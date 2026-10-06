@@ -1,0 +1,764 @@
+\section{Access}\label{sec:access}
+
+The Access chapter is about what an instrument can distinguish.  An
+observation signature \(\obsSig\) (\Cref{def:access-quotient}) is a
+declared map from states to observation symbols; its access quotient
+\(\accessQ\) identifies exactly those states that no declared
+observation separates.  The laws of this chapter say how such
+signatures determine quotients, when those quotients are adequate for
+accepted claims, when a new distinction requires new apparatus data
+rather than a free relabeling, and when structure remains hidden behind
+the current quotient \(\currQ\) although a predictive quotient
+\(\predM\) separates it.  In the running example of \Cref{sec:intro},
+\(q\) is the access quotient of the signature that reads each state's
+class \(a\), \(b\) or \(c\); the states \(1\) and \(2\) are
+indistinguishable to it, which is why \(F\) cannot be read off \(q\).
+
+Quotientality (\Fref{F10}) says that an observation signature
+determines a canonical access quotient, through which every observable
+constant on the signature factors.  Adequacy / No-Overread (\Fref{F11})
+says that accepted claims must factor through the available access.
+No-Free-Distinction (\Fref{F12}) says that a readout splits an access
+fiber exactly when it does not factor through the access quotient, that
+such a readout cannot be accepted as exact under the no-overread rule,
+and that the pairing \(\langle\accessQ,d\rangle\) is the coarsest
+refinement carrying it.  Layer Multiplicity (\Fref{F24}) closes the
+chapter: a role readout that the access quotient does not determine is
+carried by a strict refinement of that quotient, an additional layer.
+
+Between these, the Hiddenness Normal Form (\Fref{F13a}) and the CSL
+Formed-Closure Law (\Fref{F13b}) compare current and predictive
+observation.  Hiddenness is the situation in which states agree under
+\(\currQ\) but differ under \(\predM\).  \Fref{F13a} is conditional on a
+source hypothesis motivated by \citet{Tsiokos2026PvNP}; \Fref{F13b} is
+a direct theorem under an explicit determining hypothesis, motivated by
+\citet{Tsiokos2026CSL}.  No result of this paper assumes the
+P~\(\neq\)~NP claim of the former.  On a first reading these two laws
+can be skipped; the rest of the chapter does not use them.
+
+\subsection{Quotientality (Layer-Sameness via Quotient) [\texorpdfstring{\Fref{F10}}{F10}]}\label{sec:access:quotientality}
+
+\Cref{def:obs-signature} restates \Cref{def:access-quotient} for a closure
+carrier, names the quotient set \(Q_I\), and adds the calibration-family case.
+
+\begin{definition}[Observation signature]\label{def:obs-signature}
+Let \(H\) be a closure carrier.  An observation signature on \(H\)
+is a declared map
+\[
+  \obsSig:H\to\Sigma
+\]
+from states to observation symbols.  Its access kernel is the
+equivalence relation
+\[
+  h\sim_I h'
+  \quad\Longleftrightarrow\quad
+  \obsSig(h)=\obsSig(h'),
+\]
+and its access quotient is the quotient map
+\[
+  \accessQ:H\to Q_I:=H/{\sim_I}.
+\]
+For a family \((\sigma_j)_{j\in J}\) of observation signatures (a calibration
+family), the joint access kernel is \(h\sim h'\iff\sigma_j(h)=\sigma_j(h')\) for
+every \(j\), the kernel of the bundled signature \(h\mapsto(\sigma_j(h))_j\), and
+the same construction is applied to it.
+\end{definition}
+
+\begin{theorem}[Quotientality]\label{thm:F10}
+Let \(\obsSig:H\to\Sigma\) be an observation signature with access
+quotient \(\accessQ:H\to Q_I\).  Every observable \(o:H\to R\) that
+is constant on access classes factors uniquely through
+\(\accessQ\):
+\[
+  o=\overline o\circ \accessQ
+\]
+for a unique \(\overline o:Q_I\to R\).  Moreover, \(Q_I\) is the
+coarsest quotient carrying the declared observations: if
+\(\pi:H\to Q'\) is any surjective map on whose fibers \(\obsSig\) is constant,
+then \(\accessQ\) factors through \(\pi\).
+\end{theorem}
+\begin{proof}
+Define \(\overline o([h]_I)=o(h)\).  This is well defined because
+\([h]_I=[h']_I\) means \(h\sim_I h'\), and the hypothesis on \(o\)
+gives \(o(h)=o(h')\).  The equation
+\(o=\overline o\circ\accessQ\) follows from the definition on
+representatives.  If \(\overline o'\) is another such map, then for
+every access class \([h]_I\) we have
+\[
+  \overline o'([h]_I)
+  =
+  \overline o'(\accessQ(h))
+  =
+  o(h)
+  =
+  \overline o([h]_I),
+\]
+so \(\overline o'=\overline o\).
+
+For coarsestness, suppose \(\pi:H\to Q'\) is a surjective map on whose fibers
+\(\obsSig\) is constant: \(\pi(h)=\pi(h')\) implies
+\(\obsSig(h)=\obsSig(h')\).  Since \(\pi\) is surjective, define
+\(u:Q'\to Q_I\) by \(u(\pi(h))=\accessQ(h)\).  The same invisibility
+hypothesis makes this assignment independent of the representative.
+Hence \(\accessQ=u\circ\pi\).  Thus any quotient already carrying the
+declared observations refines the canonical access quotient.
+\end{proof}
+
+\paragraph{Nonclaims.} The
+theorem does not produce the coarsest quotient possible for all
+observers; it produces the coarsest quotient carrying the given
+signature.  It also does not create new observable distinctions and
+does not instantiate any particular carrier theory.
+
+\subsection*{Layer instantiations}\label{layer-inst:F10}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Myhill--Nerode minimal {DFA} (formal language theory).}] \textit{Special case.}
+For a regular language \(L\subseteq\Sigma^*\), take \(H=\Sigma^*\) and
+\(\obsSig(w):=w^{-1}L=\{z:wz\in L\}\), valued in the power set of \(\Sigma^*\) (here \(\Sigma\) is the alphabet, not the symbol set of \Cref{def:obs-signature}). Its access kernel is the Nerode
+relation \(\equiv_L\), defined by
+\(w\equiv_L w'\Leftrightarrow\forall z.\,(wz\in L\Leftrightarrow w'z\in L)\),
+so \(Q_I=\Sigma^*/\!\!\equiv_L\) is the state set of the minimal DFA
+recognising \(L\). \Fref{F10} then says that every observable constant on
+\(\equiv_L\) factors uniquely through \(Q_I\), and that every surjection with
+\(\obsSig\)-constant fibers refines \(\equiv_L\). That \(\equiv_L\) is also the
+coarsest right-congruence making \(\mathbf 1_L\) class-constant is the
+Myhill--Nerode theorem, not part of \Fref{F10}
+\citep{Nerode1958LinearAutomatonTransformations}.
+
+\item[\emph{Kalman observability canonical decomposition (control
+engineering).}] \textit{Special case.}
+Take \(H=\mathbb R^n\) and \(\obsSig(x):=(CA^kx)_{k\ge0}\); its access kernel
+is \(x-x'\in N\). For a linear time-invariant system \(\dot x=Ax+Bu,\ y=Cx\), the
+unobservable subspace
+\(N=\bigcap_{k\ge 0}\ker(CA^k)\) is the kernel of the observability
+matrix.  Two state vectors agree under \(\mathbb R^n/N\) iff they
+produce identical output trajectories for every admissible input,
+and the Kalman canonical form factors every input--output
+observable uniquely through \(\mathbb R^n/N\); every surjection of \(\mathbb R^n\) on whose fibres the output trajectory is constant refines \(\mathbb R^n/N\) (the quotient map \(\mathbb R^n\to\mathbb R^n/N\) factors through it), which is the coarsest-quotient clause of \Fref{F10}
+\citep{Kalman1963MathematicalDescription}.
+
+\item[\emph{Bernstein 3{NF} synthesis (database engineering).}] \textit{Analogy.}
+Given a relation schema with attributes \(U\) and a
+functional-dependency set \(F\), the 3NF decomposition produced by Bernstein
+synthesis from a chosen minimal cover of \(F\) is a
+dependency-preserving 3NF decomposition, which depends on the chosen
+cover: every FD-checker for the cover factors through the projection
+onto a single component schema, and coalescing components keeps
+every declared FD checkable but can introduce a 3NF violation
+\citep{Bernstein1976Synthesizing3NF}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Adequacy / No-Overread [\texorpdfstring{\Fref{F11}}{F11}]}\label{sec:access:adequacy}
+
+Fix the same closure carrier \(H\) and declared observable family as
+in the previous subsection, and let \(\accessQ:H\to Q_I\) be the
+access quotient constructed from that family.  A claim is \emph{accepted as an exact current claim} when it passes
+the finite audited status discipline of \FoundIII\ as an exact claim
+about the current layer \citep{Tsiokos2026FoundationsIII}.  By the
+no-overread rule (NO) of \Cref{sec:apparatus}, it may then use only the
+distinctions available to the current access; this is the premise the
+proof uses.  The theorem records what the discipline guarantees: an
+accepted exact claim is constant on the fibers of \(\accessQ\), and
+hence factors through it.
+
+\begin{theorem}[Adequacy / No-Overread]\label{thm:F11}
+Let \(F:H\to W\) be a map (in the intended reading, a current-layer claim over a
+formed access package), and let
+\(\mathcal O(\accessQ,F):=\{(h,h'):\accessQ(h)=\accessQ(h'),\ F(h)\ne F(h')\}\)
+be its overread obstruction.
+\begin{enumerate}[label=(\alph*)]
+\item For every \(F\),
+\[
+  F\ \text{constant on the fibers of}\ \accessQ
+  \iff \mathcal O(\accessQ,F)=\emptyset
+  \iff F=\overline F\circ\accessQ\ \text{for a unique}\ \overline F:Q_I\to W .
+\]
+\item Under the no-overread rule (NO) of \Cref{sec:apparatus}, if \(F\) is
+  accepted as an exact current claim, then it is constant on the fibers of
+  \(\accessQ\), and there is a unique map \(\overline F:Q_I\to W\) such that
+  \(F=\overline F\circ\accessQ\).
+\item Hence the no-overread rule (NO) holds if and only if every accepted
+  exact current claim factors uniquely through
+  \(\accessQ\).
+\end{enumerate}
+The first conclusion of (b) is (NO) applied to \(F\); the uniqueness uses the
+universal property of \(\accessQ\) (\Cref{thm:F10}).
+\end{theorem}
+\begin{proof}
+For (b), (NO) of \Cref{sec:apparatus} applied to the accepted claim \(F\) states exactly that \(F(h)=F(h')\) whenever \(\accessQ(h)=\accessQ(h')\).
+
+By Quotientality, every map constant on access classes factors
+uniquely through \(\accessQ\).  Applying \Cref{thm:F10} to \(F\)
+gives a unique \(\overline F:Q_I\to W\) with
+\(F=\overline F\circ\accessQ\).  Thus an accepted current claim has
+no overread defect. For the equivalences, a pair in \(\mathcal O(\accessQ,F)\)
+is exactly a failure of constancy on a fiber, and Quotientality, with
+surjectivity of \(\accessQ\), gives the unique factorization of a map constant
+on fibers; conversely a factored map is constant on fibers. Applying these
+equivalences to each accepted exact current claim gives the final
+statement.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not forbid recording distinctions beyond
+current access; such distinctions may belong to the predictive
+quotient \(\predM\), to memory, or to a later access extension.  It
+also does not determine the audit data, bridge strengths, thresholds,
+or residual budgets required for acceptance.
+
+\subsection*{Layer instantiations}\label{layer-inst:F11}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Rao--Blackwell theorem (statistical decision theory).}] \textit{Analogy.}
+For a sufficient statistic \(T:X\to\mathcal T\) on a parametric
+family \(\{P_\theta\}\), the Rao--Blackwell construction
+\(\delta_{\mathrm{RB}}(x)=\mathbb E[\delta(X)\mid T(X)=T(x)]\) takes any
+decision rule \(\delta\) and produces a \(\sigma(T)\)-measurable
+rule whose risk under a convex loss is at most that of \(\delta\)
+at every \(\theta\), and strictly smaller at some \(\theta\) under a
+strictly convex loss unless \(\delta\) is already a function of \(T\)
+almost surely.  Hence under a strictly convex loss any admissible
+decision rule with finite risk factors as
+\(\delta=\bar\delta\circ T\) a.s.; a rule that uses within-fibre
+detail of \(X\) beyond \(T(X)\) is the overread failure
+\citep{Blackwell1947ConditionalExpectation}.
+
+\end{description}
+\endgroup
+
+
+\subsection{No-Free-Distinction [\texorpdfstring{\Fref{F12}}{F12}]}\label{sec:access:no-free-distinction}
+
+Keep the formed access quotient \(\accessQ:H\to Q_I\) from
+Quotientality, together with the no-overread discipline from
+Adequacy.  A proposed new current distinction is a readout
+\(d:H\to D\).  Its split-pair obstruction at fixed access is
+\[
+  \splitObs_{\mathrm{dist}}(\accessQ,d)
+  =
+  \{(h,h')\mid \accessQ(h)=\accessQ(h')\ \text{and}\ d(h)\ne d(h')\}.
+\]
+
+Call \(d\) \emph{current-visible} when \(\accessQ(h)=\accessQ(h')\) implies
+\(d(h)=d(h')\). The \emph{financed refinement} of \(d\), the refinement that adjoins \(d\)
+as declared apparatus data, is
+\(\langle\accessQ,d\rangle:H\to Q_I\times D\).
+
+\begin{theorem}[No-Free-Distinction]\label{thm:F12}
+Let \(d:H\to D\) be a readout (the access quotient \(\accessQ\) is surjective by construction). Then
+\(d\) is current-visible if and only if
+\[
+  \splitObs_{\mathrm{dist}}(\accessQ,d)=\varnothing,
+  \qquad\text{equivalently}\qquad
+  d=\overline d\circ\accessQ
+\]
+for some \(\overline d:Q_I\to D\); in particular a readout obtained by
+applying a map to the access quotient cannot split an access fiber. The
+financed refinement \(\langle\accessQ,d\rangle\) retains \(\accessQ\) and
+carries \(d\) (both factor through it), it strictly refines \(\accessQ\) when
+the obstruction is nonempty (it separates two histories that \(\accessQ\)
+identifies, so it does not factor through \(\accessQ\)), and every map \(p\) through which both
+\(\accessQ\) and \(d\) factor also has \(\langle\accessQ,d\rangle\) factoring
+through it. If the obstruction is nonempty and the no-overread rule (NO) of
+\Cref{sec:apparatus} holds, \(d\) is not accepted as an exact current claim.
+\end{theorem}
+\begin{proof}
+By definition, \(d\) is current-visible exactly when no pair identified by
+\(\accessQ\) is separated by \(d\), that is, when the displayed obstruction is
+empty. By \Cref{thm:F10}, this is equivalent to the existence of a
+factorization \(d=\overline d\circ\accessQ\). A readout \(g\circ\accessQ\)
+depends only on the access class, so it is current-visible.
+
+The projections of \(Q_I\times D\) give
+\(\accessQ=\operatorname{pr}_1\circ\langle\accessQ,d\rangle\) and
+\(d=\operatorname{pr}_2\circ\langle\accessQ,d\rangle\). If
+\((h,h')\) lies in the obstruction, then \(\accessQ(h)=\accessQ(h')\) while
+\(\langle\accessQ,d\rangle(h)\ne\langle\accessQ,d\rangle(h')\), so the
+refinement is strict. If \(\accessQ=a\circ p\) and \(d=b\circ p\), then
+\(\langle\accessQ,d\rangle=\langle a,b\rangle\circ p\).
+
+Finally, if the obstruction is nonempty, \(d\) separates two histories that
+the current access quotient identifies, so \(d\) is not constant on the fibers
+of \(\accessQ\). By (NO), as in \Cref{thm:F11}, an exact current claim is
+constant on those fibers; hence \(d\) is not accepted as exact.
+\end{proof}
+
+A distinction that the access quotient does not support can still be used
+with declared apparatus data: memory, a bridge, a budgeted residual, a
+scope restriction, or stronger calibration. Among quotient refinements
+through which both \(\accessQ\) and \(d\) factor,
+\(\langle\accessQ,d\rangle\) is coarsest, by the factorization proved above.
+
+\paragraph{Nonclaims.} The theorem is not anti-refinement.  Calibration families may enrich
+the apparatus, and strict extensions may add real distinctions.  The
+claim is only that the enrichment must be declared and statused, not
+smuggled in as a free consequence of the old access quotient.  Nor
+does this theorem classify every possible source of new data; later
+axes treat memory, bridges, residual budgets, scope changes, and
+predictive refinements in their own normal forms.
+
+\subsection*{Layer instantiations}\label{layer-inst:F12}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Landauer's principle (thermodynamics of computation).}] \textit{Analogy.}
+Resetting a one-bit register whose prior content is an unknown,
+unbiased bit to a fixed value, by a process that exchanges heat with a
+thermal reservoir at temperature \(T\) and starts uncorrelated with it,
+dissipates at least \(k_B T\ln 2\) of heat into the reservoir; in
+general the bound is \(k_BT\) times the decrease of the register's
+entropy, measured in nats, so the lower bound is smaller for a biased prior bit
+\citep{Landauer1961IrreversibilityHeatGeneration,ReebWolf2014ImprovedLandauer}.
+The analogy is that a change in the distinctions a register carries is
+not free: it is paid for by declared apparatus, here heat exported to
+the reservoir.
+
+\end{description}
+\endgroup
+
+
+
+\subsection{Hiddenness Normal Form (conditional) [\texorpdfstring{\Fref{F13a}}{F13a}]}\label{sec:access:hiddenness}
+
+\begin{definition}[Hiddenness interface]\label{def:hiddenness-exposure}
+A \emph{hiddenness interface} \(I\) consists of a closure carrier
+\(\mathcal H_I\), a current quotient
+\(\currQ_I:\mathcal H_I\to Q_I^{\mathrm{cur}}\), a predictive quotient
+\(\predM_I:\mathcal H_I\to M_I\) refining \(\currQ_I\), an upstream
+readout \(u_I:\mathcal H_I\to U_I\) of the determining state, and three
+declared propositions
+\[
+  \operatorname{determiningStateTyped}(I),\quad
+  \operatorname{minimalRelevantUpstream}(I),\quad
+  \operatorname{lawfulCurrentExposure}(I).
+\]
+From these data we define \(\operatorname{QuotientExposed}(I)\),
+\(\operatorname{PredictiveCollapse}(I)\), \(\operatorname{PredictiveSurplus}(I)\)
+and \(\operatorname{HiddenFromCurrent}(I)\) below.
+\Fref{F13b} defines a
+distinct pair-level predicate using a readout \(d\) and proves an equivalence
+under an explicit determining hypothesis. \(\operatorname{QuotientExposed}\),
+\(\operatorname{PredictiveCollapse}\), \(\operatorname{PredictiveSurplus}\) and
+\(\operatorname{HiddenFromCurrent}\) are defined from the maps and the declared
+predicates:
+\begin{align*}
+  \operatorname{QuotientExposed}(I)
+  &:\Longleftrightarrow \exists f,\ u_I=f\circ\currQ_I,\\
+  \operatorname{PredictiveCollapse}(I)
+  &:\Longleftrightarrow \exists g,\ \predM_I=g\circ\currQ_I,\\
+  \operatorname{PredictiveSurplus}(I)
+  &:\Longleftrightarrow \exists h,h',\ \currQ_I(h)=\currQ_I(h')
+    \wedge \predM_I(h)\ne\predM_I(h'),\\
+  \operatorname{HiddenFromCurrent}(I)
+  &:\Longleftrightarrow \neg\operatorname{lawfulCurrentExposure}(I).
+\end{align*}
+The hiddenness normal form is the
+five-conjunct property
+\begin{align*}
+  \operatorname{HiddennessNormalForm}(I)
+  :={}&
+  \operatorname{determiningStateTyped}(I)
+  \wedge
+  \operatorname{minimalRelevantUpstream}(I)\\
+  &{}\wedge
+  \bigl(\operatorname{lawfulCurrentExposure}(I)
+    \leftrightarrow
+    \operatorname{QuotientExposed}(I)\bigr)\\
+  &{}\wedge
+  \bigl(\operatorname{PredictiveCollapse}(I)
+    \leftrightarrow
+    \operatorname{lawfulCurrentExposure}(I)\bigr)\\
+  &{}\wedge
+  \bigl(\operatorname{PredictiveSurplus}(I)
+    \leftrightarrow
+    \operatorname{HiddenFromCurrent}(I)\bigr).
+\end{align*}
+\end{definition}
+
+\paragraph{Reading the statement.}
+The current quotient \(\currQ_I\) records what is observable now, and
+the predictive quotient \(\predM_I\) records what matters for
+prediction.  \(\operatorname{PredictiveCollapse}(I)\) says that
+\(\predM_I\) factors through \(\currQ_I\), so that prediction needs
+nothing beyond the current class; \(\operatorname{PredictiveSurplus}(I)\)
+says that two histories with the same current class have different
+predictive classes; and \(\operatorname{QuotientExposed}(I)\) says that
+the whole upstream readout factors through \(\currQ_I\).  The predicates
+\(\operatorname{determiningStateTyped}(I)\) (the determining state has
+been given a type), \(\operatorname{minimalRelevantUpstream}(I)\) (the
+relevant upstream data are minimal) and
+\(\operatorname{lawfulCurrentExposure}(I)\) (the current quotient is a
+lawful exposure of the determining state) are declared data of the
+interface, not reduced to the quotients.
+
+The theorem has two parts.  Part (i) assumes the source hypothesis
+\((\mathsf S)\): \(\currQ_I\) is surjective and the first four conjuncts
+of the normal form hold.  It proves the fifth conjunct and the chain of
+equivalences linking exposure, collapse and the absence of surplus.  In
+the intended application, \(I\) would be an interface extracted from
+the saturated-SAT construction of \citet{Tsiokos2026PvNP}, and
+\((\mathsf S)\) a property of that construction; that paper constructs
+no such interface, and \((\mathsf S)\) is not verified for it here.
+Hypothesis \((\mathsf S)\) is satisfiable, also together with a
+predictive surplus: take two histories, a one-point current quotient,
+the identity as predictive quotient and as upstream readout,
+\(\operatorname{lawfulCurrentExposure}(I)\) false and the other two
+declared predicates true.  Part (ii) assumes nothing beyond the
+interface: the equivalence of surplus with non-collapse holds exactly
+when \(\currQ_I\) is surjective or \(M_I\) is nonempty.  The refinement
+of \(\currQ_I\) by \(\predM_I\) required in
+\Cref{def:hiddenness-exposure} is not used by the theorem; it serves
+only the remark, in the nonclaims below, that
+\(\langle\currQ_I,\predM_I\rangle\) has the fibers of \(\predM_I\).
+
+\begin{theorem}[Hiddenness Normal Form]\label{thm:F13a}
+Let \(I\) be a hiddenness interface.
+\begin{enumerate}[label=(\roman*)]
+\item Assume the source hypothesis
+  \((\mathsf S)\): \(\currQ_I\) is surjective, and
+  \begin{align*}
+    &\operatorname{determiningStateTyped}(I),\\
+    &\operatorname{minimalRelevantUpstream}(I),\\
+    &\operatorname{lawfulCurrentExposure}(I)
+      \iff \operatorname{QuotientExposed}(I),\\
+    &\operatorname{PredictiveCollapse}(I)
+      \iff \operatorname{lawfulCurrentExposure}(I).
+  \end{align*}
+  Then
+  \[
+    \operatorname{PredictiveSurplus}(I)
+      \iff \operatorname{HiddenFromCurrent}(I),
+  \]
+  so \(I\) satisfies \(\operatorname{HiddennessNormalForm}(I)\), and
+  \[
+    \operatorname{QuotientExposed}(I)\iff
+    \operatorname{PredictiveCollapse}(I)\iff
+    \neg\operatorname{PredictiveSurplus}(I):
+  \]
+  the upstream readout descends through the current quotient exactly
+  when prediction does.
+\item Without \((\mathsf S)\), \(I\) satisfies
+  \(\operatorname{PredictiveSurplus}(I)\iff\neg\operatorname{PredictiveCollapse}(I)\)
+  if and only if \(\currQ_I\) is surjective or \(M_I\) is nonempty, in
+  particular whenever \(\currQ_I\) is surjective; and for every \(I\)
+  satisfying this equivalence, the fourth conjunct of the normal form
+  holds if and only if the fifth does.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+We first show that a surjective \(\currQ_I\) gives
+\(\operatorname{PredictiveSurplus}(I)\iff\neg\operatorname{PredictiveCollapse}(I)\);
+this is \Cref{thm:F7} for the single probe \(\predM_I\), which we spell
+out.  A surplus pair \(h,h'\) rules out \(\predM_I=g\circ\currQ_I\),
+since it would give
+\(\predM_I(h)=g(\currQ_I h)=g(\currQ_I h')=\predM_I(h')\).  Conversely,
+if there is no surplus pair, \(\predM_I\) is constant on the fibers of
+\(\currQ_I\), and since \(\currQ_I\) is surjective,
+\(g(\currQ_I h):=\predM_I(h)\) defines \(g\) with
+\(\predM_I=g\circ\currQ_I\).
+
+(i) By the fourth conjunct, \(\neg\operatorname{PredictiveCollapse}(I)\)
+is equivalent to
+\(\neg\operatorname{lawfulCurrentExposure}(I)=\operatorname{HiddenFromCurrent}(I)\),
+which with the equivalence just proved gives the fifth conjunct.  The
+final chain combines the third and fourth conjuncts with the same
+equivalence.
+
+(ii) If \(\currQ_I\) is surjective, the equivalence was proved above.
+If \(M_I\ne\emptyset\), the same argument applies, with the
+fiber-defined map extended outside the image of \(\currQ_I\) by any
+chosen value.  If \(M_I=\emptyset\), then \(\mathcal H_I=\emptyset\),
+there is no surplus, and collapse holds exactly when the current
+codomain is empty, that is, when \(\currQ_I\) is surjective.  Given the
+equivalence, the fourth conjunct is equivalent to
+\(\neg\operatorname{PredictiveSurplus}(I)\iff\operatorname{lawfulCurrentExposure}(I)\),
+which is the fifth conjunct negated on both sides.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not prove \((\mathsf S)\) for
+any interface derived from the saturated-SAT construction of
+\citet{Tsiokos2026PvNP}, does not re-prove the closure result of that
+paper, and asserts nothing about a complexity class.  Its unconditional
+content is part (ii).  The upstream factorization here concerns the
+whole declared readout; it is distinct from the exposure predicate of
+the Hiddenness paper \citep{Tsiokos2026CSL}, which asks for a single
+nonconstant visible function of state.  Since \(\predM_I\) refines
+\(\currQ_I\), the pairing \(\langle\currQ_I,\predM_I\rangle\), the
+coarsest refinement of \(\currQ_I\) through which \(\predM_I\) descends
+(\Cref{sec:apparatus}), has the same fibers as \(\predM_I\).  The
+Kochen--Specker theorem \citep{KochenSpecker1967Hidden}, a
+non-contextual hidden-variable obstruction in quantum foundations, is
+a substrate-specific result, not a special case of this law.
+
+\subsection*{Layer instantiations}\label{layer-inst:F13a}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Hidden Markov model identifiability (statistical
+latent-variable analysis).}] \textit{Analogy.}
+In a hidden Markov model, two observation histories ending in the
+same observed symbol can predict different distributions of future
+observations, because they lead to different posterior distributions
+over the hidden state; such a pair is a predictive surplus over the
+current observation, and the hidden state is the determining state
+upstream of it.  For a stationary hidden Markov model with \(r\) hidden
+states and \(\kappa\ge2\) observation symbols, Allman, Matias and
+Rhodes show that the parameters are generically identifiable, up to
+relabeling of the hidden states, from the joint distribution of
+\(2k+1\) consecutive observations whenever
+\(\binom{k+\kappa-1}{\kappa-1}\ge r\); \emph{generically}
+excludes a set of parameters of measure zero.  Identifiability concerns
+the model, not the success of an estimation procedure such as
+Baum--Welch EM \citep{AllmanMatiasRhodes2009Identifiability}.
+
+\end{description}
+\endgroup
+
+
+\subsection{CSL Formed-Closure Law [\texorpdfstring{\Fref{F13b}}{F13b}]}\label{sec:access:csl-formed-closure}
+
+\begin{definition}[Diagnosis source data]\label{def:diagnosis-source}
+Diagnosis source data on a carrier \(H\) is a triple \((\currQ,\predM,d)\) of
+a current quotient \(\currQ:H\to Q\), a predictive quotient
+\(\predM:H\to M\) and a readout \(d:H\to S\) that is \emph{determining}:
+\(\currQ(h)=\currQ(h')\wedge d(h)=d(h')\Rightarrow\predM(h)=\predM(h')\). In
+the CSL case, \PaperCSL\ \citep{Tsiokos2026CSL} identifies an internal-state
+readout; the determining property is an additional hypothesis that must be
+verified for a proposed diagnosis source.
+\end{definition}
+
+\Cref{thm:F13b} applies to exactly such data.
+
+\paragraph{Reading the statement.} The theorem has three parts: the surplus equivalence for the given determining \(d\); for an arbitrary \(d'\), a factorization test for being determining and a two-case split of predictive surplus; and the statement that \(\langle\currQ,\predM\rangle\) is the coarsest pairing \(\langle\currQ,d'\rangle\) with \(d'\) determining.
+The closure carries a declared determining-state readout \(d\), the hidden
+state that the diagnosis of \PaperCSL\ identifies.
+\(\operatorname{PredictiveSurplus}(\mathcal C)\) says that two histories with
+the same current class have different predictive classes;
+\(\operatorname{HiddenStateSurplus}(\mathcal C)\) says that two histories with
+the same current class and different determining states have different
+predictive classes, so that the predictive split is carried by the hidden
+determining state. The hypothesis that \(d\) is determining says that the
+current class and the determining state together fix the predictive class.
+This pairwise property is assumed here; it is not established by the cited CSL
+diagnosis.
+
+\begin{theorem}[CSL Formed-Closure Law]\label{thm:F13b}
+Let \(\mathcal C=(H,\currQ,\predM,d)\) consist of a carrier \(H\) with
+current quotient \(\currQ:H\to Q\), predictive quotient \(\predM:H\to M\) and a
+declared determining-state readout \(d:H\to S\) that is determining:
+\[
+  \currQ(h)=\currQ(h')\ \wedge\ d(h)=d(h')
+  \ \Longrightarrow\ \predM(h)=\predM(h').
+\]
+Define
+\begin{align*}
+  \operatorname{PredictiveSurplus}(\mathcal C)
+  &:\Longleftrightarrow
+  \exists h,h'\in H:\ \currQ(h)=\currQ(h')\ \wedge\ \predM(h)\ne\predM(h'),\\
+  \operatorname{HiddenStateSurplus}(\mathcal C)
+  &:\Longleftrightarrow
+  \exists h,h'\in H:\ \currQ(h)=\currQ(h')\ \wedge\ d(h)\ne d(h')\\
+  &\qquad{}\wedge\ \predM(h)\ne\predM(h').
+\end{align*}
+Then
+\[
+  \operatorname{PredictiveSurplus}(\mathcal C)
+  \iff
+  \operatorname{HiddenStateSurplus}(\mathcal C),
+\]
+and more precisely every pair \(h,h'\) with \(\currQ(h)=\currQ(h')\) and
+\(\predM(h)\ne\predM(h')\) has \(d(h)\ne d(h')\): predictive surplus across
+the \(\predM/\currQ\) gap lies only on pairs that the hidden determining state
+separates; equivalently, the surplus pairs are the current-fiber pairs that both \(d\) and
+\(\predM\) separate. Moreover, for an arbitrary readout \(d':H\to S'\), not assumed determining, \(d'\) is determining if and only if
+\(\predM=g\circ\langle\currQ,d'\rangle\) for some map \(g\) from the image of
+\(\langle\currQ,d'\rangle\) to \(M\) (equivalently, when \(M\) is nonempty, for some
+\(g:Q\times S'\to M\)), and
+\(\operatorname{PredictiveSurplus}\) holds if and only if some pair of one current
+fiber is separated by both \(d'\) and \(\predM\), or some pair of one current
+fiber agrees under \(d'\) and is separated by \(\predM\) (this second disjunct
+says exactly that \(d'\) is not determining). In particular
+\(d'=\predM\) is determining, and \(d'\) is determining exactly when
+\(\langle\currQ,\predM\rangle\) is constant on the fibers of
+\(\langle\currQ,d'\rangle\); hence, after corestricting the pairings to their images,
+\(\langle\currQ,\predM\rangle\) is the coarsest pairing \(\langle\currQ,d'\rangle\) with
+\(d'\) determining. When \(M\) is nonempty, the canonical pairing also factors
+through the full-codomain pairing \(\langle\currQ,d'\rangle:H\to Q\times S'\) for
+every determining \(d'\).
+\end{theorem}
+\begin{proof}
+If \(\currQ(h)=\currQ(h')\) and \(\predM(h)\ne\predM(h')\), then
+\(d(h)\ne d(h')\), since otherwise the determining hypothesis would give
+\(\predM(h)=\predM(h')\). So every surplus pair is a hidden pair, which gives
+\(\operatorname{PredictiveSurplus}\Rightarrow\operatorname{HiddenStateSurplus}\);
+the converse holds because a hidden pair is in particular a surplus pair.
+For an arbitrary \(d'\), if \(d'\) is determining, define \(g(a,b)\) as
+\(\predM(h)\) for any \(h\) with \(\langle\currQ,d'\rangle(h)=(a,b)\), which is
+well defined by the determining property; when \(M\) is nonempty, \(g\) extends
+to \(Q\times S'\) by a fixed value off the image. Conversely such a \(g\) makes
+\(d'\) determining. The surplus disjunction splits a surplus pair by
+whether \(d'\) separates it.
+For the last clause, \(\predM\) is determining trivially, and since the \(\currQ\) coordinates of two histories with equal \(\langle\currQ,d'\rangle\) agree, determination of \(d'\) is constancy of \(\langle\currQ,\predM\rangle\) on the fibers of \(\langle\currQ,d'\rangle\).
+\end{proof}
+
+\paragraph{What the source supplies.} \PaperCSL\ \citep{Tsiokos2026CSL} defines an internal-state readout and studies its exposure to current observables and its behavior under trace-fingerprint loops. It does not prove that \((\currQ,d)\) determines \(\predM\) for every pair of histories. That determination is an explicit hypothesis of \Cref{thm:F13b}; applying the theorem to a CSL carrier requires a separate proof of it.
+
+
+\paragraph{Nonclaims.} This subsection does not instantiate the CSL diagnosis source and does
+not assert a measurement-theoretic contextuality theorem at the
+\FIV\ layer.
+
+\subsection*{Layer instantiations}\label{layer-inst:F13b}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Bayesian clinical diagnostic testing (medicine).}] \textit{Analogy.}
+For a clinical assay with declared sensitivity \(\mathrm{Se}\),
+specificity \(\mathrm{Sp}\) and cohort prevalence, Bayes' rule gives
+\(P(\text{disease}\mid r)\) for each possible result \(r\). Take the current
+class to record the cohort and assay parameters, and the determining readout
+to record \(r\); together they determine the posterior. If two possible
+results give different posteriors within one current class, they witness
+predictive and hidden-state surplus. Disease status alone need not determine
+the posterior, and this analogy does not infer disease status from that
+surplus \citep{Sackett2000EvidenceBasedMedicine}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Layer Multiplicity [\texorpdfstring{\Fref{F24}}{F24}]}\label{sec:access:layer-multiplicity}
+
+Let \(H\) be a closure carrier with a formed current access quotient
+\(q:H\to Q\).  A calibration or role signature is another declared
+map \(s:H\to S\): it may record a future probe, an interaction role,
+a lawhood signature, a branch readout, or a calibrated instrument
+response.  The signature is already carried by the old layer exactly
+when it descends through \(q\), equivalently when it is constant on
+the \(q\)-fibers.
+
+\paragraph{Reading the statement.}
+\(\operatorname{RoleSplit}(q,s)\) says that the old layer merges two
+histories whose roles differ, that is, some \(q\)-fiber contains two
+values of \(s\). \(\operatorname{StrictLayerExtension}(q,q_s)\) says
+that \(q_s\) retains \(q\), that is \(q=\mathrm{pr}_Q\circ q_s\), and that some
+\(q\)-fiber is split by \(q_s\): there are \(h,h'\) with \(q(h)=q(h')\) and
+\(q_s(h)\ne q_s(h')\). The theorem shows that a role split
+is always resolved by this extension. The layer-formation discipline also
+records eight other ways a split may be handled: by a memory layer, by a
+hidden upstream role, through a bridge, within a budget, within a declared
+scope, by coarsening, by placing the role outside the declared scope, or as
+blocked nonclosure. These are declared statuses, not determined by \(q\) and
+\(s\), and the theorem makes no claim about them. In ordinary notation: \(s\) factors
+through \(q\) exactly when \(\mathcal O_s=\emptyset\); some \(q\)-fiber
+carries two values of \(s\) exactly when \(\mathcal O_s\neq\emptyset\),
+which happens exactly when \(q_s\) strictly refines \(q\); and a split
+is then resolved at least by the strict extension \(q_s\). With \(d=s\), the
+descent criterion, the strict refinement under a split and the coarsest-map
+property are those of \Cref{thm:F12}; the converse (a strict extension
+implies a role split) and the corestriction are added here.
+
+\begin{theorem}[Layer Multiplicity]\label{thm:F24}
+Let \(H\) be a history space, let \(q:H\to Q\) be a surjective access
+quotient, and let \(s:H\to S\) be a declared role readout.  Define
+the role obstruction and joint role-layer quotient by
+\[
+  \mathcal O_s
+  :=
+  \{(h,h')\in H^2:q(h)=q(h')\ \text{and}\ s(h)\ne s(h')\},
+  \qquad
+  q_s(h):=(q(h),s(h)).
+\]
+Then
+\begin{align*}
+  s\ \text{descends through}\ q
+  &\iff \mathcal O_s=\emptyset,\\
+  \operatorname{RoleSplit}(q,s)
+  &\iff \mathcal O_s\ne\emptyset\\
+  &\iff \operatorname{StrictLayerExtension}(q,q_s).
+\end{align*}
+In particular,
+\[
+  \operatorname{RoleSplit}(q,s)\Longrightarrow
+  \operatorname{StrictLayerExtension}(q,q_s):
+\]
+a role split is resolved by the strict layer extension \(q_s\). Moreover, \(q_s:H\to Q\times S\) is coarsest in the factorization
+preorder among maps through which both \(q\) and \(s\) factor: if
+\(q=a\circ p\) and \(s=b\circ p\) for a map \(p\), then
+\(q_s=\langle a,b\rangle\circ p\). Its corestriction
+\(H\to\operatorname{im}(q_s)\) is the corresponding coarsest surjective
+quotient among surjective maps \(p\) through which \(q\) and \(s\) factor.
+\end{theorem}
+\begin{proof}
+Assume \(q:H\to Q\) is surjective and \(s:H\to S\) is declared.  If
+\(s\) descends through \(q\), then \(s=\bar s\circ q\) for some
+\(\bar s:Q\to S\), so
+\[
+  q(h)=q(h')\Longrightarrow s(h)=s(h')
+\]
+and \(\mathcal O_s=\emptyset\).  Conversely, if
+\(\mathcal O_s=\emptyset\), define
+\[
+  \bar s(q(h)):=s(h).
+\]
+The empty obstruction makes \(\bar s\) independent of the
+representative \(h\), and surjectivity of \(q\) supplies all quotient
+classes.  Thus \(s\) descends through \(q\).
+
+If \(\mathcal O_s\ne\emptyset\), choose
+\((h,h')\in\mathcal O_s\).  Then \(q(h)=q(h')\) but
+\[
+  q_s(h)=(q(h),s(h))\ne(q(h'),s(h'))=q_s(h'),
+\]
+so \(q_s\) strictly refines \(q\).  Conversely, a strict refinement of
+\(q\) by \(q_s\) means that some \(q\)-fiber is split by the second
+coordinate \(s\), giving an element of \(\mathcal O_s\).
+
+Finally, if \(\operatorname{RoleSplit}(q,s)\) holds, the previous
+paragraph shows that \(q_s\) strictly refines \(q\), which is
+\(\operatorname{StrictLayerExtension}(q,q_s)\).
+For the last clause, \(q_s(h)=(q(h),s(h))=(a(p(h)),b(p(h)))=\langle a,b\rangle(p(h))\).
+Corestricting \(q_s\) to its image makes it surjective. If \(p\) is
+surjective, every \(t\) is \(p(h)\) for some \(h\), so
+\((a(t),b(t))=q_s(h)\) lies in that image and gives the asserted
+quotient factorization.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem proves that a role split forces
+the strict extension \(q_s\); adopting \(q_s\) as a new layer still
+requires admissibility, closure formation, and status.
+Layer Multiplicity does not classify the number of layers in a
+carrier, does not prescribe how layers must be presented, and does
+not assert that multiplicity is finite in every setting.
+
+\subsection*{Layer instantiations}\label{layer-inst:F24}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Operating-system privilege protection (computer
+security).}] \textit{Analogy.}
+In a multi-user operating system, the privilege quotient classifies
+operations by the trust level of the executing principal.  When a
+process needs an operation outside its declared privilege, the
+layer-formation discipline names a resolution: a user-to-kernel
+system-call trap, a capability-bridge invocation, an
+inter-process-communication transfer, a sandbox or namespace
+restriction, or
+outright denial --- corresponding as follows to the declared statuses memory layer (the trap's
+saved context), bridge (capability invocation and IPC transfer), declared scope
+(sandbox) and blocked nonclosure (denial) listed in the reading paragraph of
+\Fref{F24}, about which \Fref{F24} makes no claim
+\citep{SaltzerSchroeder1975ProtectionInformation}.
+
+\end{description}
+\endgroup
+
+
+\subsection*{Access at a glance}\label{sec:access:summary}\addcontentsline{toc}{subsection}{Access at a glance}
+\input{tables/tab_axis_access_summary}
+\FloatBarrier

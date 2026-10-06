@@ -1,0 +1,686 @@
+# paper_inventory.toml — Foundations IV paper
+#
+# Canonical source bundle:
+# - paper/foundations_iv/notes/source_fidelity_split.md (source bucket assignment)
+# - Foundations IV statement source bundle (50 laws + 3 atlas records)
+# - paper/foundations_iv/proposal.md (axis grouping, anchor table)
+#
+# Status vocabulary:
+#   mechanize_now      — full Lean realization required
+#   theorem            — full Lean realization proved directly
+#   partial            — theorem applying a # substrate_pending axiom
+#   obligation         — Lean `axiom`, tagged # obligation in trust_base.txt
+#   substrate_pending  — Lean `axiom`, tagged # substrate_pending in trust_base.txt
+#   anchor_substrate   — theorem applying an adapter to existing substrate Lean decl
+#   support_only       — typed `def` recording cascade evidence; not a proof gate
+#   nonclaim           — explicitly negated; documented only
+#
+# Atlas records are NOT inventoried: they are planning artifacts
+# referenced by proposal.md, not mechanizable laws.
+#
+# Label scheme: F<file-number>[a|b for split files]. 52 mechanizable rows:
+#   49 mechanize_now/theorem + 2 anchor_substrate (F6, F53) +
+#    1 partial (F13a — applies a same-module # substrate_pending axiom).
+
+# ----------------------------------------------------------------------
+# Axis: TRANSPORT (files 2-5; drop-in LaTeX appendices exist)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "F2"
+name = "Descent-Repair Normal Form"
+kind = "theorem"
+axis = "Transport"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_05_primary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Transport.DescentRepair"
+target_lean_decl = "descent_repair_normal_form"
+notes = "F descends iff split-pair obstruction Δ(q,F,r)=∅; canonical repairs = source refinement / target coarsening. Drop-in LaTeX appendix already drafted in source."
+
+[[entry]]
+paper_label = "F3"
+name = "Holonomy-Memory Repair Normal Form"
+kind = "theorem"
+axis = "Transport"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_05_primary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Transport.HolonomyMemoryRepair"
+target_lean_decl = "holonomy_memory_repair_normal_form"
+notes = "Hidden route residue iff predictive witness; canonical Q⇝M repair."
+
+[[entry]]
+paper_label = "F4"
+name = "Local-Global Obstruction Normal Form"
+kind = "theorem"
+axis = "Transport"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_05_primary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Transport.LocalGlobalObstruction"
+target_lean_decl = "local_global_obstruction_normal_form"
+notes = "Match \\ im R; four statuses (overlap-inconsistent / compatible non-global / global ambiguous / global exact)."
+
+[[entry]]
+paper_label = "F5"
+name = "Recombination Comparison / Branch-Merge Transport"
+kind = "theorem"
+axis = "Transport"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_05_primary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Transport.RecombinationComparison"
+target_lean_decl = "recombination_comparison"
+notes = "Tightening: NOT just strict refinement R>K. Branchwise equality determines merged behavior iff R factors through K."
+
+# ----------------------------------------------------------------------
+# Axis: STABILITY (files 6-9)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "F6"
+name = "No-Needles Stability"
+kind = "theorem"
+axis = "Stability"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_04_methods.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal"
+target_lean_decl = "no_needles_stability_real"
+notes = "ANCHOR to Paper 4 Needle Killer (SixBirdsMetaMath.Main.LayerDissolving) + Paper 5 NS (SixBirdsMetaMath.NS.MainTheorem). Substrate is in inherited Lean modules. If clean instantiation adapter exists, anchor_substrate; else partial. Initial classification: anchor_substrate; may downgrade if adapter is non-trivial."
+
+[[entry]]
+paper_label = "F7"
+name = "Sufficiency Closure"
+kind = "theorem"
+axis = "Stability"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_04_methods.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Stability.SufficiencyClosure"
+target_lean_decl = "sufficiency_closure"
+notes = "Already present in pieces (Holonomy with Memory; To-Cast-a-Stone finite-probabilistic version). Predictively closed iff future probes factor through current quotient."
+
+[[entry]]
+paper_label = "F8"
+name = "Strict Extension"
+kind = "theorem"
+axis = "Stability"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_04_methods.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Stability.StrictExtension"
+target_lean_decl = "strict_extension"
+notes = "Genuine layer growth = old quotient retained + at least one new split fiber. Note: Paper 1 §strict-extension chain rule exists in inherited Xi (SixBirdsMetaMath.Xi.StrictExtension.chainRule). If clean adapter found, promote to anchor_substrate."
+
+[[entry]]
+paper_label = "F9"
+name = "No Unstatused Residual"
+kind = "theorem"
+axis = "Stability"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_04_methods.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Stability.NoUnstatusedResidual"
+target_lean_decl = "no_unstatused_residual"
+notes = "Every layer-native residual carries a typed status. Statement requires careful framing per source note. Disclosure: Lean projects the status conclusion from a package whose covering, classifier, and unique record fields are hypotheses."
+
+# ----------------------------------------------------------------------
+# Axis: ACCESS (files 10-13, 24)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "F10"
+name = "Quotientality / Layer-Sameness"
+kind = "theorem"
+axis = "Access"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_03_problem_setup.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Access.Quotientality"
+target_lean_decl = "quotientality"
+notes = "Mostly background P_5 machinery in foundations; upgrade to single F-IV normal-form law. Every instrument induces a canonical access quotient."
+
+[[entry]]
+paper_label = "F11"
+name = "Adequacy / No-Overread"
+kind = "theorem"
+axis = "Access"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_03_problem_setup.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Access.Adequacy"
+target_lean_decl = "adequacy_no_overread"
+notes = "Accepted claims factor through access. Strongly present in corpus; upgrade to single F-IV law. Disclosure: Lean projects accepted visibility from a classifier field assuming accepted_current_visible."
+
+[[entry]]
+paper_label = "F12"
+name = "No-Free-Distinction"
+kind = "theorem"
+axis = "Access"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_03_problem_setup.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Access.NoFreeDistinction"
+target_lean_decl = "no_free_distinction"
+notes = "New distinctions cost memory, bridge, residual budget, or scope shift. Bridges Quotientality + Adequacy."
+
+[[entry]]
+paper_label = "F13a"
+name = "Hiddenness — quotient/currentizer normal form (theorem-grade)"
+kind = "theorem"
+axis = "Access"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_03_problem_setup.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm"
+target_lean_decl = "hiddenness_normal_form"
+notes = "Layer 1 of file 13: theorem-grade quotient/currentizer normal form when upstream determining state is exposed or hidden relative to current access quotient. Anchored to Paper 7 (PvNP saturated SAT instance) — Paper 7 has NO Lean code in this repo. Landed encoding: partial = theorem `hiddenness_normal_form` applying the same-module # substrate_pending axiom `hiddenness_pending`. Inventory reclassified from substrate_pending → partial after axis review noted the target decl is the theorem wrapper, not the axiom. Disclosure: Guarded substrate_pending axiom wrapper; no opaque source instance is constructed."
+
+[[entry]]
+paper_label = "F13b"
+name = "CSL formed-closure law"
+kind = "theorem"
+axis = "Access"
+required = true
+intended_status = "theorem"
+source_file = "paper/foundations_iv/sections/sec_03_problem_setup.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Access.CSLFormedClosure"
+target_lean_decl = "csl_formed_closure_direct"
+notes = "Direct finite-interface theorem: determination by current access and upstream state forces upstream separation of predictive split pairs, and predictive surplus is equivalent to a hidden upstream distinction."
+
+[[entry]]
+paper_label = "F24"
+name = "Layer Multiplicity"
+kind = "theorem"
+axis = "Access"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_03_problem_setup.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Access.LayerMultiplicity"
+target_lean_decl = "layer_multiplicity"
+notes = "Nontrivial limited access generically forces new layers. Per source: needs an important discipline note."
+
+# ----------------------------------------------------------------------
+# Axis: SYMMETRY (files 14, 15, 40, 41)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "F14"
+name = "Duality Fixity / Self-Dual Trace Confinement"
+kind = "theorem"
+axis = "Symmetry"
+required = true
+intended_status = "theorem"
+source_file = "paper/foundations_iv/sections/sec_06_secondary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Symmetry.DualityFixity"
+target_lean_decl = "duality_fixity_direct"
+notes = "Direct F14 proof from an involutive ledger, anti-invariant readout, positive and faithful trace, nonnegative integral with almost-everywhere zero law, separating readout, and a vanishing trace domination ladder. The finite three-point ledger proves the hypotheses satisfiable."
+
+[[entry]]
+paper_label = "F15a"
+name = "Selection Obstruction / Repair Normal Form"
+kind = "theorem"
+axis = "Symmetry"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_06_secondary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Symmetry.SelectionObstruction"
+target_lean_decl = "selection_obstruction"
+notes = "Theorem-grade branch of file 15 per source: 'Land the selection obstruction / repair normal form now.' No-invariant-selector / split-pair / breaker-repair statements. Source says 'needs no recognition source.'"
+
+[[entry]]
+paper_label = "F15b"
+name = "Spontaneous SSB / Branch-Selection Formation"
+kind = "theorem"
+axis = "Symmetry"
+required = true
+intended_status = "theorem"
+source_file = "paper/foundations_iv/sections/sec_06_secondary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Symmetry.SpontaneousSSB"
+target_lean_decl = "spontaneous_ssb_characterization"
+notes = "Direct theorem for an orbit map: formation-record existence iff a formed state moves, orbit preservation and selected-branch movement, and exclusion of fixed-valued selectors. A Bool xor action realizes the hypotheses and existence clause."
+
+[[entry]]
+paper_label = "F40"
+name = "Anomaly / Symmetry Obstruction"
+kind = "theorem"
+axis = "Symmetry"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_06_secondary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Symmetry.Anomaly"
+target_lean_decl = "anomaly_symmetry_obstruction_paper"
+notes = "Failed symmetry descent/gluing/audit. Disclosure: The paper-specific theorem tests four gates; the retained older theorem tests six."
+
+[[entry]]
+paper_label = "F41"
+name = "Duality Equivalence"
+kind = "theorem"
+axis = "Symmetry"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_06_secondary_results.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.Symmetry.DualityEquivalence"
+target_lean_decl = "duality_equivalence"
+notes = "Role-preserving equivalence of formed packages."
+
+# ----------------------------------------------------------------------
+# Axis: STATUS / RECORDS / COHERENCE (files 17-23, 25-31)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "F17"
+name = "Objectivity as Common Quotient"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ObjectivityAsCommonQuotient"
+target_lean_decl = "objectivity_as_common_quotient"
+notes = "CommonQuotientUniversal assumes the readout equivalence for every readout; Lean projects it."
+
+[[entry]]
+paper_label = "F18"
+name = "Lawhood Descent"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.LawhoodDescent"
+target_lean_decl = "lawhood_descent"
+notes = ""
+
+[[entry]]
+paper_label = "F19"
+name = "Object Persistence"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ObjectPersistence"
+target_lean_decl = "object_persistence"
+notes = ""
+
+[[entry]]
+paper_label = "F20"
+name = "Fact / Record Formation"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.FactRecordFormation"
+target_lean_decl = "fact_record_formation"
+notes = ""
+
+[[entry]]
+paper_label = "F21"
+name = "Reflexive Nonclosure"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ReflexiveNonclosure"
+target_lean_decl = "reflexive_nonclosure"
+notes = "Self-audit requires meta-layer. Per source: one important qualification — preserve in Lean signature. Disclosure: The supplied audit policy record already contains the blocking rules; Lean projects them."
+
+[[entry]]
+paper_label = "F22"
+name = "Interface Mediation"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.InterfaceMediation"
+target_lean_decl = "interface_mediation"
+notes = ""
+
+[[entry]]
+paper_label = "F23"
+name = "Probability as Stable Unresolved Fiber"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber"
+target_lean_decl = "probability_as_stable_unresolved_fiber"
+notes = "Per source: must be stated carefully — preserve careful framing."
+
+[[entry]]
+paper_label = "F25"
+name = "Causality as Stable Intervention Transport"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.CausalityAsStableInterventionTransport"
+target_lean_decl = "causality_as_stable_intervention_transport"
+notes = "Per source: with a crucial qualification — preserve in signature."
+
+[[entry]]
+paper_label = "F26"
+name = "Moduli / Contingency"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ModuliContingency"
+target_lean_decl = "moduli_contingency"
+notes = ""
+
+[[entry]]
+paper_label = "F27"
+name = "Conservation as Orbit Descent"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ConservationAsOrbitDescent"
+target_lean_decl = "conservation_as_orbit_descent"
+notes = ""
+
+[[entry]]
+paper_label = "F28"
+name = "Composability"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.Composability"
+target_lean_decl = "composability"
+notes = ""
+
+[[entry]]
+paper_label = "F29"
+name = "Presentation Invariance"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.PresentationInvariance"
+target_lean_decl = "presentation_invariance"
+notes = ""
+
+[[entry]]
+paper_label = "F30"
+name = "Explanation as Compression With Descent"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ExplanationAsCompressionWithDescent"
+target_lean_decl = "explanation_as_compression_with_descent"
+notes = ""
+
+[[entry]]
+paper_label = "F31"
+name = "Counterfactual Legitimacy"
+kind = "theorem"
+axis = "StatusRecordsCoherence"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_07_analysis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.CounterfactualLegitimacy"
+target_lean_decl = "counterfactual_legitimacy"
+notes = ""
+
+# ----------------------------------------------------------------------
+# Axis: SELF-REFERENCE AND LIMITS (files 33-52, plus 43,md typo)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "F33"
+name = "Horizon Sufficiency / Holographic Compression"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.HorizonSufficiency"
+target_lean_decl = "horizon_sufficiency"
+notes = "Ranked #1 in file 32 master atlas priority list."
+
+[[entry]]
+paper_label = "F34"
+name = "Information Loss Normal Form"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.InformationLoss"
+target_lean_decl = "information_loss_normal_form_paper"
+notes = "Full-codomain surjectivity of the later recovery signature is explicit and matches the repaired paper."
+
+[[entry]]
+paper_label = "F35"
+name = "Scale Descent / Renormalization"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ScaleDescentRenormalization"
+target_lean_decl = "scale_descent_renormalization"
+notes = ""
+
+[[entry]]
+paper_label = "F36"
+name = "Singular Limit Completion"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.SingularLimitCompletion"
+target_lean_decl = "singular_limit_completion"
+notes = ""
+
+[[entry]]
+paper_label = "F37"
+name = "Complementarity as Non-Joint Access"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Complementarity"
+target_lean_decl = "complementarity_as_non_joint_access"
+notes = "Per source: with one crucial precision — preserve in Lean signature."
+
+[[entry]]
+paper_label = "F38"
+name = "Arrow From Record Monotonicity"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ArrowFromRecordMonotonicity"
+target_lean_decl = "arrow_from_record_monotonicity"
+notes = ""
+
+[[entry]]
+paper_label = "F39"
+name = "Entropy as Fiber Volume"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.EntropyAsFiberVolume"
+target_lean_decl = "entropy_as_fiber_volume"
+notes = ""
+
+[[entry]]
+paper_label = "F42"
+name = "Irreducibility / No Short Closed Description"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Irreducibility"
+target_lean_decl = "irreducibility_no_short_closed_description"
+notes = ""
+
+[[entry]]
+paper_label = "F43"
+name = "Continuum Emergence"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ContinuumEmergence"
+target_lean_decl = "continuum_limit_readout_from_coherent_tower"
+notes = "The new bridge uses directedness and projection coherence to propagate a base-stage readout, then constructs a quotient readout from fiber constancy and surjectivity. Actual inverse-limit construction remains unproved; alignment needs_strengthening."
+
+[[entry]]
+paper_label = "F44"
+name = "Criticality / Phase Boundary"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Criticality"
+target_lean_decl = "criticality_phase_boundary_paper"
+notes = "The paper-specific theorem uses formedness and failure of one locally constant neighborhood; the retained older theorem uses a different boundary."
+
+[[entry]]
+paper_label = "F45"
+name = "Locality / Domain of Dependence"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Locality"
+target_lean_decl = "locality_domain_of_dependence"
+notes = ""
+
+[[entry]]
+paper_label = "F46"
+name = "Law–State Split"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.LawStateSplit"
+target_lean_decl = "law_state_split"
+notes = ""
+
+[[entry]]
+paper_label = "F47"
+name = "Fine-Tuning as Small Selector Region"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.FineTuning"
+target_lean_decl = "fine_tuning_small_selector_region"
+notes = "Per source: only if stated carefully — preserve in Lean signature."
+
+[[entry]]
+paper_label = "F48"
+name = "Topology as Global Gluing Invariant"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Topology"
+target_lean_decl = "topology_global_gluing_invariant"
+notes = ""
+
+[[entry]]
+paper_label = "F49"
+name = "Common-Source / Nonlocal Correlation Normal Form"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.CommonSourceNonlocal"
+target_lean_decl = "common_source_nonlocal_correlation_repaired"
+notes = "Repaired Lean theorem matches the nonempty history hypothesis, all three surjections, map-existence clauses, and direct-route factorization of the joint readout."
+
+[[entry]]
+paper_label = "F50"
+name = "Vacuum / Background Selection"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.VacuumBackgroundSelection"
+target_lean_decl = "vacuum_background_selection"
+notes = ""
+
+[[entry]]
+paper_label = "F51"
+name = "Unification as Common Refinement"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Unification"
+target_lean_decl = "unification_as_common_refinement_paper"
+notes = "The paper-specific theorem keeps specified projection maps and all displayed equations; exact unification is a defined gate conjunction."
+
+[[entry]]
+paper_label = "F52"
+name = "Closure Completeness Boundary"
+kind = "theorem"
+axis = "SelfReferenceLimits"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/foundations_iv/sections/sec_08_formal_framework.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ClosureCompletenessBoundary"
+target_lean_decl = "closure_completeness_boundary"
+notes = "Meta-coherence law."
+
+# ----------------------------------------------------------------------
+# Anchor: CLOSURE-REALITY BOUNDARY (file 53, → Paper 3 AOR)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "F53"
+name = "Closure-Reality Boundary / CER → AOR resolution"
+kind = "theorem"
+axis = "ClosureRealityBoundary"
+required = true
+intended_status = "anchor_substrate"
+source_file = "paper/foundations_iv/sections/sec_09_synthesis.tex"
+target_lean_module = "SixBirdsMetaMath.FoundationsIV.ClosureRealityBoundary"
+target_lean_decl = "closure_reality_boundary"
+notes = "ANCHOR to Paper 3 AOR (SixBirdsMetaMath.AOR.ClSB.clSBOperator + clSBAdjunction in inherited tree). The F-IV layer-agnostic equivalence states closure-equals-reality via the reflective closure construction; substrate proof reused as adapter. If adapter is non-trivial, downgrade to partial applying substrate decl. Initial: anchor_substrate. Disclosure: The closure/AOR equivalence is a definition identity. The older aggregate theorem uses obstruction records; separate abstract-carrier Lean theorems prove the direct and converse CER witnesses from the paper hypotheses, and a finite Lean model instantiates both."
+
+# ----------------------------------------------------------------------
+# Excluded from inventory (atlas/planning files, not laws)
+# ----------------------------------------------------------------------
+#
+# Opening atlas record — 14 candidate laws
+# Revised atlas record — 8-axis scheme referenced by proposal.md
+# Master ranked atlas record — 25 F-IV/V candidates
+#
+# These three are NOT mechanizable laws. They live in the source bundle
+# as referenced planning artifacts but produce no Lean output.

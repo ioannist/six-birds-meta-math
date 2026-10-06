@@ -1,0 +1,190 @@
+\section{Integrated stress}\label{sec:integrated-stress}
+
+% Mathematical job:
+%   - Present the six stress families as anti-overclaim guardrails, not as
+%     proofs of the main theorem:
+%       1. dependency stress (R010, lower bounds, upper bound,
+%          decomposition present in order)
+%       2. circularity stress (no circular domain, no by-definition
+%          no-seventh-role, no decomposition assuming exact-six)
+%       3. channel-vs-activation stress (inactive != active)
+%       4. role-alignment stress (no generic transition->P3 etc.)
+%       5. upper-bound residual stress (probability/causality/agency do
+%          not reopen; no unclassified residual; no genuine seventh)
+%       6. overclaim stress (no full algebra, no global independence,
+%          no unique decomposition, no empirical realization, no
+%          unrestricted all-emergence)
+%   - Summarize with tables; state promotion-readiness.
+%
+% Governing sources:
+%   workspace/meta/lens_lab/campaigns/paper3_exact_six_exhaustiveness/integrated_stress/exact_six_integrated_stress_suite.md
+%   workspace/meta/lens_lab/aristotle/results/paper3/paper3_exact_six_integrated_stress_H/paper3_exact_six_integrated_stress_H_result_shape.md
+%   workspace/meta/lens_lab/papers/paper3/drafting_support/figure_table_plan.md
+%     (table_5_integrated_stress)
+%
+% Overclaim risks:
+%   - Presenting stress cases as if they were the proof of the theorem
+%     rather than stability checks on the theorem stack.
+%   - Converting stress pass into universal validity.
+
+
+With the theorem chain of Sections~\ref{sec:lower-bounds},
+\ref{sec:upper-bound-classification}, and
+\ref{sec:decomposition-exhaustion} in place, we record six stress
+families that act as consistency checks against overclaims. These are
+not proofs of the scoped exact-six target; they verify that the
+theorem chain does not silently admit overclaims. Their joint
+satisfaction is the last requirement before the terminal statement in
+Section~\ref{sec:scoped-exact-six}.
+
+\subsection{Dependency stress}\label{subsec:dependency-stress}
+
+\begin{proposition}[Dependency stress]\label{prop:dependency-stress}
+The scoped exact-six target is dependency-coherent only when the theorem
+chain is assembled in the order
+\[
+\text{\FATCD{} domain} \;\rightarrow\; \text{lower bounds} \;\rightarrow\;
+\text{upper-bound classification} \;\rightarrow\;
+\text{decomposition/exhaustion}.
+\]
+Accordingly, the following are inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item asserting the target without the \FATCD{} domain of
+    Section~\ref{sec:fatcd-domain};
+  \item asserting the target without the lower-bound theorem of
+    Section~\ref{sec:lower-bounds};
+  \item asserting the target without the upper-bound classification
+    theorem of Section~\ref{sec:upper-bound-classification};
+  \item asserting the target without the decomposition and exhaustion
+    theorems of Section~\ref{sec:decomposition-exhaustion};
+  \item promoting the assembled target before the integrated stress
+    check of Theorem~\ref{thm:integrated-stress}.
+\end{itemize}
+\end{proposition}
+
+\subsection{Circularity stress}\label{subsec:circularity-stress}
+
+\begin{proposition}[Circularity stress]\label{prop:circularity-stress}
+Three circularity patterns are inadmissible under the theorem chain:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item redefining \FATCD{} so that it already contains exactly six role
+    slots by construction;
+  \item declaring the absence of a seventh role by definition rather
+    than by classification under Definition~\ref{def:residual-scheme};
+  \item justifying decomposition existence by assuming scoped
+    exact-six.
+\end{itemize}
+The non-circularity schema of Proposition~\ref{prop:non-circularity} and
+the constructive proof of Theorem~\ref{thm:decomposition-existence}
+block each pattern.
+\end{proposition}
+
+\subsection{Channel-versus-activation stress}\label{subsec:channel-activation-stress}
+
+\begin{proposition}[Channel-versus-activation stress]\label{prop:channel-activation-stress}
+The following conflations are inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item requiring that every \(D \in \FATCD{}\) activates all six role
+    channels;
+  \item treating an inactive channel of status \(\belowthr\) as an
+    active witness for its role;
+  \item treating an inactive channel of status \(\collapsedbc\) as an
+    active witness;
+  \item treating an inactive channel of status \(\absentrec\) as an
+    active witness.
+\end{itemize}
+Proposition~\ref{prop:channel-vs-activation} enforces each distinction.
+The same inactive-status guardrail also applies to
+\(\outsidescope\).
+\end{proposition}
+
+\subsection{Role-alignment stress}\label{subsec:role-alignment-stress}
+
+\begin{proposition}[Role-alignment stress]\label{prop:role-alignment-stress}
+The three forbidden assignments of
+Remark~\ref{rem:three-repaired-alignments} are inadmissible: generic
+transition data does not project to \Pthree{}, generic path or
+derivation data does not project to \Pfive{}, and generic semantic or
+interpretation data does not project to \Pone{}. The alignment rules
+of Proposition~\ref{prop:alignment-rules} enforce each prohibition.
+\end{proposition}
+
+\subsection{Upper-bound residual stress}\label{subsec:upper-bound-residual-stress}
+
+\begin{proposition}[Upper-bound residual stress]\label{prop:residual-stress}
+Under Theorem~\ref{thm:upper-bound-classification} and within the covered
+scope, the following regressions are inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item probability or uncertainty features reopening as unresolved
+    threats;
+  \item residual-causality features reopening as unresolved threats;
+  \item residual-agency features reopening as unresolved threats;
+  \item any covered residual feature remaining unclassified under
+    Definition~\ref{def:residual-scheme};
+  \item any covered residual feature requiring a genuine seventh
+    irreducible typed closure role.
+\end{itemize}
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure}
+settle the three threat closures, and
+Theorem~\ref{thm:upper-bound-classification} delivers the emptiness of
+categories (x) and (xi).
+\end{proposition}
+
+\subsection{Overclaim stress}\label{subsec:overclaim-stress}
+
+\begin{proposition}[Overclaim stress]\label{prop:overclaim-stress}
+The following restatements of the scoped exact-six target are
+inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item restatement as a full six-primitives algebra;
+  \item restatement as a global primitive-independence theorem;
+  \item restatement as unique or canonical decomposition;
+  \item restatement as empirical realization;
+  \item restatement as a claim about all emergence phenomena, or any
+    domain broader than \FATCD{}.
+\end{itemize}
+Remark~\ref{rem:atlas-global-nonclaims},
+Proposition~\ref{prop:nonclaim-closure}, and
+Proposition~\ref{prop:non-uniqueness} carry the corresponding nonclaims
+forward through the theorem chain. In particular, nonclaim closure
+survives the exact-six assembly.
+\end{proposition}
+
+\subsection{The integrated stress theorem}\label{subsec:integrated-stress-theorem}
+
+\begin{theorem}[Integrated stress]\label{thm:integrated-stress}
+The theorem chain of Sections~\ref{sec:fatcd-domain},
+\ref{sec:lower-bounds}, \ref{sec:upper-bound-classification}, and
+\ref{sec:decomposition-exhaustion} satisfies each of the six stress
+families stated in
+Propositions~\ref{prop:dependency-stress}--\ref{prop:overclaim-stress}.
+Dependency, circularity, channel-versus-activation, role-alignment,
+upper-bound residual, and overclaim regressions are all blocked, and
+the assembled target is ready for the terminal statement of
+Section~\ref{sec:scoped-exact-six}.
+\end{theorem}
+
+\begin{proof}
+Each family is discharged by its corresponding proposition.
+Dependency stress follows from the ordered presence of the \FATCD{}
+domain (Section~\ref{sec:fatcd-domain}), lower bounds
+(Section~\ref{sec:lower-bounds}), upper-bound classification
+(Section~\ref{sec:upper-bound-classification}), and
+decomposition/exhaustion (Section~\ref{sec:decomposition-exhaustion}).
+Circularity stress follows from
+Proposition~\ref{prop:non-circularity} and the constructive proof of
+Theorem~\ref{thm:decomposition-existence}. Channel-versus-activation
+stress follows from Proposition~\ref{prop:channel-vs-activation} and
+the five-status taxonomy of Definition~\ref{def:channel-status}.
+Role-alignment stress follows from
+Proposition~\ref{prop:alignment-rules} and
+Remark~\ref{rem:three-repaired-alignments}. Upper-bound residual
+stress follows from
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure}
+and Theorem~\ref{thm:upper-bound-classification}. Overclaim stress
+follows from Remark~\ref{rem:atlas-global-nonclaims},
+Proposition~\ref{prop:nonclaim-closure}, and
+Proposition~\ref{prop:non-uniqueness}. Together: dependencies cohere,
+the channel/activation distinction holds, nonclaim closure holds, and
+the target is eligible for the terminal statement.
+\end{proof}

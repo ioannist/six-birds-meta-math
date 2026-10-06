@@ -1,0 +1,163 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{aliascnt}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+\input{includes/paper_macros.tex}
+
+\newtheorem{theorem}{Theorem}[section]
+% Shared numbering through alias counters, so that cleveref names each
+% environment correctly.
+\newcommand{\sharedtheorem}[2]{%
+  \newaliascnt{#1}{theorem}\newtheorem{#1}[#1]{#2}\aliascntresetthe{#1}}
+\sharedtheorem{lemma}{Lemma}
+\sharedtheorem{proposition}{Proposition}
+\sharedtheorem{corollary}{Corollary}
+\sharedtheorem{schema}{Conditional schema}
+\theoremstyle{definition}
+\sharedtheorem{definition}{Definition}
+\sharedtheorem{remark}{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+% Lean identifiers: break only after dots and underscores.
+\DeclareRobustCommand{\leanid}[1]{{\def\UrlBreaks{\do\.\do\_}\def\UrlBigBreaks{}%
+  \def\UrlNoBreaks{}\nolinkurl{#1}}}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{schema}{conditional schema}{conditional schemas}
+\Crefname{schema}{Conditional schema}{Conditional schemas}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0 \quad \doi{10.5281/zenodo.23086999}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Three Conditional Clay-Problem Closures: A Shared Gaussian Observation and a Common Vocabulary}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{Version 4: October 1, 2026\\[2pt] \footnotesize (Version 1: June 17, 2026)}
+\hypersetup{
+  pdftitle={Three Conditional Clay-Problem Closures: A Shared Gaussian Observation and a Common Vocabulary},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Three companion papers state conditional closures of Navier--Stokes
+regularity, the Riemann hypothesis and \(P\) versus \(NP\) within Six
+Birds Theory, each under its own open premises.  This paper compares
+them in two ways.  Concretely, one family of complex Gaussian
+observations can be evaluated on all three settings.  For positive
+width, viscosity and time, and for a finite window of zeta zeros closed
+under reflection in the critical line with reflection-invariant
+nonnegative integer weights, an elementary computation shows that the heat excess of the
+window is a positive multiple of its residual charge, the weighted sum
+of squared distances of the zeros from the critical line.  Applied to a
+mild Navier--Stokes solution, the observation restates the mild
+equation with its nonlinear Duhamel term; on the assignments of a CNF
+formula the same Gaussian kernel gives a mass that is positive exactly
+for satisfiable formulas, as it would for any \(0/1\)-valued filter.  These identities are formally verified in
+Lean.  They share a formula, not a mechanism, and transfer no premise
+from one problem to another.  Structurally, the paper gives a
+vocabulary for proof attempts and closures: a four-state classification
+of attempts aimed at a target, four conditional schemas for closures
+that name their load-bearing source instead of deriving it, and a
+catalogue of typed obstruction detectors with three named open
+transports.  Its numbered results in these parts are logical
+consequences of explicitly assumed schemas or checks of declared finite
+data.  No unconditional result about any of the problems is claimed.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Six Birds Theory; conditional closure;
+Riemann hypothesis; Navier--Stokes equations; P versus NP; Gaussian
+observation; adequacy residual; proof attempts; Lean formalization.
+
+\input{sections/sec_01_intro}
+\input{sections/sec_02_apparatus}
+\input{sections/sec_03_foreclosure}
+\input{sections/sec_04_recognition}
+\input{sections/sec_05_validation}
+\input{sections/sec_05a_gaussian_bridge}
+\input{sections/sec_05b_triad_bridge}
+\input{sections/sec_06_calibration}
+\input{sections/sec_07_audit}
+\input{sections/sec_08_predictions}
+\input{sections/sec_09_scope}
+
+\appendix
+\input{appendices/app_d_formalization}
+\input{appendices/app_version_history}
+
+\begingroup\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

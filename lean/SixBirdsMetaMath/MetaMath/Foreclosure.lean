@@ -1,0 +1,10 @@
+import SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy
+import SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility
+import SixBirdsMetaMath.MetaMath.Foreclosure.Coverage
+import SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure
+import SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure
+import SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion
+
+namespace SixBirdsMetaMath.MetaMath.Foreclosure
+
+end SixBirdsMetaMath.MetaMath.Foreclosure

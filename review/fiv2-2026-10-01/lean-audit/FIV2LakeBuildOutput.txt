@@ -1,0 +1,435 @@
+ℹ [43/328] Replayed SixBirdsMetaMath.ImportedFoundations
+info: SixBirdsMetaMath/ImportedFoundations.lean:15:0: ClosureOp.{u} (α : Type u) : Type u
+info: SixBirdsMetaMath/ImportedFoundations.lean:16:0: ClosureLadder.{u} (α : Type u) : Type u
+info: SixBirdsMetaMath/ImportedFoundations.lean:17:0: ClosureLadder.IdempotentEndo.{u} (α : Type u) : Type u
+info: SixBirdsMetaMath/ImportedFoundations.lean:18:0: ClosureLadder.MetaPackaging.pack.{u_1, u_2} {α : Sort u_1} {β : Sort u_2} (f : α → β) :
+  α → Quotient (ClosureLadder.MetaPackaging.kerRel f)
+info: SixBirdsMetaMath/ImportedFoundations.lean:20:0: SixBirds.Role : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:21:0: SixBirds.FATCD : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:22:0: SixBirds.ChannelStatus : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:23:0: SixBirds.scoped_exact_six : SixBirds.ScopedExactSixQuestion
+info: SixBirdsMetaMath/ImportedFoundations.lean:24:0: SixBirds.typed_non_collapse {r s : SixBirds.Role} : r ≠ s → SixBirds.ForbiddenCollapse r s
+info: SixBirdsMetaMath/ImportedFoundations.lean:26:0: SixBirdsIII.BirdIntDomain : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:27:0: SixBirdsIII.Primitive : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:28:0: SixBirdsIII.PromotionStatus : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:29:0: SixBirdsIII.ClaimStatus : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:30:0: SixBirdsIII.GateStatus : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:31:0: SixBirdsIII.PromotionBridgeRecord : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:32:0: SixBirdsIII.ClaimRecord : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:33:0: SixBirdsIII.DefectRecord : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:34:0: SixBirdsIII.Level : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:35:0: SixBirdsIII.Host : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:36:0: SixBirdsIII.DirectedCellRecord : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:37:0: SixBirdsIII.TopDownChannelRecord : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:38:0: SixBirdsIII.ThresholdTag : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:39:0: SixBirdsIII.VisibilityTag : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:40:0: SixBirdsIII.StrictGateStatus : Type
+info: SixBirdsMetaMath/ImportedFoundations.lean:41:0: SixBirdsIII.SqStatus : Type
+ℹ [3260/3306] Replayed SixBirdsNeedles.ImportedFoundations
+info: SixBirdsNeedles/ImportedFoundations.lean:15:0: ClosureOp.{u} (α : Type u) : Type u
+info: SixBirdsNeedles/ImportedFoundations.lean:16:0: ClosureLadder.{u} (α : Type u) : Type u
+info: SixBirdsNeedles/ImportedFoundations.lean:17:0: ClosureLadder.IdempotentEndo.{u} (α : Type u) : Type u
+info: SixBirdsNeedles/ImportedFoundations.lean:18:0: ClosureLadder.MetaPackaging.pack.{u_1, u_2} {α : Sort u_1} {β : Sort u_2} (f : α → β) :
+  α → Quotient (ClosureLadder.MetaPackaging.kerRel f)
+info: SixBirdsNeedles/ImportedFoundations.lean:20:0: SixBirds.Role : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:21:0: SixBirds.FATCD : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:22:0: SixBirds.ChannelStatus : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:23:0: SixBirds.scoped_exact_six : SixBirds.ScopedExactSixQuestion
+info: SixBirdsNeedles/ImportedFoundations.lean:24:0: SixBirds.typed_non_collapse {r s : SixBirds.Role} : r ≠ s → SixBirds.ForbiddenCollapse r s
+info: SixBirdsNeedles/ImportedFoundations.lean:26:0: SixBirdsIII.BirdIntDomain : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:27:0: SixBirdsIII.Primitive : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:28:0: SixBirdsIII.PromotionStatus : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:29:0: SixBirdsIII.ClaimStatus : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:30:0: SixBirdsIII.GateStatus : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:31:0: SixBirdsIII.PromotionBridgeRecord : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:32:0: SixBirdsIII.ClaimRecord : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:33:0: SixBirdsIII.DefectRecord : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:34:0: SixBirdsIII.Level : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:35:0: SixBirdsIII.Host : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:36:0: SixBirdsIII.DirectedCellRecord : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:37:0: SixBirdsIII.TopDownChannelRecord : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:38:0: SixBirdsIII.ThresholdTag : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:39:0: SixBirdsIII.VisibilityTag : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:40:0: SixBirdsIII.StrictGateStatus : Type
+info: SixBirdsNeedles/ImportedFoundations.lean:41:0: SixBirdsIII.SqStatus : Type
+ℹ [3573/3758] Replayed SixBirdsNeedles.XiCore.SourceStep
+info: SixBirdsNeedles/XiCore/SourceStep.lean:84:0: 'SixBirdsNeedles.XiCore.XiSourceStep.xi_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SixBirdsNeedles/XiCore/SourceStep.lean:85:0: 'SixBirdsNeedles.XiCore.XiSourceStep.xi_return_source_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SixBirdsNeedles/XiCore/SourceStep.lean:86:0: 'SixBirdsNeedles.XiCore.XiSourceStep.xi_source_lower_bound_of_fixed_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsNeedles/XiCore/SourceStep.lean:87:0: 'SixBirdsNeedles.XiCore.XiSourceStep.xi_fixed_point_zero_of_strict_transport_source_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3784/3973] Replayed SixBirdsDualityConfinement.RH.ArithmeticXiJensen
+info: SixBirdsDualityConfinement/RH/ArithmeticXiJensen.lean:212:0: 'SixBirdsDualityConfinement.RH.ArithmeticXiJensen.arithmeticXiEntire_zero_iff_zeta' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticXiJensen.lean:213:0: 'SixBirdsDualityConfinement.RH.ArithmeticXiJensen.arithmeticXiEntire_zero_in_critical_strip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticXiJensen.lean:214:0: 'SixBirdsDualityConfinement.RH.ArithmeticXiJensen.arithmeticXiEntire_J_strip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticXiJensen.lean:215:0: 'SixBirdsDualityConfinement.RH.ArithmeticXiJensen.arithmeticXi_circle_divisor_support_iff_zeta_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticXiJensen.lean:216:0: 'SixBirdsDualityConfinement.RH.ArithmeticXiJensen.arithmeticXi_circle_divisor_support_iff_classical_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticXiJensen.lean:217:0: 'SixBirdsDualityConfinement.RH.ArithmeticXiJensen.arithmeticXiEntire_jensen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3785/3973] Replayed SixBirdsDualityConfinement.RH.ArithmeticJensenWindows
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:193:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.zeroDiskSet_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:194:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.zeroDiskWindow_J_reflected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:195:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.zeroDiskWindow_image_eq_divisor_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:196:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.canonicalJensenWindow_eventuallyCovered' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:197:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.canonicalJensenWindow_xi_eq_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:198:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.canonicalJensenWindow_energy_mono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:199:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.canonicalJensenWindow_xi_mono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/ArithmeticJensenWindows.lean:200:0: 'SixBirdsDualityConfinement.RH.ArithmeticJensenWindows.criticalStripRH_of_jensen_XI_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3786/3973] Replayed SixBirdsDualityConfinement.ImportedFoundations
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:15:0: ClosureOp.{u} (α : Type u) : Type u
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:16:0: ClosureLadder.{u} (α : Type u) : Type u
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:17:0: ClosureLadder.IdempotentEndo.{u} (α : Type u) : Type u
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:18:0: ClosureLadder.MetaPackaging.pack.{u_1, u_2} {α : Sort u_1} {β : Sort u_2} (f : α → β) :
+  α → Quotient (ClosureLadder.MetaPackaging.kerRel f)
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:20:0: SixBirds.Role : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:21:0: SixBirds.FATCD : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:22:0: SixBirds.ChannelStatus : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:23:0: SixBirds.scoped_exact_six : SixBirds.ScopedExactSixQuestion
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:24:0: SixBirds.typed_non_collapse {r s : SixBirds.Role} : r ≠ s → SixBirds.ForbiddenCollapse r s
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:26:0: SixBirdsIII.BirdIntDomain : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:27:0: SixBirdsIII.Primitive : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:28:0: SixBirdsIII.PromotionStatus : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:29:0: SixBirdsIII.ClaimStatus : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:30:0: SixBirdsIII.GateStatus : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:31:0: SixBirdsIII.PromotionBridgeRecord : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:32:0: SixBirdsIII.ClaimRecord : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:33:0: SixBirdsIII.DefectRecord : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:34:0: SixBirdsIII.Level : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:35:0: SixBirdsIII.Host : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:36:0: SixBirdsIII.DirectedCellRecord : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:37:0: SixBirdsIII.TopDownChannelRecord : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:38:0: SixBirdsIII.ThresholdTag : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:39:0: SixBirdsIII.VisibilityTag : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:40:0: SixBirdsIII.StrictGateStatus : Type
+info: SixBirdsDualityConfinement/ImportedFoundations.lean:41:0: SixBirdsIII.SqStatus : Type
+⚠ [3797/3973] Replayed SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:24:2: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.abs_sq'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:20:10: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:20:10: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.mk'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:25:2: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.abs_sq_zero_iff'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:27:4: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.term'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:32:4: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.A_Z'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:37:4: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.zero'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:41:8: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.term_zero_iff_on_line'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/AntiInvariantZeroLedger.lean:52:8: The namespace 'AntiInvariantZeroLedger' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.AntiInvariantZeroLedger.AntiInvariantZeroLedger.sum_zero_iff_on_line'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+⚠ [3798/3973] Replayed SixBirdsDualityConfinement.RH.SatSelShell
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:41:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Audit_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:35:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.J_L_is_fe_involution'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:39:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.A_Z'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:27:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.H_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:25:10: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.mk'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:33:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.pi_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:40:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Vis_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:42:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Audit_L_witness'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:37:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Lambda_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:36:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Z_nt'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:28:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.I_tr'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:43:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Audit_L_channel_status'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:38:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Lambda_L_agrees_zero_ledger'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:32:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.M_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:30:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.EM_zero'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:29:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.EQ_tr'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:25:10: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:31:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.Q_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: SixBirdsDualityConfinement/RH/SatSelShell.lean:34:2: The namespace 'SatSelShell' is duplicated in the declaration 'SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell.J_L'
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+ℹ [3802/3973] Replayed SixBirdsDualityConfinement.RH.FullClassicalRHBridge
+info: SixBirdsDualityConfinement/RH/FullClassicalRHBridge.lean:63:0: 'SixBirdsDualityConfinement.RH.FullClassicalRHBridge.riemannHypothesis_of_criticalStripRH' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/FullClassicalRHBridge.lean:64:0: 'SixBirdsDualityConfinement.RH.FullClassicalRHBridge.criticalStripRH_iff_riemannHypothesis' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsDualityConfinement/RH/FullClassicalRHBridge.lean:65:0: 'SixBirdsDualityConfinement.RH.FullClassicalRHBridge.rhConditionalFullClassical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3803/3973] Replayed SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:377:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexAxialHeatIntegral_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:378:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.spectral_gaussian_eq_complex_navier_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:379:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.spectral_gaussian_eq_navier_heat_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:380:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.complex_nonlinear_frame_return_at_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:381:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.actual_zero_gaussian_eq_complex_navier_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:382:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.navierComplexWindowReadout_eq_axial_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:383:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.solenoidalThetaHeatState_complex_gaussian_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:384:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complex_nonlinear_theta_frame_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:385:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.complex_nonlinear_frame_return_at_actual_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:386:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.actual_zero_gaussian_eq_navier_heat_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:387:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexAxialWindow_real_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:388:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.navierComplexWindowReadout_real_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:389:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.gaussianVolumeFactor_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:390:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.synthetic_offline_heat_readout_exceeds_baseline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:391:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.no_stripwide_free_heat_baseline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:392:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.navierHeatLogExcess_eq_displacement_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:393:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.navierHeatWindowExcess_eq_rh_xi' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:394:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.canonical_navierHeatWindowExcess_zero_iff_riemannHypothesis' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:395:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.canonical_nonlinearFrameWindowExcess_zero_iff_riemannHypothesis' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:396:0: 'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.synthetic_offline_nonlinear_frame_exceeds_baseline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:397:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexAxialWindow_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:398:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexAxialWindow_memLp_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:399:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexAxialWindow_state_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:400:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexAxialWindow_transverseFlip' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:401:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexGaussianStateReadout_transverseBlindState_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:402:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.no_complex_axial_field_controls_admissible_xi' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:403:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout_thetaAxis' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:404:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout_real_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:405:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalWindow_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:406:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalWindow_memLp_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:407:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalWindow_state_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:408:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalWindow_heat_complete_square' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:409:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout_sub' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:410:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout_add' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:411:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.maximalMildValue_complex_directional_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:412:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout_heat_transport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:413:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.maximalMildValue_complex_directional_source_step' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:414:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.maximalMildValue_complex_directional_xi_source_step' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:415:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout_separates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:416:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout_detects_transverseBlindState' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:417:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.heatEnergy_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:418:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.full_directional_corrected_return_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:419:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexGaussianStateReadout_real_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:420:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexGaussianStateReadout_sub' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:421:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.maximalMildValue_complex_gaussian_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:422:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexGaussianStateReadout_heat_transverseBlindState_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:423:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.complex_nonlinear_perturbed_frame_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:424:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.exists_complex_nonlinear_perturbed_frame_with_unbounded_initial_xi' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/ComplexGaussianNavierRHBridge.lean:425:0: 'SixBirdsNeedles.NSCore.ComplexGaussianObservations.exists_positive_same_time_complex_corrected_trace_split_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3841/3973] Replayed SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:274:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.joint_actual_zero_xi_and_navier_source_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:275:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.nonlinear_frame_actual_zero_xi_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:276:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.actual_navier_xi_source_step_at_zero_coordinate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:277:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.arithmetic_zero_window_closure_iff_rh' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:278:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.riemannHypothesis_of_arithmetic_zero_window_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:279:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.navier_global_mild_of_two_channel_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:280:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.navier_global_physical_pde_of_two_channel_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SixBirdsMetaMath/RHNavier/JointSixBirdsObservationReturn.lean:281:0: 'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.navier_pointwise_physical_pde_of_hilbert_xi_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3844/3973] Replayed SixBirdsHiddenness.ImportedFoundations
+info: SixBirdsHiddenness/ImportedFoundations.lean:15:0: ClosureOp.{u} (α : Type u) : Type u
+info: SixBirdsHiddenness/ImportedFoundations.lean:16:0: ClosureLadder.{u} (α : Type u) : Type u
+info: SixBirdsHiddenness/ImportedFoundations.lean:17:0: ClosureLadder.IdempotentEndo.{u} (α : Type u) : Type u
+info: SixBirdsHiddenness/ImportedFoundations.lean:18:0: ClosureLadder.MetaPackaging.pack.{u_1, u_2} {α : Sort u_1} {β : Sort u_2} (f : α → β) :
+  α → Quotient (ClosureLadder.MetaPackaging.kerRel f)
+info: SixBirdsHiddenness/ImportedFoundations.lean:20:0: SixBirds.Role : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:21:0: SixBirds.FATCD : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:22:0: SixBirds.ChannelStatus : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:23:0: SixBirds.scoped_exact_six : SixBirds.ScopedExactSixQuestion
+info: SixBirdsHiddenness/ImportedFoundations.lean:24:0: SixBirds.typed_non_collapse {r s : SixBirds.Role} : r ≠ s → SixBirds.ForbiddenCollapse r s
+info: SixBirdsHiddenness/ImportedFoundations.lean:26:0: SixBirdsIII.BirdIntDomain : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:27:0: SixBirdsIII.Primitive : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:28:0: SixBirdsIII.PromotionStatus : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:29:0: SixBirdsIII.ClaimStatus : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:30:0: SixBirdsIII.GateStatus : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:31:0: SixBirdsIII.PromotionBridgeRecord : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:32:0: SixBirdsIII.ClaimRecord : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:33:0: SixBirdsIII.DefectRecord : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:34:0: SixBirdsIII.Level : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:35:0: SixBirdsIII.Host : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:36:0: SixBirdsIII.DirectedCellRecord : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:37:0: SixBirdsIII.TopDownChannelRecord : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:38:0: SixBirdsIII.ThresholdTag : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:39:0: SixBirdsIII.VisibilityTag : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:40:0: SixBirdsIII.StrictGateStatus : Type
+info: SixBirdsHiddenness/ImportedFoundations.lean:41:0: SixBirdsIII.SqStatus : Type
+✔ [3969/3973] Built SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal (2.8s)
+✔ [3970/3973] Built SixBirdsMetaMath.FoundationsIV.Stability (1.0s)
+✔ [3971/3973] Built SixBirdsMetaMath.FoundationsIV (3.3s)
+✔ [3972/3973] Built SixBirdsMetaMath (3.2s)
+Build completed successfully (3973 jobs).

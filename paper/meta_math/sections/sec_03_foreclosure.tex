@@ -1,0 +1,368 @@
+\section{Part I --- Foreclosure}\label{sec:foreclosure}
+
+\subsection{Setup}\label{sec:foreclosure:setup}
+
+Part~I describes how a proof attempt aimed at a target can stall once
+the target, the attempt and its admissible imports have been fixed.
+The target is a claim \(x\in\mathsf{Claim}\) in the sense of
+\Cref{sec:apparatus:closure-formation}, with interpretation
+\(\llbracket x\rrbracket\); the accepted imports form a sound set
+\(\mathcal B\subseteq\mathsf{Claim}\).
+
+A proof attempt is represented by a \emph{carrier}: a presentation
+through which the attempt tries to reach \(x\), together with the
+residual obstruction it leaves.  The carrier also records a few
+target-relative facts about itself, such as whether an accepted bridge
+to the target exists.  These facts are data of the carrier, not
+consequences derived here; the results of this part show what follows
+from them and from explicitly stated schemas.  They are not a claim
+that every possible argument for \(x\) has this form.
+
+\begin{definition}[Typed primary carrier]\label{def:typed-primary-carrier}
+A \emph{typed primary carrier} \(C\) consists of
+\begin{enumerate}
+\item rational matrices: an audit energy \(A_{C}\), a native-probe
+  matrix \(L_{C}\), a target (dissolving) readout \(D_{C}\) and a
+  declared matrix \(H_{C}\) standing for \(K_{LL}^{\dagger}\), which
+  determine the carrier residual
+  \[
+    R_{C}=K_{DD}-K_{DL}H_{C}K_{LD},\qquad K_{FG}=FA_{C}^{\natural}G^{\mathsf T},
+  \]
+  where \(A_{C}^{\natural}\) inverts the nonzero diagonal entries of
+  \(A_{C}\) (this is the residual of \Cref{def:carrier-residual} when
+  \(A_{C}\) is diagonal and \(H_{C}=K_{LL}^{\dagger}\));
+\item the verdict of its same-level audit
+  (\Cref{sec:apparatus:birdint});
+\item target-relative predicates on claims: \(C\leadsto x\) (aimed
+  at \(x\)), \(\operatorname{NoBridge}(C,x)\) (no accepted bridge to
+  the target), \(\operatorname{BridgeMismatch}(C,x)\) (structural
+  incompatibility with the target), and
+  \(\operatorname{MDEqTarget}(C,x)\) (the decision of its terminal
+  matrix family is equivalent to the target);
+\item target-independent cascade data: \(\operatorname{MRed}(C)\) (its
+  cascade reduces to a family of matrix elements) and
+  \(\operatorname{IRDec}(C)\) (the inherited records decide that family);
+\end{enumerate}
+and the proposition \(C\models\text{\TCD}\).  The \emph{residual
+closure} of \(C\) is the proposition \(R_{C}=0\).
+\end{definition}
+
+The residual is used only through the proposition \(R_{C}=0\); the
+matrix data serve to make it a definite proposition.  Its
+interpretation as an unexplained currency in the sense of
+\Cref{sec:apparatus:adequacy-residual} needs the further hypotheses
+just stated, which Part~I does not use, and \(R_{C}\) is a different
+object from the Hilbert-space residual \(\Xi(L)\) of
+\Cref{sec:gaussian-bridge,sec:triad-bridge}.
+
+\begin{definition}[Four typed carrier states]\label{def:four-typed-states}
+Let \(x\) be a target claim and \(C\) a carrier.  \(C\) is
+\emph{\Xequiv} if \((R_{C}=0)\leftrightarrow\llbracket x\rrbracket\),
+and \emph{\nonXequiv} if its residual closure is equivalent to a
+different claim:
+\[
+  \mbox{\nonXequiv}_{x}(C)
+  \;\Longleftrightarrow\;
+  \exists c'\in\mathsf{Claim}.\;
+    \bigl((R_{C}=0)\leftrightarrow\llbracket c'\rrbracket\bigr)
+    \wedge c'\neq x .
+\]
+The three \emph{carrier-residual-equivalent} (CRE) states, named
+\emph{target-equivalent} (TE), \emph{bridge-failed} (BF) and
+\emph{cascade-terminal matrix-element} (CTMT), are
+\[
+\begin{aligned}
+  \mbox{\CRETE}_{x}(C)
+    &\Longleftrightarrow
+      \mbox{\Xequiv}_{x}(C)\wedge\operatorname{SelfAuditFail}(C),\\
+  \mbox{\CREBF}_{x}(C)
+    &\Longleftrightarrow
+      \operatorname{NoBridge}(C,x)\vee\operatorname{BridgeMismatch}(C,x),\\
+  \mbox{\CRECTMT}_{x}(C)
+    &\Longleftrightarrow
+      \operatorname{MRed}(C)\wedge\neg\operatorname{IRDec}(C)
+      \wedge\neg\operatorname{MDEqTarget}(C,x):
+\end{aligned}
+\]
+that is, the attempt can certify the target only by a failed
+self-audit; it has no usable bridge to the target; or its reduction ends
+at a family of matrix elements that its inherited records do not
+decide.  For a claim \(c'\), put
+\[
+  \operatorname{NativeOutcome}_{\mathcal B}(C,c')
+  \;\Longleftrightarrow\;
+  \bigl(c'\in\mathcal B\wedge R_{C}=0\bigr)\vee c'\notin\mathcal B ,
+\]
+so that either \(c'\) is accepted and the carrier closes natively, or
+\(c'\) is not accepted; we call a claim that is not accepted
+\emph{open-pending}, whatever its truth value.
+\end{definition}
+
+Because claims are compared as claims, a carrier can be both
+\nonXequiv\ and \Xequiv: its residual closure may be equivalent to the
+target and to a different claim with the same truth value.  In a claim
+language rich enough to contain, with every claim, a differently named
+equivalent one, every \Xequiv\ carrier is also \nonXequiv.  The
+intended reading takes claims to be statements up to a fixed
+normalization, but no result below depends on this choice, and the
+substance of the classification lies in the hypothesis (Cls) below
+rather than in the first state.
+
+\begin{definition}[Coverage context]\label{def:coverage-ctx}
+\(\operatorname{CoverageCtx}(x,C)\) is a primitive predicate marking the
+audit settings in which the four states are intended to be exhaustive.
+\end{definition}
+
+\subsection{Carrier Dichotomy}\label{sec:foreclosure:carrier-dichotomy}
+
+Write \(\operatorname{ExactlyOne}(A,B,D)\) for
+\((A\wedge\neg B\wedge\neg D)\vee(B\wedge\neg A\wedge\neg D)\vee(D\wedge\neg A\wedge\neg B)\).
+The \emph{classification hypothesis} for \((x,C)\) is
+\[
+  \mbox{(Cls)}\qquad
+  \mbox{\Xequiv}_{x}(C)\Longrightarrow
+  \operatorname{ExactlyOne}\bigl(\mbox{\CRETE}_{x}(C),\mbox{\CREBF}_{x}(C),\mbox{\CRECTMT}_{x}(C)\bigr).
+\]
+It is not proved here.  Since the three states are defined by data
+recorded in the carrier, (Cls) is a condition on carrier records, an
+admissibility requirement on how attempts are recorded, rather than a conjecture about proofs.  It requires that every \Xequiv\ carrier
+record exactly one failure, so a successful \Xequiv\ attempt cannot be
+recorded at all; the foreclosure of this part is a consequence of this
+recording convention, not evidence about the problems.  Since the
+states can overlap (see above), they form, on the carriers that satisfy
+the Coverage schema below, a cover rather than a partition.
+
+\begin{theorem}[Carrier Dichotomy, conditional form]\label{thm:carrier-dichotomy}
+Let \(\mathcal B\) be a sound set of accepted claims, \(x\) a target
+claim, and \(C\) a carrier that satisfies \textup{(Cls)}.  Then:
+\begin{enumerate}
+\item if \(C\) is \nonXequiv, there is a claim \(c'\neq x\) with
+  \((R_{C}=0)\leftrightarrow\llbracket c'\rrbracket\) and
+  \(\operatorname{NativeOutcome}_{\mathcal B}(C,c')\): either \(c'\) is
+  accepted and \(R_{C}=0\), or \(c'\) is open-pending;
+\item if \(C\) is \Xequiv, exactly one of \CRETE, \CREBF\ and
+  \CRECTMT\ holds.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For (1), choose \(c'\) as in the definition.  If \(c'\in\mathcal B\),
+soundness gives \(\llbracket c'\rrbracket\), hence \(R_{C}=0\); otherwise
+\(c'\) is open-pending.  Part (2) is (Cls).
+\end{proof}
+
+The first branch is the only one proved from the definitions; the
+second is the classification hypothesis.  The theorem needs no aiming,
+typing or coverage-context hypothesis; these enter only through the
+intended scope of (Cls).  The \CRETE\ alternative is
+the case in which the attempt's same-level audit has failed in the
+sense of \Cref{sec:apparatus:birdint}; \CREBF\ and \CRECTMT\ are the
+bridge and cascade alternatives.
+
+\subsection{Bridge Impossibility}\label{sec:foreclosure:bridge-impossibility}
+
+A \nonXequiv\ carrier might be enriched by a bridge into a composite
+that is \Xequiv.  The question is what status such a bridge has.
+
+\begin{definition}[Carrier-side typed bridge]\label{def:carrier-side-typed-bridge}
+A \emph{\TypedBridgeCarrier} is a directed transport from a carrier
+toward the target side.  The primitive relation
+\(\operatorname{BridgeComp}_{x}(B,C,C_{B})\) states that composing the
+bridge \(B\) with the carrier \(C\) yields the composite carrier
+\(C_{B}\) for the target \(x\).\footnote{This is distinct from the
+calibration-side bridge of \Cref{def:calibration-side-typed-bridge}.}
+\end{definition}
+
+\begin{definition}[\(X\)-strength obligation]\label{def:x-strength-obligation}
+The primitive predicate \(\operatorname{XObl}(B,x)\) states that the
+bridge \(B\) carries an \emph{\XstrengthObl}: it must itself supply the
+target-strength content needed for the composite to reach \(x\), and is
+not merely a change of presentation.
+\end{definition}
+
+The \emph{bridge-obligation hypothesis} for \((B,C,C_{B},x)\) is
+\[
+\begin{aligned}
+  \mbox{(BO)}\qquad
+    &\operatorname{BridgeComp}_{x}(B,C,C_{B})\\
+  &\quad\wedge\operatorname{ExactlyOne}\bigl(\mbox{\CRETE}_{x}(C_{B}),\mbox{\CREBF}_{x}(C_{B}),\mbox{\CRECTMT}_{x}(C_{B})\bigr)\\
+  &\quad\Longrightarrow\operatorname{XObl}(B,x).
+\end{aligned}
+\]
+
+\begin{corollary}[Bridge Impossibility, conditional form]\label{cor:bridge-impossibility}
+Let \(\mathcal B\) be a sound set of accepted claims and \(x\) a target
+claim.  Let \(C\) be a \nonXequiv\ carrier with \(R_{C}=0\), let \(B\) be
+a carrier-side bridge, and let \(C_{B}\) be a composite with
+\(\operatorname{BridgeComp}_{x}(B,C,C_{B})\), \(R_{C_{B}}=0\),
+\((R_{C_{B}}=0)\leftrightarrow\llbracket x\rrbracket\),
+\(C_{B}\leadsto x\), \(C_{B}\models\text{\TCD}\) and
+\(\operatorname{CoverageCtx}(x,C_{B})\).  If \(C_{B}\) satisfies
+\textup{(Cls)} and \textup{(BO)} holds, then \(\operatorname{XObl}(B,x)\).
+\end{corollary}
+
+\begin{proof}
+The composite is \Xequiv, so \Cref{thm:carrier-dichotomy} applied to
+\(C_{B}\) gives exactly one of its three carrier-residual-equivalent
+states, and (BO) gives \(\operatorname{XObl}(B,x)\).
+\end{proof}
+
+The hypotheses of the corollary imply that \(\llbracket x\rrbracket\)
+holds, since \(C_{B}\) is \Xequiv\ and \(R_{C_{B}}=0\); the corollary
+describes what a bridge that actually reached the target would have to
+carry.  The hypotheses are jointly satisfiable: there is a model in
+which all of them hold at once, with two different claims that are both
+true (\Cref{app:formalization}).  The model is degenerate (a
+single carrier with zero matrices serves as both \(C\) and \(C_{B}\)),
+so it shows only that the hypotheses do not contradict each other, not
+that (BO) is plausible.  The proof uses only the
+composition, the \(X\)-equivalence of \(C_{B}\), (Cls) and (BO); the
+remaining hypotheses describe the situation the corollary is about.  The content of the corollary is
+carried by (BO): a bridge that turns a \nonXequiv\ carrier into an
+\Xequiv\ composite must carry the target-strength content it appears to
+transport.  This is a statement inside the carrier setup of this part,
+not a general impossibility result for bridges into \(x\).
+
+\subsection{Coverage}\label{sec:foreclosure:coverage}
+
+\begin{schema}[Coverage Theorem]\label{thm:coverage}
+Let \(x\) be a target claim and \(C\) a carrier with \(C\leadsto x\),
+\(C\models\text{\TCD}\) and \(\operatorname{CoverageCtx}(x,C)\).  Then
+\[
+  \mbox{\nonXequiv}_{x}(C)\vee
+  \mbox{\CRETE}_{x}(C)\vee
+  \mbox{\CREBF}_{x}(C)\vee
+  \mbox{\CRECTMT}_{x}(C).
+\]
+\end{schema}
+
+The schema asserts exhaustiveness only.  For a carrier that records a
+claim \(r_{C}\) with \(\llbracket r_{C}\rrbracket\leftrightarrow(R_{C}=0)\),
+the schema follows from (Cls): if \(C\) is not \Xequiv, then
+\(r_{C}\neq x\) and \(r_{C}\) witnesses that \(C\) is \nonXequiv;
+otherwise (Cls) gives one of the three states.  Without such a claim it
+need not follow: in a language with a single claim, interpreted as
+false, a carrier with \(R_{C}=0\) and no recorded failures satisfies
+(Cls) vacuously but none of the four states.  Turning the schema into
+a statement about actual proof attempts would require definitions of
+the recorded predicates and a notion of a target that is open relative
+to \(\mathcal B\), neither settled by accepted claims nor replaceable by
+an equivalent claim that imports accepted content; this paper supplies
+neither.
+
+\subsection{Type-Finite Foreclosure}\label{sec:foreclosure:type-finite}
+
+The set of possible carriers aimed at \(x\) may be infinite; the set of
+audit outcomes is not.  Let
+\(\mathsf{State}=\{\mathsf{nonX},\mathsf{TE},\mathsf{BF},\mathsf{CTMT}\}\),
+and let \(\operatorname{ClassifiesAs}(s,x,C)\) mean that \(C\) is in the
+state named by \(s\).
+
+\begin{theorem}[Type-Finite Foreclosure, conditional form]\label{thm:type-finite-foreclosure}
+If a carrier \(C\) satisfies the conclusion of
+the Coverage schema for \(x\), then
+\(\operatorname{ClassifiesAs}(s,x,C)\) for some \(s\in\mathsf{State}\).
+Consequently, any family of carriers satisfying the Coverage schema for
+\(x\) is classified by a map into the four-element set
+\(\mathsf{State}\), however large the family is.
+\end{theorem}
+
+\begin{proof}
+Choose the state named by a true disjunct of the coverage disjunction.
+\end{proof}
+
+Since the states can overlap, the classifying map is a choice and is
+not canonical.
+
+\subsection{Attack Foreclosure}\label{sec:foreclosure:attack-foreclosure-v4}
+
+The framework has three kinds of \emph{\fim}: a \emph{\carrierPivot}
+replaces the carrier by another carrier aimed at \(x\); a
+\emph{\bridgeImport} composes the carrier with a bridge to \(x\); and a
+\emph{\cascadeInternal} continues the reduction inside the carrier.
+None of these moves is forbidden.  The claim of this subsection is that
+they do not, by themselves, produce progress on \(x\) without content
+from outside the framework.
+
+\begin{definition}[Framework-scope predicate]\label{def:in-scope}
+\(\operatorname{InScope}(x)\) is a primitive predicate marking the
+targets to which the framework's typing and closure-formation discipline
+applies.  \(\operatorname{AdvancesWithoutExternal}(m,x)\) is a
+primitive predicate stating that the internal move \(m\) makes progress
+on \(x\) using only the framework's internal operations.  The scope
+predicate is meant to exclude targets already settled by accepted
+claims, for which the schema below would fail under any natural
+reading; the formal statement does not enforce this.
+\end{definition}
+
+\begin{schema}[Attack Foreclosure]\label{thm:attack-foreclosure-v4}
+For every target \(x\) with \(\operatorname{InScope}(x)\) and every
+framework-internal move
+\(m\in\{\mbox{\carrierPivot},\mbox{\bridgeImport},\mbox{\cascadeInternal}\}\),
+\[
+  \neg\,\operatorname{AdvancesWithoutExternal}(m,x).
+\]
+\end{schema}
+
+The intended reading is that each move either returns to the
+four-state classification or exposes outside content that must be
+accepted through closure formation.  This reading is an interpretation,
+not a consequence of the schema: the predicates are primitive, so the
+schema neither constructs a transition between carriers nor exhibits
+the outside content.  The intended derivation is a case analysis.  A
+pivot gives a new carrier aimed at \(x\), which
+\Cref{thm:carrier-dichotomy} and the Coverage schema return to the four
+states.  A bridge import that reaches an \Xequiv\ composite falls under
+\Cref{cor:bridge-impossibility}.  A cascade-internal computation either
+closes the residual with accepted content or enters a tower of
+matrix-element terminations (\Cref{thm:ctmt-recursion}).  For a finite
+chain of moves the same alternative holds move by move.  What is
+missing is the theorem that this case analysis covers every admissible
+chain of internal moves, which is why the statement is a schema.
+
+The schema concerns the framework's own moves.  It is not a barrier
+theorem in the sense of the classical results: relativization, by
+oracles relative to which \(P=NP\) and others relative to which
+\(P\neq NP\) \cite{BakerGillSolovay1975Relativization}; natural proofs,
+which cannot prove superpolynomial circuit lower bounds if suitable
+pseudorandom functions exist \cite{RazborovRudich1997NaturalProofs};
+and algebrization, an extension of relativization to algebraic oracles
+\cite{AaronsonWigderson2009Algebrization}.  The conditional results on feature-based proof
+attempts in the P-versus-NP application \cite{Tsiokos2026PvNP} are
+likewise conditional on explicit hypotheses and are not a barrier of
+that scope.
+
+\subsection{CTMT Recursion}\label{sec:foreclosure:ctmt-recursion}
+
+The cascade-terminal state need not be a single step: the decision of a
+terminal matrix family may itself reduce to a deeper family.  Fix a
+relation \(\operatorname{Reduces}_{\sigma}(x,C,C')\), the \emph{cascade
+semantics}, stating that the cascade of \(C\) reduces to that of \(C'\).
+Define towers inductively: \(\mathsf{Tower}_{\sigma}(x,C,1)\) holds when
+\(C\) is in \CRECTMT, and \(\mathsf{Tower}_{\sigma}(x,C,n+2)\) holds when
+\(\mathsf{Tower}_{\sigma}(x,C',n+1)\) and \(\operatorname{Reduces}_{\sigma}(x,C,C')\)
+for some \(C'\).
+
+\begin{theorem}[CTMT Recursion]\label{thm:ctmt-recursion}
+For every cascade semantics \(\sigma\), target \(x\) and carrier \(C\),
+\[
+  \mathsf{Tower}_{\sigma}(x,C,1)\Longleftrightarrow\mbox{\CRECTMT}_{x}(C),
+\]
+and for every \(n\ge0\), \(\mathsf{Tower}_{\sigma}(x,C',n+1)\) and
+\(\operatorname{Reduces}_{\sigma}(x,C,C')\) imply
+\(\mathsf{Tower}_{\sigma}(x,C,n+2)\).
+\end{theorem}
+
+\begin{proof}
+A tower of depth \(1\) can only come from the first clause, since the
+second produces depth at least \(2\); conversely the first clause
+applies to every carrier in \CRECTMT.  The second statement is the
+second clause.
+\end{proof}
+
+The theorem records that matrix-element termination can occur at any
+finite depth along a chain of reductions, without introducing a fifth
+state.  It does not construct a reduction in any application; the
+relation \(\operatorname{Reduces}_{\sigma}\) is supplied.
+
+\input{tables/tab_01_foreclosure_summary}

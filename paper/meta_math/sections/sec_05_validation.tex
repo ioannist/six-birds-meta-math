@@ -1,0 +1,99 @@
+\section{The three applications}\label{sec:validation}
+
+\subsection{Overview}\label{sec:validation:intro}
+
+This section places the three companion applications in the scheme of
+\Cref{sec:recognition}.  It derives nothing: the applications are cited
+as they stand, and no theorem of theirs is restated or re-proved.  The
+problems themselves are stated in the Clay Mathematics Institute
+descriptions \cite{Fefferman2000NavierStokes,Bombieri2000Riemann,Cook2000PvsNP};
+for recent work on Navier--Stokes regularity see
+\cite{Tao2016NSAveragedBlowup,BuckmasterVicol2019NS}, for the Riemann
+hypothesis \cite{Conrey2003RH,IwaniecKowalski2004ANT}, and for
+NP-completeness \cite{Cook1971NPCompleteness,Karp1972NPComplete21}.
+
+The three applications do not share one closure hypothesis.  The
+Navier--Stokes application \cite{Tsiokos2026NavierStokes} assumes a
+spectral closure hypothesis, uniform over the time horizon, together with hypotheses on
+real, divergence-free Sobolev initial data.  The Riemann-hypothesis
+application \cite{Tsiokos2026RH} assumes a supplied Selberg recognition
+source and an identification with the classical zeros of the completed
+zeta function.  The P-versus-NP application \cite{Tsiokos2026PvNP}
+proves a fixed machine-level translation and derives \(P\neq NP\) from
+an accepted negative source, whose content and, in the family form,
+whose admission to the chosen family of observables are premises.  The
+SB closure assumption discharges none of these.
+
+The applications also fall on both sides of the column distinction of
+\Cref{sec:recognition:column-classification}.  As placed in the
+hiddenness companion \cite{Tsiokos2026CSL}, the Navier--Stokes
+substrate is witness-content-exposing, and the Riemann-hypothesis and
+P-versus-NP substrates are trace-state-only, with the recognition
+sources \(\Gamma_{\mathrm{SDTC}}^{\mathrm{Selberg}}\) and
+\(\Gamma_{\mathrm{csl\text{-}sat\text{-}hidden}}\) respectively.  The
+placements are hypotheses of that paper, and the sources are premises
+of the applications; neither is derived here.
+
+\subsection{Navier--Stokes}\label{sec:validation:ns}
+
+The Navier--Stokes application is the witness-content-exposing case.
+Its conditional closure proceeds through problem-specific analytic
+apparatus, including the layer-dissolving membrane of
+\cite{Tsiokos2026NeedleKiller,Tsiokos2026NavierStokes}, and not through
+the recognition-mode template.  It therefore shows that the template
+does not cover every closure in the series.  It is not evidence for the
+schemas of \Cref{sec:recognition}; under the placements of the
+hiddenness companion, it is a case on the other side of the column
+distinction.
+
+\subsection{The Riemann hypothesis}\label{sec:validation:rh}
+
+The Riemann-hypothesis application is the first trace-state-only case.
+Its load-bearing source is the Selberg recognition source
+\(\Gamma_{\mathrm{SDTC}}^{\mathrm{Selberg}}\), recorded in the
+application \cite{Tsiokos2026RH} and not derived from framework
+primitives.  In the terms of \Cref{sec:recognition}, the application
+follows the seven stages, the derivation sweep reported in its first
+version \cite{Tsiokos2026RHvOne} returns, in this paper's reading of
+that report, the verdicts \SigPattern, its load-bearing source is named rather than derived, and
+its route is a recognition-mode landing rather than a derivation.  These
+four observations are what the application contributes as an
+illustration of the four schemas; they are read off the application,
+not proved from the schemas.
+
+\subsection{P versus NP}\label{sec:validation:pvnp}
+
+The P-versus-NP application works with the classes \(P\) and \(FP\)
+defined by deterministic multi-tape Turing machines with polynomial
+running time, the class \(NP\) defined by nondeterministic ones, and
+the standard bitstring encoding of
+CNF formulas, as formalized in complexitylib
+\cite{Schlesinger2026Complexitylib}.  Its \emph{tagged witness
+selector} sends a bitstring \(z\) that encodes a satisfiable formula to
+the tag bit \(1\) followed by the lexicographically first satisfying
+assignment of the variables \(0,\ldots,|z|\), and every other bitstring,
+including malformed ones, to the single bit \(0\).  The application proves, in both directions, that a
+polynomial-time SAT decider exists exactly when this selector is
+computable in polynomial time.  If the selector is not computable in polynomial time,
+then \(P\neq NP\); this negative premise is not proved.  The family
+form of the result additionally requires that every constructed search
+event be admitted to the chosen family of current observables
+\cite{Tsiokos2026PvNP}.
+
+The proposed recognition source is
+\(\Gamma_{\mathrm{csl\text{-}sat\text{-}hidden}}\), recorded in the
+P-versus-NP paper \cite{Tsiokos2026PvNP}.  Its negative content and its acceptance are
+separate premises; under the admission law, the accepted negative
+content has the strength of \(L_{\mathrm{SAT}}\notin P\), which by the
+Cook--Levin theorem \cite{Cook1971NPCompleteness} is equivalent to
+\(P\neq NP\).  It is not
+derived here, nor by the Gaussian construction of
+\Cref{sec:triad-bridge}.  As for the Riemann hypothesis, the
+application follows the seven stages, the sweep reported in its first
+version \cite{Tsiokos2026PvNPvOne} returns, in this paper's reading of
+that report, the verdicts \SigPattern, and its source is named rather than derived; it is the
+second illustration of the schemas of \Cref{sec:recognition}.  The
+conditional feature-decomposition results of the P-versus-NP paper
+reappear in \Cref{sec:calibration:functorial-gates}.
+
+\input{tables/tab_04_validation_summary}

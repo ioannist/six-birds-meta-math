@@ -1,0 +1,555 @@
+\section{Stability}\label{sec:stability}
+
+The Stability axis asks when declared future behavior is already
+controlled by present data, and when a residual must be recorded
+instead of ignored.  In the language of \Cref{sec:apparatus}, the
+question is whether the current quotient carries the probes the
+package has declared, or whether closure-stability fails under a
+structural perturbation.  A perturbation may be a new future probe,
+a layer-dissolving move at a membrane, a strict extension of a
+quotient, or an unpriced residual.  The axis records the normal
+forms that decide which of these outcomes is legitimate.
+In the running example of \Cref{sec:intro}, the value of \(F\) is a
+declared future probe that the current quotient \(q\) does not carry:
+\(q\) identifies \(1\) and \(2\) while \(F\) separates them, so the
+split pair must be resolved or recorded as a residual.
+
+The chapter has four laws.  No-Needles Stability is the first theorem of the chapter: when the
+currency, residual and endpoint budgets hold together with the stated block
+identities, every transported dissolving direction is bounded by its budget,
+so no needle exists.  Sufficiency Closure then gives the
+factorization criterion for declared futures: the current quotient is
+sufficient exactly when every declared future probe descends through
+it.  Strict Extension records when genuine layer growth has occurred,
+namely when the old quotient is retained and a new quotient splits at
+least one old fiber.  No Unstatused Residual closes the axis: under the
+residual-coverage rule and agreement of statuses at a common locus, every
+native residual carries a well-defined typed status, and neither hypothesis
+can be dropped.
+
+No-Needles Stability is the layer-agnostic form of the layer-dissolving
+membrane theorem of \citet{Tsiokos2026NeedleKiller}, which
+\citet{Tsiokos2026NavierStokes} applies to the Navier--Stokes
+equations.  Here a membrane means the
+layer-dissolving boundary of a closure: the place where a distinction
+between ``inside'' and ``outside'' the layer can cease to be
+meaningful.  Strict Extension also has descriptive substrate context,
+but it is a direct law here: the Schur-calculus intuition comes from
+\PaperAR\ \citep{Tsiokos2026XiCompanion}, where residuals compose
+along refinement chains.  The Stability axis can be read
+independently of the Access axis; its only prerequisite is the
+notation of \Cref{sec:apparatus}.
+
+\subsection{No-Needles Stability [\texorpdfstring{\Fref{F6}}{F6}]}\label{sec:stability:no-needles}
+
+The setup is a formed stability package: a closure carrier equipped
+with the inherited closure apparatus, quotient discipline, audit
+ledger, and a layer-dissolving membrane.  The membrane is the
+boundary across which a native layer distinction is allowed to
+dissolve only when the package has recorded the appropriate
+apparatus footprint.  A \emph{needle} is a transported dissolving direction whose effect exceeds
+its declared budget. In the matrix data of the theorem below, it is a vector
+\(v\in\mathbb R^d\) with
+\(v^{\!\top}S\,K_{DD}\,S^{\!\top}v>v^{\!\top}\Theta_D v\) (the block \(K_{DD}\), the selector \(S\) and the bound \(\Theta_D\in\mathbb R^{d\times d}\) are introduced in the paragraphs \emph{Notation} and \emph{Bounds and order} below).
+
+\paragraph{Notation.} The theorem itself concerns four blocks
+\(K_{LL},K_{LD},K_{DL},K_{DD}\) and a matrix \(K_{LL}^{\dagger}\) subject to the
+identities displayed in it; the next paragraph describes their
+intended origin. The data of the theorem are the matrices displayed in it.
+\paragraph{Intended origin (not used by the theorem).} In the intended origin, which the theorem does not use, the currency
+block \(C\) is an \(e\times e\) matrix on the exterior carrier, and \(L\)
+and \(D\) are \(y\times e\) and \(z\times e\) blocks for the layer-bridge
+and dissolving directions. Let \(C^{+}\) be any symmetric \(e\times e\) matrix (for instance the
+Moore--Penrose pseudoinverse of a symmetric \(C\); the theorem uses \(C\) only through \(C^{+}\), and uses the blocks only
+through the stated identities); the currency pieces are \(K_{LL}=L\,C^{+}L^{\!\top}\),
+\(K_{LD}=L\,C^{+}D^{\!\top}\), \(K_{DL}=D\,C^{+}L^{\!\top}\) and
+\(K_{DD}=D\,C^{+}D^{\!\top}\), and symmetry of \(C^{+}\) gives
+\(K_{DL}=K_{LD}^{\!\top}\). Let \(K_{LL}^{\dagger}\) be any symmetric \(y\times y\)
+matrix with \(K_{LL}K_{LL}^{\dagger}K_{LD}=K_{LD}\) (for instance the
+Moore--Penrose pseudoinverse of \(K_{LL}\) when \(C^{+}\succeq0\)). The declared native explanation
+\(\widehat E=K_{DL}K_{LL}^{\dagger}\) predicts the dissolving block from the
+layer-bridge block, and the adequacy residual
+\(\Xi=K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD}\), a generalized Schur complement,
+is the algebraic remainder of that explanation. When \(C^{+}\succeq0\), the
+block matrix \(\bigl[\begin{smallmatrix}K_{LL}&K_{LD}\\K_{DL}&K_{DD}\end{smallmatrix}\bigr]\)
+is positive semidefinite; then \(\Xi\succeq0\), and for every \(z\times y\)
+matrix \(E\),
+\(K_{DD}-EK_{LD}-K_{DL}E^{\!\top}+EK_{LL}E^{\!\top}=\Xi+(E-\widehat E)K_{LL}(E-\widehat E)^{\!\top}\succeq\Xi\),
+so \(\widehat E\) is the Loewner-optimal explanation. For arbitrary
+symmetric \(C^{+}\), neither positivity nor optimality is asserted; the endpoint proof uses the block identities and
+budgets alone.
+\paragraph{Bounds and order.} \(\Theta_Y\in\mathbb R^{y\times y}\), \(\Omega_Z\in\mathbb R^{z\times z}\) and
+\(\Theta_D\in\mathbb R^{d\times d}\) are declared bounds; no construction from the blocks \(L\) or \(D\) is required,
+\(\preceq\) is the Loewner preorder of quadratic forms
+(\(A\preceq B\) when \(v^{\!\top}(B-A)v\ge0\) for every vector \(v\); on
+symmetric matrices this is the Loewner order, and in general it compares
+symmetric parts), and \(S\) is any \(d\times z\) matrix, for instance
+one selecting \(d\) of the dissolving directions.
+In \citet{Tsiokos2026NeedleKiller} the audit form \(C\) is a positive
+semidefinite operator on a finite-dimensional real or complex space, and
+\(C^{+}\) and \(K_{LL}^{\dagger}\) are Moore--Penrose pseudoinverses.  The
+proof below uses only the displayed matrix identities and budgets; the
+package and its membrane name the setting in which they are declared.
+
+\begin{theorem}[No-Needles Stability]\label{thm:F6}
+Suppose given the following data (in the intended reading, declared by a
+formed stability package \(\mathcal P\), whose other properties, including its
+membrane, are not used):
+\begin{itemize}
+  \item block matrices \(K_{LL}\in\mathbb R^{y\times y}\),
+  \(K_{LD}\in\mathbb R^{y\times z}\), \(K_{DL}\in\mathbb R^{z\times y}\) and
+  \(K_{DD}\in\mathbb R^{z\times z}\) (in the intended reading, the currency pieces
+  formed from a symmetric \(C^{+}\) and the blocks \(L\), \(D\) as in the paragraph \emph{Intended origin}) and a matrix \(K_{LL}^{\dagger}\in\mathbb R^{y\times y}\);
+  \item the symmetry conditions \(K_{DL}=K_{LD}^{\!\top}\) (automatic when the
+  pieces are formed from a symmetric \(C^{+}\)) and
+  \(K_{LL}^{\dagger}=(K_{LL}^{\dagger})^{\!\top}\), together with the
+  projection identity
+  \[
+    K_{LL}\,K_{LL}^{\dagger}\,K_{LD}=K_{LD};
+  \]
+  \item currency and residual budgets
+  \[
+    K_{LL}\preceq \Theta_Y,
+    \qquad
+    \Xi\preceq \Omega_Z,
+  \]
+  where \(\Xi:=K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD}\) is the adequacy residual;
+  \item a transport selector \(S\) of size \(d\times z\) satisfying
+  the endpoint budget
+  \[
+    S\bigl(\widehat E\,\Theta_Y\,\widehat E^{\!\top}
+      +\Omega_Z\bigr)S^{\!\top}\preceq\Theta_D,
+  \]
+  where \(\widehat E:=K_{DL}K_{LL}^{\dagger}\) is the declared native
+  explanation.
+\end{itemize}
+Then the transported dissolving block satisfies the Loewner endpoint
+\[
+  S\,K_{DD}\,S^{\!\top}\preceq\Theta_D .
+\]
+Equivalently, no needle exists: every transported dissolving direction is
+bounded by its declared budget.
+\end{theorem}
+\begin{proof}
+Assume the symmetry, projection, currency-budget, residual-budget,
+and transport-budget hypotheses displayed in the theorem.  The
+projection identity
+\[
+  K_{LL}\,K_{LL}^{\dagger}\,K_{LD}=K_{LD}
+\]
+gives the layer-dissolving decomposition of the substrate master theorem.
+Indeed, with \(\widehat E:=K_{DL}\,K_{LL}^{\dagger}\), the symmetry conditions
+give \(\widehat E^{\!\top}=K_{LL}^{\dagger}K_{LD}\), so
+\[
+  \widehat E\,K_{LL}\,\widehat E^{\!\top}
+  =K_{DL}K_{LL}^{\dagger}\bigl(K_{LL}K_{LL}^{\dagger}K_{LD}\bigr)
+  =K_{DL}K_{LL}^{\dagger}K_{LD},
+\]
+and by the definition of \(\Xi\),
+\[
+  K_{DD}
+  =
+  \widehat E\,K_{LL}\,\widehat E^{\!\top}
+  +\Xi.
+\]
+Here \(\widehat E\) is the declared native explanation and \(\Xi\) is
+the adequacy residual.  Applying Loewner monotonicity under the
+declared bounds \(K_{LL}\preceq\Theta_Y\) and
+\(\Xi\preceq\Omega_Z\) yields
+\[
+  K_{DD}
+  \preceq
+  \widehat E\,\Theta_Y\,\widehat E^{\!\top}+\Omega_Z .
+\]
+Here the first step also uses that congruence preserves the order: for any
+matrix \(A\) and any \(v\),
+\(v^{\!\top}A(Y-X)A^{\!\top}v=(A^{\!\top}v)^{\!\top}(Y-X)(A^{\!\top}v)\), so
+\(X\preceq Y\) implies \(AXA^{\!\top}\preceq AYA^{\!\top}\), applied with
+\(A=\widehat E\). Conjugation by \(S\) preserves the Loewner order in the same
+way, so
+\[
+  S\,K_{DD}\,S^{\!\top}
+  \preceq
+  S\bigl(\widehat E\,\Theta_Y\,\widehat E^{\!\top}
+    +\Omega_Z\bigr)S^{\!\top}.
+\]
+The declared transport-side endpoint budget gives
+\[
+  S\bigl(\widehat E\,\Theta_Y\,\widehat E^{\!\top}
+    +\Omega_Z\bigr)S^{\!\top}
+  \preceq \Theta_D .
+\]
+Transitivity of \(\preceq\) therefore gives the endpoint
+\[
+  S\,K_{DD}\,S^{\!\top}\preceq\Theta_D .
+\]
+
+\end{proof}
+
+The proof uses only the arithmetic of an ordered field and the order
+on quadratic forms, so the theorem holds verbatim with \(\mathbb R\)
+replaced by any ordered field, for instance \(\mathbb Q\).  The complex
+instances of \citet{Tsiokos2026NeedleKiller} need the analogous
+statement with conjugate transposes and Hermitian forms, which is not
+stated here.
+
+\paragraph{What the sources supply.} The layer-dissolving membrane
+theorem of \citet{Tsiokos2026NeedleKiller} applies the same argument at
+every accepted stage of a refinement, with positive semidefinite audit
+forms and Moore--Penrose pseudoinverses, and identifies the endpoint
+with a bound on delivered capacity; \citet{Tsiokos2026NavierStokes}
+applies it to shell readouts of the Navier--Stokes equations.
+\Cref{thm:F6} isolates the matrix inequality common to these
+instances.
+
+\paragraph{Nonclaims.} The theorem does not re-prove the Needle Killer or Navier--Stokes
+substrate instances, does not classify every possible
+layer-dissolving move, and does not assert that the substrate carrier
+is unique.  It records the common stability normal form: under the
+declared budgets, the transported dissolving block is dominated in the Loewner
+order by its endpoint budget.
+
+\subsection*{Layer instantiations}\label{layer-inst:F6}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Schur-complement positivity criterion (linear algebra).}] \textit{Analogy.}
+A symmetric block matrix
+\(\bigl[\begin{smallmatrix}A&B\\B^{\!\top}&C\end{smallmatrix}\bigr]\)
+is positive semidefinite iff \(A\succeq0\), \((I-AA^{+})B=0\), and
+\(C-B^{\!\top}A^{+}B\succeq0\).  The criterion is not a case of \Cref{thm:F6}; it is the positivity fact stated in the paragraph \emph{Intended origin}, with \(A,B,C,A^{+}\) in the roles of \(K_{LL},K_{LD},K_{DD},K_{LL}^{\dagger}\): \((I-AA^{+})B=0\) is the projection identity \(K_{LL}K_{LL}^{\dagger}K_{LD}=K_{LD}\), and the Schur complement \(C-B^{\!\top}A^{+}B\) is the adequacy residual \(\Xi\), whose bound \(\Xi\preceq\Omega_Z\) is a hypothesis of the theorem; the transported endpoint is \(SK_{DD}S^{\!\top}\) \citep{Zhang2005SchurApplications}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Sufficiency Closure [\texorpdfstring{\Fref{F7}}{F7}]}\label{sec:stability:sufficiency-closure}
+
+Fix a closure package with history carrier \(H\), current quotient
+map \(q:H\to Q\), and a declared family \(\mathcal F\) of future
+probes.  The family is the apparatus's announcement of which future
+observables will be tested at this interface; it is not a claim of
+sufficiency for every possible future question.
+
+Write \(\Phi:H\to\prod_{f\in\mathcal F}F_f\), \(\Phi(h)=(f(h))_{f\in\mathcal F}\),
+for the bundled future signature, and call \(q\) \emph{sufficient} for
+\(\mathcal F\) when \(q(h)=q(h')\) implies \(f(h)=f(h')\) for every
+\(f\in\mathcal F\).
+
+\begin{theorem}[Sufficiency Closure]\label{thm:F7}
+Assume \(q\) is surjective. The current quotient \(q\) is sufficient
+for the declared future family \(\mathcal F\) if and only if every declared
+future probe \(f\in\mathcal F\) descends through \(q\), that is, for every
+\(f:H\to F_f\) in \(\mathcal F\) there is a map
+\(\overline f:Q\to F_f\) such that
+\[
+  f=\overline f\circ q ,
+\]
+equivalently \(\Phi=\overline\Phi\circ q\) for some
+\(\overline\Phi:Q\to\prod_{f\in\mathcal F}F_f\), and if and only if no pair \((h,h')\) has \(q(h)=q(h')\) and
+\(\Phi(h)\ne\Phi(h')\). Moreover exactly one of the following four statuses
+holds: \emph{exact closure} (\(q\) is sufficient and \(\Phi\) determines \(q\): \(\Phi(h)=\Phi(h')\Rightarrow q(h)=q(h')\) for all \(h,h'\in H\)); \emph{redundant closure} (\(q\) sufficient, \(\Phi\) does not determine \(q\)); \emph{predictive non-closure} (\(\Phi\) determines \(q\), \(q\) not sufficient); and \emph{incomparable} (neither).
+\end{theorem}
+\begin{proof}
+Assume first that every declared future probe descends through
+\(q\).  Then each future value \(f(h)\) is determined by the current
+class \(q(h)\), so two histories with the same current class have the
+same value under every declared probe; this is sufficiency.
+
+Conversely, suppose \(q\) is sufficient for the declared future family.
+For a probe \(f:H\to F_f\) and a class \(x\in Q\), choose \(h\) with
+\(q(h)=x\), which exists because \(q\) is surjective, and set
+\(\overline f(x)=f(h)\). Sufficiency makes this independent of the chosen
+\(h\): if \(q(h)=q(h')\), then \(f(h)=f(h')\). Therefore \(\overline f\) is
+well-defined and satisfies \(f=\overline f\circ q\). The bundled form follows
+by taking \(\overline\Phi=(\overline f)_{f\in\mathcal F}\); conversely
+\(\overline f=\mathrm{pr}_f\circ\overline\Phi\).
+
+Sufficiency says that no pair in a common current fiber is separated by a
+probe, which is the statement that no pair has \(q(h)=q(h')\) and
+\(\Phi(h)\ne\Phi(h')\). Finally, the four statuses are the four
+combinations of two Boolean conditions, sufficiency and the implication
+\(\Phi(h)=\Phi(h')\Rightarrow q(h)=q(h')\); every configuration satisfies
+exactly one combination.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not enumerate the
+declared future probes; that choice belongs to the apparatus.  It
+also does not assert sufficiency for undeclared probes, which lie
+outside the current audit scope.
+
+\subsection*{Layer instantiations}\label{layer-inst:F7}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Information bottleneck (information theory / machine
+learning).}] \textit{Special case.}
+For input \(X\) and a declared prediction target \(Y\), the
+Tishby--Pereira--Bialek information bottleneck trades the compression cost \(I(X;T)\) against the relevance
+\(I(T;Y)\) over stochastic encoders; its limiting case, with a
+deterministic encoder \(T=q(X)\), \(q\) corestricted to its image as \Fref{F7} requires, minimises \(I(X;T)\) under the
+sufficiency constraint \(I(T;Y)=I(X;Y)\).  For a finite input alphabet
+with \(P_X(x)>0\) for every \(x\), taken as \(H\), the constraint holds exactly
+when \(P(Y\mid X=x)=P(Y\mid T=q(x))\) for every \(x\), which is the \Fref{F7}
+factorization for \(\mathcal F=\{x\mapsto P(Y\mid X=x)\}\).  Over-compressing the
+encoder breaks the factorization: the \Fref{F7} obstruction is nonempty
+exactly when the gap \(I(X;Y)-I(T;Y)\) is positive
+\citep{TishbyPereiraBialek1999InformationBottleneck}.
+
+\item[\emph{Predictive state representations (reinforcement
+learning).}] \textit{Special case.}
+A PSR summarizes the history of a partially observable dynamical
+system by the vector \(p(h)\), corestricted to its image as \Fref{F7} requires, of probabilities of a declared family of
+core future tests.  The Singh--James--Rudary sufficiency theorem
+states that every declared future test factors linearly through
+\(p(h)\): \(\Pr(t\mid h)=m_t\cdot p(h)\).  The summary is sufficient
+for the declared test family while remaining hidden-state-free, and a
+summary built from fewer tests than the system's linear dimension does not make
+every test a linear function of it
+\citep{SinghJamesRudary2004PredictiveStateRepresentations}.
+
+\item[\emph{Query-complete materialized views (databases).}] \textit{Special case.}
+For a base schema \(R\) and a declared workload \(\mathcal Q\) of
+queries, a set of materialized views \(V\) \emph{determines} \(Q\in\mathcal Q\)
+when \(V(I)=V(I')\) implies \(Q(I)=Q(I')\) for all instances \(I,I'\). By
+\Fref{F7}, with the view map corestricted to its image, this holds iff
+\(Q=Q'\circ V\) for some map \(Q'\) on view extents; the view materialization
+plays the summary and \(Q'\) the lower map. A rewriting of \(Q'\) in a query
+language is a stronger requirement: conjunctive views can determine a
+conjunctive query that has no conjunctive rewriting \citep{NashSegoufinVianu2010Views}.  The
+sufficiency is workload-relative: a query needing an attribute
+projected away by \(V\) does not factor through the views
+\citep{Halevy2001AnsweringQueriesUsingViewsSurvey}.
+
+\item[\emph{Quantum sufficient subalgebras (quantum information).}] \textit{Analogy.}
+For a parametric family of density operators
+\(\{\rho_\theta:\theta\in\Theta\}\) and a CPTP quantum channel \(T\),
+Petz's theorem says \(T\) is sufficient for the family iff there is a
+recovery channel \(R\) (the Petz recovery map) with
+\(\rho_\theta=R(T(\rho_\theta))\) for every \(\theta\).  Every declared
+measurement statistic \(\operatorname{Tr}(\rho_\theta M_i)\) then
+factors through \(T\), and the obstruction is strict contraction of
+relative entropy by \(T\), which prevents recovery
+\citep{Petz1986SufficientSubalgebras}.
+
+\item[\emph{Noninterference for low observers.}] \textit{Special case.}
+For a deterministic program \(P:H\to H\) on states with high-security (secret) and low-security (public) components, take the current quotient to be the low projection \(q:H\to H{\restriction}L\) of the initial state and the declared probes to be \(h\mapsto o(P(h))\) for the declared low observers \(o\) of the final state; \(P\) satisfies noninterference iff every such probe factors through \(q\).  Side-channel attacks --- timing, cache,
+fault --- appear as family-extension bridges: the declared
+low-observer family is enlarged to include an observer for which the
+low-projection is no longer sufficient
+\citep{GoguenMeseguer1982SecurityPolicies,SabelfeldMyers2003LanguageBasedInformationFlow}.
+\end{description}
+\endgroup
+
+\subsection{Strict Extension [\texorpdfstring{\Fref{F8}}{F8}]}\label{sec:stability:strict-extension}
+
+Let \(H\) be the carrier under discussion, let
+\[
+  q_{\mathrm{old}}:H\to Q_{\mathrm{old}}
+\]
+be the old quotient, and let
+\[
+  q_{\mathrm{new}}:H\to Q_{\mathrm{new}}
+\]
+be a candidate new quotient.  A new presentation is not
+automatically a new layer: it may be a relabeling, a coarsening, or
+an incomparable rewrite.  The Schur-calculus intuition from
+\PaperAR\ \citep{Tsiokos2026XiCompanion} is that residuals compose
+along refinement chains, so genuine layer growth preserves the old
+quotient while accounting for the new split.
+
+An extension is \emph{strict} when it retains the old quotient, so that the
+old classes can be read off the new ones, and adds genuine growth, so that
+it is not a relabeling of the old quotient. Precisely, the extension from
+\(q_{\mathrm{old}}\) to \(q_{\mathrm{new}}\) \emph{retains} the old quotient
+when \(q_{\mathrm{old}}=\rho\circ q_{\mathrm{new}}\) for some map \(\rho\), the
+new quotient is \emph{definable from the old} when
+\(q_{\mathrm{new}}=\lambda\circ q_{\mathrm{old}}\) for some map \(\lambda\), and
+the extension is strict when it retains the old quotient and the new one is
+not definable from the old. The lemma turns the second condition into a
+split fiber and places strictness among the four possible comparisons.
+
+\begin{lemma}[Strict Extension]\label{lem:F8}
+Let \(q_{\mathrm{old}}\) be surjective. The extension from \(q_{\mathrm{old}}\) to \(q_{\mathrm{new}}\) is
+strict if and only if there is a retention map
+\[
+  \rho:Q_{\mathrm{new}}\to Q_{\mathrm{old}},
+  \qquad
+  q_{\mathrm{old}}=\rho\circ q_{\mathrm{new}},
+\]
+and there are histories \(h,h'\in H\) such that
+\[
+  q_{\mathrm{old}}(h)=q_{\mathrm{old}}(h')
+  \quad\text{but}\quad
+  q_{\mathrm{new}}(h)\ne q_{\mathrm{new}}(h').
+\]
+Moreover, for any \(q_{\mathrm{old}}\) and \(q_{\mathrm{new}}\), surjective or not, exactly one of
+four comparisons holds: \emph{equivalent} (retains and definable),
+\emph{strict} (retains and not definable), \emph{coarsening} (definable and
+not retains) or \emph{incomparable} (neither).
+\end{lemma}
+\begin{proof}
+Assume the extension is strict.  By the retention part of strictness,
+there is a map \(\rho:Q_{\mathrm{new}}\to Q_{\mathrm{old}}\) with
+\(q_{\mathrm{old}}=\rho\circ q_{\mathrm{new}}\).  If no old fiber were
+split, then \(q_{\mathrm{new}}\) would be constant on each fiber of
+\(q_{\mathrm{old}}\); since \(q_{\mathrm{old}}\) is surjective, every
+\(y\in Q_{\mathrm{old}}\) is \(q_{\mathrm{old}}(h)\) for some \(h\), and
+\(\lambda(y):=q_{\mathrm{new}}(h)\) would be a well-defined map with
+\(q_{\mathrm{new}}=\lambda\circ q_{\mathrm{old}}\), contradicting
+non-definability.  So there are \(h,h'\in H\) with
+\(q_{\mathrm{old}}(h)=q_{\mathrm{old}}(h')\) but
+\(q_{\mathrm{new}}(h)\ne q_{\mathrm{new}}(h')\).
+
+Conversely, suppose such a retention map and split old fiber are
+given.  The equation \(q_{\mathrm{old}}=\rho\circ q_{\mathrm{new}}\)
+says that every new class lies inside an old class, so the candidate
+retains the old quotient rather than replacing it.  The displayed
+pair \(h,h'\) shows that at least one old class has been split by
+the new quotient, so no \(\lambda\) satisfies
+\(q_{\mathrm{new}}=\lambda\circ q_{\mathrm{old}}\): it would give
+\(q_{\mathrm{new}}(h)=\lambda(q_{\mathrm{old}}(h))=\lambda(q_{\mathrm{old}}(h'))=q_{\mathrm{new}}(h')\).
+Thus the extension is strict.  The four comparisons are the four
+combinations of the two conditions, so exactly one of them holds.
+\end{proof}
+
+\paragraph{Nonclaims.} In the strict case the lemma supplies a
+retention map \(\rho\) and a split pair \((h,h')\), which a finite audit
+can check.  It does not re-derive the Schur calculus,
+and it does not classify every kind of layer growth.  It only gives
+the quotient test for genuine retentive growth.
+
+\subsection*{Layer instantiations}\label{layer-inst:F8}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Ring species (evolutionary biology).}] \textit{Analogy.}
+For a ring-distributed population complex (the greenish-warbler ring around the Tibetan Plateau, the
+\emph{Ensatina} salamander complex around California's Central
+Valley), the local interbreeding equivalence
+\(q_{\mathrm{old}}\) identifies adjacent populations that interbreed
+in the wild --- yielding a single ring-wide class.  Reproductive compatibility is not
+transitive around the ring, so it is not itself an equivalence; the
+reproductive partition \(q_{\mathrm{new}}\) refines
+\(q_{\mathrm{old}}\) by assigning the two reproductively isolated
+terminal forms to distinct classes at a declared boundary along the
+chain.  The
+retention map is the inclusion of new classes into the single old
+class, and the witness split is the closure pair, reproductively
+isolated yet connected through the chain of locally interbreeding
+intermediates \citep{IrwinBenschPrice2001SpeciationInARing}.
+
+\item[\emph{Refinement mappings in formal verification (computer
+science).}] \textit{Analogy.}
+For a high-level specification \(S_2\) and a candidate implementation
+\(S_1\), the Abadi--Lamport refinement-mapping theorem states that, when
+\(S_1\) is machine-closed and \(S_2\) has finite invisible
+nondeterminism and is internally continuous, \(S_1\) implements
+\(S_2\) if and only if, possibly after adjoining history and prophecy
+variables, there exists a state-level map
+\(f:\mathrm{States}(S_1)\to\mathrm{States}(S_2)\) sending each \(S_1\)
+step to a legal \(S_2\) step or a stuttering step and preserving
+liveness.  The map \(f\) is the \Fref{F8} retention map;
+the witness split is two implementation behaviors with identical
+\(S_2\)-observable trace but distinct internal scheduling or
+auxiliary-variable values
+\citep{AbadiLamport1991RefinementMappings}.
+
+\end{description}
+\endgroup
+
+
+\subsection{No Unstatused Residual [\texorpdfstring{\Fref{F9}}{F9}]}\label{sec:stability:no-unstatused-residual}
+
+A formed stability package has a native residual registry: the
+defects, gaps, budget failures, split pairs, critical pairs, or
+endpoint failures that its own claims make relevant.  Each native
+residual is not merely a number or a warning flag.  It comes with a
+record saying which judgment family is responsible for it and which
+status classifier applies.
+
+\paragraph{Reading the statement.}
+\(\mathcal S_{\mathrm{typed}}\) is the set of typed statuses the package
+may assign: a status value, such as visible, hidden with a record, outside scope,
+blocked, priced or accepted, tagged by the judgment family that assigns it.
+The package keeps a set \(\mathrm{Rec}\) of residual records; each record
+\(\rho\) names a residual \(\operatorname{loc}(\rho)\in R\), its locus, and
+carries a typed status \(\operatorname{st}(\rho)\in\mathcal S_{\mathrm{typed}}\).
+A residual \(r\) has a typed status when it is the locus of some record, and
+it is \emph{unstatused}, \(\operatorname{UnstatusedResidual}_{\mathcal P}(r)\),
+when it is the locus of no record.
+
+\begin{theorem}[No Unstatused Residual]\label{thm:F9}
+Let \(R\) be a residual type and let \(\mathcal P\) be a stability package over
+\(R\) (in the intended reading, a formed one) with residual records \(\mathrm{Rec}\), locus map
+\(\operatorname{loc}:\mathrm{Rec}\to R\) and status map
+\(\operatorname{st}:\mathrm{Rec}\to\mathcal S_{\mathrm{typed}}\). Assume
+the residual-coverage rule (RC) of \Cref{sec:apparatus}, so every residual is
+the locus of a record, and assume records with the same locus carry the same
+status: \(\operatorname{loc}(\rho)=\operatorname{loc}(\rho')\) implies
+\(\operatorname{st}(\rho)=\operatorname{st}(\rho')\). (This holds in particular
+when records are unique at their locus.) Then, for every \(r\in R\):
+\begin{enumerate}[label=(\roman*)]
+\item \(r\) has a typed status;
+\item all records with locus \(r\) carry the same typed status, so
+  \(\operatorname{st}_{\mathcal P}(r):=\operatorname{st}(\rho)\) for any
+  record \(\rho\) with locus \(r\) defines a map
+  \(\operatorname{st}_{\mathcal P}:R\to\mathcal S_{\mathrm{typed}}\);
+\item \(\neg\operatorname{UnstatusedResidual}_{\mathcal P}(r)\).
+\end{enumerate}
+Clauses (i) and (iii) restate (RC) at \(r\); clause (ii) uses the agreement
+of statuses at a common locus. Both hypotheses are needed: under (RC), a map
+\(\operatorname{st}_{\mathcal P}:R\to\mathcal S_{\mathrm{typed}}\) with
+\(\operatorname{st}_{\mathcal P}(\operatorname{loc}\rho)=\operatorname{st}(\rho)\)
+for every record exists if and only if records with a common locus carry the
+same status; and (RC) is equivalent to the absence of unstatused residuals.
+\end{theorem}
+\begin{proof}
+Let \(r\in R\). By (RC) there is a record \(\rho\) with
+\(\operatorname{loc}(\rho)=r\), and \(\operatorname{st}(\rho)\) is a typed
+status of \(r\); this is (i). If \(\rho'\) is another record with
+\(\operatorname{loc}(\rho')=r\), the agreement hypothesis gives
+\(\operatorname{st}(\rho')=\operatorname{st}(\rho)\); this
+is (ii), and \(\operatorname{st}_{\mathcal P}(r)\) does not depend on the
+record chosen. Finally, \(\operatorname{UnstatusedResidual}_{\mathcal P}(r)\)
+says that \(r\) is the locus of no record, which contradicts (RC); this is
+(iii). For the converses, if a map \(\operatorname{st}_{\mathcal P}\) with
+\(\operatorname{st}_{\mathcal P}(\operatorname{loc}\rho)=\operatorname{st}(\rho)\)
+exists and \(\operatorname{loc}(\rho)=\operatorname{loc}(\rho')\), then
+\(\operatorname{st}(\rho)=\operatorname{st}_{\mathcal P}(\operatorname{loc}\rho)
+=\operatorname{st}_{\mathcal P}(\operatorname{loc}\rho')=\operatorname{st}(\rho')\);
+and (RC) says exactly that every residual is the locus of some record, that is,
+that no residual is unstatused.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not
+enumerate or redefine the inherited status families; that belongs to
+the admissibility apparatus.  Formedness is not used: the conclusions
+hold for any locus and status maps satisfying (RC) and status agreement.
+
+\subsection*{Layer instantiations}\label{layer-inst:F9}
+
+\begingroup\small
+\begin{description}
+\item[\emph{{GHS} chemical hazard classification (regulatory
+registry).}] \textit{Analogy.}
+GHS classification records the applicable hazard category or subcategory
+using class-specific criteria, tiered assessment and weight of evidence.
+Conflicting data are resolved by the applicable assessment rules. For a declared
+registry, take \(R\) to be the hazard endpoints under review, \(\mathrm{Rec}\)
+its endpoint-status records, \(\operatorname{loc}(\rho)\) the endpoint assessed and
+\(\operatorname{st}(\rho)\) its recorded assessment outcome, including a hazard
+category or an explicit nonclassification or insufficient-data status.
+\Fref{F9} applies when the registry records every endpoint, satisfying (RC),
+and all records at a common endpoint agree. Coverage and agreement are
+conditions on this registry. EU CLP and
+OSHA HazCom implement GHS-based classification requirements
+\citep{UN2025GHSRev11}.
+
+\end{description}
+\endgroup
+
+
+\subsection*{Stability at a glance}\label{sec:stability:summary}\addcontentsline{toc}{subsection}{Stability at a glance}
+\input{tables/tab_axis_stability_summary}
+\FloatBarrier

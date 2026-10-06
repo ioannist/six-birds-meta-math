@@ -1,0 +1,413 @@
+\section{The closure--reality boundary}\label{sec:anchor:closure-reality-boundary}
+
+The final row of the catalog is not another internal normal form.  It
+marks the boundary between formal closure-of-record and bare physical
+realisability.  A closure-of-record (\Cref{def:closure-formation}) is a
+formed closure with an audit record of its closure data.  Bare physical
+realisability says only that some physical or operational system
+instantiates a model in an ordinary sense.  The question is whether the
+two notions can be identified; without further structure they cannot.
+The running example of \Cref{sec:intro} is a formal closure-of-record:
+its carrier, split pair and repairs are audited data, and whether a
+physical system instantiates it is the separate question treated here.
+
+We model a closure-of-record abstractly.  Let \(\mathcal C\) be a
+declared class of carriers, each considered over a declared scope
+\(\mathfrak S\) that records the targets, routes, instruments,
+interfaces, residuals, budgets and nonclaims under discussion.  (In this
+chapter a carrier is an element of \(\mathcal C\), such as a subset of
+a record set in the finite models, not the underlying set of the
+working vocabulary of \Cref{sec:apparatus}.)  Formal closure over
+\(\mathfrak S\) is given by a declared operator
+\(\mathrm{Cl}_{\mathfrak S}:\mathcal C\to\mathcal C\), and a carrier is
+formally closed when it is a fixed point.  The naive
+\emph{closure-equals-reality} (CER) principle would identify bare
+physical realisability of \(C\) with \(C=\mathrm{Cl}_{\mathfrak S}(C)\).
+Its direct direction says that physical realisability implies
+closure-of-record, and its converse that closure-of-record implies
+physical realisability.  The two no-go theorems below show that neither
+direction is valid without further structure.  Their implications use
+no closure axiom; the finite models satisfy all three closure axioms,
+so neither direction follows from those axioms.
+
+Three operators occur in this chapter: an arbitrary operator
+\(\mathrm{Cl}_{\mathfrak S}\) in the two no-go theorems; the five-flag
+saturation \(\operatorname{Sat}_5\), a finite formal model of zero
+structural defect, in clauses (a), (c) and (e) of \Cref{prop:F53}; and
+the inference reflector \(\ClSB\) of \PaperAOR\
+\citep{Tsiokos2026AOR}, which reflects ledgers into inference-closed
+ledgers while keeping their evidence unchanged, in clause (b) only.
+Full accounting in that apparatus requires supplied witnesses in
+addition to inference closure.  Neither construction identifies formal
+closure with bare physical realisability.
+
+\begin{definition}[Reflective closure operator]\label{def:reflective-closure}
+This definition fixes two different operators: the retained five-flag saturation \(\operatorname{Sat}_5\), defined here, and the AOR inference reflector \(\ClSB\), recalled from \citet{Tsiokos2026AOR}.
+In the five-flag encoding used in this paper (called the \emph{retained} encoding below: it retains a carrier's structural data and changes only its five flags), a carrier over a scope \(\mathfrak S\) is a pair
+\(C=(s,(P_1(C),\ldots,P_5(C)))\) of structural data \(s\) in a fixed set
+\(\mathcal D_{\mathfrak S}\) and five propositions, read as: declared records are
+typed, cited routes are audited, residuals are statused, nonclaims are
+registered, and meta-audit obligations are discharged; two carriers are equal
+when their data are equal and their flags are pairwise equivalent.
+Write \(\operatorname{Sat}_5(C)\) for the operator keeping the structural
+data and replacing each flag by a true proposition, and
+\(\Xi_5(C)=\{i\in\{1,\ldots,5\}:\neg P_i(C)\}\).
+The retained operational predicate is defined by \(\Xi_5(C)=\varnothing\).
+This is a predicate on the five flags, not a construction of witnesses.
+
+The inference-closure operator \(\ClSB\) of \PaperAOR, called the AOR operator below, is a different operator. Only \(\operatorname{Sat}_5\), \(\Xi_5\) and the retained operational predicate are defined here; the AOR notions below are recalled from \citet{Tsiokos2026AOR} for clause (b) of \Cref{prop:F53}. It takes a ledger to its
+least rule-closed extension, retaining the actual obligation meanings,
+evidence carrier, validity relation and certificate decoder. The reflected ledger
+contains the seed ledger (the unit of the reflection). Inference closure does not supply missing
+certificates. Concretely, a ledger over an audit model is a set of facts of
+four kinds about obligations \(o\): \(o\) is declared, \(o\) is registered, \(e\)
+is a certificate for \(o\), and \(o\) is discharged. A ledger is \emph{sound}
+when every recorded certificate is valid for its obligation and the
+meaning of every discharged obligation holds,
+\emph{inference-closed} when it is closed under the rules of \PaperAOR, and
+\emph{fully discharged} when every declared obligation is discharged. For a kernel state \(S\), \(\operatorname{Accounted}(S)\)
+means that every reachable record has a supplied status and payload satisfying
+its original readout. The \emph{canonical reflected presentation} of \(S\) is \(\ClSB\) applied to the ledger that presents \(S\) over its audit model; clause (b) of \Cref{prop:F53} therefore concerns the AOR reflector, not \(\operatorname{Sat}_5\). The relation between full discharge of the canonical reflected presentation and \(\operatorname{Accounted}(S)\) is the imported equivalence stated in clause (b) of \Cref{prop:F53} \citep{Tsiokos2026AOR}. Kernel states, their reachable records, supplied
+statuses and payloads, and the canonical reflected presentation are the
+notions of the AOR kernel of \citet{Tsiokos2026AOR}; they are used only in
+clause (b) of \Cref{prop:F53}, whose equivalence is imported. Only the second sentence of clause (b), whose ledger is the scalar-budget ledger in the proof of \Cref{prop:F53}, is checked here, with the inference rules of \citet{Tsiokos2026AOR} stated in its proof; the first sentence is read in the notation of \citet{Tsiokos2026AOR}. In this paper
+\(\ClSB\) always denotes that inference reflector, and no identification
+\(\operatorname{Sat}_5=\ClSB\) is assumed.
+\end{definition}
+
+The two no-go theorems below derive each failure from a hypothesis that
+supplies it; their general content is the clause of
+\Cref{thm:CER-converse-no-go} for an arbitrary extensive operator: for an
+extensive operator (in particular a closure operator) on the subsets of a set,
+there exists a bare-realisability predicate, stable under every reduct
+satisfying \(\operatorname{Red}C\subseteq C\), for which both CER implications
+fail if and only if the operator is not the identity.
+
+The \emph{reduct-obstruction hypothesis} of the next theorem concerns a
+declared reduct map \(\operatorname{Red}:\mathcal C\to\mathcal C\), which forgets
+a closure-relevant datum \(d\), and consists of three items:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item a carrier \(C^{+}\) with \(\operatorname{BareReal}_{\mathfrak S}(C^{+})\);
+  \item \(\operatorname{BareReal}_{\mathfrak S}(C)\Rightarrow
+    \operatorname{BareReal}_{\mathfrak S}(\operatorname{Red}C)\) for every
+    \(C\in\mathcal C\);
+  \item \(\mathrm{Cl}_{\mathfrak S}(\operatorname{Red}C^{+})\ne\operatorname{Red}C^{+}\).
+\end{enumerate}
+In the intended reading, \(\operatorname{Red}C^{+}\) keeps a target claim whose
+audit uses \(d\), and (iii) holds because closure must add \(d\) back. The
+proof uses all three items.
+
+\begin{theorem}[Direct CER no-go]\label{thm:CER-direct-no-go}
+Let \(\mathfrak S\) be a declared scope, let \(\mathcal C\) be a
+class of carriers, let
+\(\operatorname{BareReal}_{\mathfrak S}:\mathcal C\to\mathrm{Prop}\)
+be bare physical realisability, and let
+\(\mathrm{Cl}_{\mathfrak S}:\mathcal C\to\mathcal C\) be any operator on
+carriers, the formal closure over \(\mathfrak S\).
+Assume the reduct-obstruction hypothesis. Then \(C:=\operatorname{Red}C^{+}\) satisfies
+\[
+  \operatorname{BareReal}_{\mathfrak S}(C)
+  \quad\text{and}\quad
+  C\ne \mathrm{Cl}_{\mathfrak S}(C),
+\]
+so the direct CER implication
+\[
+  \operatorname{BareReal}_{\mathfrak S}(C)
+  \Longrightarrow
+  C=\mathrm{Cl}_{\mathfrak S}(C)
+\]
+fails at \(C\); by definition it fails exactly when some bare-realised carrier is not fixed by \(\mathrm{Cl}_{\mathfrak S}\). Moreover, the hypothesis is satisfiable by a closure
+operator: on the subsets of \(\{d,e,f\}\), with
+\(\mathrm{Cl}_{\mathfrak S}(C)=C\cup\{d\}\) if \(e\in C\) and
+\(\mathrm{Cl}_{\mathfrak S}(C)=C\) otherwise, \(\operatorname{Red}C=C\setminus\{d\}\)
+and \(\operatorname{BareReal}_{\mathfrak S}(C):\Longleftrightarrow C\subseteq\{d,e\}\),
+the operator \(\mathrm{Cl}_{\mathfrak S}\) is extensive, monotone and
+idempotent, \(\operatorname{BareReal}_{\mathfrak S}\) is stable under
+\(\operatorname{Red}\), items (i)--(iii) hold with \(C^{+}=\{d,e\}\), and the
+direct implication fails at \(\{e\}\). For every operator
+\(\mathrm{Cl}_{\mathfrak S}\ne\mathrm{id}\) on \(\mathcal P(X)\), extensive or not (in particular every closure operator other than the identity), choose \(C_0\subseteq X\)
+with \(\mathrm{Cl}_{\mathfrak S}(C_0)\ne C_0\). Defining
+\(\operatorname{BareReal}_0(C):\Longleftrightarrow C\subseteq C_0\) gives a predicate
+stable under every reduct satisfying \(\operatorname{Red}C\subseteq C\), for which
+the direct implication fails at \(C_0\) (proved at the end of the proof below).
+\end{theorem}
+\begin{proof}
+Assume the scope \(\mathfrak S\), the predicate
+\(\operatorname{BareReal}_{\mathfrak S}\), the operator
+\(\mathrm{Cl}_{\mathfrak S}\), and the reduct-obstruction
+hypothesis.  Let \(C:=\operatorname{Red}C^{+}\). By (i) and (ii),
+\[
+  \operatorname{BareReal}_{\mathfrak S}(C),
+\]
+and by (iii),
+\[
+  C\ne \mathrm{Cl}_{\mathfrak S}(C).
+\]
+In the intended reading, the retained claim has a native residual whose
+required record was the forgotten datum \(d\), and closure adds it back.
+This \(C\) is the displayed witness to failure of the direct CER
+implication. The finite-model clause is checked in the paragraph that follows; for the clause on arbitrary nonidentity operators, \(\operatorname{Red}C\subseteq C\subseteq C_0\) gives \(\operatorname{BareReal}_0(\operatorname{Red}C)\), and \(C_0\) satisfies \(\operatorname{BareReal}_0\) while \(\mathrm{Cl}_{\mathfrak S}(C_0)\neq C_0\).
+\end{proof}
+
+\paragraph{A finite model.} The hypothesis is satisfiable. Let the carriers
+be the subsets of a record set \(\{d,e,f\}\), where \(e\) is a target claim
+whose audit uses the datum \(d\); let \(\mathrm{Cl}_{\mathfrak S}(C)\) add \(d\)
+to \(C\) whenever \(e\in C\), and let \(\operatorname{Red}C=C\setminus\{d\}\). Let \(\operatorname{BareReal}_{\mathfrak S}(C)\) mean
+\(C\subseteq\{d,e\}\), the records of a realised system; it is preserved by
+reducts. With \(C^{+}=\{d,e\}\), items (i)--(iii) hold, and the witness of the
+theorem is \(C=\{e\}\): it is bare-realised, and
+\(\mathrm{Cl}_{\mathfrak S}(C)=\{d,e\}\ne C\). The theorem states what any
+carrier satisfying the hypothesis implies; the model shows that such carriers
+exist. The operator \(\mathrm{Cl}_{\mathfrak S}\) of the model is extensive,
+monotone and idempotent, so the model also shows that the direct CER
+implication does not follow from the axioms of a closure operator together
+with stability of bare realisability under reducts.
+
+\subsection*{Layer instantiations}\label{layer-inst:CER-direct}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Common Rule informed-consent record
+(medical research ethics).}] \textit{Analogy.}
+The carrier \(C\) is the clinical procedure as
+performed; the scope \(\mathfrak S\) imposes the
+Common Rule audit (protocol, IRB approval,
+informed consent, adverse-event reporting).  The
+closure-relevant datum \(d\) is the signed
+consent form with its IRB version history.  The
+procedure can be bare-realised (physically
+performed) while \(d\) is missing, so the reduct
+satisfies \(\operatorname{BareReal}_{\mathfrak S}\)
+but is not a closure-of-record: the retained
+claim ``subject enrolled under IRB-approved
+protocol'' has a residual whose required record
+is the missing consent \citep{DHHS2018CommonRule}.
+
+\end{description}
+\endgroup
+
+The \emph{closure-instantiation-gap hypothesis} of the next theorem
+consists of two items:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item a formal carrier \(C\) whose records, residual statuses, bridges
+    and nonclaims are closed over \(\mathfrak S\), so that
+    \(C=\mathrm{Cl}_{\mathfrak S}(C)\);
+  \item a witness that \(C\) has no bare physical instantiation, so that
+    \(\neg\operatorname{BareReal}_{\mathfrak S}(C)\).
+\end{enumerate}
+The proof takes both items from the hypothesis.
+
+\begin{theorem}[Converse CER no-go]\label{thm:CER-converse-no-go}
+Let \(\mathfrak S\), \(\mathcal C\),
+\(\operatorname{BareReal}_{\mathfrak S}\), and
+\(\mathrm{Cl}_{\mathfrak S}\) be as above.  The converse CER implication
+\[
+  C=\mathrm{Cl}_{\mathfrak S}(C)
+  \Longrightarrow
+  \operatorname{BareReal}_{\mathfrak S}(C)
+\]
+fails for some carrier if and only if some fixed point of
+\(\mathrm{Cl}_{\mathfrak S}\) is not bare-realised. In the model of
+\Cref{thm:CER-direct-no-go}, whose closure operator is extensive, monotone and
+idempotent and whose bare realisability is stable under reducts, the
+closure-instantiation-gap hypothesis holds at \(C=\{f\}\) and the converse
+implication fails there, so neither CER implication follows from the axioms of
+a closure operator together with stability of bare realisability under
+reducts. More generally, let \(\mathrm{Cl}_{\mathfrak S}\) be any
+operator on the subsets of a set \(X\), and choose
+\(C_0\subseteq X\) with \(\mathrm{Cl}_{\mathfrak S}(C_0)\ne C_0\), which exists
+whenever \(\mathrm{Cl}_{\mathfrak S}\ne\mathrm{id}\). For
+the predicate \(B_0(C):\Leftrightarrow C\subseteq C_0\) (the predicate \(\operatorname{BareReal}_0\) of \Cref{thm:CER-direct-no-go}) in place of
+\(\operatorname{BareReal}_{\mathfrak S}\), \(B_0\) is stable under every reduct with
+\(\operatorname{Red}C\subseteq C\) and the direct implication fails at \(C_0\); no other property of \(\mathrm{Cl}_{\mathfrak S}\) is used. If \(\mathrm{Cl}_{\mathfrak S}\) is extensive (in particular a closure operator), then \(\mathrm{Cl}_{\mathfrak S}(X)=X\) and the converse implication fails at \(X\). For every extensive operator,
+including the identity, the always-false predicate, which is stable under
+every reduct, makes the converse implication fail at \(X\). For every operator on \(\mathcal P(X)\), extensive or not, some reduct-stable predicate makes the direct implication fail if
+and only if \(\mathrm{Cl}_{\mathfrak S}\ne\mathrm{id}\), since for the identity every
+carrier is fixed. Hence, for every extensive operator, both CER implications fail for some reduct-stable
+bare-realisability predicate if and only if \(\mathrm{Cl}_{\mathfrak S}\ne\mathrm{id}\).
+The closure-instantiation-gap hypothesis at a carrier \(C\) is, item by item,
+the statement that \(C\) witnesses the failure of the converse implication;
+the content beyond this reformulation is the finite model and the clause on
+extensive operators. In particular, under the closure-instantiation-gap
+hypothesis there exists a carrier \(C\in\mathcal C\) such that
+\[
+  C=\mathrm{Cl}_{\mathfrak S}(C)
+  \quad\text{and}\quad
+  \neg\operatorname{BareReal}_{\mathfrak S}(C).
+\]
+\end{theorem}
+\begin{proof}
+Assume the scope \(\mathfrak S\), the predicate
+\(\operatorname{BareReal}_{\mathfrak S}\), the operator
+\(\mathrm{Cl}_{\mathfrak S}\), and the closure-instantiation-gap
+hypothesis.  The hypothesis supplies a formal carrier \(C\) whose
+records, residual statuses, bridges, and nonclaims are internally
+closed:
+\[
+  C=\mathrm{Cl}_{\mathfrak S}(C).
+\]
+It also supplies the missing-instantiation witness:
+\[
+  \neg\operatorname{BareReal}_{\mathfrak S}(C).
+\]
+The point is that formal closure only checks the declared audit data
+inside \(\mathfrak S\).  It does not by itself construct an external
+physical system realising \(C\).  Therefore the displayed carrier
+\(C\) is closed over \(\mathfrak S\) but not bare-realised, which is
+the desired witness to failure of the converse CER implication. For the
+last sentence of the theorem: the converse implication fails at a carrier
+\(C\) exactly when its hypothesis \(C=\mathrm{Cl}_{\mathfrak S}(C)\) holds and
+its conclusion \(\operatorname{BareReal}_{\mathfrak S}(C)\) does not. The
+clause on the finite model is checked in the paragraph that follows. For the
+general clause, \(\operatorname{Red}C\subseteq C\subseteq C_0\) gives stability;
+\(C_0\) is bare-realised and not closed, so the direct implication fails there;
+extensivity gives \(\mathrm{Cl}_{\mathfrak S}(X)=X\), and \(X\not\subseteq C_0\),
+since \(X=C_0\) would make \(C_0\) closed, so the converse implication fails
+at \(X\).
+For the identity case, \(\mathrm{id}\) fixes every carrier, so the direct implication holds for every predicate; \(\bot\) is stable under every reduct and fails at the fixed carrier \(X\).
+\end{proof}
+
+\paragraph{A finite model.} In the model after \Cref{thm:CER-direct-no-go},
+the carrier \(C=\{f\}\) contains no claim whose audit needs another record, so
+\(\mathrm{Cl}_{\mathfrak S}(C)=C\), and \(f\notin\{d,e\}\), so
+\(\neg\operatorname{BareReal}_{\mathfrak S}(C)\). Both items of the hypothesis
+hold, and \(C\) witnesses the failure of the converse implication; in the same
+model the direct implication fails at \(\{e\}\). So neither CER direction follows
+from the closure-operator axioms together with reduct stability.
+
+\subsection*{Layer instantiations}\label{layer-inst:CER-converse}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Construction documents for a
+never-constructed building (architectural
+design).}] \textit{Analogy.}
+The carrier \(C\) is the building considered as a
+closure-of-record: sealed construction documents,
+stamped structural calculations, life-safety
+analysis, code-review approvals, and issued
+permit.  Under \(\mathfrak S\) the
+architectural-design audit is closed at the
+construction-document set.  When the owner
+declines to break
+ground or funding lapses, no physical building
+instantiates \(C\), so \(C=\mathrm{Cl}_{\mathfrak
+S}(C)\) yet \(\neg\operatorname{BareReal}
+_{\mathfrak S}(C)\)
+\citep{AllenIano2019Fundamentals}.
+
+\end{description}
+\endgroup
+
+
+\paragraph{Reading the statement.}
+The positive fixed-point equivalence below is proved for the retained
+five-flag saturation. The AOR inference reflector has a separate
+accounting criterion. An inference-closed ledger can still have an unpaid
+obligation. Therefore the fixed-point equivalence for the flags cannot be
+imported as an equivalence between inference closure and payment.
+The proposition keeps both statements at their actual scopes.
+
+\begin{proposition}[Closure--Reality Boundary resolution]\label{prop:F53}
+For the retained encoding and the AOR kernel of
+\Cref{def:reflective-closure}, the following statements hold.
+\begin{enumerate}[label=(\alph*),topsep=2pt,itemsep=2pt]
+\item A carrier is fixed by \(\operatorname{Sat}_5\) if and only if
+  \(\Xi_5(C)=\varnothing\), equivalently all five flags hold.
+\item (The accounting equivalence is imported; the kernel notions
+  are those of \citet{Tsiokos2026AOR}, and the counterexample
+  below is checked here.) For an AOR kernel state \(S\), its canonical reflected
+  presentation is fully discharged if and only if
+  \(\operatorname{Accounted}(S)\). Inference closure alone does not imply
+  full discharge: a sound, inference-closed ledger over the scalar-budget
+  evidence model of \PaperAOR, with all records declared, leaves the obligation \(5\le2\) unpaid.
+\item The retained operational predicate, defined by
+  \(\Xi_5(C)=\varnothing\), is consequently equivalent to the fixed-point
+  predicate for \(\operatorname{Sat}_5\), and by (d) it is the unique
+  predicate \(B\) for which both CER implications hold with
+  \(\mathrm{Cl}=\operatorname{Sat}_5\) and \(B\) in place of bare
+  realisability. No implication to or from bare
+  physical realisability is asserted, and no identification with
+  AOR inference closure is made.
+\item For any operator \(\mathrm{Cl}\) and predicate \(B\), both CER
+  implications hold for every carrier exactly when
+  \(B(C)\iff C=\mathrm{Cl}(C)\) for every \(C\). Thus the fixed-point
+  predicate is the unique predicate satisfying both implications.
+\item If the set \(\mathcal D_{\mathfrak S}\) of structural data is nonempty, let
+  \(D(C)=\{i\in\{1,\dots,5\}:P_i(C)\}\). For every proper subset
+  \(D_0\subsetneq\{1,\dots,5\}\), both CER implications fail for
+  \(\operatorname{Sat}_5\) and the predicate \(D(C)\subseteq D_0\). That
+  predicate is stable under every reduct \(\operatorname{Red}\) with
+  \(D(\operatorname{Red}C)\subseteq D(C)\) for all \(C\).
+\end{enumerate}
+Clause (b)'s accounting equivalence is imported from the AOR
+kernel; its counterexample is checked using that same substrate. The other
+clauses are proved for the retained encoding or for an arbitrary operator.
+\end{proposition}
+\begin{proof}
+For (a), saturation keeps the structural data and sets all five flags to true.
+Equality with the original carrier holds exactly when every original flag is
+true, by propositional extensionality. This is precisely
+\(\Xi_5(C)=\varnothing\). Clause (c) is (a) read through the definition of the retained predicate, together with (d) for \(\mathrm{Cl}=\operatorname{Sat}_5\).
+
+For (b), \PaperAOR\ proves that a canonical discharged fact is derivable
+exactly when its original record has a supplied valid status and payload.
+Applying this equivalence to every reachable record yields the stated full
+accounting equivalence. For the counterexample, take the scalar-budget model
+with meaning \((c,b)\mapsto c\le b\), valid evidence a natural slack
+\(e\) satisfying \(c+e=b\), and no dependency edges. Its interpreted
+ledger declares and registers every obligation, stores exactly valid
+certificates, and discharges exactly true inequalities. The inference rules of \citet{Tsiokos2026AOR} are four: from \(o\) declared
+infer \(o\) registered; from a certificate \(e\) for \(o\) infer \(o\)
+discharged; from \(o\) discharged infer \(o\) registered; and from \(o\)
+declared and a dependency edge \(o\to d\) infer \(d\) declared. The
+interpreted ledger contains every declaration and registration; a stored
+certificate \(e\) for \((c,b)\) is valid, so \(c+e=b\) and \(c\le b\), and the
+discharge the second rule concludes is already present; the model has no
+dependency edges. Hence every rule preserves the ledger, and it is inference
+closed. The declared obligation \((5,2)\)
+is not discharged since \(5\nleq2\). Thus even a sound inference fixed point
+need not be fully discharged.
+
+For (d), the two implications are exactly the two directions of the stated
+equivalence. Predicates with the same truth values are equal. For (e), keeping
+any carrier's structural data and clearing its flags gives \(D(C)=\varnothing\),
+which lies below \(D_0\) but is not fixed. Its saturation is fixed and has
+all five flags, so it does not lie below the proper subset \(D_0\).
+A reduct removing discharged flags only shrinks \(D(C)\).
+
+The generic no-go theorems do not depend on identifying the two operators.
+The retained saturation explains a formal fixed-point predicate. The
+AOR construction additionally tracks the original witnesses required for
+accounting; a consumer policy may require accepted delivery beyond accounting.
+No bare physical existence claim follows from either construction.
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F53}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Good Manufacturing Practice
+(pharmaceutical regulatory affairs).}] \textit{Analogy.}
+The raw carrier is a manufactured drug substance and the declared scope
+includes batch records, validated processes, traceability and quality-unit
+release. Closing the documentation's inference rules does not establish
+that a missing validation was performed. Actual certificates must satisfy
+those original obligations; release may additionally require the consumer's
+acceptance policy. The distinction illustrates inference closure versus
+accounting, without deriving a regulatory guarantee \citep{ICH2016Q7}.
+
+\end{description}
+\endgroup
+
+
+This chapter closes the catalog by separating formal fixed points, audited
+accounting and bare physical realisability. Neither CER direction follows
+from the closure-operator axioms with reduct stability. The retained positive
+equivalence concerns \(\operatorname{Sat}_5\); the AOR reflector
+requires the separate source-accounting condition. The chapter imports that
+condition's kernel theorem and does not claim that inference closure creates
+its witnesses. This chapter does not re-prove the AOR apparatus or extend its
+source-accounting equivalence to non-AOR reflective frameworks. The broader philosophical setting is the structural-realism
+debate launched by \citet{Worrall1989StructuralRealism}; this chapter records
+the formal closure / realisability gap without taking a stand in that debate.

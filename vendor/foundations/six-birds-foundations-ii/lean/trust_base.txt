@@ -1,0 +1,11 @@
+# Allowed non-project axioms for theorem dependency audits.
+#
+# Phase 2 rejects project-local axioms for manifest entries marked `theorem`.
+# These names are accepted as the Lean/Mathlib trust base when reported by
+# `#print axioms`.
+
+Classical.choice
+propext
+Quot.sound
+choice
+funext

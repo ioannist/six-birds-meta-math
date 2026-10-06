@@ -1,0 +1,23 @@
+\begin{table}[H]
+  \centering
+  \caption{The declared coverage table of \Cref{thm:coverage-family-geometry}.  The assignment of regions to calibrations is a modelling choice; calibrations not listed are assigned no region.}
+  \label{tab:coverage-regions}
+  \small
+  \renewcommand{\arraystretch}{1.08}
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.22\textwidth}@{}}
+    \toprule
+    Region label & Assigned to & Status \\
+    \midrule
+    bounded-depth & \(\Cvobs\), \(\CMI\) & covered \\
+    low-degree & \(\Cvobs\) & covered \\
+    stable-local & \(\CRE\) & covered \\
+    query & \(\CQamp\) & covered \\
+    topological & \(\CCh\) & covered \\
+    low-Nullstellensatz-degree & \(\CIalg\) & covered \\
+    \(\mathsf{NC}^{1}\) & none & uncovered; hole \(\xiNCone\) \\
+    \(\mathsf{NC}^{2}\) & none & uncovered \\
+    \(\mathsf{P/poly}\) & none & uncovered \\
+    adaptive polynomial time & none & uncovered; hole \(\xiAdaptive\) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}

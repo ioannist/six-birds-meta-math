@@ -1,0 +1,2411 @@
+\section{Status, Records, Coherence}\label{sec:status-records-coherence}
+
+This chapter treats records as part of the mathematical object rather
+than as commentary about it.  A formed fact has a claim record, a
+status, and a place in a coherence ledger that records how it
+persists, transports, composes and supports explanation; the laws of
+the chapter govern that bookkeeping.  In the running example of
+\Cref{sec:intro}, the record of the split pair \((1,2)\), with its
+status and the repair chosen, is part of the object these laws
+describe.
+
+The fourteen laws run from shared objects to counterfactual use.
+Objectivity as Common Quotient identifies when several presentations
+share an object; Lawhood Descent tests when a law factors through the
+available quotient; Object Persistence tests when an object survives
+transport; and Fact / Record Formation says what it means for a fact
+or record to form.  Reflexive Nonclosure, Interface Mediation,
+Probability as Stable Unresolved Fiber and Causality as Stable
+Intervention Transport describe how records behave under self-audit,
+interfaces, unresolved fibers and interventions.  The remaining laws
+concern coherence: Moduli / Contingency separates stable parameters
+from contingent choices, Conservation as Orbit Descent reads
+conservation as a quotient law on orbits, Composability and
+Presentation Invariance say when records survive composition and change
+of presentation, Explanation as Compression with Descent treats
+explanation as compression that still factors through the declared
+quotient, and Counterfactual Legitimacy says when a counterfactual
+claim is lawful rather than an overread.
+
+The chapter uses only the vocabulary of \Cref{sec:apparatus}.  The
+summary table at the end groups the laws into three reading groups,
+which do not follow document order: status (\Fref{F17}, \Fref{F18},
+\Fref{F22}, \Fref{F23}), records (\Fref{F19}, \Fref{F20}, \Fref{F21},
+\Fref{F25}) and coherence (\Fref{F26}--\Fref{F31}).  The chapter's axes
+are status, records and interfaces (\Cref{subsec:reading-guide});
+coherence is a reading group, not an axis.
+
+\subsection{Objectivity as Common Quotient [\texorpdfstring{\Fref{F17}}{F17}]}\label{sec:status-records-coherence:objectivity}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F17} below.
+Here ``\(r\) descends through \(q\)'' means that \(r=\bar r\circ q\) for
+some map \(\bar r\), as in \Cref{sec:apparatus}.
+\(\operatorname{CommonAcrossAccesses}(q,r)\) says that \(r\) descends
+through every access quotient \(q_i\), and
+\(\operatorname{PublicDeterminesObject}(p,r)\) says that \(r\) descends
+through the public quotient \(p\).
+\(\operatorname{AccessObjectivityDefectEmpty}(q_i,r)\) says that no two
+histories with the same \(q_i\)-class have different \(r\)-values.
+\(\operatorname{PublicToObjectDefect}(p,r)\) is the set of pairs with
+the same \(p\)-class and different \(r\)-values, and
+\(\operatorname{ObstructionEmpty}\) says that this set is empty.
+\(\operatorname{CommonQuotientVisible}(q,p)\) says that \(p\) itself
+descends through every \(q_i\). The objective extension
+\(\operatorname{objectiveExtension}(p,r)\) is the pairing
+\(h\mapsto(p(h),r(h))\); it \emph{retains} \(p\), and \emph{carries}
+\(r\), when \(p\), respectively \(r\), descends through it.
+The status partition
+\(\operatorname{ExactlyOneObjectivityStatus}(p,r)\) says that exactly
+one of four statuses holds, according to whether \(r\) descends through
+\(p\) and whether \(p\) descends through \(r\): exact common quotient when
+both hold, coarse objective object when only \(r\) descends through \(p\),
+private overrefinement when only \(p\) descends through \(r\), and
+incomparable object claim when neither does.
+
+\begin{theorem}[Objectivity as Common Quotient]\label{thm:F17}
+Let \(H\) be a carrier with a family of access quotients
+\(q_i:H\to Q_i\) indexed by \(i\in I\), a public quotient
+\(p:H\to P\), and a target readout \(r:H\to R\).  Assume each
+\(q_i\) is surjective, \(p\) is surjective, and the family satisfies
+the common-quotient universal property
+\(\operatorname{CommonQuotientUniversal}(q,p)\): \(p\) factors
+through every \(q_i\), and any map \(s:H\to S\) that factors through every
+\(q_i\) also factors through \(p\).  Then
+\begin{align*}
+  &\operatorname{CommonAcrossAccesses}(q,r)
+    \iff \operatorname{PublicDeterminesObject}(p,r),\\
+  &\operatorname{CommonAcrossAccesses}(q,r)\\
+  &\qquad{}\iff
+    \forall i\in I,\,
+      \operatorname{AccessObjectivityDefectEmpty}(q_i,r),\\
+  &\operatorname{PublicDeterminesObject}(p,r)\\
+  &\qquad{}\iff
+    \operatorname{ObstructionEmpty}
+      \bigl(\operatorname{PublicToObjectDefect}(p,r)\bigr),
+\end{align*}
+together with
+\begin{align*}
+  &\operatorname{CommonQuotientVisible}(q,p),\\
+  &\operatorname{RetainsPublicQuotient}
+      \bigl(p,\operatorname{objectiveExtension}(p,r)\bigr),\\
+  &\operatorname{CarriesObject}
+      \bigl(\operatorname{objectiveExtension}(p,r),r\bigr),
+\end{align*}
+and the status partition
+\[
+  \operatorname{ExactlyOneObjectivityStatus}(p,r).
+\]
+In ordinary terms: \(p\) factors through every \(q_i\); the pairing
+\(\langle p,r\rangle\) satisfies \(p=\mathrm{pr}_1\circ\langle p,r\rangle\) and
+\(r=\mathrm{pr}_2\circ\langle p,r\rangle\); and exactly one of the following holds:
+both \(r\) factors through \(p\) and \(p\) through \(r\) (exact common quotient);
+only the first (coarse objective object); only the second (private
+overrefinement); neither (incomparable).
+\end{theorem}
+\begin{proof}
+Assume the surjectivity of each \(q_i\), the surjectivity of \(p\),
+and \(\operatorname{CommonQuotientUniversal}(q,p)\).  We prove the
+seven conjuncts in turn.
+
+\emph{(1) Common across accesses iff public determines object.}
+The universal property supplies comparison maps
+\[
+  p=\pi_i\circ q_i\quad(i\in I),
+  \qquad
+  s=\lambda\circ p
+  \quad\text{whenever } s=\mu_i\circ q_i \text{ for every } i\in I .
+\]
+Thus \(p\) is the finest quotient that factors through every \(q_i\).
+If \(r\) is common across the access quotients, then \(r\) factors through
+every \(q_i\) by definition, hence through
+\(p\), by the universal property applied to the map \(r\).  Conversely, if \(r\) factors through \(p\), it factors through
+every \(q_i\), since \(p=\pi_i\circ q_i\).  So a readout \(r\) is common
+across the access quotients exactly when it is constant on the common
+public fibers:
+\[
+  \forall h,h'\in H,\quad
+  p(h)=p(h')\Longrightarrow r(h)=r(h').
+\]
+Since \(p\) is surjective, this is equivalent to the existence of
+\(\bar r:P\to R\) with
+\[
+  r=\bar r\circ p,
+\]
+which is precisely \(\operatorname{PublicDeterminesObject}(p,r)\).
+
+\emph{(2) Common across accesses iff every access defect is empty.}
+For \(i\in I\), the access objectivity defect is the set
+\[
+  \Delta_i(q_i,r)
+  =
+  \{(h,h')\in H\times H:
+      q_i(h)=q_i(h')\ \text{and}\ r(h)\neq r(h')\}.
+\]
+Since \(q_i\) is surjective, the descent criterion of
+\Cref{sec:apparatus} shows that \(\Delta_i(q_i,r)=\emptyset\) is
+equivalent to \(r=\bar r_i\circ q_i\) for some \(\bar r_i\); requiring
+this for every \(i\in I\) is \(\operatorname{CommonAcrossAccesses}(q,r)\),
+giving the second equivalence.
+
+\emph{(3) Public determines object iff the public-to-object
+obstruction is empty.}
+The public-to-object defect is
+\[
+  \Delta_P(p,r)
+  =
+  \{(h,h')\in H\times H:
+      p(h)=p(h')\ \text{and}\ r(h)\neq r(h')\}.
+\]
+By the descent criterion, since \(p\) is surjective, its emptiness is
+equivalent to \(r=\bar r\circ p\) for some \(\bar r:P\to R\), that is, to
+\(\operatorname{PublicDeterminesObject}(p,r)\).
+
+\emph{(4) Common quotient visible.}
+The same universal property exhibits \(p\) as a declared common
+quotient of the family \((q_i)_{i\in I}\):
+\[
+  \operatorname{CommonQuotientUniversal}(q,p)
+  \Longrightarrow
+  \operatorname{CommonQuotientVisible}(q,p).
+\]
+Here visibility is the first half of the universal property: \(p\)
+descends through every \(q_i\), \(p=\pi_i\circ q_i\).
+
+\emph{(5) The objective extension retains the public quotient.}
+Let
+\[
+  \operatorname{objectiveExtension}(p,r)
+  :=
+  \langle p,r\rangle:H\longrightarrow P\times R,
+  \qquad
+  h\longmapsto (p(h),r(h)).
+\]
+Projection to the first coordinate recovers the public quotient:
+\[
+  \operatorname{pr}_P\circ\langle p,r\rangle=p.
+\]
+Therefore the objective extension retains \(p\).
+
+\emph{(6) The objective extension carries the object.}
+Projection to the second coordinate recovers the object readout:
+\[
+  \operatorname{pr}_R\circ\langle p,r\rangle=r.
+\]
+Thus the same extension carries the object \(r\).
+
+\emph{(7) Exactly one objectivity status.}
+The four status predicates compare the object \(r\) with the public
+quotient \(p\) in both directions: whether \(r\) descends through \(p\)
+(the public quotient determines the object) and whether \(p\) descends
+through \(r\) (the object determines the public quotient).  The cases
+are
+\[
+\begin{array}{c|c|c}
+\text{status} & r\ \text{descends through}\ p
+  & p\ \text{descends through}\ r\\
+\hline
+\text{exact common quotient} & \text{yes} & \text{yes}\\
+\text{coarse objective object} & \text{yes} & \text{no}\\
+\text{private overrefinement} & \text{no} & \text{yes}\\
+\text{incomparable object claim} & \text{no} & \text{no}
+\end{array}
+\]
+Every configuration of the two Boolean tests falls into one row, and
+no configuration falls into two rows.  Hence
+\(\operatorname{ExactlyOneObjectivityStatus}(p,r)\).
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not determine which presentations are declarable and
+does not enumerate the kinds of objects that may be shared.  The
+closest physical analogy is quantum Darwinism, in which
+objectivity emerges as redundant agreement of the environment's
+records across many access channels \citep{Zurek2009QuantumDarwinism};
+the layer-agnostic statement above is independent of that
+substrate.
+
+\subsection*{Layer instantiations}\label{layer-inst:F17}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Fixed-effect meta-analysis (statistics).}] \textit{Analogy.}
+Under a declared fixed-common-effect model, a fixed-effect
+meta-analysis combines independent study-level effect-size
+estimates by inverse-variance weighting to produce a pooled
+consensus estimate computed from the study-level estimates; when the
+model holds, every study estimates the same common effect, and the
+pooled estimate is its public estimator.  Cochran's \(Q\) (and the later \(I^2\) index of Higgins and Thompson) measures the
+\Fref{F17} access-objectivity defect: heterogeneity is the witness that
+the declared common-effect model is violated
+\citep{HedgesOlkin1985MetaAnalysis}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Lawhood Descent [\texorpdfstring{\Fref{F18}}{F18}]}\label{sec:status-records-coherence:lawhood-descent}
+
+\paragraph{Reading the statement.}
+A candidate law here is a predicate or readout \(P:H\to V\). It is
+\emph{lawful} at the layer when it is invariant under the symmetries of the
+access quotient: \(P\circ\sigma=P\) for every bijection \(\sigma:H\to H\)
+with \(\accessQ\circ\sigma=\accessQ\). For a relation or a transition rule,
+lawfulness means factoring through \(\accessQ\) in each argument; invariance
+under such \(\sigma\) is weaker there, since every such \(\sigma\) preserves
+the equality relation on \(H\), which need not factor.
+
+\begin{theorem}[Lawhood Descent]\label{thm:F18}
+Let \(\accessQ:H\to Q\) be a surjective access quotient (the available access of
+a formed closure in the intended reading).  A declared candidate law \(P:H\to V\) satisfies \(P\circ\sigma=P\) for
+every bijection \(\sigma:H\to H\) with \(\accessQ\circ\sigma=\accessQ\) (that is,
+\(P\) is lawful at the layer) if and only if \(P\) factors through \(\accessQ\),
+that is, \(P(h)=P(h')\) whenever \(\accessQ(h)=\accessQ(h')\).
+\end{theorem}
+\begin{proof}
+If \(P=\bar P\circ\accessQ\) and \(\accessQ\circ\sigma=\accessQ\), then
+\(P\circ\sigma=\bar P\circ\accessQ\circ\sigma=\bar P\circ\accessQ=P\).
+Conversely, let \(P\) be lawful and \(\accessQ(h)=\accessQ(h')\) with
+\(h\ne h'\). The transposition \(\sigma\) exchanging \(h\) and \(h'\) is a
+bijection with \(\accessQ\circ\sigma=\accessQ\), so
+\(P(h')=P(\sigma(h))=P(h)\). Hence \(P\) is constant on access classes;
+define \(\bar P(\accessQ(h))=P(h)\), which surjectivity defines on all of
+\(Q\).  Constancy makes this well-defined, and
+\(P=\bar P\circ\accessQ\).  Thus lawhood is precisely quotient descent.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not enumerate lawful candidates and does not
+construct the access quotient; that is the role of Quotientality.
+
+\subsection*{Layer instantiations}\label{layer-inst:F18}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Wilson loops in gauge theory (physics).}] \textit{Special case.}
+In Yang--Mills theory, a candidate physical observable is a
+lawful observable at the gauge-quotient iff it is
+gauge-invariant.  Wilson loops --- traces of the holonomy around
+closed loops --- are the canonical gauge-invariant
+observables, descending through the gauge-orbit projection
+\(\mathcal A\to\mathcal A/\mathcal G\)
+\citep{Wilson1974ConfinementQuarks}.
+
+\item[\emph{Parnas information hiding (software engineering).}] \textit{Analogy.}
+Parnas's principle of information hiding declares that a module
+exposes a public interface and hides its implementation behind
+that interface.  A client predicate is a lawful use of the
+module iff it depends only on the declared public operations;
+predicates that read hidden state are overreads.  The interface
+is the \Fref{F18} access quotient through which lawful client claims
+descend
+\citep{Parnas1972InformationHiding}.
+
+\item[\emph{Bisimulation invariance in process calculi
+(concurrency theory).}] \textit{Special case.}
+In Milner--Park bisimulation theory, every Hennessy--Milner
+modal-logic formula is bisimulation-invariant, and on image-finite
+labelled transition systems two processes are bisimilar iff they
+satisfy the same formulas.  A process property is lawful iff it is
+bisimulation-invariant, and the bisimulation quotient on the labelled
+transition system is the \Fref{F18} access quotient through which
+lawful process-level laws, the Hennessy--Milner formulas among them,
+descend
+\citep{Milner1989CommunicationConcurrency}.
+
+\item[\emph{Congruences and quotient algebras (universal
+algebra).}] \textit{Special case.}
+A predicate on an algebra \(A\) descends to a well-defined predicate
+on the quotient \(A/{\sim}\) iff it is \(\sim\)-invariant, and the
+operations of \(A\) descend to \(A/{\sim}\) iff \(\sim\) is a
+congruence (compatible with all operations); for a congruence
+\(\sim\), laws over the quotient algebra correspond exactly to
+\(\sim\)-invariant predicates on the original algebra
+\citep{Gratzer1979UniversalAlgebra}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Object Persistence [\texorpdfstring{\Fref{F19}}{F19}]}\label{sec:status-records-coherence:object-persistence}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F19} below.
+\(\operatorname{Persists}(q_i,\gamma,q_j)\) says that the later class
+\(q_j(\gamma h)\) depends only on the earlier class \(q_i(h)\), that
+is, \(q_j\circ\gamma\) descends through \(q_i\). The persistence
+obstruction, also called the split obstruction, is the set of pairs
+with the same \(q_i\)-class whose transports have different
+\(q_j\)-classes; the \emph{ObstructionEmpty} predicates say that the
+named set is empty. \(\operatorname{ViablePersistence}\) says that every
+transported class is viable, and the dissolution obstruction is the set
+of histories whose transported class is not viable.
+\(\operatorname{RelationValuedPersistence}(q_i,q_j,C)\) says that
+whether \(C(h,k)\) holds depends only on the classes \(q_i(h)\) and
+\(q_j(k)\); its obstruction is the set of pairs of pairs with the same
+classes on which \(C\) differs.
+\(\operatorname{IdentityHolonomyCoherent}\) says that
+\(\operatorname{compBar}=\bar\eta\circ\bar\gamma\), and the holonomy
+defect is the set of classes where the two differ. The comparison
+status compares the split obstruction with the merge obstruction, the
+pairs merged by the transport that \(q_i\) separates.  The persistence
+extension is the pairing \(h\mapsto(q_i(h),q_j(\gamma h))\); it
+\emph{retains} the old identity \(q_i\), and \emph{carries} the later
+identity \(q_j\circ\gamma\), when that map descends through it.
+
+\begin{theorem}[Object Persistence]\label{thm:F19}
+Let \(H_i,H_j\) be carriers with access quotients
+\(q_i:H_i\to Q_i\) and \(q_j:H_j\to Q_j\), and let
+\(\gamma:H_i\to H_j\) be a declared transport.  Assume \(q_i\) is surjective.  Let
+\(\operatorname{viable}:Q_j\to\mathrm{Prop}\) be a viability
+predicate, \(C:H_i\times H_j\to\mathrm{Prop}\) a relation predicate,
+let \(Q_k\) be a declared target set, and let
+\[
+  \bar\gamma:Q_i\to Q_j,\qquad
+  \bar\eta:Q_j\to Q_k,\qquad
+  \operatorname{compBar}:Q_i\to Q_k
+\]
+be arbitrary holonomy data (no compatibility between
+\(\operatorname{compBar}\) and \(\bar\eta\circ\bar\gamma\) is
+assumed).  Then
+\begin{align*}
+  &\operatorname{Persists}(q_i,\gamma,q_j)
+    \iff
+    \operatorname{PersistenceObstructionEmpty}(q_i,\gamma,q_j)\\
+  &\qquad{}\iff
+    \operatorname{SplitObstructionEmpty}(q_i,\gamma,q_j),\\
+  &\operatorname{ViablePersistence}(\gamma,q_j,\operatorname{viable})
+    \iff
+    \operatorname{DissolutionObstructionEmpty}
+      (\gamma,q_j,\operatorname{viable}),\\
+  &\operatorname{RelationValuedPersistence}(q_i,q_j,C)
+    \iff
+    \operatorname{RelationPersistenceObstructionEmpty}(q_i,q_j,C),\\
+  &\operatorname{IdentityHolonomyCoherent}
+      (\bar\gamma,\bar\eta,\operatorname{compBar})\\
+  &\qquad{}\iff
+    \operatorname{IdentityHolonomyDefectEmpty}
+      (\bar\gamma,\bar\eta,\operatorname{compBar}),
+\end{align*}
+where \(\operatorname{ViablePersistence}:\Longleftrightarrow\forall h,\
+\operatorname{viable}(q_j(\gamma h))\);
+\(\operatorname{RelationValuedPersistence}:\Longleftrightarrow C=\bar C\circ(q_i\times
+q_j)\) for some \(\bar C\); and
+\(\operatorname{IdentityHolonomyCoherent}:\Longleftrightarrow\operatorname{compBar}=\bar\eta\circ\bar\gamma\);
+together with the comparison-status partition
+\[
+  \operatorname{ExactlyOnePersistenceComparisonStatus}
+    (q_i,\gamma,q_j),
+\]
+and the retention and carrying conditions
+\begin{align*}
+  &\operatorname{RetainsOldIdentity}
+      \bigl(q_i,\operatorname{persistenceExtension}(q_i,\gamma,q_j)\bigr),\\
+  &\operatorname{CarriesLaterIdentity}
+      \bigl(\operatorname{persistenceExtension}(q_i,\gamma,q_j),
+        \gamma,q_j\bigr).
+\end{align*}
+If moreover \(\eta:H_j\to H_k\) and \(q_k:H_k\to Q_k\) satisfy
+\(\bar\gamma\circ q_i=q_j\circ\gamma\), \(\bar\eta\circ q_j=q_k\circ\eta\) and
+\(\operatorname{compBar}\circ q_i=q_k\circ\eta\circ\gamma\), then
+\(\operatorname{IdentityHolonomyCoherent}(\bar\gamma,\bar\eta,\operatorname{compBar})\)
+holds; hence, when the holonomy defect is nonempty, one of the three
+displayed commutation equations fails.
+Here the persistence and split obstructions are the same set
+\(\Delta_{\mathrm{split}}=\{(h,h'):q_i(h)=q_i(h'),\ q_j(\gamma h)\ne q_j(\gamma h')\}\), and
+\(\operatorname{Persists}(q_i,\gamma,q_j)\) says that \(q_j\circ\gamma\)
+factors through \(q_i\).
+Here \(\operatorname{ExactlyOnePersistenceComparisonStatus}\) says that exactly
+one of exact endurance (\(\Delta_{\mathrm{split}}=\Delta_{\mathrm{merge}}=\emptyset\)),
+persistent with merge (only \(\Delta_{\mathrm{merge}}\ne\emptyset\)), identity
+branching (only \(\Delta_{\mathrm{split}}\ne\emptyset\)) and identity rewrite (both
+nonempty) holds, where \(\Delta_{\mathrm{merge}}=\{(h,h'):q_j(\gamma h)=q_j(\gamma
+h'),\ q_i(h)\ne q_i(h')\}\).
+\end{theorem}
+\begin{proof}
+Assume the surjectivity of \(q_i\), the predicates
+\(\operatorname{viable}\) and \(C\), and the holonomy data
+\(\bar\gamma,\bar\eta,\operatorname{compBar}\).  We prove the eight
+conjuncts in turn. Part (3) proves the comparison-status partition, which the statement lists after the holonomy line, and part (6) also proves the added holonomy clause.
+
+\emph{(1) Persists iff the persistence obstruction is empty.}
+The persistence obstruction is
+\[
+  \Delta_{\mathrm{pers}}(q_i,\gamma,q_j)
+  =
+  \{(h,h')\in H_i\times H_i:
+      q_i(h)=q_i(h')\ \text{and}\
+      q_j(\gamma h)\ne q_j(\gamma h')\}.
+\]
+Since \(q_i\) is surjective, the descent criterion of
+\Cref{sec:apparatus} applied to \(q_j\circ\gamma\) shows that its
+emptiness is equivalent to the existence of a map
+\(\gamma^{\flat}:Q_i\to Q_j\) satisfying
+\[
+  \gamma^{\flat}\circ q_i=q_j\circ\gamma,
+\]
+which is \(\operatorname{Persists}(q_i,\gamma,q_j)\).
+
+\emph{(2) Split-obstruction empty iff persists.}
+The split obstruction is the same pair set written in the comparison
+vocabulary:
+\[
+  \Delta_{\mathrm{split}}(q_i,\gamma,q_j)
+  =
+  \Delta_{\mathrm{pers}}(q_i,\gamma,q_j).
+\]
+Thus \(\Delta_{\mathrm{split}}=\emptyset\) iff the persistence
+obstruction is empty, and by (1) this is equivalent to persistence.
+
+\emph{(3) Exactly-one persistence comparison status.}
+The comparison statuses are decided by two split-pair defects on the
+declared continuation \(\gamma\): the persistence/split obstruction
+\(\Delta_{\mathrm{split}}\) of case~(1), and the merge obstruction
+\[
+  \Delta_{\mathrm{merge}}(q_i,\gamma,q_j)
+  =
+  \{(h,h')\in H_i\times H_i:
+      q_j(\gamma h)=q_j(\gamma h')\ \text{and}\ q_i(h)\ne q_i(h')\}.
+\]
+The four statuses partition the configurations by the joint
+\(\Delta_{\mathrm{split}}\)\textendash{}\(\Delta_{\mathrm{merge}}\)
+emptiness pattern:
+\[
+\begin{array}{c|c|c}
+\text{status} & \Delta_{\mathrm{split}}=\emptyset
+  & \Delta_{\mathrm{merge}}=\emptyset\\
+\hline
+\text{exact endurance} & \text{yes} & \text{yes}\\
+\text{persistent with merge} & \text{yes} & \text{no}\\
+\text{identity branching} & \text{no} & \text{yes}\\
+\text{identity rewrite} & \text{no} & \text{no}
+\end{array}
+\]
+Every configuration of the two Boolean defect tests falls into
+exactly one row.  Existence is by case enumeration; exclusivity is by
+definitional disjointness of the four status predicates.  The
+dissolution and relation-valued obstructions of cases~(4) and~(5) are
+separate conditions and do not enter this partition.
+
+\emph{(4) Viable persistence iff the dissolution obstruction is
+empty.}
+The dissolution obstruction is
+\[
+  \Delta_{\mathrm{diss}}(\gamma,q_j,\operatorname{viable})
+  =
+  \{h\in H_i:
+      \neg\,\operatorname{viable}(q_j(\gamma h))\}.
+\]
+Viable persistence says that every transported \(q_j\)-class lies in
+the viable region:
+\[
+  \forall h\in H_i,\quad
+  \operatorname{viable}(q_j(\gamma h)).
+\]
+This is precisely \(\Delta_{\mathrm{diss}}=\emptyset\).
+
+\emph{(5) Relation-valued persistence iff its obstruction is empty.}
+The relation-persistence obstruction is
+\[
+  \Delta_C(q_i,q_j,C)
+  =
+  \left\{
+  \begin{array}{l}
+    ((h,k),(h',k'))\in(H_i\times H_j)^2:\\
+    q_i(h)=q_i(h'),\ q_j(k)=q_j(k'),\
+    C(h,k)\not\iff C(h',k')
+  \end{array}
+  \right\}.
+\]
+Emptiness of \(\Delta_C\) says that the truth of \(C(h,k)\) depends only
+on the pair of classes \((q_i(h),q_j(k))\).  Setting \(\bar C:=\bot\) off the image of \(q_i\times q_j\), this holds exactly when \(C\) descends to a
+well-defined relation on \(Q_i\times Q_j\), which is relation-valued
+persistence; this part uses no surjectivity, and surjectivity of \(q_j\) is not assumed.
+
+\emph{(6) Identity holonomy coherent iff the holonomy defect is
+empty.}
+The holonomy defect is
+\[
+  \Delta_{\mathrm{hol}}(\bar\gamma,\bar\eta,\operatorname{compBar})
+  =
+  \{a\in Q_i:
+      \operatorname{compBar}(a)\ne\bar\eta(\bar\gamma(a))\}.
+\]
+Thus \(\Delta_{\mathrm{hol}}=\emptyset\) iff
+\[
+  \forall a\in Q_i,\quad
+  \operatorname{compBar}(a)=\bar\eta(\bar\gamma(a)),
+\]
+which is the pointwise form of
+\(\operatorname{compBar}=\bar\eta\circ\bar\gamma\), i.e. identity
+holonomy coherence. Under the descent equations of the added clause,
+\(\operatorname{compBar}(q_ih)=q_k\eta\gamma h=\bar\eta(q_j\gamma h)
+=\bar\eta\bar\gamma(q_ih)\) for every \(h\), and \(q_i\) is surjective, so
+the defect is empty.
+
+\emph{(7) The persistence extension retains the old identity.}
+Define the persistence extension as the joint quotient
+\[
+  \operatorname{persistenceExtension}(q_i,\gamma,q_j)
+  :=
+  \langle q_i,q_j\circ\gamma\rangle:H_i\to Q_i\times Q_j.
+\]
+Projection to the first coordinate recovers the old identity:
+\[
+  \operatorname{pr}_{Q_i}\circ
+  \langle q_i,q_j\circ\gamma\rangle=q_i.
+\]
+Therefore the persistence extension retains \(q_i\).
+
+\emph{(8) The persistence extension carries the later identity.}
+Projection to the second coordinate recovers the transported later
+identity:
+\[
+  \operatorname{pr}_{Q_j}\circ
+  \langle q_i,q_j\circ\gamma\rangle=q_j\circ\gamma.
+\]
+Thus the same extension carries \(q_j\) along the declared transport
+\(\gamma\).
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not classify persistent objects or say which
+transports should be declared.
+
+\subsection*{Layer instantiations}\label{layer-inst:F19}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Mendelian inheritance (genetics).}] \textit{Analogy.}
+Through meiotic segregation and fertilisation, parental allele
+identity at a locus survives into the offspring's diploid
+genotype.  The \Fref{F19} reading: allele identity persists when no
+mutation or non-disjunction breaks the descent; mutation and
+non-disjunction events are the persistence obstruction
+\citep{Mendel1866VersuchePflanzenHybriden}.
+
+\item[\emph{Pure-state identity under unitary evolution (quantum
+mechanics).}] \textit{Special case.}
+For a closed quantum system, time evolution is the unitary
+\(U(t)=\exp(-iHt/\hbar)\); the projective ray
+\([|\psi\rangle]\) (state modulo global phase) evolves through the
+descended projective evolution.  Pure-state identity persists:
+\(U(t)(e^{i\phi}\psi)=e^{i\phi}U(t)\psi\), so the persistence
+obstruction is empty.  For decoherence, take unit state vectors, fix an initial environment state
+and a unitary evolution of the combined system. With the earlier quotient
+the system's projective ray and the later quotient its reduced density
+operator, corestricted to the reduced states it attains, global phase cancels, so the persistence obstruction is empty.
+When the reduced state is mixed, it fails
+\(\operatorname{viable}(\rho):\Leftrightarrow\rho^2=\rho\) and contributes to
+the dissolution obstruction \citep{vonNeumann1932MathematischeGrundlagen}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Fact / Record Formation [\texorpdfstring{\Fref{F20}}{F20}]}\label{sec:status-records-coherence:fact-record}
+
+\begin{definition}[Record formation]\label{def:record-formation}
+Let \(H_0,H_1\) be history sets (in the intended reading, carriers of a
+formed closure \(\closureForm(A)\)), with continuation
+\(\gamma:H_0\to H_1\) and record readout \(\rho_1:H_1\to R_1\). The
+\emph{record} of a history \(h\in H_0\) is its record signature
+\(s(h)=\rho_1(\gamma(h))\), and an event readout \(\varepsilon:H_0\to E\) is a
+\emph{recorded fact} when \(\varepsilon=\bar\varepsilon\circ s\) for some
+\(\bar\varepsilon:R_1\to E\).
+\end{definition}
+
+\paragraph{Reading the statement.} The theorem makes
+\Cref{def:record-formation} precise for readouts: the record is the
+signature \(\rho_1\circ\gamma\).
+\(\operatorname{EventRecorded}(\varepsilon,\gamma,\rho_1)\) says that
+the event \(\varepsilon\) descends through the record signature
+\(\rho_1\circ\gamma\), so the record determines the event.
+\(\operatorname{RecordStable}(\rho_s,\theta,\rho_t)\) says that
+\(\rho_t\circ\theta\) descends through \(\rho_s\), so the transport
+respects records. \(\operatorname{FactValueStable}\) says that
+\(d_t\circ\bar\theta=u\circ d_s\), so the fact value moves by the
+declared update. \(\operatorname{StableFact}\) is the conjunction of these
+three conditions.  They describe the transport of one recorded fact when
+\(H_s=H_1\), \(\rho_s=\rho_1\), \(E_s=E\) and \(d_s=\bar\varepsilon\), the
+descended event readout of \Cref{def:record-formation}; the last clause
+of the theorem treats this case.  \(\operatorname{EventRecorded}(\varepsilon,\gamma,\rho_1)\)
+holds exactly when \(\varepsilon\) is a recorded fact in the sense of
+\Cref{def:record-formation}.
+\(\operatorname{RetainsRecord}\) and \(\operatorname{CarriesEvent}\) say
+that the record signature, respectively the event, descends through
+the record-event extension. \(\operatorname{IdempotentPackaging}(C)\)
+says that packaging an already packaged history changes nothing. The
+packaging clause is independent of the other data: it is the standard fact
+that an idempotent map is a retraction onto its fixed set, included because a
+packaged record must be unchanged by repackaging; \(H\) denotes the auxiliary
+carrier only in this clause.
+
+\begin{theorem}[Fact / Record Formation]\label{thm:F20}
+Let \(H_0,H_1,H_s,H_t\) be history spaces with event readout
+\(\varepsilon:H_0\to E\), continuation \(\gamma:H_0\to H_1\),
+record readouts
+\[
+  \rho_1:H_1\to R_1,\qquad
+  \rho_s:H_s\to R_s,\qquad
+  \rho_t:H_t\to R_t,
+\]
+transport \(\theta:H_s\to H_t\), a declared record-level transport
+\(\bar\theta:R_s\to R_t\), fact-value maps
+\(d_s:R_s\to E_s\), \(d_t:R_t\to E_t\), update
+\(u:E_s\to E_t\), and a packaging map \(C:H\to H\) on an auxiliary
+carrier \(H\).  Define the record signature
+\[
+  s:=\rho_1\circ\gamma:H_0\to R_1,
+\]
+and assume that \(s\) and \(\rho_s\) are surjective.  Define
+\begin{align*}
+  \mathcal O_{\mathrm{ev}}
+  &:=
+  \{(h,h')\in H_0^2:
+      \rho_1(\gamma h)=\rho_1(\gamma h')
+      \text{ and } \varepsilon(h)\ne\varepsilon(h')\},\\
+  \mathcal O_{\mathrm{red}}
+  &:=
+  \{(h,h')\in H_0^2:
+      \varepsilon(h)=\varepsilon(h')
+      \text{ and } \rho_1(\gamma h)\ne\rho_1(\gamma h')\},\\
+  \mathcal O_{\mathrm{rec}}
+  &:=
+  \{(x,y)\in H_s^2:
+      \rho_s(x)=\rho_s(y)
+      \text{ and } \rho_t(\theta x)\ne\rho_t(\theta y)\},\\
+  \mathcal O_{\mathrm{val}}
+  &:=
+  \{r\in R_s:
+      d_t(\bar\theta r)\ne u(d_s r)\}.
+\end{align*}
+Then
+\begin{align*}
+  \operatorname{EventRecorded}(\varepsilon,\gamma,\rho_1)
+  &\iff \mathcal O_{\mathrm{ev}}=\emptyset,\\
+  \operatorname{RecordStable}(\rho_s,\theta,\rho_t)
+  &\iff \mathcal O_{\mathrm{rec}}=\emptyset,\\
+  \operatorname{FactValueStable}(\bar\theta,d_s,d_t,u)
+  &\iff \mathcal O_{\mathrm{val}}=\emptyset,\\
+  \operatorname{StableFact}
+  &\iff
+  \mathcal O_{\mathrm{ev}}=\emptyset
+  \wedge
+  \mathcal O_{\mathrm{rec}}=\emptyset
+  \wedge
+  \mathcal O_{\mathrm{val}}=\emptyset,
+\end{align*}
+together with the record-comparison status partition
+\[
+  \operatorname{ExactlyOneRecordComparisonStatus}
+    (\varepsilon,\gamma,\rho_1),
+\]
+the retention and carrying conditions for the record-event extension
+\(\langle\rho_1\circ\gamma,\varepsilon\rangle:H_0\to R_1\times E\),
+\begin{align*}
+  &\operatorname{RetainsRecord}
+      \bigl(\rho_1\circ\gamma,
+        \langle\rho_1\circ\gamma,\varepsilon\rangle\bigr),\\
+  &\operatorname{CarriesEvent}
+      \bigl(\langle\rho_1\circ\gamma,\varepsilon\rangle,
+        \varepsilon\bigr),
+\end{align*}
+and the characterization of idempotent packaging by its image,
+\[
+  \operatorname{IdempotentPackaging}(C)
+  \iff
+  C(H)=\operatorname{Fix}(C),
+\]
+where \(\operatorname{IdempotentPackaging}(C):\Longleftrightarrow\forall h\in H,\ C(C(h))=C(h)\)
+and \(\operatorname{Fix}(C)=\{h:C(h)=h\}\). Here, with \(s=\rho_1\circ\gamma\),
+\(\operatorname{EventRecorded}(\varepsilon,\gamma,\rho_1):\Longleftrightarrow\exists\,\bar\varepsilon:R_1\to E,\ \bar\varepsilon\circ s=\varepsilon\);
+\(\operatorname{RecordStable}(\rho_s,\theta,\rho_t):\Longleftrightarrow\exists\,\theta^\flat:R_s\to R_t,\ \theta^\flat\circ\rho_s=\rho_t\circ\theta\);
+\(\operatorname{FactValueStable}(\bar\theta,d_s,d_t,u):\Longleftrightarrow d_t\circ\bar\theta=u\circ d_s\);
+and \(\operatorname{StableFact}\) is the conjunction of these three.
+The record-comparison status takes one of four values
+(\emph{exact}, \emph{redundant}, \emph{ambiguous}, or
+\emph{incomparable}) determined by the joint emptiness pattern of
+\(\mathcal O_{\mathrm{ev}}\) and \(\mathcal O_{\mathrm{red}}\): exact when
+both are empty, redundant when only \(\mathcal O_{\mathrm{ev}}\) is empty,
+ambiguous when only \(\mathcal O_{\mathrm{red}}\) is empty, and incomparable
+when neither is.
+If moreover \(\bar\theta\) is a descended transport,
+\(\bar\theta\circ\rho_s=\rho_t\circ\theta\), then fact-value stability is the
+raw fact-value equation:
+\[
+  \operatorname{FactValueStable}(\bar\theta,d_s,d_t,u)
+  \iff
+  \forall x\in H_s,\ d_t(\rho_t(\theta x))=u(d_s(\rho_s x)).
+\]
+If moreover \(H_s=H_1\), \(\rho_s=\rho_1\), \(E_s=E\),
+\(d_s\circ\rho_1\circ\gamma=\varepsilon\) and
+\(\bar\theta\circ\rho_1=\rho_t\circ\theta\), then
+\(\operatorname{FactValueStable}(\bar\theta,d_s,d_t,u)\) implies
+\(d_t\circ\rho_t\circ\theta\circ\gamma=u\circ\varepsilon\): a stable fact
+transports the event it records.
+\end{theorem}
+\begin{proof}
+Assume the displayed maps, the surjectivity of \(s=\rho_1\circ\gamma\),
+and the surjectivity of \(\rho_s\).  We prove the conjuncts in
+turn.
+
+\emph{(1) Event recorded iff event-record obstruction empty.}
+This is the descent criterion of \Cref{sec:apparatus} for the
+surjective record signature \(s\) and the readout \(\varepsilon\): the
+descended event readout is \(\bar\varepsilon(s(h)):=\varepsilon(h)\).
+
+\emph{(2) Record stable iff record-stability obstruction empty.}
+The record-stability equivalence is the same quotient argument for
+\(\rho_s\).  The condition \(\mathcal O_{\mathrm{rec}}=\emptyset\) is
+exactly the independence needed to define a map
+\[
+  \theta^{\flat}(\rho_s x):=\rho_t(\theta x),
+  \qquad\text{so that}\qquad
+  \theta^{\flat}\circ\rho_s=\rho_t\circ\theta.
+\]
+The fact-value clause below concerns the given map \(\bar\theta\);
+when record stability holds, the natural choice of \(\bar\theta\) is
+this descended transport \(\theta^{\flat}\). For the last clause, if
+\(\bar\theta\circ\rho_s=\rho_t\circ\theta\), then
+\(d_t(\rho_t(\theta x))=d_t(\bar\theta(\rho_s x))\), so the raw equation at
+\(x\) is the fact-value equation at \(\rho_s x\); since \(\rho_s\) is
+surjective, every \(r\in R_s\) is of this form.
+
+\emph{(3) Fact-value stable iff the fact-value defect is empty.}
+The fact-value defect at \(r\in R_s\) is the failure of the
+commutative square
+\[
+  d_t\circ\bar\theta=u\circ d_s.
+\]
+Equivalently,
+\[
+  \mathcal O_{\mathrm{val}}=\emptyset
+  \quad\Longleftrightarrow\quad
+  \forall r\in R_s,\ d_t(\bar\theta r)=u(d_s r),
+\]
+which is precisely \(\operatorname{FactValueStable}(\bar\theta,d_s,d_t,u)\).
+
+\emph{(4) Stable fact iff the three obstructions are empty.}
+By definition, a stable fact requires event recording, record
+stability, and fact-value stability.  Combining (1)--(3) gives
+\[
+  \operatorname{StableFact}
+  \iff
+  \mathcal O_{\mathrm{ev}}=\emptyset
+  \wedge
+  \mathcal O_{\mathrm{rec}}=\emptyset
+  \wedge
+  \mathcal O_{\mathrm{val}}=\emptyset.
+\]
+
+\emph{(5) Exactly-one record-comparison status.}
+The four statuses are decided by the joint
+\((\mathcal O_{\mathrm{ev}},\mathcal O_{\mathrm{red}})\) emptiness
+pattern:
+\[
+\begin{array}{c|c|c}
+\text{status} & \mathcal O_{\mathrm{ev}}=\emptyset
+  & \mathcal O_{\mathrm{red}}=\emptyset\\
+\hline
+\text{exact record} & \text{yes} & \text{yes}\\
+\text{redundant record} & \text{yes} & \text{no}\\
+\text{ambiguous record} & \text{no} & \text{yes}\\
+\text{incomparable record} & \text{no} & \text{no}
+\end{array}
+\]
+Every configuration of the two Boolean defect tests falls into one
+row, and no configuration falls into two rows.  Existence is by case
+enumeration; exclusivity is by definitional disjointness of the four
+status predicates.
+
+\emph{(6) Retains record.}
+Define the canonical record-event extension
+\[
+  \langle\rho_1\circ\gamma,\varepsilon\rangle:
+  H_0\longrightarrow R_1\times E,
+  \qquad
+  h\longmapsto(\rho_1(\gamma h),\varepsilon(h)).
+\]
+Projection to the first coordinate recovers the record signature:
+\[
+  \operatorname{pr}_{R_1}
+  \circ\langle\rho_1\circ\gamma,\varepsilon\rangle
+  =
+  \rho_1\circ\gamma.
+\]
+
+\emph{(7) Carries event.}
+Projection to the second coordinate recovers the event readout:
+\[
+  \operatorname{pr}_{E}
+  \circ\langle\rho_1\circ\gamma,\varepsilon\rangle
+  =
+  \varepsilon.
+\]
+
+\emph{(8) Idempotent packaging is image equal to fixed locus.}
+Always \(\operatorname{Fix}(C)\subseteq C(H)\), since \(h=C(h)\) for a fixed
+point. If \(C(C(h))=C(h)\) for every \(h\), then each \(C(h)\) is fixed, so
+\(C(H)\subseteq\operatorname{Fix}(C)\). Conversely, if
+\(C(H)\subseteq\operatorname{Fix}(C)\), then \(C(h)\) is fixed for every
+\(h\), that is, \(C(C(h))=C(h)\).
+
+\emph{(9) A stable fact transports its event.} Under the additional
+identifications, for every \(h\in H_0\),
+\(d_t\rho_t\theta\gamma h=d_t\bar\theta\rho_1\gamma h=u\,d_s\rho_1\gamma h
+=u\,\varepsilon h\), using the descended transport, fact-value stability and
+the decoding identity in turn.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not determine which candidates count as evidence and
+does not identify the fact with the record.
+
+\subsection*{Layer instantiations}\label{layer-inst:F20}
+
+\begingroup\small
+\begin{description}
+\item[\emph{{FAIR} scientific-data principles (research
+methodology).}] \textit{Analogy.}
+The FAIR Guiding Principles --- Findable, Accessible,
+Interoperable, Reusable --- are guidelines for the findability and
+reuse of scientific data.  Read through \Fref{F20}, data form stable
+facts when generation events are recorded as provenance
+metadata, records persist under storage / migration transport via
+persistent identifiers and access protocols, and derived analyses
+preserve fact-value consistency through declared processing
+pipelines.  Each obstruction (unrecorded provenance, broken DOI,
+undocumented pipeline change) is an \Fref{F20}-style stable-fact failure
+\citep{WilkinsonDumontier2016FAIRPrinciples}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Reflexive Nonclosure [\texorpdfstring{\Fref{F21}}{F21}]}\label{sec:status-records-coherence:reflexive-nonclosure}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F21} below.
+\(\operatorname{CompleteSelfSoundness}_{\pi}(c)\) says that the claim
+\(c\) asserts the complete soundness of the policy at its own layer; a
+scoped lower audit is an audit of a more limited claim below that
+assertion. \(\operatorname{InScope}_{\pi}\) and
+\(\operatorname{SameLayerCycle}_{\pi}\) mark the claims the policy
+covers and those that depend on themselves at the same layer. Rules 2 and 3 fix the statuses of outside-scope and in-scope cyclic claims, and the rule on \(\mu\)
+says that the meta layer does not accept a meta-claim about its own
+soundness. Rule 4 is the premise through which same-layer circularity enters;
+the blocking of self-certification is derived from rules 2--4, each needed by
+the sharpness clause, and the meta-layer clause is the contrapositive of the
+rule on \(\mu\). The scoped-lower-audit clause follows from the blocking of self-certification.
+
+\begin{theorem}[Reflexive Nonclosure]\label{thm:F21}
+Let \(\mathcal C\) be a space of claims and let \(\pi\) be a same-layer
+audit policy on \(\mathcal C\): predicates
+\(\operatorname{InScope}_{\pi}\),
+\(\operatorname{CompleteSelfSoundness}_{\pi}\),
+\(\operatorname{ScopedLowerAudit}_{\pi}\) and
+\(\operatorname{SameLayerCycle}_{\pi}\) on \(\mathcal C\), and a status
+map \(\operatorname{st}_{\pi}\) from \(\mathcal C\) to a set of statuses
+containing three distinct statuses \(\mathsf{accepted}\),
+\(\mathsf{outsideScope}\) and \(\mathsf{undefinedCircular}\), subject to rules 2--4 below (rule 1 describes the intended policies and is not assumed):
+\begin{enumerate}
+\item (intended, not assumed) a scoped lower audit is not a complete self-soundness claim;
+\item a claim outside the scope receives \(\mathsf{outsideScope}\);
+\item a claim in scope with a same-layer cycle receives
+  \(\mathsf{undefinedCircular}\);
+\item a complete self-soundness claim in scope has a same-layer cycle.
+\end{enumerate}
+Let \(\mu\) be a meta-layer audit into a space \(\mathcal M\) of
+meta-claims: a relation \(\operatorname{Audits}_{\mu}(m,c)\) and
+predicates \(\operatorname{Accepted}_{\mu}\) and
+\(\operatorname{MetaSelfSound}_{\mu}\) on \(\mathcal M\), such that \(\operatorname{MetaSelfSound}_{\mu}(m)\Rightarrow\neg\operatorname{Accepted}_{\mu}(m)\) for every \(m\in\mathcal M\): no
+meta-claim asserting its own soundness is accepted by the meta layer.
+Write
+\begin{align*}
+  \operatorname{SelfCertificationBlocked}_{\pi}(c)
+  &:\iff
+  \bigl(\operatorname{CompleteSelfSoundness}_{\pi}(c)
+    \Rightarrow \operatorname{st}_{\pi}(c)\ne\mathsf{accepted}\bigr),\\
+  \operatorname{AcceptedScopedLowerAudit}_{\pi}(c)
+  &:\iff
+  \operatorname{ScopedLowerAudit}_{\pi}(c)
+    \wedge\operatorname{st}_{\pi}(c)=\mathsf{accepted},\\
+  \operatorname{HasMetaLayerCertificate}_{\mu}(c)
+  &:\iff
+  \exists m\in\mathcal M,\
+    \operatorname{Audits}_{\mu}(m,c)\wedge\operatorname{Accepted}_{\mu}(m).
+\end{align*}
+Then for every \(c\in\mathcal C\),
+\begin{align*}
+  &\operatorname{SelfCertificationBlocked}_{\pi}(c),\\
+  &\operatorname{AcceptedScopedLowerAudit}_{\pi}(c)
+    \Longrightarrow
+    \neg\operatorname{CompleteSelfSoundness}_{\pi}(c),\\
+  &\operatorname{HasMetaLayerCertificate}_{\mu}(c)\\
+  &\qquad{}\Longrightarrow
+    \exists m\in\mathcal M,\,
+      \operatorname{Audits}_{\mu}(m,c)
+      \wedge\operatorname{Accepted}_{\mu}(m)
+      \wedge
+      \neg\operatorname{MetaSelfSound}_{\mu}(m),\\
+  &\operatorname{CompleteSelfSoundness}_{\pi}(c)\\
+  &\qquad{}\Longrightarrow
+    \bigl(\neg\operatorname{InScope}_{\pi}(c)
+      \wedge\operatorname{st}_{\pi}(c)=\mathsf{outsideScope}\bigr)\\
+  &\hspace{5em}\vee
+    \bigl(\operatorname{InScope}_{\pi}(c)
+      \wedge\operatorname{SameLayerCycle}_{\pi}(c)
+      \wedge\operatorname{st}_{\pi}(c)=\mathsf{undefinedCircular}\bigr).
+\end{align*}
+Rules~2, 3 and~4 cannot be dropped: there is a policy on two claims (without rule 4) satisfying
+rules 1--3 in which \(\operatorname{SelfCertificationBlocked}_{\pi}\) fails,
+a policy on one claim (without rule 2) satisfying rules 1, 3 and 4 in which it fails, and a
+policy on one claim (without rule 3) satisfying rules 1, 2 and 4 in which it fails. Rule~1 is not assumed: the second line follows from the first, since a claim with status \(\mathsf{accepted}\) is not a complete self-soundness claim.
+\end{theorem}
+\begin{proof}
+Assume the same-layer policy \(\pi\) and the meta-layer audit
+\(\mu\), and fix \(c\in\mathcal C\).  Suppose
+\(\operatorname{CompleteSelfSoundness}_{\pi}(c)\).  There are two
+cases.  If \(c\) is outside the scope of \(\pi\), rule~2 gives
+\(\operatorname{st}_{\pi}(c)=\mathsf{outsideScope}\).  If \(c\) is in
+scope, rule~4 gives a same-layer cycle, and rule~3 then gives
+\(\operatorname{st}_{\pi}(c)=\mathsf{undefinedCircular}\).  This proves
+the fourth line, and in both cases
+\(\operatorname{st}_{\pi}(c)\ne\mathsf{accepted}\), which is
+\(\operatorname{SelfCertificationBlocked}_{\pi}(c)\): a claim certifying
+its own complete soundness at the same layer is never accepted.
+
+If \(\operatorname{AcceptedScopedLowerAudit}_{\pi}(c)\) holds, then
+\(\operatorname{st}_{\pi}(c)=\mathsf{accepted}\), so
+\(\neg\operatorname{CompleteSelfSoundness}_{\pi}(c)\) by the first line: the audit is
+accepted for its scoped lower claim, not for the full assertion of its
+own soundness.
+
+If \(\operatorname{HasMetaLayerCertificate}_{\mu}(c)\) holds, choose
+\(m\) with \(\operatorname{Audits}_{\mu}(m,c)\) and
+\(\operatorname{Accepted}_{\mu}(m)\).  If
+\(\operatorname{MetaSelfSound}_{\mu}(m)\) held, the rule on \(\mu\)
+would give \(\neg\operatorname{Accepted}_{\mu}(m)\); hence
+\(\neg\operatorname{MetaSelfSound}_{\mu}(m)\).  The certificate is
+supplied by a meta-claim that does not certify its own soundness, so
+the audit has moved to a strict meta-layer.
+
+For the sharpness claim, let \(\mathcal C=\{a,b\}\), put both claims in scope,
+let \(b\) be the only complete self-soundness claim and \(a\) the only scoped
+lower audit, let no claim have a same-layer cycle, and let
+\(\operatorname{st}_{\pi}\) assign \(\mathsf{accepted}\) to both. Rule~1 holds
+because \(a\) is not a complete self-soundness claim, and rules~2 and~3 hold
+vacuously. Rule~4 fails at \(b\), and \(b\) is a complete self-soundness claim
+with status \(\mathsf{accepted}\), so
+\(\operatorname{SelfCertificationBlocked}_{\pi}(b)\) fails. For rule~2, let
+\(\mathcal C=\{c\}\) with \(c\) a complete self-soundness claim outside the
+scope of \(\pi\), with no scoped lower audit, no same-layer cycle, and status \(\mathsf{accepted}\).
+Rule~1 holds because there is no scoped lower audit, rules~3 and~4 because
+\(c\) is not in scope, rule~2 fails at \(c\), and
+\(\operatorname{SelfCertificationBlocked}_{\pi}(c)\) fails. For rule~3, let
+\(\mathcal C=\{c\}\) with \(c\) a complete self-soundness claim in scope, with a
+same-layer cycle, no scoped lower audit, and status \(\mathsf{accepted}\).
+Rule~1 holds because there is no scoped lower audit, rule~2 holds vacuously,
+rule~4 holds because \(c\) has a same-layer cycle, rule~3 fails at \(c\), and
+\(\operatorname{SelfCertificationBlocked}_{\pi}(c)\) fails.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not forbid scoped self-audit; it forbids unrestricted
+same-layer self-closure.  A proof-theoretic analogue is G\"odel's second
+incompleteness theorem \citep{Godel1931Unentscheidbare}, where unprovability
+of self-consistency is derived from the arithmetic of the theory; here
+non-acceptance of complete self-soundness follows from rules 2--4 and the
+distinctness of the three statuses, which
+the policy supplies. The modal-logic reformulation in
+terms of a provability operator is developed in
+\citet{Boolos1993LogicProvability}.
+
+\subsection*{Layer instantiations}\label{layer-inst:F21}
+
+\begingroup\small
+\begin{description}
+\item[\emph{{ISO}/{IEC} 17025 laboratory accreditation
+(industrial metrology).}] \textit{Analogy.}
+Under ISO/IEC 17025, a testing or calibration laboratory
+cannot self-certify its measurement competence: an
+accredited laboratory must be assessed by a recognised
+accreditation body (an ILAC member such as A2LA, UKAS, or
+DAkkS), which acts as the meta-layer.  Internal
+quality-management records are a scoped lower audit,
+sufficient
+for internal corrective action but not for legal or
+commercial recognition of competence; the meta-layer
+accreditation certificate is the legitimate reflexive
+audit witness \citep{ISOIEC17025_2017}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Interface Mediation [\texorpdfstring{\Fref{F22}}{F22}]}\label{sec:status-records-coherence:interface-mediation}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F22} below.
+\(\operatorname{InterfaceMediated}(q,\beta,U,q')\) says that the target
+class \(q'(U(x,y))\) depends only on the source class \(q(x)\) and the
+boundary value \(\beta(y)\). \(\operatorname{BoundaryLeakageAbsent}\)
+says that, for each fixed \(x\), two inputs \(y,y'\) with the same
+boundary value give the same target class;
+\(\operatorname{InternalInsufficiencyAbsent}\) says that, for each
+fixed \(y\), two states \(x,x'\) with the same source class give the
+same target class. \(\operatorname{ExternallyInert}(\bar U)\) says that
+\(\bar U(a,b)\) does not depend on the boundary argument \(b\), and
+\(\operatorname{ActiveMediatedInfluence}(\bar U)\) says that it does
+for some \(a\).
+
+\begin{theorem}[Interface Mediation]\label{thm:F22}
+Let \(q:X\to Q\) be a source quotient, let
+\(\beta:Y\to B\) be a boundary readout, let
+\(U:X\times Y\to X'\) be an interface update, and let
+\(q':X'\to Q'\) be the target quotient.  Assume \(q\) and \(\beta\) are surjective.  Define
+\[
+  \mathcal O_U
+  :=
+  \{((x,y),(x',y')) :
+    q(x)=q(x'),\ \beta(y)=\beta(y'),\
+    q'(U(x,y))\ne q'(U(x',y'))\}.
+\]
+Then
+\begin{align*}
+  \operatorname{InterfaceMediated}(q,\beta,U,q')
+  &\iff \mathcal O_U=\emptyset\\
+  &\iff
+  \exists!\,\bar U:Q\times B\to Q'\ \text{with}\
+    \bar U(q(x),\beta(y))=q'(U(x,y))\ \forall x,y,\\
+  \mathcal O_U=\emptyset
+  &\iff
+  \operatorname{BoundaryLeakageAbsent}\wedge
+  \operatorname{InternalInsufficiencyAbsent},
+\end{align*}
+and, by the definitions of active mediated influence and external inertness,
+for every \(\bar U:Q\times B\to Q'\), in particular the descended \(\bar U\) of the
+second line,
+\[
+  \operatorname{ActiveMediatedInfluence}(\bar U)
+  \iff \neg\operatorname{ExternallyInert}(\bar U).
+\]
+\end{theorem}
+\begin{proof}
+Assume the source quotient \(q\), boundary readout \(\beta\),
+interface update \(U\), and target quotient \(q'\).  If
+\(\operatorname{InterfaceMediated}(q,\beta,U,q')\) holds, then
+changing representatives inside the same \(q\)-class and
+\(\beta\)-class cannot change the target \(q'\)-class; hence
+\(\mathcal O_U=\emptyset\).
+
+Conversely, suppose \(\mathcal O_U=\emptyset\).  Define
+\[
+  \bar U(q(x),\beta(y)):=q'(U(x,y)).
+\]
+If \(q(x)=q(x')\) and \(\beta(y)=\beta(y')\), the emptiness of
+\(\mathcal O_U\) gives
+\[
+  q'(U(x,y))=q'(U(x',y')),
+\]
+so \(\bar U\) is independent of representatives.  Thus the
+interface update descends through \(Q\times B\).  The absence of
+\(\mathcal O_U\) also rules out the two possible mediation failures:
+boundary-equivalent inputs cannot leak distinct target classes, and
+source-equivalent internal states cannot create an undeclared target
+difference.  Conversely, assume both absences, and let \(q(x)=q(x')\) and
+\(\beta(y)=\beta(y')\).  Boundary leakage is absent at the fixed state
+\(x\), and internal insufficiency is absent at the fixed input \(y'\), so
+\[
+  q'(U(x,y))=q'(U(x,y'))=q'(U(x',y')),
+\]
+and \(\mathcal O_U=\emptyset\).  Finally, \(\bar U\) has active mediated influence
+exactly when it is not constant in the external argument, which is
+the negation of external inertness.
+The descended map \(\bar U\) is unique because \(q\times\beta\) is surjective.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not determine the interface's internal structure and
+does not apply to undeclared interfaces.
+
+\subsection*{Layer instantiations}\label{layer-inst:F22}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Abstract-data-type encapsulation (software
+engineering).}] \textit{Special case.}
+In an abstract data type, the carrier \(X\) is the set of
+concrete representations satisfying the representation invariant (e.g., a stack realised as a
+linked list, a dynamic array, or a deque); the source
+quotient \(q\) is the abstraction function, which sends each
+representation to the abstract value it represents. Take \(Y\) to be the set of public method calls with concretely encoded arguments, \(\beta\) the map sending a call to its method name and the abstract values of its arguments, \(U(x,y)\) the implementation's post-state and return value, and \(q'\) the abstraction of the post-state paired with the abstract return value. Require argument representations to satisfy their invariants and \(U\) to be total with invariant-satisfying post-states, including declared error outcomes. Take \(Q=q(X)\), \(B=\beta(Y)\) and \(Q'=q'(X')\).  Encapsulation is the
+requirement that two representations in the same source
+class respond identically (modulo the target quotient)
+to the same public-method call; private-state exposure
+through the public interface, where two representations of one abstract
+value answer the same public call with different abstract results, is the
+internal-insufficiency failure mode; boundary leakage would be
+two calls at a fixed concrete representation, with the same
+boundary value \(\beta(y)=\beta(y')\), that give different
+abstract results \citep{LiskovZilles1974ADT}.
+
+\item[\emph{Black-box security reduction
+(theoretical cryptography).}] \textit{Analogy.}
+A standard security proof shows that any adversary
+breaking a scheme can be turned into an algorithm
+solving an underlying hard problem; in the black-box
+reduction discipline, the reduction accesses the
+adversary only through oracle queries.  The carrier is
+the adversary's internal state, the source quotient
+collapses adversaries with the same query/response
+distribution, the boundary is the oracle transcript,
+and the update is the adversary's next step.  The
+reduction's success thereby depends only on the
+boundary I/O profile, not on the adversary's internal
+code.  The random-oracle methodology, in which the hash
+function is itself modelled as a uniformly random
+oracle, is one influential setting within this
+discipline \citep{BellareRogaway1993RandomOracles}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Probability as Stable Unresolved Fiber [\texorpdfstring{\Fref{F23}}{F23}]}\label{sec:status-records-coherence:probability}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F23} below.
+\(\operatorname{Unresolved}(q,r)\) says that some \(q\)-fiber contains
+two readout values. \(\operatorname{Stable}\) says that each ledger has its
+support contained in its own fiber, at the source and at the target, and that
+the two declared maps \(\operatorname{push}\) and \(\operatorname{mix}\),
+the transported ledger and the declared mixture of target ledgers, agree on
+every source class; \(\operatorname{push}\) reads the source ledger through
+\(\Phi\), and \(\operatorname{mix}\) reads the ledger of the continued class
+through \(\Psi\).
+\(\operatorname{StableProbability}(q,r)\) says that the readout is
+unresolved and the declared ledgers satisfy \(\operatorname{Stable}\).
+\(\operatorname{Stable}\) constrains \(\lambda\), \(\lambda'\), their supports and
+the declared maps \(\Phi\), \(\Psi\), \(\bar\kappa\); it does not involve the
+weight assignment \(m\), so the values \(\operatorname{Pr}_{q,r}\) enter only
+clauses (ii) and (iv)--(vi). With \(S\) and \(S'\) empty and \(\mathcal T\) a
+one-point set, \(\operatorname{Stable}\) holds, and by (iii)
+\(\operatorname{StableProbability}(q,r)\) is then equivalent to
+\(\operatorname{Unresolved}(q,r)\).  Clause (iii) unfolds the definition
+of \(\operatorname{StableProbability}\); no normalization or additivity
+of the weights is assumed beyond what clauses (iv)--(vi) state. The relation \(S\) is declared separately from the weights: it constrains \(m(\lambda(a))\) only through the hypothesis of clause (v). Under \(\operatorname{Stable}\), a ledger shared by two classes has empty support, since its support lies in both fibers; clause (vi), which does not use \(S\), allows such sharing.
+
+\begin{theorem}[Probability as Stable Unresolved Fiber]\label{thm:F23}
+Let \(q:H\to Q\) be a surjective quotient of histories, let
+\(\lambda:Q\to L\) be a ledger map with support relation
+\(S\subseteq L\times H\), let
+\(m:L\to (H\to\mathrm{Prop})\to W\) be a weight assignment, and let
+\(r:H\to Z\) be a readout.  Let a declared continuation carry a target
+quotient \(q':H'\to Q'\) with ledger \(\lambda':Q'\to L'\) and support
+relation \(S'\subseteq L'\times H'\), and let
+\(\bar\kappa:Q\to Q'\) be the class-level continuation, let \(\mathcal T\) be a
+set with a declared ledger transport \(\Phi:L\to\mathcal T\) and target
+mixture \(\Psi:L'\to\mathcal T\), and put
+\(\operatorname{push}:=\Phi\circ\lambda\) and
+\(\operatorname{mix}:=\Psi\circ\lambda'\circ\bar\kappa\); only their pointwise
+equality in \(\operatorname{Stable}\) is used. The continuation data enter only
+through \(\operatorname{Stable}\), which enters clause (iii), the last sentence
+of clause (v), and the final equivalence of clause (vi). Apart from these uses
+of \(\operatorname{Stable}\), clauses (i), (ii) and (iv)--(vi) depend only on
+\(q\), \(\lambda\), \(S\), \(m\), \(r\) and their clause-specific hypotheses.  For \(a\in Q\) and \(v\in Z\), set
+\[
+  \operatorname{Pr}_{q,r}(a,v)
+  :=
+  m(\lambda(a))\bigl(\{h\in H:q(h)=a\ \text{and}\ r(h)=v\}\bigr),
+\]
+and write
+\begin{align*}
+  \operatorname{Stable}
+  :\iff{}&
+  \bigl(\forall a\in Q,\forall h\in H,\
+    S(\lambda(a),h)\Rightarrow q(h)=a\bigr)\\
+  &{}\wedge
+  \bigl(\forall a'\in Q',\forall h'\in H',\
+    S'(\lambda'(a'),h')\Rightarrow q'(h')=a'\bigr)\\
+  &{}\wedge
+  \bigl(\forall a\in Q,\
+    \operatorname{push}(a)=\operatorname{mix}(a)\bigr),\\
+  \operatorname{Unresolved}(q,r)
+  :\iff{}&
+  \exists h,h'\in H,\ q(h)=q(h')\ \text{and}\ r(h)\ne r(h'),\\
+  \operatorname{StableProbability}(q,r)
+  :\iff{}&
+  \operatorname{Unresolved}(q,r)
+  \wedge
+  \operatorname{Stable}.
+\end{align*}
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item \(r\) descends through \(q\) if and only if
+  \(q(h)=q(h')\Rightarrow r(h)=r(h')\) for all \(h,h'\in H\), and exactly
+  one of ``\(r\) descends through \(q\)'' and \(\operatorname{Unresolved}(q,r)\)
+  holds;
+\item if \(r=\bar r\circ q\), then for every \(a\in Q\) and \(v\in Z\) the
+  event \(\{h:q(h)=a\ \text{and}\ r(h)=v\}\) is the fiber \(q^{-1}(a)\) when
+  \(v=\bar r(a)\) and is empty otherwise, so
+  \(\operatorname{Pr}_{q,r}(a,v)=m(\lambda(a))(q^{-1}(a))\) for
+  \(v=\bar r(a)\) and \(\operatorname{Pr}_{q,r}(a,v)=m(\lambda(a))(\emptyset)\)
+  for \(v\ne\bar r(a)\);
+\item \(\operatorname{StableProbability}(q,r)\) holds if and only if
+  \(\operatorname{Stable}\) holds and \(r\) does not descend through \(q\);
+\item if the weights form a commutative monoid, \(Z\) is finite and each
+  \(m(\lambda(a))\) vanishes on the empty event and is additive on disjoint
+  events, then
+  \(\sum_{v\in Z}\operatorname{Pr}_{q,r}(a,v)=m(\lambda(a))(q^{-1}(a))\) for
+  every \(a\in Q\): the readout distributes the weight of the fiber;
+\item if the support conjunct of \(\operatorname{Stable}\) holds at \(a\), that
+  is, \(S(\lambda(a),h)\Rightarrow q(h)=a\), and there are an operation \(\oplus\) on \(W\) and
+  an element \(0\in W\) (no monoid laws are needed) with
+  \(m(\lambda(a))(A\cup B)=m(\lambda(a))(A)\oplus m(\lambda(a))(B)\) for disjoint
+  events \(A,B\) and \(m(\lambda(a))(E)=0\) for every event \(E\) disjoint from
+  \(\{h:S(\lambda(a),h)\}\), then
+  \(\operatorname{Pr}_{q,r}(a,v)=m(\lambda(a))(\{h:r(h)=v\})\) for every
+  \(v\in Z\): the ledger of a class is concentrated on its fiber; in
+  particular, under \(\operatorname{Stable}\) the support hypothesis holds at
+  every \(a\in Q\), so this conclusion holds at every \(a\) at which the two
+  weight conditions hold;
+\item if \(W=\mathbb R\), \(H\) is finite and for each \(a\in Q\) there are weights
+  \(w_a:q^{-1}(a)\to(0,1]\) with \(\sum_{h\in q^{-1}(a)}w_a(h)=1\) and
+  \(m(\lambda(a))(E)=\sum_{h\in E}w_a(h)\) for every event \(E\subseteq q^{-1}(a)\)
+  (no condition is imposed on other events, so distinct classes may share a
+  ledger), then \(r\) descends through \(q\) if and only if every
+  \(\operatorname{Pr}_{q,r}(a,\cdot)\) is a point mass, that is,
+  \(\operatorname{Pr}_{q,r}(a,v)=1\) for some \(v\); hence
+  \(\operatorname{Unresolved}(q,r)\) holds exactly when some
+  \(\operatorname{Pr}_{q,r}(a,\cdot)\) charges two values; consequently,
+  under these weights, \(\operatorname{StableProbability}(q,r)\) holds if and
+  only if \(\operatorname{Stable}\) holds and some
+  \(\operatorname{Pr}_{q,r}(a,\cdot)\) charges two values.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Assume the surjective quotient \(q\), the ledgers, supports and
+weights, the continuation data, and the readout \(r\).  (i) The first equivalence is the descent criterion of
+\Cref{sec:apparatus}, since \(q\) is surjective.
+\(\operatorname{Unresolved}(q,r)\) is the negation of the constancy
+condition, so exactly one of the two holds.
+
+(ii) Let \(r=\bar r\circ q\) and \(a\in Q\).  Every \(h\) with \(q(h)=a\)
+has \(r(h)=\bar r(a)\).  So the event \(\{h:q(h)=a\ \text{and}\ r(h)=v\}\)
+is the whole fiber \(q^{-1}(a)\) when \(v=\bar r(a)\) and is empty
+otherwise, and the formula for \(\operatorname{Pr}_{q,r}\) follows from its
+definition: the readout is deterministic on each fiber.
+
+(iii) \(\operatorname{StableProbability}(q,r)\) is
+\(\operatorname{Unresolved}(q,r)\wedge\operatorname{Stable}\), and by (i)
+\(\operatorname{Unresolved}(q,r)\) holds exactly when \(r\) does not descend
+through \(q\).
+Unresolvedness alone is not probability: a stable probability also requires
+that each ledger have its support contained in its own fiber, at the source and at the
+target, and that transporting the ledger of each source class give the
+declared mixture of target ledgers, which is \(\operatorname{Stable}\).
+
+(iv) For fixed \(a\), the events \(\{h:q(h)=a\ \text{and}\ r(h)=v\}\),
+\(v\in Z\), are pairwise disjoint and their union is \(q^{-1}(a)\). Finite
+additivity of \(m(\lambda(a))\) gives the stated sum.
+
+(v) The event \(\{h:r(h)=v\}\) is the disjoint union of
+\(\{h:q(h)=a\ \text{and}\ r(h)=v\}\) and \(\{h:q(h)\ne a\ \text{and}\ r(h)=v\}\).
+By the support conjunct, the second is disjoint from
+\(\{h:S(\lambda(a),h)\}\), so \(m(\lambda(a))\) vanishes on it; so does the
+empty event. Write \(E_{a,v}=\{h:q(h)=a\ \text{and}\ r(h)=v\}\) and \(\oplus\)
+for the addition of weights. Additivity on \(E_{a,v}\) and \(\emptyset\) gives
+\(\operatorname{Pr}_{q,r}(a,v)=m(\lambda(a))(E_{a,v})\oplus 0\), and additivity
+on \(E_{a,v}\) and \(\{h:q(h)\ne a\ \text{and}\ r(h)=v\}\) gives
+\(m(\lambda(a))(\{h:r(h)=v\})=m(\lambda(a))(E_{a,v})\oplus 0\), where \(0\) is
+the common value on events disjoint from the support. Hence
+\(m(\lambda(a))(\{h:r(h)=v\})=\operatorname{Pr}_{q,r}(a,v)\).
+
+(vi) The event \(\{h:q(h)=a,\ r(h)=v\}\) lies in \(q^{-1}(a)\), and each \(h\in
+q^{-1}(a)\) has \(w_a(h)>0\), so \(\operatorname{Pr}_{q,r}(a,v)=\sum_{h\in q^{-1}(a),\,r(h)=v}w_a(h)\),
+these values sum to \(1\) over \(v\), and \(\operatorname{Pr}_{q,r}(a,v)>0\)
+exactly when some \(h\in q^{-1}(a)\) has \(r(h)=v\). Hence
+\(\operatorname{Pr}_{q,r}(a,\cdot)\) is a point mass exactly when \(r\) takes
+one value on \(q^{-1}(a)\), and by (i) this holds for every \(a\) exactly when
+\(r\) descends through \(q\).
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not determine numerical probability values and does
+not apply to resolved fibers.  The measure-theoretic foundation of
+probability is \citet{Kolmogorov1933Grundbegriffe}; the branch /
+decoherent-histories interpretation that comes closest to a stable
+unresolved-fiber reading appears in \citet{Griffiths1984ConsistentHistories}.
+
+\subsection*{Layer instantiations}\label{layer-inst:F23}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Design-based survey sampling (social
+statistics).}] \textit{Analogy.}
+For a fixed finite population, the carrier is the set of
+possible sample-draw realisations under the chosen
+randomisation scheme; the source quotient collapses
+draws sharing the same population-level summary; the
+readout is the realised sample statistic.  The same
+population-level summary supports many distinct sample
+realisations.  The sampling design's inclusion-probability
+measure is the ledger; the design-induced probability
+law on draws is the weight assignment.  The
+Horvitz-Thompson estimator and the design-based variance
+estimator are the stable probability records derived
+from this design measure
+\citep{Cochran1977SamplingTechniques}.
+
+\item[\emph{Chain-ladder loss-reserving in non-life
+insurance (actuarial science).}] \textit{Analogy.}
+The carrier is the space of individual
+claim-development histories within an accident year;
+the source quotient collapses histories sharing the
+same observed cumulative-payment pattern through the
+current development cell; the readout is the ultimate
+loss, which is unresolved over the observed
+development-pattern fibre.  Mack's distribution-free
+assumptions on the cumulative payments constitute the
+ledger and supply the first-and-second-moment structure
+of incremental development factors as the weight
+assignment.  The chain-ladder reserve estimator and
+Mack's prediction-error formula are the stable
+probability records used for reserve setting and
+solvency capital \citep{Mack1993ChainLadder}.
+
+\item[\emph{Wright-Fisher stochastic population genetics
+(theoretical biology).}] \textit{Analogy.}
+The carrier is the set of gamete-sampling realisations
+within a generation; the source quotient collapses
+realisations to the current-generation allele frequency;
+the readout is the realised next-generation allele
+count.  Two distinct gamete-sampling outcomes sharing
+the same current frequency can produce different
+next-generation counts, so the readout is unresolved
+over the current-frequency fibre.  The ledger records
+the effective population size and any
+selection/mutation parameters; the weight assignment is
+the Wright-Fisher binomial (or diffusion) transition
+kernel they induce.  The resulting transition law is
+the stable probability record that descends to the
+population-level frequency dynamics
+\citep{Wright1931Evolution}.
+
+\item[\emph{Shannon noisy-channel coding (information
+theory).}] \textit{Analogy.}
+The carrier is the set of (input, output) trajectories
+of a noisy memoryless channel; the source quotient
+collapses trajectories sharing the same observed output
+sequence; the readout is the transmitted input.  The
+receiver cannot uniquely recover the input from the
+output (unresolved fibre).  The channel input
+distribution supplies the ledger; the channel law
+supplies the weight assignment; the channel capacity and the noisy-channel coding
+theorem are results about this channel that \Fref{F23}
+neither states nor implies; \Fref{F23} classifies the input readout as unresolved exactly
+when at least one output fibre contains trajectories with
+different transmitted inputs
+\citep{Shannon1948Mathematical}.
+
+\item[\emph{Weibull life-distribution model in
+reliability engineering (engineering reliability).}] \textit{Analogy.}
+The carrier is the set of individual component
+life trajectories under specified operating conditions;
+the source quotient collapses trajectories sharing the
+same operating-condition class; the readout is the
+realised time-to-failure of a particular component.
+Individual times-to-failure are unresolved over the
+operating-condition fibre.  The Weibull distribution
+function \(F(t)=1-\exp(-(t/\eta)^{\beta})\) is the
+standard ledger and supplies a stable two-parameter
+hazard model as the weight assignment; fitted shape
+\(\beta\) and scale \(\eta\) give the stable
+probability record used for population-level
+reliability prediction, warranty pricing, and burn-in
+design \citep{Weibull1951Statistical}.
+\end{description}
+\endgroup
+
+\subsection{Causality as Stable Intervention Transport [\texorpdfstring{\Fref{F25}}{F25}]}\label{sec:status-records-coherence:causality}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F25} below.
+\(\operatorname{ITD}\) and \(\operatorname{PITD}\) say that the target
+readout, respectively the kernel outcome, depends only on the context
+class and the intervention class. \(\operatorname{Caus}(c,u,v)\) says
+that interventions of classes \(u\) and \(v\) at context class \(c\)
+have a stable causal effect: both are admissible, the quotient-level
+transport gives different results for them, and the residue is stable
+in the declared sense; \(\operatorname{ResStable}\) is declared data.
+\(\operatorname{ProbCaus}\) is the same for kernel outcomes.
+
+\begin{theorem}[Causality as Stable Intervention Transport]\label{thm:F25}
+Let \(q:H\to Q\) be a surjective context quotient, let
+\(\alpha:A\to\bar A\) be a surjective intervention abstraction, let
+\(\Gamma:H\times A\to H'\) be an intervention transport, let
+\(r:H'\to R\) be a target readout, and let
+\(K:H\times A\to K_0\) be a kernel outcome (in the intended reading \(K_0\) is a set of probability laws on outcomes and \(K(h,a)\) is the outcome law of intervention \(a\) in context \(h\); the theorem uses \(K\) only as a map).  Let
+\(\operatorname{Adm}:Q\times\bar A\to\mathrm{Prop}\) be admissibility,
+let
+\(\operatorname{ResStable},\operatorname{ProbResStable}:
+Q\times\bar A\times\bar A\to\mathrm{Prop}\) be residue-stability
+predicates, and let \(\bar\Gamma:Q\times\bar A\to R\) and
+\(\bar K:Q\times\bar A\to K_0\) be quotient-level transports.  Define
+\[
+  \mathcal O_{\Gamma}
+  :=
+  \{((h,a),(h',a')) :
+    q(h)=q(h'),\ \alpha(a)=\alpha(a'),\
+    r(\Gamma(h,a))\ne r(\Gamma(h',a'))\},
+\]
+and \(\mathcal O_K\) in the same way with \(K\) in place of
+\(r\circ\Gamma\).  Define intervention-transport descent
+\(\operatorname{ITD}\), probabilistic intervention-transport descent
+\(\operatorname{PITD}\), and, for \(c\in Q\) and \(u,v\in\bar A\), a stable
+causal effect \(\operatorname{Caus}(c,u,v)\) and a stable probabilistic
+causal effect \(\operatorname{ProbCaus}(c,u,v)\):
+\begin{align*}
+  \operatorname{ITD}(q,\alpha,\Gamma,r)
+  &:\Longleftrightarrow
+  \exists\,g:Q\times\bar A\to R,\
+    g(q(h),\alpha(a))=r(\Gamma(h,a))\ \forall h,a,\\
+  \operatorname{PITD}(q,\alpha,K)
+  &:\Longleftrightarrow
+  \exists\,k:Q\times\bar A\to K_0,\
+    k(q(h),\alpha(a))=K(h,a)\ \forall h,a,\\
+  \operatorname{Caus}(c,u,v)
+  &:\Longleftrightarrow
+  \operatorname{Adm}(c,u)\wedge\operatorname{Adm}(c,v)
+  \wedge\bar\Gamma(c,u)\ne\bar\Gamma(c,v)
+  \wedge\operatorname{ResStable}(c,u,v),\\
+  \operatorname{ProbCaus}(c,u,v)
+  &:\Longleftrightarrow
+  \operatorname{Adm}(c,u)\wedge\operatorname{Adm}(c,v)
+  \wedge\bar K(c,u)\ne\bar K(c,v)
+  \wedge\operatorname{ProbResStable}(c,u,v).
+\end{align*}
+Then
+\begin{align*}
+  \operatorname{ITD}(q,\alpha,\Gamma,r)
+  &\iff \mathcal O_{\Gamma}=\emptyset
+  \iff
+  \exists!\,g:Q\times\bar A\to R,\
+    g(q(h),\alpha(a))=r(\Gamma(h,a))\ \forall h,a,\\
+  \operatorname{PITD}(q,\alpha,K)
+  &\iff \mathcal O_{K}=\emptyset
+  \iff
+  \exists!\,k:Q\times\bar A\to K_0,\
+    k(q(h),\alpha(a))=K(h,a)\ \forall h,a.
+\end{align*}
+Stable causal effects have raw witnesses, each under its own descent
+equation. If \(\bar\Gamma\) is a descended transport,
+\(\bar\Gamma(q(h),\alpha(a))=r(\Gamma(h,a))\) for all \(h,a\), then
+\(\operatorname{Caus}(c,u,v)\) implies that there are \(h\in H\) and
+\(a_1,a_2\in A\) with \(q(h)=c\), \(\alpha(a_1)=u\), \(\alpha(a_2)=v\) and
+\(r(\Gamma(h,a_1))\ne r(\Gamma(h,a_2))\). If \(\bar K\) is a descended
+transport, \(\bar K(q(h),\alpha(a))=K(h,a)\) for all \(h,a\), then
+\(\operatorname{ProbCaus}(c,u,v)\) implies the same with \(K\) in place of
+\(r\circ\Gamma\).
+\end{theorem}
+\begin{proof}
+Assume the surjective quotients \(q\) and \(\alpha\), the transport
+\(\Gamma\), the target readout \(r\), and the kernel outcome \(K\).
+The first line is the descent criterion of \Cref{sec:apparatus} for
+the surjective source \(q\times\alpha:H\times A\to Q\times\bar A\) and the
+readout \((h,a)\mapsto r(\Gamma(h,a))\), with
+\(g(q(h),\alpha(a)):=r(\Gamma(h,a))\); the probabilistic statement is
+identical with \(K\) in place of \(r\circ\Gamma\).
+
+A causal effect at context class \(c\) compares two intervention
+classes \(u\) and \(v\).  It requires both to be admissible at \(c\),
+the quotient-level transport to give different results on them (a
+nonzero residue), and the residue to be stable; this is the definition of
+\(\operatorname{Caus}\), and \(\operatorname{ProbCaus}\) is the same with
+\(\bar K\) and \(\operatorname{ProbResStable}\).  A zero residue,
+\(\bar\Gamma(c,u)=\bar\Gamma(c,v)\), is a finding of no effect, not a
+failure of transport: a transport can descend with every residue zero.
+
+For the last clause, choose by surjectivity \(h\) with \(q(h)=c\) and
+\(a_1,a_2\) with \(\alpha(a_1)=u\), \(\alpha(a_2)=v\). Then
+\(r(\Gamma(h,a_1))=\bar\Gamma(c,u)\ne\bar\Gamma(c,v)=r(\Gamma(h,a_2))\), using
+only the descent equation of \(\bar\Gamma\); the same computation applies to
+\(K\) and \(\bar K\), using only the descent equation of \(\bar K\).
+Uniqueness of \(g\) and \(k\) holds because \(q\times\alpha:H\times A\to Q\times\bar A\) is surjective.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not identify causes with raw interventions and does
+not apply to undeclared alternatives.  The intervention-counterfactual
+hierarchy that this layer-agnostic formulation echoes is developed
+in detail in \citet{Pearl2009Causality}.
+
+\subsection*{Layer instantiations}\label{layer-inst:F25}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Randomised controlled trial / Fisher
+randomisation (experimental design).}] \textit{Analogy.}
+The carrier is the population of experimental units
+(patients, field plots); the context quotient collapses
+units to their pre-randomisation baseline stratum; the
+intervention space is the set of treatment arms; the
+abstraction collapses operational delivery details to
+the trial-arm class; the transport is the trial's
+delivery-and-follow-up process; the target readout is
+the primary outcome.  Individual outcomes do not
+deterministically descend through (baseline stratum,
+arm); the \Fref{F25} reading is its probabilistic form:
+randomised assignment supplies admissibility, and the
+stable residue is the arm-specific outcome distribution
+or the within-stratum average treatment effect, secured
+by pre-registration, blinding, and intention-to-treat
+analysis \citep{Fisher1935DesignExperiments}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Moduli / Contingency [\texorpdfstring{\Fref{F26}}{F26}]}\label{sec:status-records-coherence:moduli}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F26} below.
+Lawful closures are grouped into moduli by the equivalence \(\sim\), and
+\(p\) sends a lawful closure to its modulus. A readout can fail to be a
+function of the modulus (it is presentation-dependent), or it can be a
+function of the modulus and then either take one value on every lawful
+closure (necessary) or take different values on two inequivalent lawful
+closures (contingent). The definitions come first; the theorem proves that
+these alternatives are exhaustive and exclusive, and that descent through
+\(p\) is the same as independence of presentation. The predicate
+\(\operatorname{NecessaryBackground}\) of \Cref{thm:F50} is necessity in the
+present sense for a background already defined on moduli.
+
+\begin{theorem}[Moduli / Contingency]\label{thm:F26}
+Let \(\mathcal C\) be a closure space with lawfulness predicate
+\(\operatorname{Lawful}:\mathcal C\to\mathrm{Prop}\), equivalence relation
+\(\sim\) on lawful closures (an equivalence relation, by the kernel condition), moduli quotient \(p:\mathcal C\to M\) with
+\(p(c)=p(d)\iff c\sim d\) for lawful \(c,d\), and readout
+\(r:\mathcal C\to V\). Assume that every \(m\in M\) is \(p(c)\) for some
+lawful \(c\). Define, with \(c,d\) ranging over lawful closures,
+\begin{align*}
+  \operatorname{ClosureObstructed}
+  &:\Longleftrightarrow
+  \text{no closure is lawful},\\
+  \operatorname{NontrivialModuli}
+  &:\Longleftrightarrow
+  \exists c,d:\ \neg(c\sim d),\\
+  \operatorname{ModuliReadout}(r)
+  &:\Longleftrightarrow
+  \forall c,d:\ c\sim d\Rightarrow r(c)=r(d),\\
+  \operatorname{PresentationDependent}(r)
+  &:\Longleftrightarrow
+  \exists c,d:\ c\sim d\ \wedge\ r(c)\ne r(d),\\
+  \operatorname{NecessaryReadout}(r)
+  &:\Longleftrightarrow
+  \forall c,d:\ r(c)=r(d),\\
+  \operatorname{ContingentReadout}(r)
+  &:\Longleftrightarrow
+  \exists c,d:\ \neg(c\sim d)\ \wedge\ r(c)\ne r(d).
+\end{align*}
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item \(\operatorname{ModuliReadout}(r)\) holds if and only if there is
+  \(\bar r:M\to V\) with \(\bar r(p(c))=r(c)\) for every lawful \(c\), and
+  \(\operatorname{PresentationDependent}(r)\) holds if and only if
+  \(\operatorname{ModuliReadout}(r)\) fails;
+\item if \(\operatorname{ModuliReadout}(r)\) holds, then exactly one of
+  \(\operatorname{NecessaryReadout}(r)\) and
+  \(\operatorname{ContingentReadout}(r)\) holds;
+\item if \(\operatorname{NontrivialModuli}\) fails, every moduli readout is
+  necessary; if \(\operatorname{ClosureObstructed}\) holds, every readout is
+  necessary and none is contingent or presentation-dependent, since these
+  three predicates quantify over lawful closures only; this part does not use
+  the standing assumption. Under the standing assumption,
+  \(\operatorname{ClosureObstructed}\) moreover forces \(M=\emptyset\), hence
+  \(\mathcal C=\emptyset\), because \(p\) is defined on all of \(\mathcal C\);
+\item for a map \(T:\mathcal C\to\mathcal C'\) into a second closure space
+  with lawfulness \(\operatorname{Lawful}'\) and equivalence \(\sim'\), taking
+  lawful closures to lawful closures, \(T\) respects moduli
+  (\(c\sim d\Rightarrow T(c)\sim' T(d)\) for lawful \(c,d\)) if and only if no
+  pair of lawful closures \(c\sim d\) has \(\neg(T(c)\sim' T(d))\).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(i) If \(\bar r\) exists and \(c\sim d\), then \(p(c)=p(d)\), so
+\(r(c)=\bar r(p(c))=\bar r(p(d))=r(d)\). Conversely, let \(r\) be a moduli
+readout. For \(m\in M\) choose a lawful \(c_m\) with \(p(c_m)=m\) and set
+\(\bar r(m):=r(c_m)\). For lawful \(c\), \(p(c_{p(c)})=p(c)\) gives
+\(c_{p(c)}\sim c\), so \(\bar r(p(c))=r(c_{p(c)})=r(c)\). The second
+statement is the negation of the definition of a moduli readout.
+
+(ii) Let \(r\) be a moduli readout. If \(r\) is necessary, no two lawful
+closures have different readouts, so \(r\) is not contingent. If \(r\) is not
+necessary, there are lawful \(c,d\) with \(r(c)\ne r(d)\); since \(r\) is a
+moduli readout, \(c\not\sim d\), so \(r\) is contingent.
+
+(iii) If \(\operatorname{NontrivialModuli}\) fails, all lawful closures are
+equivalent, so a moduli readout takes one value on them. If no closure is
+lawful, the universal conditions hold vacuously and the existential ones fail.
+
+(iv) The obstruction pairs are exactly the failures of the implication that
+defines respecting moduli.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not enumerate a carrier's moduli and does not
+collapse stable parameters with contingent choices.
+
+\subsection*{Layer instantiations}\label{layer-inst:F26}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Moduli space of elliptic curves (algebraic
+geometry).}] \textit{Special case.}
+The carrier is the set of Weierstrass-form presentations
+\(y^2=x^3+ax+b\) over an algebraically closed base field of characteristic other
+than 2 and 3; the lawfulness
+predicate restricts to non-singular cubics
+\((4a^3+27b^2\ne 0)\); the equivalence is isomorphism of
+elliptic curves; the moduli quotient sends a
+non-singular presentation to its isomorphism class and every singular
+presentation to the class of \(y^2=x^3-x\) (\Fref{F26}'s kernel condition is imposed only on lawful
+closures). Take \(M\) to be the isomorphism classes of
+nonsingular presentations, and extend \(j\) to singular
+presentations by \(j(a,b)=1728\). This total readout is a moduli readout: distinct Weierstrass
+presentations of isomorphic elliptic curves share the
+same j-invariant, and the descended map
+\(\bar\jmath:M\to\mathbb A^1\) is a bijection onto the
+coarse moduli space.  It is contingent, since non-isomorphic
+curves have different j-invariants.  The individual coefficients
+\((a,b)\) are presentation-dependent: \((a,b)\) and
+\((\lambda^4a,\lambda^6b)\) present isomorphic curves.  The genus, equal
+to one on every lawful closure, is a necessary readout
+\citep{Mumford1965GIT}.
+
+\item[\emph{Crystallographic space groups and Bravais
+lattices (solid-state physics).}] \textit{Special case.}
+The carrier is the set of three-dimensional crystalline
+arrangements; the lawfulness
+predicate requires invariance under a rank-3 lattice of
+translations; the equivalence is conjugacy of space groups under
+orientation-preserving affine maps (change of origin and
+right-handed basis); the moduli quotient sends a crystal to its
+space-group label among the 230 space-group types.  Abstract
+isomorphism, equivalently conjugacy under all affine maps, merges
+the 11 enantiomorphic pairs and gives 219 classes.  The space-group label is a
+moduli readout, and a contingent one, since lawful crystals with different
+space groups exist (rock salt, \(Fm\bar3m\); \(\alpha\)-quartz,
+\(P3_121\)).  The lattice metric (unit-cell lengths
+\(a,b,c\), angles \(\alpha,\beta,\gamma\),
+atomic-displacement parameters) is presentation-dependent for this
+equivalence: lawful crystals with the same space group can have different
+lattice metrics \citep{HahnITC2016}.
+
+\item[\emph{Standard Model free parameters as
+renormalisation moduli (particle physics).}] \textit{Analogy.}
+The carrier is the space of Standard-Model Lagrangians
+with the fixed gauge group
+SU(3)\(\times\)SU(2)\(\times\)U(1), three-generation
+fermion content, and Higgs doublet built into the
+lawfulness predicate (renormalisability, gauge
+invariance, anomaly cancellation, observed particle
+content); the equivalence identifies Lagrangians giving
+identical low-energy phenomenology under the
+renormalisation group; the moduli quotient sends a
+Lagrangian to its renormalised-parameter point.  The 19
+parameters of the Standard Model with massless neutrinos (three
+gauge couplings, nine charged-fermion masses, four CKM-matrix
+parameters, the Higgs mass and vacuum expectation value, and the QCD
+vacuum angle), extended by the neutrino-sector parameters, are
+contingent moduli readouts; in dimensionless form the fermion
+masses are replaced by Yukawa couplings and the Higgs mass by the
+quartic self-coupling; predicted phenomenology descends
+through the renormalised-parameter point
+\citep{Workman2022Review}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Conservation as Orbit Descent [\texorpdfstring{\Fref{F27}}{F27}]}\label{sec:status-records-coherence:conservation}
+
+\paragraph{Reading the statement.}
+A declared route or symmetry structure on \(X\) is a set \(\Gamma\) of partial
+steps \(\gamma:\operatorname{dom}\gamma\to X\) with
+\(\operatorname{dom}\gamma\subseteq X\); a family of maps \(X\to X\) is the case
+\(\operatorname{dom}\gamma=X\). A declared relation \(\to\) on \(X\) is the case
+\(\Gamma=\{\gamma_{x,x'}:x\to x'\}\) with \(\operatorname{dom}\gamma_{x,x'}=\{x\}\) and
+\(\gamma_{x,x'}(x)=x'\); its orbits are the classes of the equivalence generated
+by \(\to\), and conservation says \(C(x)=C(x')\) whenever \(x\to x'\). The reaction,
+Reidemeister and reduction instances below are declared in this form. The \emph{orbits} are the classes of the
+equivalence relation generated by \(x\sim\gamma(x)\) for \(\gamma\in\Gamma\)
+and \(x\in\operatorname{dom}\gamma\), and \(q_{\mathrm{orb}}\) is the quotient
+map onto them. A quantity \(C:X\to V\) is \emph{conserved} when
+\(C(\gamma(x))=C(x)\) for every \(\gamma\in\Gamma\) and
+\(x\in\operatorname{dom}\gamma\).
+
+\begin{theorem}[Conservation as Orbit Descent]\label{thm:F27}
+Let \(\Gamma\) be a set of partial maps \(\gamma:\operatorname{dom}\gamma\to X\)
+with \(\operatorname{dom}\gamma\subseteq X\), let \(q_{\mathrm{orb}}\) be the
+quotient map of the equivalence relation generated by \(x\sim\gamma(x)\)
+(\(\gamma\in\Gamma\), \(x\in\operatorname{dom}\gamma\)), and let \(C:X\to V\).
+Then \(C\) is conserved, \(C(\gamma(x))=C(x)\) for all \(\gamma\in\Gamma\) and
+\(x\in\operatorname{dom}\gamma\), if and only if it descends through the orbit
+quotient, \(C=\bar C\circ q_{\mathrm{orb}}\) for some \(\bar C\); that is,
+\(C(x)=C(x')\) whenever \(x\) and \(x'\) lie in the same orbit.
+\end{theorem}
+\begin{proof}
+If \(C\) descends through the orbit quotient, then, since \(x\) and
+\(\gamma(x)\) lie in the same orbit for \(x\in\operatorname{dom}\gamma\), \(C(\gamma(x))=C(x)\), so \(C\) is
+conserved.  Conversely, let \(C\) be conserved. The relation
+\(C(x)=C(x')\) is an equivalence relation containing every generating pair
+\((x,\gamma(x))\), so it contains the generated equivalence: \(C\) is constant
+on orbits.  Define the quotient readout by \(\bar C([x])=C(x)\).  Orbit constancy
+makes the definition independent of representative, and
+\(C=\bar C\circ q_{\mathrm{orb}}\).  Thus conservation is orbit
+descent.
+\end{proof}
+
+For the conserved quantity to be lawful at the current layer in the sense of \Cref{thm:F18}, \(C\) must also factor through the access quotient \(\accessQ\) of that layer; descent through \(q_{\mathrm{orb}}\) alone does not give this.
+
+\paragraph{Nonclaims.} The theorem does not enumerate conserved quantities and does not
+apply to undeclared routes or symmetries.  Noether's theorem
+\citep{Noether1918Invariante} produces conserved quantities from continuous
+variational symmetries; the theorem above reads each such quantity as a
+function on the orbits of the flow.
+
+\subsection*{Layer instantiations}\label{layer-inst:F27}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Lavoisier conservation of mass in chemical
+reactions (chemistry).}] \textit{Special case.}
+The carrier is the set of finite multisets of molecules, each molecule a finite multiset of atoms of declared elements \(e\) with masses \(m_e\); the declared route structure
+is the set of elementary chemical reactions that
+preserve atomic identity; the orbit quotient refines the map sending a
+configuration to its multiset of atoms.  Total mass
+\(C(x)=\sum_e n_e(x)\,m_e\) is constant across orbits
+of chemical rearrangement and so descends through the
+orbit quotient.  Lavoisier's stoichiometric balancing
+of chemical equations is the founding expression of
+this orbit-descent reading \citep{Lavoisier1789Traite}.
+
+\item[\emph{Knot invariants under Reidemeister moves
+(combinatorial knot theory).}] \textit{Special case.}
+The carrier is the set of planar knot diagrams; the
+declared route structure is the Reidemeister moves (R1
+twist, R2 poke, R3 slide) together with planar isotopy;
+the orbit quotient sends a diagram to its
+ambient-isotopy class.  Polynomial invariants such as
+the Jones polynomial or the Conway-normalized Alexander polynomial are unchanged under
+every Reidemeister move and so descend through the
+orbit quotient to functions on knots.  Reidemeister's
+theorem certifies that ambient isotopy of knots is
+exactly generated by the three planar moves
+\citep{Reidemeister1927Knotentheorie}.
+
+\item[\emph{Subject reduction in operational semantics
+(programming-language theory).}] \textit{Special case.}
+The carrier is the set of typable program expressions
+under a fixed typing context \(\Gamma\) and a type
+system in which each typable expression has a unique type (as in the
+Church-style simply typed \(\lambda\)-calculus); the declared route structure is the small-step
+reduction relation \(\to\) with its reachability
+preorder.  Subject reduction (type preservation) is the
+conservation statement: if
+\(\Gamma\vdash e:\tau\) and \(e\to e'\) then
+\(\Gamma\vdash e':\tau\).  On the typable carrier every reduction step therefore links
+two expressions of the same type, so the type readout is constant on
+each class of the equivalence generated by \(\to\) and descends
+through this orbit quotient; no subject expansion is needed, because
+both ends of each step are typable.  Together with progress, it yields
+the Wright-Felleisen formulation of type soundness
+\citep{WrightFelleisen1994SyntacticTypeSoundness}.
+
+\item[\emph{Meselson-Stahl semi-conservative {DNA}
+replication (molecular biology).}] \textit{Analogy.}
+The carrier is the population of DNA duplexes in a
+dividing cell; the declared route structure is one
+round of replication, in which each parental duplex
+yields two daughter duplexes that each contain one
+parental strand and one newly synthesised strand; the
+orbit quotient sends a daughter duplex to its parental
+template-strand identity.  The conserved quantity is
+the template-strand sequence content carried by each
+daughter molecule, which is constant across the
+replication orbit (modulo replication-error
+corrections).  The Meselson-Stahl density-gradient
+experiment is the canonical demonstration,
+distinguishing semi-conservative replication from
+conservative and dispersive alternatives
+\citep{MeselsonStahl1958Replication}.
+
+\item[\emph{Martingale property under conditional
+expectation (probability theory).}] \textit{Special case.}
+For a stochastic process \((M_t)_{t\ge 0}\) with \(\mathbb E|M_t|<\infty\) for every \(t\), adapted to a filtration
+\((\mathcal F_t)\) and a fixed time \(s\), the carrier is the time set
+\([s,\infty)\); the declared route structure is time advance, whose
+orbit quotient collapses \([s,\infty)\) to a single class; the
+quantity is \(C_s(t)=\mathbb E[M_t\mid\mathcal F_s]\), valued in
+integrable random variables modulo almost-sure equality.  The
+martingale property is this conservation statement for every \(s\):
+\(\mathbb E[M_t\mid\mathcal F_s]=M_s\) almost surely for all
+\(t\ge s\), so \(C_s\) is constant along
+the orbit, equal to its value \(M_s\) at \(t=s\).  The
+\(\mathcal F_s\)-measurability of \(\mathbb E[M_t\mid\mathcal F_s]\)
+holds for every integrable process and is not the content.  Optional
+stopping, Doob's maximal inequalities, and martingale convergence
+are built on this conservation property
+\citep{Doob1953Stochastic}.
+\end{description}
+\endgroup
+
+\subsection{Composability [\texorpdfstring{\Fref{F28}}{F28}]}\label{sec:status-records-coherence:composability}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F28} below.
+\(\operatorname{COD}\), \(\operatorname{CRD}\) and
+\(\operatorname{AD}\) say that the composite outcome, the cross residual
+and admissibility depend only on the parts' classes and interface
+values \(\kappa(a,b)\). \(\operatorname{Composable}\) is exact
+composability, the conjunction of the three. \(\operatorname{Assoc}\)
+and \(\operatorname{Id}\) are the coherence equations named in the
+display.
+
+\begin{theorem}[Composability]\label{thm:F28}
+Let \(X_A,X_B\) be component spaces with quotients
+\(q_A:X_A\to Q_A\), \(q_B:X_B\to Q_B\), interface readouts
+\(\beta_A:X_A\to I_A\), \(\beta_B:X_B\to I_B\), composition
+\(U:X_A\times X_B\to X_{AB}\), composite quotient
+\(q_{AB}:X_{AB}\to Q_{AB}\), admissibility predicate
+\(\operatorname{Adm}:X_A\times X_B\to\mathrm{Prop}\), and residual
+\(\delta:X_A\times X_B\to D\).  Write
+\[
+  \kappa(a,b):=\bigl((q_A(a),\beta_A(a)),(q_B(b),\beta_B(b))\bigr)
+\]
+for the part/interface quotient and assume \(\kappa\) is surjective.
+For a map \(f\) on \(X_A\times X_B\), let
+\[
+  \mathcal O(f)
+  :=
+  \{((a,b),(a',b')) :
+     \kappa(a,b)=\kappa(a',b'),\ f(a,b)\ne f(a',b')\},
+\]
+and set \(\mathcal O_U:=\mathcal O(q_{AB}\circ U)\),
+\(\mathcal O_{\delta}:=\mathcal O(\delta)\) and
+\(\mathcal O_{\operatorname{Adm}}:=\mathcal O(\operatorname{Adm})\).
+Write \(\operatorname{COD}\), \(\operatorname{CRD}\) and
+\(\operatorname{AD}\) for descent through \(\kappa\) of the composite
+outcome, the cross residual and admissibility, and
+\(\operatorname{Composable}\) for exact composability.  Then
+\begin{align*}
+  \operatorname{COD}
+  &\iff
+  \mathcal O_U=\emptyset
+  \iff
+    \exists!\,\bar U:(Q_A\times I_A)\times(Q_B\times I_B)\to Q_{AB}\\
+  &\hspace{6em}\text{with}\ \bar U(\kappa(a,b))=q_{AB}(U(a,b)),\\
+  \operatorname{CRD}
+  &\iff
+  \mathcal O_{\delta}=\emptyset,
+  \qquad
+  \operatorname{AD}
+  \iff
+  \mathcal O_{\operatorname{Adm}}=\emptyset,\\
+  \operatorname{Composable}
+  &\iff
+  \mathcal O_{\operatorname{Adm}}=\emptyset
+  \wedge\mathcal O_U=\emptyset
+  \wedge\mathcal O_{\delta}=\emptyset.
+\end{align*}
+The maps through which the cross residual and admissibility descend are likewise unique.
+Associativity and identity are separate coherence conditions: for the
+two bracketings \(\ell,\varrho:Y\to Y'\) of a declared quotient-level triple
+composite, define \(\operatorname{Assoc}:\Longleftrightarrow\ell=\varrho\), and
+for a declared composite \(c:Z\times E\to Z\) and a declared \(e\in E\) define
+\(\operatorname{Id}:\Longleftrightarrow\forall z\in Z,\ c(z,e)=z\); then
+\(\operatorname{Assoc}\iff\{y:\ell(y)\ne\varrho(y)\}=\emptyset\) and
+\(\operatorname{Id}\iff\{z\in Z:c(z,e)\ne z\}=\emptyset\). If moreover \(\ell\circ\kappa_3=q'\circ L\) and \(\varrho\circ\kappa_3=q'\circ P\) for raw bracketings \(L,P:X_3\to X'\), a surjection \(\kappa_3:X_3\to Y\) and a map \(q':X'\to Y'\), then \(\operatorname{Assoc}\iff q'\circ L=q'\circ P\); in particular raw associativity \(L=P\) gives \(\operatorname{Assoc}\). Likewise, if \(c(\kappa_Z x,e)=\kappa_Z(\tilde c(x))\) for a surjection \(\kappa_Z\) and a map \(\tilde c\), then \(\operatorname{Id}\iff\kappa_Z\circ\tilde c=\kappa_Z\).
+\end{theorem}
+\begin{proof}
+Assume the component quotients \(q_A,q_B\), interface readouts
+\(\beta_A,\beta_B\), composition \(U\), composite quotient
+\(q_{AB}\), admissibility predicate \(\operatorname{Adm}\), residual
+\(\delta\), and surjectivity of \(\kappa\).  The composite outcome
+descends exactly when it is independent of representatives of the
+\(\kappa\)-classes, that is, of the parts' classes and interface values.
+Thus, if \(\mathcal O_U=\emptyset\), the definition
+\[
+  \bar U(\kappa(a,b)):=q_{AB}(U(a,b))
+\]
+is well-defined, and surjectivity of \(\kappa\) defines it everywhere; two such maps agree on the image of the surjection \(\kappa\), so they are equal;
+if \(\mathcal O_U\ne\emptyset\), a pair in \(\mathcal O_U\) is precisely
+a split-pair obstruction.  The same argument applied to \(\delta\) and
+to \(\operatorname{Adm}\) gives the second line, and exact
+composability is the conjunction of the three descent conditions.
+Associativity and identity are pointwise equations, so each holds
+exactly when its set of failures is empty. For the raw clauses, precompose with the surjections: \(\ell=\varrho\) iff \(\ell\circ\kappa_3=\varrho\circ\kappa_3\) iff \(q'\circ L=q'\circ P\), and \(c(\cdot,e)=\mathrm{id}_Z\) iff \(c(\kappa_Z x,e)=\kappa_Z x\) for all \(x\) iff \(\kappa_Z\circ\tilde c=\kappa_Z\).
+\end{proof}
+
+The three descent conditions characterize exact quotient-level
+composability. Associativity and identity are additional equations for
+declared composites.
+
+\paragraph{Nonclaims.} The theorem does not enumerate composable records and does not apply
+to undeclared compositions.
+
+\subsection*{Layer instantiations}\label{layer-inst:F28}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Universally composable cryptographic
+protocols (theoretical computer science).}] \textit{Analogy.}
+The carriers are implementations of protocol components;
+the source quotients collapse implementations to their
+UC ideal-functionality class; the interface readouts
+record input-output behaviour visible to the
+environment; the composition combines components by
+message-passing; the composite quotient collapses the
+composite to its ideal-functionality class.  The UC
+composition theorem yields composite-outcome descent;
+the residual records simulator output and descends
+through the same component quotient.  Admissibility,
+associativity, and identity correspond to syntactic
+well-formedness of the protocol-composition operation
+\citep{Canetti2001UC}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Presentation Invariance [\texorpdfstring{\Fref{F29}}{F29}]}\label{sec:status-records-coherence:presentation-invariance}
+
+\paragraph{Reading the statement.}
+Each predicate on the left is defined by the first condition displayed on
+its right, as the symbol \(:\Longleftrightarrow\) marks: invariance under change of presentation within a
+\(\pi\)-class, invariance under the declared compatible relation \(\sim\),
+invariance of the relation \(R\) under the tuple quotient, and
+covariance of \(T\) under the group.
+
+\begin{theorem}[Presentation Invariance]\label{thm:F29}
+Let \(P\) be a presentation space with quotient
+\(\pi:P\to\Pi\), let \(\sim\) be a relation compatible
+with \(\pi\), that is, \(p\sim p'\Rightarrow\pi(p)=\pi(p')\), let \(s:\Pi\to P\) be a section with
+\(\pi(s(x))=x\), and let \(T:P\to V\) be a readout.  Let
+\(\tau:\operatorname{Tuple}(P)\to\operatorname{Tuple}(\Pi)\) be the
+tuple quotient on a declared carrier \(\operatorname{Tuple}(P)\) of presentation
+tuples, for instance \(P^n\) with \(\tau=\pi^n\), let \(R:\operatorname{Tuple}(P)\to\mathrm{Prop}\) be a
+relation, and let a group \(G\) act on \(P\) and \(V\).  Define
+\begin{align*}
+  \operatorname{PresentationInvariant}(\pi,T)
+  &:\Longleftrightarrow
+  \forall p,p'\in P,\ \pi(p)=\pi(p')\Rightarrow T(p)=T(p'),\\
+  \operatorname{EquivalentPresentationInvariant}(\sim,T)
+  &:\Longleftrightarrow
+  \forall p,p'\in P,\ p\sim p'\Rightarrow T(p)=T(p'),\\
+  \operatorname{PresentationRelationInvariant}(\tau,R)
+  &:\Longleftrightarrow
+  \forall x,y,\ \tau(x)=\tau(y)\Rightarrow (R(x)\leftrightarrow R(y)),\\
+  \operatorname{GroupEquivariant}(T)
+  &:\Longleftrightarrow
+  \forall g\in G,\forall p\in P,\ T(g\cdot p)=g\cdot T(p).
+\end{align*}
+Then
+\[
+  \operatorname{PresentationInvariant}(\pi,T)
+  \iff
+  \exists\,\bar T:\Pi\to V\ \text{with}\ \bar T\circ\pi=T,
+\]
+\(\operatorname{PresentationInvariant}(\pi,T)\) implies
+\(\operatorname{EquivalentPresentationInvariant}(\sim,T)\); when \(\sim\) is
+an equivalence relation, the converse holds for every \(T\) into a
+two-element \(V\) exactly when \(p\sim p'\iff\pi(p)=\pi(p')\); and
+\(\operatorname{PresentationInvariant}(\pi,T)\) holds exactly when
+\(T(p)=T(s(\pi(p)))\) for every \(p\in P\). More generally, if \(r\) is any
+relation on \(P\) whose equivalence closure is the kernel of \(\pi\), that is,
+\(\pi(p)=\pi(p')\) exactly when \(p\) and \(p'\) are joined by a finite chain
+of \(r\)-steps taken in either direction, then
+\(\operatorname{PresentationInvariant}(\pi,T)\) holds exactly when
+\(T(p)=T(p')\) whenever \(r(p,p')\). For every \(\tau\), \(\operatorname{PresentationRelationInvariant}(\tau,R)\) holds if and only if
+\(R=\bar R\circ\tau\) for some \(\bar R:\operatorname{Tuple}(\Pi)\to\mathrm{Prop}\).
+\(\operatorname{GroupEquivariant}(T)\) is the displayed intertwining condition;
+presentation invariance does not imply it.
+\end{theorem}
+\begin{proof}
+Assume the quotient \(\pi\), compatible relation \(\sim\), section
+\(s\), readout \(T\), tuple quotient \(\tau\), relation \(R\), and
+group action of \(G\).  If \(T\) is presentation-invariant, it is
+constant on \(\pi\)-fibers.  Conversely, if \(T\) is constant on
+\(\pi\)-fibers, define
+\[
+  \bar T(x):=T(s(x)).
+\]
+For \(p\in P\), the presentations \(p\) and \(s(\pi(p))\) lie in the same
+\(\pi\)-fiber, because \(\pi(s(\pi(p)))=\pi(p)\); since \(T\) is constant on
+\(\pi\)-fibers, \(\bar T(\pi(p))=T(s(\pi(p)))=T(p)\), that is,
+\(\bar T\circ\pi=T\). Since \(p\sim p'\) implies \(\pi(p)=\pi(p')\), a readout constant on
+\(\pi\)-fibers is invariant under \(\sim\). If \(\sim\) is the kernel of
+\(\pi\), the converse is immediate. If \(\sim\) is an equivalence relation
+strictly smaller than the kernel, pick \(p\not\sim p'\) with
+\(\pi(p)=\pi(p')\); the indicator of the \(\sim\)-class of \(p\) is
+\(\sim\)-invariant but not presentation-invariant. If \(T\) is
+presentation-invariant, then \(T(p)=T(s(\pi(p)))\) because \(p\) and
+\(s(\pi(p))\) lie in one \(\pi\)-fiber; conversely, if \(T(p)=T(s(\pi(p)))\) for
+every \(p\) and \(\pi(p)=\pi(p')\), then \(T(p)=T(s(\pi(p)))=T(s(\pi(p')))=T(p')\).
+
+The relation statement holds for every \(\tau\): given invariance, put \(\bar R(z):\Leftrightarrow\exists x,\ \tau(x)=z\wedge R(x)\); then \(\bar R(\tau(y))\Leftrightarrow R(y)\). The converse is immediate.  The group-action statement is a separate
+intertwining condition:
+\[
+  T(g\cdot p)=g\cdot T(p).
+\]
+For a generating relation \(r\): if \(T\) is presentation-invariant, then
+\(r(p,p')\) gives \(\pi(p)=\pi(p')\) and so \(T(p)=T(p')\); conversely, if
+\(T\) is constant along \(r\)-steps, it is constant along every finite chain of
+steps taken in either direction, by induction on the length, hence on every
+\(\pi\)-fiber.
+For the non-implication, take \(P=\Pi=V=\{0,1\}\) and \(\pi=s=T=\mathrm{id}\),
+and let \(C_2\) swap the points of \(P\) and act trivially on \(V\). Then \(T\) is
+presentation-invariant, but \(T(g\cdot0)=1\ne0=g\cdot T(0)\) for the generator
+\(g\).
+\end{proof}
+
+Readouts and relations satisfying the stated descent conditions are
+independent of representatives of their respective presentation quotients.
+The group-action clause characterizes equivariance; presentation independence
+of a formed record requires descent of each relevant field.
+
+\paragraph{Nonclaims.} The theorem does not enumerate presentations and does not collapse
+the presentation/object distinction.
+
+\subsection*{Layer instantiations}\label{layer-inst:F29}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Coordinate-free formulation of general
+relativity (mathematical physics).}] \textit{Special case.}
+The presentation space is the set of
+coordinate-component representations of a geometric
+tensor over a spacetime manifold; the quotient
+collapses representations to the underlying
+coordinate-free tensor field.  The diffeomorphism
+group acts on representations by pushforward. The
+readout \(T\) sending a coordinate representation to its tensor field is
+presentation-invariant; it is also diffeomorphism-equivariant,
+\(T(\phi\cdot p)=\phi_*T(p)\), which \Fref{F29} treats as a separate
+condition.  General
+covariance is the requirement that physically
+meaningful readouts be presentation-invariant in this
+sense \citep{MisnerThorneWheeler1973Gravitation}.
+
+\item[\emph{Gr\"obner basis as canonical
+polynomial-ideal presentation (computer algebra).}] \textit{Special case.}
+The presentation space \(P\) is the set of finite subsets of
+\(k[x_1,\dots,x_n]\), and \(\pi\) sends a set to the ideal it generates.
+Under a fixed monomial ordering, the reduced Gr\"obner basis supplies a
+canonical section: every ideal has a unique reduced Gr\"obner basis.
+Membership of a fixed polynomial is a presentation-invariant readout.
+Equality of generated ideals is an invariant relation on \(P^2\); for any
+fixed ideal \(J\), so is the predicate \(I(A)\cap I(B)=J\), fitting the
+relation clause with \(\tau=\pi^2\). Membership and equality can be checked
+using Gr\"obner bases and normal forms, while an intersection can be computed
+using an elimination Gr\"obner basis. Buchberger's algorithm constructs the
+required bases \citep{Buchberger1965ThesisGroebner}.
+
+\item[\emph{Jordan canonical form and matrix similarity
+(linear algebra).}] \textit{Special case.}
+For a finite-dimensional vector space \(V\) over an
+algebraically closed field \(k\), the presentation
+space is the set of matrix representatives of linear
+endomorphisms; the quotient sends a matrix to its
+similarity class.  Under a fixed eigenvalue and
+block ordering, the Jordan canonical form supplies a
+canonical section.  Trace, determinant, characteristic
+polynomial, minimal polynomial, eigenvalue multiset
+with algebraic and geometric multiplicities, rank, and
+nullity are presentation-invariant readouts.  The
+general linear group \(\mathrm{GL}_n(k)\) acts on
+matrices by similarity; the listed invariants are
+\(\mathrm{GL}_n(k)\)-invariant readouts, but they do not
+separate similarity classes (nilpotent \(7\times 7\)
+matrices with Jordan blocks of sizes \(3,3,1\) and
+\(3,2,2\) agree on all of them), while the Jordan form,
+read through the canonical section, is a complete
+invariant \citep{HoffmanKunze1971LinearAlgebra}.
+
+\item[\emph{De Bruijn indices for alpha-equivalence
+(programming-language theory).}] \textit{Special case.}
+The presentation space is the set of lambda terms with
+named bound variables; the quotient sends a term to its
+alpha-equivalence class.  The de Bruijn-index encoding
+(each bound variable replaced by the distance to its
+binder) is a complete invariant: two terms have the
+same encoding iff they are alpha-equivalent.  Renaming
+each bound variable by the depth of its binder, from a
+reserved supply of names disjoint from the free
+variables, gives a canonical named representative of
+each class, which is the section \(s\).  The set of alpha-equivalence classes of one-step beta-reducts,
+and the alpha-equivalence class of the beta-normal form when
+one exists (with a marker otherwise), are presentation-invariant
+readouts. Named-term outputs need not be presentation-invariant,
+unless a canonical representative convention is imposed; the de Bruijn encoding
+solves the variable-capture problem by construction
+\citep{deBruijn1972LambdaNotation}.
+
+\item[\emph{Lewin transformational music theory and the
+chromatic group (music theory).}] \textit{Special case.}
+The presentation space is the set of pitch-class
+assignments to a musical motif; the chromatic group
+\(G=\mathbb Z/12\mathbb Z\) acts by transposition, and
+the dihedral group \(D_{12}\) of order 24 extends this with
+inversion.  Some motif features, such as the pitch-class set, transform equivariantly,
+\(T(g\cdot p)=g\cdot T(p)\); others are invariant.  Pitch-class invariants
+such as the interval-class content (a canonical
+\(G\)-invariant readout) descend through the orbit
+quotient of the \(D_{12}\)-action and are
+presentation-invariant musical features
+\citep{Lewin1987GMIT}.
+\end{description}
+\endgroup
+
+\subsection{Explanation as Compression with Descent [\texorpdfstring{\Fref{F30}}{F30}]}\label{sec:status-records-coherence:explanation}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F30} below.
+\(\operatorname{ExactExplanation}(b,e,t)\) says that the explanation
+\(e\) descends through the base \(b\) and the target \(t\) descends
+through \(e\): the base determines the explanation, and the explanation
+determines the target. \(\operatorname{StrictCompression}(b,e)\) says
+that \(e\) descends through \(b\) but \(b\) does not descend through
+\(e\), so the explanation forgets some distinction of the base.
+
+\begin{theorem}[Explanation as Compression with Descent]\label{thm:F30}
+Let \(H\) be a history space with base readout \(b:H\to B\),
+explanation readout \(e:H\to E\), target readout \(t:H\to T\),
+continuation \(\kappa:H\to H'\), later explanation
+\(e':H'\to E'\), and later target \(t':H'\to T'\).  Assume \(b\)
+and \(e\) are surjective.  Define the obstruction sets
+\begin{align*}
+  \mathcal O_{\mathrm{src}}
+  &:=
+  \{(h,h')\in H^2:b(h)=b(h')\ \text{and}\ e(h)\ne e(h')\},\\
+  \mathcal O_{\mathrm{tgt}}
+  &:=
+  \{(h,h')\in H^2:e(h)=e(h')\ \text{and}\ t(h)\ne t(h')\},\\
+  \mathcal O_{\mathrm{cmp}}
+  &:=
+  \{(h,h')\in H^2:e(h)=e(h')\ \text{and}\ b(h)\ne b(h')\},
+\end{align*}
+and the predicates
+\begin{align*}
+  \operatorname{ExactExplanation}(b,e,t)
+  &:\Longleftrightarrow
+  \exists\,\alpha:B\to E,\ \exists\,\beta:E\to T,\
+    \alpha\circ b=e\ \text{and}\ \beta\circ e=t,\\
+  \operatorname{StrictCompression}(b,e)
+  &:\Longleftrightarrow
+  \exists\,\alpha:B\to E,\ \alpha\circ b=e
+  \ \text{and}\ 
+  \neg\exists\,\delta:E\to B,\ \delta\circ e=b,\\
+  \operatorname{DynamicExplanation}(e,\kappa,e',t')
+  &:\Longleftrightarrow
+  \exists\,\gamma:E\to E',\ \gamma\circ e=e'\circ\kappa
+  \ \text{and}\
+  \exists\,\theta:E'\to T',\ \theta\circ e'=t'.
+\end{align*}
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item \(\operatorname{ExactExplanation}(b,e,t)\) holds if and only if
+  \(\mathcal O_{\mathrm{src}}=\emptyset\) and
+  \(\mathcal O_{\mathrm{tgt}}=\emptyset\);
+\item \(\operatorname{StrictCompression}(b,e)\) holds if and only if
+  \(\mathcal O_{\mathrm{src}}=\emptyset\) and
+  \(\mathcal O_{\mathrm{cmp}}\ne\emptyset\): the explanation is determined by
+  the base and merges two histories that the base separates;
+\item if \(\operatorname{DynamicExplanation}(e,\kappa,e',t')\), then the later
+  target \(t'\circ\kappa\) descends through \(e\): the explanation now
+  determines the target after the continuation.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Assume the base readout \(b\), explanation readout \(e\), target
+readout \(t\), and the surjectivity of \(b\) and \(e\).
+
+(i) By the descent criterion of \Cref{sec:apparatus}, since \(b\) and
+\(e\) are surjective, \(\alpha\) exists exactly when
+\(\mathcal O_{\mathrm{src}}=\emptyset\), and \(\beta\) exactly when
+\(\mathcal O_{\mathrm{tgt}}=\emptyset\).
+
+(ii) By (i), \(\alpha\) exists exactly when
+\(\mathcal O_{\mathrm{src}}=\emptyset\), and by the descent criterion for
+the surjective \(e\), a map \(\delta:E\to B\) with \(\delta\circ e=b\)
+exists exactly when \(\mathcal O_{\mathrm{cmp}}=\emptyset\).  So strict compression is
+\(\mathcal O_{\mathrm{src}}=\emptyset\) together with
+\(\mathcal O_{\mathrm{cmp}}\ne\emptyset\).
+
+(iii) Given \(\gamma\) and \(\theta\),
+\(t'\circ\kappa=\theta\circ e'\circ\kappa=\theta\circ\gamma\circ e\), so
+\(t'\circ\kappa\) factors through \(e\).
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not rank explanations and does not identify
+explanation with the fact explained.  The Kolmogorov-complexity and
+minimum-description-length traditions develop the
+shortest-program / shortest-code reading of explanation in detail
+\citep{LiVitanyi2008Kolmogorov}.
+
+\subsection*{Layer instantiations}\label{layer-inst:F30}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Newtonian mechanics explaining
+Kepler's laws (mathematical physics).}] \textit{Analogy.}
+The history space is the set of solar-system
+trajectories; the base records observed positions and
+velocities.  The explanation is Newton's gravitational
+dynamics: masses of the bodies, the inverse-square
+gravitational law, and initial conditions.  The target
+is the set of Kepler-type empirical regularities
+(elliptical orbits, equal areas in equal times,
+\(T^2\propto a^3\)) and the ephemeris of future
+planetary positions.  The descended map identifies
+masses and initial conditions from kinematics, and
+the target map solves the two-body problem to derive
+Kepler's laws; because the dynamics is deterministic,
+integrating the equations of motion recovers the trajectory from the
+explanation, so this compression is exact but not strict in the
+\Fref{F30} sense; its gain is that finitely many parameters and one
+law replace the continuous trajectory \citep{Newton1687Principia}.
+
+\item[\emph{Principal component analysis as
+dimensionality-reducing explanation (statistics).}] \textit{Special case.}
+The history space is observed records
+\(x\in\mathbb R^p\); the base is the full record.
+The explanation is the top-\(k\) principal-component
+representation, computed as eigenvectors of the
+empirical covariance matrix.  The target is the
+low-rank reconstruction or rank-\(k\) orthogonal
+projection visualisation, both exactly determined by
+the principal-component representation through a
+linear map.  Taking the history space to be all of
+\(\mathbb R^p\), the compression is strict whenever \(k<p\), because
+the rank-\(k\) projection is not injective; on a finite data set the
+projection can be injective, and non-zero discarded variance then
+measures reconstruction error rather than strictness.  The
+explained-variance ratio measures the compression fidelity \citep{Pearson1901PCA}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Counterfactual Legitimacy [\texorpdfstring{\Fref{F31}}{F31}]}\label{sec:status-records-coherence:counterfactual}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F31} below.
+\(\operatorname{CFL}\) says that admissibility is constant on
+\((q,\alpha)\)-classes and that target truth is constant on the
+admissible pairs of each class, so that a counterfactual claim depends
+only on the declared context and intervention classes. The target
+quotient \(q'\) is recorded with the data, but
+neither obstruction set uses it.
+
+\begin{theorem}[Counterfactual Legitimacy]\label{thm:F31}
+Let \(q:H\to Q\) be a context quotient, let \(\alpha:A\to\bar A\) be an intervention abstraction, let \(\operatorname{Adm}:H\times A\to\mathrm{Prop}\) be admissibility, let
+\(\Gamma:H\times A\to H'\) be a counterfactual route, let
+\(q':H'\to R\) be a target quotient, and let
+\(\tau:H'\to\mathrm{Bool}\) be target truth.  Define
+\[
+  \mathcal O_{\mathrm{adm}}
+  :=
+  \{((h,a),(h',a')) :
+    q(h)=q(h'),\ \alpha(a)=\alpha(a'),\
+    \operatorname{Adm}(h,a)\not\leftrightarrow
+    \operatorname{Adm}(h',a')\},
+\]
+and
+\[
+  \mathcal O_{\mathrm{cf}}
+  :=
+  \left\{
+  \begin{array}{l}
+    ((h,a),(h',a')) :
+    q(h)=q(h'),\ \alpha(a)=\alpha(a'),\\
+    \operatorname{Adm}(h,a),\ \operatorname{Adm}(h',a'),\\
+    \tau(\Gamma(h,a))\ne\tau(\Gamma(h',a'))
+  \end{array}
+  \right\}.
+\]
+Define the counterfactual-legitimacy predicate by
+\(\operatorname{CFL}(q,\alpha,\operatorname{Adm},\Gamma,q',\tau):\Longleftrightarrow\)
+for all \(h,h'\in H\) and \(a,a'\in A\) with \(q(h)=q(h')\) and
+\(\alpha(a)=\alpha(a')\), \(\operatorname{Adm}(h,a)\leftrightarrow\operatorname{Adm}(h',a')\),
+and if moreover \(\operatorname{Adm}(h,a)\) and \(\operatorname{Adm}(h',a')\), then
+\(\tau(\Gamma(h,a))=\tau(\Gamma(h',a'))\); the target quotient \(q'\) is not used
+in this definition.  Then
+\begin{align*}
+  \operatorname{CFL}(q,\alpha,\operatorname{Adm},\Gamma,q',\tau)
+  &\iff
+  \mathcal O_{\mathrm{adm}}=\emptyset
+  \wedge
+  \mathcal O_{\mathrm{cf}}=\emptyset\\
+  &\iff
+  \begin{gathered}
+    \exists\,\overline{\operatorname{Adm}}:Q\times\bar A\to\mathrm{Prop},\
+    \exists\,\bar\tau:Q\times\bar A\to\mathrm{Bool}
+    \ \text{such that}\\
+    \overline{\operatorname{Adm}}(q(h),\alpha(a))
+      \leftrightarrow\operatorname{Adm}(h,a)
+    \ \text{for all }(h,a)\ \text{and}\\
+    \bar\tau(q(h),\alpha(a))=\tau(\Gamma(h,a))
+    \ \text{for all admissible }(h,a).
+  \end{gathered}
+\end{align*}
+\end{theorem}
+\begin{proof}
+Assume the context quotient \(q\), intervention abstraction
+\(\alpha\), admissibility predicate \(\operatorname{Adm}\), route
+\(\Gamma\), target quotient \(q'\), and target truth \(\tau\).  If a
+counterfactual is legitimate, admissibility is constant on
+\((q,\alpha)\)-classes, so
+\(\mathcal O_{\mathrm{adm}}=\emptyset\).  Its target truth is also
+constant on admissible \((q,\alpha)\)-classes, so
+\(\mathcal O_{\mathrm{cf}}=\emptyset\).
+
+Conversely, assume both obstruction sets are empty.  Define
+\[
+  \overline{\operatorname{Adm}}(q(h),\alpha(a)):=\operatorname{Adm}(h,a)
+\]
+and, for admissible pairs,
+\[
+  \bar\tau(q(h),\alpha(a)):=\tau(\Gamma(h,a)).
+\]
+The emptiness of \(\mathcal O_{\mathrm{adm}}\) makes
+\(\overline{\operatorname{Adm}}\) well-defined, it is set false off the image of \(q\times\alpha\), \(\bar\tau\) is set to false at classes with no admissible representative, and the emptiness of
+\(\mathcal O_{\mathrm{cf}}\) makes \(\bar\tau\) independent of the
+admissible representative.  Conversely again, given
+\(\overline{\operatorname{Adm}}\) and \(\bar\tau\), two pairs with the
+same classes have the same admissibility and, when admissible, the
+same target truth, so both obstruction sets are empty.  Thus a pair in either obstruction set is exactly a witness that
+admissibility or admissible target truth fails to descend to
+\(Q\times\bar A\).
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not determine the truth value of counterfactuals and
+does not apply to arbitrary undeclared possible worlds.  The
+possible-worlds semantics in the background is the classical reference
+\citep{Lewis1973Counterfactuals}.
+
+\subsection*{Layer instantiations}\label{layer-inst:F31}
+
+\begingroup\small
+\begin{description}
+\item[\emph{{MIL-STD-810} environmental-qualification
+bench testing (engineering qualification).}] \textit{Analogy.}
+US Department of Defense MIL-STD-810 prescribes a
+catalogue of environmental qualification test methods
+(thermal cycling, vibration, shock, humidity, salt fog,
+etc.).  The context quotient collapses specimens to
+their design baseline (model number, build
+configuration); the intervention abstraction collapses
+test profiles to the standardised method class;
+admissibility requires the profile to lie within the
+standard envelope; the counterfactual route is the
+laboratory test execution under the prescribed
+profile; the target truth records pass/fail according
+to the acceptance criterion.  The legitimacy of a
+qualification-test counterfactual --- ``this specimen
+would pass under method X'' --- is the \Fref{F31} statement:
+admissibility and pass/fail descend through
+(design-baseline, test-method) classes
+\citep{MILSTD810H2019}.
+
+\end{description}
+\endgroup
+
+
+\subsection*{Status, Records, Coherence at a glance}\label{sec:status-records-coherence:summary}\addcontentsline{toc}{subsection}{Status, Records, Coherence at a glance}
+\input{tables/tab_axis_status_records_coherence_summary}
+\FloatBarrier

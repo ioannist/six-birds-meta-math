@@ -1,0 +1,10 @@
+$out_dir = 'build';
+$aux_dir = 'build';
+
+# Allow BibTeX to find the shared bibliography at paper/references.bib.
+# BibTeX runs from build/, so paper/ is two levels up.
+$ENV{'BIBINPUTS'} = '../..:..:.:' . ($ENV{'BIBINPUTS'} // '');
+$ENV{'TEXINPUTS'} = '../..:..:.:' . ($ENV{'TEXINPUTS'} // '');
+
+# After a successful build, synchronize the local standalone source and PDF.
+$success_cmd = 'python3 ../../scripts/sync_meta_math_paper.py';

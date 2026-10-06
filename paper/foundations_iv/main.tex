@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{needspace}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{aliascnt}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+\input{includes/paper_macros.tex}
+
+% Flush pending floats (as placeins' \FloatBarrier): a page break only
+% when floats are still waiting to be placed.
+\makeatletter
+\newcommand{\FloatBarrier}{\par\begingroup\let\@elt\relax
+  \edef\@tempa{\@currlist\@botlist\@deferlist\@dbldeferlist}\def\@tempb{}%
+  \ifx\@tempa\@tempb\else\clearpage\fi\endgroup}
+\makeatother
+\newtheorem{theorem}{Theorem}[section]
+% Environments share the theorem counter through aliased counters, so that
+% cleveref prints the environment's own name.
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\theoremstyle{definition}
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0 \quad \doi{10.5281/zenodo.23087000}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Six Birds Foundations IV:\\
+A Catalog of Layer-Agnostic Structural Laws}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{Version 3: October 1, 2026\\[2pt] \footnotesize (Version 1: June 17, 2026)}
+\hypersetup{
+  pdftitle={Six Birds Foundations IV: A Catalog of Layer-Agnostic Structural Laws},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\sloppy
+\hbadness=10000
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Foundations IV states and proves 52 structural laws about layers of
+description.  A layer is a set of states read through a quotient, which
+fixes the distinctions the layer can make.  Each law is a theorem with
+its own hypotheses, stated without reference to what the layer is made
+of, so that it applies to numbers, physical systems, cells, markets,
+languages or programs whenever its hypotheses hold.  Most laws are
+instances of one criterion, descent: a readout on states descends
+through a quotient exactly when it is constant on the quotient's
+classes, and when it is not, a pair of states that the quotient merges
+and the readout separates witnesses the failure; the repair either
+refines the quotient or coarsens the readout.  Most laws are
+elementary consequences of this criterion, and the contribution is the
+catalog itself: uniform statements with explicit hypotheses, proofs and
+scope.  The laws give descent-style counterparts of notions such as
+access and hidden predictive structure, stability and residuals,
+transport and local-to-global gluing, symmetry and its breaking,
+records, objectivity, probability, causality, composability,
+information loss, complementarity, entropy, limits and completeness,
+and the boundary between formal closure and physical realisability.  A
+few laws use other arguments: a Loewner-order inequality (No-Needles
+Stability), a trace squeeze (Duality Fixity, whose domination
+hypothesis is shown to hold exactly when the confined readout
+vanishes almost everywhere), a connectedness argument for phase boundaries, and finite
+counterexamples showing that, for abstract realisability predicates
+stable under reducts, formal closure and realisability need not imply
+each other in either direction.  All laws
+are proved here with two qualifications: the Hiddenness Normal Form is
+conditional on an explicit source hypothesis, motivated by but not
+verified for the saturated-SAT construction of an earlier paper, and
+one equivalence of the Closure--Reality Boundary is imported from the
+paper on audited operational realisability.  Special cases and analogies
+from mathematics, the sciences and engineering follow each law and are
+marked as such.  The laws are formalized in Lean~4 with Mathlib; for Duality
+Fixity the formalization treats an abstract ledger rather than
+Hilbert-space measures.
+The catalog is not exhaustive.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} quotient descent; factorization; split-pair
+obstruction; local-to-global gluing; structural laws; layer-agnostic
+statement; Six Birds Theory; emergence calculus.
+
+\tableofcontents
+
+\input{sections/sec_01_intro}            % sec:intro
+\input{sections/sec_02_background}        % sec:apparatus
+\input{sections/sec_03_problem_setup}     % sec:access
+\input{sections/sec_04_methods}           % sec:stability
+\input{sections/sec_05_primary_results}   % sec:transport
+\input{sections/sec_06_secondary_results} % sec:symmetry
+\input{sections/sec_07_analysis}          % sec:status-records-coherence
+\input{sections/sec_08_formal_framework}  % sec:self-reference-limits
+\input{sections/sec_09_synthesis}         % sec:anchor:closure-reality-boundary
+\input{sections/sec_10_discussion}        % sec:substrate-instances
+\input{sections/sec_11_conclusion}        % sec:sketches
+\input{sections/sec_12_nonclaims}         % sec:nonclaims
+
+\appendix
+\crefalias{section}{appendix}
+\crefalias{subsection}{appendix}
+\crefname{appendix}{appendix}{appendices}
+\Crefname{appendix}{Appendix}{Appendices}
+\input{appendices/app_d_formalization}   % app:formalization
+\input{appendices/app_further_instantiations}   % app:further-instantiations
+\input{appendices/app_version_history}   % app:version-history
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

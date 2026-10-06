@@ -1,0 +1,10 @@
+$out_dir = 'build';
+$aux_dir = 'build';
+
+# Allow BibTeX to find the shared bibliography at paper/references.bib.
+# BibTeX runs from build/, so paper/ is two levels up.
+$ENV{'BIBINPUTS'} = '../..:..:.:' . ($ENV{'BIBINPUTS'} // '');
+$ENV{'TEXINPUTS'} = '../..:..:.:' . ($ENV{'TEXINPUTS'} // '');
+
+# After successful build, flatten .tex into a single file in build/
+$success_cmd = 'latexpand %S -o %Y/%R_flat.tex';

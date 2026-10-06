@@ -1,0 +1,2298 @@
+\section{Self-Reference and Limits}\label{sec:self-reference-limits}
+
+The Self-Reference and Limits chapter collects the laws that mark where
+closure formation reaches a boundary.  Some boundaries are horizons:
+boundary data can determine a declared target even when the ambient
+carrier is larger.  Others concern information loss, singular limits,
+locality, topology and completeness: what is visible, what is glued
+globally, what survives a limit, and what cannot be established from
+inside the same closure without additional audit structure.  The
+self-audit law, Reflexive Nonclosure (\Fref{F21}), is stated in the
+Status, Records, Coherence chapter because its data are claim records;
+here the law that treats self-reference directly is the Closure
+Completeness Boundary (\Fref{F52}).  In the running example of
+\Cref{sec:intro}, the identification of \(1\) and \(2\) made by \(q\)
+loses information that \(F\) records; in the language of the
+Information Loss Normal Form (\Fref{F34}), with the identity as
+transport, \(q\) as recovery quotient and \(F\) as source information,
+\((1,2)\) lies in the loss obstruction.
+
+The eighteen laws proceed from local sufficiency to completeness.
+Horizon Sufficiency / Holographic Compression (\Fref{F33}) opens the
+chapter: a target depends on a history only through its boundary
+readout and exterior class exactly when it descends through their
+pairing.  It is followed by Information Loss, Scale Descent /
+Renormalization, Singular Limit Completion, Complementarity as
+Non-Joint Access, Arrow from Record Monotonicity and Entropy as Fiber
+Volume.  The middle of the chapter treats Irreducibility / No Short
+Closed Description, Continuum Emergence, Criticality / Phase Boundary,
+Locality / Domain of Dependence, Law--State Split and Fine-Tuning as
+Small Selector Region.  The last part gives Topology as Global Gluing
+Invariant, Common-Source / Nonlocal Correlation, Vacuum / Background
+Selection, Unification as Common Refinement and the Closure
+Completeness Boundary, which is distinct from the closure--reality
+boundary of \Cref{sec:anchor:closure-reality-boundary}.  The chapter
+depends only on \Cref{sec:apparatus}, and the summary table at its end
+groups the laws into limits, emergence and invariants.
+
+\subsection{Horizon Sufficiency / Holographic Compression [\texorpdfstring{\Fref{F33}}{F33}]}\label{sec:self-reference-limits:horizon-sufficiency}
+
+\begin{definition}[Horizon-bounded support]\label{def:horizon-bounded-support}
+Let \(\beta:I\to B\) be a boundary readout and \(\varepsilon:E\to Q\) an
+exterior classifier on an interior--exterior decomposition \(I\times E\). A
+target readout \(t:I\times E\to T\) is \emph{horizon-bounded} for
+\((\beta,\varepsilon)\) when \(t(i,e)=t(i',e')\) whenever \(\beta(i)=\beta(i')\)
+and \(\varepsilon(e)=\varepsilon(e')\); the pair \((\beta,\varepsilon)\) is its
+horizon record.
+\end{definition}
+
+\begin{theorem}[Horizon Sufficiency / Holographic Compression]\label{thm:F33}
+Let \(I\) and \(E\) be sets, the interior and exterior factors (a set \(H\) of histories with a decomposition \(H\cong I\times E\) is identified with \(I\times E\)), and define
+\[
+  \pi : I \times E \longrightarrow B \times Q,
+  \qquad
+  \pi(i,e)=(\beta(i),\varepsilon(e)),
+\]
+where \(\beta:I\to B\) is the boundary readout and
+\(\varepsilon:E\to Q\) is the exterior classifier. Assume \(\pi\) is
+surjective, and let \(t:I\times E\to T\) be a declared target readout.
+Then
+\begin{align*}
+  t\ \text{horizon-bounded for }(\beta,\varepsilon)
+  &\iff
+  t \text{ descends through }\pi\\
+  &\iff
+  \forall (i,e),(i',e'),\
+    \pi(i,e)=\pi(i',e')\Rightarrow t(i,e)=t(i',e')\\
+  &\iff
+  \exists\,\bar t:B\times Q\to T\ \text{ such that }\
+    \bar t\circ\pi=t .
+\end{align*}
+Here horizon-boundedness is that of \Cref{def:horizon-bounded-support}. Call \(t\) \emph{horizon-sufficient}
+when these hold. For a family \((t_\sigma)_{\sigma\in\Sigma}\), the bundled
+readout \(x\mapsto(t_\sigma(x))_{\sigma}\) is horizon-sufficient if and only if
+every \(t_\sigma\) is.
+\end{theorem}
+\begin{proof}
+By \Cref{def:horizon-bounded-support}, \(t\) is horizon-bounded exactly
+when it is constant on the fibers of \(\pi\).  Since \(\pi\) is
+surjective, the descent criterion of \Cref{sec:apparatus} gives the
+equivalence with descent through \(\pi\) and with the existence of
+\(\bar t\).  Two points have the same bundled value exactly when they
+have the same value under every \(t_\sigma\), so the bundled readout is
+constant on the fibers of \(\pi\) exactly when every \(t_\sigma\) is.
+\end{proof}
+
+The motivating substrate-physics analogy is the holographic principle, in which
+the bulk information of a region is encoded on its boundary
+\citep{Maldacena1997LargeN,Bousso2002Holographic}.  The
+layer-agnostic statement here is the descent-through-boundary form
+of that pattern; it does not assert the AdS/CFT correspondence or
+any particular gravitational realization.
+
+\subsection*{Layer instantiations}\label{layer-inst:F33}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Boundary-value problem for a linear elliptic
+{PDE} (mathematical analysis).}] \textit{Special case.}
+For a fixed bounded Lipschitz domain \(\Omega\subseteq\mathbb R^n\), the
+first factor \(I\) of the decomposition (its name in \Cref{thm:F33} is only a slot name: here the first factor carries the boundary data and the second factor carries the bulk data \(f\) and \(A\)) is the set of admissible Dirichlet data \(g\); the boundary readout records \(g\) in a fixed
+function space (e.g., \(H^{1/2}(\partial\Omega)\)).
+The second factor \(E\) parameterises sources \(f\in H^{-1}(\Omega)\) and bounded measurable, uniformly elliptic
+divergence-form coefficient fields; the exterior classifier records the
+source-and-coefficient data in their function-space
+equivalence class.  The target readout is the entire
+weak solution \(u\in H^1(\Omega)\).  By the Lax-Milgram
+theorem, applied, after lifting \(g\) to \(H^1(\Omega)\), to the bilinear form
+\(\int_\Omega A\nabla u\cdot\nabla v\), coercive on \(H^1_0(\Omega)\) by the Poincar\'e inequality, the target descends through the product
+quotient: same boundary data plus same
+source-coefficient class yield the same solution.  For Neumann data over a connected \(\Omega\), put
+\(g\in H^{-1/2}(\partial\Omega)\) in the first factor \(I\) and
+\(f\in(H^1(\Omega))'\), with the coefficient field, in the second factor \(E\),
+and let the target be the weak solution modulo constants when
+\(\langle f,1\rangle+\langle g,1\rangle_{\partial\Omega}=0\) and a marker
+\(\bot\) otherwise. The compatibility test and, on compatible data,
+coercivity on \(H^1(\Omega)/\mathbb R\) make this target a function of
+\((g,f,A)\), so it again descends through the product quotient
+\citep{Evans2010PartialDifferential}.
+
+\item[\emph{Boundary representation in solid {CAD}
+modelling (engineering).}] \textit{Analogy.}
+A 3D rigid solid \(B\subset\mathbb R^3\) is represented
+by its boundary surface together with adjacency and
+orientation data: a B-rep records faces, edges, and
+vertices with incidence relations.  The interior is the
+open solid; the boundary readout records the B-rep with
+face-orientation conventions; the exterior classifier
+records the combinatorial topology (genus, handles,
+through-holes).  Geometric and topological readouts ---
+volume via the divergence theorem, mass distribution,
+collision detection, boolean operations --- descend
+through the product quotient
+\citep{Mortenson2006GeometricModeling}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Information Loss Normal Form [\texorpdfstring{\Fref{F34}}{F34}]}\label{sec:self-reference-limits:information-loss}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F34} below.
+\(\operatorname{Recoverable}(\sigma,\tau,\rho)\) says that the source
+information can be read back after transport: \(\sigma(h)\) depends only
+on the later recovery class \(\rho(\tau h)\), that is, \(\sigma\)
+descends through \(\rho\circ\tau\).
+
+\begin{theorem}[Information Loss Normal Form]\label{thm:F34}
+Let \(H_0,H_1\) be source and later carriers with transport
+\(\tau:H_0\to H_1\). Let \(\sigma:H_0\to I\) be source information,
+and \(\rho:H_1\to R\) a recovery quotient. Assume that
+\(\rho\circ\tau\) is surjective onto \(R\). Define
+\[
+  \mathcal O_\rho
+  =\{(h,h'):\rho(\tau h)=\rho(\tau h')\ \text{and}\
+      \sigma(h)\ne\sigma(h')\}.
+\]
+Then
+\begin{align*}
+  \operatorname{Recoverable}(\sigma,\tau,\rho)
+  &\iff \mathcal O_\rho=\emptyset\\
+  &\iff
+  \exists\,\bar\sigma:R\to I\ \text{ such that }\
+    \bar\sigma\circ\rho\circ\tau=\sigma .
+\end{align*}
+The later quotient preserves the declared source information exactly
+when every identification made by \(\rho\circ\tau\) is invisible to
+\(\sigma\).
+\end{theorem}
+\begin{proof}
+\(\operatorname{Recoverable}(\sigma,\tau,\rho)\) says that \(\sigma\)
+descends through \(\rho\circ\tau\), and \(\mathcal O_\rho\) is the
+split-pair obstruction of \(\rho\circ\tau\) and \(\sigma\).  Since
+\(\rho\circ\tau\) is surjective onto \(R\), both equivalences are the
+descent criterion of \Cref{sec:apparatus}.  A pair in
+\(\mathcal O_\rho\) has the same recovered class but different source
+information, which is precisely loss across a recovery class.
+\end{proof}
+
+A physical analogue is the black-hole information paradox, posed by Hawking \citep{Hawking1976Breakdown} after his thermodynamic analysis of black holes \citep{Hawking1976BHThermodynamics}, where the loss of information is argued
+from semiclassical gravity; the statement above records only the descent
+obstruction of a declared horizon quotient.
+
+\subsection*{Layer instantiations}\label{layer-inst:F34}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Huffman entropy coding (information theory).}] \textit{Special case.}
+The source carrier is the set of source-symbol sequences
+over an alphabet \(\Sigma\); the source information is
+the original symbol sequence.  The transport encodes
+into a prefix-free binary codeword sequence; the later carrier is the set \(\tau(H_0)\) of encoded streams, and the recovery quotient is the prefix decoder on it.  Distinct
+source sequences produce distinct codeword streams; the
+obstruction set is empty and the source is fully
+recoverable.  Compression achieves the entropy bound to
+within one bit per symbol
+\citep{Huffman1952Method}.
+
+\item[\emph{Reed-Solomon forward error correction
+(coding theory).}] \textit{Special case.}
+For a Reed-Solomon \((n,k)\) code over a finite field
+\(\mathbb F_q\), the source carrier is the set of pairs
+\((m,\varepsilon)\) of a \(k\)-symbol message and an error
+vector of Hamming weight at most
+\(t=\lfloor(n-k)/2\rfloor\), with \(\sigma(m,\varepsilon)=m\).
+Let the later carrier be the union of radius-\(t\) Hamming
+balls around the codewords. The transport sends
+\((m,\varepsilon)\) to \(c(m)+\varepsilon\), where \(c(m)\)
+evaluates the message polynomial at \(n\) distinct field
+points. Let \(\rho\) be bounded-distance decoding from this
+carrier to the message set, using syndrome decoding and error
+correction. Disjoint radius-\(t\) balls make
+\(\rho(c(m)+\varepsilon)=m\), so the obstruction is empty;
+taking \(\varepsilon=0\) for each message shows that
+\(\rho\circ\tau\) is surjective, and the source message is
+recoverable; Reed-Solomon codes underlie CD/DVD, QR
+codes, and deep-space communication
+\citep{ReedSolomon1960Codes}.
+
+\item[\emph{Cryptographic one-way hash function
+(cryptography).}] \textit{Special case.}
+For a cryptographic hash function
+\(H:\{0,1\}^{<2^{64}}\to\{0,1\}^{256}\) (SHA-256), the
+source information is the original bitstring.  The
+transport maps bitstrings to fixed-length digests;
+the recovery quotient is the identity on the set \(H(\{0,1\}^{<2^{64}})\) of attained digests.
+Since the domain has more than \(2^{256}\) elements, distinct source
+bitstrings collide to the same digest by pigeonhole, so the obstruction set is non-empty.  The
+cryptographic hash is the canonical non-recoverable
+instance; its cryptographic use rests on collisions
+being hard to find, not absent
+\citep{NIST2015FIPS180}.
+
+\item[\emph{Database write-ahead logging and {ARIES}
+recovery (database systems).}] \textit{Analogy.}
+The source information is the committed-state effects
+of database transactions.  The transport writes log
+records (before-image, after-image, LSN, transaction
+ID) to stable storage before any modified page is
+written.  The recovery quotient is the ARIES
+three-pass algorithm (analysis, redo, undo) applied
+to the on-disk log and data pages after a crash.
+Within the failure model, the obstruction set is
+empty and the committed-state effects are recoverable
+\citep{Mohan1992ARIES}.
+
+\item[\emph{Magnetic-resonance image reconstruction
+(medical imaging).}] \textit{Analogy.}
+The source information is the tissue proton-density
+map, supported within the field of view and represented at the
+declared resolution.  The transport
+samples k-space (the Fourier dual of physical space)
+under controlled magnetic-field gradient sequences;
+the later carrier is the set of sampled k-space
+datasets.  The recovery quotient is the inverse
+Fourier transform, in clinical practice combined with
+parallel-imaging unfolding and partial-Fourier
+filling.  When the k-space sampling step is at most the reciprocal of the
+object's spatial extent, the obstruction set is empty and the
+proton-density map is recoverable up to the resolution set by the
+sampled k-space extent; with a coarser step, aliasing folds the
+object onto itself and makes the loss illegitimate
+\citep{Lauterbur1973MRI}.
+\end{description}
+\endgroup
+
+\subsection{Scale Descent / Renormalization [\texorpdfstring{\Fref{F35}}{F35}]}\label{sec:self-reference-limits:scale-descent}
+
+\begin{theorem}[Scale Descent / Renormalization]\label{thm:F35}
+Let \(H\) be a carrier with consecutive scale quotients
+\(q_n:H\to Q_n\) and \(q_{n+1}:H\to Q_{n+1}\), with \(q_n\) surjective. Let
+\(c:Q_n\to Q_{n+1}\) be a surjective coarsening with
+\[
+  c\circ q_n=q_{n+1},
+\]
+and let \(t:H\to T\) be a target law. Put
+\[
+  \mathcal O_n(t)=
+  \{(h,h'):q_n(h)=q_n(h')\ \text{and}\ t(h)\ne t(h')\}.
+\]
+Then
+\begin{align*}
+  t \text{ descends to } Q_n
+  &\iff \mathcal O_n(t)=\emptyset\\
+  &\iff
+  \exists\,\bar t_n:Q_n\to T\ \text{ such that }\
+    \bar t_n\circ q_n=t .
+\end{align*}
+When \(t\) descends to \(Q_n\), the map \(\bar t_n\) is unique, and a
+renormalized law at scale \(Q_{n+1}\), a map \(\bar t_{n+1}:Q_{n+1}\to T\) with
+\(\bar t_{n+1}\circ c=\bar t_n\), exists exactly when \(\bar t_n\) is constant
+on the fibers of \(c\), and then \(t=\bar t_{n+1}\circ q_{n+1}\), and \(\bar t_{n+1}\) is unique since \(c\) is surjective. Consequently
+\(t\) descends to \(Q_{n+1}\) if and only if it descends to \(Q_n\) and
+\(\bar t_n\) is constant on the fibers of \(c\).
+\end{theorem}
+\begin{proof}
+Since \(q_n\) is surjective, the first two equivalences and the
+uniqueness of \(\bar t_n\) are the descent criterion of
+\Cref{sec:apparatus} for \(q_n\) and \(t\). For the next scale, if \(\bar t_{n+1}\circ c=\bar t_n\),
+then \(c(x)=c(x')\) gives \(\bar t_n(x)=\bar t_n(x')\), so \(\bar t_n\) is
+constant on the fibers of \(c\). Conversely, if \(\bar t_n\) is constant on
+the fibers of \(c\), then \(\bar t_{n+1}(c(x)):=\bar t_n(x)\) is independent of
+the choice of \(x\), and surjectivity of \(c\) defines it on all of
+\(Q_{n+1}\). Then \(t=\bar t_n\circ q_n=\bar t_{n+1}\circ c\circ q_n=\bar t_{n+1}\circ q_{n+1}\).
+Conversely, if \(t=s\circ q_{n+1}=s\circ c\circ q_n\), then \(t\) descends to
+\(Q_n\), uniqueness gives \(\bar t_n=s\circ c\), and \(\bar t_n\) is constant on
+the fibers of \(c\). If two renormalized laws \(\bar t_{n+1},\bar t'_{n+1}\)
+satisfy \(\bar t_{n+1}\circ c=\bar t_n=\bar t'_{n+1}\circ c\), then they agree on
+the image of \(c\), which is all of \(Q_{n+1}\). Thus scale descent is quotient
+descent iterated along the tower.
+\end{proof}
+
+The Wilsonian renormalization group of statistical and quantum field
+theory \citep{Wilson1975RG} is the standard substrate analogy, in
+which scale-by-scale quotient descent is the central calculational
+device.
+
+\subsection*{Layer instantiations}\label{layer-inst:F35}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Hydrodynamic limit via Chapman-Enskog
+expansion (kinetic theory).}] \textit{Analogy.}
+For a rarefied gas, the carrier is the space of
+phase-space distribution functions \(f(x,v,t)\).  The
+scale quotient at the kinetic scale records the
+one-particle distribution at Knudsen number
+\(\mathrm{Kn}\sim O(1)\); the coarsening sends \(f\)
+to its hydrodynamic moments (density, momentum
+density, energy density) in the limit
+\(\mathrm{Kn}\to 0\).  The target law at the kinetic
+scale is the Boltzmann equation; the renormalised law
+at the hydrodynamic scale is the Navier-Stokes (or
+Euler) system, derived by the Chapman-Enskog
+asymptotic expansion.  Scale descent succeeds in
+\(\mathrm{Kn}\ll 1\) regimes and fails near shocks
+and boundary layers \citep{Cercignani1988Boltzmann}.
+
+\item[\emph{Burt-Adelson Laplacian image pyramid
+(computer vision and signal processing).}] \textit{Special case.}
+For a digital image, the carrier is the space of
+full-resolution images.  The scale quotient
+sends an image to its Gaussian-pyramid level at
+resolution \(2^{-n}\) (Gaussian filter followed by
+downsampling), corestricted to the levels it attains; the coarsening sends level \(n\) to
+level \(n+1\) by repeating the filter-and-downsample
+step.  The band-pass Laplacian layer
+\(L_n=G_n-\mathrm{up}(G_{n+1})\) is the target law at
+level \(n\) and descends through the scale quotient.
+The Laplacian pyramid is a complete representation:
+the original image \(G_0\) is recovered exactly from the coarsest level \(G_N\) and the residues \(L_0,\dots,L_{N-1}\) by \(G_n=L_n+\mathrm{up}(G_{n+1})\), \(n=N-1,\dots,0\)
+\citep{BurtAdelson1983LaplacianPyramid}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Singular Limit Completion [\texorpdfstring{\Fref{F36}}{F36}]}\label{sec:self-reference-limits:singular-limit}
+
+\paragraph{Reading the statement.} In \Cref{thm:F36} below, a
+limiting process \(p\) has a completed object \(\ell(p)\), and
+\(\operatorname{Completed}(u,\ell)\) says that its target-limit value
+depends only on that object.  \(\operatorname{PathDependent}(u,\ell)\)
+says that two processes with the same completed object have different
+target-limit values.  \(\operatorname{Removable}(j,\ell,\sigma,p_0)\)
+says that completion removes the singularity at \(p_0\): the completed
+object \(\ell(p_0)\) is not the image of a current object under \(j\),
+and the signature-limit readout \(\sigma\) descends through \(\ell\).
+
+\begin{theorem}[Singular Limit Completion]\label{thm:F36}
+Let \(P\) be a set of limiting processes, let \(\ell:P\to\widehat Q\)
+be a surjective limit quotient, let \(j:Q\to\widehat Q\) be a
+completion map, let \(u:P\to\widehat T\) be the target-limit readout,
+let \(\sigma:P\to\widehat S\) be a declared signature-limit readout,
+let \(u^{\mathrm{ren}}:P\to\widehat T^{\mathrm{ren}}\) be a declared
+renormalized target-limit readout, and let \(p_0\in P\) be a selected
+process.  Define the singular target obstruction
+\[
+  \mathcal O_{\ell}(u)
+  =\{(p_1,p_2)\in P^2:
+      \ell(p_1)=\ell(p_2)\ \text{and}\ u(p_1)\ne u(p_2)\}
+\]
+and the corresponding signature obstruction
+\(\mathcal O_{\ell}(\sigma)\).  Write
+\[
+  \rho_{u,\ell}:P\to\widehat Q\times\widehat T,
+  \qquad
+  \rho_{u,\ell}(p):=(\ell(p),u(p)),
+\]
+for the joint \((\ell,u)\) refinement, and let
+\(\operatorname{Current}_{j}(\ell,p_0)\) abbreviate
+\(\exists c\in Q,\ j(c)=\ell(p_0)\), and define
+\[
+  \operatorname{Removable}(j,\ell,\sigma,p_0)
+  :\Longleftrightarrow
+  \neg\operatorname{Current}_{j}(\ell,p_0)
+  \wedge
+  \operatorname{Completed}(\sigma,\ell).
+\]
+Here \(\operatorname{Completed}(v,\kappa)\), for a readout \(v\) and a map
+\(\kappa\) on \(P\), says that \(v(p)\) depends only on \(\kappa(p)\),
+\(\operatorname{Refines}(\kappa,\ell)\) says that \(\kappa(p_1)=\kappa(p_2)\)
+implies \(\ell(p_1)=\ell(p_2)\), and
+\(\operatorname{PathDependent}(u,\ell)\) says that
+\(\mathcal O_\ell(u)\ne\emptyset\).
+Then
+\begin{align*}
+  \operatorname{Completed}(u,\ell)
+  &\iff \mathcal O_{\ell}(u)=\emptyset,\\
+  \operatorname{Completed}(u,\ell)
+  &\iff
+  \exists\,\bar u:\widehat Q\to\widehat T,\ \bar u\circ\ell=u,\\
+  \operatorname{Completed}(\sigma,\ell)
+  &\iff \mathcal O_{\ell}(\sigma)=\emptyset,\\
+  \operatorname{Removable}(j,\ell,\sigma,p_0)
+  &\iff \neg\operatorname{Current}_{j}(\ell,p_0)\wedge\mathcal O_{\ell}(\sigma)=\emptyset,\\
+  \operatorname{PathDependent}(u,\ell)
+  &\iff \neg\operatorname{Completed}(u,\ell),\\
+  &\operatorname{Refines}(\rho_{u,\ell},\ell),\\
+  &\operatorname{Completed}(u,\rho_{u,\ell}),\\
+  \operatorname{Completed}(u^{\mathrm{ren}},\ell)
+  &\iff
+  \mathcal O_{\ell}(u^{\mathrm{ren}})=\emptyset.
+\end{align*}
+Equivalently, completion is descent of \(u\) through \(\ell\); the
+canonical path-memory repair \(\rho_{u,\ell}\) is a refinement of
+\(\ell\) that completes \(u\); a renormalized target is tested by the
+same descent criterion as its raw target, and if \(u^{\mathrm{ren}}=R\circ u\) for a
+map \(R\), then \(\operatorname{Completed}(u,\ell)\) implies
+\(\operatorname{Completed}(u^{\mathrm{ren}},\ell)\), with the converse when \(R\) is
+injective.
+\end{theorem}
+\begin{proof}
+We prove the eight conjuncts. Parts (4) and (5) prove the PathDependent and Removable lines, which the statement lists in the opposite order; part (8) also proves the clause on \(u^{\mathrm{ren}}=R\circ u\).
+
+\emph{(1)--(3) Completion and obstructions.}
+Since \(\ell\) is surjective, the descent criterion of
+\Cref{sec:apparatus}, applied to \(\ell\) and \(u\), gives (1) and (2),
+and applied to \(\ell\) and \(\sigma\) gives (3).
+
+\emph{(4) Path-dependent iff not completed.}
+Path dependence is witnessed by a split pair:
+\[
+  \operatorname{PathDependent}(u,\ell)
+  \iff
+  \exists(p_1,p_2)\in\mathcal O_{\ell}(u).
+\]
+By (1), \(\mathcal O_{\ell}(u)\ne\emptyset\) is equivalent to
+\(\neg\operatorname{Completed}(u,\ell)\).
+
+\emph{(5) Removable.}
+By definition \(\operatorname{Removable}(j,\ell,\sigma,p_0)\) is
+\(\neg\operatorname{Current}_{j}(\ell,p_0)\wedge\operatorname{Completed}(\sigma,\ell)\),
+and (3) replaces the second conjunct by \(\mathcal O_{\ell}(\sigma)=\emptyset\).
+
+\emph{(6) The path repair refines \(\ell\).}
+The canonical path-memory repair is
+\[
+  \rho_{u,\ell}(p)=(\ell(p),u(p)).
+\]
+Projection to the first coordinate recovers the original limit:
+\[
+  \operatorname{pr}_{\widehat Q}\circ\rho_{u,\ell}=\ell.
+\]
+Thus each \(\rho_{u,\ell}\)-fiber lies inside an \(\ell\)-fiber, so
+\(\rho_{u,\ell}\) is a source refinement of \(\ell\).
+
+\emph{(7) After the path repair, the target is completed.}
+Projection to the second coordinate recovers the target-limit readout:
+\[
+  \operatorname{pr}_{\widehat T}\circ\rho_{u,\ell}=u.
+\]
+Hence \(u\) factors through the repaired quotient by the explicit
+factor \(\operatorname{pr}_{\widehat T}\), and therefore
+\[
+  \operatorname{Completed}(u,\rho_{u,\ell}).
+\]
+
+\emph{(8) Renormalized completed iff its obstruction is empty.}
+The descent criterion applied to \(\ell\) and \(u^{\mathrm{ren}}\) gives
+\[
+  \operatorname{Completed}(u^{\mathrm{ren}},\ell)
+  \iff
+  \mathcal O_{\ell}(u^{\mathrm{ren}})=\emptyset,
+\]
+so a renormalized target is subject to the same completion criterion
+as a raw target. If \(u^{\mathrm{ren}}=R\circ u\) and \(u=\bar u\circ\ell\), then
+\(u^{\mathrm{ren}}=(R\circ\bar u)\circ\ell\); conversely, assume \(R\) is injective
+and \(\operatorname{Completed}(u^{\mathrm{ren}},\ell)\). For \(\ell(p_1)=\ell(p_2)\),
+this completion gives \(R(u(p_1))=R(u(p_2))\); injectivity gives
+\(u(p_1)=u(p_2)\). Thus \(\mathcal O_\ell(u)=\emptyset\), and the first
+equivalence gives \(\operatorname{Completed}(u,\ell)\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F36}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Riemann removable singularity in complex
+analysis (complex analysis).}] \textit{Special case.}
+For a function \(f\) holomorphic on a punctured disk,
+the set of limiting processes is the family of
+approach paths to the puncture along which \(f\) has a
+limit in the Riemann sphere; the limit quotient
+\(\ell\) is constant, since every path approaches the same puncture; the
+target readout is the path-limit value of \(f\).  By
+Riemann's removable-singularity theorem, if \(f\) is
+bounded on the punctured disk then the limit is
+independent of approach path and the obstruction set
+is empty.  At a pole
+\(|f|\to\infty\) along every approach path, so the limit is
+path-independent on the Riemann sphere.  An essential
+singularity can give the path-dependent case: \(e^{1/z}\) tends
+to \(\infty\) along the positive real axis and to \(0\) along the
+negative real axis
+\citep{Ahlfors1979ComplexAnalysis}.
+
+\item[\emph{L'H\^opital's rule for indeterminate
+forms (real analysis).}] \textit{Analogy.}
+For functions \(f,g\) with \(f(a)=g(a)=0\), the
+literal substitution \(\lim_{x\to a}f(x)/g(x)\)
+yields the indeterminate form \(0/0\), which by
+itself does not descend through the limit quotient.
+L'H\^opital's rule provides the completion: if \(f\)
+and \(g\) are differentiable with \(g'(a)\ne 0\),
+the limit equals \(f'(a)/g'(a)\).  The path-memory
+repair records the order of vanishing of \(f\) and
+\(g\) at \(a\), completing the limit through the
+derivative-ratio readout
+\citep{Cauchy1821CoursAnalyse}.
+
+\item[\emph{Riemann integral as limit of Riemann sums
+(classical analysis).}] \textit{Special case.}
+For a bounded \(f:[a,b]\to\mathbb R\), the set of
+limiting processes is the family of sequences of
+tagged partitions with mesh tending to zero along
+which the Riemann sums converge; the target readout
+is the limit of the Riemann sums; the limit quotient \(\ell\) is the constant
+map onto a one-point set.  The function is Riemann-integrable precisely when
+\(\mathcal O_\ell(u)=\emptyset\) (for bounded \(f\), tags approximating the interval suprema
+and infima give sequences converging to the upper and lower
+Darboux integrals, which differ otherwise), i.e., when the limit of Riemann sums
+is independent of the choice of partition
+refinement and tag selection.  The completed map is
+the Riemann integral
+\(\int_a^b f\,dx\); non-Riemann-integrable functions
+(e.g., the Dirichlet function) instantiate the
+path-dependent case
+\citep{Riemann1854Habilitationsschrift}.
+\end{description}
+\endgroup
+
+
+\subsection{Complementarity as Non-Joint Access [\texorpdfstring{\Fref{F37}}{F37}]}\label{sec:self-reference-limits:complementarity}
+
+Position and momentum \citep{Bohr1928Quantum} motivate a restricted choice
+of \(\mathcal J\): if an admissible carrier must arise from a single joint
+quantum observable with sharp position and sharp momentum as its marginals, no
+such carrier exists. The pair of statistical readouts still exists as a map.
+Merely requiring a joint probability distribution with the correct marginals
+would not give non-joint access, since the product of those marginals is one.
+The statement below abstracts non-joint access relative to the declared class
+\(\mathcal J\).
+
+\paragraph{Reading the statement.}
+The class \(\mathcal J\) and the formedness of each access are declared
+data: they fix which joint carriers count as admissible at the stated
+scope. \(q_A\perp_{\mathrm{acc}}q_B\) says that each access is lawful
+on its own but no admissible joint carrier determines both.
+
+\begin{theorem}[Complementarity as Non-Joint Access]\label{thm:F37}
+Let \(H\) be a nonempty carrier with two access quotients
+\(q_A:H\to Q_A\) and \(q_B:H\to Q_B\) and target readouts
+\(t_A:H\to T_A\), \(t_B:H\to T_B\).  The access \(q_A\) is
+\emph{separately admissible} when \(t_A\) descends through \(q_A\)
+(formedness of the access is part of the setting and adds no condition), and
+likewise for \(q_B\).  Let \(K\) be a declared
+joint-carrier type and let \(\mathcal J\) be a declared class of
+admissible joint carriers \(j:H\to K\).  A joint access in
+\(\mathcal J\) is a carrier \(j\in\mathcal J\) together with maps
+\(a:K\to Q_A\) and \(b:K\to Q_B\) satisfying
+\[
+  a\circ j=q_A,\qquad b\circ j=q_B .
+\]
+Define
+\begin{align*}
+  q_A \perp_{\mathrm{acc}} q_B
+  \;:\Longleftrightarrow\;&
+  q_A,\,q_B\ \text{separately admissible}\\
+  &\wedge\ \neg\exists\, j\in\mathcal J,\ \exists\,a:K\to Q_A,\ \exists\,b:K\to Q_B,\
+  a\circ j=q_A\ \wedge\ b\circ j=q_B .
+\end{align*}
+Then \(q_A \perp_{\mathrm{acc}} q_B\) holds if and only if \(q_A\) and \(q_B\) are separately admissible and every
+\(j\in\mathcal J\) identifies two histories that one of the accesses
+separates: for each \(j\in\mathcal J\) there are \(h,h'\in H\) with
+\(j(h)=j(h')\) and (\(q_A(h)\neq q_A(h')\) or \(q_B(h)\neq q_B(h')\)).
+Thus complementarity is precisely separate admissibility together with the presence, in every admissible joint
+carrier, of a split pair against one of the two accesses. Equivalently, \(q_A\perp_{\mathrm{acc}}q_B\) holds if and only if \(q_A\) and \(q_B\) are separately admissible and no \(j\in\mathcal J\) has
+\(\langle q_A,q_B\rangle=g\circ j\) for a map \(g:K\to Q_A\times Q_B\); in
+particular, if \(K=Q_A\times Q_B\) and \(\langle q_A,q_B\rangle\in\mathcal J\),
+then \(q_A\perp_{\mathrm{acc}}q_B\) fails.
+\end{theorem}
+\begin{proof}
+Fix
+\(j\in\mathcal J\). If \(a\circ j=q_A\), then \(j(h)=j(h')\) gives
+\(q_A(h)=q_A(h')\). (For the factorization form, take \(g=\langle a,b\rangle\), and
+conversely \(a=\mathrm{pr}_1\circ g\), \(b=\mathrm{pr}_2\circ g\); if the pairing
+itself lies in \(\mathcal J\), take \(g=\mathrm{id}\).) Conversely, if \(q_A\) is constant on the fibers of
+\(j\), set \(a(j(h)):=q_A(h)\) on the image of \(j\) and give \(a\) any value
+in \(Q_A\) elsewhere, which is possible since \(H\), and hence \(Q_A\), is
+nonempty; then \(a\circ j=q_A\). So a map \(a\) exists exactly when no pair
+identified by \(j\) is separated by \(q_A\), and likewise for \(b\) and
+\(q_B\). Hence \(j\) is a joint access exactly when it identifies no pair that
+\(q_A\) or \(q_B\) separates, and \(\mathcal J\) contains no joint access
+exactly when every \(j\in\mathcal J\) identifies such a pair. Together with
+separate admissibility this is complementarity. The product map
+\(h\mapsto(q_A(h),q_B(h))\) always carries both accesses, and it factors
+through every carrier of both accesses; complementarity is
+therefore a statement about the declared class \(\mathcal J\), which
+decides whether such a carrier counts as an admissible joint access.
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F37}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Time-frequency Gabor uncertainty (signal
+processing).}] \textit{Analogy.}
+For a square-integrable signal \(s\in L^2(\mathbb R)\),
+the access quotient \(q_A\) records its time-marginal
+\(|s(t)|^2\) and \(q_B\) records its
+frequency-marginal \(|\hat s(f)|^2\).  Within the
+admissibility class of Cohen-class bilinear
+time-frequency representations satisfying the correct
+marginals, the covariance properties of bilinear
+distributions, and non-negativity (probability-density
+interpretation), no joint quotient exists: the
+Wigner-Ville distribution satisfies marginals and
+covariance but is not non-negative, and no member of
+Cohen's class is jointly compatible.  The access
+quotients are \Fref{F37}-complementary
+\citep{Cohen1995TimeFrequency}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Arrow from Record Monotonicity [\texorpdfstring{\Fref{F38}}{F38}]}\label{sec:self-reference-limits:arrow}
+
+The phrase ``arrow of time'' is due to \citet{Eddington1928Nature}, who tied it to the increase of entropy; the formulation below takes the arrow instead from monotone growth of records, without committing to a specific physical realization.
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F38} below.
+\(\operatorname{Arrow}(\kappa)\) is defined at the level of histories:
+the continuation respects records, and record status does not decrease along
+it. The theorem says that this is the same as a map \(\bar\kappa\) on records
+along which status does not decrease.
+
+\begin{theorem}[Arrow from Record Monotonicity]\label{thm:F38}
+Let \(H_s,H_t\) be source and target history sets with continuation
+\(\kappa:H_s\to H_t\). Let \(r_s:H_s\to R_s\) be a surjective record quotient
+and \(r_t:H_t\to R_t\) a target record map, and let
+\(s_s:R_s\to S\), \(s_t:R_t\to S\) be status readouts into a set \(S\) with a relation \(\le_S\) (no order axioms are used). Define
+\[
+  \operatorname{Arrow}(\kappa)
+  :\Longleftrightarrow
+  r_t\circ\kappa\ \text{descends through}\ r_s
+  \ \wedge\
+  \forall h\in H_s,\ s_s(r_s h)\le_S s_t(r_t(\kappa h)).
+\]
+Then
+\begin{align*}
+  \bigl(\forall h,h'\in H_s,\ r_s(h)=r_s(h')\Rightarrow r_t(\kappa h)=r_t(\kappa h')\bigr)
+  &\iff
+  \exists\,\bar\kappa:R_s\to R_t\ \text{ such that }\
+    \bar\kappa\circ r_s=r_t\circ\kappa,\\
+  \operatorname{Arrow}(\kappa)
+  &\iff
+  \exists\,\bar\kappa:R_s\to R_t,\
+  \bar\kappa\circ r_s=r_t\circ\kappa\\
+  &\hphantom{{}\iff{}}\text{and } s_s(x)\le_S s_t(\bar\kappa x)\
+    \forall x\in R_s.
+\end{align*}
+The arrow is the monotone direction of the descended record transport.
+\end{theorem}
+\begin{proof}
+Since \(r_s\) is surjective, the first equivalence is the descent
+criterion of \Cref{sec:apparatus} for \(r_s\) and \(r_t\circ\kappa\),
+and the descended map \(\bar\kappa\) is unique.  The arrow condition
+therefore splits into descent of \(r_t\circ\kappa\) and a status
+inequality.  For \(x=r_s(h)\), \(s_t(\bar\kappa x)=s_t(r_t(\kappa h))\); since \(r_s\) is
+surjective, the history-level and record-level inequalities are the same
+condition, which gives the second equivalence.
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F38}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Git commit {DAG} and version-control history
+(software engineering).}] \textit{Analogy.}
+The source history set is a project-state at a given
+commit; the target is the project-state after a child
+commit; \(\kappa\) records the commit operation.  The
+record quotient sends a state to its commit hash, with
+status readout equal to the DAG-ancestry generation
+(the longest ancestor chain length).  The hash of a
+new commit is the cryptographic digest of its content
+together with parent-commit references, so the
+descended map carries each parent hash to the child
+hash.  The status readout is strictly monotone: each
+child commit has generation greater than each of its
+parents \citep{ChaconStraub2014ProGit}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Entropy as Fiber Volume [\texorpdfstring{\Fref{F39}}{F39}]}\label{sec:self-reference-limits:entropy}
+
+The fiber-volume reading of entropy combines two classical substrate
+sources: the statistical-mechanical interpretation
+\(S=k\log W\) developed in \citet{Boltzmann1877Beziehung} and the
+communication-theoretic entropy of \citet{Shannon1948Mathematical}.
+The layer-agnostic statement below records the structural form
+common to both.
+
+\paragraph{Reading the statement.} In \Cref{thm:F39} below,
+\(\operatorname{TargetEntropyZero}(q,t)\) is defined combinatorially,
+as \(\mathcal O_q(t)=\emptyset\): no \(q\)-fiber contains two different
+target values.  Its identification with a vanishing entropy value is
+the added clause on \(m(\langle q,t\rangle,q)\).  The fiber-volume
+functional of the last clause is the conditional Shannon entropy of a
+uniformly distributed history given its class, and \(m(q_F,q_C)\) is
+then the entropy of the \(q_F\)-class given the \(q_C\)-class, so
+\(E(q_C)=E(q_F)+m(q_F,q_C)\) is the chain rule of conditional entropy;
+the theorem evaluates \(m\) only on refining pairs.  In this instance
+\(m(\langle q,t\rangle,q)\) is the conditional entropy of the target
+given the \(q\)-class, and the last clause identifies
+\(\operatorname{TargetEntropyZero}(q,t)\) with its vanishing.
+
+\begin{theorem}[Entropy as Fiber Volume]\label{thm:F39}
+Let \(q:H\to Q\) be a surjective access quotient with target readout
+\(t:H\to T\).  Let \(q_F:H\to Q_F\) be a finer quotient and
+\(q_C:H\to Q_C\) a coarsening, related by a factorization
+\(c:Q_F\to Q_C\) with
+\[
+  c\circ q_F=q_C.
+\]
+Let \(\mathcal E\) be a set of entropy values with a relation \(\le_E\) (no order axioms are used), and let
+\[
+  E:\{\,q':H\to Q'\ :\ Q'\text{ a set of a fixed universe}\,\}\longrightarrow \mathcal E
+\]
+be an entropy functional assigning a fiber-volume value to every
+declared quotient.  Suppose the apparatus declares a mixing
+functional \(m\) and a combiner
+\(\odot:\mathcal E\times\mathcal E\to\mathcal E\) satisfying the
+chain-rule identity
+\[
+  E(q_C)=E(q_F)\odot m(q_F,q_C)
+\]
+and the combine-monotonicity condition at this pair
+\[
+  E(q_F)\le_E E(q_F)\odot m(q_F,q_C)
+\]
+(which holds when \(a\le_E a\odot b\) for all \(a,b\), and in the fiber-volume
+instance because \(m\ge0\)).
+Suppose also that \(\mathcal E\) has a declared zero \(0\) such that
+\(E(q')=0\) exactly when \(q'\) is injective, that is, every nonempty fiber of \(q'\) is a singleton.
+Define the raw split-pair and target obstructions
+\begin{align*}
+  \mathcal O_q^{\mathrm{raw}}
+  &:=
+  \{(h,h')\in H^2:q(h)=q(h')\ \text{and}\ h\ne h'\},\\
+  \mathcal O_q(t)
+  &:=
+  \{(h,h')\in H^2:q(h)=q(h')\ \text{and}\ t(h)\ne t(h')\},
+\end{align*}
+and put \(\operatorname{TargetEntropyZero}(q,t):\Longleftrightarrow\mathcal O_q(t)=\emptyset\)
+and \(\operatorname{TargetUnresolved}(q,t):\Longleftrightarrow\mathcal O_q(t)\neq\emptyset\);
+the entropy identification is the clause on \(m(\langle q,t\rangle,q)\) below.
+Of the displayed lines, only the first and the last involve \(E\); the target predicates involve \(E\) only through the mixing clause below.
+Then
+\begin{align*}
+  E(q)=0
+  &\iff
+  \mathcal O_q^{\mathrm{raw}}=\emptyset,\\
+  \operatorname{TargetEntropyZero}(q,t)
+  &\iff
+  t\ \text{descends through}\ q,\\
+  \operatorname{TargetUnresolved}(q,t)
+  &\iff
+  \neg(t\ \text{descends through}\ q),\\
+  \forall b\in Q_C,\ \forall h\in H,\quad
+  q_C(h)=b
+  &\iff
+  \exists a\in Q_F,\ c(a)=b\ \wedge\ q_F(h)=a,\\
+  E(q_F)
+  &\le_E
+  E(q_C).
+\end{align*}
+If moreover \(m(\langle q,t\rangle,q)=0\) exactly when \(\langle q,t\rangle\)
+and \(q\) have the same fibers (as holds when \(m(q',q'')=0\) exactly when
+\(q'\) and \(q''\) have the same fibers, for every \(q'\) refining \(q''\)), then
+the target entropy is a mixing value:
+\[
+  m(\langle q,t\rangle,q)=0
+  \iff t\ \text{descends through}\ q
+  \iff \operatorname{TargetEntropyZero}(q,t).
+\]
+For finite nonempty \(H\), the fiber-volume functional
+\(E(q')=|H|^{-1}\sum_{h\in H}\log|q'^{-1}(q'(h))|\) with
+\(m(q',q'')=E(q'')-E(q')\) for \(q'\) refining \(q''\), with values in
+\(\mathbb R\) under addition and zero \(0\), satisfies the zero criterion, and the chain-rule identity and
+combine-monotonicity at every refining pair,
+\(m\ge0\), and \(m(q',q'')=0\) exactly when \(q'\) and \(q''\) have the same
+fibers; hence all conclusions above hold for it, in particular
+\(E(q_F)\le E(q_C)\) and
+\(\operatorname{TargetEntropyZero}(q,t)\iff m(\langle q,t\rangle,q)=0\).
+\end{theorem}
+\begin{proof}
+Assume \(q\) is surjective, \(c\circ q_F=q_C\), the chain-rule
+identity \(E(q_C)=E(q_F)\odot m(q_F,q_C)\), and combine-monotonicity
+\(E(q_F)\le_E E(q_F)\odot m(q_F,q_C)\).  We prove the five conjuncts and then
+the added clause.
+
+\emph{(1) Raw entropy zero iff no raw split pair.}
+By the declared zero, \(E(q)=0\) exactly when every \(q\)-fiber is a
+singleton, that is, when no \(q\)-fiber contains distinct elements,
+which is \(\mathcal O_q^{\mathrm{raw}}=\emptyset\).
+
+\emph{(2) Target entropy zero iff target descends.}
+Target entropy is measured by the target obstruction
+\(\mathcal O_q(t)\).  Its emptiness is exactly the quotient-descent
+condition for \(t\) through \(q\):
+\[
+  \mathcal O_q(t)=\emptyset
+  \iff
+  \exists\,\bar t:Q\to T,\ \bar t\circ q=t.
+\]
+This is \(\operatorname{TargetEntropyZero}(q,t)\) iff target descent.
+
+\emph{(3) Target unresolved iff target does not descend.}
+The target-unresolved predicate is witnessed by a split pair
+\((h,h')\in\mathcal O_q(t)\).  By (2), nonemptiness of
+\(\mathcal O_q(t)\) is the negation of target descent.
+
+\emph{(4) Coarse fibers decompose into fine fibers.}
+Let \(b\in Q_C\) and \(h\in H\).  If \(q_C(h)=b\), set
+\(a:=q_F(h)\).  The factorization \(c\circ q_F=q_C\) gives
+\[
+  c(a)=c(q_F(h))=q_C(h)=b,
+\]
+and by construction \(q_F(h)=a\).  Conversely, if there exists
+\(a\in Q_F\) with \(c(a)=b\) and \(q_F(h)=a\), then the same
+factorization gives
+\[
+  q_C(h)=c(q_F(h))=c(a)=b.
+\]
+
+\emph{(5) Entropy is monotone under coarsening.}
+Apply the chain-rule identity to the factorized coarsening pair
+\((q_F,q_C)\):
+\[
+  E(q_C)=E(q_F)\odot m(q_F,q_C).
+\]
+Combine-monotonicity with \(a:=E(q_F)\) and \(b:=m(q_F,q_C)\) gives
+\[
+  E(q_F)\le_E E(q_F)\odot m(q_F,q_C)=E(q_C).
+\]
+Thus \(E(q_F)\le_E E(q_C)\).
+
+\emph{(6) Target entropy as a mixing value.} Under the added hypothesis,
+\(m(\langle q,t\rangle,q)=0\) exactly when the two quotients have the same
+fibers, that is, when \(q(x)=q(y)\) implies
+\((q(x),t(x))=(q(y),t(y))\), the converse being automatic; that is, exactly
+when \(t\) is constant on \(q\)-fibers, which by (2) is descent of \(t\) and
+\(\operatorname{TargetEntropyZero}(q,t)\). For the fiber-volume functional,
+\(m(q',q'')=|H|^{-1}\sum_h\log\bigl(|q''^{-1}(q''h)|/|q'^{-1}(q'h)|\bigr)\) is
+a sum of nonnegative terms, since each \(q'\)-fiber lies in a \(q''\)-fiber, and
+it vanishes exactly when every term does, that is, when the fibers coincide.
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F39}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Simpson concentration index (ecology).}] \textit{Analogy.}
+For a community of \(N\) individuals classified into
+species, the access quotient sends each of the \(N\) individuals to its species.  The
+Simpson concentration index
+\(\lambda=\sum_i p_i^2\) (with \(p_i\) the abundance of
+species \(i\)) is the probability that two individuals drawn with
+replacement lie in one species fiber; it is not the fiber-volume functional
+\(E\) of \Cref{thm:F39} (for the species quotient \(E=\sum_i p_i\log(Np_i)\)),
+but, like \(E\), it does not decrease under coarsening.  Taxonomic coarsening (genus,
+family) combines species classes; since
+\(p_g=\sum_{i\in g}p_i\) and the cross terms of \(p_g^2\) are
+nonnegative, \(\sum_g p_g^2\ge\sum_i p_i^2\), so the index is
+monotone non-decreasing under coarsening
+\citep{Simpson1949Diversity}.
+
+\item[\emph{Burnside orbit-counting in finite group
+theory (group theory).}] \textit{Special case.}
+For a finite group \(G\) acting on a finite nonempty set \(X\),
+the access quotient sends each element to its
+\(G\)-orbit. Take any target readout \(t\), for instance \(t(x)=|Gx|\).  The fiber over an orbit \(O\) has
+cardinality \(|O|\). For every quotient \(q'\) of the finite nonempty set
+\(X\), take \(\mathcal E=[0,\infty)\), \(E(q')=\log(|X|/|\operatorname{im}q'|)\)
+and \(\odot=+\); for a coarsening \(q_C=c\circ q_F\), set
+\(m(q_F,q_C)=\log(|\operatorname{im}q_F|/|\operatorname{im}q_C|)\). Then
+\(m\ge0\), the chain rule and combine-monotonicity of \Fref{F39} hold, and
+\(E(q')=0\) exactly when \(q'\) is injective.  This \(E\) is not the
+fiber-volume functional of the theorem's last clause; the two agree
+when all fibers have the same size. The orbit quotient has entropy
+\(\log(|X|/|X/G|)\), with \(|X/G|\) given by
+Burnside's lemma as the average number of fixed
+points of group elements.  Coarsening to a supergroup
+\(G'\supseteq G\) merges orbits into larger fibers,
+non-decreasing the average orbit size
+\citep{Burnside1897Theory}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Irreducibility / No Short Closed Description [\texorpdfstring{\Fref{F42}}{F42}]}\label{sec:self-reference-limits:irreducibility}
+
+The notion of an object's shortest closed description is the central
+object of Kolmogorov complexity and algorithmic information theory;
+the standard reference is \citet{LiVitanyi2008Kolmogorov}.
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F42} below.
+\(\mathcal O_t(e,h)\) is the set of pairs in the \(e\)-class of \(h\)
+with different target values, and \(\mathcal O_\gamma(e,h)\) the set of
+pairs in that class whose compressed states differ after the route
+\(r_\gamma\). \(\operatorname{Irreducible}_e(h)\) says that no closed
+compression \(e'\) in the admissible class \(\mathcal A\) describes \(h\) more
+cheaply than \(e\) does. The predicate does not require \(e\) itself to lie in
+\(\mathcal A\) or to be closed for \(h\); it is meant for \(e\in\mathcal A\) with
+\(\operatorname{ClosedCompression}(e,h)\), as produced by the existence clause. The class matters: closedness at \(h\) looks only at
+the class of \(h\), so if the admissible maps can give \(h\) any value on a
+class of its own (for instance, if every map \(H\to E\) is admissible and
+\(E\) has at least two elements), irreducibility reduces to minimality of \(\operatorname{cost}(e(h))\) over all of \(E\).
+
+\begin{theorem}[Irreducibility / No Short Closed Description]\label{thm:F42}
+\emph{Pointwise form.} Let \(H\) be a set of objects with compression
+map \(e:H\to E\), target readout \(t:H\to T\), and route updates
+\(r_\gamma:H\to H\) for \(\gamma\in\Gamma\). Let \(\mathcal A\) be a declared
+class of admissible compressions \(H\to E\), and let
+\(\operatorname{cost}:E\to C\) take values in a set \(C\) with a relation \(<\) (no order axioms are used; the existence clause uses only well-foundedness). For \(h\in H\) put
+\(\mathcal O_t(e,h):=\{(x,x')\in H^2:e(x)=e(x')=e(h),\ t(x)\ne t(x')\}\) and
+\(\mathcal O_\gamma(e,h):=\{(x,x')\in H^2:e(x)=e(x')=e(h),\ e(r_\gamma x)\ne
+e(r_\gamma x')\}\). A compression \(e\) is closed for \(h\), written
+\(\operatorname{ClosedCompression}(e,h)\), when \(t\) and every
+\(e\circ r_\gamma\) are constant on the class \(e^{-1}(e(h))\). Define
+\[
+  \operatorname{Irreducible}_e(h)
+  :\Longleftrightarrow
+  \neg\exists e'\in\mathcal A,\
+  \operatorname{ClosedCompression}(e',h)
+  \ \wedge\
+  \operatorname{cost}(e'(h))<\operatorname{cost}(e(h)).
+\]
+Then
+\[
+  \operatorname{ClosedCompression}(e,h)
+  \iff
+  \mathcal O_t(e,h)=\emptyset
+  \ \wedge\
+  \forall\gamma\in\Gamma,\ \mathcal O_\gamma(e,h)=\emptyset.
+\]
+By the displayed equivalence, \(\operatorname{Irreducible}_e(h)\) holds
+exactly when every \(e'\in\mathcal A\) with
+\(\operatorname{cost}(e'(h))<\operatorname{cost}(e(h))\) has
+\(\mathcal O_t(e',h)\ne\emptyset\) or \(\mathcal O_\gamma(e',h)\ne\emptyset\)
+for some \(\gamma\). Moreover, if \(<\) is well founded on \(C\) and some compression
+in \(\mathcal A\) is closed for \(h\), then there is \(e^\ast\in\mathcal A\)
+that is closed for \(h\) and satisfies
+\(\operatorname{Irreducible}_{e^\ast}(h)\). If for every \(v\in E\) the class \(\mathcal A\) contains a map \(e'\) with
+\(e'(h)=v\) and \(e'(x)\ne v\) for every \(x\ne h\) (for instance, if
+\(\mathcal A\) contains every map \(H\to E\) and \(E\) has at least two
+elements), then
+\(\operatorname{Irreducible}_e(h)\) holds exactly when no \(v\in E\) has
+\(\operatorname{cost}(v)<\operatorname{cost}(e(h))\). For such a class
+\(\mathcal A\) the pointwise notion depends on neither \(t\) nor the routes
+\(r_\gamma\); it constrains the target only when \(\mathcal A\) excludes maps
+isolating \(h\). The global notion below requires closure on every class, so an
+isolating map is globally closed only when \(t\) and every \(r_\gamma\) respect
+all its classes.
+\emph{Global form.} Let \(b:H\to B\) be a map. Separately declare an admissible
+class \(\mathcal A_{\mathrm{glob}}\) of descriptions \(e:H\to E'\), allowing the
+codomain \(E'\) to vary, and a cost \(c\) on these descriptions and on \(b\).
+Call \(e\) \emph{globally closed over} \(b\) when \(e\) descends through \(b\),
+\(t\) descends through \(e\), and \(e\circ r_\gamma\) descends through \(e\) for
+every \(\gamma\). For surjective \(b\) and \(e\), this holds exactly when the sets
+\(\{(x,x'):b(x)=b(x'),\ e(x)\ne e(x')\}\) and
+\(\{(x,x'):e(x)=e(x'),\ t(x)\ne t(x')\}\) and, for every \(\gamma\),
+\(\{(x,x'):e(x)=e(x'),\ e(r_\gamma x)\ne e(r_\gamma x')\}\) are empty. Define
+\(b\) to be \emph{globally irreducible} when no \(e\in\mathcal A_{\mathrm{glob}}\)
+globally closed over \(b\) satisfies \(c(e)<c(b)\). If \(c\) takes values in a
+well-founded strict order and some description in \(\mathcal A_{\mathrm{glob}}\)
+is globally closed over \(b\), then some \(e^\ast\in\mathcal A_{\mathrm{glob}}\)
+globally closed over \(b\) has no description in \(\mathcal A_{\mathrm{glob}}\)
+globally closed over \(b\) of smaller cost, and \(e^\ast\) is globally
+irreducible (with \(e^\ast\) in place of \(b\)).
+\end{theorem}
+\begin{proof}
+Assume the named maps and the declared cost relation. A compression is
+closed exactly when no target or route update distinguishes two
+representatives of the same compressed description. In symbols,
+\[
+  \mathcal O_t(e,h)=
+  \{(x,x'):e(x)=e(x')=e(h),\ t(x)\ne t(x')\},
+\]
+and similarly \(\mathcal O_\gamma(e,h)\) is formed using
+\(e(r_\gamma x)\). Hence closedness is precisely the simultaneous
+emptiness of these obstruction sets. Substituting this for each cheaper \(e'\in\mathcal A\) in the definition of
+\(\operatorname{Irreducible}_e(h)\) gives the reformulation after the display:
+a shorter closed \(e'\) carries all declared readouts with smaller cost, so
+\(h\) is reducible exactly when some cheaper admissible candidate has all its
+obstruction sets empty.
+If \(\operatorname{Irreducible}_e(h)\) holds, no admissible closed compression
+has cost below \(\operatorname{cost}(e(h))\). If moreover \(e\in\mathcal A\)
+is closed at \(h\), then \(e\) is minimal among admissible closed compressions.
+For the existence clause, the costs \(\operatorname{cost}(e'(h))\) of the
+closed compressions \(e'\in\mathcal A\) at \(h\) form a nonempty subset of
+\(C\). Since \(<\) is well founded, this subset has a \(<\)-minimal element
+\(\operatorname{cost}(e^\ast(h))\) with \(e^\ast\in\mathcal A\) closed at
+\(h\), and no closed compression in \(\mathcal A\) at \(h\) has a cost below
+it, which is \(\operatorname{Irreducible}_{e^\ast}(h)\).
+For the last clause, let \(v\in E\) and take \(e'\in\mathcal A\) with
+\(e'(h)=v\) and \(e'(x)\ne v\) for \(x\ne h\); when \(\mathcal A\) contains
+every map and \(E\) has two elements, choose \(w\ne v\) and set
+\(e'(h)=v\) and \(e'(x)=w\) for \(x\ne h\). The map \(e'\) has
+\(\{h\}\) as the \(e'\)-class of \(h\), so both obstruction sets are empty and
+\(e'\) is closed for \(h\). Hence a \(v\) with
+\(\operatorname{cost}(v)<\operatorname{cost}(e(h))\) gives a cheaper closed
+\(e'\in\mathcal A\); conversely, a cheaper closed \(e'\) gives such a \(v\),
+namely \(e'(h)\). For the global clause, each descent condition is the
+emptiness of the corresponding set by the descent criterion, using
+surjectivity of \(b\) and \(e\). An isolating map is globally closed only if
+\(t\) and every \(r_\gamma\) respect its classes on all of \(H\). For the global
+minimum, take a closed description of minimal cost; any description globally
+closed over \(e^\ast\) descends through \(e^\ast\), hence through \(b\), so it is
+closed over \(b\) and cannot cost less.
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F42}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Abel-Ruffini-Galois unsolvability of the
+quintic (algebra).}] \textit{Analogy.}
+For a quintic over \(\mathbb Q\) with Galois group \(S_5\), no
+root is a nested-radical expression in its coefficients, by Galois's solvability criterion; Abel proved the corresponding statement for the general quintic \citep{Abel1824Quintic,Galois1846Memoire}. To instantiate \Fref{F42}, one must
+specify \(H,E,t,\mathcal A\) and establish that every compression
+in \(\mathcal A\) closed at the chosen polynomial would yield such
+a radical expression for the target root.
+
+\end{description}
+\endgroup
+
+
+\subsection{Continuum Emergence [\texorpdfstring{\Fref{F43}}{F43}]}\label{sec:self-reference-limits:continuum-emergence}
+
+\paragraph{Reading the statement.} \Cref{thm:F43} below does not
+construct a limit: the candidate limit \(L\), the projections \(p_i\) and
+the limit quotient \(\ell\) are given, and no topology or convergence
+beyond the declared predicate \(\operatorname{Vanishes}\) on the
+residuals is used.  \(\operatorname{Cofinal}(I)\) says that every
+declared finite test is covered at some index; it is a covering
+condition, not order-theoretic cofinality.  Coherence, cofinality and
+vanishing enter \(\operatorname{StableLimitQuotient}(L)\) only as
+assumed conjuncts and are carried unchanged into the conclusion.  The
+content of the theorem is the existence and uniqueness of a readout
+\(\bar\ell\) on the limit quotient that agrees with every stage readout:
+the equations \(\phi_{ij}\circ p_j=p_i\) and \(r_i\circ\phi_{ij}=r_j\),
+together with directedness, make the stage readouts agree, and
+\(\bar\ell\) exists when their common value descends through \(\ell\).
+
+\begin{theorem}[Continuum Emergence]\label{thm:F43}
+Let \((I,\le)\) be a nonempty directed index set, let \(A_i\) be a discrete
+approximation at index \(i\), and let
+\(\phi_{ij}:A_j\to A_i\) be comparison maps for \(i\le j\). Let
+\(p_i:L\to A_i\) be projections from a candidate limit \(L\), let
+\(\xi_i\in R_i\) be residuals, let
+\(\ell:L\to Q_\infty\) be a surjective limit quotient, let
+\(r_i:A_i\to L_{\mathrm{rec}}\) be stage readouts, and let
+\(t:L\to L_{\mathrm{rec}}\) be a target readout. Let \(\mathcal T\) be a set of
+declared finite tests with a covering relation
+\(\operatorname{cov}\subseteq I\times\mathcal T\), write
+\(\operatorname{Cofinal}(I)\) (a covering condition, not order-theoretic
+cofinality) \(:\Longleftrightarrow\forall\tau\in\mathcal T\ \exists i\in I\ \operatorname{cov}(i,\tau)\),
+and let \(\operatorname{Vanishes}\) be a declared predicate on residual
+families \((\xi_i)_{i\in I}\). Write \(\operatorname{TowerCoherent}(\phi_{ij})\)
+when \(\phi_{ii}=\mathrm{id}\) and \(\phi_{ik}=\phi_{ij}\circ\phi_{jk}\) for
+\(i\le j\le k\), and call \(\bar\ell:Q_\infty\to L_{\mathrm{rec}}\) compatible with
+all \(p_i\) when \(\bar\ell(\ell(x))=r_i(p_i(x))\) for all \(i\in I\) and
+\(x\in L\). Write
+\begin{align*}
+  \operatorname{StableLimitQuotient}(L)
+  :\iff\
+  &\operatorname{TowerCoherent}(\phi_{ij})
+  \ \wedge\
+  \operatorname{Cofinal}(I)\\
+  &\wedge\
+  \operatorname{Vanishes}(\xi_i)
+  \ \wedge\
+  \exists\,\bar\ell:Q_\infty\to L_{\mathrm{rec}}\ \text{ compatible with all }p_i .
+\end{align*}
+Suppose that the tower is coherent and cofinal, that the residuals vanish,
+that \(\phi_{ij}\circ p_j=p_i\) and \(r_i\circ\phi_{ij}=r_j\) for \(i\le j\),
+and that for some index \(b\) the target readout satisfies
+\(t=r_b\circ p_b\) and is constant on the fibers of \(\ell\). Then there is exactly one \(\bar\ell:Q_\infty\to L_{\mathrm{rec}}\) compatible
+with all \(p_i\), namely \(\bar\ell(\ell(x))=t(x)\); with the assumed coherence,
+cofinality and vanishing, \(\operatorname{StableLimitQuotient}(L)\) holds. More generally, assume only that \(\phi_{ij}\circ p_j=p_i\) and
+\(r_i\circ\phi_{ij}=r_j\) for \(i\le j\). Then \(r_i\circ p_i=r_j\circ p_j\) for all
+\(i,j\in I\); for every index \(b\), a map \(\bar\ell\) compatible with all \(p_i\)
+exists if and only if \(r_b\circ p_b\) is constant on the fibers of \(\ell\), and
+it is then unique; hence \(\operatorname{StableLimitQuotient}(L)\) holds if and
+only if, in addition, the tower is coherent and cofinal and the residuals
+vanish.
+\end{theorem}
+\begin{proof}
+Fix \(x\in L\) and \(i\in I\). Since \(I\) is directed, choose \(k\) with
+\(b\le k\) and \(i\le k\). Using \(p_b=\phi_{bk}\circ p_k\) and
+\(r_b\circ\phi_{bk}=r_k\),
+\[
+  t(x)=r_b(p_b(x))=r_b(\phi_{bk}(p_k(x)))=r_k(p_k(x)),
+\]
+and in the same way
+\(r_i(p_i(x))=r_i(\phi_{ik}(p_k(x)))=r_k(p_k(x))\). Hence
+\(r_i(p_i(x))=t(x)\) for every \(i\). Since \(t\) is constant on the fibers
+of \(\ell\) and \(\ell\) is surjective, \(\bar\ell(\ell(x)):=t(x)\) defines a
+map \(\bar\ell:Q_\infty\to L_{\mathrm{rec}}\), and
+\(\bar\ell(\ell(x))=r_i(p_i(x))\) for all \(i\) and \(x\), so \(\bar\ell\) is
+compatible with all \(p_i\). Together with the coherence, cofinality and
+vanishing hypotheses, the four conditions defining
+\(\operatorname{StableLimitQuotient}(L)\) hold.
+For the general clause, the same computation with a common upper bound \(k\)
+of \(i\) and \(j\) gives \(r_i\circ p_i=r_k\circ p_k=r_j\circ p_j\). If
+\(\bar\ell\) is compatible with all \(p_i\), then
+\(r_b(p_b(x))=\bar\ell(\ell(x))\) is constant on the fibers of \(\ell\);
+conversely, if \(r_b\circ p_b\) is constant on those fibers, the argument above
+with \(t:=r_b\circ p_b\) gives a compatible \(\bar\ell\). Since \(\ell\) is
+surjective, \(\bar\ell\) is determined by \(\bar\ell(\ell(x))=r_b(p_b(x))\).
+\end{proof}
+
+The result supplies a readout on the specified quotient of a candidate limit
+that agrees with every stage readout.
+
+\subsection*{Layer instantiations}\label{layer-inst:F43}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Dedekind cut construction of the reals
+(analysis).}] \textit{Analogy.}
+The discrete approximations are rational intervals
+indexed by precision; comparison maps are
+inclusions of finer intervals into coarser ones.
+A Dedekind cut is a non-empty proper downward-closed
+subset \(A\subsetneq\mathbb Q\) without greatest element.  The candidate limit is the set of cuts;
+projections send a cut to its rational interval
+approximant; the surjective limit quotient sends
+a cut to its real value, and tower coherence is
+nested-approximation consistency.  The analogy
+is informal: the cut construction is not
+presented here as a tower satisfying the
+hypotheses of \Fref{F43} \citep{Dedekind1872Stetigkeit}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Criticality / Phase Boundary [\texorpdfstring{\Fref{F44}}{F44}]}\label{sec:self-reference-limits:criticality}
+
+The motivating substrate analogy is the theory of phase transitions and
+critical phenomena; the standard textbook treatment is
+\citet{Stanley1971PhaseTransitions}.  The layer-agnostic statement
+below records the descent-and-margin shape that the substrate
+realizes.
+
+\paragraph{Reading the statement.} In \Cref{thm:F44} below, the three
+displayed lines define phase transition, phase boundary and criticality from
+the declared data, and clause (i) is the ordinary quotient-descent criterion. Neighborhoods are indexed by \(W\in\mathcal W\), and \(U\) is the non-uniform-response
+predicate. For a general relation \(N\) the predicate is only as informative
+as \(N\): if \(\mathcal W\) is empty, every formed control is a phase boundary,
+and an index \(W\) with no \(y\) satisfying \(N(x,W,y)\) makes \(x\) locally
+phase-constant. The relation of (iv) excludes both cases. Clause (iii) asks that, at each step and for every \(W\), some
+neighbour of \(x_k\) have the phase of \(x_{k+1}\); with the neighbourhood
+relation of (iv) this says that \(x_k\) lies in the closure of the phase class
+of \(x_{k+1}\), and (iv) is the form that applies to continuous paths.
+The relation of (iv) is chosen so that the empty open set does not
+witness local constancy, as it would for the relation
+\(x\in W\wedge y\in W\).
+
+\begin{theorem}[Criticality / Phase Boundary]\label{thm:F44}
+Let \(\mathcal C\) be a control space with surjective quotient
+\(c:\mathcal C\to C\), phase readout \(\varphi:\mathcal C\to\Phi\),
+formedness predicate \(F:\mathcal C\to\mathrm{Prop}\), and
+neighborhood relation \(N\subseteq\mathcal C\times\mathcal W\times\mathcal C\) over a
+declared set \(\mathcal W\) of neighbourhood indices (in (iv), \(\mathcal W\) is
+the set of open subsets of \(\mathcal C\)). Let
+\(M,U,R:\mathcal C\to\mathrm{Prop}\) denote, respectively,
+margin-vanishing, non-uniform response, and
+residuals-statused. For a readout \(r:\mathcal C\to V\) let
+\(\mathcal O_c(r)=\{(x,y):c(x)=c(y)\ \text{and}\ r(x)\ne r(y)\}\), and for
+\(x,x_-,x_+\in\mathcal C\) define
+\begin{align*}
+  \operatorname{PhaseTransition}(x_-,x_+)
+  &:\Longleftrightarrow \varphi(x_-)\ne\varphi(x_+),\\
+  \operatorname{PhaseBoundary}(x)
+  &:\Longleftrightarrow F(x)\ \wedge\
+    \neg\exists W,\ \forall y,\ N(x,W,y)\Rightarrow \varphi(y)=\varphi(x),\\
+  \operatorname{Critical}(x)
+  &:\Longleftrightarrow \operatorname{PhaseBoundary}(x)\wedge (M(x)\vee U(x))\wedge R(x).
+\end{align*}
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item \(r\) descends through \(c\), that is \(r=\bar r\circ c\) for some
+  \(\bar r:C\to V\), if and only if \(\mathcal O_c(r)=\emptyset\);
+\item if \(\varphi\), \(F\), \(M\), \(U\) and \(R\) are constant on the fibers
+  of \(c\), and \(N\) respects \(c\) (\(N(x,W,y)\iff N(x',W,y)\) whenever
+  \(c(x)=c(x')\)), then \(\operatorname{PhaseBoundary}\) and
+  \(\operatorname{Critical}\) are constant on the fibers of \(c\), so by (i)
+  they descend through \(c\): whether a control is critical depends only on
+  its class;
+\item if \(x_0,\dots,x_n\) is a finite list of controls with \(F(x_k)\) for
+  every \(k\) and, for every \(k<n\) and every \(W\), some \(y\) with
+  \(N(x_k,W,y)\) has \(\varphi(y)=\varphi(x_{k+1})\) (for instance,
+  \(N(x_k,W,x_{k+1})\) for every \(W\), as when \(N\) is a neighbourhood graph
+  whose relation does not depend on \(W\); with the topological relation \(N(x,W,y):\Leftrightarrow(x\in W\Rightarrow y\in W)\), \(W\) open, used in (iv), the condition says exactly that \(x_k\) lies in the closure of the phase class of \(x_{k+1}\)), and
+  \(\varphi(x_0)\ne\varphi(x_n)\), then some \(k<n\) has
+  \(\varphi(x_k)\ne\varphi(x_{k+1})\) and
+  \(\operatorname{PhaseBoundary}(x_k)\): a phase transition along a path of
+  neighbouring formed controls crosses a phase boundary;
+\item if \(\mathcal C\) is a topological space, \(W\) ranges over its open
+  sets and \(N(x,W,y)\) means that \(y\in W\) whenever \(x\in W\), and
+  \(\gamma:[0,1]\to\mathcal C\) is continuous with \(F(\gamma(s))\) for every
+  \(s\) and \(\varphi(\gamma(0))\ne\varphi(\gamma(1))\), then
+  \(\operatorname{PhaseBoundary}(\gamma(s))\) for some \(s\in[0,1]\): a phase
+  transition along a continuous path of formed controls crosses a phase
+  boundary. With this \(N\), \(\operatorname{PhaseBoundary}(x)\) holds exactly
+  when \(F(x)\) holds, \(\varphi\) is not constant on \(\mathcal C\), and
+  \(\varphi\) is constant on no open neighbourhood of \(x\).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Since \(c\) is surjective, (i) is the descent criterion of
+\Cref{sec:apparatus}.  The defined predicates sort a formed control \(x\) into two cases:
+\[
+  \begin{cases}
+  \exists W\,\forall y,\ N(x,W,y)\Rightarrow\varphi(y)=\varphi(x),
+    &\text{\(x\) is locally phase-constant,}\\
+  \neg\exists W\,\forall y,\ N(x,W,y)\Rightarrow\varphi(y)=\varphi(x),
+    &\text{\(x\) lies on a phase boundary,}
+  \end{cases}
+\]
+and a critical control is a boundary control at which the separating margin
+vanishes or the response is non-uniform, with its residuals statused.
+For (ii), let \(c(x)=c(x')\). Then \(F(x)=F(x')\) and
+\(\varphi(x)=\varphi(x')\), and for every \(W\) and \(y\),
+\(N(x,W,y)\iff N(x',W,y)\); so \(x\) is locally phase-constant exactly when
+\(x'\) is, and \(\operatorname{PhaseBoundary}(x)\iff
+\operatorname{PhaseBoundary}(x')\). With \(M(x)=M(x')\), \(U(x)=U(x')\) and
+\(R(x)=R(x')\), also \(\operatorname{Critical}(x)\iff
+\operatorname{Critical}(x')\).
+(iii) Since \(\varphi(x_0)\ne\varphi(x_n)\), some \(k<n\) has
+\(\varphi(x_{k+1})\ne\varphi(x_k)\). For every \(W\), the hypothesis gives
+\(y\) with \(N(x_k,W,y)\) and \(\varphi(y)=\varphi(x_{k+1})\ne\varphi(x_k)\), so
+no \(W\) makes \(\varphi\) constant at \(x_k\); with \(F(x_k)\) this is
+\(\operatorname{PhaseBoundary}(x_k)\).
+(iv) Suppose no \(\gamma(s)\) is a boundary point. Since every
+\(\gamma(s)\) is formed, for each \(s\) there is an open \(W_s\) with
+\(\varphi(y)=\varphi(\gamma(s))\) for every \(y\) such that
+\(\gamma(s)\in W_s\Rightarrow y\in W_s\). If \(\gamma(s)\notin W_s\), every
+\(y\) qualifies, so \(\varphi\) is constant on \(\mathcal C\), contradicting
+\(\varphi(\gamma(0))\ne\varphi(\gamma(1))\). Hence \(\gamma(s)\in W_s\) and
+\(\varphi\) is constant on \(W_s\), so \(\varphi\circ\gamma\) is constant on
+the open neighbourhood \(\gamma^{-1}(W_s)\) of \(s\). A locally constant map
+on the connected interval \([0,1]\) is constant, so
+\(\varphi(\gamma(0))=\varphi(\gamma(1))\), a contradiction.
+For the last sentence of (iv): an open \(W\not\ni x\) relates \(x\) to every
+\(y\), so it witnesses local constancy exactly when \(\varphi\) is constant on
+\(\mathcal C\); an open \(W\ni x\) does so exactly when \(\varphi\) is constant on
+\(W\). Since \(\mathcal C\) is an open neighbourhood of \(x\),
+\(\operatorname{PhaseBoundary}(x)\) holds exactly when \(F(x)\) holds and
+\(\varphi\) is constant on no open neighbourhood of \(x\), which implies that
+\(\varphi\) is not constant on \(\mathcal C\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F44}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Allee effect threshold (population
+ecology).}] \textit{Analogy.}
+For a species population \(\dot N=N\,r(N)\), the
+control space is population size; the phase readout
+records ``extinction'' vs ``persistence''.  The Allee
+effect makes the per-capita growth \(r(N)\) negative
+below an Allee threshold \(N_A\), producing a phase
+boundary at \(N=N_A\): the per-capita growth rate
+\(r(N_A)\) vanishes, response to environmental perturbations is
+non-uniform, and the residuals-statused predicate \(R\) would have
+to be supplied as a declared status of demographic
+noise, which the analogy does not provide
+\citep{Allee1931Aggregations}.
+
+\item[\emph{Thom cusp catastrophe (catastrophe
+theory).}] \textit{Analogy.}
+The cusp catastrophe is the family of potentials
+\(V_a(x)=x^4/4+a_1 x^2/2+a_2 x\) parameterised by
+\((a_1,a_2)\in\mathbb R^2\); the phase readout
+records the number of stable equilibria.  The
+bifurcation set \(4a_1^3+27a_2^2=0\) is the phase boundary: on its
+fold branches one stable equilibrium merges with the unstable one,
+all three equilibria merge at the cusp point \(a=0\), the energy
+margin vanishes, the response is
+non-uniform, and the residual smooth-perturbation
+status is classified by the elementary catastrophe
+normal form \citep{Thom1972Stabilite}.
+
+\item[\emph{{NBER} business-cycle peak/trough
+(macroeconomics).}] \textit{Analogy.}
+The control space is macroeconomic time series of
+GDP, employment, industrial production, and personal
+income; the phase readout records expansion vs
+recession.  NBER-defined peaks and troughs are
+phase boundaries: leading-indicator marginal growth
+vanishes, sectoral responses are non-uniform, and
+the residual status is handled by the NBER Business
+Cycle Dating Committee's revision protocol over
+noisy indicators \citep{BurnsMitchell1946Measuring}.
+
+\item[\emph{Hopf bifurcation onset of oscillation
+(nonlinear dynamics).}] \textit{Analogy.}
+For a parameter-dependent ODE
+\(\dot{\mathbf x}=f(\mathbf x;\mu)\), the control
+space is \(\mu\); the phase readout records ``stable
+fixed point'' vs ``limit cycle''.  A Hopf bifurcation
+at \(\mu=\mu_H\) occurs when a complex-conjugate
+eigenvalue pair of the Jacobian crosses the
+imaginary axis: the real part vanishes, in the supercritical case
+oscillation amplitude grows as \(\sqrt{\mu-\mu_H}\) (a subcritical
+bifurcation instead produces a jump to a distant attractor), and the
+residual perturbation is statused by smooth
+normal-form coefficients \citep{Hopf1942Abzweigung}.
+\end{description}
+\endgroup
+
+
+\subsection{Locality / Domain of Dependence [\texorpdfstring{\Fref{F45}}{F45}]}\label{sec:self-reference-limits:locality}
+
+The classical relativistic analogy for a local quotient with a
+domain-of-dependence structure is the causal structure of
+Lorentzian spacetime; the standard reference for the
+domain-of-dependence formalism is \citet[Chapter~8]{Wald1984GR}.
+
+\begin{theorem}[Locality / Domain of Dependence]\label{thm:F45}
+Let \(H\) be a history set with local quotient \(\ell:H\to L\),
+target readout \(t:H\to T\), signature \(\sigma:H\to\Sigma\), update
+map \(u:H\to H'\), and target quotient \(q':H'\to Q'\). Assume
+\(\ell\) is surjective. Let \(<\) be a declared strict-smaller relation on a
+declared class of local quotients of \(H\) that contains \(\ell\); in
+\(\operatorname{MinimalDomain}\), \(\ell'\) ranges over that class. Write
+\(\operatorname{LocalToDomain}(\ell,t)\) when \(t\) factors through \(\ell\),
+that is \(t=\bar t\circ\ell\) for some \(\bar t:L\to T\);
+\(\operatorname{TargetFamilyLocal}(\ell,\sigma)\) when \(\sigma\) factors
+through \(\ell\); and \(\operatorname{DynamicLocality}(\ell,u,q')\) when
+\(q'\circ u\) factors through \(\ell\). Define
+\[
+  \mathcal O_\ell(t)=
+  \{(h,h'):\ell(h)=\ell(h')\ \text{and}\ t(h)\ne t(h')\},
+\]
+and define
+\[
+  \operatorname{MinimalDomain}(\ell,\sigma)
+  :\Longleftrightarrow \operatorname{TargetFamilyLocal}(\ell,\sigma)\ \wedge\
+  \neg\exists \ell',\ \ell'\!<\ell\ \wedge\
+  \operatorname{TargetFamilyLocal}(\ell',\sigma).
+\]
+Then
+\begin{align*}
+  \operatorname{LocalToDomain}(\ell,t)
+  &\iff \mathcal O_\ell(t)=\emptyset,\\
+  \operatorname{TargetFamilyLocal}(\ell,\sigma)
+  &\iff
+  \forall a,b\in H,\ \ell(a)=\ell(b)\Rightarrow \sigma(a)=\sigma(b),\\
+  \operatorname{DynamicLocality}(\ell,u,q')
+  &\iff
+  \forall a,b\in H,\ \ell(a)=\ell(b)\Rightarrow q'(u(a))=q'(u(b)).
+\end{align*}
+Moreover, the local repair \(\langle\ell,t\rangle:H\to L\times T\) satisfies
+\(\operatorname{LocalToDomain}(\langle\ell,t\rangle,t)\). If \(\ell'<\ell\)
+means that \(\ell'\) factors through \(\ell\) and \(\ell\) does not factor
+through \(\ell'\), the declared class contains \(\sigma\), and \(H\) is
+nonempty, then \(\operatorname{MinimalDomain}(\ell,\sigma)\) holds if and only if \(\ell\) and
+\(\sigma\) have the same fibers.
+\end{theorem}
+\begin{proof}
+Since \(\ell\) is surjective, the three displayed equivalences are the
+descent criterion of \Cref{sec:apparatus} for \(\ell\) and the readouts
+\(t\), \(\sigma\) and \(q'\circ u\).  For the local repair, \(t=\mathrm{pr}_2\circ\langle\ell,t\rangle\), so \(t\)
+factors through \(\langle\ell,t\rangle\). For the last clause, note that for
+nonempty \(H\) two maps on \(H\) with the same fibers factor through each other
+(for empty \(H\) a map into an empty codomain need not exist). Suppose
+\(\operatorname{MinimalDomain}(\ell,\sigma)\). Then \(\sigma\) factors through
+\(\ell\); if \(\ell\) did not factor through \(\sigma\), then \(\sigma<\ell\)
+and \(\sigma\) factors through itself, contradicting minimality, so \(\ell\)
+and \(\sigma\) have the same fibers. Conversely, if they have the same fibers
+and \(\sigma\) factors through some \(\ell'\) with \(\ell'<\ell\), then
+\(\ell\), which factors through \(\sigma\), factors through \(\ell'\),
+contradicting \(\ell'<\ell\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F45}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Markov property in stochastic processes
+(probability theory).}] \textit{Special case.}
+For a time-homogeneous Markov chain \((X_t)\) on a countable
+state space \(S\) with transition matrix \(P\), let \(H\) be the set of
+state sequences \(\omega=(x_0,\dots,x_k)\) of positive probability,
+\(\ell(\omega)=x_k\) and \(L=\ell(H)\), so \(\ell\) is surjective. For an
+integer \(\Delta\ge1\), let \(t(\omega)\) be the law of \(X_{k+\Delta}\) given
+\((X_0,\dots,X_k)=\omega\). The Markov property says
+\(t(\omega)=P^{\Delta}(x_k,\cdot)\), which implies
+\(\operatorname{LocalToDomain}(\ell,t)\) with \(\bar t(x)=P^{\Delta}(x,\cdot)\). Take \(\sigma=t\), all quotients of \(H\)
+as the declared class, and strict coarsening as \(<\). Then \(\ell\)
+is sufficient and is minimal exactly when distinct states in \(L\)
+have distinct \(\Delta\)-step rows; otherwise equality of those rows
+gives a coarser sufficient quotient. This descent condition concerns the \(\Delta\)-step law of the unlumped state; lumpability asks that the lumped process itself be Markov, and the two conditions can coincide \citep{Markov1906Investigation}.
+
+\item[\emph{Sheaf locality on a topological space
+(algebraic geometry).}] \textit{Special case.}
+For a sheaf \(\mathcal F\) on a topological space
+\(X\), the history set consists of pairs
+\((U,s)\) of an open subset and a section; the
+local quotient sends \((U,s)\) to \(U\) together with its family of
+germs \((s_x)_{x\in U}\), \(s_x\in\mathcal F_x\), corestricted to its image so that \(\ell\) is surjective.  The target
+readout is the section.  The sheaf condition
+states that two sections agreeing on all germs
+coincide, so the section descends through the germ-family quotient (gluing is not needed, since every history is an actual section).  Take \(\sigma=t\), all quotients of \(H\) as
+the declared class and strict coarsening as \(<\). Since the family of
+germs and the section determine each other, \(\ell\) and the readout have
+the same fibers, so \(\ell\) is a minimal domain by the last clause of
+\Cref{thm:F45} \citep{Grothendieck1957Tohoku}.
+
+\item[\emph{Cellular automaton local-update rule
+(theoretical computer science).}] \textit{Special case.}
+For a cellular automaton on \(\mathbb Z^d\) with
+finite state space, the history set is global
+configurations; the local quotient sends a
+configuration to its restriction to a radius-\(r\)
+neighbourhood of a cell.  The local update rule
+computes the next state from the radius-\(r\)
+neighbourhood; the next-state readout descends
+through the neighbourhood quotient, so the
+radius-\(r\) neighbourhood is a sufficient domain.
+Take \(\sigma\) the next-state readout, all quotients of the history set as the declared class and strict coarsening as \(<\); by the last clause of \Cref{thm:F45}, a local quotient is minimal exactly when it has the fibers of \(\sigma\). The minimal quotient identifies neighbourhood
+patterns with the same next state; for an XOR rule it
+is the parity of the neighbourhood
+\citep{vonNeumann1966SelfReproducing}.
+
+\item[\emph{Lamport happens-before relation
+(distributed systems).}] \textit{Special case.}
+For a distributed system of asynchronous processes exchanging
+messages, fix an event set containing at least three events. The history set consists of ordered pairs \((e_1,e_2)\) of distinct events; the local quotient \(\ell\) sends such a pair to its pair of causal pasts \((\downarrow e_1,\downarrow e_2)\), corestricted to its image, with \(\downarrow e:=\{f:f\to e\}\cup\{e\}\), where \(\to\) is Lamport's relation, the smallest transitive relation in which events within one process are ordered by occurrence and every message-send precedes its matching receive. Let \(\sigma(e_1,e_2)\) be the verdict \(e_1\to e_2\), \(e_2\to e_1\) or \(e_1\parallel e_2\) (concurrent). Since \(e_1\to e_2\) exactly when \(e_1\in\downarrow e_2\), the verdict descends through \(\ell\). Take all quotients of the history set as the declared class and strict coarsening as \(<\). Because \(e\) is the greatest element of \(\downarrow e\), \(\ell\) is injective, while \(\sigma\) takes at most three values on at least six pairs; so by the last clause of \Cref{thm:F45} \(\ell\) is sufficient but not minimal, and the minimal domain is the verdict itself \citep{Lamport1978HappensBefore}.
+
+\item[\emph{Voronoi cell as nearest-neighbour
+domain (computational geometry).}] \textit{Special case.}
+For a nonempty finite indexed set of distinct seed points
+\(P=\{p_1,\ldots,p_m\}\subset\mathbb R^d\), the history set is the ambient
+space; the local quotient sends each point to the
+index of its nearest seed, ties broken by the smallest index.  The local
+domain is the cell \(\{x:\text{the tie-broken nearest seed is }p_i\}\),
+contained in the Voronoi cell
+\(V_i=\{x:\|x-p_i\|\le\|x-p_j\|\,\forall j\}\), and
+the nearest-neighbour classification descends
+through this quotient.  On interior points of these cells the verdict is
+robust to small perturbations. At distance ties the declared rule gives a
+unique verdict, although it need not be robust to perturbations.
+Take \(\sigma\) the verdict readout, all quotients of the history set as the declared class and strict coarsening as \(<\); by the last clause of \Cref{thm:F45}, a local quotient is minimal exactly when it has the fibers of \(\sigma\). The minimal domain is the partition into the tie-broken cells
+\citep{Voronoi1908Nouvelles}.
+\end{description}
+\endgroup
+
+\subsection{Law--State Split [\texorpdfstring{\Fref{F46}}{F46}]}\label{sec:self-reference-limits:law-state-split}
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F46} below.
+By clause (ii), for a readout that descends the split does not depend on
+\(\mu\): a law readout is a readout constant on \(\mathcal X\), and \(\mu\) enters
+only through descent, uniqueness of \(\bar r\), and clauses (iii) and (iv).
+Taking every closure lawful and \(c\sim d:\Longleftrightarrow\mu(c)=\mu(d)\)
+in \Cref{thm:F26}, a readout that descends through \(\mu\) is a moduli
+readout, \(\operatorname{LawReadout}\) is \(\operatorname{NecessaryReadout}\),
+and for a descending readout \(\operatorname{StateDependent}\) is
+\(\operatorname{ContingentReadout}\). Clause~(i) below is the first half of
+clause~(i) of \Cref{thm:F26} with uniqueness of \(\bar r\) added; clause~(ii)
+contains clause~(ii) there; clause~(iv) is clause~(iv) there with \(\sim'\)
+the kernel of \(\mu_2\); and clause~(iii) evaluates the descended readout at
+the selected modulus \(m_\ast\).
+
+\begin{theorem}[Law--State Split]\label{thm:F46}
+Let \(\mathcal X\) be a closure space with surjective moduli quotient
+\(\mu:\mathcal X\to M\) and readout \(r:\mathcal X\to V\). Let
+\(m_\ast\in M\) be a selected modulus, and let
+\(\tau:\mathcal X\to\mathcal X_2\) be a transport into a second closure
+space with moduli quotient \(\mu_2:\mathcal X_2\to M_2\). The readout
+\(r\) \emph{descends} through \(\mu\) when \(r=\bar r\circ\mu\) for some
+\(\bar r:M\to V\), its \emph{descended readout}. For a readout that descends,
+define
+\begin{align*}
+  \operatorname{LawReadout}(r)
+  &:\Longleftrightarrow
+  \forall m,m'\in M,\ \bar r(m)=\bar r(m'),\\
+  \operatorname{StateDependent}(r)
+  &:\Longleftrightarrow \neg\operatorname{LawReadout}(r).
+\end{align*}
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item \(r\) descends through \(\mu\) if and only if no pair \(x,y\) has
+  \(\mu(x)=\mu(y)\) and \(r(x)\ne r(y)\), and then its descended readout
+  \(\bar r\) is unique;
+\item if \(r\) descends, \(\operatorname{LawReadout}(r)\) holds if and only if no
+  pair \(m,m'\in M\) has \(\bar r(m)\ne\bar r(m')\), if and only if \(r\) is
+  constant on \(\mathcal X\), and exactly one of
+  \(\operatorname{LawReadout}(r)\) and \(\operatorname{StateDependent}(r)\)
+  holds; moreover \(\operatorname{StateDependent}(r)\) holds if and only if
+  some \(x,y\in\mathcal X\) have \(\mu(x)\ne\mu(y)\) and \(r(x)\ne r(y)\);
+\item if \(r\) descends, every \(x\) with \(\mu(x)=m_\ast\) has
+  \(r(x)=\bar r(m_\ast)\): the selected state fixes the readout;
+\item \(\mu_2\circ\tau\) descends through \(\mu\) if and only if no pair
+  \(x,y\) has \(\mu(x)=\mu(y)\) and \(\mu_2(\tau x)\ne\mu_2(\tau y)\).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(i) and (iv), with the uniqueness of \(\bar r\), are the descent
+criterion of \Cref{sec:apparatus} for the surjective quotient \(\mu\),
+applied to \(r\) and to \(\mu_2\circ\tau\). (ii) The first equivalence restates
+the definition with the order of quantifier and negation exchanged. For the
+second, if \(\bar r\) is constant then \(r=\bar r\circ\mu\) is constant; if
+\(r\) is constant and \(m=\mu(x)\), \(m'=\mu(y)\), then
+\(\bar r(m)=r(x)=r(y)=\bar r(m')\). Either \(\bar r\) is constant on \(M\), and
+\(r\) is a law-readout, or there exist \(m,m'\) with
+\(\bar r(m)\ne\bar r(m')\), and the value depends on the selected moduli
+class; \(\operatorname{StateDependent}(r)\) is defined as the second case, so
+exactly one holds. If \(\bar r(m)\ne\bar r(m')\), choose \(x,y\) with
+\(\mu(x)=m\), \(\mu(y)=m'\); then \(r(x)\ne r(y)\) and \(\mu(x)\ne\mu(y)\).
+Conversely such \(x,y\) give \(\bar r(\mu x)=r(x)\ne r(y)=\bar r(\mu y)\). (iii) If \(\mu(x)=m_\ast\), then
+\(r(x)=\bar r(\mu(x))=\bar r(m_\ast)\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F46}
+
+\begingroup\small
+\noindent In each item the constancy of the readout is the cited classical
+result, supplied as input; \Fref{F46} then classifies that readout as a law
+readout and the listed coordinates as state-dependent. It does not reprove the
+cited law. In each item \(M\) is the image of the moduli quotient, so that \(\mu\) is surjective as \Cref{thm:F46} requires and the descended readout is unique.
+\begin{description}
+\item[\emph{Clapeyron ideal gas law (thermodynamics).}] \textit{Special case.}
+For the ideal-gas model, the closure space is the
+set of states \((P,V,T,n)\) with \(P,V,T,n>0\) and \(PV=nRT\), where
+\(R\approx8.314\;\mathrm{J\,mol^{-1}\,K^{-1}}\) is the molar gas constant; the
+moduli quotient sends a state to its \((P,V,T,n)\) coordinates; this map is
+injective, so every readout descends, and the item illustrates clause (ii) only.  The readout
+\(PV/(nT)\) equals \(R\) on every state of the model, so the descended readout is
+constant on the moduli space and is a law-readout
+in the \Fref{F46} sense.  The state-dependent readouts
+(individual \(P\), \(V\), \(T\), \(n\)) vary across
+moduli \citep{Clapeyron1834Memoire}.
+
+\item[\emph{Hardy-Weinberg principle (population
+genetics).}] \textit{Special case.}
+For a randomly mating diploid population with two
+alleles at frequencies \(p,q\) under the
+Hardy-Weinberg assumptions, the closure space is
+the set of equilibrium populations and the moduli
+quotient collapses populations to their
+allele-frequency pair \((p,q)\).  The residual readout
+\((f_{AA}-p^2,\,f_{Aa}-2pq,\,f_{aa}-q^2)\) equals
+\((0,0,0)\) on every equilibrium population: the
+descended readout is constant and is a law-readout.
+The individual genotype frequencies
+\(f_{AA},f_{Aa},f_{aa}\) vary across moduli and are
+state-dependent \citep{Hardy1908Mendelian}.
+
+\item[\emph{Pythagorean theorem (Euclidean
+geometry).}] \textit{Special case.}
+For right triangles in Euclidean \(\mathbb R^2\),
+the moduli quotient sends a triangle to its leg
+lengths and hypotenuse \((a,b,c)\).  The Pythagorean
+readout \(c^2-a^2-b^2\) equals \(0\) on every right
+triangle; the descended readout is constant and is
+a law-readout.  Triangle area \(ab/2\), the two acute
+angles, and perimeter \(a+b+c\) are state-dependent
+\citep{Euclid300BCElements}.
+
+\item[\emph{Coulomb's law (electromagnetism).}] \textit{Special case.}
+For a system of nonzero point charges in vacuum, the
+moduli quotient sends configurations to charge values and pairwise
+distances.  For each pair, with \(F\) the signed pairwise force
+between charges 1 and 2 (positive for repulsion), the readout
+\(F r_{12}^2/(q_1 q_2)\) equals
+\(k_e=1/(4\pi\varepsilon_0)\approx8.988\times 10^9\;\mathrm{N\,m^2\,C^{-2}}\)
+on every configuration of the electrostatic model of nonzero point charges at
+rest in vacuum; the
+descended readout is constant and is a law-readout.
+Individual force magnitudes, charge values, and
+distances are state-dependent
+\citep{Coulomb1785Memoires}.
+
+\item[\emph{Bayes' rule for probability updating
+(probability theory).}] \textit{Special case.}
+Let the closure space be the set of quadruples
+\((P(H),P(D\mid H),P(D),P(H\mid D))\in[0,1]^4\) with \(P(H)>0\) and \(P(D)>0\) arising from
+events \(H,D\) of some probability space, and let the moduli quotient send a
+quadruple to its first three coordinates (prior, likelihood, data).  The Bayes residual
+readout \(P(H\mid D)\,P(D)-P(D\mid H)\,P(H)\)
+equals zero on every valid tuple; the descended
+readout is constant and is a law-readout.  The
+specific posterior, prior, and data values are
+state-dependent \citep{Bayes1763Essay}.
+\end{description}
+\endgroup
+
+\subsection{Fine-Tuning as Small Selector Region [\texorpdfstring{\Fref{F47}}{F47}]}\label{sec:self-reference-limits:fine-tuning}
+
+The canonical physical analogy for a small target-compatible region
+inside a moduli space is Weinberg's cosmological-constant analysis
+\citep{Weinberg1989CosmologicalConstant}.  The layer-agnostic
+statement below abstracts the smallness test from that substrate
+discussion.
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F47} below.
+\(\operatorname{TargetImpossible}(\Sigma(r,T))\) says that the selector
+region is empty: no modulus reaches the target region. The declarations
+of moduli space, target, measure and threshold are part of the setting and
+add no hypothesis.
+
+\begin{theorem}[Fine-Tuning as Small Selector Region]\label{thm:F47}
+Let \(M\) be a moduli space, \(r:M\to V\) a readout, and
+\(T:V\to\mathrm{Prop}\) a target-region predicate.  Let
+\(\mathcal M\) be the carrier type of measure-record values, let
+\(\mu:\mathrm{Pow}(M)\to\mathcal M\) be a measure record on subsets
+of \(M\), let \(\mu_{\mathrm{tot}}\in\mathcal M\) be the total
+measure, let \(\theta\in\Theta\) be a threshold in a declared set \(\Theta\), and let
+\(\odot:\Theta\times\mathcal M\to\mathcal M\) be the declared
+threshold scaling.  Let \(\operatorname{Pos}:\mathcal M\to
+\mathrm{Prop}\) and \({\le_{\mathcal M}}\subseteq
+\mathcal M\times\mathcal M\) be the declared positivity and order
+predicates on the measure record.  Let \(\mathrm{sel}\in M\) be a
+selected modulus, let \(\mathsf{selDec}\) be a selector-declared
+predicate.  Define the selector region
+\(\Sigma(r,T):=\{m\in M:T(r(m))\}\) and
+\begin{align*}
+  \operatorname{Small}(\Sigma(r,T))
+  &:\Longleftrightarrow
+  \operatorname{Pos}(\mu(\Sigma(r,T)))
+  \wedge
+  \mu(\Sigma(r,T))\le_{\mathcal M}\theta\odot\mu_{\mathrm{tot}},\\
+  \operatorname{Realized}(\Sigma(r,T),\mathrm{sel},\mathsf{selDec})
+  &:\Longleftrightarrow
+  \mathsf{selDec}
+  \wedge
+  \mathrm{sel}\in\Sigma(r,T)
+  \wedge
+  \operatorname{Small}(\Sigma(r,T)),\\
+  \operatorname{TargetImpossible}(\Sigma(r,T))
+  &:\Longleftrightarrow
+  \Sigma(r,T)=\emptyset.
+\end{align*}
+Then \(m\in\Sigma(r,T)\) if and only if \(T(r(m))\), and
+\[
+  \operatorname{TargetImpossible}(\Sigma(r,T))
+  \Longrightarrow
+  \neg\operatorname{Realized}(\Sigma(r,T),\mathrm{sel},\mathsf{selDec}):
+\]
+fine-tuning cannot be realized in a selector region that no modulus
+reaches, whatever the measure record says; this uses only the conjunct
+\(\mathrm{sel}\in\Sigma(r,T)\) of \(\operatorname{Realized}\). Moreover, realized fine-tuning
+gives \(\operatorname{Pos}(\mu(\Sigma(r,T)))\) and \(\Sigma(r,T)\ne\emptyset\);
+and if \(\mu\) is monotone (\(\Sigma\subseteq\Sigma'\) implies
+\(\mu(\Sigma)\le_{\mathcal M}\mu(\Sigma')\)), \(\le_{\mathcal M}\) is transitive
+and \(T\) implies \(T'\), then
+\(\operatorname{Pos}(\mu(\Sigma(r,T)))\) and \(\operatorname{Small}(\Sigma(r,T'))\)
+give \(\operatorname{Small}(\Sigma(r,T))\): a stricter target keeps a small
+selector region small. If moreover \(\mathcal M=\mathbb R\) with its usual order,
+\(\mu(M)=\mu(\Sigma(r,T))+\mu(\Sigma(r,\neg T))=\mu_{\mathrm{tot}}>0\),
+\(\operatorname{Pos}(x):\Leftrightarrow x>0\), \(\Theta\subseteq\mathbb R\), \(\odot\) is multiplication and
+\(\theta<\tfrac12\), then \(\operatorname{Small}(\Sigma(r,T))\) and
+\(\operatorname{Small}(\Sigma(r,\neg T))\) do not both hold.
+\end{theorem}
+\begin{proof}
+The membership statement is the definition of
+\(\Sigma(r,T)\) as the preimage \(r^{-1}(T)\).  If
+\(\operatorname{TargetImpossible}(\Sigma(r,T))\), then no \(m\in M\) lies in
+\(\Sigma(r,T)\); in particular \(\mathrm{sel}\notin\Sigma(r,T)\), which
+contradicts the second conjunct of \(\operatorname{Realized}\).  Hence
+\(\neg\operatorname{Realized}(\Sigma(r,T),\mathrm{sel},\mathsf{selDec})\).
+Realized fine-tuning contains \(\operatorname{Small}(\Sigma(r,T))\), hence
+\(\operatorname{Pos}(\mu(\Sigma(r,T)))\), and \(\mathrm{sel}\in\Sigma(r,T)\).
+If \(T\) implies \(T'\), then \(\Sigma(r,T)\subseteq\Sigma(r,T')\), so
+monotonicity gives \(\mu(\Sigma(r,T))\le_{\mathcal M}\mu(\Sigma(r,T'))\), and
+\(\operatorname{Small}(\Sigma(r,T'))\) gives
+\(\mu(\Sigma(r,T'))\le_{\mathcal M}\theta\odot\mu_{\mathrm{tot}}\);
+transitivity and the assumed positivity give
+\(\operatorname{Small}(\Sigma(r,T))\).
+For the quantitative clause, the two regions partition \(M\), so both being
+small would give \(\mu_{\mathrm{tot}}\le2\theta\mu_{\mathrm{tot}}<\mu_{\mathrm{tot}}\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F47}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Circumstellar habitable zone (astrobiology).}] \textit{Analogy.}
+The moduli space is the set of orbital and
+atmospheric parameter values for a planet (semi-major
+axis, eccentricity, atmospheric composition, greenhouse
+mass column); the readout is the equilibrium surface
+temperature; the target predicate restricts to the
+liquid-water range.  The selector region is the circumstellar habitable zone.
+Whether it occupies a small fraction of the parameter space
+depends on a declared measure and threshold satisfying
+\(\operatorname{Small}\). Earth meets the liquid-water target
+criterion; realizing the fine-tuning predicate additionally
+requires those measure and threshold conditions
+\citep{Kasting1993Habitable}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Topology as Global Gluing Invariant [\texorpdfstring{\Fref{F48}}{F48}]}\label{sec:self-reference-limits:topology}
+
+The motivating mathematical example is sheaf theory, in which
+topological information emerges as the consistent global gluing of
+locally defined data; the standard reference is
+\citet{MacLaneMoerdijk1992Sheaves}.
+
+\begin{theorem}[Topology as Global Gluing Invariant]\label{thm:F48}
+Let \(G\) be a set of global states with gluing quotient
+\(\gamma:G\to\Gamma\), readout \(r:G\to V\), transport
+\(\tau:G\to G'\), and target gluing quotient \(\gamma':G'\to\Gamma'\).
+Assume \(\gamma\) is surjective. Write
+\(\operatorname{TopologicalReadout}(r)\) when \(r\) factors through \(\gamma\),
+that is \(r=\bar r\circ\gamma\) for some \(\bar r:\Gamma\to V\), and define
+\[
+  \mathcal O_\gamma(r)=
+  \{(g,g'):\gamma(g)=\gamma(g')\ \text{and}\ r(g)\ne r(g')\},
+\]
+and define
+\begin{align*}
+  \operatorname{CompleteInvariant}(r)
+  &:\Longleftrightarrow \operatorname{TopologicalReadout}(r)\wedge
+    \forall g,g',\ r(g)=r(g')\Rightarrow \gamma(g)=\gamma(g'),\\
+  \operatorname{CoarseInvariant}(r)
+  &:\Longleftrightarrow \operatorname{TopologicalReadout}(r)\wedge
+    \exists g,g',\gamma(g)\ne\gamma(g')\wedge r(g)=r(g'),\\
+  \operatorname{TransportDescends}(\tau)
+  &:\Longleftrightarrow
+    \exists\,\bar\tau:\Gamma\to\Gamma'\ \text{ with }\
+    \bar\tau\circ\gamma=\gamma'\circ\tau .
+\end{align*}
+Then
+\[
+  \operatorname{TopologicalReadout}(r)\iff\mathcal O_\gamma(r)=\emptyset,
+\]
+every topological readout is exactly one of a complete and a coarse
+invariant, and \(\operatorname{TransportDescends}(\tau)\) holds if and only if
+\(\mathcal O_\gamma(\gamma'\circ\tau)=\emptyset\).
+\end{theorem}
+\begin{proof}
+Since \(\gamma\) is surjective, the first equivalence is the descent
+criterion of \Cref{sec:apparatus}.  If \(r\) also separates \(\Gamma\)-classes, it is complete; if two
+distinct gluing classes have the same \(r\)-value, it is coarse. These
+are the two cases
+\[
+  \forall g,g',\ r(g)=r(g')\Rightarrow\gamma(g)=\gamma(g')
+  \quad\text{or}\quad
+  \exists g,g',\gamma(g)\ne\gamma(g')\wedge r(g)=r(g'),
+\]
+and each is the negation of the other, so a topological readout satisfies
+exactly one of them. The transport clause is the same descent criterion applied to
+\(\gamma'\circ\tau\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F48}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Euler characteristic (algebraic
+topology).}] \textit{Special case.}
+For a finite cell complex, the gluing quotient
+collapses cell-complex presentations to their
+underlying topological space.  The Euler
+characteristic
+\(\chi=V-E+F\) (alternating sum of cell counts in
+higher dimensions) is invariant under
+cell-decomposition refinement and homotopy, hence a
+TopologicalReadout.  It is a coarse invariant: the
+torus and the Klein bottle both have \(\chi=0\) but
+the torus is orientable and the Klein bottle is
+not.  For the transport clause take \(\tau\) the identity of presentations
+and \(\gamma'\) the map to homotopy types; homeomorphic spaces are homotopy
+equivalent, so \(\operatorname{TransportDescends}(\tau)\) holds
+\citep{Euler1750Polyhedron}.
+
+\item[\emph{Genus of a closed orientable surface
+(topology).}] \textit{Special case.}
+For closed connected orientable 2-manifolds, the gluing
+quotient collapses polygon-with-edge-identification
+presentations to homeomorphism classes.  The genus
+\(g(\Sigma)\) — the number of handles, equivalently
+\((2-\chi)/2\) — is a TopologicalReadout \citep{Riemann1857Theorie}, and the later
+classification theorem of closed surfaces makes
+genus a CompleteInvariant for closed connected
+orientable surfaces.
+
+\item[\emph{Fundamental group (algebraic topology).}] \textit{Special case.}
+For based spaces drawn from a fixed set (for instance, finite based CW
+complexes), the gluing quotient sends a space to its based homotopy type.
+The isomorphism class of the fundamental group \(\pi_1(X,x_0)\) — homotopy
+classes of based loops — is homotopy-invariant,
+hence a TopologicalReadout.  It is coarse: the
+2-sphere and 3-sphere both have trivial \(\pi_1\)
+but are not homotopy-equivalent.  Continuous
+basepoint-preserving maps induce \(\pi_1\)-compatible
+group homomorphisms \citep{Poincare1895Analysis}.
+
+\item[\emph{{DNA} linking number of closed circular
+{DNA} (molecular biology).}] \textit{Special case.}
+Model a closed circular DNA duplex as an ordered pair of disjoint smooth oriented embedded circles in \(\mathbb R^3\), its two strands; the gluing quotient collapses pairs related by smooth ambient isotopy of \(\mathbb R^3\) preserving the strand orientations (no strand breaks).  The linking
+number \(\mathrm{Lk}\in\mathbb Z\) — the signed
+Gauss linking integral counting strand wrappings
+— is invariant under smooth ambient isotopy preserving the strand orientations, hence a
+TopologicalReadout.  For a duplex represented by the centreline and offset edge of an embedded closed ribbon, with compatible orientations, the Călugăreanu-White formula
+\(\mathrm{Lk}=\mathrm{Tw}+\mathrm{Wr}\) decomposes
+\(\mathrm{Lk}\) into non-topological twist and
+writhe; only their sum is topological.
+Topoisomerase enzymes implement the transport that
+changes \(\mathrm{Lk}\) by strand cleavage and
+religation \citep{BatesMaxwell2005DNATopology}.
+
+\item[\emph{Reeb graph from {M}orse-function level
+sets (geometric topology).}] \textit{Analogy.}
+For a smooth manifold with a Morse function \(f\),
+the gluing quotient collapses configurations
+continuously deformable along the Morse flow.  The
+Reeb graph quotients the manifold by the
+``connected component of \(f^{-1}(c)\)'' relation,
+encoding topology changes of level sets at
+critical values.  Within the declared
+function-isotopy class, the Reeb graph is a
+TopologicalReadout, and a coarse invariant
+(distinct Morse functions can yield isomorphic
+Reeb graphs) \citep{Reeb1946Points}.
+\end{description}
+\endgroup
+
+\subsection{Common-Source / Nonlocal Correlation Normal Form [\texorpdfstring{\Fref{F49}}{F49}]}\label{sec:self-reference-limits:common-source}
+
+The Einstein--Podolsky--Rosen / Bell situation \citep{Bell1964EPR}, of correlations that admit no local common-source explanation, is an analogy, not a special case: Bell's theorem concerns probabilistic local models, whereas \(\operatorname{CommonSource}\) below is a deterministic factorization; the layer-agnostic statement below
+records the descent-to-common-source obstruction abstracted from
+that substrate.
+
+\paragraph{Reading the statement.} The symbols are those of \Cref{thm:F49} below.
+The locality package \(\operatorname{Loc}\) is declared data: the
+theorem uses it only through its failure, which is what makes a
+correlation residual nonlocal. \(\operatorname{Corr}\), by contrast, is defined from the
+data: the joint readout is not a function of the two local access classes. Surjectivity of \((\sigma,q_A,q_B)\), which the theorem does not assume but a model may impose, says that every source class occurs with every pair of local access classes; it is the deterministic
+form of measurement independence, and it excludes
+the trivial source: for injective \(\sigma\) (for example
+\(\sigma=\mathrm{id}_H\)) every fiber of \((\sigma,q_A)\) is a point, so
+\(\operatorname{CommonSource}(\sigma)\) holds automatically, and surjectivity
+then forces \(L_A\) and \(L_B\) to be singletons; hence when \(L_A\) or \(L_B\)
+has two elements, \(\sigma\) is not injective. The
+theorem tests the declared \(\sigma\), \(\iota\) and \(\rho\); it does not
+assert that no source quotient explains the correlation.
+
+\begin{theorem}[Common-Source / Nonlocal Correlation Normal Form]\label{thm:F49}
+Let \(H\) be a nonempty history space with source quotient
+\(\sigma:H\to S\), shared interface \(\iota:H\to I\), local access
+quotients
+\(q_A:H\to L_A\), \(q_B:H\to L_B\), and readouts
+\(r_A:H\to A\), \(r_B:H\to B\), with joint readout
+\(r=(r_A,r_B):H\to A\times B\). Let a declared direct route consist of
+two declared propositions, its admissibility record and its stability record, and a route quotient
+\(\rho:H\to P\). Let \(\operatorname{Corr}:\Longleftrightarrow\exists h,h'\) with
+\((q_A,q_B)(h)=(q_A,q_B)(h')\) and \(r(h)\ne r(h')\), that is, the joint
+readout is not fixed by the two local access classes, and let
+\(\operatorname{Loc}\) be the declared locality package, a proposition the
+theorem does not analyse. \(\operatorname{CommonSource}(\sigma)\) below is a
+deterministic factorization; probabilistic common-cause models are not
+covered. No surjectivity is assumed. Write \(\operatorname{CommonSource}(\sigma)\) when \(r_A\) is
+constant on the fibers of \((\sigma,q_A)\) and \(r_B\) is constant on the
+fibers of \((\sigma,q_B)\); \(\operatorname{InterfaceFactorization}(\iota)\)
+when \(r\) is constant on the fibers of \((\iota,q_A,q_B)\); and
+\(\operatorname{DirectRoute}\) when both records hold and
+\(r\) is constant on the fibers of \(\rho\), and define
+\[
+  \operatorname{LocallyExplainable}
+  :\iff \operatorname{CommonSource}(\sigma)\vee\operatorname{DirectRoute}
+    \vee \operatorname{InterfaceFactorization}(\iota).
+\]
+Then
+\begin{align*}
+  \operatorname{CommonSource}(\sigma)
+  &\iff
+  \exists\,\bar r_A:S\times L_A\to A,\ \bar r_B:S\times L_B\to B,\\
+  &\hphantom{{}\iff{}}
+    \bar r_A\circ(\sigma,q_A)=r_A\ \wedge\ \bar r_B\circ(\sigma,q_B)=r_B,\\
+  \operatorname{InterfaceFactorization}(\iota)
+  &\iff
+  \exists\,\hat r:I\times L_A\times L_B\to A\times B,\
+    \hat r\circ(\iota,q_A,q_B)=r,\\
+  \operatorname{DirectRoute}
+  &\iff
+  \text{both records hold, and}\
+    \exists\,\tilde r:P\to A\times B,\ \tilde r\circ\rho=r.
+\end{align*}
+Call \(\operatorname{Corr}\wedge\neg\operatorname{LocallyExplainable}\) a
+\emph{correlation residual}, and a \emph{nonlocal residual} when moreover
+\(\neg\operatorname{Loc}\). By the three equivalences, a correlation residual
+is present exactly when \(\operatorname{Corr}\) holds, neither the common-source
+nor the interface factorization exists, and it is not the case that the route
+is admissible, stable and has some \(\tilde r\) with \(\tilde r\circ\rho=r\).
+Moreover, \(\neg\operatorname{Corr}\) implies \(\operatorname{InterfaceFactorization}(\iota)\)
+for every \(\iota\), so a correlation residual is exactly
+\(\neg\operatorname{LocallyExplainable}\); and \(\operatorname{CommonSource}(\sigma)\)
+implies \(\operatorname{InterfaceFactorization}\) for the interface \(\iota:=\sigma\).
+\end{theorem}
+\begin{proof}
+Since \(H\) is nonempty, so are \(A\) and \(B\); a map on \(H\) that is constant on the fibers of a map \(p\) factors through \(p\), defined from representatives on the image of \(p\) and by a fixed value elsewhere. (Without nonemptiness the CommonSource equivalence fails: for \(H=L_B=A=\varnothing\) and \(S\times L_A\) a point, \(\operatorname{CommonSource}(\sigma)\) holds vacuously but no \(\bar r_A\) exists.) So a map on \(H\) with values in \(A\), \(B\) or \(A\times B\) factors through a map \(p\) exactly when it is constant on the fibers of \(p\). Hence \(r_A\) and \(r_B\) are constant on the
+fibers of \((\sigma,q_A)\) and \((\sigma,q_B)\) exactly when response maps
+\(\bar r_A\), \(\bar r_B\) as displayed exist: each local readout depends only
+on the shared source class and its own access data. The
+joint readout factors through \((\iota,q_A,q_B)\)
+exactly when it is constant on its fibers, which gives the interface
+case. The direct-route case is the same factorization argument for \(\rho\): the joint readout factors through the route
+quotient exactly when it is constant on its fibers, and a declared route
+explains the correlation when, in addition, its admissibility and
+stability records hold. A correlation is
+locally explained exactly when one of the three explanations is
+supplied. If a correlation is present and none is supplied, it is
+recorded as a residual, not as an explained relation; it is a nonlocal
+residual only relative to a failed locality package.
+If \(\neg\operatorname{Corr}\), then \(r\) is constant on the fibers of \((q_A,q_B)\), hence on the finer fibers of \((\iota,q_A,q_B)\). Under \(\operatorname{CommonSource}(\sigma)\), \(r_A\) and \(r_B\) are constant on the fibers of \((\sigma,q_A)\) and \((\sigma,q_B)\), so \(r=(r_A,r_B)\) is constant on the fibers of \((\sigma,q_A,q_B)\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F49}
+
+\begingroup\small
+\begin{description}
+\item[\emph{{MISTRA} twin studies (behavioral
+genetics).}] \textit{Analogy.}
+For the Minnesota Study of Twins Reared Apart, the
+source quotient sends a twin pair to its
+shared-genotype class; the readouts are conditional
+trait
+distributions
+\(P(\mathrm{trait}\mid\sigma)\) under a declared
+quantitative-genetic model.  The CommonSource
+hypothesis holds when conditional distributions
+descend through the shared-genotype quotient; the
+interface captures shared rearing environment
+(absent for the reared-apart sample).  The reared-apart monozygotic
+correlation \(r_{MZA}\), which estimates heritability directly,
+operationalises the \Fref{F49} LocallyExplainable decomposition; the
+Falconer formula \(h^2=2(r_{MZ}-r_{DZ})\) is the counterpart for
+twins reared together
+\citep{Bouchard1990Sources}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Vacuum / Background Selection [\texorpdfstring{\Fref{F50}}{F50}]}\label{sec:self-reference-limits:vacuum}
+
+The most discussed contemporary substrate analogy is the string
+landscape of vacua surveyed in \citet{Susskind2003Landscape};
+the layer-agnostic statement below records the selector-singleton
+shape without committing to that physical realization.
+
+\begin{theorem}[Vacuum / Background Selection]\label{thm:F50}
+Let \(\mathcal X\) be a closure space with moduli quotient
+\(\mu:\mathcal X\to M\), raw background \(b_0:\mathcal X\to B\),
+a declared background \(b:M\to B\), target \(t:M\to T\), and vacuum
+criterion \(V\subseteq M\), and a declared set \(T_{\mathrm{f}}\subseteq T\)
+of formed targets. Assume \(\mu\) is surjective. Define
+\begin{align*}
+  \operatorname{NecessaryBackground}(b)
+  &:\Longleftrightarrow \forall m,m'\in M,\ b(m)=b(m'),\\
+  \operatorname{BackgroundModuli}(b)
+  &:\Longleftrightarrow \exists m,m'\in M,\ b(m)\ne b(m'),\\
+  \operatorname{Vacuum}(m_\ast)
+  &:\Longleftrightarrow V=\{m_\ast\}\ \wedge\ t(m_\ast)\in T_{\mathrm{f}}.
+\end{align*}
+Then
+\[
+  \bigl(\forall x,y\in\mathcal X,\ \mu(x)=\mu(y)\Rightarrow b_0(x)=b_0(y)\bigr)
+  \iff
+  \exists\,\beta:M\to B\ \text{ with } \beta\circ\mu=b_0.
+\]
+The necessary/moduli alternatives are exhaustive and disjoint. If \(b\) is
+a descended raw background, \(b\circ\mu=b_0\), then
+\[
+  \operatorname{NecessaryBackground}(b)
+  \iff \forall x,y\in\mathcal X,\ b_0(x)=b_0(y).
+\]
+Exactly one of \(V=\emptyset\), \(V\) a singleton, and \(V\) containing two
+distinct elements holds. Some \(m_\ast\) satisfies
+\(\operatorname{Vacuum}(m_\ast)\) if and only if \(V=\{m\}\) for some \(m\)
+with \(t(m)\in T_{\mathrm{f}}\), and such an \(m_\ast\) is unique. If
+\(\operatorname{Vacuum}(m_\ast)\), then under \(\operatorname{BackgroundModuli}(b)\) some modulus outside \(V\) carries a background different from \(b(m_\ast)\); if moreover \(b\circ\mu=b_0\), then \(b_0(x)=b(m_\ast)\) for
+every \(x\) with \(\mu(x)=m_\ast\).
+\end{theorem}
+\begin{proof}
+Since \(\mu\) is surjective, the descent clause is the descent criterion
+of \Cref{sec:apparatus} for \(\mu\) and \(b_0\).  For the declared background \(b\), either \(b\) is constant on \(M\)
+or there exist \(m,m'\) with \(b(m)\ne b(m')\):
+\[
+  \bigl(\forall m,m', b(m)=b(m')\bigr)
+  \quad\vee\quad
+  \bigl(\exists m,m', b(m)\ne b(m')\bigr).
+\]
+These alternatives are mutually exclusive. For the vacuum criterion,
+either \(V\) is empty, or it has an element \(m\); in the second case either
+every element of \(V\) equals \(m\), so \(V=\{m\}\), or some element differs
+from \(m\), so \(V\) contains two distinct elements. A singleton has no two
+distinct elements and a nonempty set is not empty, so exactly one case holds.
+By definition, \(\operatorname{Vacuum}(m_\ast)\) says that \(V=\{m_\ast\}\) and
+\(t(m_\ast)\in T_{\mathrm{f}}\), which gives the existence equivalence; if
+\(\operatorname{Vacuum}(m_\ast)\) and \(\operatorname{Vacuum}(m'_\ast)\), then
+\(\{m_\ast\}=V=\{m'_\ast\}\), so \(m_\ast=m'_\ast\).
+If \(b\circ\mu=b_0\), then \(b_0(x)=b(\mu x)\), so \(b_0\) is constant when
+\(b\) is; conversely every \(m\in M\) is \(\mu(x)\) for some \(x\), so \(b\) is
+constant when \(b_0\) is. For the last clause, \(b_0(x)=b(\mu x)=b(m_\ast)\) when
+\(\mu(x)=m_\ast\); and if \(b(m)\ne b(m')\), one of \(m,m'\) has background
+different from \(b(m_\ast)\), and it is not \(m_\ast\), the only member of \(V\).
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F50}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Waddington epigenetic landscape
+(developmental biology).}] \textit{Analogy.}
+For a developing embryo, the moduli quotient
+collapses stem-cell trajectory configurations
+sharing the same cell-type endpoint; the
+descended background records the cell-fate class.
+Waddington's epigenetic landscape depicts cell-fate
+decision as a ball rolling down a branching
+landscape: each branching point is a vacuum-style
+selection of one cell-fate from a set of accessible
+attractors \citep{Waddington1957Strategy}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Unification as Common Refinement [\texorpdfstring{\Fref{F51}}{F51}]}\label{sec:self-reference-limits:unification}
+
+The motivating particle-physics analogy is the electroweak unification
+introduced in \citet{Weinberg1967Leptons}.  The statement below records a common-refinement shape; electroweak unification is an analogy, and no physical unification is asserted to satisfy its hypotheses.
+
+\paragraph{Reading the statement.}
+\emph{Exact unification} is defined as the conjunction displayed in the
+theorem: formation of the parent closure, the three pairs of equations, role
+preservation of the two child theories, and the status check of every cross
+residual. Role preservation and the residual status check are declared
+predicates of the apparatus. The content of the theorem is what follows from
+the first pair of equations: the parent quotient is a common refinement of the
+two children, in the sense of the displayed square, and, when \(q_U\) is
+surjective, \(\langle\pi_A,\pi_B\rangle\) is injective exactly when the parent
+carries no distinction beyond those of the two children.
+
+\begin{theorem}[Unification as Common Refinement]\label{thm:F51}
+Let \(\mathcal C_U,\mathcal C_A,\mathcal C_B\) be parent and child
+closures with quotients \(q_U:\mathcal C_U\to Q_U\),
+\(q_A:\mathcal C_A\to Q_A\), and \(q_B:\mathcal C_B\to Q_B\). Let
+\(\iota_A:\mathcal C_U\to\mathcal C_A\) and
+\(\iota_B:\mathcal C_U\to\mathcal C_B\) be interpretations, and let
+\(\pi_A:Q_U\to Q_A\), \(\pi_B:Q_U\to Q_B\) be quotient projections.
+Let \(R_U^A,R_U^B:Q_U\to Q_U\) and \(R_A:Q_A\to Q_A\),
+\(R_B:Q_B\to Q_B\) be the declared route systems. For claim sets
+\(K_A,K_B,K_U\), lifts \(\lambda_A:K_A\to K_U\),
+\(\lambda_B:K_B\to K_U\), status maps \(s_A,s_B,s_U\), and status
+translations \(\alpha_A,\alpha_B\) into the statuses of \(K_U\), \emph{exact
+unification} is defined as the conjunction of the following: the
+declared formedness proposition for the parent closure \(\mathcal C_U\) holds; the equations
+\begin{align*}
+  \pi_A\circ q_U=q_A\circ\iota_A
+  &\quad\wedge\quad
+  \pi_B\circ q_U=q_B\circ\iota_B,\\
+  \pi_A\circ R_U^A=R_A\circ\pi_A
+  &\quad\wedge\quad
+  \pi_B\circ R_U^B=R_B\circ\pi_B,\\
+  s_U(\lambda_A k)=\alpha_A(s_A k)
+  &\quad\wedge\quad
+  s_U(\lambda_B \ell)=\alpha_B(s_B \ell)
+  \quad\text{for all }k\in K_A,\ell\in K_B
+\end{align*}
+hold; the declared role-preservation proposition holds; and the declared cross-residual status-check proposition holds. If
+\(\pi_A\circ q_U=q_A\circ\iota_A\) and \(\pi_B\circ q_U=q_B\circ\iota_B\), in
+particular under exact unification, then
+\[
+  \langle\pi_A,\pi_B\rangle\circ q_U
+  =(q_A\times q_B)\circ\langle\iota_A,\iota_B\rangle
+  :\mathcal C_U\to Q_A\times Q_B ,
+\]
+and the parent kernel is contained in both pulled-back child kernels: for all
+\(x,x'\in\mathcal C_U\), \(q_U(x)=q_U(x')\) implies
+\(q_A(\iota_A x)=q_A(\iota_A x')\) and \(q_B(\iota_B x)=q_B(\iota_B x')\).
+If moreover \(q_U\) is surjective, then \(\langle\pi_A,\pi_B\rangle\) is injective
+if and only if \(q_U(x)=q_U(x')\Leftrightarrow q_A(\iota_A x)=q_A(\iota_A x')
+\wedge q_B(\iota_B x)=q_B(\iota_B x')\) for all \(x,x'\): the parent carries
+exactly the distinctions of the two children.
+\end{theorem}
+\begin{proof}
+The first pair of equations gives, for every
+\(x\in\mathcal C_U\),
+\[
+  \pi_A(q_U x)=q_A(\iota_A x),
+  \qquad
+  \pi_B(q_U x)=q_B(\iota_B x),
+\]
+which is the displayed square componentwise, so \(Q_U\) is a common
+refinement. If \(q_U(x)=q_U(x')\), then
+\(q_A(\iota_A x)=\pi_A(q_U x)=\pi_A(q_U x')=q_A(\iota_A x')\), and likewise
+for \(B\). For the last clause, let \(q_U\) be surjective. By the square,
+\(q_A(\iota_A x)=q_A(\iota_A x')\wedge q_B(\iota_B x)=q_B(\iota_B x')\) says
+\(\langle\pi_A,\pi_B\rangle(q_U x)=\langle\pi_A,\pi_B\rangle(q_U x')\). If the
+pairing is injective, this gives \(q_U(x)=q_U(x')\). Conversely, every two
+points of \(Q_U\) are \(q_U(x)\) and \(q_U(x')\) for some \(x,x'\), so the
+equivalence gives injectivity.
+\end{proof}
+
+\subsection*{Layer instantiations}\label{layer-inst:F51}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Maxwell unification of electromagnetism
+(classical physics).}] \textit{Analogy.}
+The parent closure is Maxwell's electromagnetic
+field theory; the children are pre-Maxwellian
+electrostatics (Coulomb-Gauss) and magnetostatics
+(Amp\`ere-Biot-Savart).  Setting time derivatives to
+zero in Maxwell's equations yields each child as a
+specialisation.  The unified parent predicts
+electromagnetic waves at the speed of light,
+identifying light as electromagnetic — a
+prediction not derivable from either child alone
+\citep{Maxwell1865Dynamical}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Closure Completeness Boundary [\texorpdfstring{\Fref{F52}}{F52}]}\label{sec:self-reference-limits:closure-completeness}
+
+A proof-theoretic analogue of a closure-completeness boundary is
+G\"odel's incompleteness theorem \citep{Godel1931Unentscheidbare}, where
+incompleteness is derived from the arithmetic of the theory; the statement
+below records a declared scope boundary instead. The modal-logic systematization of provability obstructions is
+collected in \citet{Boolos1993LogicProvability}.  The layer-agnostic
+meta-coherence statement below records the apparatus-side scope
+discipline that complements those classical results.
+
+\begin{definition}[Catalog boundary]\label{def:catalog-boundary}
+Let \(D\) be a direction type with predicates \(\operatorname{claimed}\),
+\(\operatorname{inScope}\) and \(\operatorname{namedOutside}\), as in
+\Cref{thm:F52}. The \emph{catalog boundary} is
+\(\partial D:=\{d:\operatorname{claimed}(d)\wedge\neg\operatorname{inScope}(d)
+\wedge\operatorname{namedOutside}(d)\}\), the claimed directions explicitly
+marked out of scope, for example because they require substrate-specific data
+or stronger apparatus. The \emph{unmarked frontier} is
+\(\{d:\operatorname{claimed}(d)\wedge\neg\operatorname{inScope}(d)\wedge
+\neg\operatorname{namedOutside}(d)\}\).
+\end{definition}
+
+The theorem below states when a closure package reaches this boundary:
+it is complete up to its declared scope, and every direction it claims
+lies inside that scope or is named as outside it.
+
+\paragraph{Reading the statement.}
+\(\operatorname{formed}\) records that the closure package is formed in
+the sense of \Cref{def:closure-formation}, and
+\(\operatorname{scopeDeclared}\) records that its completeness scope has
+been declared. Both are declared data of the package. Each displayed
+line of the theorem unfolds the predicate on its left; together they
+state what completeness up to a declared scope requires. The last sentence of the theorem, that each conjunct can fail while the other three hold, is proved by one-element examples.
+
+\begin{theorem}[Closure Completeness Boundary]\label{thm:F52}
+Let \(R\) be a residual type with predicates
+\(\operatorname{hasStatus}:R\to\mathrm{Prop}\) and
+\(\operatorname{adequate}:R\to\mathrm{Prop}\). Let \(D\) be a direction
+type with predicates \(\operatorname{inScope}:D\to\mathrm{Prop}\),
+\(\operatorname{claimed}:D\to\mathrm{Prop}\), and
+\(\operatorname{namedOutside}:D\to\mathrm{Prop}\). Let
+\(\operatorname{formed}\) and \(\operatorname{scopeDeclared}\) be
+propositions, and let
+\(v\) be a meta-audit verdict, drawn from a declared set of verdicts
+containing \(\operatorname{accepted}\). Define
+\begin{align*}
+  \operatorname{ResidualCoverage}
+  &:\Longleftrightarrow
+  \forall r\in R,\ \operatorname{hasStatus}(r)\wedge\operatorname{adequate}(r),\\
+  \operatorname{MetaCovered}(v)
+  &:\Longleftrightarrow v=\operatorname{accepted},\\
+  \operatorname{ScopedClosureComplete}
+  &:\Longleftrightarrow
+  \operatorname{formed}\wedge\operatorname{scopeDeclared}\wedge
+  \operatorname{ResidualCoverage}\\
+  &\qquad\wedge\
+  \forall d\in D,\ \operatorname{claimed}(d)\Rightarrow
+    \bigl(\operatorname{inScope}(d)\vee\operatorname{namedOutside}(d)\bigr),\\
+  \operatorname{MetaComplete}
+  &:\Longleftrightarrow \operatorname{ScopedClosureComplete}\wedge\operatorname{MetaCovered}(v).
+\end{align*}
+Then \(\operatorname{ScopedClosureComplete}\) holds if and only if
+\(\operatorname{formed}\) and \(\operatorname{scopeDeclared}\) hold and the
+three obstruction sets
+\[
+\begin{gathered}
+  \{r:\neg\operatorname{hasStatus}(r)\},\qquad
+  \{r:\neg\operatorname{adequate}(r)\},\\
+  \{d:\neg\operatorname{inScope}(d)\wedge\operatorname{claimed}(d)
+      \wedge\neg\operatorname{namedOutside}(d)\}
+\end{gathered}
+\]
+are empty; the third set is the unmarked frontier of
+\Cref{def:catalog-boundary}. Hence \(\operatorname{MetaComplete}\) fails
+exactly when one of these conditions fails or \(v\ne\operatorname{accepted}\).
+Each of the four conjuncts of \(\operatorname{ScopedClosureComplete}\) can fail
+while the other three hold.
+\end{theorem}
+\begin{proof}
+\(\operatorname{ResidualCoverage}\) says that every residual has a status and
+that every residual is adequate, that is, that the first two sets are empty.
+With \(\operatorname{hasStatus}(r):\Longleftrightarrow\exists\rho\in\mathrm{Rec},\ \operatorname{loc}(\rho)=r\),
+its first conjunct is (RC) of \Cref{sec:apparatus}; adequacy is an additional
+requirement.
+For a direction \(d\) there are three cases:
+\[
+  \operatorname{inScope}(d),\qquad
+  \operatorname{namedOutside}(d),\qquad
+  \neg\operatorname{inScope}(d)\wedge\neg\operatorname{namedOutside}(d).
+\]
+The direction clause of \(\operatorname{ScopedClosureComplete}\) excludes
+the third case for every claimed direction, which is emptiness of the third
+set. The penultimate sentence follows from the definition of
+\(\operatorname{MetaComplete}\). For the last, take \(R\) and \(D\) with one
+element each. Making \(\operatorname{formed}\) false, or
+\(\operatorname{scopeDeclared}\) false, or \(\operatorname{hasStatus}\) false
+at the residual, or \(d\) claimed with \(\operatorname{inScope}(d)\) and
+\(\operatorname{namedOutside}(d)\) false, while every other datum is true,
+falsifies exactly one conjunct.
+\end{proof}
+
+For the catalog itself, take as \(D\) the candidate directions
+considered for it, let \(\operatorname{inScope}(d)\) mean that \(d\) is a
+law of the catalog or reduces to one, let
+\(\operatorname{namedOutside}(d)\) mean that \(d\) is named in
+\Cref{sec:sketches}, and let \(\operatorname{claimed}(d)\) hold for
+every \(d\in D\).  The direction clause then requires every candidate to
+be covered or named, and the residual clauses require a residual
+register for the catalog, which is not given here; \Cref{sec:sketches}
+discusses this application.
+
+\subsection*{Layer instantiations}\label{layer-inst:F52}
+
+\begingroup\small
+\begin{description}
+\item[\emph{{CONSORT} statement for randomised-trial
+reporting (clinical research).}] \textit{Analogy.}
+The residuals are the methodological items required
+for adequate trial reporting; directions are
+declarable claims and outcomes.  CONSORT 2010
+requires 25 explicit reporting items, with primary
+and secondary outcomes \emph{inScope} and
+exploratory analyses \emph{namedOutside}.  Residual
+coverage holds when every CONSORT item has status
+and is adequate; the meta-audit is journal-editor
+acceptance \citep{Schulz2010CONSORT}.
+
+\end{description}
+\endgroup
+
+
+\clearpage
+\subsection*{Self-Reference and Limits at a glance}\label{sec:self-reference-limits:summary}\addcontentsline{toc}{subsection}{Self-Reference and Limits at a glance}
+\input{tables/tab_axis_self_reference_limits_summary}
+\FloatBarrier

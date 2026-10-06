@@ -1,0 +1,68 @@
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE.{u_1} {𝕜 : Type u_1} [Field 𝕜] [LinearOrder 𝕜] {n : ℕ}
+  (A B : Matrix (Fin n) (Fin n) 𝕜) : Prop
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.quadratic_congruence.{u_1} {𝕜 : Type u_1} [Field 𝕜] {m n : ℕ}
+  (M : Matrix (Fin m) (Fin n) 𝕜) (A : Matrix (Fin n) (Fin n) 𝕜) (v : Fin m → 𝕜) :
+  v ⬝ᵥ (M * A * Mᵀ) *ᵥ v = Mᵀ *ᵥ v ⬝ᵥ A *ᵥ Mᵀ *ᵥ v
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_congruence.{u_1} {𝕜 : Type u_1} [Field 𝕜]
+  [LinearOrder 𝕜] {m n : ℕ} (M : Matrix (Fin m) (Fin n) 𝕜) (A B : Matrix (Fin n) (Fin n) 𝕜)
+  (h : SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE A B) :
+  SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE (M * A * Mᵀ) (M * B * Mᵀ)
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_add_mono.{u_1} {𝕜 : Type u_1} [Field 𝕜] [LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] {n : ℕ} (A B C D : Matrix (Fin n) (Fin n) 𝕜)
+  (hAB : SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE A B)
+  (hCD : SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE C D) :
+  SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE (A + C) (B + D)
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_trans.{u_1} {𝕜 : Type u_1} [Field 𝕜] [LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] {n : ℕ} (A B C : Matrix (Fin n) (Fin n) 𝕜)
+  (hAB : SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE A B)
+  (hBC : SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE B C) :
+  SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE A C
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation.{u_1} {𝕜 : Type u_1} [Field 𝕜] {y z : ℕ}
+  (KDL : Matrix (Fin z) (Fin y) 𝕜) (KLLdagger : Matrix (Fin y) (Fin y) 𝕜) : Matrix (Fin z) (Fin y) 𝕜
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.blockResidual.{u_1} {𝕜 : Type u_1} [Field 𝕜] {y z : ℕ}
+  (KLD : Matrix (Fin y) (Fin z) 𝕜) (KDL : Matrix (Fin z) (Fin y) 𝕜) (KDD : Matrix (Fin z) (Fin z) 𝕜)
+  (KLLdagger : Matrix (Fin y) (Fin y) 𝕜) : Matrix (Fin z) (Fin z) 𝕜
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.block_schur_decomposition.{u_1} {𝕜 : Type u_1} [Field 𝕜]
+  {y z : ℕ} (KLL : Matrix (Fin y) (Fin y) 𝕜) (KLD : Matrix (Fin y) (Fin z) 𝕜) (KDL : Matrix (Fin z) (Fin y) 𝕜)
+  (KDD : Matrix (Fin z) (Fin z) 𝕜) (KLLdagger : Matrix (Fin y) (Fin y) 𝕜) (hKDL : KDL = KLDᵀ)
+  (hdagger : KLLdagger = KLLdaggerᵀ) (hprojection : KLL * KLLdagger * KLD = KLD) :
+  KDD =
+    SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation KDL KLLdagger * KLL *
+        (SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation KDL KLLdagger)ᵀ +
+      SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.blockResidual KLD KDL KDD KLLdagger
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_ordered_field.{u_1} {𝕜 : Type u_1} [Field 𝕜]
+  [LinearOrder 𝕜] [IsStrictOrderedRing 𝕜] {y z d : ℕ} (KLL : Matrix (Fin y) (Fin y) 𝕜) (KLD : Matrix (Fin y) (Fin z) 𝕜)
+  (KDL : Matrix (Fin z) (Fin y) 𝕜) (KDD : Matrix (Fin z) (Fin z) 𝕜) (KLLdagger ThetaY : Matrix (Fin y) (Fin y) 𝕜)
+  (OmegaZ : Matrix (Fin z) (Fin z) 𝕜) (ThetaD : Matrix (Fin d) (Fin d) 𝕜) (S : Matrix (Fin d) (Fin z) 𝕜)
+  (hKDL : KDL = KLDᵀ) (hdagger : KLLdagger = KLLdaggerᵀ) (hprojection : KLL * KLLdagger * KLD = KLD)
+  (hnative : SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE KLL ThetaY)
+  (hresidual :
+    SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE
+      (SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.blockResidual KLD KDL KDD KLLdagger) OmegaZ)
+  (htransport :
+    SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE
+      (S *
+          (SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation KDL KLLdagger * ThetaY *
+              (SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation KDL KLLdagger)ᵀ +
+            OmegaZ) *
+        Sᵀ)
+      ThetaD) :
+  SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE (S * KDD * Sᵀ) ThetaD
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_real {y z d : ℕ}
+  (KLL : Matrix (Fin y) (Fin y) ℝ) (KLD : Matrix (Fin y) (Fin z) ℝ) (KDL : Matrix (Fin z) (Fin y) ℝ)
+  (KDD : Matrix (Fin z) (Fin z) ℝ) (KLLdagger ThetaY : Matrix (Fin y) (Fin y) ℝ) (OmegaZ : Matrix (Fin z) (Fin z) ℝ)
+  (ThetaD : Matrix (Fin d) (Fin d) ℝ) (S : Matrix (Fin d) (Fin z) ℝ) (hKDL : KDL = KLDᵀ)
+  (hdagger : KLLdagger = KLLdaggerᵀ) (hprojection : KLL * KLLdagger * KLD = KLD)
+  (hnative : SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE KLL ThetaY)
+  (hresidual :
+    SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE
+      (SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.blockResidual KLD KDL KDD KLLdagger) OmegaZ)
+  (htransport :
+    SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE
+      (S *
+          (SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation KDL KLLdagger * ThetaY *
+              (SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation KDL KLLdagger)ᵀ +
+            OmegaZ) *
+        Sᵀ)
+      ThetaD) :
+  SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE (S * KDD * Sᵀ) ThetaD

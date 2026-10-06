@@ -1,0 +1,150 @@
+\section{Introduction}\label{sec:intro}
+
+Six Birds Theory is a program that treats a theory as a fixed point of
+an idempotent closure operator acting on descriptions of a system, and
+studies how such closed descriptions arise
+\cite{Tsiokos2026EmergenceCalculus}.  Its companion papers apply this
+vocabulary to open problems (a glossary is in
+\Cref{sec:glossary}): a \emph{conditional closure} of
+a problem is a theorem deriving the problem's standard statement from
+explicitly named premises.  Three companion papers state conditional
+closures of three Clay Millennium problems in this sense
+\cite{Fefferman2000NavierStokes,Bombieri2000Riemann,Cook2000PvsNP,CarlsonJaffeWiles2006MillenniumPrize}.
+The Navier--Stokes paper \cite{Tsiokos2026NavierStokes} derives a
+global solution satisfying the equations pointwise from a spectral
+closure hypothesis and hypotheses on the initial data.  The Riemann-hypothesis paper
+\cite{Tsiokos2026RH} derives the Riemann hypothesis from a supplied
+Selberg recognition source and an identification with the classical
+zeros.  The P-versus-NP paper \cite{Tsiokos2026PvNP} proves a fixed
+machine-level translation between deciding SAT and computing a tagged
+witness selector, and derives \(P\neq NP\) from an accepted negative
+source.  In each case the premises are open.  None of the three is an
+unconditional result, and this paper does not change that.  The three
+are also not of one type: the Navier--Stokes closure is derived from its
+hypotheses through problem-specific analysis, while the other two name
+a load-bearing source as a premise.
+
+The three arguments nevertheless have a common shape, and this paper
+asks why.  It gives two kinds of answer.  The first is concrete: one
+family of Gaussian observations can be read on all three mathematical
+objects (\Cref{sec:gaussian-bridge,sec:triad-bridge}).  The second is
+structural: a description, in the vocabulary of the framework, of how
+proof attempts aimed at a target can stall, of how a closure can instead
+name its load-bearing source, and of the detectors by which obstructions
+are measured (\Cref{sec:foreclosure,sec:recognition,sec:calibration}).
+
+\paragraph{The concrete construction.}  For a width \(a>0\) and a
+complex centre \(z\), a complex Gaussian window on the Fourier side of
+\(\mathbb R^{3}\) defines a linear observation of Fourier states.
+Evaluated against the heat multiplier, it gives
+\((\pi/(a+b))^{3/2}e^{-\kappa z^{2}}\) with \(b=4\pi^{2}\nu t\) and
+\(\kappa=ab/(a+b)\).  Placing \(z\) at the spectral coordinate of a zero
+\(\rho\) of the completed zeta function, the logarithmic excess of this
+value is \(\kappa(\operatorname{Re}\rho-\frac12)^{2}\); summed with
+reflection-invariant nonnegative integer weights over a finite window closed under
+reflection in the critical line, it is \(\kappa\) times
+the residual charge of the window in the sense of the
+adequacy-residual companion \cite{Tsiokos2026XiCompanion}
+(\Cref{thm:joint-gaussian-return}).  Vanishing of this excess on all
+windows is a reformulation of the Riemann hypothesis, not a route to
+it.  Applied to a mild solution of the Navier--Stokes equations the
+same observation restates the mild equation, with the nonlinear Duhamel
+term kept and not estimated.  On the assignment space of a CNF formula
+the same scalar kernel gives a Gaussian mass that is positive exactly
+for satisfiable formulas, with exact laws for adding a clause and for
+fixing a variable (\Cref{thm:concrete-triad-gaussian-xi}); positivity
+here holds for any \(\{0,1\}\)-valued filter and is not specific to
+SAT.  On a reflected
+zero window the constant probe reads zero; on a satisfiable formula it
+reads the number of satisfying assignments.  These identities are
+elementary, and they are formally verified in Lean
+(\Cref{app:formalization}).  What the three settings share is a
+formula, not a mechanism: the identities transfer no premise from one
+problem to another, and no efficient evaluation of the Gaussian mass is
+proved.
+
+\paragraph{The structural account.}  The account has three parts.
+Part~I (\Cref{sec:foreclosure}) concerns \emph{carriers}: a carrier is a
+presentation through which a proof attempt tries to reach a target
+\(X\), together with the obstruction it leaves, its \emph{residual}.
+Four outcomes are distinguished: the residual closure points to a
+proposition other than \(X\); it is equivalent to \(X\) but the attempt
+can certify \(X\) only by auditing itself; it needs a bridge to \(X\)
+that is unavailable; or its reduction ends at a family of matrix
+elements whose decision it does not supply.  That these four outcomes
+are exhaustive is the Coverage schema, which is not proved; the
+theorems of Part~I derive consequences from explicitly assumed schemas
+and are short logical arguments.
+
+Part~II (\Cref{sec:recognition}) concerns closures that do not derive
+their load-bearing content but name it as a premise, called
+\emph{recognition-mode landings}.  It states, as four conditional
+schemas, a seven-stage template for such closures, a pattern in the
+outcome of searching for an internal derivation, the thesis that the
+load-bearing content is named rather than derived, and a combination of
+this with the foreclosure statement of Part~I.  The Riemann-hypothesis
+and P-versus-NP applications illustrate the schemas; they do not prove
+them.
+
+Part~III (\Cref{sec:calibration}) concerns \emph{calibrations}, typed
+detectors of obstructions such as low-degree polynomials, mutual
+information or Nullstellensatz certificates.  It records a catalogue,
+introduced here, of thirteen detector classes considered for the
+P-versus-NP problem, a criterion for
+when a new calibration is a relabelling of an old one, the direction of
+bridges between calibrations, a table of which regions the catalogue
+covers, and three named transports---\emph{functorial gates}---whose
+proofs are open.  The results of Part~III are elementary facts about
+these finite records; they say nothing about the performance of a
+detector or about inclusions between complexity classes.
+
+\paragraph{Status of the results.}  The paper distinguishes three
+kinds of numbered statement (\Cref{sec:apparatus:opacity-guards}).
+Theorems, propositions and corollaries are proved from the hypotheses
+they state; in Parts~I and~III most of them are short logical arguments
+or checks of declared finite data, and we say so where they occur.  Conditional schemas are not proved; they are displayed so
+that other statements can assume them.  Some predicates, such as being
+in framework scope or being load-bearing, are primitive: they are named
+and not defined here, and results about them establish only their
+logical shape.  \Cref{app:formalization} records, for every numbered
+statement, its formal counterpart in Lean.  The only computations in
+the paper are in \Cref{sec:gaussian-bridge,sec:triad-bridge}, and they
+are elementary; their contribution is that the definitions are aligned
+across the three settings and formally verified.  The rest of the paper
+is a vocabulary for comparing conditional closures, and a reader may
+take it as such.
+A glossary of the framework's terms is in
+\Cref{sec:glossary}.  The companion papers are preprints.
+
+\paragraph{Relation to the series.}  The paper uses the closure
+calculus of \FOne\ \cite{Tsiokos2026EmergenceCalculus}, the
+admissibility setting of \FTwo\ \cite{Tsiokos2026FoundationsII}, and the
+audit calculus of \FThree\ \cite{Tsiokos2026FoundationsIII}.  The three
+applications \cite{Tsiokos2026NavierStokes,Tsiokos2026RH,Tsiokos2026PvNP}
+are cited as they stand; the recognition sources of the two
+trace-state-only applications are named in those applications.  The
+self-dual trace confinement companion \cite{Tsiokos2026SDTC} supplies
+the confinement squeeze and its setting, the hiddenness companion
+\cite{Tsiokos2026CSL} the placements and exposure classifications used
+here, the adequacy-residual companion \cite{Tsiokos2026XiCompanion} supplies
+the residual, and the emergence companion \cite{Tsiokos2026NeedleKiller}
+supplies the distinction between native and layer-dissolving probes.
+This paper is downstream of all of these and replaces none of their
+arguments.
+
+\paragraph{Scope.}  The Birch--Swinnerton-Dyer conjecture
+\cite{Wiles2000BSD} is outside the scope of the paper, and the Hodge
+conjecture \cite{Deligne2000Hodge} appears only as a prediction.  Nothing
+here asserts an unconditional proof of any Millennium problem
+(\Cref{sec:scope}).
+
+\paragraph{Organization.}  \Cref{sec:apparatus} fixes the vocabulary.
+\Cref{sec:foreclosure,sec:recognition} contain Parts~I and~II, and
+\Cref{sec:validation} places the three applications in that scheme.
+\Cref{sec:gaussian-bridge,sec:triad-bridge} contain the Gaussian
+construction, and \Cref{sec:calibration} Part~III.
+\Cref{sec:audit} checks the description of the companion papers,
+\Cref{sec:predictions} lists predictions and open problems, and
+\Cref{sec:scope} collects the limitations.
+\Cref{app:formalization} describes the formal verification and
+\Cref{app:version-history} the changes between versions.

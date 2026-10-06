@@ -1,0 +1,104 @@
+\section{Version history}\label{app:version-history}
+\begingroup\small
+Every numbered statement of earlier versions keeps its number and
+place.  Several statements were renamed in Version~4, as recorded
+below.
+
+\subsection*{Version 4 (October 1, 2026)}
+\begin{itemize}
+    \item The paper was retitled; Versions~1--3 were titled \emph{One
+    Meta-Theory, Three Clay-Problem Closures}.  The abstract, the
+    introduction and the scope section were rewritten to state the
+    status of every result, and a glossary was added.
+  \item In \Cref{sec:foreclosure}, targets and accepted imports are now
+    claims with an interpretation, instead of propositions.  With
+    propositions, a sound set of accepted imports could only accept all
+    true propositions or none, and the hypotheses of
+    \Cref{cor:bridge-impossibility} could not hold together; the formal
+    development now exhibits a model in which they do.
+    \Cref{thm:carrier-dichotomy} no longer assumes the aiming, typing
+    and coverage-context hypotheses, which its proof does not use.  The
+    classification hypothesis (Cls) and the bridge-obligation hypothesis
+    (BO), previously applied as unproved obligations, are now explicit
+    hypotheses of \Cref{thm:carrier-dichotomy,cor:bridge-impossibility},
+        and \Cref{thm:type-finite-foreclosure} assumes coverage explicitly.
+    It is shown that the Coverage schema follows from (Cls) when some
+    claim expresses the residual closure.  The names of these three
+    results now end in ``conditional form''.
+  \item The formal record no longer states any schema as an axiom; each
+    schema is a definition, used only as a hypothesis.
+  \item \Cref{thm:attack-foreclosure-v4,thm:attack-foreclosure-v5},
+    previously called Attack Foreclosure v4 and v5, are now called
+    Attack Foreclosure and Refined Attack Foreclosure.  Readings of them
+    that do not follow from their statements are now described as
+    interpretations, and the first clause of
+    \Cref{thm:attack-foreclosure-v5} is derived from
+    \Cref{thm:attack-foreclosure-v4}.
+    \item Definitions~\ref{def:vdiff-tso-column}, \ref{def:applies} and
+    \ref{def:load-bearing}, previously called V-Differential
+    trace-state-only column, Template-applies predicate and
+    Load-bearing predicate, are now called Columns, Template applies and
+    Load-bearing content; \Cref{thm:concrete-triad-gaussian-xi},
+    previously the Concrete Gaussian--XI triad span, is now the Concrete
+        Gaussian--residual triad.  In \Cref{sec:calibration},
+    Theorems~\ref{thm:calibration-family-structure},
+    \ref{thm:bridges-as-theorems}, \ref{thm:coverage-family-geometry},
+    \ref{thm:framework-type-self-char} and
+    \ref{cat:named-functorial-gates}, previously called
+    Calibration-Family Structure, Bridges-as-Theorems, Coverage-Family
+    Geometry, Framework-Type Self-Characterization and Named Functorial
+    Gates, are now called Seed catalogue size, Bridge kinds, Declared
+    coverage table, Recorded type mismatch and Gate catalogue, names
+    that describe what they check.  \Cref{def:load-bearing} defines the
+    load-bearing content as an assignment, as in the formal record.  The verdicts of
+    \Cref{tab:verdict-signature} are described as this paper's reading
+    of the two applications rather than as verified instances.
+    \item The SB closure assumption is no longer attributed to
+    Foundations~I, the result quoted from Foundations~III is stated
+    with its scope, and the name of the Selberg source is described as
+    an analogy.
+  \item The recognition sources are attributed to the applications
+    that name them, the formed-closure predicate is identified as a
+    definition of this paper, the sweep reports read in
+    \Cref{sec:validation} are cited to the first versions of the
+    applications, and the Navier--Stokes physical-window return is
+    stated with its time-integrability condition and its assumed
+    terminal-divergence input.
+  \item \Cref{sec:gaussian-bridge,sec:triad-bridge} now define the
+        observation, the heat excess and the frame explicitly, in the
+    Sobolev-weighted Fourier coordinates in which they are formalized.  The
+    reflection is \(J(\rho)=1-\bar\rho\) (previously misprinted as
+    \(1-\rho\)).  \Cref{thm:joint-gaussian-return} is stated for
+    nonnegative integer weights, and \Cref{thm:concrete-triad-gaussian-xi}
+    for the specific three-solution frame and unit weights for which it
+    is proved; the earlier statement for an arbitrary frame was too
+    general.
+  \item In \Cref{sec:calibration} the conclusions of
+    \Cref{thm:calibration-family-structure,thm:bridges-as-theorems,thm:bridge-type-direction}
+    are restricted to the properties of records that are proved; the
+    seed catalogue is described as introduced in this paper, and its
+    source column was removed.
+    \item The account of the non-descending translation statement, an
+    earlier formulation from which the calibration family developed,
+    was reduced to a statement of scope in \Cref{sec:scope}.
+  \item Companion papers are cited in their current versions, and the
+    first versions separately where their content is meant.
+  \item A data point on the depth of matrix-element towers, not
+    supported by the cited papers, was removed from
+    \Cref{sec:predictions}.
+    \item \Cref{app:formalization} was rewritten as a correspondence
+    table with a statement of what is and is not verified.
+    Cross-references now name the kind of statement they point to.
+\end{itemize}
+
+\subsection*{Versions 2 and 3}
+Versions~2 and~3, the latter dated September 29, 2026, restated the
+premises of the three companion applications in their current form,
+added the Gaussian constructions of \Cref{sec:gaussian-bridge} and
+\Cref{sec:triad-bridge} with their figures, and described their formal
+verification.
+
+\subsection*{Version 1 (June 17, 2026)}
+The first version presented the foreclosure, recognition-mode and
+calibration-family parts.
+\par\endgroup

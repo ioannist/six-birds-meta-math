@@ -1,0 +1,1311 @@
+# Meta-Math statements of record
+# Locked 2026-05-27. Canonical registry for manuscript claims and
+# formalization-support wording.
+#
+# One row per labeled paper-side claim. Fields:
+#
+#   paper_label          — primary label (e.g. T1, T1-obligation, T5,
+#                          T16-pending, T15-overlap-lemma, val:ns,
+#                          nonclaim:bsd, etc.).
+#   env_kind             — definition / theorem / lemma / corollary /
+#                          remark / warning / nonclaim / obligation /
+#                          support_only / validation.
+#   source_file          — proposal / M5 / M6 / canonical paper source
+#                          path / substrate paper bibkey.
+#   source_section       — named claim within the source.
+#   source_lines         — line range or section anchor in source.
+#   theorem_title        — paper-prose name from prose-names.md.
+#   target_destination   — body / appendix / source_only /
+#                          evidence_pack_only / nonclaim.
+#   target_part          — I / II / III / Apparatus / Validation /
+#                          Audit / Predictions / Scope / Conclusion.
+#   target_section_hint  — \label{sec:...} hint.
+#   proof_presentation   — body_full / body_sketch / appendix_only /
+#                          lean_substantive / lean_traceability_only /
+#                          standard_reference / definition_entry /
+#                          obligation_disclosure / validation_citation
+#                          / nonclaim_statement.
+#   lean_coverage        — theorem / partial / obligation /
+#                          substrate_pending / definition /
+#                          not_mechanized / not_applicable.
+#   lean_decl            — full Lean path (from manifest) or
+#                          "not_applicable".
+#   semantic_alignment   — faithful / narrowed_surrogate /
+#                          weakened_genericized / needs_strengthening /
+#                          projection_packaged / opacity_guarded /
+#                          not_applicable.
+#   obligation_guard     — opacity-guard predicate name (only for
+#                          obligation rows; empty otherwise).
+#   substrate_cite       — bibkey for §5 validation rows; empty otherwise.
+#   notes                — paper-side wording / disclosure hints.
+
+schema_version: 1
+status: locked-2026-05-27
+
+# ============================================================================
+# PART I — FORECLOSURE (T1-T6)
+# ============================================================================
+
+rows:
+
+  # ---------- T1 ----------
+  - paper_label: T1
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 1 (Carrier Dichotomy)"
+    source_lines: "43-52"
+    theorem_title: "Carrier Dichotomy Theorem"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:carrier-dichotomy"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrier_dichotomy
+    semantic_alignment: opacity_guarded
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Spine theorem of Part I. Partial: applies T3's coverage_theorem under CoverageContext opacity guard. Disclosure: 'Lean verifies the structural derivation applying the same-paper obligation.' Cites Foundations III Theorem 24 (Same-Level Self-Audit Failure) for the CRE-TE classification."
+
+  - paper_label: T1-obligation
+    env_kind: obligation
+    source_file: M6
+    source_section: "Theorem 1 (Carrier Dichotomy) — exhaustiveness via T3"
+    source_lines: "43-52"
+    theorem_title: "carrier-dichotomy T3 pending obligation"
+    target_destination: appendix
+    target_part: I
+    target_section_hint: "sec:foreclosure:carrier-dichotomy"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema
+    semantic_alignment: opacity_guarded
+    obligation_guard: CoverageContext
+    substrate_cite: ""
+    notes: "Disclosure footnote at T1 body: 'the same-paper obligation under the opaque coverage-context guard; honestly disclosed in the formalization trust base (Appendix D).' Not standalone body content."
+
+  # ---------- T2 ----------
+  - paper_label: T2
+    env_kind: corollary
+    source_file: M6
+    source_section: "Theorem 2 (Bridge Impossibility Corollary)"
+    source_lines: "54-56"
+    theorem_title: "Bridge Impossibility Corollary"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:bridge-impossibility"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility
+    semantic_alignment: opacity_guarded
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Corollary of T1; partial applies T1's carrier_dichotomy plus bridge_impossibility_carries_obligation under BridgeComposition opacity guard. Disclosure must surface BOTH applications: 'Lean verifies the structural derivation applying the Carrier Dichotomy plus the same-paper bridge-composition obligation.' NOT a classical-barrier no-go theorem; do NOT invoke relativization/natural-proofs/algebrization analogies in T2 statement."
+
+  - paper_label: T2-obligation
+    env_kind: obligation
+    source_file: M6
+    source_section: "Theorem 2 — bridge X-strength obligation"
+    source_lines: "54-56"
+    theorem_title: "bridge-impossibility carries obligation"
+    target_destination: appendix
+    target_part: I
+    target_section_hint: "sec:foreclosure:bridge-impossibility"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema
+    semantic_alignment: opacity_guarded
+    obligation_guard: BridgeComposition
+    substrate_cite: ""
+    notes: "Disclosure footnote at T2 body: 'the same-paper obligation under the opaque bridge-composition guard.' Added in axis-review T2 fix cycle (BridgeComposition introduced to soundly carry the M6 final-step bridge obligation)."
+
+  # ---------- T3 ----------
+  - paper_label: T3
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 3 (Coverage Theorem, central proposed result)"
+    source_lines: "58-62"
+    theorem_title: "Coverage Theorem"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:coverage"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema
+    semantic_alignment: opacity_guarded
+    obligation_guard: CoverageContext
+    substrate_cite: ""
+    notes: "Spine theorem of Part I; central M6 proof obligation. Body presents the statement in full plus the opacity-guard disclosure: 'Lean records this as a tagged obligation axiom under the opaque coverage-context guard; honestly disclosed in the formalization trust base. Pending precise definition of \"open conjecture relative to accepted-imports base\" plus relative-consistency argument (M6 §Pending).'"
+
+  # ---------- T4 ----------
+  - paper_label: T4
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 4 (Type-Finite Foreclosure)"
+    source_lines: "64-68"
+    theorem_title: "Type-Finite Foreclosure Theorem"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:type-finite"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.type_finite_foreclosure
+    semantic_alignment: opacity_guarded
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Corollary of T3; partial applies coverage_theorem under CoverageContext. Disclosure: 'Lean verifies the structural derivation applying the Coverage Theorem; door-space is type-finite (≤4 states).'"
+
+  # ---------- T5 ----------
+  - paper_label: T5
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 5 (Attack Foreclosure Conjecture — operational meta-theorem)"
+    source_lines: "70-78"
+    theorem_title: "Attack Foreclosure Theorem (v4)"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:attack-foreclosure-v4"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema
+    semantic_alignment: opacity_guarded
+    obligation_guard: "InFrameworkScope + internalMoveSemantics"
+    substrate_cite: ""
+    notes: "Spine theorem of Part I (negative-half conclusion). Body presents statement plus disclosure: 'Lean records this as a tagged obligation axiom under the opaque framework-scope guard composed with opaque internal-move semantics; derivation from T1+T2+T6 is currently informal per M6.' §3.6 describes Class-B Irremovability (Paper 7) as a conditional framework with explicit feature-decomposition, joint-access, no-bite, and target-equivalence hypotheses; it does not establish a fourth barrier comparable in scope to relativization/natural-proofs/algebrization."
+
+  # ---------- T6 ----------
+  - paper_label: T6
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 6 (CTMT recursion)"
+    source_lines: "80-84"
+    theorem_title: "CTMT Recursion Theorem"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:ctmt-recursion"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.ctmt_recursion
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Depth-indexed inductive structure CTMTTower. Disclosure: 'Lean proves.' Track-independent depth bound remains open and is noted as future work in §8."
+
+# ============================================================================
+# PART II — RECOGNITION-MODE LANDING TEMPLATE (T7-T10)
+# ============================================================================
+
+  # ---------- T7 ----------
+  - paper_label: T7
+    env_kind: theorem
+    source_file: M5
+    source_section: "Appendix A Theorem 1 (Recognition-Mode Template Applicability)"
+    source_lines: "390 (statement) + 74-122 (template §3.1-3.7)"
+    theorem_title: "Recognition-Mode Template Applicability Theorem"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:template-applicability"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplicabilitySchema
+    semantic_alignment: opacity_guarded
+    obligation_guard: "shared opaque types + TemplateApplies"
+    substrate_cite: ""
+    notes: "Spine theorem of Part II (positive-half conclusion). Body presents statement plus disclosure: 'Lean records this as a tagged obligation axiom under the opaque template-applies guard composed with opaque substrate-typing predicates (FormedClosure, VDifferentialTSOColumn, SBClosureAssumption, LandsAtTheoremGrade); paper-proposal-grade per M5 §10.6, illustrated by cited conditional PvNP and RH records (named sources remain supplied), corpus-pending.' Cites Foundations II seven-schema admissibility for SevenStageTemplate background."
+
+  # ---------- T8 ----------
+  - paper_label: T8
+    env_kind: theorem
+    source_file: M5
+    source_section: "Appendix A Theorem 2 (Cross-Track Verdict Signature)"
+    source_lines: "392 (statement) + 49-71 (§2.2)"
+    theorem_title: "Cross-Track Verdict Signature Theorem"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:verdict-signature"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.VerdictSignatureSchema
+    semantic_alignment: opacity_guarded
+    obligation_guard: "TemplateApplies + sweepVerdict"
+    substrate_cite: ""
+    notes: "(ii)/(iii)/(ii) pattern for sweep options (i) framework-primitive / (ii) SAU non-descent / (iii) V-Differential elevation. Two cited conditional records (PvNP, RH). Disclosure: 'Lean records this as a tagged obligation axiom under the opaque template-applies guard composed with opaque sweep-verdict; illustrated by cited conditional instances, corpus-pending.' Body must include 'two-instance' qualifier every time the signature is mentioned."
+
+  # ---------- T9 ----------
+  - paper_label: T9
+    env_kind: theorem
+    source_file: M5
+    source_section: "Appendix A Theorem 3 (Closure-Content Thesis)"
+    source_lines: "394 (statement) + 124-143 (§4)"
+    theorem_title: "Closure-Content Thesis"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:closure-content-thesis"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.ClosureContentThesisSchema
+    semantic_alignment: opacity_guarded
+    obligation_guard: loadBearingFor
+    substrate_cite: ""
+    notes: "Semantic ground for T7 and T10. Body presents statement plus disclosure: 'Lean records this as a tagged obligation axiom under the opaque load-bearing predicate.' Cites Foundations I closure formation and Paper 8 CSL (recognition source Γ_csl-sat-hidden). NEVER 'derived from primitives'; always 'imported as named recognition.'"
+
+  # ---------- T10 ----------
+  - paper_label: T10
+    env_kind: theorem
+    source_file: M5
+    source_section: "Appendix A Theorem 4 + §6 v5 refinement"
+    source_lines: "396 (statement) + 172-198 (§6)"
+    theorem_title: "Attack Foreclosure Theorem (v5 refinement)"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:attack-foreclosure-v5"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.AttackForeclosureV5Schema
+    semantic_alignment: opacity_guarded
+    obligation_guard: "InFrameworkScope + IsDerivationRoute + RecognitionModeLanding + ImportsAsNamedRecognition"
+    substrate_cite: ""
+    notes: "Spine theorem of Part II (joint with T7). Refines T5, does NOT replace. Body presents statement plus disclosure: 'Lean records this as a tagged obligation axiom under the opaque framework-scope guard composed with opaque derivation-route, recognition-mode-landing, and imports-as-named-recognition predicates; v4 (T5) continues to hold for derivation routes.' Recognition-mode and derivation-mode are peer paths under the SB closure assumption."
+
+# ============================================================================
+# §5 CROSS-TRACK VALIDATION ROWS
+# ============================================================================
+
+  - paper_label: support:validation-intro
+    env_kind: support_only
+    source_file: "paper/meta_math/notes/section-outline.md"
+    source_section: "§5 Cross-track validation intro"
+    source_lines: "§5 purpose + validation discipline"
+    theorem_title: "Cross-track validation introduction"
+    target_destination: body
+    target_part: Validation
+    target_section_hint: "sec:validation:intro"
+    proof_presentation: standard_reference
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Introductory validation framing only: cite-only discipline, conditional-closure qualifier, and WCE/TSO row split. No substrate theorem restatement."
+
+  - paper_label: val:ns
+    env_kind: validation
+    source_file: "paper/meta_math/sections/sec_05_validation.tex"
+    source_section: "Paper 5 NS (substrate landing)"
+    source_lines: "abstract + main theorem"
+    theorem_title: "NS substrate-landing validation row"
+    target_destination: body
+    target_part: Validation
+    target_section_hint: "sec:validation:ns"
+    proof_presentation: validation_citation
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: Tsiokos2026NavierStokes
+    notes: "Witness-content-exposing column. The current principal NS conditional theorem assumes horizon-uniform spectral Hilbert XI closure and smooth initial-data conditions, and proves its physical PDE return. Generic record closure alone does not supply that spectral hypothesis. The retained AOR operational route has separate supplied return inputs."
+
+  - paper_label: val:rh
+    env_kind: validation
+    source_file: "paper/meta_math/sections/sec_05_validation.tex"
+    source_section: "Paper 6 RH (substrate landing) + Paper 2 SDTC (apparatus)"
+    source_lines: "abstract + main theorem"
+    theorem_title: "RH substrate-landing validation row"
+    target_destination: body
+    target_part: Validation
+    target_section_hint: "sec:validation:rh"
+    proof_presentation: validation_citation
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: "Tsiokos2026RH, Tsiokos2026SDTC"
+    notes: "TSO column; recognition-mode landing; stage instance for M5 §2.1 + §5.3. Cite both substrate papers. Recognition source: Γ_SDTC^Selberg imported as named recognition per Foundations I closure formation (Paper 6 RH + Paper 2 SDTC)."
+
+  - paper_label: val:pvnp
+    env_kind: validation
+    source_file: "paper/meta_math/sections/sec_05_validation.tex"
+    source_section: "Paper 7 PvNP (substrate landing) + Paper 8 CSL (recognition source)"
+    source_lines: "abstract + main theorem"
+    theorem_title: "PvNP substrate-landing validation row"
+    target_destination: body
+    target_part: Validation
+    target_section_hint: "sec:validation:pvnp"
+    proof_presentation: validation_citation
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: "Tsiokos2026PvNP, Tsiokos2026CSL"
+    notes: "TSO column; recognition-mode landing; stage instance for M5 §2.1 + §5.2. Cite both substrate papers. Recognition source: Γ_csl-sat-hidden imported as named recognition per Foundations I closure formation (Paper 8 CSL). Also cite Class-B Irremovability barrier from Paper 7 in T17 context."
+
+# ============================================================================
+# PART III — CALIBRATION FAMILY (T11-T17)
+# ============================================================================
+
+  # ---------- T11 ----------
+  - paper_label: T11
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 8 (Calibration-Family Structure)"
+    source_lines: "106-128"
+    theorem_title: "Calibration-Family Structure Theorem"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:structure"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibration_family_structure
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Lean proves the finite typed record structure and its 13-entry seed catalogue. Non-descent and detector performance of the named applications are not derived from these catalogue fields. Cited PvNP calibration records provide motivation, not proofs of the abstract fields' intended semantic interpretation."
+
+  # ---------- T12 ----------
+  - paper_label: T12
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 8.1 (Calibration-Family Discipline: Rebadge vs. Genuinely New)"
+    source_lines: "130-134"
+    theorem_title: "Rebadge-Discipline Theorem"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:rebadge"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.rebadge_discipline
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Four-axis discriminator (algebraic identities, detector class, descent invariants, carrier orientation). Disclosure: 'Lean proves.'"
+
+  # ---------- T13 ----------
+  - paper_label: T13
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 9 (Bridges Between Calibrations Require Theorems, Not Dictionaries)"
+    source_lines: "136-147"
+    theorem_title: "Bridges-as-Theorems Theorem"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:bridges-as-theorems"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.bridges_as_theorems
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "The theorem exhausts the two declared BridgeKind constructors. It does not prove that a proposed bridge implements a basis change or a substantive transport theorem. Calibration-side TypedBridge is distinct from carrier-side TypedBridge of T2."
+
+  # ---------- T14 ----------
+  - paper_label: T14
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 9.1 (Bridge Type-Direction Asymmetry)"
+    source_lines: "149-155"
+    theorem_title: "Bridge Type-Direction Theorem"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:bridge-type-direction"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgeTypeDirection.bridge_type_direction
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Source/target labels encode direction; reversing their order equals the original ordered pair iff the labels agree. This does not construct a reverse bridge or transport theorem."
+
+  # ---------- T15 ----------
+  - paper_label: T15
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 10 (Calibration-Family Coverage Geometry)"
+    source_lines: "157-167"
+    theorem_title: "Coverage-Family Geometry Theorem"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:coverage-family-geometry"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.coverage_family_geometry
+    semantic_alignment: projection_packaged
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "The six covered-region tags, four uncovered tags and two hole names belong to a declared finite catalogue. The packaged theorem computes that catalogue and its supplied coverage table; it does not prove complexity-class containments or separations. Empty entries leave the union unchanged, consistently with monotonicity."
+
+  - paper_label: T15-supporting-lemma:all-covered
+    env_kind: lemma
+    source_file: M6
+    source_section: "Theorem 10 supporting evidence"
+    source_lines: "157-167"
+    theorem_title: "All-covered-regions-in-family lemma"
+    target_destination: appendix
+    target_part: III
+    target_section_hint: "sec:calibration:coverage-family-geometry"
+    proof_presentation: appendix_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.all_covered_regions_in_family
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Supporting lemma; surface in Appendix D table only."
+
+  - paper_label: T15-supporting-lemma:all-uncovered
+    env_kind: lemma
+    source_file: M6
+    source_section: "Theorem 10 supporting evidence"
+    source_lines: "157-167"
+    theorem_title: "All-uncovered-regions-not-in-family lemma"
+    target_destination: appendix
+    target_part: III
+    target_section_hint: "sec:calibration:coverage-family-geometry"
+    proof_presentation: appendix_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.all_uncovered_regions_not_in_family
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Supporting lemma; surface in Appendix D table only."
+
+  - paper_label: T15-supporting-lemma:bounded-depth-overlap
+    env_kind: lemma
+    source_file: M6
+    source_section: "Theorem 10 supporting evidence"
+    source_lines: "157-167"
+    theorem_title: "Bounded-depth overlap lemma"
+    target_destination: appendix
+    target_part: III
+    target_section_hint: "sec:calibration:coverage-family-geometry"
+    proof_presentation: appendix_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.bounded_depth_overlap
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Supporting lemma; surface in Appendix D table only."
+
+  - paper_label: T15-supporting-lemma:non-monotone
+    env_kind: lemma
+    source_file: M6
+    source_section: "Theorem 10 supporting evidence — non-monotone closure-power"
+    source_lines: "157-167"
+    theorem_title: "Empty-coverage-adds-nothing lemma"
+    target_destination: appendix
+    target_part: III
+    target_section_hint: "sec:calibration:coverage-family-geometry"
+    proof_presentation: appendix_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.empty_coverage_adds_nothing
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "An empty coverage entry leaves the covered-region union unchanged. This disproves strict growth from adding an entry, not monotonicity of union."
+
+  # ---------- T16 ----------
+  - paper_label: T16
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 11 (Framework-Type Self-Characterization)"
+    source_lines: "169-187"
+    theorem_title: "Framework-Type Self-Characterization Theorem"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:framework-type-self-char"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.framework_type_self_characterization
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Proves inequality of the retained finite PvNP catalogue type tags and supplies the named-gate catalogue. It does not classify the current all-input uniform worst-case SAT machine theorem. The framework-general candidate is a separate guarded obligation, unused by this theorem."
+
+  - paper_label: T16-pending
+    env_kind: obligation
+    source_file: M6
+    source_section: "Theorem 11 framework-general candidate"
+    source_lines: "169-187"
+    theorem_title: "framework-type self-characterization (framework-general candidate)"
+    target_destination: appendix
+    target_part: III
+    target_section_hint: "sec:calibration:framework-type-self-char"
+    proof_presentation: obligation_disclosure
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkTypeGeneralSchema
+    semantic_alignment: opacity_guarded
+    obligation_guard: "VDifferentialTSOColumn gate + opaque cascadeFrameworkType + standardClayTargetType"
+    substrate_cite: ""
+    notes: "Disclosure footnote at T16 body: 'the framework-general candidate is documented as a separate pending obligation axiom under the opaque per-substrate framework-type predicates; NOT applied by the Framework-Type Self-Characterization Theorem proof. Captures the conjectural extension to opaque per-substrate framework-types beyond PvNP.' M6 status: candidate framework-general, promotion gated by replication on further Clay track."
+
+  - paper_label: T16-supporting-lemma:pvnp-mismatch
+    env_kind: lemma
+    source_file: M6
+    source_section: "Theorem 11 PvNP-specific direct mismatch"
+    source_lines: "169-187"
+    theorem_title: "PvNP framework-type mismatch lemma"
+    target_destination: appendix
+    target_part: III
+    target_section_hint: "sec:calibration:framework-type-self-char"
+    proof_presentation: appendix_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.pvnp_framework_type_mismatch
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Decidable from concrete record values. Surface in Appendix D table; mention in §6.7 as direct lemma feeding T16."
+
+  # ---------- T17 ----------
+  - paper_label: T17
+    env_kind: theorem
+    source_file: M6
+    source_section: "Theorem 12 (Named Functorial Gates as a Third Typed-Deliverable Species)"
+    source_lines: "189-204"
+    theorem_title: "Named Functorial Gates Catalog"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:functorial-gates"
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.named_functorial_gates
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Proves that the three listed gate names are nonempty and present in the finite catalogue. The list is not exhaustive and does not discharge any gate's mathematical content or classify every possible transport route."
+
+# ============================================================================
+# DEFINITION ENTRIES (paper-prose-worthy supporting concepts)
+# Only those that warrant prose mention; all others surface only in Appendix D.
+# ============================================================================
+
+  # Apparatus subsection anchors required by the §2 black-box background.
+  - paper_label: apparatus:closure-formation
+    env_kind: support_only
+    source_file: Tsiokos2026EmergenceCalculus
+    source_section: "Foundations I closure formation"
+    source_lines: "standard reference"
+    theorem_title: "Foundations I closure formation and SB closure assumption"
+    target_destination: body
+    target_part: Apparatus
+    target_section_hint: "sec:apparatus:closure-formation"
+    proof_presentation: standard_reference
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: Tsiokos2026EmergenceCalculus
+    notes: "§2 black-box background anchor; cite Foundations I and do not re-derive."
+
+  - paper_label: apparatus:birdint
+    env_kind: support_only
+    source_file: Tsiokos2026FoundationsIII
+    source_section: "BirdInt judgment and Same-Level Self-Audit Failure"
+    source_lines: "Theorem 24 reference"
+    theorem_title: "BirdInt judgment and Same-Level Self-Audit Failure"
+    target_destination: body
+    target_part: Apparatus
+    target_section_hint: "sec:apparatus:birdint"
+    proof_presentation: standard_reference
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: Tsiokos2026FoundationsIII
+    notes: "§2 black-box background anchor; cite Foundations III and do not re-derive."
+
+  - paper_label: apparatus:typed-context
+    env_kind: support_only
+    source_file: Tsiokos2026FoundationsII + Tsiokos2026FoundationsIII
+    source_section: "Typed-context discipline"
+    source_lines: "standard reference"
+    theorem_title: "typed-context discipline"
+    target_destination: body
+    target_part: Apparatus
+    target_section_hint: "sec:apparatus:typed-context"
+    proof_presentation: standard_reference
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: Tsiokos2026FoundationsII, Tsiokos2026FoundationsIII
+    notes: "§2 black-box background anchor for the ambient typing discipline."
+
+  - paper_label: apparatus:opacity-guards
+    env_kind: support_only
+    source_file: meta-math formalization discipline
+    source_section: "Opacity-guard pattern"
+    source_lines: "Appendix D register"
+    theorem_title: "opacity-guard pattern"
+    target_destination: body
+    target_part: Apparatus
+    target_section_hint: "sec:apparatus:opacity-guards"
+    proof_presentation: standard_reference
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§2 methodological anchor only. Name the guard pattern; defer specific obligation statements to §3-§6 and Appendix D."
+
+  # Part I definitions worth prose mention
+  - paper_label: foreclosure:setup
+    env_kind: support_only
+    source_file: M6
+    source_section: "Foreclosure setup"
+    source_lines: "43-84"
+    theorem_title: "Foreclosure setup and four-state taxonomy overview"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:setup"
+    proof_presentation: standard_reference
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: Tsiokos2026FoundationsIII
+    notes: "§3.1 audience-entry setup only. Introduces the typed carrier-state vocabulary before the T1-T6 theorem subsections."
+
+  - paper_label: def:typed-primary-carrier
+    env_kind: definition
+    source_file: M6
+    source_section: "Carrier Dichotomy setup"
+    source_lines: "43-52"
+    theorem_title: "typed primary carrier aimed at X"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:carrier-dichotomy"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §3.2 introduces this with plain-mathematical first-use: 'an attempted proof construction that targets a designated open conjecture X.'"
+
+  - paper_label: def:carrier-residual
+    env_kind: definition
+    source_file: M6 + Paper 1
+    source_section: "Adequacy residual"
+    source_lines: "43-52 (M6 context) + Paper 1 §2"
+    theorem_title: "carrier's adequacy residual Ξ_C(D | L)"
+    target_destination: body
+    target_part: Apparatus
+    target_section_hint: "sec:apparatus:adequacy-residual"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrierResidual
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: Tsiokos2026XiCompanion
+    notes: "Apparatus cite to Paper 1; do not re-derive. Body §2 introduces black-box."
+
+  - paper_label: def:four-typed-states
+    env_kind: definition
+    source_file: M6
+    source_section: "Carrier Dichotomy states"
+    source_lines: "43-52"
+    theorem_title: "four typed states: non-X-equivalent, CRE-TE, CRE-BF, CRE-CTMT"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:carrier-dichotomy"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: "SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.{nonXEquivalent,creTE,creBF,creCTMT}"
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §3.3 introduces all four with plain-mathematical first-use: CRE-TE 'target-equivalent fallback' / CRE-BF 'bridge-failed dead-end' / CRE-CTMT 'cascade-terminal matrix element' / non-X-equivalent 'classical residue.'"
+
+  - paper_label: def:framework-internal-move
+    env_kind: definition
+    source_file: M6
+    source_section: "Attack Foreclosure setup"
+    source_lines: "70-78"
+    theorem_title: "framework-internal move (carrier pivot / bridge import / cascade-internal computation)"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:attack-foreclosure-v4"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §3.6 introduces with plain-mathematical first-use."
+
+  - paper_label: def:ctmt-tower
+    env_kind: definition
+    source_file: M6
+    source_section: "CTMT recursion"
+    source_lines: "80-84"
+    theorem_title: "CTMT tower (depth-indexed)"
+    target_destination: body
+    target_part: I
+    target_section_hint: "sec:foreclosure:ctmt-recursion"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §3.7 introduces inductively."
+
+  # Part II definitions worth prose mention
+  - paper_label: def:vdiff-tso-column
+    env_kind: definition
+    source_file: M5
+    source_section: "V-Differential column classification"
+    source_lines: "§2.1"
+    theorem_title: "V-Differential trace-state-only column"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:column-classification"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §4.1 introduces the TSO / WCE column split with plain-mathematical first-use."
+
+  - paper_label: def:seven-stage-template
+    env_kind: definition
+    source_file: M5
+    source_section: "Seven-stage template §3.1-3.7"
+    source_lines: "74-122"
+    theorem_title: "seven-stage recognition-mode landing template"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:template-applicability"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §4.2 walks through Stages 1-7 (closure construction → translation theorem → applicability audit → smuggle audit → anti-tautology hardening → three-option derivation sweep → recognition closure). The bulk of Part II is this walkthrough."
+
+  - paper_label: def:three-option-sweep
+    env_kind: definition
+    source_file: M5
+    source_section: "Three-option derivation sweep §3.6"
+    source_lines: "49-71"
+    theorem_title: "three-option derivation sweep (framework-primitive / SAU non-descent / V-Differential elevation)"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:verdict-signature"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §4.4 introduces three options + the (i)/(ii)/(iii) verdict assignment."
+
+  - paper_label: def:closure-content
+    env_kind: definition
+    source_file: M5
+    source_section: "Closure-content thesis support"
+    source_lines: "§4 lines 124-143"
+    theorem_title: "load-bearing structural content / recognition source / accepted-imports base"
+    target_destination: body
+    target_part: II
+    target_section_hint: "sec:recognition:closure-content-thesis"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: "SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.{StructuralContent,IsFormedLayerClosureContent,IsDerivableFromFrameworkPrimitives,NamedAsAcceptedSource}"
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: Tsiokos2026EmergenceCalculus
+    notes: "Body §4.5 introduces the three predicates that constitute the load-bearing-content classification. Cites Foundations I closure formation."
+
+  # Part III definitions worth prose mention
+  - paper_label: def:calibration
+    env_kind: definition
+    source_file: M6
+    source_section: "Calibration record"
+    source_lines: "106-128"
+    theorem_title: "calibration (name × detector-class × native-carrier-type)"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:structure"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §6.2 introduces the record type and lists 13-entry seed catalog."
+
+  - paper_label: def:four-axis-profile
+    env_kind: definition
+    source_file: M6
+    source_section: "Rebadge discipline"
+    source_lines: "130-134"
+    theorem_title: "calibration four-axis profile"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:rebadge"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §6.3 introduces the four-axis discriminator."
+
+  - paper_label: def:bridge-kind
+    env_kind: definition
+    source_file: M6
+    source_section: "Bridges-as-Theorems"
+    source_lines: "136-147"
+    theorem_title: "calibration-bridge kind dichotomy (basis-change / substantive)"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:bridges-as-theorems"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.BridgeKind
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §6.4 introduces BridgeKind."
+
+  - paper_label: def:framework-type
+    env_kind: definition
+    source_file: M6
+    source_section: "Framework-Type Self-Characterization"
+    source_lines: "169-187"
+    theorem_title: "framework-type (uniformity × worst-caseness × scoping × packaging)"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:framework-type-self-char"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkType
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §6.7 introduces the four-axis framework-type record."
+
+  - paper_label: def:functorial-gate
+    env_kind: definition
+    source_file: M6
+    source_section: "Named functorial gates"
+    source_lines: "189-204"
+    theorem_title: "functorial gate (name × source × target × direction × theorem-obligation)"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:functorial-gates"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.FunctorialGate
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §6.8 introduces the FunctorialGate record + 3-entry named catalog."
+
+  - paper_label: def:coverage-regions
+    env_kind: definition
+    source_file: M6
+    source_section: "Coverage-family geometry regions"
+    source_lines: "157-167"
+    theorem_title: "carrier regions (6 covered + 4 uncovered + 2 typed holes)"
+    target_destination: body
+    target_part: III
+    target_section_hint: "sec:calibration:coverage-family-geometry"
+    proof_presentation: definition_entry
+    lean_coverage: definition
+    lean_decl: "SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.{boundedDepthRegion,lowDegreeRegion,stableLocalRegion,queryRegion,topologicalRegion,lowNSDegreeRegion,nc1Region,nc2Region,pPolyRegion,adaptivePolyTimeRegion,xiNC1Coverage,xiAdaptiveTrace}"
+    semantic_alignment: faithful
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Body §6.6 lists all 12 regions in a single table (figure 4 / table candidate per figure-table-plan)."
+
+# ============================================================================
+# CASCADE-EVIDENCE / SUPPORT-ONLY ROWS
+# ============================================================================
+
+  - paper_label: support:vobs-arc
+    env_kind: support_only
+    source_file: "paper/meta_math/sections/sec_06_calibration.tex"
+    source_section: "validation-obstruction background"
+    source_lines: "paper-local summary"
+    theorem_title: "vobs-arc historical evidence"
+    target_destination: source_only
+    target_part: III
+    target_section_hint: "sec:calibration:intro"
+    proof_presentation: definition_entry
+    lean_coverage: not_mechanized
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "M6 Theorem 7 (Non-Descending Translation) historical motivation. Folded into Part III as historical/substrate context. May surface in §6.1 introduction as a one-paragraph background; not a body claim."
+
+  - paper_label: support:calibration-catalog
+    env_kind: support_only
+    source_file: "paper/meta_math/sections/sec_06_calibration.tex"
+    source_section: "calibration and retract catalog"
+    source_lines: "paper-local summary"
+    theorem_title: "calibration and retract catalog (PvNP track)"
+    target_destination: source_only
+    target_part: III
+    target_section_hint: "sec:calibration:functorial-gates"
+    proof_presentation: definition_entry
+    lean_coverage: not_mechanized
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "11 valid calibrations + 5 honest retracts on PvNP track; concrete catalog from which T17 three named gates were extracted. May surface in §6.8 background paragraph; not a body claim."
+
+  - paper_label: support:recognition-framing-alignment
+    env_kind: support_only
+    source_file: "paper/meta_math/sections/sec_07_audit.tex"
+    source_section: "recognition-closure framing alignment"
+    source_lines: "paper-local summary"
+    theorem_title: "recognition-closure framing alignment evidence"
+    target_destination: source_only
+    target_part: Audit
+    target_section_hint: "sec:audit:cross-paper-consistency"
+    proof_presentation: definition_entry
+    lean_coverage: not_mechanized
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Evidence for §7 cross-paper consistency audit (recognition-mode vs derivation-mode peer-path framing). Not a body claim."
+
+  - paper_label: audit:source-record-discipline
+    env_kind: remark
+    source_file: "paper/meta_math/sections/sec_07_audit.tex"
+    source_section: "source-record discipline across the corpus"
+    source_lines: "n/a"
+    theorem_title: "source-record discipline (audit observation)"
+    target_destination: body
+    target_part: Audit
+    target_section_hint: "sec:audit:source-record-discipline"
+    proof_presentation: definition_entry
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Audit-grade observation, not a formal claim. Subsection added in §7 drafting."
+
+  - paper_label: support:rh-recognition-background
+    env_kind: support_only
+    source_file: "paper/meta_math/sections/sec_05_validation.tex"
+    source_section: "RH recognition-closure background"
+    source_lines: "paper-local summary"
+    theorem_title: "RH recognition-closure historical evidence"
+    target_destination: source_only
+    target_part: Validation
+    target_section_hint: "sec:validation:rh"
+    proof_presentation: definition_entry
+    lean_coverage: not_mechanized
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Background for §5 RH validation row. Not a body claim; cited via substrate-paper bibkey."
+
+# ============================================================================
+# NONCLAIMS (binding exclusions per scope-fence and out-of-scope-ledger)
+# ============================================================================
+
+  - paper_label: nonclaim:scope-register
+    env_kind: nonclaim
+    source_file: scope-fence
+    source_section: "Meta-math nonclaim register"
+    source_lines: "all"
+    theorem_title: "Nonclaims register umbrella"
+    target_destination: nonclaim
+    target_part: Scope
+    target_section_hint: "sec:scope:nonclaims"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "Umbrella §9 nonclaim register; table population deferred to polish."
+
+  - paper_label: nonclaim:bsd
+    env_kind: nonclaim
+    source_file: M6
+    source_section: "Theorems 9.2, 10.1, 12.1 + b53-b225 cascade + 6 BSD obligations"
+    source_lines: "206 ff."
+    theorem_title: "BSD-track content (out of scope)"
+    target_destination: nonclaim
+    target_part: Scope
+    target_section_hint: "sec:scope:bsd-out"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§9 Scope only. Required wording per out-of-scope-ledger §1: 'BSD-track results from the M6 source proposal (Theorems 9.2, 10.1, 12.1; the b53-b225 cascade evidence; six BSD-specific obligations) are out of scope for this paper.'"
+
+  - paper_label: nonclaim:hodge-prediction
+    env_kind: nonclaim
+    source_file: M5
+    source_section: "§7 Hodge predictions"
+    source_lines: "§7"
+    theorem_title: "Hodge-track (prediction-only)"
+    target_destination: nonclaim
+    target_part: Predictions
+    target_section_hint: "sec:predictions:hodge"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§8 Predictions ONLY. Required wording per out-of-scope-ledger §2: explicit 'conditional' / 'should' / 'prediction' framing."
+
+  - paper_label: nonclaim:hodge-scope
+    env_kind: nonclaim
+    source_file: M5
+    source_section: "§7 Hodge predictions"
+    source_lines: "§7"
+    theorem_title: "Hodge-track (prediction-only scope caveat)"
+    target_destination: nonclaim
+    target_part: Scope
+    target_section_hint: "sec:scope:hodge-prediction-only"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§9 Scope caveat cross-referencing §8 Hodge prediction; no Hodge landing is claimed."
+
+  - paper_label: prediction:ym-generalization
+    env_kind: support_only
+    source_file: M5
+    source_section: "§7 Yang-Mills generalization conjecture"
+    source_lines: "§7"
+    theorem_title: "Yang-Mills generalization conjecture"
+    target_destination: body
+    target_part: Predictions
+    target_section_hint: "sec:predictions:ym"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§8 Predictions only. No Yang-Mills substrate exists; prose must use conjecture / should / open-problem framing."
+
+  - paper_label: prediction:t7-t10-lifting
+    env_kind: support_only
+    source_file: M5
+    source_section: "§10.6 theorem-grade lifting condition"
+    source_lines: "§10.6"
+    theorem_title: "third-instance theorem-grade lifting condition for T7-T10"
+    target_destination: body
+    target_part: Predictions
+    target_section_hint: "sec:predictions:theorem-grade-lifting"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§8 Predictions only. Lifting requires third-instance TSO replication plus structural argument from V-Differential column-membership to the (ii)/(iii)/(ii) verdict pattern."
+
+  - paper_label: prediction:ctmt-depth-bound
+    env_kind: support_only
+    source_file: M6
+    source_section: "Theorem 6 (CTMT Recursion) open depth-bound problem"
+    source_lines: "80-84"
+    theorem_title: "track-independent CTMT depth bound"
+    target_destination: body
+    target_part: Predictions
+    target_section_hint: "sec:predictions:ctmt-depth-bound"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§8 Predictions only. The documented depth-8 chain is evidence, not a bound; track-independent CTMT depth bound remains open."
+
+  - paper_label: prediction:open-functorial-gates
+    env_kind: support_only
+    source_file: M6
+    source_section: "Theorem 12 (Named Functorial Gates) future gate obligations"
+    source_lines: "189-204"
+    theorem_title: "open functorial gates beyond the three named gates"
+    target_destination: body
+    target_part: Predictions
+    target_section_hint: "sec:predictions:functorial-gates"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§8 Predictions only. T17's three-gate catalog is species-level; individual gate theorem obligations and future gates remain open."
+
+  - paper_label: nonclaim:m6-theorem-7
+    env_kind: nonclaim
+    source_file: M6
+    source_section: "Theorem 7 (Non-Descending Translation Meta-Theorem)"
+    source_lines: "preceding T11"
+    theorem_title: "M6 Theorem 7 (folded into Part III as historical/substrate context)"
+    target_destination: nonclaim
+    target_part: III
+    target_section_hint: "sec:scope:m6-theorem-7-folded"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_mechanized
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§6.1 or §6.8 background only. Required wording per out-of-scope-ledger §4."
+
+  - paper_label: nonclaim:recognition-source-derivation
+    env_kind: nonclaim
+    source_file: M5
+    source_section: "§10.6 + Closure-Content Thesis"
+    source_lines: "§10.6"
+    theorem_title: "recognition source framework-internal derivation (out of scope)"
+    target_destination: nonclaim
+    target_part: Scope
+    target_section_hint: "sec:scope:recognition-source-imports"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§9 Scope. Required wording per out-of-scope-ledger §5: 'imported as named recognition per Foundations I closure formation' for every recognition-source mention; never 'derived from framework primitives.'"
+
+  - paper_label: nonclaim:universal-lifting
+    env_kind: nonclaim
+    source_file: M5
+    source_section: "§10.6 universal lifting condition"
+    source_lines: "§10.6"
+    theorem_title: "theorem-grade universal lifting of T7-T10 (out of scope; prediction-only in §8)"
+    target_destination: nonclaim
+    target_part: Scope
+    target_section_hint: "sec:scope:universal-lifting-deferred"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§9 Scope + §8 Predictions. Required wording per out-of-scope-ledger §6: 'candidate meta-theorem under SB closure assumption, illustrated by cited conditional instances, corpus-pending; theorem-grade lifting requires third-instance cross-track replication + structural argument from V-Differential column-membership.'"
+
+  - paper_label: nonclaim:standard-zfc-clay
+    env_kind: nonclaim
+    source_file: proposal
+    source_section: "Scope of meta-math"
+    source_lines: "proposal §1, §pending"
+    theorem_title: "standard-ZFC unconditional Clay-class claims (out of scope)"
+    target_destination: nonclaim
+    target_part: Scope
+    target_section_hint: "sec:scope:standard-zfc"
+    proof_presentation: nonclaim_statement
+    lean_coverage: not_applicable
+    lean_decl: not_applicable
+    semantic_alignment: not_applicable
+    obligation_guard: ""
+    substrate_cite: ""
+    notes: "§9 Scope. Required wording per out-of-scope-ledger §3: 'every Clay-class landing referenced is conditional under SB closure assumption.'"
+
+# ============================================================================
+# SUMMARY COUNTS (auto-generated equivalents; locked targets)
+# ============================================================================
+
+  - paper_label: thm:joint-gaussian-return
+    env_kind: theorem
+    source_file: paper/meta_math/sections/sec_05a_gaussian_bridge.tex
+    source_section: Joint Gaussian observation and source return
+    source_lines: thm:joint-gaussian-return
+    theorem_title: Joint Gaussian observation and source return
+    target_destination: body
+    target_part: Validation
+    target_section_hint: sec:gaussian-bridge
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.joint_actual_zero_xi_and_navier_source_return
+    semantic_alignment: faithful
+    obligation_guard: ''
+    substrate_cite: ''
+    notes: Exact actual zero-window Gaussian/XI identity plus actual local Navier Duhamel return; no payment theorem.
+
+  - paper_label: thm:concrete-triad-gaussian-xi
+    env_kind: theorem
+    source_file: paper/meta_math/sections/sec_05b_triad_bridge.tex
+    source_section: Concrete Gaussian--XI triad span
+    source_lines: thm:concrete-triad-gaussian-xi
+    theorem_title: Concrete Gaussian--XI triad span
+    target_destination: body
+    target_part: Validation
+    target_section_hint: sec:triad-bridge
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.RHNavierPvNP.TriadObservationReturn.concrete_triad_gaussian_xi_span
+    semantic_alignment: faithful
+    obligation_guard: ''
+    substrate_cite: ''
+    notes: Exact actual-zero XI return, SAT native/XI and encoded-language return, clause failure trace, and unit-branch XI commutator at one actual local Navier frame; no source payment or polynomial Gaussian evaluation.
+
+total_rows: 68
+# Breakdown:
+# - 17 T-row primaries (T1-T17)
+# - 3 same-paper obligation sub-rows (T1-obligation, T2-obligation, T16-pending)
+# - 4 T15 supporting lemmas (all-covered, all-uncovered, bounded-depth-overlap, non-monotone)
+# - 1 T16 supporting lemma (pvnp-mismatch)
+# - 4 §2 apparatus support anchors (closure formation, BirdInt, typed-context, opacity guards)
+# - 1 §3 foreclosure setup support anchor
+# - 1 §5 validation intro support anchor
+# - 3 §5 validation rows (val:ns, val:rh, val:pvnp)
+# - 15 definition entries worth prose mention
+# - 4 cascade-evidence support_only rows
+# - 6 nonclaim rows
+# Total = 17 + 3 + 4 + 1 + 4 + 1 + 1 + 3 + 15 + 4 + 6 = 59
+
+# Summary counts are approximate; the validator script reports exact
+# counts at runtime via `python3 scripts/check_statements_of_record_meta_math.py`.
+# These are recorded here for human review only.
+
+target_destination_counts:
+  body: 34
+  appendix: 5
+  source_only: 4
+  evidence_pack_only: 0
+  nonclaim: 6
+  # Approximate human-review summary; validator reports exact row count.
+
+target_part_counts:
+  # Approximate — part assignments follow target_part field per row
+  # (see validator output for exact tally).
+  notes: "validator-derived"
+
+lean_coverage_counts:
+  theorem: 18    # T6, T11-T17, 4 T15-lemmas, T16-lemma = 13 theorem + 5 supporting lemmas; some rows mark theorem
+  partial: 0     # T1, T2, T4
+  obligation: 0  # T1-obl, T2-obl, T3, T5, T7, T8, T9, T10, T16-pending
+  substrate_pending: 0
+  definition: 24
+  not_mechanized: 5
+  not_applicable: 21  # 4 apparatus support anchors + 1 setup anchor + 1 validation intro + 3 val + 8 nonclaim + 4 predictions
+
+proof_presentation_counts:
+  appendix_only: 5
+  lean_substantive: 11   # T1, T2, T4 (partials) + T6 + T11-T15 + T16 + T17
+  definition_entry: 19   # 15 def + 4 support
+  standard_reference: 6  # §2 apparatus support anchors + §3 setup anchor + §5 validation intro
+  obligation_disclosure: 9
+  validation_citation: 3
+  nonclaim_statement: 12
+
+semantic_alignment_counts:
+  faithful: 31
+  projection_packaged: 1
+  opacity_guarded: 12   # 9 obligations + 3 partials
+  not_applicable: 21

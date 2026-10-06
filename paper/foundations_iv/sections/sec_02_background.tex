@@ -1,0 +1,454 @@
+\section{Apparatus and conventions}\label{sec:apparatus}
+
+This section records the apparatus inherited from the earlier
+foundations papers in ordinary mathematical language, fixes the
+quotient notation used throughout, and states the template in which the
+laws are presented.  The inherited results are used as background and
+are not reproved.  On a first reading,
+\Cref{def:quotient-packaging,def:split-pair,def:access-quotient}, the
+descent criterion and the pairing refinement after
+\Cref{def:split-pair}, the paragraph \emph{Two inherited rules}, and the
+reading guide (\Cref{subsec:reading-guide}) suffice; the rest of the
+section is reference material, to be consulted when a theorem uses it.
+
+\FoundI\ supplies closure formation
+\citep{Tsiokos2026EmergenceCalculus}; \FoundII\ supplies admissibility
+and quotient packaging \citep{Tsiokos2026FoundationsII}; and
+\FoundIII\ supplies the finite audited interaction judgment
+\citep{Tsiokos2026FoundationsIII}.  The following definitions are the
+forms of that apparatus used in this paper.
+
+\begin{definition}[Closure formation]\label{def:closure-formation}
+A \emph{closure formation} is the passage from initial data to the
+object obtained by closing that data under a declared family of closure
+rules.  Precisely, let \(X\) be a set and \(\mathcal R\) a set of rules
+\((P,x)\) with \(P\subseteq X\) finite and \(x\in X\); a set \(A\subseteq X\)
+is \(\mathcal R\)-closed when \(P\subseteq A\) implies \(x\in A\) for every
+\((P,x)\in\mathcal R\). The formed-closure operation \(\closureForm\) sends
+\(A\subseteq X\) to the intersection of the \(\mathcal R\)-closed supersets
+of \(A\); it is extensive, monotone and idempotent. A \emph{formed closure} is
+the completed object relative to the declared rules, that is, a set of the
+form \(\closureForm(A)\), equivalently an \(\mathcal R\)-closed set.  A
+\emph{closure-of-record} is a formed closure together with an
+audit record of the closure data used to form it.
+\end{definition}
+
+Completing a substructure under an operation, taking the closure
+of a relation, or closing a set of rules under composition are familiar
+examples.  The \FoundI\ vocabulary does not introduce a new species of
+closure; it records which rules have been declared and which completed
+object is being used.
+
+\begin{definition}[Current and predictive quotients]\label{def:quotient-packaging}
+Quotient packaging is the standard quotient construction: an
+equivalence relation is imposed on a carrier and only equivalence
+classes are retained.  The quotient map is denoted \(\quotMap\) when no
+more specific symbol is needed.  A quotient of a
+carrier \(H\) is a map \(q:H\to Q\), read through its kernel \(q(h)=q(h')\); it
+is a quotient map when surjective. The \emph{current quotient}
+\(\currQ:H\to Q\) (the quotient presently visible to the apparatus) and the
+\emph{predictive quotient} \(\predM:H\to M\) (classes predicted but not
+necessarily visible at the current level) are two declared quotients of \(H\);
+\(\predM\) \emph{refines} \(\currQ\) when \(\currQ=f\circ\predM\) for some \(f\),
+and then each \(\currQ\)-fiber is a union of \(\predM\)-fibers.
+\end{definition}
+
+In theorem statements, \(\currQ\) and \(\predM\) denote maps; surjectivity
+and refinement are assumed only when stated.  The gap between \(\currQ\)
+and \(\predM\) is the basic way the paper records a distinction that is
+predicted but not currently observable.  It appears in \Fref{F13a},
+\Fref{F13b} and \Fref{F3}; \Fref{F7} makes the same comparison with a
+declared family of future probes in place of \(\predM\).
+
+\begin{definition}[BirdInt judgment]\label{def:birdint}
+A \emph{\(\BirdInt\) judgment} is a judgment of the nineteen-component finite
+audited interaction calculus \(\mathbf{BirdInt}^{\mathrm{aud}}_{\mathrm{fin}}\)
+of \FoundIII\ (its Section~3.1).  It records that an interaction is
+legitimately observable by declared finite audit data.  No hypothesis or
+proof of this paper uses it.  For every law of the catalog, the data
+such a judgment would read are the maps, predicates and pairs listed in
+the law's setup; when carriers and codomains are finite, these are
+finite records.
+\end{definition}
+
+\paragraph{Working vocabulary.} A few words recur in the statements of the
+laws.  Most of them are interpretive: they say how a law is meant to be
+read, and they enter a proof only where a statement displays them as a
+hypothesis.
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \emph{Carrier}: the underlying set on which a law's data live;
+    a \emph{history space} or \emph{history set} is a carrier whose
+    elements are read as histories, with no further structure assumed.
+  \item \emph{Layer}: a carrier seen through a quotient or a readout, the
+    level of description at which a law is read.
+  \item \emph{Layer-agnostic}: stated in terms of declared structure
+    and hypotheses, so that the law applies wherever those hypotheses hold.
+  \item \emph{Substrate paper}: a paper supplying a result or construction
+    on which a catalog law draws.
+  \item \emph{Declared}: named as part of a law's data. A declared object
+    has no content beyond what the law states about it; a declared
+    predicate is assumed to hold only where a statement says so, and the
+    paragraphs headed \emph{Reading the statement} say what each one is
+    meant to express.
+  \item \emph{Formed}, \emph{audited}: completed under declared rules,
+    respectively carrying a record of the data used, as for a formed
+    closure and a closure-of-record in \Cref{def:closure-formation}.
+  \item \emph{Package}: a formed closure together with the quotients,
+    readouts and records a law uses; a stability package, for instance,
+    also carries an audit ledger and a membrane.  The \emph{apparatus}
+    is the declared data of a package.
+  \item \emph{Ledger}: a declared record attached to a carrier. An audit
+    ledger lists audit entries; a fiber ledger assigns weights to the
+    classes of a quotient.
+  \item \emph{Status}: one of the declared outcome labels of a law, such
+    as visible, hidden with a record, outside scope, blocked, priced or
+    accepted; a residual or a claim is \emph{statused} when it carries one.
+    \emph{Priced} means accepted within a declared budget rather than
+    removed; an \emph{unpriced} residual is one that no budget accounts
+    for.
+  \item \emph{Closure carrier}, \emph{closure space}: the set on which a
+    formed closure lives, respectively a set of closures or closure
+    states; a theorem stated on a closure space uses only that set and
+    the maps and predicates it displays.
+  \item \emph{Membrane}: the declared boundary of a formed closure,
+    across which a distinction of the layer may dissolve only with a
+    recorded cost.
+  \item \emph{Gate}: a declared map on a carrier whose effect on a layer is
+    under test; it acts on the layer when it descends to the quotient.
+  \item \emph{Current-visible}: constant on the fibers of the quotient the
+    layer currently uses (the current quotient \(\currQ\), or the access
+    quotient \(\accessQ\) in \Fref{F12}).
+  \item \emph{Prop, Bool}: a map \(P:X\to\mathrm{Prop}\) is a predicate on
+    \(X\), a subset written as a truth-valued map;
+    \(\mathrm{Bool}=\{0,1\}\); in \Fref{F23} an event is a predicate on \(H\).
+\end{itemize}
+The words \emph{formed}, \emph{package}, \emph{apparatus} and
+\emph{membrane} name the setting in which a law is read.  Where a
+setting condition does mathematical work in a proof, it appears as a
+displayed hypothesis (such as the formedness predicate \(F\) of
+\Fref{F44}) or as one of the two inherited rules below; elsewhere these
+words add no premise.
+
+\input{figures/fig_axis_topology}
+
+\begin{definition}[Split-pair obstruction]\label{def:split-pair}
+Let \(q:X\to Q\) be a source quotient, \(F:X\to Y\) a map, and
+\(r:Y\to R\) a target identification.  The \emph{split-pair
+obstruction} is
+\[
+  \splitObs(q,F,r)
+  =
+  \{(x,x')\in X\times X
+    \mid q(x)=q(x')\ \text{and}\ rF(x)\ne rF(x')\}.
+\]
+It is the set of pairs identified by the source quotient but separated
+after transport to the target quotient.
+\end{definition}
+
+\paragraph{The descent criterion.} For surjective \(q\), the map \(rF\)
+descends through \(q\), that is,
+\[
+  \overline F\circ q=r\circ F
+\]
+for some \(\overline F:Q\to R\), precisely when \(\splitObs(q,F,r)=\emptyset\),
+and then \(\overline F\) is unique.  Indeed, a factorization makes \(rF\)
+constant on the fibers of \(q\); conversely, if \(rF\) is constant on
+fibers, \(\overline F(q(x)):=rF(x)\) is well defined, and surjectivity
+of \(q\) defines it on all of \(Q\).  Most proofs in the catalog apply
+this argument to particular maps; the paragraph \emph{Instances of the
+descent criterion} at the end of this section lists them.  When the
+obstruction is nonempty, the source-side repair refines \(q\), while the
+target-side repair coarsens \(R\) by the smallest equivalence relation
+generated by the identifications \(rF(x)\sim rF(x')\) whenever
+\(q(x)=q(x')\).  Surjectivity is assumed only where a statement says
+so.
+
+\paragraph{The pairing refinement.} For maps \(q:X\to Q\) and \(s:X\to S\),
+the pairing \(\langle q,s\rangle:X\to Q\times S\),
+\(x\mapsto(q(x),s(x))\), satisfies \(q=\operatorname{pr}_Q\circ\langle
+q,s\rangle\) and \(s=\operatorname{pr}_S\circ\langle q,s\rangle\); if
+\(q=a\circ p\) and \(s=b\circ p\) for a map \(p\), then \(\langle
+q,s\rangle=\langle a,b\rangle\circ p\); and \(\langle q,s\rangle\) separates two
+points of a \(q\)-fiber exactly when \(s\) does. So \(\langle q,s\rangle\) is
+the coarsest map through which both \(q\) and \(s\) factor, and it strictly
+refines \(q\) exactly when \(s\) splits a \(q\)-fiber.  A pairing is written
+with its product codomain; it is a quotient map after corestriction to
+its image, which \Cref{thm:F13b,thm:F24} state explicitly where it
+matters.  The repairs and extensions of \Fref{F2}, \Fref{F3}, \Fref{F12},
+\Fref{F13a}, \Fref{F13b}, \Fref{F15a}, \Fref{F17}, \Fref{F19}, \Fref{F20},
+\Fref{F24}, \Fref{F36} and \Fref{F45} are built from this pairing.
+
+\begin{definition}[Observation signature; access quotient]\label{def:access-quotient}
+An \emph{observation signature} is a declared map
+\(\obsSig:H\to \Sigma\) from a carrier \(H\) to observation symbols.
+It determines the access kernel
+\[
+  h\sim_I h'
+  \quad\Longleftrightarrow\quad
+  \obsSig(h)=\obsSig(h').
+\]
+The \emph{access quotient} \(\accessQ\) is the quotient of \(H\) by
+this kernel.  It is the quotient carrying exactly the distinctions made
+by the declared observation signature.
+\end{definition}
+
+Any observable constant on the access kernel factors uniquely through
+\(\accessQ\).  The Access chapter turns this universal property into
+the Quotientality theorem; here it fixes the notation used by later
+laws.
+
+\begin{figure}[t]
+\centering
+\fbox{%
+\begin{minipage}{0.88\linewidth}
+\centering
+\(\SetupBlock\)
+\(\longrightarrow\)
+\(\NormalForm{theorem}\)
+\(\longrightarrow\)
+\(\ProofSpine\)
+\(\longrightarrow\)
+\(\CaseEnum\)
+\(\longrightarrow\)
+\(\Nonclaims\)
+\end{minipage}}
+\caption{The order in which each catalog law is presented. The setup is the
+opening paragraph, the \emph{Reading the statement} paragraph, or the
+theorem's hypotheses. The proof carries the proof spine and any case
+enumeration. A labelled nonclaims paragraph follows in the chapters
+listed in \Cref{subsec:reading-guide}. Most laws are then followed by a
+list headed \emph{Layer instantiations}, and some by a paragraph on what
+a source paper supplies; neither is part of the template, and no proof
+uses them.}
+\label{fig:normal-form-template}
+\end{figure}
+
+\begin{definition}[Normal-form template]\label{def:normal-form}
+Each catalog law is presented in a template of up to five parts:
+\emph{setup}, \emph{theorem}, \emph{proof spine}, \emph{case
+enumeration} and \emph{nonclaims}.  The setup names the data on which
+the law operates.  The theorem states the layer-agnostic claim.  The
+proof spine gives the structural argument.  The case enumeration lists
+the mutually exclusive outcomes when the statement branches.  The
+nonclaims field states what the law does not assert.  In the catalog
+the setup precedes the theorem, the proof carries the proof spine and,
+when the statement branches, the case enumeration, and the nonclaims
+appear as a labelled paragraph after the proof in the chapters that
+record them.  \Cref{fig:normal-form-template} gives the schematic form
+and \Cref{fig:axis-topology} the chapters.
+\end{definition}
+
+The template is editorial rather than categorical.  It does not assert
+that the laws are equivalent or that the axes are canonical; it puts
+hypotheses, proof shape, case split and scope in the same order for
+every law.
+
+\paragraph{The conditional law.} One law, \Fref{F13a}, is conditional.
+Besides its data, it assumes a source hypothesis \((\mathsf S)\):
+surjectivity of the current quotient and the first four of its five
+conclusions.  It proves the fifth conclusion and the equivalence of
+predictive surplus with failure of predictive collapse.  The hypothesis
+is motivated by the saturated-SAT construction of
+\citet{Tsiokos2026PvNP}, for which it is not verified here.
+
+\paragraph{Two inherited rules.} The rules (NO) and (RC) of earlier papers
+enter three proofs of this catalog as premises: (NO) those of \Fref{F11} and
+\Fref{F12}, (RC) that of \Fref{F9}.
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \emph{No overread} (\FoundIII; used in \Fref{F11} and \Fref{F12}). A claim
+    accepted as exact at the current layer may not depend on content
+    that the instrument has suppressed; an explicit bridge supplying such content is declared apparatus data that enlarges the observation signature and hence \(\accessQ\), so in every case the claim may use only the distinctions that the current
+    access makes. For a claim \(F\) and the access quotient \(\accessQ\):
+    \[
+      \text{(NO)}\qquad
+      F \text{ accepted as exact}
+      \ \Longrightarrow\
+      \bigl(\accessQ(h)=\accessQ(h')\Rightarrow F(h)=F(h')\bigr).
+    \]
+    Here \emph{accepted as exact} is a declared predicate \(\mathrm{Acc}\) on
+    claims \(H\to W\), for every codomain \(W\) (in \Fref{F12} it is applied with \(W=D\)), supplied by the audit discipline of \FoundIII\ and not
+    analysed here; (NO) is the hypothesis that every \(F\) with
+    \(\mathrm{Acc}(F)\) is constant on the fibers of \(\accessQ\).
+  \item \emph{Residual coverage} (\FoundII; used in \Fref{F9}). Every
+    native residual of a formed package has a declared status record.
+    For the residual type \(R\) and the residual records
+    \(\rho\in\mathrm{Rec}\) of the package, each naming its residual
+    \(\operatorname{loc}(\rho)\) and carrying a typed status
+    \(\operatorname{st}(\rho)\in\mathcal S_{\mathrm{typed}}\), the set of status values the package may assign, each tagged by the judgment family that assigns it (see the reading paragraph before \Cref{thm:F9}):
+    \[
+      \text{(RC)}\qquad
+      \forall r\in R,\ \exists \rho\in\mathrm{Rec},\
+      \operatorname{loc}(\rho)=r.
+    \]
+\end{itemize}
+
+\paragraph{Notation.} A predicate whose name ends in
+\emph{ObstructionEmpty} or \emph{DefectEmpty}, such as
+\(\operatorname{SplitObstructionEmpty}\), says that the named set of
+pairs or points is empty.  Split-pair obstruction sets are written
+\(\splitObs\) in some laws and \(\mathcal O\) in others; both denote the
+pairs that a quotient identifies and a readout or transport separates.
+Letters are reused across chapters (for instance \(M\) is the target of
+\(\predM\) and also a moduli set, \(F\) is usually a transport map, and
+\(I\) indexes the access notation \(\obsSig,\accessQ,Q_I\) and also
+denotes a hiddenness interface); each theorem fixes its letters in its
+statement.  Every displayed line of a theorem is a definition (marked
+by \(:=\), \(:\iff\) or ``when''), a hypothesis or a conclusion,
+according to the surrounding sentence.  Every conclusion is proved,
+except the accounting equivalence of clause (b) of \Cref{prop:F53},
+which is imported from \citet{Tsiokos2026AOR}; some conclusions
+follow by unfolding the definitions in the same statement.
+
+\subsection{Reading guide}\label{subsec:reading-guide}
+
+\paragraph{Chapters and axes.}
+The catalog is organized along eight axes---access, closure or
+stability, transport, status, records, symmetry, interfaces and
+self-reference---which six chapters group as in the table below.  The
+Status, Records, Coherence chapter carries the status, records and
+interfaces axes, and the Closure--Reality Boundary lies outside the
+axes.  Axes label chapters, not laws.  The headings in the summary
+tables of the last two chapters (for instance Status/Records/Coherence
+and Limits/Emergence/Invariants) are reading groups only.  The result
+codes are fixed identifiers and are not consecutive: F1, F16 and F32 do
+not occur, F13 and F15 each name two laws (a and b), and the two
+closure--reality no-go theorems belong to the F53 row.  In the Access,
+Stability, Symmetry and Status, Records, Coherence chapters, each law
+carries a labelled nonclaims paragraph; in the Transport and
+Self-Reference and Limits chapters and in the closure--reality chapter,
+the scope is set by the hypotheses and by the catalog-wide nonclaims of
+\Cref{sec:nonclaims}.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Chapter & Axes & Laws \\
+\midrule
+Access (\Cref{sec:access}) & access & \Fref{F10}--\Fref{F12}, \Fref{F13a}, \Fref{F13b}, \Fref{F24} \\
+Stability (\Cref{sec:stability}) & closure or stability & \Fref{F6}--\Fref{F9} \\
+Transport (\Cref{sec:transport}) & transport & \Fref{F2}--\Fref{F5} \\
+Symmetry (\Cref{sec:symmetry}) & symmetry & \Fref{F14}, \Fref{F15a}, \Fref{F15b}, \Fref{F40}, \Fref{F41} \\
+Status, Records, Coherence (\Cref{sec:status-records-coherence}) & status, records, interfaces & \Fref{F17}--\Fref{F23}, \Fref{F25}--\Fref{F31} \\
+Self-Reference and Limits (\Cref{sec:self-reference-limits}) & self-reference & \Fref{F33}--\Fref{F39}, \Fref{F42}--\Fref{F52} \\
+Closure--Reality Boundary (\Cref{sec:anchor:closure-reality-boundary}) & outside the axes & \Fref{F53} and the two closure-equals-reality (CER) no-go theorems \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Reading path.} Sections~\ref{sec:intro} and~\ref{sec:apparatus},
+then Transport (\Cref{sec:transport}), whose source-repair clause is used
+in the proof of \Fref{F15a}; then the remaining chapters in any order.
+\Fref{F13a} can be left for last.  A paragraph headed \emph{Reading the
+statement} explains the predicates of the result that follows it; on a
+first reading it may be read after that result.  No statement or proof
+uses \Cref{app:further-instantiations} (further analogies) or
+\Cref{app:version-history} (version history) or
+\Cref{app:formalization} (formalization).
+
+\paragraph{Layer instantiations.}
+Most results are followed by a list headed \emph{Layer
+instantiations}, and further analogies for most laws are collected in
+\Cref{app:further-instantiations}.  Each item places a construction
+from another field in the slots of the result: its carrier, quotients,
+readouts and obstruction.  Each item carries one of two tags.  A
+\emph{special case} fills the slots with well-defined sets and maps that
+satisfy the hypotheses, so the result applies to it as stated;
+statements in a special-case item beyond the slot assignment are cited
+facts about the example, not consequences of the law.  An
+\emph{analogy} matches the construction to the slots informally: its
+data are institutional, empirical or approximate; or the construction
+is exact mathematics that does not satisfy the law's hypotheses or fill
+all of its slots (for instance the Schur-complement criterion beside
+\Cref{thm:F6}); or the result needs a source hypothesis or a formed
+package that the item does not supply.  No proof depends on these lists,
+and a first reading can skip them.
+
+\paragraph{Acronyms.}
+AOR: audited operational realisability.
+CER: closure equals reality, the unrestricted equivalence of Six Birds
+closure and bare physical realisability, which the two no-go theorems
+of the Closure--Reality Boundary chapter show to fail in each direction
+under their obstruction hypotheses.
+CSL: candidate structural law, in the sense of the paper
+\emph{Hiddenness as a Structural Law of Emergence}
+\citep{Tsiokos2026CSL}.
+SDTC: self-dual trace confinement.
+SSB: spontaneous symmetry breaking.
+
+\paragraph{Map of results.}\addcontentsline{toc}{subsection}{Map of results}
+The rows of the catalog carry F-codes, which the text uses as names.
+The table lists each F-code with its printed number, the section that
+contains it, its name, and its page.
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.08\linewidth}>{\raggedright\arraybackslash}p{0.47\linewidth}>{\raggedright\arraybackslash}p{0.07\linewidth}@{}}
+\toprule
+F-code & Result & Section & Name & Page \\
+\midrule
+\endfirsthead
+\toprule
+F-code & Result & Section & Name & Page \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+F10 & Theorem~\ref{thm:F10} & \ref{sec:access:quotientality} & Quotientality & \pageref{thm:F10} \\
+F11 & Theorem~\ref{thm:F11} & \ref{sec:access:adequacy} & Adequacy / No-Overread & \pageref{thm:F11} \\
+F12 & Theorem~\ref{thm:F12} & \ref{sec:access:no-free-distinction} & No-Free-Distinction & \pageref{thm:F12} \\
+F13a & Theorem~\ref{thm:F13a} & \ref{sec:access:hiddenness} & Hiddenness Normal Form & \pageref{thm:F13a} \\
+F13b & Theorem~\ref{thm:F13b} & \ref{sec:access:csl-formed-closure} & CSL Formed-Closure Law & \pageref{thm:F13b} \\
+F24 & Theorem~\ref{thm:F24} & \ref{sec:access:layer-multiplicity} & Layer Multiplicity & \pageref{thm:F24} \\
+F6 & Theorem~\ref{thm:F6} & \ref{sec:stability:no-needles} & No-Needles Stability & \pageref{thm:F6} \\
+F7 & Theorem~\ref{thm:F7} & \ref{sec:stability:sufficiency-closure} & Sufficiency Closure & \pageref{thm:F7} \\
+F8 & Lemma~\ref{lem:F8} & \ref{sec:stability:strict-extension} & Strict Extension & \pageref{lem:F8} \\
+F9 & Theorem~\ref{thm:F9} & \ref{sec:stability:no-unstatused-residual} & No Unstatused Residual & \pageref{thm:F9} \\
+F2 & Theorem~\ref{thm:F2} & \ref{sec:transport:descent-repair} & Descent--Repair Normal Form & \pageref{thm:F2} \\
+F3 & Theorem~\ref{thm:F3} & \ref{sec:transport:holonomy-memory} & Holonomy-Memory Repair Normal Form & \pageref{thm:F3} \\
+F4 & Theorem~\ref{thm:F4} & \ref{sec:transport:local-global} & Local-Global Obstruction Normal Form & \pageref{thm:F4} \\
+F5 & Theorem~\ref{thm:F5} & \ref{sec:transport:recombination} & Recombination Comparison & \pageref{thm:F5} \\
+F14 & Theorem~\ref{thm:F14} & \ref{sec:symmetry:duality-fixity} & Duality Fixity / Self-Dual Trace Confinement & \pageref{thm:F14} \\
+F15a & Theorem~\ref{thm:F15a} & \ref{sec:symmetry:selection-obstruction} & Selection Obstruction / Repair Normal Form & \pageref{thm:F15a} \\
+F15b & Theorem~\ref{thm:F15b} & \ref{sec:symmetry:spontaneous-ssb} & Spontaneous Symmetry Breaking / Branch-Selection Formation & \pageref{thm:F15b} \\
+F40 & Theorem~\ref{thm:F40} & \ref{sec:symmetry:anomaly} & Anomaly / Symmetry Obstruction & \pageref{thm:F40} \\
+F41 & Theorem~\ref{thm:F41} & \ref{sec:symmetry:duality-equivalence} & Duality Equivalence & \pageref{thm:F41} \\
+F17 & Theorem~\ref{thm:F17} & \ref{sec:status-records-coherence:objectivity} & Objectivity as Common Quotient & \pageref{thm:F17} \\
+F18 & Theorem~\ref{thm:F18} & \ref{sec:status-records-coherence:lawhood-descent} & Lawhood Descent & \pageref{thm:F18} \\
+F19 & Theorem~\ref{thm:F19} & \ref{sec:status-records-coherence:object-persistence} & Object Persistence & \pageref{thm:F19} \\
+F20 & Theorem~\ref{thm:F20} & \ref{sec:status-records-coherence:fact-record} & Fact / Record Formation & \pageref{thm:F20} \\
+F21 & Theorem~\ref{thm:F21} & \ref{sec:status-records-coherence:reflexive-nonclosure} & Reflexive Nonclosure & \pageref{thm:F21} \\
+F22 & Theorem~\ref{thm:F22} & \ref{sec:status-records-coherence:interface-mediation} & Interface Mediation & \pageref{thm:F22} \\
+F23 & Theorem~\ref{thm:F23} & \ref{sec:status-records-coherence:probability} & Probability as Stable Unresolved Fiber & \pageref{thm:F23} \\
+F25 & Theorem~\ref{thm:F25} & \ref{sec:status-records-coherence:causality} & Causality as Stable Intervention Transport & \pageref{thm:F25} \\
+F26 & Theorem~\ref{thm:F26} & \ref{sec:status-records-coherence:moduli} & Moduli / Contingency & \pageref{thm:F26} \\
+F27 & Theorem~\ref{thm:F27} & \ref{sec:status-records-coherence:conservation} & Conservation as Orbit Descent & \pageref{thm:F27} \\
+F28 & Theorem~\ref{thm:F28} & \ref{sec:status-records-coherence:composability} & Composability & \pageref{thm:F28} \\
+F29 & Theorem~\ref{thm:F29} & \ref{sec:status-records-coherence:presentation-invariance} & Presentation Invariance & \pageref{thm:F29} \\
+F30 & Theorem~\ref{thm:F30} & \ref{sec:status-records-coherence:explanation} & Explanation as Compression with Descent & \pageref{thm:F30} \\
+F31 & Theorem~\ref{thm:F31} & \ref{sec:status-records-coherence:counterfactual} & Counterfactual Legitimacy & \pageref{thm:F31} \\
+F33 & Theorem~\ref{thm:F33} & \ref{sec:self-reference-limits:horizon-sufficiency} & Horizon Sufficiency / Holographic Compression & \pageref{thm:F33} \\
+F34 & Theorem~\ref{thm:F34} & \ref{sec:self-reference-limits:information-loss} & Information Loss Normal Form & \pageref{thm:F34} \\
+F35 & Theorem~\ref{thm:F35} & \ref{sec:self-reference-limits:scale-descent} & Scale Descent / Renormalization & \pageref{thm:F35} \\
+F36 & Theorem~\ref{thm:F36} & \ref{sec:self-reference-limits:singular-limit} & Singular Limit Completion & \pageref{thm:F36} \\
+F37 & Theorem~\ref{thm:F37} & \ref{sec:self-reference-limits:complementarity} & Complementarity as Non-Joint Access & \pageref{thm:F37} \\
+F38 & Theorem~\ref{thm:F38} & \ref{sec:self-reference-limits:arrow} & Arrow from Record Monotonicity & \pageref{thm:F38} \\
+F39 & Theorem~\ref{thm:F39} & \ref{sec:self-reference-limits:entropy} & Entropy as Fiber Volume & \pageref{thm:F39} \\
+F42 & Theorem~\ref{thm:F42} & \ref{sec:self-reference-limits:irreducibility} & Irreducibility / No Short Closed Description & \pageref{thm:F42} \\
+F43 & Theorem~\ref{thm:F43} & \ref{sec:self-reference-limits:continuum-emergence} & Continuum Emergence & \pageref{thm:F43} \\
+F44 & Theorem~\ref{thm:F44} & \ref{sec:self-reference-limits:criticality} & Criticality / Phase Boundary & \pageref{thm:F44} \\
+F45 & Theorem~\ref{thm:F45} & \ref{sec:self-reference-limits:locality} & Locality / Domain of Dependence & \pageref{thm:F45} \\
+F46 & Theorem~\ref{thm:F46} & \ref{sec:self-reference-limits:law-state-split} & Law--State Split & \pageref{thm:F46} \\
+F47 & Theorem~\ref{thm:F47} & \ref{sec:self-reference-limits:fine-tuning} & Fine-Tuning as Small Selector Region & \pageref{thm:F47} \\
+F48 & Theorem~\ref{thm:F48} & \ref{sec:self-reference-limits:topology} & Topology as Global Gluing Invariant & \pageref{thm:F48} \\
+F49 & Theorem~\ref{thm:F49} & \ref{sec:self-reference-limits:common-source} & Common-Source / Nonlocal Correlation Normal Form & \pageref{thm:F49} \\
+F50 & Theorem~\ref{thm:F50} & \ref{sec:self-reference-limits:vacuum} & Vacuum / Background Selection & \pageref{thm:F50} \\
+F51 & Theorem~\ref{thm:F51} & \ref{sec:self-reference-limits:unification} & Unification as Common Refinement & \pageref{thm:F51} \\
+F52 & Theorem~\ref{thm:F52} & \ref{sec:self-reference-limits:closure-completeness} & Closure Completeness Boundary & \pageref{thm:F52} \\
+CER (direct) & Theorem~\ref{thm:CER-direct-no-go} & \ref{sec:anchor:closure-reality-boundary} & Direct CER no-go & \pageref{thm:CER-direct-no-go} \\
+CER (converse) & Theorem~\ref{thm:CER-converse-no-go} & \ref{sec:anchor:closure-reality-boundary} & Converse CER no-go & \pageref{thm:CER-converse-no-go} \\
+F53 & Proposition~\ref{prop:F53} & \ref{sec:anchor:closure-reality-boundary} & Closure--Reality Boundary resolution & \pageref{prop:F53} \\
+\end{longtable}
+\endgroup
+
+\paragraph{Instances of the descent criterion.} The following laws contain the descent criterion, applied to the source map and readout indicated in parentheses (with surjectivity, or another hypothesis supplying the descended map, as stated in each law) (for \Fref{F17}, in its third displayed line); it is also the descent clause of \Cref{thm:F2} with \(F=\mathrm{id}\): \Fref{F10} (\(\accessQ\), \(o\)), \Fref{F11} (\(\accessQ\), \(F\)), \Fref{F12} (\(\accessQ\), \(d\)), \Fref{F13a} (\(\currQ_I\), \(\predM_I\)), \Fref{F13b} (\(\langle\currQ,d'\rangle\), \(\predM\)), \Fref{F24} (\(q\), \(s\)), \Fref{F7} (\(q\), \(\Phi\)), \Fref{F8} (\(q_{\mathrm{old}}\), \(q_{\mathrm{new}}\)), \Fref{F5} (\(K\), \(R\)), \Fref{F15a} (\(\pi\), \(s\)), \Fref{F40} (\(q\), \(q\circ\alpha(g,\cdot)\) for each \(g\)), \Fref{F17} (\(p\), \(r\)), \Fref{F18} (\(\accessQ\), \(P\)), \Fref{F19} (\(q_i\), \(q_j\circ\gamma\)), \Fref{F20} (\(s\), \(\varepsilon\)), \Fref{F23} (\(q\), \(r\)), \Fref{F27} (\(q_{\mathrm{orb}}\), \(C\)), \Fref{F29} (\(\pi\), \(T\)), \Fref{F30} (\(b\), \(e\)), \Fref{F33} (\(\pi\), \(t\)), \Fref{F34} (\(\rho\circ\tau\), \(\sigma\)), \Fref{F35} (\(q_n\), \(t\)), \Fref{F36} (\(\ell\), \(u\)), \Fref{F38} (\(r_s\), \(r_t\circ\kappa\)), \Fref{F39} (\(q\), \(t\)), \Fref{F43} (\(\ell\), \(r_b\circ p_b\)), \Fref{F44} (\(c\), \(r\)), \Fref{F45} (\(\ell\), \(t\)), \Fref{F46} (\(\mu\), \(r\)), \Fref{F48} (\(\gamma\), \(r\)), \Fref{F49} (\((\sigma,q_A)\), \(r_A\), and the interface and route quotients, \(r\)) and \Fref{F50} (\(\mu\), \(b_0\)); \Fref{F22}, \Fref{F25}, \Fref{F28} and \Fref{F31} apply it to a product source such as \(q\times\beta\).

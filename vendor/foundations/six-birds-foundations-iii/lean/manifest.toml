@@ -1,0 +1,701 @@
+# Lean validation manifest for Six Birds Foundations III.
+#
+# Status meanings:
+# - definition: paper definition has a Lean definition-like declaration.
+# - theorem: paper claim has a Lean theorem/lemma whose dependency audit passes.
+# - axiomatic: declaration is or depends on project-local axioms.
+# - partial: declaration mechanizes only a supporting fragment.
+# - unformalized: no Lean correspondent is present yet.
+
+[[definition]]
+paper_label = "def:primitive-labels"
+paper_section = "2"
+description = "Finite primitive labels P1 through P6."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.Primitive"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:levels"
+paper_section = "2"
+description = "Behavioral, verification, and structural levels."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.Level"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:hosts"
+paper_section = "2"
+description = "Finite permitted host inventory."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.Host"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:birdint-domain"
+paper_section = "3"
+description = "Finite audited interaction calculus domain tuple."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.BirdIntDomain"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:role-status"
+paper_section = "5"
+description = "Role-channel status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.RoleStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:cell-status"
+paper_section = "5"
+description = "Directed-cell status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.CellStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:pair-status"
+paper_section = "5"
+description = "Pair-observable status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.PairStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:promotion-status"
+paper_section = "5"
+description = "Promotion status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.PromotionStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:claim-status"
+paper_section = "5"
+description = "Instrument-indexed claim status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.ClaimStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:gate-status"
+paper_section = "5"
+description = "Promotion and claim gate status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.GateStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:strict-gate-status"
+paper_section = "5"
+description = "Strictness-gate status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.StrictGateStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:square-status"
+paper_section = "5"
+description = "High-structure square status family."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.SqStatus"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:threshold-tags"
+paper_section = "5"
+description = "Threshold tag vocabulary."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.ThresholdTag"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:visibility-tags"
+paper_section = "3"
+description = "Visibility partition tags."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.VisibilityTag"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:profile-record"
+paper_section = "3"
+description = "Profile record skeleton."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.Profile"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:instrument-record"
+paper_section = "3"
+description = "Instrument record skeleton."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.Instrument"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:directed-cell-record"
+paper_section = "4"
+description = "Directed-cell record skeleton."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.DirectedCellRecord"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:pair-observable-record"
+paper_section = "4"
+description = "Pair-observable record skeleton."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.PairObservableRecord"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:promotion-bridge-record"
+paper_section = "4"
+description = "Promotion-bridge record skeleton."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.PromotionBridgeRecord"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:defect-record"
+paper_section = "5"
+description = "Typed defect record skeleton."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.DefectRecord"
+notes = "Phase 1 scaffold."
+
+[[definition]]
+paper_label = "def:claim-record"
+paper_section = "4"
+description = "Instrument-indexed claim record skeleton."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.ClaimRecord"
+notes = "Phase 1 scaffold."
+
+[[claim]]
+paper_label = "thm:no-total-algebra"
+paper_number = 1
+paper_section = "6"
+kind = "theorem"
+description = "No total primitive-pair algebra recovers directed-cell status."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.no_total_algebra"
+notes = "Phase 2 mechanization target."
+
+[[claim]]
+paper_label = "thm:typed-non-collapse"
+paper_number = 2
+paper_section = "6"
+kind = "theorem"
+description = "Active typed interaction does not identify actor and informant primitives."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.typed_non_collapse"
+notes = "Phase 3 core interaction mechanization."
+
+[[claim]]
+paper_label = "thm:cell-well-formedness-decidability"
+paper_number = 3
+paper_section = "6"
+kind = "theorem"
+description = "Directed-cell well-formedness is decidable on finite records."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.cell_well_formedness_decidable"
+notes = "Phase 3 core interaction mechanization."
+
+[[claim]]
+paper_label = "thm:covered-cell-unique-status"
+paper_number = 4
+paper_section = "6"
+kind = "theorem"
+description = "A covered well-formed directed cell receives exactly one status."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.covered_cell_unique_status"
+notes = "Phase 3 core interaction mechanization."
+
+[[claim]]
+paper_label = "thm:status-family-separation"
+paper_number = 5
+paper_section = "6"
+kind = "theorem"
+description = "Judgment-attached status families remain separated."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.status_family_separation"
+notes = "Phase 3 core interaction mechanization."
+
+[[claim]]
+paper_label = "thm:descent-through-quotient"
+paper_number = 6
+paper_section = "7"
+kind = "theorem"
+description = "Finite update descent through a quotient is equivalent to fiber constancy."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.descent_through_quotient"
+notes = "Phase 2 mechanization target."
+
+[[claim]]
+paper_label = "thm:descent-defect-equivalence"
+paper_number = 7
+paper_section = "7"
+kind = "theorem"
+description = "The descent defect vanishes exactly when descent exists."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.descent_defect_equivalence"
+notes = "Phase 4 defect mechanization."
+
+[[claim]]
+paper_label = "thm:finite-markov-closure-deficit"
+paper_number = 8
+paper_section = "7"
+kind = "theorem"
+description = "Finite Markov predictive closure loss equals conditional mutual information under assumptions."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.finite_markov_closure_deficit"
+notes = "Phase 4 finite closure-loss optimization mechanization under explicit KL-decomposition assumptions."
+
+[[claim]]
+paper_label = "thm:noncommuting-completions"
+paper_number = 9
+paper_section = "7"
+kind = "theorem"
+description = "Finite idempotent completions need not commute."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.noncommuting_completions"
+notes = "Phase 4 completion counterexample."
+
+[[claim]]
+paper_label = "thm:completion-pasting-defect"
+paper_number = 10
+paper_section = "7"
+kind = "theorem"
+description = "Completion-pasting defect is nonempty exactly when completions do not commute."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.completion_pasting_defect"
+notes = "Phase 4 completion defect mechanization."
+
+[[claim]]
+paper_label = "thm:idempotent-saturation"
+paper_number = 11
+paper_section = "7"
+kind = "theorem"
+description = "An idempotent finite self-map saturates after one positive iterate."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.idempotent_saturation"
+notes = "Phase 2 mechanization target."
+
+[[claim]]
+paper_label = "thm:strict-extension-nonfactorization"
+paper_number = 12
+paper_section = "7"
+kind = "theorem"
+description = "Strict extension nonfactorization is equivalent to a fiber mismatch."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.strict_extension_nonfactorization"
+notes = "Phase 2 mechanization target."
+
+[[claim]]
+paper_label = "thm:factorization-defect-equivalence"
+paper_number = 13
+paper_section = "7"
+kind = "theorem"
+description = "The factorization defect records exactly nonfactorization witnesses."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.factorization_defect_equivalence"
+notes = "Phase 4 defect mechanization."
+
+[[claim]]
+paper_label = "thm:fixed-interface-definability-bound"
+paper_number = 14
+paper_section = "7"
+kind = "theorem"
+description = "Finite-lens definability over a fixed interface has cardinality 2 to the image size."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.fixed_interface_definability_bound"
+notes = "Phase 4 definability mechanization; bijective form of the finite cardinal bound."
+
+[[claim]]
+paper_label = "thm:forest-no-drive"
+paper_number = 15
+paper_section = "8"
+kind = "theorem"
+description = "A finite forest has no first-cohomology drive."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.forest_no_drive"
+notes = "Phase 5 graph/cohomology no-drive mechanization."
+
+[[claim]]
+paper_label = "thm:exact-form-null-drive"
+paper_number = 16
+paper_section = "8"
+kind = "theorem"
+description = "Exact finite one-forms have zero integral around every cycle."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.exact_form_null_drive"
+notes = "Phase 5 graph/cohomology exact-form mechanization."
+
+[[claim]]
+paper_label = "thm:nonzero-affinity-equivalence"
+paper_number = 17
+paper_section = "8"
+kind = "theorem"
+description = "Nonzero cohomology class is equivalent to nonzero cycle affinity."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.nonzero_affinity_equivalence"
+notes = "Phase 5 graph/cohomology drive mechanization under finite pairing support."
+
+[[claim]]
+paper_label = "thm:gating-affinity-suppression"
+paper_number = 18
+paper_section = "8"
+kind = "theorem"
+description = "Gating to a forest suppresses cycle-supported drive."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.gating_affinity_suppression"
+notes = "Phase 5 graph/cohomology gating suppression mechanization."
+
+[[claim]]
+paper_label = "thm:promotion-gate-soundness"
+paper_number = 19
+paper_section = "10"
+kind = "theorem"
+description = "Accepted-family promotion verdicts require every required core gate to pass."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.promotion_gate_soundness"
+notes = "Phase 6 promotion gate classifier mechanization."
+
+[[claim]]
+paper_label = "thm:strict-promotion-nonfactorization"
+paper_number = 20
+paper_section = "10"
+kind = "theorem"
+description = "Strict promotion implies a nonfactorization witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.strict_promotion_nonfactorization"
+notes = "Phase 6 strict promotion mechanization."
+
+[[claim]]
+paper_label = "thm:nonstrict-promotion-factorization"
+paper_number = 21
+paper_section = "10"
+kind = "theorem"
+description = "Non-strict promotion implies a factorization filler."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.nonstrict_promotion_factorization"
+notes = "Phase 6 non-strict promotion mechanization."
+
+[[claim]]
+paper_label = "thm:toy22-strict-bridge"
+paper_number = 22
+paper_section = "10"
+kind = "theorem"
+description = "A finite two-layer Toy22 bridge witnesses strict promotion."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.toy22_strict_bridge"
+notes = "Phase 6 Toy22 strict bridge mechanization."
+
+[[claim]]
+paper_label = "thm:no-overreading-suppression"
+paper_number = 23
+paper_section = "11"
+kind = "theorem"
+description = "No accepted claim depends on unbridged suppressed content."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.no_overreading_suppression"
+notes = "Phase 6 instrument claim visibility mechanization."
+
+[[claim]]
+paper_label = "thm:same-level-self-audit-failure"
+paper_number = 24
+paper_section = "11"
+kind = "theorem"
+description = "Same-level complete self-audit does not receive accepted status."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.same_level_self_audit_failure"
+notes = "Phase 6 same-level self-audit mechanization."
+
+[[claim]]
+paper_label = "thm:finite-rotating-audit"
+paper_number = 25
+paper_section = "11"
+kind = "theorem"
+description = "A finite lower instrument stack admits a one-level audit extension."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.finite_rotating_audit"
+notes = "Phase 6 finite rotating audit mechanization."
+
+[[claim]]
+paper_label = "thm:ai-closure-as-packaging"
+paper_number = 26
+paper_section = "12"
+kind = "theorem"
+description = "The abstract-interpretation map is a closure operator."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.ai_closure_as_packaging"
+notes = "Phase 7 abstract-interpretation closure mechanization."
+
+[[claim]]
+paper_label = "thm:ai-descent-as-sound-transformer"
+paper_number = 27
+paper_section = "12"
+kind = "theorem"
+description = "Abstract interpretation soundness inequalities give a sound transformer."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.ai_descent_as_sound_transformer"
+notes = "Phase 7 abstract-interpretation soundness mechanization."
+
+[[claim]]
+paper_label = "thm:ai-representability-as-fixedness"
+paper_number = 28
+paper_section = "12"
+kind = "theorem"
+description = "Representability is fixedness under the abstract-interpretation closure."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.ai_representability_as_fixedness"
+notes = "Phase 7 abstract-interpretation representability mechanization."
+
+[[claim]]
+paper_label = "model:ai-model-family"
+paper_number = 29
+paper_section = "12"
+kind = "model_theorem"
+description = "Finite abstract-interpretation family realizes the named role fragment."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.ai_model_family"
+notes = "Phase 7 AI model-family realization mechanization."
+
+[[claim]]
+paper_label = "thm:descent-square-recovery"
+paper_number = 30
+paper_section = "14"
+kind = "theorem"
+description = "Decorated descent square exactness recovers descent commutation."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.descent_square_recovery"
+notes = "Phase 7 decorated descent-square recovery mechanization."
+
+[[claim]]
+paper_label = "thm:completion-pasting-recovery"
+paper_number = 31
+paper_section = "14"
+kind = "theorem"
+description = "Decorated completion square exactness recovers completion commutation."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.completion_pasting_recovery"
+notes = "Phase 7 decorated completion-pasting recovery mechanization."
+
+[[claim]]
+paper_label = "thm:strict-extension-as-no-filler"
+paper_number = 32
+paper_section = "14"
+kind = "theorem"
+description = "Strict extension is equivalent to absence of an exact filler."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.strict_extension_as_no_filler"
+notes = "Phase 7 decorated factorization no-filler mechanization."
+
+[[claim]]
+paper_label = "model:pica-model-realization"
+paper_number = 33
+paper_section = "13"
+kind = "model_theorem"
+description = "Finite PICA realizes the cell, pair, and provenance fragment."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.pica_model_realization"
+notes = "Phase 7 PICA model-realization mechanization."
+
+[[claim]]
+paper_label = "model:cantor-strict-bridge-realization"
+paper_number = 34
+paper_section = "13"
+kind = "model_theorem"
+description = "Audited Cantor shell realizes the strict-bridge fragment."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.cantor_strict_bridge_realization"
+notes = "Phase 7 Cantor strict-bridge model-realization mechanization."
+
+[[claim]]
+paper_label = "prop:mechanization-target-feasibility"
+paper_number = 35
+paper_section = "15"
+kind = "proposition"
+description = "The small finite core is feasible as a proof-assistant target."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.mechanization_target_feasibility"
+notes = "Phase 7 final mechanization feasibility record."
+
+[[definition]]
+paper_label = "def:top-down-channel-record"
+paper_section = "4.7"
+description = "Finite top-down channel record schema."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.TopDownChannelRecord"
+notes = "Top-down channel revision."
+
+[[definition]]
+paper_label = "def:top-down-gates"
+paper_section = "4.7"
+description = "Required top-down channel gate vocabulary."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.TopDownGate"
+notes = "Top-down channel revision."
+
+[[definition]]
+paper_label = "def:struct-down"
+paper_section = "4.7"
+description = "Structural downward influence predicate."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.StructDown"
+notes = "Top-down channel revision."
+
+[[claim]]
+paper_label = "prop:top-down-channel-gate-soundness"
+paper_section = "4.7"
+kind = "proposition"
+description = "Accepted top-down channel records pass every required top-down gate."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.top_down_channel_gate_soundness"
+notes = "Top-down channel revision."
+
+[[claim]]
+paper_label = "prop:top-down-channel-implies-struct-down"
+paper_section = "4.7"
+kind = "proposition"
+description = "Accepted top-down channel records supply structural downward influence."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.top_down_channel_implies_struct_down"
+notes = "Top-down channel revision."
+
+[[claim]]
+paper_label = "prop:struct-down-insufficient-for-top-down-channel"
+paper_section = "4.7"
+kind = "proposition"
+description = "A structural downward path can exist while the top-down channel claim is blocked."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsIII"
+lean_decl = "SixBirdsIII.structural_downward_influence_not_top_down_channel"
+notes = "Top-down channel revision."

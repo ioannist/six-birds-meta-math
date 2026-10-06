@@ -1,0 +1,15 @@
+# Allowed non-project axioms for theorem dependency audits.
+#
+# scripts/check_manifests.py rejects project-local axioms for manifest
+# entries marked `theorem`. These names are accepted as the Lean trust
+# base when reported by `#print axioms`. RHNavier and RHNavierPvNP
+# import Mathlib through their dependencies; dependency audits enforce this list.
+
+# ----- Lean core foundational axioms -----
+Classical.choice
+propext
+Quot.sound
+choice
+funext
+
+# MetaMath conditional schemas introduce no project axioms.

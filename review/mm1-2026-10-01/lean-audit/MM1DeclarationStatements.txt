@@ -1,0 +1,437 @@
+MM-1 declaration report — 2026-10-01
+
+Every changed/new explicit source declaration is listed below with its full name, file:line, and copied signature.
+Foreclosure declarations use implicit {language : ClaimLanguage.{u}} where shown in the source section.
+The rerunnable MM1AxiomAudit.lean prints each elaborated signature, including all implicit universe parameters.
+Schema and structure declarations are copied in full so their propositions and fields are explicit.
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.ClosureContentThesisSchema
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/ClosureContentThesis.lean:46
+def ClosureContentThesisSchema : Prop :=
+  ∀
+    (c : FormedClosure) (X : Prop)
+    (_hcolumn : VDifferentialTSOColumn c),
+    IsFormedLayerClosureContent (loadBearingFor c X) c ∧
+    ¬ IsDerivableFromFrameworkPrimitives (loadBearingFor c X) ∧
+    NamedAsAcceptedSource (loadBearingFor c X) c
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.closure_content_thesis
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/ClosureContentThesis.lean:55
+theorem closure_content_thesis
+    (hschema : ClosureContentThesisSchema)
+    (c : FormedClosure) (X : Prop)
+    (hcolumn : VDifferentialTSOColumn c) :
+    IsFormedLayerClosureContent (loadBearingFor c X) c ∧
+    ¬ IsDerivableFromFrameworkPrimitives (loadBearingFor c X) ∧
+    NamedAsAcceptedSource (loadBearingFor c X) c
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.AttackForeclosureV5Schema
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/AttackForeclosureV5.lean:47
+def AttackForeclosureV5Schema (signature : InternalMoveSignature language) : Prop :=
+  ∀ (c : FormedClosure) (X : language.Claim),
+    VDifferentialTSOColumn c → SBClosureAssumption c → InFrameworkScope signature X →
+      (∀ move : FrameworkInternalMove, IsDerivationRoute move →
+        ¬ advancesXWithoutExternal signature move X) ∧
+      (∀ l : RecognitionModeLanding c (language.interp X),
+        ImportsAsNamedRecognition l (loadBearingFor c (language.interp X))) ∧
+      (∀ _l : RecognitionModeLanding c (language.interp X),
+        LandsAtTheoremGrade c (language.interp X))
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_v5_derivation_conjunct_of_v4
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/AttackForeclosureV5.lean:59
+theorem attack_v5_derivation_conjunct_of_v4
+    (signature : InternalMoveSignature language)
+    (hv4 : AttackForeclosureV4Schema signature)
+    (X : language.Claim) (hscope : InFrameworkScope signature X) :
+    ∀ move : FrameworkInternalMove, IsDerivationRoute move →
+      ¬ advancesXWithoutExternal signature move X
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_foreclosure_v5
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/AttackForeclosureV5.lean:69
+theorem attack_foreclosure_v5
+    (signature : InternalMoveSignature language)
+    (hschema : AttackForeclosureV5Schema signature)
+    (c : FormedClosure) (X : language.Claim)
+    (hcolumn : VDifferentialTSOColumn c)
+    (hclosure : SBClosureAssumption c)
+    (hscope : InFrameworkScope signature X) :
+    (∀ move : FrameworkInternalMove, IsDerivationRoute move →
+      ¬ advancesXWithoutExternal signature move X) ∧
+    (∀ l : RecognitionModeLanding c (language.interp X),
+      ImportsAsNamedRecognition l (loadBearingFor c (language.interp X))) ∧
+    (∀ _l : RecognitionModeLanding c (language.interp X),
+      LandsAtTheoremGrade c (language.interp X))
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplicabilitySchema
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/Template.lean:56
+def TemplateApplicabilitySchema : Prop :=
+  ∀
+    (c : FormedClosure) (X : Prop)
+    (_hcolumn : VDifferentialTSOColumn c)
+    (_hclosure : SBClosureAssumption c)
+    (htemplate : SevenStageTemplate c X)
+    (_happlies : TemplateApplies c X htemplate),
+    LandsAtTheoremGrade c X
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.recognition_template_applicability
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/Template.lean:66
+theorem recognition_template_applicability
+    (hschema : TemplateApplicabilitySchema)
+    (c : FormedClosure) (X : Prop)
+    (hcolumn : VDifferentialTSOColumn c)
+    (hclosure : SBClosureAssumption c)
+    (htemplate : SevenStageTemplate c X)
+    (happlies : TemplateApplies c X htemplate) :
+    LandsAtTheoremGrade c X
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.VerdictSignatureSchema
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/VerdictSignature.lean:41
+def VerdictSignatureSchema : Prop :=
+  ∀
+    (c : FormedClosure) (X : Prop)
+    (_hcolumn : VDifferentialTSOColumn c)
+    (htemplate : SevenStageTemplate c X)
+    (_happlies : TemplateApplies c X htemplate),
+    sweepVerdict htemplate SweepOption.frameworkPrimitive = Verdict.ii ∧
+    sweepVerdict htemplate SweepOption.sauNonDescent = Verdict.iii ∧
+    sweepVerdict htemplate SweepOption.vDifferentialElevation = Verdict.ii
+
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.verdict_signature
+lean/SixBirdsMetaMath/MetaMath/RecognitionMode/VerdictSignature.lean:52
+theorem verdict_signature
+    (hschema : VerdictSignatureSchema)
+    (c : FormedClosure) (X : Prop)
+    (hcolumn : VDifferentialTSOColumn c)
+    (htemplate : SevenStageTemplate c X)
+    (happlies : TemplateApplies c X htemplate) :
+    sweepVerdict htemplate SweepOption.frameworkPrimitive = Verdict.ii ∧
+    sweepVerdict htemplate SweepOption.sauNonDescent = Verdict.iii ∧
+    sweepVerdict htemplate SweepOption.vDifferentialElevation = Verdict.ii
+
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/AttackForeclosure.lean:15
+structure InternalMoveSignature (language : ClaimLanguage.{u}) where
+  semantics : FrameworkInternalMove → language.Claim → Prop
+  scope : language.Claim → Prop
+
+variable {language : ClaimLanguage.{u}}
+
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.internalMoveSemantics
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/AttackForeclosure.lean:21
+def internalMoveSemantics (signature : InternalMoveSignature language)
+    (move : FrameworkInternalMove) (X : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/AttackForeclosure.lean:24
+def advancesXWithoutExternal (signature : InternalMoveSignature language)
+    (move : FrameworkInternalMove) (X : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/AttackForeclosure.lean:28
+def InFrameworkScope (signature : InternalMoveSignature language)
+    (X : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/AttackForeclosure.lean:32
+def AttackForeclosureV4Schema (signature : InternalMoveSignature language) : Prop :=
+  ∀ (X : language.Claim) (move : FrameworkInternalMove),
+    InFrameworkScope signature X → ¬ advancesXWithoutExternal signature move X
+
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.attack_foreclosure_v4
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/AttackForeclosure.lean:37
+theorem attack_foreclosure_v4 (signature : InternalMoveSignature language)
+    (hschema : AttackForeclosureV4Schema signature)
+    (X : language.Claim) (move : FrameworkInternalMove)
+    (hscope : InFrameworkScope signature X) :
+    ¬ advancesXWithoutExternal signature move X
+
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/Coverage.lean:10
+def CoverageSchema (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop :=
+  nonXEquivalent X C ∨ creTE X C ∨ creBF X C ∨ creCTMT X C
+
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_of_classification
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/Coverage.lean:16
+theorem coverage_of_classification
+    (X : language.Claim) (C : TypedPrimaryCarrier language)
+    (hresidual : ∃ c : language.Claim, residualClosureEquivalent C c)
+    (hclassification : CarrierClassificationSchema X C) :
+    nonXEquivalent X C ∨ creTE X C ∨ creBF X C ∨ creCTMT X C
+
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_theorem
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/Coverage.lean:34
+theorem coverage_theorem
+    (X : language.Claim) (C : TypedPrimaryCarrier language)
+    (hcoverage : CoverageSchema X C) :
+    nonXEquivalent X C ∨ creTE X C ∨ creBF X C ∨ creCTMT X C
+
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classifyAs
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/TypeFiniteForeclosure.lean:27
+def classifyAs (s : CarrierState) (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.type_finite_foreclosure
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/TypeFiniteForeclosure.lean:42
+theorem type_finite_foreclosure
+    (X : language.Claim) (C : TypedPrimaryCarrier language)
+    (hcoverage : CoverageSchema X C) :
+    ∃ s : CarrierState, classifyAs s X C
+
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/TypeFiniteForeclosure.lean:54
+noncomputable def classify
+    (X : language.Claim) (C : TypedPrimaryCarrier language)
+    (hcoverage : CoverageSchema X C) : CarrierState
+
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify_spec
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/TypeFiniteForeclosure.lean:60
+theorem classify_spec
+    (X : language.Claim) (C : TypedPrimaryCarrier language)
+    (hcoverage : CoverageSchema X C) :
+    classifyAs (classify X C hcoverage) X C
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:8
+structure BridgeSignature (language : ClaimLanguage.{u}) where
+  Bridge : Type v
+  obligation : Bridge → language.Claim → Prop
+  composition : Bridge → TypedPrimaryCarrier language → TypedPrimaryCarrier language →
+    language.Claim → Prop
+  coverage : language.Claim → TypedPrimaryCarrier language → Prop
+
+variable {language : ClaimLanguage.{u}}
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:17
+abbrev TypedBridge (signature : BridgeSignature.{u, v} language) : Type v
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.XStrengthObligation
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:19
+def XStrengthObligation (signature : BridgeSignature language)
+    (B : TypedBridge signature) (X : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeComposition
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:22
+def BridgeComposition (signature : BridgeSignature language)
+    (B : TypedBridge signature) (C composite : TypedPrimaryCarrier language)
+    (X : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:27
+def BridgeObligationSchema (signature : BridgeSignature language)
+    (B : TypedBridge signature) (C composite : TypedPrimaryCarrier language)
+    (X : language.Claim) : Prop :=
+  BridgeComposition signature B C composite X →
+    ExactlyOneOfThree (creTE X composite) (creBF X composite) (creCTMT X composite) →
+      XStrengthObligation signature B X
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:39
+theorem bridge_impossibility
+    (signature : BridgeSignature language)
+    (_acceptedImportsBase : language.Claim → Prop)
+    (_h_imports_sound : ∀ c, _acceptedImportsBase c → language.interp c)
+    (X : language.Claim) (C : TypedPrimaryCarrier language)
+    (B : TypedBridge signature) (composite : TypedPrimaryCarrier language)
+    (_hCNonX : nonXEquivalent X C)
+    (_hCNative : residualClosureZero C)
+    (hcomp : BridgeComposition signature B C composite X)
+    (hcompositeProduces : residualClosureZero composite ∧ residualClosureEquivalent composite X)
+    (_hcompositeDiscipline : composite.typedContextDiscipline)
+    (_hcompositeAimed : composite.aimedAt X)
+    (_hcompositeCtx : CoverageContext signature.coverage X composite)
+    (hclassification : CarrierClassificationSchema X composite)
+    (hbridge : BridgeObligationSchema signature B C composite X) :
+    XStrengthObligation signature B X
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.twoClaimBridgeSignature
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:58
+def twoClaimBridgeSignature : BridgeSignature.{0, 0} twoTrueClaims where
+  Bridge
+
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility_hypotheses_satisfiable
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/BridgeImpossibility.lean:68
+theorem bridge_impossibility_hypotheses_satisfiable :
+    ∃ (language : ClaimLanguage.{0})
+      (signature : BridgeSignature.{0, 0} language)
+      (acceptedImportsBase : language.Claim → Prop)
+      (X : language.Claim) (C composite : TypedPrimaryCarrier language)
+      (B : TypedBridge signature),
+      (∀ c, acceptedImportsBase c → language.interp c) ∧
+      nonXEquivalent X C ∧ residualClosureZero C ∧
+      BridgeComposition signature B C composite X ∧
+      (residualClosureZero composite ∧ residualClosureEquivalent composite X) ∧
+      composite.typedContextDiscipline ∧ composite.aimedAt X ∧
+      CoverageContext signature.coverage X composite ∧
+      CarrierClassificationSchema X composite ∧
+      BridgeObligationSchema signature B C composite X
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.cascadeReducesToDeeperFamily
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CTMTRecursion.lean:24
+def cascadeReducesToDeeperFamily
+    (semantics : language.Claim → TypedPrimaryCarrier language → TypedPrimaryCarrier language → Prop)
+    (X : language.Claim) (C Cdeeper : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CTMTRecursion.lean:36
+inductive CTMTTower
+    (semantics : language.Claim → TypedPrimaryCarrier language → TypedPrimaryCarrier language → Prop)
+    (X : language.Claim) : TypedPrimaryCarrier language → Nat → Prop where
+  | base {C : TypedPrimaryCarrier language} (h : creCTMT X C) :
+      CTMTTower semantics X C 1
+  | step {C Cdeeper : TypedPrimaryCarrier language} (n : Nat)
+      (htower : CTMTTower semantics X Cdeeper (n + 1))
+      (hreduces : cascadeReducesToDeeperFamily semantics X C Cdeeper) :
+      CTMTTower semantics X C (n + 2)
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.ctmt_recursion
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CTMTRecursion.lean:50
+theorem ctmt_recursion :
+    (∀ (semantics : language.Claim → TypedPrimaryCarrier language → TypedPrimaryCarrier language → Prop)
+        (X : language.Claim) (C : TypedPrimaryCarrier language),
+        CTMTTower semantics X C 1 ↔ creCTMT X C) ∧
+    (∀ (semantics : language.Claim → TypedPrimaryCarrier language → TypedPrimaryCarrier language → Prop)
+        (X : language.Claim) (C Cdeeper : TypedPrimaryCarrier language) (n : Nat),
+        CTMTTower semantics X Cdeeper (n + 1) →
+          cascadeReducesToDeeperFamily semantics X C Cdeeper →
+            CTMTTower semantics X C (n + 2))
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:19
+structure ClaimLanguage where
+  Claim : Type u
+  interp : Claim → Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:31
+structure TypedPrimaryCarrier (language : ClaimLanguage.{u}) where
+  e : Nat
+  y : Nat
+  z : Nat
+  audit : Mat e e
+  nativeProbes : Mat y e
+  dissolvingReadout : Mat z e
+  KLLdagger : Mat y y
+  aimedAt : language.Claim → Prop
+  typedContextDiscipline : Prop
+  sameLevelAuditStatus : SixBirdsMetaMath.F3ClaimStatus
+  noAcceptedBridgeToTarget : language.Claim → Prop
+  structurallyBridgeIncompatible : language.Claim → Prop
+  cascadeReducesToMatrixFamily : Prop
+  inheritedRecordsDecideMatrixFamily : Prop
+  matrixFamilyDecisionEquivalentToTarget : language.Claim → Prop
+
+variable {language : ClaimLanguage.{u}}
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrierResidual
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:51
+def carrierResidual (C : TypedPrimaryCarrier language) : Mat C.z C.z
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:55
+def residualClosureZero (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:59
+def residualClosureEquivalent (C : TypedPrimaryCarrier language) (X : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.xEquivalent
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:63
+def xEquivalent (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:72
+def nonXEquivalent (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.openPending
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:76
+def openPending (acceptedImportsBase : language.Claim → Prop) (X' : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.NativeClosureOutcome
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:83
+def NativeClosureOutcome
+    (acceptedImportsBase : language.Claim → Prop) (C : TypedPrimaryCarrier language) (X' : language.Claim) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sameLevelSelfAuditFailure
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:89
+def sameLevelSelfAuditFailure (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:97
+def creTE (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:104
+def creBF (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:112
+def creCTMT (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CoverageContext
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:122
+def CoverageContext
+    (guard : language.Claim → TypedPrimaryCarrier language → Prop)
+    (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:128
+def CarrierClassificationSchema
+    (X : language.Claim) (C : TypedPrimaryCarrier language) : Prop :=
+  xEquivalent X C →
+    ExactlyOneOfThree (creTE X C) (creBF X C) (creCTMT X C)
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrier_dichotomy
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:135
+theorem carrier_dichotomy
+    (acceptedImportsBase : language.Claim → Prop)
+    (h_imports_sound : ∀ c, acceptedImportsBase c → language.interp c)
+    (X : language.Claim) (C : TypedPrimaryCarrier language)
+    (hclassification : CarrierClassificationSchema X C) :
+    (nonXEquivalent X C →
+      ∃ X' : language.Claim,
+        residualClosureEquivalent C X' ∧ X' ≠ X ∧
+          NativeClosureOutcome acceptedImportsBase C X') ∧
+    (xEquivalent X C →
+      ExactlyOneOfThree (creTE X C) (creBF X C) (creCTMT X C))
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:156
+def twoTrueClaims : ClaimLanguage.{0}
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:159
+def selectiveTrueBase : twoTrueClaims.Claim → Prop
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sound_base_noncollapse
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:162
+theorem sound_base_noncollapse :
+    (∀ c, selectiveTrueBase c → twoTrueClaims.interp c) ∧
+    twoTrueClaims.interp false ∧ twoTrueClaims.interp true ∧
+    selectiveTrueBase false ∧ ¬ selectiveTrueBase true
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:171
+def closedTwoClaimCarrier : TypedPrimaryCarrier twoTrueClaims where
+  e
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier_zero
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:189
+theorem closedTwoClaimCarrier_zero : residualClosureZero closedTwoClaimCarrier
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier_classification
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:195
+theorem closedTwoClaimCarrier_classification (X : twoTrueClaims.Claim) :
+    CarrierClassificationSchema X closedTwoClaimCarrier
+
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent_and_xEquivalent
+lean/SixBirdsMetaMath/MetaMath/Foreclosure/CarrierDichotomy.lean:207
+theorem nonXEquivalent_and_xEquivalent :
+    nonXEquivalent true closedTwoClaimCarrier ∧
+      xEquivalent true closedTwoClaimCarrier
+
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkTypeGeneralSchema
+lean/SixBirdsMetaMath/MetaMath/CalibrationFamily/FrameworkTypeSelfChar.lean:72
+def FrameworkTypeGeneralSchema : Prop :=
+    ∀ c : FormedClosure,
+      VDifferentialTSOColumn c →
+        ¬ typesMatch (cascadeFrameworkType c) (standardClayTargetType c)

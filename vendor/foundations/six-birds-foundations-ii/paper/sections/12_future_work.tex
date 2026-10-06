@@ -1,0 +1,99 @@
+\section{Future work}\label{sec:future-work}
+
+% Mathematical job:
+%   - List future research directions WITHOUT promising results not earned.
+%   - Topics:
+%       endogenous instrument meta-limit / self-certification theorem;
+%       broader-domain exact-six stress beyond FATCD;
+%       uniqueness or canonical decomposition study;
+%       full six-primitives algebra;
+%       empirical substrate mapping;
+%       formal mechanization strengthening (Lean);
+%       cross-instrument comparison of exact-six decompositions.
+%
+% Governing sources:
+%   workspace/meta/lens_lab/papers/paper3/gaps_and_followups.md
+%   vision.md (Stage 6: Empirical bridge; meta-limit notes)
+%
+% Overclaim risks:
+%   - Writing future work as commitments or predictions.
+%   - Reopening the terminal theorem by framing these as gaps.
+
+Theorem~\ref{thm:scoped-exact-six} and the limitations of
+Section~\ref{sec:limitations-nonclaims} suggest several follow-on
+research directions. Each subsection below states a direction, not a
+commitment.
+
+\subsection{Endogenous-instrument meta-limit}\label{subsec:future-meta-limit}
+
+A formalization of the meta-limit described in
+Section~\ref{subsec:meta-limit} would target a three-way
+impossibility statement: no internal argument can simultaneously
+establish the scoped exact-six claim, certify the soundness of the
+accepted instrument family, and certify its completeness for
+exact-six judgments formulable inside the same regime.
+Theorem~\ref{thm:scoped-exact-six} would remain intact under such a
+result; the additional content would be a precise account of
+self-certification boundaries.
+
+\subsection{Broader-domain exact-six}\label{subsec:future-broader-domain}
+
+Candidate extensions beyond \FATCD{} include admissibility regimes
+that weaken finiteness, closure, or audit
+(Section~\ref{sec:fatcd-domain}), and regimes that admit annotation
+kinds beyond the six \(\mathrm{Ann}_*\) categories of
+Definition~\ref{def:annotations}. Any such extension would require
+fresh upper-bound and decomposition/exhaustion analysis, since the
+alignment rules and threat closures are not stated at scope-free
+strength.
+
+\subsection{Uniqueness or canonical decomposition}\label{subsec:future-uniqueness}
+
+Theorem~\ref{thm:scoped-exact-six} is existential. A uniqueness study
+would investigate when distinct well-formed decomposition/exhaustion
+records of the same \(D \in \FATCD{}\) are equivalent under explicit
+translation records, or when a canonical representative can be
+selected. The channel-versus-activation discipline
+(Proposition~\ref{prop:channel-vs-activation}) is compatible with
+such a study; no uniqueness claim is part of the present theorem.
+
+\subsection{Full six-primitives algebra}\label{subsec:future-algebra}
+
+The generator-and-relation structure of \Pone{}--\Psix{} beyond
+typed non-collapse remains open. A full algebra would require
+scope-free independence data, not just the local boundary
+distinctions of Table~\ref{tab:boundary-matrix}, and would likely
+require a categorical apparatus richer than the raw grammar of
+Section~\ref{subsec:raw-grammar}.
+
+\subsection{Empirical substrate mapping}\label{subsec:future-substrate}
+
+The empirical-bridge admissibility regime
+(Proposition~\ref{prop:empirical-bridge}) can be connected to
+concrete substrate-level observables. The present paper treats
+empirical bridges as threshold-dependent, level-indexed, and
+instrument-visible annotations; later work can couple this to
+substrate-specific measurement theory while preserving the nonclaim
+of empirical realization.
+
+\subsection{Mechanization}\label{subsec:future-mechanization}
+
+The typed non-collapse proposition, the decomposition-existence
+theorem, and the upper-bound classification theorem are natural
+targets for mechanization in a proof
+assistant~\citep{DeMouraUllrich2021}. Work-in-progress Lean
+mechanization accompanying the present paper is available at the
+code repository of Appendix~\ref{app:code-availability}, and the
+Foundations program~\citep{Tsiokos2026SixBirdsFoundations} has
+already mechanized closure-related infrastructure that can be
+reused.
+
+\subsection{Cross-instrument comparison}\label{subsec:future-cross-instrument}
+
+Decomposition/exhaustion records of the same \(D \in \FATCD{}\) can
+be compared under different admissible instrument assignments.
+Proposition~\ref{prop:visibility} admits visibility records that
+suppress different portions of a claim under different instruments; a
+cross-instrument study could make the instrument-dependence of
+\(\Dec{D}\) explicit and sharpen the notion of instrument-relative
+claim strength.

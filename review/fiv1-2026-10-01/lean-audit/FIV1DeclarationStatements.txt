@@ -1,0 +1,53 @@
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.HiddennessSourceObligation
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:61
+def HiddennessSourceObligation (I : HiddennessInterface) : Prop
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_normal_form
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:117
+theorem hiddenness_normal_form (I : HiddennessInterface)
+    (hsrc : HiddennessSourceObligation I) :
+    HiddennessNormalForm I
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_exposure_collapse_surplus
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:127
+theorem hiddenness_exposure_collapse_surplus
+    (I : HiddennessInterface) (hsrc : HiddennessSourceObligation I) :
+    (QuotientExposed I ↔ PredictiveCollapse I) ∧
+    (PredictiveCollapse I ↔ ¬ PredictiveSurplus I)
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_normal_form_with_exposure_collapse_surplus
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:146
+theorem hiddenness_normal_form_with_exposure_collapse_surplus
+    (I : HiddennessInterface) (hsrc : HiddennessSourceObligation I) :
+    HiddennessNormalForm I ∧
+    (QuotientExposed I ↔ PredictiveCollapse I) ∧
+    (PredictiveCollapse I ↔ ¬ PredictiveSurplus I)
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_normal_form_of_source_obligation
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:199
+theorem hiddenness_normal_form_of_source_obligation
+    (Src : HiddennessInterface → Prop)
+    (hS : ∀ J, Src J → HiddennessSourceObligation J)
+    (I : HiddennessInterface) (src : Src I) :
+    Function.Surjective I.current ∧ HiddennessNormalForm I ∧
+      (QuotientExposed I ↔ PredictiveCollapse I) ∧
+      (PredictiveCollapse I ↔ ¬ PredictiveSurplus I)
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.exposedUnitInterface
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:261
+def exposedUnitInterface : HiddennessInterface
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_source_obligation_satisfiable
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:276
+theorem hiddenness_source_obligation_satisfiable :
+    ∃ I : HiddennessInterface, HiddennessSourceObligation I
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenBoolInterface
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:285
+def hiddenBoolInterface : HiddennessInterface
+
+SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_source_obligation_with_surplus_satisfiable
+lean/SixBirdsMetaMath/FoundationsIV/Access/HiddennessNormalForm.lean:301
+theorem hiddenness_source_obligation_with_surplus_satisfiable :
+    ∃ I : HiddennessInterface,
+      HiddennessSourceObligation I ∧ PredictiveSurplus I

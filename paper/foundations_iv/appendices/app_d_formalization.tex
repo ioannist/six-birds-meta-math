@@ -1,0 +1,127 @@
+\section{Lean formalization}\label{app:formalization}
+
+\subsection{Scope}\label{subsec:lean-wording-discipline}
+
+The laws of this paper are formalized in Lean~4 with Mathlib, in the
+modules \texttt{SixBirdsMetaMath.FoundationsIV} of the accompanying
+repository.  The modules and everything they import build without
+\texttt{sorry}, and the development declares no axioms: the declarations
+listed below depend only on Lean's standard axioms \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}.  Each law is listed
+in \Cref{tab:formalization-coverage} with its declarations and one of
+three alignments.
+\begin{description}
+\item[Faithful.] The listed declarations together prove every clause of
+  the paper statement, each from at most the paper's hypotheses for that
+  clause; they may prove more, or state the data more generally.  A
+  listed declaration marked \emph{companion} uses a stronger hypothesis
+  and is not the covering declaration.
+\item[Restricted.] The declarations cover less than the paper
+  statement; this applies to \Fref{F14} only.
+\item[Imported clause.] One clause applies a theorem of the
+  formalization of a substrate paper; this applies to clause (b) of
+  \Fref{F53} only.
+\end{description}
+Fifty laws are faithful, \Fref{F14} is restricted, and \Fref{F53} is
+faithful apart from its imported clause.  A faithful formalization of a
+conditional law, such as \Fref{F13a}, proves the implication from its
+hypotheses, not the hypotheses.
+
+\subsection{Notes on particular laws}\label{subsec:narrowing-disclosure}
+
+\paragraph{F13a.} The source hypothesis \((\mathsf S)\) is the
+predicate \texttt{HiddennessSourceObligation}: surjectivity of the
+current map together with conjuncts 1--4.  Part (i) of \Cref{thm:F13a}
+is \path|hiddenness_normal_form_with_exposure_collapse_surplus|, which
+takes \((\mathsf S)\) as an explicit hypothesis;
+\path|hiddenness_normal_form_of_source_obligation| states the same for
+every interface satisfying a source predicate that implies
+\((\mathsf S)\).  Part (ii) is
+\path|predictive_surplus_iff_not_collapse_iff| together with
+\path|hidden_iff_collapse_iff_of_surplus_iff_not_collapse|.  The
+satisfiability remark of the reading paragraph is
+\path|hiddenness_source_obligation_with_surplus_satisfiable|.  No
+interface derived from the saturated-SAT construction of
+\citet{Tsiokos2026PvNP} is formalized.  In the namespace of
+\Fref{F13b}, the predicate \(\operatorname{HiddenStateSurplus}\) is
+\texttt{HiddenFromCurrent}, with \texttt{HiddenStateSurplus} an
+abbreviation for it; the \Fref{F13a} predicate \texttt{HiddenFromCurrent}
+is a different definition.
+
+\paragraph{F6.} \path|Stability.NoNeedlesReal.no_needles_stability_real|
+proves \Cref{thm:F6} for real matrices, with the Loewner preorder
+defined by quadratic forms, from exactly the displayed identities and
+budgets; the decomposition \(K_{DD}=\widehat E K_{LL}\widehat E^{\top}+\Xi\)
+and monotonicity under congruence are separate lemmas.  Companion
+declarations prove the endpoint over the rational matrices of the
+substrate development, for arbitrary rational blocks and for supplied
+symmetric pseudoinverses.
+
+\paragraph{F14.} The formalization proves the direct squeeze for an
+abstract ledger satisfying the trace laws (C1)--(C3) and the
+almost-everywhere laws used in the proof, with an additive involution \(U\)
+preserving the declared squared norm in place of the unitary involution;
+the proof of the squeeze does not use \(U\).  The equivalence under the
+condition on \(U\), and the converse on ladders, are proved for the
+abstract ledger under two explicit laws that the ledger structure does
+not include (the squared norm of \(0\) is \(0\), and an
+almost-everywhere-zero nonnegative integrand has integral \(0\)); a
+one-point ledger with \(U=-\mathrm{id}\) shows that the equivalence fails
+without the condition on \(U\).  The laws are instantiated on finite
+ledgers valued in \(1\times1\) positive semidefinite rational matrices
+with \(U=\mathrm{id}\).  An instance for Bochner integrals over a Hilbert
+space is not formalized here; the companion formalization of
+\citet{Tsiokos2026SDTC} treats real Hilbert spaces.
+
+\paragraph{F29.} The first listed declaration assumes that \(\sim\) is
+the kernel of \(\pi\), whereas \Cref{thm:F29} assumes only
+\(p\sim p'\Rightarrow\pi(p)=\pi(p')\).  The clauses not mentioning
+\(\sim\) follow from it with \(\sim\) the kernel of \(\pi\); the clauses on
+\(\sim\) are \texttt{presentation\_invariance\_general\_relation}, which
+assumes one-way compatibility only.
+
+\paragraph{F39.} The fiber-volume instance is formalized over \(\mathbb
+R\), with the chain identity, monotonicity and the zero criterion proved
+directly; the abstract theorem, with combine-monotonicity at the pair,
+applies to it.
+
+\paragraph{F43.} Stage carriers and residual sets may vary with the
+index, as in the statement; the candidate limit carrier is supplied, not
+constructed, in both.
+
+\paragraph{F53 and the closure--reality theorems.} The direct no-go
+theorem is \path|ClosureRealityBoundary.cer_direct_reduct_witness|,
+which takes items (i)--(iii) as hypotheses over an abstract carrier
+type; \path|finite_cer_direct_instance| and
+\path|finite_cer_paper_bundle| instantiate the finite model, and
+\path|cer_direct_no_go_of_nonidentity_operator| proves the clause on
+arbitrary nonidentity operators.  The converse theorem is
+\path|cer_converse_closed_witness|, with the characterization
+\path|cer_converse_failure_iff_closed_not_bare| and the clauses on
+extensive operators \path|cer_no_go_of_nonidentity_extensive_operator|
+and \path|cer_no_go_iff_nonidentity_extensive_operator|.  For
+\Cref{prop:F53}, the retained fixed-point equivalence, the generic
+uniqueness statement and the five-flag counterexamples of clause (e) are
+proved directly.  The equivalence of clause (b) is
+\path|current_aor_accounted_completion_iff|, which applies the kernel
+theorem of the formalization of \citet{Tsiokos2026AOR}, and
+\path|current_aor_inference_closed_not_fully_discharged| checks the
+scalar-budget counterexample with the ledger definitions and inference
+rules of that development; the proof in the body is self-contained given
+the four rules it states.  The names
+\texttt{ClSB} and \texttt{SixBirdsClosed}, and the prefix \texttt{aor}
+in \texttt{closed\_iff\_aor}, \texttt{aor\_saturation\_cer\_both\_fail}
+and \texttt{aor\_realisability\_unique\_fixed\_point\_predicate}, denote
+\(\operatorname{Sat}_5\) and the five-flag encoding, not the AOR
+inference reflector \(\ClSB\) of this paper; only the two
+\texttt{current\_aor} declarations concern the AOR kernel.  The wrapper
+\path|closure_reality_boundary| uses opaque obstruction fields and does
+not instantiate them; it is not listed in \Cref{tab:formalization-coverage},
+and no listed declaration uses it.
+
+\subsection{Declarations by law}\label{subsec:formalization-coverage}
+
+In \Cref{tab:formalization-coverage}, declaration names omit the prefix
+\texttt{SixBirdsMetaMath.FoundationsIV}.
+
+\input{tables/tab_formalization_coverage}

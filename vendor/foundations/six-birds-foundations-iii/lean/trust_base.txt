@@ -1,0 +1,10 @@
+# Allowed non-project axioms for theorem dependency audits.
+#
+# Phase 1 has no paper-backed theorem declarations. This file is still present
+# so the validator can enforce the same audit shape used by Foundations II.
+
+Classical.choice
+propext
+Quot.sound
+choice
+funext

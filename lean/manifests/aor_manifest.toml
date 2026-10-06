@@ -1,0 +1,491 @@
+# Lean validation manifest for the AOR paper axis.
+#
+# Each entry corresponds to a paper_label from
+# formalization/inventory/aor_paper_inventory.toml whose
+# intended_status is "mechanize_now". The manifest records the accepted
+# Lean realization status for each inventoried paper item.
+#
+# Status meanings (verbatim from F2/F3, NS):
+# - definition:   paper definition has a Lean definition-like declaration
+# - theorem:      paper claim has a Lean theorem/lemma whose dependency audit passes
+# - axiomatic:    declaration is or depends on project-local axioms (not allowed here)
+# - partial:      declaration mechanizes only a supporting fragment
+# - unformalized: no Lean correspondent is present yet
+#
+# Use `[[definition]]` for definition_kind entries, `[[claim]]` for
+# theorem/lemma/proposition/corollary entries. This mirrors F2/F3 and
+# the Main/Xi/NS manifest idiom.
+#
+# Entries may start as `status = "unformalized"` and `lean_decl = ""`;
+# accepted Lean correspondents update the status and declaration path.
+
+
+[[definition]]
+paper_label = "def:aor:presb-carrier"
+paper_section = "PreSB carriers and the AOR full subcategory"
+description = "Seventeen-field PreSB carrier over a fixed scope, with zero-defect audit obligations."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.PreSB"
+lean_decl = "SixBirdsMetaMath.AOR.PreSB.preSBCarrier"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:scope-record"
+paper_section = "PreSB carriers and the AOR full subcategory"
+description = "Scope record declaring admissible carrier, source, interface, and route data."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.PreSB"
+lean_decl = "SixBirdsMetaMath.AOR.PreSB.scopeRecord"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:morphism-presb"
+paper_section = "PreSB carriers and the AOR full subcategory"
+description = "Scope-preserving PreSB field morphism commuting with quotient and audit transport."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.PreSB"
+lean_decl = "SixBirdsMetaMath.AOR.PreSB.morphismPreSB"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:aor-subcategory"
+paper_section = "PreSB carriers and the AOR full subcategory"
+description = "Full AOR subcategory of PreSB carriers whose structural defect is zero."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.PreSB"
+lean_decl = "SixBirdsMetaMath.AOR.PreSB.aorSubcategory"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:aor-full-subcat"
+paper_section = "PreSB carriers and the AOR full subcategory"
+description = "The AOR inclusion is full and faithful, with membership preserved and reflected by isomorphism."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.PreSB"
+lean_decl = "SixBirdsMetaMath.AOR.PreSB.aorFullSubcat"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:cl-sb-operator"
+paper_section = "The closure-completion functor Cl_SB"
+description = "Closure-completion operator sending a PreSB carrier to its saturated AOR carrier."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ClSB"
+lean_decl = "SixBirdsMetaMath.AOR.ClSB.clSBOperator"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:cl-sb-construction"
+paper_section = "The closure-completion functor Cl_SB"
+description = "Monotone idempotent syntactic five-flag saturation; no complete-lattice or semantic leastness construction."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ClSB"
+lean_decl = "SixBirdsMetaMath.AOR.ClSB.clSBConstruction"
+notes = "Retained flag model; the semantic reflection is maintained in SixBirdsNeedles.AOR.Core."
+
+[[claim]]
+paper_label = "thm:aor:cl-sb-universal-property"
+paper_section = "The closure-completion functor Cl_SB"
+description = "Universal factorization of PreSB morphisms through the reflection unit."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ClSB"
+lean_decl = "SixBirdsMetaMath.AOR.ClSB.clSBUniversalProperty"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:cl-sb-adjunction"
+paper_section = "The closure-completion functor Cl_SB"
+description = "Adjunction witness for Cl_SB left adjoint to the AOR inclusion, with identity-field counit."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ClSB"
+lean_decl = "SixBirdsMetaMath.AOR.ClSB.clSBAdjunction"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:xi-sb"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "AOR structural defect as the tagged disjoint sum of the eight defect strata."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.xiSB"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-obs"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Observation defect stratum for undeclared codomain, role, provenance, or context."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaObs"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-stage"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Stage defect stratum for undeclared stage law, refinement axis, or route compatibility."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaStage"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-constraint"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Constraint defect stratum for positivity, audit typing, or admissible-solution gaps."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaConstraint"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-rewrite"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Rewrite defect stratum for missing presentation, admissibility, or blocked annotations."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaRewrite"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-holonomy"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Holonomy defect stratum for missing transport, source attribution, or nonclaim flag."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaHolonomy"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-residual"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Residual defect stratum for residual records missing AOR-8 discharge status."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaResidual"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-nonclaim"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Nonclaim defect stratum for unregistered exclusions and blocked/deprecated claims."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaNonclaim"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:sigma-meta"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Meta-audit defect stratum for undischarged provenance, version, audit, or dispute obligations."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.sigmaMeta"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:eight-stratum-decomposition"
+paper_section = "The structural defect Xi_SB and its 8 strata"
+description = "Xi_SB decomposes into eight computable strata, preserves strata under isomorphism, and is zero iff all strata are empty."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.DefectStrata"
+lean_decl = "SixBirdsMetaMath.AOR.DefectStrata.eightStratumDecomposition"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:residual-types-twelve"
+paper_section = "The Sigma_residual atlas"
+description = "Residual primary-type atlas containing every Delta-type listed in the AOR paper."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ResidualAtlas"
+lean_decl = "SixBirdsMetaMath.AOR.ResidualAtlas.residualTypesTwelve"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:residual-partial-order"
+paper_section = "The Sigma_residual atlas"
+description = "Generated residual refinement order by primary type, refinement depth, and secondary-type inclusion."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ResidualAtlas"
+lean_decl = "SixBirdsMetaMath.AOR.ResidualAtlas.residualPartialOrder"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:residual-atom"
+paper_section = "The Sigma_residual atlas"
+description = "Residual atom predicate for canonical non-refined primary residual records."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ResidualAtlas"
+lean_decl = "SixBirdsMetaMath.AOR.ResidualAtlas.residualAtom"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:atom-decomposition"
+paper_section = "The Sigma_residual atlas"
+description = "Canonical finite ordered tag-atom expansion with explicit depth reconstruction and proved uniqueness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ResidualAtlas"
+lean_decl = "SixBirdsMetaMath.AOR.ResidualAtlas.atomDecomposition"
+notes = "The syntactic record expansion preserves all secondary tags; uniqueness is relative to this ordered record grammar."
+
+[[claim]]
+paper_label = "thm:aor:residual-product"
+paper_section = "The Sigma_residual atlas"
+description = "Product residuals split into left, right, and cross terms with only four cross primary types."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ResidualAtlas"
+lean_decl = "SixBirdsMetaMath.AOR.ResidualAtlas.residualProduct"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:forced-residual"
+paper_section = "The Sigma_residual atlas"
+description = "Forced-secondary residual table and faithfulness of unresolved forced secondary types."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.ResidualAtlas"
+lean_decl = "SixBirdsMetaMath.AOR.ResidualAtlas.forcedResidual"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:aor-8-statuses"
+paper_section = "AOR-8 statuses and discharge"
+description = "AOR-8 status catalogue: zero, budgeted, bridged, hidden, moduli, selected, probabilistic, out_of_scope, nonclaim, blocked, approved_other."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.AOR8Status"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:discharge-record"
+paper_section = "AOR-8 statuses and discharge"
+description = "Triple (atom, status, witness) with typed witness_holds for the chosen AOR-8 status."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.DischargeWitness"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:discharge-witness"
+paper_section = "AOR-8 statuses and discharge"
+description = "Family of discharge records, one per atom in the residual decomposition."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.DischargeWitnessFamily"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:cost-record"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Finite downstream-obligation cost record for a residual type and AOR-8 status."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.costRecord"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:down-operator"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Downstream operator collecting cost-table obligations from discharge witnesses."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.downOperator"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:cost-table"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Base AOR-8 cost-table function with explicit transport/blocked, source/budgeted, and scale/hidden rows plus definition_metadata defaults."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.costTable"
+notes = "AOR8Status is the 11-entry base catalogue. Explicit base rows: (transport, blocked), (source, budgeted), and (scale, hidden); asymptotic limit rows live in Refinement.asymptoticCostTable."
+
+[[definition]]
+paper_label = "def:aor:cascade-graph"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Bipartite labelled cascade graph with atom and discharge-witness vertices."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.cascadeGraph"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:cascade-bipartite"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Cascade graph edges alternate between atom and witness vertices."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.cascadeBipartite"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:cascade-termination"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Cascade termination witness using residual-type and status ranks with a finite step bound."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.cascadeTermination"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:cascade-confluence"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Local and global confluence witness for the normalized discharge relation."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.cascadeConfluence"
+notes = "Local confluence and the well-founded discharge relation are mechanized; the Newman global-confluence implication and unique normal form are deferred."
+
+[[claim]]
+paper_label = "thm:aor:cross-cascade-composition"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Disjoint-union cascade composition with cross edges only for interface/local/global/sym types."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.crossCascadeComposition"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:cascade-stable-aor"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Cascade-stable predicate on an AOR carrier paired with a declared residual discharge assignment."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.cascadeStableAOR"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:cascade-stable-characterisation"
+paper_section = "Discharge cascades over Sigma_residual"
+description = "Cascade stability iff each atom's assigned status reaches zero and its forced obligations empty."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Cascades"
+lean_decl = "SixBirdsMetaMath.AOR.Cascades.cascadeStableCharacterisation"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:refinement-morphism"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "PreSB refinement morphism carrying A1-A6 per-field annotations."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.refinementMorphism"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:refinement-kinds-six"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Six disjoint refinement kinds A1-A6 for refinement morphism annotations."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.refinementKindsSix"
+notes = ""
+
+[[definition]]
+paper_label = "def:aor:refpresb-category"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Fixed-scope RefPreSB category with PreSB objects and refinement morphisms."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.refpresbCategory"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:refpresb-cocomplete"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Conditional directed cocompleteness from a supplied construction of universal commuting cocones."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.refpresbCocomplete"
+notes = "hConstruct is an explicit hypothesis; selecting the chain base does not construct a colimit."
+
+[[definition]]
+paper_label = "def:aor:asymptotic-statuses"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Four asymptotic discharge statuses, kept separate from the 11-entry AOR-8 catalogue."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.asymptoticStatuses"
+notes = "Asymptotic limit rows are represented by SixBirdsMetaMath.AOR.Refinement.asymptoticCostTable."
+
+[[claim]]
+paper_label = "thm:aor:asymptotic-soundness"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Quantitative Nat-cost status implications: eventual zero implies contractive, then summable, then uniformly budgeted."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.asymptoticSoundness"
+notes = "Requires actual sequence certificates; no analytic colimit AOR closure is derived by this integer-cost theorem."
+
+[[definition]]
+paper_label = "def:aor:refinement-stable-aor"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Refinement-stable predicate on an assigned AOR carrier: cascade stability plus asymptotic colimit payment."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.refinementStableAOR"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:refinement-stable-characterisation"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Characterisation of assigned refinement stability by assigned cascade stability and asymptotic residual payment."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.refinementStableCharacterisation"
+notes = ""
+
+[[claim]]
+paper_label = "thm:aor:hierarchy"
+paper_section = "Refinement chains, colimits, and asymptotic discharge"
+description = "Refinement-stable implies cascade-stable; one actual unbounded-cost separation and one retained typed blocked marker."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.AOR.Refinement"
+lean_decl = "SixBirdsMetaMath.AOR.Refinement.hierarchy"
+notes = "The first example proves failure of refinement stability; the second marker does not prove failure of cascade stability. Revised operational strictness is maintained in SixBirdsNeedles.AOR.Core."

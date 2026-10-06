@@ -1,0 +1,112 @@
+# Python bytecode caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*.swo
+
+# Lake build artifacts (do not check vendored Foundations' lake builds either)
+.lake/
+lake-manifest.json
+*.olean
+*.ilean
+
+# Foundation validator scratch logs (regenerated per run)
+**/.validate-logs/
+
+# codex CLI internal marker file (zero bytes; per-environment)
+/.codex
+
+# Internal research/discussion archive; not part of the public paper support surface
+anti_loc/
+
+# Local agent/session artifacts and private workflow notes
+.agents/
+memory/
+**/.codex_thread_id*
+lean/codex_kickoff*.md
+lean/CODEX_RUNBOOK.md
+scripts/build_codex_prompt.py
+PLAN_mechanization_needles.md
+paper/*review_request*.md
+paper/*review*request*.md
+paper/**/*review_request*.md
+paper/**/*review*request*.md
+paper/**/PLAN_mechanization.md
+paper/**/writing-plan.md
+paper/**/notes/*-plan.md
+paper/**/notes/*plan*.md
+paper/**/notes/*review*.md
+paper/**/notes/*.md
+paper/**/notes/examples/
+paper/**/notes/drafting_arc_close.md
+paper/**/submission/
+paper/consistency-coherence-audit.md
+formalization/traceability/
+formalization/traceability/sample_codex_prompt_*.txt
+formalization/traceability/phase*_completion_report.md
+formalization/traceability/phases_*_review.md
+formalization/traceability/queue_*.csv
+
+# Generated research/citation bundles; keep canonical bib/support text instead
+paper/**/citations.zip
+
+# LaTeX build artifacts (paper/ and any latex-build subtrees)
+build/
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Environment files (secrets)
+.env
+.env.local
+
+# Drafting guide, stale build backups and internal campaign/build receipts (kept on disk)
+/paper/notation_and_terminology.md
+paper/**/build.bak/
+/review/cross-repository-campaign-index-*.md
+/review/joint-source-only-isolated-build-*.md
+/review/preliminary-portable-bundle-verifier-*.md
+
+# Editor noise
+.vscode/
+.idea/
+
+# Local secrets and credentials (keep only an explicit example file)
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+.pypirc
+credentials*.json
+*secret*
+*token*.txt
+
+# Further agent, prompt, transcript and session state (any depth)
+**/.agents/
+**/.codex/
+**/.claude/
+**/.cursor/
+**/.aider*
+**/.continue/
+**/.specstory/
+**/.windsurf/
+/prompts/
+/skills/
+**/transcripts/
+**/rollout-*.jsonl
+**/*.transcript*
+**/CLAUDE.local.md
+**/.claude.json

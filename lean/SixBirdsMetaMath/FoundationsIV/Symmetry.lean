@@ -1,0 +1,9 @@
+import SixBirdsMetaMath.FoundationsIV.Symmetry.DualityFixity
+import SixBirdsMetaMath.FoundationsIV.Symmetry.SelectionObstruction
+import SixBirdsMetaMath.FoundationsIV.Symmetry.SpontaneousSSB
+import SixBirdsMetaMath.FoundationsIV.Symmetry.Anomaly
+import SixBirdsMetaMath.FoundationsIV.Symmetry.DualityEquivalence
+
+namespace SixBirdsMetaMath.FoundationsIV.Symmetry
+
+end SixBirdsMetaMath.FoundationsIV.Symmetry

@@ -1,0 +1,10 @@
+import SixBirdsMetaMath.FoundationsIV.Access.Quotientality
+import SixBirdsMetaMath.FoundationsIV.Access.Adequacy
+import SixBirdsMetaMath.FoundationsIV.Access.NoFreeDistinction
+import SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm
+import SixBirdsMetaMath.FoundationsIV.Access.CSLFormedClosure
+import SixBirdsMetaMath.FoundationsIV.Access.LayerMultiplicity
+
+namespace SixBirdsMetaMath.FoundationsIV.Access
+
+end SixBirdsMetaMath.FoundationsIV.Access

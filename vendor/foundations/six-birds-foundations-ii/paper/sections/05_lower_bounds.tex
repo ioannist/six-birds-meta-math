@@ -1,0 +1,258 @@
+\section{Six-role lower bounds}\label{sec:lower-bounds}
+
+% Mathematical job:
+%   - Theorem: for each i in {1,...,6}, there exists D_i in FATCD and
+%     a derived active projection pi_i(D_i) witnessing role channel P_i.
+%   - Each witness carries the full witness requirements: finite description
+%     check, closure check, audit/bookkeeping check, threshold annotation,
+%     witness schema, level assignment, role projection record, explicit
+%     nonclaims.
+%   - Emphasize: lower bounds prove occurrence, NOT exhaustion.
+%
+% Per-role witness scaffolds:
+%   P1  update-vs-quotient descent obstruction
+%   P2  macro-specification representability
+%   P3  enriched route/coherence mismatch
+%   P4  stage/order/transition/refinement structure
+%   P5  quotient packaging
+%   P6  audit/bookkeeping beyond passive logs
+%
+% Governing sources:
+%   workspace/meta/lens_lab/campaigns/paper3_exact_six_exhaustiveness/lower_bounds/six_role_lower_bound_targets.md
+%   workspace/meta/lens_lab/aristotle/results/paper3/paper3_six_role_lower_bounds_C/paper3_six_role_lower_bounds_C_result_shape.md
+%   workspace/meta/lens_lab/papers/paper3/drafting_support/theorem_statement_bank.md
+%
+% Overclaim risks:
+%   - Presenting lower bounds alone as the exact-six theorem.
+%   - Labeling witnesses with a role name without satisfying the role's
+%     threshold/witness-schema conditions.
+%   - Bypassing the neutral raw grammar (writing witnesses using P_i slots
+%     directly).
+
+
+The exact-six question of
+\S\ref{subsec:scoped-exact-six-question} has two directions. The
+lower-bound direction asserts that each of \Pone{}, \ldots, \Psix{}
+is instantiated in \FATCD{}; the upper-bound classification of
+Section~\ref{sec:upper-bound-classification} will assert that no
+covered seventh role is needed. This section establishes the
+lower-bound direction by constructing one admissible witness for each
+role. The content is occurrence, not exhaustion: lower bounds alone
+do not answer the exact-six question, but they rule out the
+trivialization in which some role has no admissible witness in the
+domain.
+
+\subsection{Lower-bound theorem and common witness requirements}\label{subsec:lower-bound-theorem}
+
+\begin{theorem}[Six-role lower bounds]\label{thm:six-role-lower-bounds}
+For each role index \(i \in \{1,\ldots,6\}\), there exists a description
+\(D_i \in \FATCD{}\) and a derived active projection
+\(\pi_i(D_i)\) witnessing the role channel \(P_i\) in the sense of
+Definition~\ref{def:role-projection}. In particular, each of
+\Pone{}, \Ptwo{}, \Pthree{}, \Pfour{}, \Pfive{}, \Psix{} is instantiated
+by at least one admissible description in \FATCD{}. This is an occurrence
+theorem, not an exhaustion theorem.
+\end{theorem}
+
+A witness for role \(P_i\) consists of the data specified below,
+following the role-projection discipline of
+\S\ref{subsec:derived-role-projections} and the threshold-attachment
+discipline of \S\ref{subsec:threshold-attachment}.
+
+\begin{definition}[Common witness data for role \(P_i\)]\label{def:common-witness-data}
+A \emph{witness of role \(P_i\) in \FATCD{}} is a tuple
+\[
+\bigl(D_i,\; C_i,\; \Theta_i,\; W_i,\; \mathrm{Level}_i,\;
+v_i^{\mathrm{fin}},\; v_i^{\mathrm{cl}},\; v_i^{\mathrm{aud}},\;
+n_i,\; \pi_i(D_i)\bigr)
+\]
+where
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \(D_i \in \FATCD{}\) is the ambient admissible description;
+  \item \(C_i \subseteq \Raw{D_i}\) is the raw feature cluster on which
+    the projection is interpreted;
+  \item \(\Theta_i\) is the threshold annotation attached to \(C_i\);
+  \item \(W_i\) is the witness schema for the role meaning of \(P_i\)
+    fixed in Definition~\ref{def:primitive-roles};
+  \item \(\mathrm{Level}_i\) is the level assignment in the sense of
+    Definition~\ref{def:level-trichotomy};
+  \item \(v_i^{\mathrm{fin}}, v_i^{\mathrm{cl}}, v_i^{\mathrm{aud}}\) are
+    the finite-description, closure, and audit/bookkeeping verifications
+    for \(D_i\);
+  \item \(n_i\) is the explicit nonclaim record carried by the witness;
+  \item \(\pi_i(D_i)\) is the derived role projection of
+    Definition~\ref{def:role-projection}.
+\end{itemize}
+A witness is admissible only if every item in this tuple is present and
+correctly aligned with the role meaning of \(P_i\).
+\end{definition}
+
+The proof of Theorem~\ref{thm:six-role-lower-bounds} proceeds role by
+role: for each \(i \in \{1,\ldots,6\}\) we exhibit an admissible
+tuple of the form in Definition~\ref{def:common-witness-data}. The
+six constructions are collected in
+\S\ref{subsec:per-role-witnesses}.
+
+\subsection{Per-role witnesses}\label{subsec:per-role-witnesses}
+
+Each construction below specifies a raw feature cluster, threshold
+annotation, witness schema, level assignment, derived active
+projection, and explicit nonclaim record. The finite-description,
+closure, and audit/bookkeeping verifications are routine once these
+data are placed in a description built from the raw grammar of
+\S\ref{subsec:raw-grammar} and checked against the admissibility
+conditions of \S\ref{subsec:conditions}.
+
+\begin{proposition}[\Pone{} lower bound]\label{prop:p1-witness}
+There exists \(D_1 \in \FATCD{}\) with a derived active projection
+\(\pi_1(D_1)\) witnessing \Pone{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_1\) carry object records \(x, y\), a relation record
+\(x \sim y\), a selected update map record \(F\), and a comparison
+record exhibiting \(F(x) \not\sim' F(y)\) in the target relation
+\(\sim'\). Attach a threshold annotation
+\(\Theta_1 = \mathrm{Ann}_\Theta[\text{descent obstruction}]\) to the
+cluster \(C_1\) comprising these records, and record the witness schema
+\(W_1\) that detects update-vs-quotient incompatibility between \(\sim\)
+and \(\sim'\) under \(F\). Take \(\mathrm{Level}_1\) on the verification
+level, and let \(\pi_1(D_1)\) be the derived active projection
+interpreting \(C_1\) via \((\Theta_1,W_1,\mathrm{Level}_1)\). The
+finiteness, closure, and audit verifications \(v_1^{\mathrm{fin}},
+v_1^{\mathrm{cl}}, v_1^{\mathrm{aud}}\) then attach routinely. The
+nonclaim record \(n_1\) excludes any \Pfive{}-packaging
+identification (Remark~\ref{rem:repaired-alignments}) and any claim of
+an unconditional descended map in the obstruction case.
+\end{proof}
+
+\begin{proposition}[\Ptwo{} lower bound]\label{prop:p2-witness}
+There exists \(D_2 \in \FATCD{}\) with a derived active projection
+\(\pi_2(D_2)\) witnessing \Ptwo{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_2\) carry object records together with a predicate record \(s\)
+playing the role of a macro specification, a relation record
+\(\mathrm{Real}\) connecting realizers to \(s\), and a comparison
+record showing that the realizer relation is not reducible to
+quotient-class equality alone. Attach
+\(\Theta_2 = \mathrm{Ann}_\Theta[\text{nontrivial representability}]\)
+to the resulting cluster \(C_2\), and record \(W_2\) as the schema
+checking that \(s\) has or lacks a realizer through \(\mathrm{Real}\) in
+a way not reducible to quotient-class equality alone. Take
+\(\mathrm{Level}_2\) on the verification level, and let \(\pi_2(D_2)\)
+be the derived active projection determined by
+\((C_2,\Theta_2,W_2,\mathrm{Level}_2)\). The finiteness, closure, and
+audit checks then follow from the construction. The
+nonclaim \(n_2\) excludes collapse to \Pfive{} quotient equality alone
+and excludes arbitrary relation promotion.
+\end{proof}
+
+\begin{proposition}[\Pthree{} lower bound]\label{prop:p3-witness}
+There exists \(D_3 \in \FATCD{}\) with a derived active projection
+\(\pi_3(D_3)\) witnessing \Pthree{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_3\) carry object records \(u, v\), two path records
+\(\rho_1, \rho_2\) both from \(u\) to \(v\) generated by the enriched
+route grammar, and a comparison record recording that \(\rho_1\) and
+\(\rho_2\) are distinguishable by a non-reducibility certificate.
+Attach \(\Theta_3 = \mathrm{Ann}_\Theta[\text{route mismatch}]\) to the
+cluster \(C_3 = \{u, v, \rho_1, \rho_2, \text{comparison}\}\), and
+record \(W_3\) as the schema certifying that two generated same-source,
+same-target route records are distinguishable by a non-reducibility or
+coherence-mismatch certificate. Take \(\mathrm{Level}_3\) on the
+verification level, and let \(\pi_3(D_3)\) be the derived active
+projection determined by
+\((C_3,\Theta_3,W_3,\mathrm{Level}_3)\). The routine verifications
+\(v_3^{\mathrm{fin}}, v_3^{\mathrm{cl}}, v_3^{\mathrm{aud}}\) then
+follow. The nonclaim \(n_3\) excludes conflation with
+\Pone{} route undefinedness and with direct cross-level comparison.
+\end{proof}
+
+\begin{proposition}[\Pfour{} lower bound]\label{prop:p4-witness}
+There exists \(D_4 \in \FATCD{}\) with a derived active projection
+\(\pi_4(D_4)\) witnessing \Pfour{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_4\) carry index records \(i_0 < i_1 < i_2\) and transition
+records \(t_{01}, t_{12}\) linking them, together with a refinement
+record connecting two levels of indexing with explicit transition laws,
+and closure records for the endpoints and refinement references used by
+those transitions. Attach
+\(\Theta_4 = \mathrm{Ann}_\Theta[\text{nontrivial stage/refinement}]\)
+to the cluster \(C_4\) comprising these records, and record \(W_4\) as
+the schema certifying a non-identity
+order, transition, refinement, or stage tower. Take
+\(\mathrm{Level}_4\) on the structural-categorical level, and let
+\(\pi_4(D_4)\) be the derived active projection determined by
+\((C_4,\Theta_4,W_4,\mathrm{Level}_4)\). The routine verifications
+\(v_4^{\mathrm{fin}}, v_4^{\mathrm{cl}}, v_4^{\mathrm{aud}}\) then
+follow. The nonclaim \(n_4\) excludes bare labels and arbitrary
+relations or transitions without laws.
+\end{proof}
+
+\begin{proposition}[\Pfive{} lower bound]\label{prop:p5-witness}
+There exists \(D_5 \in \FATCD{}\) with a derived active projection
+\(\pi_5(D_5)\) witnessing \Pfive{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_5\) carry distinct object records \(x \ne y\), a relation
+record \(x \sim y\), a packaging map record
+\(\mathrm{pack}\) with \(\mathrm{pack}(x) = \mathrm{pack}(y)\), and a
+comparison record providing quotient-validity evidence. Attach
+\(\Theta_5 = \mathrm{Ann}_\Theta[\text{nontrivial quotient packaging}]\)
+to the cluster \(C_5\) comprising these records, and record \(W_5\) as
+the schema certifying
+that distinct raw objects are related and packaged together by a valid
+packaging map with quotient-validity evidence. Take
+\(\mathrm{Level}_5\) on the verification level, and let \(\pi_5(D_5)\)
+be the derived active projection determined by
+\((C_5,\Theta_5,W_5,\mathrm{Level}_5)\). The routine verifications
+\(v_5^{\mathrm{fin}}, v_5^{\mathrm{cl}}, v_5^{\mathrm{aud}}\) then
+follow. The nonclaim \(n_5\) excludes identity packaging and
+weak-distinctness witnesses.
+\end{proof}
+
+\begin{proposition}[\Psix{} lower bound]\label{prop:p6-witness}
+There exists \(D_6 \in \FATCD{}\) with a derived active projection
+\(\pi_6(D_6)\) witnessing \Psix{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_6\) carry event records, a trace record, a provenance record
+referencing the events, and a replay or check record. Record an audit
+entry that references the event, tracks provenance and dependency, and
+supports a replay or check relation. Attach
+\(\Theta_6 = \mathrm{Ann}_\Theta[\text{nontrivial audit schema}]\) to
+the cluster \(C_6\) comprising these records, and record \(W_6\) as the
+schema certifying that
+the audit record contains event-reference, provenance/dependency, and
+replay/check structure. Take \(\mathrm{Level}_6\) on the verification
+level, and let \(\pi_6(D_6)\) be the derived active projection
+determined by \((C_6,\Theta_6,W_6,\mathrm{Level}_6)\). The routine
+verifications \(v_6^{\mathrm{fin}}, v_6^{\mathrm{cl}},
+v_6^{\mathrm{aud}}\) then follow. The nonclaim \(n_6\) excludes passive
+logs, certificate-only content, and partial audit records.
+\end{proof}
+
+Propositions~\ref{prop:p1-witness}--\ref{prop:p6-witness} supply, for
+each \(i \in \{1,\ldots,6\}\), an admissible witness tuple of the
+form in Definition~\ref{def:common-witness-data}. This proves
+Theorem~\ref{thm:six-role-lower-bounds}.
+
+\begin{remark}[What the lower bounds do and do not establish]\label{rem:lower-bounds-scope}
+Theorem~\ref{thm:six-role-lower-bounds} asserts that each of the six
+roles is instantiated somewhere in \FATCD{}. It does not prove
+exact-six, does not rule out candidate seventh-role threats, does not
+prove decomposition, and does not prove uniqueness of any later
+decomposition/exhaustion record. It also does not assert that any
+single description activates all six channels simultaneously. Those
+questions are handled in
+Sections~\ref{sec:upper-bound-classification}
+and~\ref{sec:decomposition-exhaustion}.
+\end{remark}

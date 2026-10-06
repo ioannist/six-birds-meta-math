@@ -1,0 +1,401 @@
+# Lean validation manifest for the NS paper axis.
+#
+# Each entry corresponds to a paper_label from
+# formalization/inventory/ns_paper_inventory.toml whose
+# intended_status is "mechanize_now". The manifest records the accepted
+# Lean realization status for each inventoried paper item.
+#
+# Status meanings (verbatim from F2/F3):
+# - definition:   paper definition has a Lean definition-like declaration
+# - theorem:      paper claim has a Lean theorem/lemma whose dependency audit passes
+# - axiomatic:    declaration is or depends on project-local axioms (not allowed here)
+# - partial:      declaration mechanizes only a supporting fragment
+# - unformalized: no Lean correspondent is present yet
+#
+# Schema (per entry):
+#   paper_label    = "<kind>:<axis>:<short-name>"  # from per-axis paper_inventory
+#   paper_section  = "<section title>"
+#   description    = "<one-line summary>"
+#   status         = "<one of the values above>"
+#   lean_subproject = "."                          # single lakefile project
+#   lean_module    = "SixBirdsMetaMath.NS.<Section>"
+#   lean_decl      = "SixBirdsMetaMath.NS.<Section>.<name>"
+#   notes          = ""
+#
+# Use `[[definition]]` for definition_kind entries, `[[claim]]` for
+# theorem/lemma/proposition/corollary entries. This mirrors F2/F3's
+# manifest TOML idiom.
+#
+# Entries may start as `status = "unformalized"` and `lean_decl = ""`;
+# accepted Lean correspondents update status to `definition`, `theorem`,
+# or `partial` as appropriate.
+
+[[definition]]
+paper_label = "def:ns:bg-readout"
+paper_section = "The Navier-Stokes carrier and the BG/BKM dissolving readout"
+description = "Bradshaw-Grujic frequency-window dissolving readout D^{BG} on the NS carrier (NS instantiation of abstract D)"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.Carrier"
+lean_decl = "SixBirdsMetaMath.NS.Carrier.bgReadout"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:physical-native-probes"
+paper_section = "The Navier-Stokes carrier and the BG/BKM dissolving readout"
+description = "Physical-native probe family L^{phys}: finite linear Fourier/Sobolev probes (NS instantiation of abstract L)"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.Carrier"
+lean_decl = "SixBirdsMetaMath.NS.Carrier.physicalNativeProbes"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:bg-package"
+paper_section = "The Navier-Stokes carrier and the BG/BKM dissolving readout"
+description = "BG-windowed exact package data Gamma_j with frequency doubling lambda_{j+1}=2 lambda_j"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.Carrier"
+lean_decl = "SixBirdsMetaMath.NS.Carrier.bgPackage"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:null-mode-legal-ns"
+paper_section = "The Navier-Stokes carrier and the BG/BKM dissolving readout"
+description = "Null-mode legality of L^{phys} and D^{BG} for audit C_{J,t} on the NS carrier"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.Carrier"
+lean_decl = "SixBirdsMetaMath.NS.Carrier.nullModeLegalNS"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:bkm-import"
+paper_section = "Literature imports"
+description = "Beale-Kato-Majda continuation criterion as a proof-carrying structure; external PDE import"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.PDEImports"
+lean_decl = "SixBirdsMetaMath.NS.PDEImports.bkmImport"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:bg-import"
+paper_section = "Literature imports"
+description = "Bradshaw-Grujic frequency-window regularity criterion as a proof-carrying structure"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.PDEImports"
+lean_decl = "SixBirdsMetaMath.NS.PDEImports.bgImport"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:kato-import"
+paper_section = "Literature imports"
+description = "Kato local well-posedness for H^{gamma_0} data with gamma_0>5/2 as a proof-carrying structure"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.PDEImports"
+lean_decl = "SixBirdsMetaMath.NS.PDEImports.katoImport"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:wang-halflog-import"
+paper_section = "Literature imports"
+description = "Foias-Temam / Herbst-Skibsted / Wang half-log analyticity radius as a proof-carrying structure"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.PDEImports"
+lean_decl = "SixBirdsMetaMath.NS.PDEImports.wangHalfLogImport"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:lp-bcd-import"
+paper_section = "Literature imports"
+description = "Littlewood-Paley / Bony-Chemin-Danchin calculus background as a proof-carrying structure"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.PDEImports"
+lean_decl = "SixBirdsMetaMath.NS.PDEImports.lpBcdImport"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:sobolev-besov-embedding-import"
+paper_section = "Literature imports"
+description = "Sobolev/Besov embedding H^{gamma_0} -> dot B^{-eps}_{infty,infty} as a proof-carrying structure"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.PDEImports"
+lean_decl = "SixBirdsMetaMath.NS.PDEImports.sobolevBesovEmbeddingImport"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:criterion-native-equality"
+paper_section = "Criterion-native equality and physical-native gap"
+description = "Trivial algebraic equality Xi_C(D^{BG} | L^{BG}) = 0 when L^{BG} := D^{BG}; uninformative"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.CriterionNativeGap"
+lean_decl = "SixBirdsMetaMath.NS.CriterionNativeGap.criterionNativeEquality"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-criterion-native"
+paper_section = "Criterion-native equality and physical-native gap"
+description = "NG1 partial counterexample: criterion-native zero residual can coexist with nonzero physical-native residual"
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.CriterionNativeGap"
+lean_decl = "SixBirdsMetaMath.NS.CriterionNativeGap.noGoCriterionNative"
+notes = "Explicit 2-1-1 witness: C=I2, D_BG=[1,0], Lphys=[0,1], 1x1 identity pseudoinverses."
+
+[[definition]]
+paper_label = "def:ns:source-admission-ledger"
+paper_section = "The physical-native adequacy cascade"
+description = "Source-admission ledger Omega_src = Omega_tr + Omega_pr + Omega_visc + Omega_tail + Omega_str as a structure"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.Cascade"
+lean_decl = "SixBirdsMetaMath.NS.Cascade.sourceAdmissionLedger"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:source-admission-recurrence"
+paper_section = "The physical-native adequacy cascade"
+description = "T4: Loewner-inequality recurrence Xi_{t+h} <= C_old T_h Xi_t T_h^* + Omega_src under R3, R4"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.Cascade"
+lean_decl = "SixBirdsMetaMath.NS.Cascade.sourceAdmissionRecurrence"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-scalar-energy"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG2 conditional template: supplied linear-family necessity and nonlinearity obstruction imply ill-formedness"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoScalarEnergy"
+notes = "The necessity implication and absence of a lawful linear family are explicit hypotheses; actual nonlinearity of energy/enstrophy is not derived by this declaration."
+
+[[claim]]
+paper_label = "thm:ns:no-go-packing-amplitude"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG3: packing alone (size r^{3-d}, amplitude r^{-alpha}) does not control D^{BG} amplitude"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoPackingAmplitude"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-sparse-shadow"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG4: sparseness pays Omega_bb only with sector containment or paid mismatch"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoSparseShadow"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-marker-only"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG5: marker payloads do not dominate D^{BG} amplitude without a quantitative bridge"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoMarkerOnly"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-metric-shadow"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG6: weighted/Gevrey metrics need normalized dominance over BG/BKM readout"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoMetricShadow"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-moving-window"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG7: moving-window/derivative-stack data needs fixed/exhaustive ledger promotion"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoMovingWindow"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-half-log-endpoint"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG8: available half-log Gevrey staged budget fails summable predictive propagation"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoHalfLogEndpoint"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-published-analyticity"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG9: available analyticity lane short by sqrt(log lambda_J) for direct radius-window gate"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoPublishedAnalyticity"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:no-go-raw-nonlinearity"
+paper_section = "Framework-derived no-go theorems (NG2-NG10)"
+description = "NG10: raw nonlinear observables illegal as Schur probes; require tangent-linear/lifted/source-admission form"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.NoGo"
+lean_decl = "SixBirdsMetaMath.NS.NoGo.noGoRawNonlinearity"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:gevrey-probes"
+paper_section = "Gevrey radius-window branch and LP-transport rescue"
+description = "Gevrey-normalized derivative probes M_tilde_{m,J,t} = rho^m/(C_G^m m!) nabla^m P_{J(t)}"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.GevreyLP"
+lean_decl = "SixBirdsMetaMath.NS.GevreyLP.gevreyProbes"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:lp-transport"
+paper_section = "Gevrey radius-window branch and LP-transport rescue"
+description = "LP-transport stage operator S_j: L^2(P_j) -> H^{-s} with ||S_j||^2 ~ 2^{-2sj}"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.GevreyLP"
+lean_decl = "SixBirdsMetaMath.NS.GevreyLP.lpTransport"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:gevrey-dominance"
+paper_section = "Gevrey radius-window branch and LP-transport rescue"
+description = "T6: Gevrey dominance constant A_m^G = lambda_J^{q-eps} m!/sigma_J^m; optimized inf_m bound and radius-window gate"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.GevreyLP"
+lean_decl = "SixBirdsMetaMath.NS.GevreyLP.gevreyDominance"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:lp-transport-rescue"
+paper_section = "Gevrey radius-window branch and LP-transport rescue"
+description = "T8: LP-transported budget B_tilde_j(s) = C_B 2^{2(p-s)j} ...; s>=p gives summable propagation"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.GevreyLP"
+lean_decl = "SixBirdsMetaMath.NS.GevreyLP.lpTransportRescue"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:smooth-data-half-log-transfer"
+paper_section = "Gevrey radius-window branch and LP-transport rescue"
+description = "T9: smooth-data H^{gamma_0} (gamma_0>5/2) -> Besov embedding -> half-log radius transfer to BG-compatible stages"
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.GevreyLP"
+lean_decl = "SixBirdsMetaMath.NS.GevreyLP.smoothDataHalfLogTransfer"
+notes = ""
+
+[[definition]]
+paper_label = "def:ns:closure-r1-r9"
+paper_section = "Six Birds closure records R1-R9"
+description = "Closure record bundle R = (R_1,...,R_9), with R4 exposing carrier-space audit forms, transport, and kernel preservation (no Tmax field)"
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.ClosureRecords"
+lean_decl = "SixBirdsMetaMath.NS.ClosureRecords.ClosureR1R9"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:framework-deliverable-regularity"
+paper_section = "Main theorem under Six Birds closure"
+description = "Legacy conditional projection from R_1..R_9 and the explicitly supplied closureDeliverable implication to infinite lifespan."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.MainTheorem"
+lean_decl = "SixBirdsMetaMath.NS.MainTheorem.frameworkDeliverableRegularity"
+notes = "The full target bridge is an additional hypothesis; no PDE estimate chain is derived in this retained export."
+
+[[definition]]
+paper_label = "def:ns:aor-instance-object"
+paper_section = "NS as an AOR instance"
+description = "NS smooth-data carrier packaged as a fixed-scope PreSB / RefPreSB object for the AOR-instance reading."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.AORInstance"
+lean_decl = "SixBirdsMetaMath.NS.AORInstance.aorInstanceObject"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:aor-mechanical-r-records"
+paper_section = "NS as an AOR instance"
+description = "Mechanical NS R-record discharges projected from the ClosureR1R9 bundle, presented as components of the AOR-membership witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.AORInstance"
+lean_decl = "SixBirdsMetaMath.NS.AORInstance.aorMechanicalRRecords"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:aor-r4-discharge"
+paper_section = "NS as an AOR instance"
+description = "R4 source-admission discharge for the AOR-instance reading, consuming carrier-space R4q kernel-preservation transport."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.AORInstance"
+lean_decl = "SixBirdsMetaMath.NS.AORInstance.aorR4Discharge"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:aor-r6-discharge"
+paper_section = "NS as an AOR instance"
+description = "R6 LP-transport discharge with transport primary type and contractive/summable witnesses, as one component of the AOR-membership witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.AORInstance"
+lean_decl = "SixBirdsMetaMath.NS.AORInstance.aorR6Discharge"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:aor-r7-discharge"
+paper_section = "NS as an AOR instance"
+description = "R7 half-log discharge with scale primary type and horizon/basic-gate witnesses, as one component of the AOR-membership witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.AORInstance"
+lean_decl = "SixBirdsMetaMath.NS.AORInstance.aorR7Discharge"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:aor-quotient-transport-record"
+paper_section = "NS as an AOR instance"
+description = "Carrier-space quotient-transport record using R4 audit matrices, transport, and kernel preservation, supplying the R_{4q} component of the AOR-membership witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.AORInstance"
+lean_decl = "SixBirdsMetaMath.NS.AORInstance.aorQuotientTransportRecord"
+notes = ""
+
+[[claim]]
+paper_label = "thm:ns:in-refstableaor"
+paper_section = "NS as an AOR instance"
+description = "Legacy placeholder NS carrier refinement-stability, conditional on actual limitCost and supplied hLimitPaid for each residual."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.NS.AORInstance"
+lean_decl = "SixBirdsMetaMath.NS.AORInstance.inRefStableAOR"
+notes = "Tag assignment ignores R4/R6/R7 values; this is not semantic AOR membership of a Fourier carrier or NS regularity."

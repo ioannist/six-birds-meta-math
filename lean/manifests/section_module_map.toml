@@ -1,0 +1,48 @@
+# Paper section title → Lean module path mapping.
+#
+# Maps paper section titles to target Lean modules. Section titles are matched
+# verbatim against the `section` field in the per-axis paper inventory
+# (formalization/inventory/<axis>_paper_inventory.toml).
+#
+# If a section is renamed in the source paper, update both the
+# inventory toml and this map in lockstep.
+
+[main]
+"Legal quotient and native currency" = "SixBirdsMetaMath.Main.LegalQuotient"
+"The Xi companion interface" = "SixBirdsMetaMath.Main.XiInterface"
+"Predictive native membranes" = "SixBirdsMetaMath.Main.PredictiveNative"
+"Layer-dissolving membrane endpoint theorem" = "SixBirdsMetaMath.Main.LayerDissolving"
+"Duality-confinement membrane theorem" = "SixBirdsMetaMath.Main.DualityConfinement"
+"Critical-pair completion and strict extension" = "SixBirdsMetaMath.Main.CriticalPair"
+"All-six records, transfer, and taxonomy" = "SixBirdsMetaMath.Main.AllSix"
+
+[xi]
+"Standing hypotheses: the legal energy quotient" = "SixBirdsMetaMath.Xi.StandingHypotheses"
+"Currency and minimum spend" = "SixBirdsMetaMath.Xi.Currency"
+"Definition of the adequacy residual" = "SixBirdsMetaMath.Xi.AdequacyResidual"
+"Projection theorem" = "SixBirdsMetaMath.Xi.Projection"
+"Optimal residual and exact adequacy" = "SixBirdsMetaMath.Xi.OptimalResidual"
+"Promotion from native membrane to dissolving membrane" = "SixBirdsMetaMath.Xi.Promotion"
+"Strict native extension" = "SixBirdsMetaMath.Xi.StrictExtension"
+"Data processing and transfer" = "SixBirdsMetaMath.Xi.DataProcessing"
+"Obstruction and repair calculus" = "SixBirdsMetaMath.Xi.Obstruction"
+
+[ns]
+"The Navier-Stokes carrier and the BG/BKM dissolving readout" = "SixBirdsMetaMath.NS.Carrier"
+"Literature imports" = "SixBirdsMetaMath.NS.PDEImports"
+"Criterion-native equality and physical-native gap" = "SixBirdsMetaMath.NS.CriterionNativeGap"
+"The physical-native adequacy cascade" = "SixBirdsMetaMath.NS.Cascade"
+"Framework-derived no-go theorems (NG2-NG10)" = "SixBirdsMetaMath.NS.NoGo"
+"Gevrey radius-window branch and LP-transport rescue" = "SixBirdsMetaMath.NS.GevreyLP"
+"Six Birds closure records R1-R9" = "SixBirdsMetaMath.NS.ClosureRecords"
+"Main theorem under Six Birds closure" = "SixBirdsMetaMath.NS.MainTheorem"
+"NS as an AOR instance" = "SixBirdsMetaMath.NS.AORInstance"
+
+[aor]
+"PreSB carriers and the AOR full subcategory" = "SixBirdsMetaMath.AOR.PreSB"
+"The closure-completion functor Cl_SB" = "SixBirdsMetaMath.AOR.ClSB"
+"The structural defect Xi_SB and its 8 strata" = "SixBirdsMetaMath.AOR.DefectStrata"
+"The Sigma_residual atlas" = "SixBirdsMetaMath.AOR.ResidualAtlas"
+"AOR-8 statuses and discharge" = "SixBirdsMetaMath.AOR.ResidualAtlas"
+"Discharge cascades over Sigma_residual" = "SixBirdsMetaMath.AOR.Cascades"
+"Refinement chains, colimits, and asymptotic discharge" = "SixBirdsMetaMath.AOR.Refinement"

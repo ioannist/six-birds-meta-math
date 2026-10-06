@@ -1,0 +1,14 @@
+import SixBirdsMetaMath
+
+open scoped Matrix
+
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.quadratic_congruence
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_congruence
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_add_mono
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_trans
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.blockResidual
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.block_schur_decomposition
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_ordered_field
+#check SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_real

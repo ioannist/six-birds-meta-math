@@ -1,0 +1,735 @@
+\section{Version history}\label{app:version-history}
+
+This appendix records the differences between successive versions.  No
+statement or proof of the paper depends on it.
+
+\subsection{Version 3}\label{subsec:version-3}
+
+Version 3 keeps every numbered result of Version 2, with its name,
+number and place.
+
+\paragraph{Results.}
+\begin{itemize}
+\item \Cref{thm:F13a} takes its source hypothesis \((\mathsf S)\)
+  directly as a hypothesis on the interface.  Version~2 stated it for an
+  arbitrary source predicate with a certificate and an obligation
+  supplying \((\mathsf S)\); the theorem used no property of that
+  predicate, so the two forms are equivalent.  The reading paragraph
+  gives an interface satisfying \((\mathsf S)\) with a predictive
+  surplus.
+\item The formal development no longer contains an axiom for
+  \Fref{F13a}: the property that Version~2 recorded as a guarded
+  trust-base axiom is now the explicit hypothesis \((\mathsf S)\).  The
+  opacity-guard subsection and the tagged-axiom register of
+  Version~2 are removed accordingly.
+\item \Cref{thm:F6} is formalized for real matrices, and over any
+  ordered field; a remark after its proof records that the theorem holds
+  over any ordered field.  Version~2 formalized it over the rationals
+  only, so its formalization is now faithful.
+\item The summaries of \Fref{F14} carry the measurability and
+  square-integrability of the readout, and the summary of \Fref{F36}
+  carries the surjectivity of the limit quotient.
+\end{itemize}
+
+\paragraph{Provenance and analogies.}
+\begin{itemize}
+\item The reading paragraph of \Cref{thm:F14} identifies the odd
+  readout of the self-dual trace confinement paper with the case
+  \(U=\mathrm{id}\), and distinguishes it from that paper's response
+  involution.
+\item The description of the Riemann-hypothesis application of
+  \Fref{F14} follows the current version of that paper: its conditional
+  theorem uses an auxiliary ledger of represented zeros, and is
+  equivalent to the Riemann hypothesis on the bare shell of all
+  nontrivial zeros; its concrete version uses finite windows of zeros
+  closed under \(s\mapsto1-\bar s\), with unit weights, that eventually
+  contain every zero, and is likewise equivalent to the Riemann
+  hypothesis.
+\item The description of the substrate of \Fref{F6} follows the current
+  version of the Needle Killer paper, which uses Moore--Penrose
+  pseudoinverses of positive semidefinite audit forms.
+\item The hidden Markov model analogy of \Fref{F13a} states the
+  generic identifiability theorem of Allman, Matias and Rhodes with its
+  hypotheses and separates identifiability from estimation; Version~2
+  stated a sufficient condition that does not suffice.
+\item The Landauer analogy of \Fref{F12} is restricted to the erasure of
+  an unbiased bit with a thermal reservoir and states the
+  entropy-dependent bound.
+\item The matching analogy of \Fref{F9} cites the incentive results of
+  Dubins--Freedman and Roth, and the minimal-genome analogy of
+  \Fref{F42} no longer asserts the irreducibility of the experimental
+  genome.
+\item Citations of the companion papers refer to their current versions.
+\end{itemize}
+
+\paragraph{Presentation.}
+\begin{itemize}
+\item The introduction, \Cref{sec:apparatus}, the chapter openings of
+  the Access, Stability, Transport and Symmetry chapters, and
+  \Cref{sec:anchor:closure-reality-boundary,sec:substrate-instances,sec:sketches,sec:nonclaims}
+  are rewritten for readability; \Cref{sec:anchor:closure-reality-boundary}
+  is retitled.
+\item The \emph{Interaction status} paragraphs, whose first sentence held
+  for every law by construction, are replaced by nonclaims paragraphs,
+  and \Cref{def:birdint,def:normal-form} and
+  \Cref{fig:normal-form-template,fig:axis-topology} are revised
+  accordingly.
+\item Notes on the formalization are collected in
+  \Cref{app:formalization}: the body no longer carries formalization
+  footnotes, and the summary tables no longer carry a coverage column.
+\item In \Cref{sec:status-records-coherence,sec:self-reference-limits},
+  proofs that repeated the descent argument cite the descent criterion
+  of \Cref{sec:apparatus}, and the reading paragraphs no longer repeat
+  the statements they precede; the split set of \Cref{thm:F19} is named
+  \(\Delta_{\mathrm{split}}\).
+\item The introduction states that most laws are elementary
+  consequences of the descent criterion.
+\item The paragraphs on notation and displayed equivalences in
+  \Cref{sec:apparatus} are shortened, and the descent criterion is
+  stated there with its proof.
+\end{itemize}
+
+\subsection{Version 2}\label{subsec:version-2}
+
+Version 2 keeps every numbered result of Version 1, with its name, number
+and place. This subsection lists the differences between the two versions:
+first the principal change to each result, then further changes to results,
+Lean coverage, summary rows and instantiations in the order in which they were
+made, and then summaries for the Lean artifact, the apparatus and the
+instantiations. The body statements are authoritative; each entry below summarizes a change.
+
+\paragraph{Changes to results.}
+\begin{itemize}
+\item \Cref{thm:F2} states both repairs by their universal properties: the
+  source repair \(\langle q,r\circ F\rangle\) is the coarsest refinement of
+  \(q\) through which \(r\circ F\) descends, and a target map \(c\) makes
+  \(c\circ r\circ F\) descend exactly when it factors through \(c_F\).
+\item \Cref{thm:F3} defines when memory is forced and states the memory
+  repair \(\langle\currQ,\predM\rangle\) by its universal property, as an
+  instance of \Cref{thm:F2}.
+\item \Cref{thm:F4} states its status partition as ``exactly one of four'',
+  with each status defined, and states that a globalizing family is
+  compatible; its proof gives the exclusivity step that uses this.
+\item \Cref{thm:F6} reads its needle clause in the language of
+  \Cref{sec:apparatus}. Its proof derives the layer-dissolving decomposition from the projection identity and the monotonicity of the Loewner order under congruence, and the sizes of the bounds and of \(S\) are stated. It defines a needle as a transported dissolving direction exceeding its budget and states that no needle exists.
+\item \Cref{thm:F7} defines sufficiency and adds the split-pair form and the
+  partition into exactly one of four sufficiency statuses.
+\item \Cref{lem:F8} defines retention, definability from the old quotient and
+  strictness, assumes the old quotient surjective, proves the split-fiber step
+  from non-definability, and adds the partition into exactly one of four
+  comparisons. Without surjectivity the equivalence fails: an empty history
+  set with a nonempty old quotient and an empty new quotient gives a strict
+  extension with no split fiber.
+\item \Cref{thm:F9} is stated for the residual records of a package, with the
+  inherited rule (RC) and agreement of statuses at a common locus as
+  hypotheses, and adds that both hypotheses are sharp.
+\item \Cref{thm:F11} names the inherited rule (NO) among its hypotheses,
+  states that its factorization is unique, and says which hypothesis gives
+  which conclusion. It adds that constancy on the access fibers, emptiness of the overread obstruction and unique factorization are equivalent, and that (NO) holds exactly when every accepted exact current claim factors uniquely through the access quotient.
+\item \Cref{thm:F12} defines current visibility, states the properties of the
+  financed refinement \(\langle\accessQ,d\rangle\), including its
+  minimality, and states its last conclusion under the no-overread rule.
+\item \Cref{thm:F13a} names its source predicates in paper terms, adds the
+  upstream readout of the determining state, defines quotient exposure,
+  predictive collapse and predictive surplus from the maps, and proves its
+  fifth conjunct from the fourth; an adopted, guarded source obligation supplies
+  the first four conjuncts and surjectivity of the current quotient, and no
+  concrete PvNP adapter is constructed. It states the unconditional equivalence of predictive surplus with the failure of predictive collapse for a surjective current quotient, and marks the first four conjuncts as supplied by that obligation.
+\item \Cref{thm:F13b} is a direct theorem for a closure with a declared
+  determining-state readout: predictive surplus and hidden-state surplus are equivalent, and every surplus pair is separated by the
+  determining state. Version~1 stated it under an obligation axiom.
+\item \Cref{thm:F14} is a direct theorem: it states the two properties of
+  the positive cone and the trace identity its proof uses, with the
+  measurability, integrability and equivariance of the readout and proves that a positive anti-invariant
+  ledger dominated by bounds of vanishing trace is zero, and that a
+  separating readout confines visible mass to the fixed locus. Version~1
+  stated it under a source certificate. Its readout is measurable, square-integrable and anti-invariant, \(\psi^-(\Jinv x)=-U\psi^-(x)\), for a declared unitary involution \(U\), and its separation condition is a null-set condition.
+\item \Cref{thm:F15a} no longer carries a breaker readout as an unused hypothesis
+  (the breaker readout now enters only through the breaker-extension clause), and its
+  proof does not use equivariance of the orbit map.
+\item \Cref{thm:F15b} lets the formation operator select a branch in
+  \(\mathcal C\) itself, with \(q\circ F=q\); in Version~1 it took values in
+  the branch quotient, on which the group acts trivially, so the required
+  inequality \(g\cdot F(c)\ne F(c)\) could not hold. It is a direct theorem:
+  a branch-selection formation record exists exactly when some ground state
+  is not invariant under the symmetry, and every such record selects a branch
+  in the orbit of the ground state that is not fixed by the group and is not
+  the value of any equivariant selector. Its formation record is constant on orbits, so the identity map is not a record, and for a symmetric ground-state predicate the record exhibits two distinct ground states in one orbit.
+\item \Cref{thm:F17} states its universal property as ``any quotient that
+  factors through every \(q_i\) also factors through \(p\)''; Version~1
+  stated the reverse direction, which forces \(p\) to be injective. Part (7)
+  of the proof uses descent of \(r\) through \(p\) and of \(p\) through \(r\).
+\item \Cref{thm:F18} defines lawfulness of a predicate as invariance under
+  the bijections that preserve the access classes, assumes the access quotient
+  surjective, and proves that lawfulness is descent.
+\item The proof of part (5) of \Cref{thm:F19} uses the obstruction on pairs
+  of classes in \(Q_i\times Q_j\). \Cref{thm:F19} declares its target set \(Q_k\).
+\item The proof of \Cref{thm:F20} names the constructed descended transport
+  \(\theta^{\flat}\) instead of redefining the given map \(\bar\theta\), and
+  the theorem adds that, for the descended transport, fact-value stability is
+  the raw fact-value equation. Its packaging clause characterizes idempotence by the equality of image and fixed locus.
+\item \Cref{thm:F21} states the rules of the audit policy and a conclusion
+  about the certifying meta-claim, assumes its three statuses distinct, and
+  adds a two-claim model showing that its fourth rule cannot be dropped.
+\item \Cref{thm:F23} defines stability as fiber-supported ledgers with the
+  declared transport equation, and adds the dichotomy between descent and
+  unresolvedness, the value of \(\operatorname{Pr}_{q,r}\) for a descending
+  readout, and that the readout distributes the weight of each fiber. It adds that a ledger concentrated on its fiber gives the unrestricted mass of each readout value.
+\item \Cref{thm:F22} states the equivalence of an empty mediation obstruction
+  with the absence of boundary leakage and of internal insufficiency; Version~1
+  stated one direction.
+\item \Cref{thm:F24} states that a role split implies the strict layer
+  extension \(q_s\); Version~1 asserted that exactly one of eight resolution
+  cases holds, and the other cases are now described in the reading paragraph
+  as declared statuses. It adds that \(q_s\) is coarsest in the factorization preorder among maps through which \(q\) and \(s\) both factor. Its corestriction to its image is the coarsest surjective quotient with that property.
+\item \Cref{thm:F25} defines a causal effect as a stable nonzero contrast
+  between two admissible interventions, and adds that, for the descended
+  transports, every stable causal effect has raw witnesses.
+\item \Cref{thm:F27} defines conservation as invariance under every declared
+  step and the orbits as the classes of the generated equivalence.
+\item \Cref{thm:F26} defines moduli readouts, presentation dependence,
+  necessity and contingency, and proves the descent criterion, the exclusive
+  split of a moduli readout into necessary and contingent, and the transport
+  criterion; the converse step uses a pair with the same modulus.
+\item \Cref{thm:F28} defines composability as descent through parts together
+  with interfaces, with associativity and identity as separate conditions,
+  and names \(\ell\) and \(\varrho\) as the two bracketings of a triple
+  composite.
+\item \Cref{thm:F29} defines compatibility of \(\sim\) with \(\pi\), states that
+  presentation invariance implies invariance under \(\sim\); when
+  \(\sim\) is an equivalence relation, the converse holds for every
+  two-valued readout exactly when \(\sim\) is the kernel of \(\pi\).
+  It also justifies \(\bar T\circ\pi=T\).
+\item \Cref{thm:F30} adds the obstruction criterion for strict compression
+  and the continuation clause that uses \(\kappa\), \(e'\) and \(t'\).
+\item \Cref{thm:F31} assumes \(q\) and \(\alpha\) surjective, and its
+  factorization form requires admissibility to descend; its reading paragraph
+  notes that no obstruction uses the target quotient.
+\item \Cref{thm:F34} assumes \(\rho\circ\tau\) surjective onto \(R\); in
+  Version~1 surjectivity onto its image imposed no condition, and the
+  equivalence failed for an empty source with a nonempty recovery quotient.
+\item \Cref{thm:F35} assumes the finer scale quotient surjective, which makes
+  the descended law unique, and proves both directions of the renormalization
+  criterion.
+\item The last line of \Cref{thm:F36} states the obstruction criterion for the
+  renormalized readout; in Version~1 it was a tautology.
+\item \Cref{thm:F37} quantifies over a declared class of admissible joint
+  carriers and states separate admissibility; in Version~1 the product map
+  was always a joint quotient, so the right-hand side could not hold. It adds
+  the split-pair criterion.
+\item \Cref{thm:F39} assumes a declared zero of the entropy values, attained
+  exactly by quotients with singleton fibers, and adds that, when the mixing
+  functional vanishes exactly on pairs with the same fibers, zero target
+  entropy is zero mixing \(m(\langle q,t\rangle,q)\), as for conditional
+  Shannon entropy. Its mixing clause assumes only that \(m(\langle q,t\rangle,q)\) vanishes exactly when the two quotients have the same fibers, which conditional Shannon entropy satisfies.
+\item \Cref{thm:F40} concerns a symmetry that is claimed and not recorded as
+  explicitly broken, and adds that the group law holds for the descended
+  action of a group action. It defines the anomaly as a nonempty action or domain obstruction or a failure of readout preservation, and the induced action when the action obstruction is empty; with the induced action, an anomaly is exactly the failure of one of the four conditions.
+\item \Cref{thm:F41} writes the route actions as \(\mathrm{act}_A\),
+  \(\mathrm{act}_B\), states the status-value map between the packages, says
+  that role-preserving duality equivalence is defined by the displayed
+  conditions, and adds that the inverse map also intertwines the routes. Its role readouts live on the quotients, and the inverse map carries roles back.
+\item \Cref{thm:F42} writes the cost of the competing description at \(h\)
+  as \(\operatorname{cost}(e'(h))\), with the compression as a subscript of
+  the irreducibility predicate, and adds that an irreducible closed
+  compression exists when costs are well founded and some compression is
+  closed.
+\item \Cref{thm:F43} defines the stable limit quotient by its four conditions
+  and proves the implication; no limit is constructed.
+\item \Cref{thm:F44} writes its defining line with \(:\Longleftrightarrow\),
+  states the surjectivity its descent clause uses, and adds that phase
+  boundaries and criticality descend when their data do.
+\item \Cref{thm:F45} declares the order on local quotients used in its
+  minimality clause and defines its locality predicates as factorizations.
+\item \Cref{thm:F46} writes its defining line with \(:\Longleftrightarrow\)
+  and adds the selected-modulus and transport clauses. It no longer assumes a
+  descended readout: descent is fiber constancy, the descended readout is
+  unique, and a law-readout is a constant readout.
+\item \Cref{thm:F47} writes its defining line with \(:\Longleftrightarrow\)
+  and adds the consequences of realized fine-tuning and the monotonicity of
+  smallness under a stricter target.
+\item \Cref{thm:F49} states the tests for the joint readout together with the
+  local access data, adds a declared direct-route explanation, the
+  surjectivity hypotheses and a nonempty history space, and classifies an
+  unexplained present correlation as a residual, nonlocal exactly when the
+  declared locality package fails. Its explanation predicates are defined by
+  fiber constancy, so the displayed factorizations are proved equivalences.
+\item \Cref{thm:F38} and \Cref{thm:F50} open with the fiber-constancy
+  criterion for the transported record and the raw background, and
+  \Cref{thm:F48} defines a topological readout as a factorization through the
+  gluing quotient and adds that every topological readout is exactly one of a
+  complete and a coarse invariant.
+\item \Cref{thm:F50} declares its set of formed targets and adds that, for the
+  descended background, necessity is constancy of the raw background.
+\item \Cref{thm:F51} defines exact unification by the conjunction of
+  parent formation, role preservation and closure of the cross residuals, and
+  declares the route systems and status translations the display uses; the
+  reading paragraph says that exact unification is defined by the displayed
+  conditions, and the theorem adds the common-refinement square and the
+  inclusion of the parent kernel in both child kernels.
+\item \Cref{thm:F52} writes its defining line with \(:\Longleftrightarrow\)
+  and adds its obstruction criterion. \Cref{sec:sketches} describes it as a characterization for declared residuals and directions.
+\item \Cref{prop:F53} states that its positive equivalence combines the
+  closure fixed-point criterion with the definition of the retained operational predicate, with
+  the structural defect named. The
+  hypotheses of \Cref{thm:CER-direct-no-go,thm:CER-converse-no-go} are
+  spelled out before them, the direct one through a declared reduct map, and a
+  finite model with a closure operator follows each and satisfies its
+  hypothesis. Both theorems state the finite model as their last clause, so
+  neither implication follows from the axioms of a closure operator with
+  reduct stability, and \Cref{thm:CER-converse-no-go} adds that the converse
+  fails exactly when some fixed point of the closure is not bare-realised.
+\item \Cref{thm:F10} and \Cref{thm:F5} assume their quotient maps surjective,
+  which the coarsest-quotient clause and the recombination criterion need
+  when a carrier is empty. \Cref{thm:F13a} states that its certificate is
+  used only as the hypothesis of conjuncts 1--4 and that its
+  certificate-free content is the last clause. \Cref{thm:F11} and
+  \Cref{thm:F9} say which conclusions restate their inherited rules.
+  \Cref{thm:F6} states the scope of its substrate Lean anchor, and the
+  closure--reality row lists its Lean theorems and says that the positive
+  equivalence holds in Lean by unfolding definitions. Summary rows for
+  \Fref{F4}, \Fref{F26}, \Fref{F40} and \Fref{F52} match their theorems.
+\item \Cref{thm:F13a} describes its source certificate as the guard of an
+  adopted source obligation, with no identification with an interface of the
+  source paper constructed, and \Cref{thm:F11} is stated
+  in three parts: the factorization criterion for every claim, its
+  consequence under (NO), and the characterization of (NO). Defining lines of
+  \Cref{thm:F29}, \Cref{thm:F36} and \Cref{thm:F40} use
+  \(:\Longleftrightarrow\), \Cref{thm:F25} writes its context classes as \(c\),
+  and \Cref{thm:F20} and \Cref{thm:F50} name their record-level transport and
+  background as declared maps. \Cref{def:diagnosis-source} states the determining hypothesis to which
+  \Cref{thm:F13b} applies. \Cref{thm:F15a}
+  adds that for the orbit quotient with its induced action, the action on
+  orbits is trivial and every equivariant section takes values in \(X^G\);
+  when \(O\ne\emptyset\), such a section can exist only if
+  \(X^G\ne\emptyset\). The Lean theorems for \Fref{F20}, \Fref{F25} and
+  \Fref{F50} assume the descent equation only for the clause that uses it.
+\item \Cref{thm:F29} adds section independence, the descent criterion for
+  relations on presentation tuples and the independence of equivariance;
+  \Cref{thm:F38} defines the arrow at the level of histories and proves its
+  record-level form; \Cref{thm:F24} and \Cref{thm:F31} define the strict layer
+  extension and counterfactual legitimacy. In \Cref{thm:F36},
+  \Cref{thm:F40}, \Cref{thm:F42} and \Cref{thm:F45} definitions precede the
+  proved lines. The Lean theorems for \Fref{F11}, \Fref{F23}, \Fref{F24},
+  \Fref{F29} and \Fref{F39} carry each hypothesis only where the paper uses
+  it. The summary of \Fref{F14} says that the sources take their domination
+  bounds as input, and the catalog-boundary definition is linked to
+  \Cref{thm:F52}.
+\item \Cref{thm:F5} adds the reverse comparison and its four statuses,
+  \Cref{thm:F7} states the bundled form of sufficiency, \Cref{thm:F15a} states
+  the breaker-extension clauses, and \Cref{thm:F40} lists its four conditions.
+  The Lean theorems for \Fref{F7} and \Fref{F17} take the paper's hypotheses:
+  the per-probe family and the factorization and minimality of the common
+  quotient. \Cref{thm:F13a} says what its certificate identifies and that
+  the formal predicate is opaque, the summaries of \Fref{F9} state its
+  hypotheses, the displayed-equivalence convention treats every line without
+  \(:\Longleftrightarrow\) as an assertion, and Lean names in the body are
+  collected in \Cref{app:formalization}.
+\item Interpretive sentences that closed the proofs of
+  \Cref{thm:F27,thm:F28,thm:F29,thm:F43} follow them.
+\item Surjectivity is assumed only where a statement says so
+  (\Cref{sec:apparatus}). \Cref{thm:F5,thm:F25,thm:F48,thm:F49,thm:F50} define
+  their predicates before the conclusion, and \Cref{thm:F43} defines its test
+  set, cofinality and vanishing. The footnotes to \Cref{thm:F13a} and
+  \Cref{prop:F53} say which clauses are checked in Lean and which are taken
+  from a source paper, the Lean ledger for \Fref{F14} carries the declared
+  involution \(U\), and the Access introduction and summary state what
+  \Cref{thm:F12} proves. The coverage table follows the chapter order, and
+  three instantiations are retagged or reworded to match their content.
+\item \Cref{thm:F50} classifies the vacuum criterion as empty, singleton or
+  multiple and states existence and uniqueness of a vacuum;
+  \Cref{thm:F25} defines its descent predicates and gives each raw-witness
+  clause only its own descent equation; \Cref{thm:F38} assumes surjectivity of
+  the source record quotient only. \Cref{def:closure-formation} defines the
+  formed closure of a rule set. The Lean theorems for \Fref{F9},
+  \Fref{F25}, \Fref{F38} and \Fref{F50} state these forms, with an arbitrary
+  status type for \Fref{F9}; the coverage row of \Fref{F53} lists first the
+  theorems that take the paper's hypotheses. The formalization appendix
+  states that the trust-base axiom can refute its guard, the answer to the
+  anchor-row objection says what each anchor row adds, and the catalog
+  application of \Cref{thm:F52} states which of its clauses are met.
+\item \Cref{thm:F2} states the factorization of the source repair through
+  every refinement, \Cref{thm:F45} adds that the local repair carries the
+  target, and \Cref{thm:F51} derives its square and kernel inclusions from
+  the projection equations alone. \Cref{thm:F14} states its conclusion up to
+  null sets, and the readings of \Cref{thm:F20,thm:F23} say what their
+  predicates join. The Lean theorems for \Fref{F2}, \Fref{F9}, \Fref{F12},
+  \Fref{F36}, \Fref{F43}, \Fref{F44}, \Fref{F45} and \Fref{F51} state every
+  displayed clause, \Fref{F43} with index-dependent stage and residual
+  types; the coverage row of \Fref{F53} lists only applicable theorems, and
+  the formalization appendix states what the opaque guard of \Fref{F13a}
+  permits.
+\item \Cref{thm:F13a} lists surjectivity of the current quotient among the
+  imported data, \Cref{thm:F33} states the family clause as an equivalence
+  for the bundled readout, and \Cref{thm:F6,thm:F37} say which setting words
+  add no condition. The abstract and introduction count the laws proved in
+  full and the laws with direct Lean theorems separately. The Lean
+  development instantiates the \Fref{F14} laws for positive semidefinite
+  rational matrices, proves the \Fref{F33} family clause, and proves the
+  fixed-point form of the \Fref{F53} criterion for the structural defect of
+  the retained five-flag encoding. The coverage vocabulary is Theorem, Anchor and Partial
+  with alignments faithful, restricted and anchored, and the build
+  instructions are replaced by a statement of the trust base.
+\item The readings of \Cref{thm:F17,thm:F19,thm:F20} name the case of each
+  status, the comparisons with G\"odel's and Noether's theorems and with the
+  information paradox state what each classical result derives, the framing
+  of \Cref{thm:F37} states that non-joint access is relative to the declared
+  class of joint carriers, and the prose around \Cref{thm:F6} states what the
+  theorem proves. The Lean theorem for \Fref{F52} allows an arbitrary verdict
+  set, and the coverage rows of \Fref{F8} and \Fref{F42} list the theorems
+  that carry their hypothesis-free clauses.
+\item \Cref{thm:F49} states when a correlation residual is present including
+  the admissibility and stability of the route, the \Fref{F21} nonclaim names
+  the rules its conclusion uses, and the reading of \Cref{thm:F19} gives its
+  obstruction sets in ordinary notation. Surjectivity is assumed only where a
+  statement says so, a faithful Lean row may state more than the paper, and
+  the build statement names its scope. The abstract counts the laws in one
+  split, and the presentation figure describes where each part of a law
+  appears.
+\item \Cref{thm:F35} states the next-scale descent criterion that its
+  linking equation gives, \Cref{thm:F23} characterizes stable probability as
+  stability together with failure of descent, \Cref{thm:F40} names the
+  induced action separately from the candidate action, and the residual of
+  the closure--reality apparatus has a stated codomain. Two instantiations
+  whose data do not meet their law's hypotheses are tagged as analogies, and
+  the abstract states the scope of the formalized matrix inequality.
+\item The Myhill--Nerode, crystallographic, Gr\"obner-basis and general
+  relativity instantiations are restated so that they meet the hypotheses of
+  their laws; \Cref{thm:F47} keeps only the predicates its conclusion uses;
+  gates are described as maps on carriers; the introduction describes the
+  eight themes as chapter labels; the abstract counts the laws proved in full
+  separately from those with direct Lean theorems; and two displays are set
+  within the margins.
+\item \Cref{thm:F42} measures irreducibility against a declared class of
+  admissible compressions and states what it reduces to when every map is
+  admissible, and \Cref{thm:F21} shows that rule~3 cannot be dropped either;
+  the Lean development proves both. The residual of the closure--reality
+  apparatus is the set of its five structural defect atoms, the hiddenness
+  interface defines \(\operatorname{HiddenFromCurrent}\) with its other
+  predicates, and a paragraph on the pairing refinement precedes the
+  catalog. The readings of \Cref{thm:F24,thm:F46} relate them to
+  \Cref{thm:F12,thm:F26}, the similarity instantiation of \Cref{thm:F29}
+  states that its listed invariants do not separate similarity classes, and
+  the build statement names Lean's standard axioms.
+\item \Cref{thm:F23} adds a clause for finite weights, in which descent is
+  equivalent to every fiber probability being a point mass, and its
+  concentration clause is proved from additivity alone; \Cref{thm:F43}
+  characterizes the stable limit quotient for every index;
+  \Cref{thm:F45} characterizes minimal domains under strict factorization;
+  \Cref{thm:F51} states when the parent carries exactly the children's
+  distinctions; and \Cref{thm:F52} shows that each of its four conditions is
+  independent of the others. The Lean development proves these clauses. The
+  catalog boundary, horizon-bounded support, record formation and diagnosis
+  source data are defined by formulas, \Cref{thm:F14} assumes only that the
+  traces have infimum zero, and the quantum instantiation of
+  \Cref{thm:F19} places decoherence in the dissolution obstruction.
+\item \Cref{thm:F27} allows partial steps, so that moves applying only where
+  they apply are instances, and \Cref{thm:CER-converse-no-go} shows that both
+  closure--reality implications fail for every nontrivial closure operator on
+  subsets; the Lean development proves both. The Reed--Solomon instantiation
+  places the error vector in the source carrier, the introduction says how the
+  eight themes are assigned to chapters, the coverage row of \Fref{F23} names
+  the theorem for each clause, the formalization appendix gives each restricted
+  or anchored row its own paragraph, and the pairing paragraph lists every law
+  that uses the pairing.
+\item \Cref{thm:F23} defines its transported ledger and target mixture
+  through a ledger transport, a target mixture and the class-level
+  continuation, \Cref{thm:F49} defines its correlation record from the joint
+  readout and the local access classes, and the duality ledger of
+  \Cref{thm:F14} is strongly measurable. The crystallographic, Burnside and
+  quantum instantiations state the predicate or functional they use, the
+  abstract states the rational-matrix scope of \Fref{F6}, the formalization
+  appendix distinguishes the inherited diagonal-support proof from the
+  Foundations IV endpoint proof for arbitrary rational blocks, the \Fref{F13a} note names its
+  axiom, guard and axiom-free clause, the introduction relates its coverage
+  counts to those of the abstract, and two summary-table rows state what their
+  theorems prove.
+\item The closure--reality anchor defines the retained operational predicate by the vanishing
+  of the residual in the body and in the proof, \Cref{thm:F20} says when its
+  three stable-fact conditions concern one recorded fact, and
+  \Cref{thm:F33} states horizon-boundedness and defines horizon
+  sufficiency. The inherited-rules paragraph counts the laws that use them,
+  the source of \Fref{F13b} is called the CSL paper, access is stated for any
+  observation signature, the Access chapter points new readers to the
+  Transport chapter, and three summary-table rows state what their theorems
+  prove.
+\item The Lehmann--Scheff\'e instantiation uses the likelihood-ratio function,
+  whose fibers are those of the minimal sufficient statistic, and the Markov
+  instantiation uses the transition kernel of a countable chain. The
+  closure--reality chapter states what the no-go theorems show and that
+  the retained operational predicate is not compared with bare realisability, the
+  formalization appendix states the restriction of the two anchored rows,
+  the abstract's coverage sentences are regrouped, the chapter groupings are
+  called axes throughout, the covering condition of \Cref{thm:F43} is
+  explained, and the predictive-state and residual-coverage statements are
+  corrected.
+\item \Cref{thm:F44} shows that a phase transition along a path of
+  neighbouring formed controls crosses a phase boundary, \Cref{thm:F39} adds
+  the fiber-volume instance, and \Cref{thm:F13a} states the exposure,
+  collapse and surplus equivalences under the certificate; the Lean
+  development proves these clauses, proves the \Fref{F6} endpoint for
+  arbitrary rational blocks, and defines closedness in the closure--reality
+  anchor as a fixed point of the saturation operator. The \Fref{F13b}
+  statement says that surplus pairs are separated by the determining state,
+  the proof of \Cref{thm:F11} cites the no-overread rule, the reading path
+  names the one cross-chapter use, and each Lean footnote names its row of
+  the coverage table.
+\item \Cref{thm:F44} adds the clause for continuous paths in a topological
+  control space, and \Cref{thm:F42} states its collapse clause for any
+  admissible class that isolates \(h\) with every value; the Lean
+  development proves both. \(\BirdInt\)-compatibility is defined by listing in
+  the law's setup, \Cref{thm:F40} declares the record of explicit breaking,
+  \Cref{thm:F15a} assumes the orbit-quotient property only where it is used,
+  the statements of \Cref{thm:F17,thm:F19,thm:F36} gloss their predicates,
+  the reading paragraph of \Cref{thm:F43} names every conjunct unused by the
+  construction, and the summary rows of \Fref{F15a} and \Fref{F39} follow
+  their statements.
+\item \Cref{prop:F53} adds its clause on the saturation of the retained five-flag encoding,
+  and the closure--reality chapter states the general content of its two no-go
+  theorems. The notation of \Cref{thm:F6} allows any symmetric \(C^{+}\) and any
+  symmetric \(K_{LL}^{\dagger}\) satisfying the projection identity, the reading
+  paragraphs of \Cref{thm:F13a,thm:F39,thm:F42} state what their predicates do
+  and do not require, the introduction and abstract state which laws import
+  results and how Lean covers them, the Access chapter can be read first, and
+  the interaction-status convention adds no premise.
+\item \Cref{thm:F13b} characterizes determining readouts by factorization
+  and splits predictive surplus for an arbitrary readout, \Cref{thm:F29}
+  characterizes presentation invariance by a generating relation of the
+  kernel, and \Cref{thm:F36} relates the completion of a renormalized target
+  obtained by post-processing to that of its raw target; the Lean development
+  proves the three clauses. The encoding of the reflective closure used by the
+  saturation clause is described with the definition, every
+  interaction-status paragraph names its setup data, the instantiations of
+  \Fref{F46} state that the classical law is an input, and the reading
+  paragraphs of \Cref{thm:F43,thm:F44} state what their conclusions add.
+\item \Cref{thm:F42} adds its global form over a base description,
+  \Cref{thm:F19} shows that holonomy is coherent when the three class maps are
+  the descended ones, \Cref{thm:F14} requires only that the traces approach
+  zero from above, the no-overread rule names its acceptance predicate, the
+  fiber-volume instance of \Cref{thm:F39} states where its mixing term is
+  evaluated, the formalization appendix names the declarations of
+  \Fref{F13a}, and every law is noted as \(\BirdInt\)-compatible by
+  construction.
+\item \Cref{thm:F42} adds the existence of a globally irreducible description
+  of minimal cost, \Cref{thm:F47} adds a quantitative clause for
+  complementary selector regions, \Cref{thm:F39} requires combine-monotonicity
+  only at the pair it uses, so that the fiber-volume instance satisfies the
+  theorem, the closure--reality no-go theorems hold for every extensive
+  operator, and the Lean development proves these clauses and the full
+  descent equivalence of \Cref{thm:F35}. \Cref{thm:F43} states its unique
+  compatible readout as the conclusion, the direct no-go theorem characterizes
+  failure of its implication, the vocabulary defines a closure space, the
+  reading path lists the arguments that are not descent arguments, and the
+  Reflexive Nonclosure law states which of its conclusions are premises.
+\item The point-mass clause of \Cref{thm:F23} requires weights only on each
+  fiber, so distinct classes may share a ledger, and the Lean development proves
+  it in that form. \Cref{thm:F6} is stated for arbitrary block matrices with the
+  symmetry and projection identities it uses, \Cref{prop:F53} displays the
+  fixed-point equivalence it asserts, two instantiations are tagged as
+  analogies, and \Cref{thm:F17} writes its defects out.
+\item \Cref{thm:F13b} identifies the pairing with the predictive quotient as
+  the coarsest determining one, \Cref{thm:F49} shows that a correlation
+  residual is exactly the absence of a local explanation, and \Cref{thm:F41}
+  shows that the inverse class map and the role-value map are determined; the
+  Lean development proves these clauses. The definition of the current and
+  predictive quotients states what a quotient and refinement are, the
+  interaction-status convention states that it adds no hypothesis, the
+  closure--reality proof states what the no-go theorems show, and the coverage
+  rows of \Fref{F23} and \Fref{F39} name the declarations of their clauses.
+\item The closure--reality no-go theorems characterize the extensive operators
+  for which a reduct-stable predicate makes both implications fail, and the Lean
+  development proves the characterization. \Cref{thm:F18} states its invariance
+  condition in the statement, \Cref{thm:F39} defines its entropy predicates in
+  the statement, \Cref{thm:F44} states what its boundary means for continuous
+  paths, the settings of \Cref{thm:F9,thm:F11,thm:F41} are stated as intended
+  readings, and the nonclaims name the \(\BirdInt\) judgment as background.
+\item \Cref{thm:F44} asks along a finite path only that each control have
+  neighbours of the next control's phase, which in the topological case means
+  that it lies in the closure of that phase class, and \Cref{prop:F53} shows
+  that both closure--reality implications hold exactly for the fixed-point
+  predicate of the closure, so that the retained operational predicate is the
+  unique predicate for which closure equals reality holds for
+  \(\operatorname{Sat}_5\); the Lean development
+  proves both. The reading of \Cref{thm:F17} is stated in ordinary terms, the
+  footnote to \Cref{thm:F14} describes its Lean instance exactly, and the
+  Vitali and sheaf-locality instantiations name the readout and the minimal
+  domain.
+\item The introduction identifies the inherited no-overread rule (NO)
+  as a premise in \Fref{F11} and \Fref{F12} and summarizes the coverage
+  in two sentences; the direct
+  closure--reality no-go names the carrier at which the implication fails;
+  clause (d) of \Cref{prop:F53} is stated for every operator; the reading of
+  \Cref{thm:F44} explains its neighbourhood relation; \Cref{thm:F43} glosses
+  its covering condition in the statement; and the summary rows of
+  \Fref{F8}, \Fref{F23} and \Fref{F44} state the results rather than their
+  definitions.
+\item The Lean development proves the characterization of the phase boundary
+  in clause (iv) of \Cref{thm:F44} and the closure form of the step hypothesis
+  of clause (iii). \Cref{thm:F42} defines its obstruction sets in the
+  statement, \Cref{thm:F27} states its route structure in the statement, the
+  reading of \Cref{thm:F49} explains its surjectivity hypothesis, the anomaly
+  clause of \Cref{thm:F40} is stated for unbroken symmetries, the interaction-status
+  convention says that the paragraphs may be skipped, and the direct
+  closure--reality no-go states that its first clause holds by definition.
+\item The Lean development proves the two factorizations of the canonical
+  pairing in \Cref{thm:F13b}. The reading of \Cref{thm:F15b} states when a
+  non-invariant ground state is a spontaneous breaking, \Cref{thm:F26} explains
+  its obstructed clause, \Cref{thm:F19} gains a summary in ordinary terms, the
+  Access chapter cites the apparatus pairing refinement in place of
+  \Cref{thm:F3}, and the reading groups
+  of the Status, Records and Coherence chapter are listed.
+\item The reading of \Cref{thm:F23} states which data its stability condition
+  constrains; \Cref{prop:F53} describes its right-hand side as the defect
+  characterization of the closure's fixed points; the pointwise clause of
+  \Cref{thm:F42} states what it depends on for large admissible classes; the
+  opening of the Self-Reference and Limits chapter states the horizon law as
+  proved and locates the self-audit law; the certificate of \Cref{thm:F13a} is
+  described as fixing one interface; and the introduction explains the
+  F-codes.
+\item \Cref{prop:F53} adds clause (e): both closure--reality implications fail
+  for the retained saturation \(\operatorname{Sat}_5\) itself, for a
+  reduct-stable predicate; \Cref{thm:F37}
+  states its factorization form and the product corollary; and the Lean
+  development proves these and the empty-moduli clause of \Cref{thm:F26}. The
+  reading of \Cref{thm:F40} states what the recorded flag affects, the
+  correlation predicate of \Cref{thm:F49} is described as defined from the
+  data, and one instantiation of the Self-Reference and Limits chapter is
+  relabelled an analogy.
+\item The Lean footnotes point to the per-row map of the formalization
+  appendix; the dependency hints of the axis figure state the proof-level uses;
+  the convention on displayed lines names the lines that unfold a definition;
+  \Cref{thm:F28} defines its associativity and identity predicates; the
+  comparison statuses of \Cref{thm:F19} are stated with the theorem; the
+  reading of \Cref{thm:F23} states which clauses use the continuation data; and
+  the coverage row of \Fref{F53} lists the finite instances.
+\item \Cref{thm:F4} adds the characterization of the sheaf condition for a
+  cover, and \Cref{thm:F14} adds, for \(U=\mathrm{id}\), the equivalence between
+  a vanishing ledger and full measure of the fixed locus; the Lean development
+  proves both (the second for the abstract ledger under explicit laws). The
+  converse closure--reality no-go identifies its closure-instantiation-gap
+  hypothesis with a witnessing carrier, \Cref{thm:F23} names the operation and zero of clause (v),
+  the global clause of \Cref{thm:F42} drops an unused surjectivity, and the
+  reading order states that the Transport chapter can be read first.
+\item Clause (e) of \Cref{prop:F53} names its predicate and requires only a
+  carrier over the scope; \Cref{thm:F19} defines its persistence predicates in
+  the statement; the last line of \Cref{thm:F22} holds for every \(\bar U\); the
+  reading paragraphs of \Cref{thm:F15a,thm:F44} name their symbols in order;
+  the anchor status describes what the Lean proves for \Fref{F6} and
+  \Fref{F53}; the interaction-status convention points to the nonclaims it
+  carries; and the reading of \Cref{thm:F49} states when the source map is
+  injective.
+\item The convention on displayed lines adds examples of definitions and of
+  lines combining definitions with descent criteria; \Cref{prop:F53} states at its head which clauses are imported,
+  definitional and proved; the interaction-status paragraphs of the Access,
+  Stability and Symmetry chapters are titled with their nonclaims; the proof
+  of \Cref{thm:F6} calls its identity the projection identity; and the general
+  clause of \Cref{thm:F43} names its hypotheses.
+\item The special-case readings of the catalog rows (query determinacy, the
+  gas and Coulomb models, connected genus, the Riemann and removable-limit
+  quotients, the pyramid carrier) state the hypotheses under which they
+  instantiate their rows; \Cref{thm:F43} separates its hypotheses from its
+  conclusion; and \Cref{thm:F25} states the uniqueness of the descended
+  outcome maps, with the full Lean statement cited in its coverage row.
+\item The final clause of \Cref{thm:F14} holds whenever \(U\) has no
+  \(-1\)-eigenvector, with a one-point ledger showing the condition is needed;
+  \Cref{prop:F53} states the uniqueness of the retained predicate in clause (c)
+  and defines the flag set and reducts of clause (e); the proof of
+  \Cref{thm:CER-direct-no-go} points to where its extensive-operator clause is
+  proved; the substrate table describes what \Fref{F53} imports; and the
+  Berry-phase, cryptographic-hash and Voronoi special cases and the weight
+  hypothesis of \Cref{thm:F23}(vi) are stated exactly.
+\item The obstructed-closure part of \Cref{thm:F26}(iii) holds without the
+  standing assumption, which then forces the closure space to be empty;
+  \Cref{thm:F20} adds that a stable fact transports the event it records;
+  the closure--reality chapter says which operator ``retained'' and
+  ``current'' refer to; and the meiosis, abstract-data-type, de Bruijn,
+  Vitali, martingale and fundamental-group special cases are corrected.
+\item Special cases state the data of their laws and the hypotheses they
+  need: the elliptic boundary-value problem (bounded Lipschitz domain,
+  coefficient and source classes, Neumann compatibility), the holonomy,
+  Berry-phase and Preisach cases of \Fref{F3}, integrability of the
+  martingale, the minimal domains of \Fref{F45}, the Bayes closure space,
+  the Euler-characteristic transport and the path-integral readout.
+\item \Cref{thm:F46} characterizes state-dependent readouts by pairs of
+  distinct moduli classes; \Cref{thm:F41} adds that the dualities preserve
+  quotient fibers; \Cref{thm:F22} states uniqueness of the mediated update;
+  \Cref{thm:F37} drops the surjectivity of its access quotients;
+  \Cref{thm:F39} states the laws its fiber-volume instance satisfies; the
+  terms of clause (b) of \Cref{prop:F53} are defined; and the proofs of
+  \Cref{thm:F15a}, \Cref{thm:F17}, \Cref{thm:F31}, \Cref{thm:F42} and
+  \Cref{thm:F44} state only what they prove.
+\end{itemize}
+
+\paragraph{Lean artifact and coverage.}
+The catalog has 49 direct theorem rows, two anchor rows, and one conditional
+row. Each direct row has a Lean theorem, and 48 direct rows have faithful Lean
+coverage of the displayed result; \Cref{app:formalization} gives the alignment
+of every row. Version~1 described all direct rows as faithful and
+listed the declarations for \Fref{F13b} and \Fref{F15b} as theorems, although
+they were obligation axioms. Version~2 removes both obligation axioms, proves
+\Fref{F13b}, \Fref{F14} and \Fref{F15b} without a guarded axiom, and adds Lean
+theorems for the clauses added above. The Lean theorems for \Fref{F11},
+\Fref{F17} and \Fref{F21} take the paper's hypotheses and rules explicitly
+instead of reading the conclusions off record fields, and the closure--reality
+no-go theorems are proved over an abstract carrier and instantiated by the
+finite model. One conditional law (\Cref{thm:F13a})
+and one trust-base axiom remain; the axiom supplies only the four
+source-specific conjuncts of \Cref{thm:F13a} and surjectivity of its current
+quotient.
+
+\paragraph{Apparatus and instantiations.} The current and predictive quotient maps are written \(\currQ\) and \(\predM\), distinct from their target sets, and defining lines in several laws use \(:\Longleftrightarrow\). Three instantiations whose data are
+empirical are tagged as analogies, and the meiosis instantiation counts
+crossovers by parity.
+\Cref{sec:apparatus} gives a reading guide: the chapters and axes, the status
+vocabulary, the acronyms, the meaning of the layer instantiations, a reading
+path and a map of results with the section of each result. It adds paragraphs
+on the conditional laws, the two rules inherited from earlier papers,
+displayed as formulas, the words that name a law's setting, the emptiness
+predicates, obstruction sets, reused letters and displayed equivalences. A
+small running example is carried through the introduction and the chapter
+openings. A paragraph \emph{Reading the statement} precedes each result whose
+statement uses predicates that need explanation, and a paragraph \emph{What the
+source supplies} follows each conditional law. The chapter titles name their
+subject, and the conditional laws are marked in their subsection titles. The
+summary rows paraphrase the statements, symbols that named two objects were
+renamed, and the result codes link to their results. The interaction status
+and nonclaims of each row carry run-in labels. Each layer instantiation is
+tagged as a special case or an analogy; seventy-three instantiations were
+corrected where they misstated a condition, a formula, a direction, a date or
+an attribution, and two references were added. Each law keeps its special cases beside it, and every law with analogies keeps at least one beside it (\Fref{F29}, \Fref{F45} and \Fref{F46} have special cases only); the other analogies are collected in
+\Cref{app:further-instantiations}. The substrate map is given once, in
+\Cref{tab:substrate-instances}.
+
+\paragraph{Development of the Lean artifact.}
+Before Version 1, an axis-level review of the Lean development led to three
+strengthened statements. For \Fref{F2}, the canonical target repair is built
+from the equivalence generated by identifying \(rF(x)\) and \(rF(x')\)
+whenever \(q(x)=q(x')\), matching the minimal-repair universal property of
+the statement, in place of a fallback to a one-point target. For \Fref{F10},
+the access quotient \(q_I\) is constructed from a lawful observation
+signature rather than assumed, and the universal property covers observable
+factorization together with the coarsest-quotient property. For \Fref{F53},
+the two closure--reality no-go statements are derived from guarded
+structural assumptions (reduct stability on the direct side and a closure
+instantiation gap on the converse side) rather than assumed as raw
+counterexamples.
+
+\paragraph{Closure operators of the closure--reality chapter.}
+The current revision distinguishes the retained five-flag saturation
+\(\operatorname{Sat}_5\) from AOR's current evidence-preserving inference
+reflector. Earlier descriptions identifying those operators are superseded
+by \Cref{def:reflective-closure,prop:F53}. The retained saturation theorem
+and CER controls remain valid. Current AOR full accounting has its separate
+source-witness criterion, and a Lean counterexample establishes that inference
+closure alone does not pay the obligation \(5\le2\).
+
+\paragraph{Source scope of F13a and matrix scope of F6.}
+\Fref{F13a} remains conditional on an adopted guarded source obligation.
+The current PvNP Lean does not construct the required catalogue adapter
+or its opaque certificate; earlier descriptions of its four clauses as
+proved source imports are superseded by
+\Cref{thm:F13a,subsec:narrowing-disclosure}.
+For \Fref{F6}, arbitrary symmetric blocks support the algebraic budget
+theorem, while the optimization and positive-residual interpretation
+requires the positive-semidefinite setting \(C^{+}\succeq0\) of the
+Notation paragraph before \Cref{thm:F6}.

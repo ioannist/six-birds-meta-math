@@ -1,0 +1,232 @@
+\section{Decomposition and exhaustion}\label{sec:decomposition-exhaustion}
+
+% Mathematical job:
+%   - Define the decomposition record Dec(D).
+%   - State six-channel exactness: Dec(D) has exactly six role channels
+%     P1 through P6, each with exactly one status from
+%       {active_projection, below_threshold, collapsed_boundary_case,
+%        absent_with_record, inapplicable_outside_scope}.
+%   - State the channel-vs-activation discipline explicitly: inactive
+%     statuses are statuses, NOT active witnesses.
+%   - State residual exhaustion: every raw feature not absorbed into an
+%     active projection or status record is classified by the repaired
+%     upper-bound categories.
+%   - Prove existence of Dec(D) for every D in FATCD.
+%   - Make clear: decomposition is EXISTENTIAL, not unique.
+%
+% Governing sources:
+%   workspace/meta/lens_lab/campaigns/paper3_exact_six_exhaustiveness/decomposition_exhaustion/exact_six_channel_vs_activation_note.md
+%   workspace/meta/lens_lab/campaigns/paper3_exact_six_exhaustiveness/decomposition_exhaustion/decomposition_exhaustion_theorem_spec.md
+%   workspace/meta/lens_lab/aristotle/results/paper3/paper3_decomposition_exhaustion_exact_G/paper3_decomposition_exhaustion_exact_G_result_shape.md
+%   workspace/meta/lens_lab/papers/paper3/drafting_support/theorem_statement_bank.md
+%
+% Overclaim risks:
+%   - Existential-to-unique decomposition slippage ("the decomposition",
+%     "canonical decomposition", "the unique decomposition interface").
+%   - Conflating six channels with six active witnesses.
+%   - Treating a below-threshold status record as a witness for P_i.
+
+
+The lower-bound theorem of Section~\ref{sec:lower-bounds} and the
+upper-bound classification of
+Section~\ref{sec:upper-bound-classification} reduce the scoped
+exact-six question to a decomposition-existence problem: given
+\(D \in \FATCD{}\), does \(D\) admit a well-formed record combining
+the six role channels, their statuses, and the classification of any
+raw features not absorbed into active projections? This section
+answers affirmatively and records the channel-versus-activation
+discipline that the answer requires. The lower bounds show that each
+of the six channels is materially realizable in the domain; the
+upper-bound classification shows that no covered seventh role channel
+is needed.
+
+\subsection{Decomposition records and channel statuses}\label{subsec:dec-records}
+
+\begin{definition}[Channel status]\label{def:channel-status}
+For each \(i \in \{1,\ldots,6\}\), the \emph{role channel}
+\(\Chan{i}{D}\) of a description \(D \in \FATCD{}\) is the
+\(P_i\)-labeled slot in the six-channel interface associated to \(D\),
+regardless of whether that slot is active. A \emph{channel status} for
+\(\Chan{i}{D}\) is exactly one of the five values
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \(\activeproj\) --- an active derived role projection
+    \(\pi_i(D)\) in the sense of
+    Definition~\ref{def:role-projection} exists, with the full
+    attachment data of
+    Definition~\ref{def:threshold-attachment};
+  \item \(\belowthr\) --- candidate raw features are present but the
+    threshold data required by
+    Definition~\ref{def:threshold-attachment} is absent;
+  \item \(\collapsedbc\) --- the candidate cluster is a boundary case
+    that collapses under the witness schema \(W_i\);
+  \item \(\absentrec\) --- no relevant raw features for role \(P_i\) are
+    present in \(\Raw{D}\), and the absence is itself recorded;
+  \item \(\outsidescope\) --- the role-\(P_i\) content of \(D\) lies
+    outside the covered scope.
+\end{itemize}
+We write \(\Status{i}{D}\) for the channel status of \(\Chan{i}{D}\).
+\end{definition}
+
+\begin{definition}[Decomposition/exhaustion record]\label{def:decomposition-record}
+A \emph{decomposition/exhaustion record} for \(D \in \FATCD{}\) is a tuple
+\[
+\Dec{D} = \bigl(\Raw{D},\; (\Chan{i}{D}, \Status{i}{D})_{i=1}^{6},\;
+\Residual{D},\; \mathrm{Classify},\; \mathcal{L},\; \mathcal{V},\;
+\Audit{D},\; \mathcal{N}\bigr)
+\]
+where
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the six role channels together with their statuses form the
+    six-channel status sequence. If \(\Status{i}{D} = \activeproj\), the channel
+    carries an active projection \(\pi_i(D)\) with its full attachment
+    data. If \(\Status{i}{D}\) is inactive, the channel carries the
+    corresponding below-threshold, collapsed-boundary,
+    absent-with-record, or outside-scope status record;
+  \item \(\Residual{D} \subseteq \Raw{D}\) is the residual feature set
+    (the raw records and annotations not already accounted for by an
+    active projection or an inactive status record), and
+    \(\mathrm{Classify}\) assigns to each \(r \in \Residual{D}\) a label
+    in the scheme of Definition~\ref{def:residual-scheme};
+  \item \(\mathcal{L}\) collects the loss and lift records for any level
+    crossings involved in projections or classifications;
+  \item \(\mathcal{V}\) collects instrument-visibility and
+    empirical-bridge annotations where these are asserted;
+  \item \(\Audit{D}\) is the honest bookkeeping subrecord;
+  \item \(\mathcal{N}\) is the explicit nonclaim record.
+\end{itemize}
+A decomposition/exhaustion record is \emph{well-formed} when each
+\(\Status{i}{D}\) is drawn from the five values of
+Definition~\ref{def:channel-status}, each active
+\(\pi_i(D)\) is admissible in the sense of
+Definitions~\ref{def:role-projection} and~\ref{def:threshold-attachment},
+each inactive status record is honestly supported by the corresponding
+raw-feature situation, and every raw feature is accounted for at the
+channel/exhaustion level either by an active projection, by a status
+record for its channel, or by a residual classification. The records in
+\(\mathcal{L}\) and \(\mathcal{V}\) are auxiliary annotations on this
+coverage, not additional role channels.
+\end{definition}
+
+
+\subsection{Existence, six-channel exactness, and residual exhaustion}\label{subsec:dec-theorems}
+
+\begin{theorem}[Decomposition existence]\label{thm:decomposition-existence}
+Every description \(D \in \FATCD{}\) admits a well-formed decomposition/exhaustion
+record \(\Dec{D}\) in the sense of
+Definition~\ref{def:decomposition-record}.
+\end{theorem}
+
+\begin{proof}
+For each \(i \in \{1,\ldots,6\}\), inspect \(\Raw{D}\) for a cluster
+aligned with the meaning of \(P_i\) under
+Proposition~\ref{prop:alignment-rules}. If such a cluster carries the
+threshold, witness, level, and audit data of
+Definition~\ref{def:threshold-attachment}, record
+\(\Status{i}{D} = \activeproj\) and an active projection
+\(\pi_i(D)\) in the sense of Definition~\ref{def:role-projection};
+otherwise record one of the four inactive statuses, determined by
+which attachment data is missing, whether the cluster is a
+boundary-case collapse, whether no relevant cluster exists, or
+whether the role lies outside the covered scope. Six status entries
+result, one per role. The raw features absorbed by these channel
+records are removed from the residual stage; the remainder pass to
+\(\Residual{D}\). By Theorem~\ref{thm:upper-bound-classification},
+every covered residual feature classifies under categories (ii)--(ix)
+of Definition~\ref{def:residual-scheme}, with categories (x) and (xi)
+empty in the covered scope, so \(\mathrm{Classify}\) is total on
+\(\Residual{D}\). The records \(\mathcal{L}\) and \(\mathcal{V}\) are
+read from \(\Raw{D}\) and \(\Audit{D}\); the bookkeeping subrecord is
+\(\Audit{D}\); and \(\mathcal{N}\) records the nonclaims carried
+forward from the witness discipline. The resulting tuple is a
+decomposition/exhaustion record, well-formed by construction.
+Non-vacuity of the six channels follows from
+Theorem~\ref{thm:six-role-lower-bounds}, which supplies, for each
+channel, a description in which that channel is active.
+\end{proof}
+
+\begin{theorem}[Six-channel exactness and residual exhaustion]\label{thm:six-channel-exactness}
+For every \(D \in \FATCD{}\) and every well-formed
+\(\Dec{D}\) in the sense of
+Definition~\ref{def:decomposition-record}:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item the channel sequence \((\Chan{i}{D})_{i=1}^{6}\) has length
+    exactly six, one per primitive role \Pone{}, \ldots, \Psix{};
+  \item every raw feature of \(D\) is accounted for at the
+    channel/exhaustion level by an active projection \(\pi_i(D)\), a
+    channel-status record for an inactive channel, or a residual
+    classification under the scheme of
+    Definition~\ref{def:residual-scheme}; the records in \(\mathcal{L}\)
+    and \(\mathcal{V}\) are auxiliary annotations on this coverage;
+  \item within the covered scope, no raw feature is classified as
+    an unresolved seventh-role threat or as a genuine seventh
+    irreducible typed closure role
+    (Theorem~\ref{thm:upper-bound-classification}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Exactness of the channel sequence is built into the definition of
+\(\Dec{D}\); there are six role channels by
+Definition~\ref{def:decomposition-record}. Coverage of raw features is
+the well-formedness condition of
+Definition~\ref{def:decomposition-record} together with totality of
+\(\mathrm{Classify}\) on \(\Residual{D}\), which is delivered by
+Theorem~\ref{thm:upper-bound-classification}. Emptiness of categories
+(x) and (xi) within the covered scope is
+Theorem~\ref{thm:upper-bound-classification} directly.
+\end{proof}
+
+\subsection{Channel-versus-activation discipline}\label{subsec:channel-vs-activation}
+
+Theorem~\ref{thm:six-channel-exactness} asserts six channels in every
+decomposition/exhaustion record. It does not assert six active
+projections in every record, nor does it assert that a well-formed
+record is unique. The distinction between channel presence and
+channel activation prevents six-channel exactness from being read as
+an all-six-active claim.
+
+\begin{proposition}[Channel-versus-activation discipline]\label{prop:channel-vs-activation}
+Let \(D \in \FATCD{}\) and let \(\Dec{D}\) be a well-formed decomposition/exhaustion
+record. The following are distinct statements:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item \emph{Six channels}: the channel sequence
+    \((\Chan{i}{D})_{i=1}^{6}\) has length six with the fixed role names
+    \Pone{}, \ldots, \Psix{}.
+  \item \emph{Six active projections}: for each \(i\),
+    \(\Status{i}{D} = \activeproj\) and the channel carries an active
+    \(\pi_i(D)\).
+\end{enumerate}
+Theorem~\ref{thm:six-channel-exactness} establishes (i) for every
+\(D \in \FATCD{}\). It does not establish (ii). In particular, an
+admissible \(D \in \FATCD{}\) may carry any number of active projections
+between zero and six; inactive channels are recorded with status
+\(\belowthr\), \(\collapsedbc\), \(\absentrec\), or \(\outsidescope\)
+and are not active witnesses for the corresponding roles.
+\end{proposition}
+
+\begin{proposition}[Decomposition records are not unique]\label{prop:non-uniqueness}
+A description \(D \in \FATCD{}\) may admit more than one well-formed
+decomposition/exhaustion record in the sense of
+Definition~\ref{def:decomposition-record}. Distinct well-formed records
+may differ in level assignments, choice of witness schema, residual
+classification labels for features admitting more than one admissible
+category under the alignment rules, or placement of loss/lift and
+visibility records. Theorems~\ref{thm:decomposition-existence}
+and~\ref{thm:six-channel-exactness} assert existence, not uniqueness.
+\end{proposition}
+
+\begin{remark}[What the decomposition theorems do and do not prove]\label{rem:dec-scope}
+Theorems~\ref{thm:decomposition-existence}
+and~\ref{thm:six-channel-exactness} establish the structural side of
+the scoped exact-six claim: every \(D \in \FATCD{}\) admits a
+six-channel decomposition/exhaustion record with residual exhaustion
+in the covered scope. Together with the lower-bound theorem
+(Section~\ref{sec:lower-bounds}) and the upper-bound classification
+(Section~\ref{sec:upper-bound-classification}), they prepare the
+scoped exact-six theorem but do not replace the integrated-stress
+check that follows. They do not assert that every description
+activates all six roles, that the decomposition is canonical or
+unique, or that the scoped exact-six program extends beyond \FATCD{};
+those remain nonclaims.
+\end{remark}
+

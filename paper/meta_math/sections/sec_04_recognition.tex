@@ -1,0 +1,239 @@
+\section{Part II --- Recognition-mode landings}\label{sec:recognition}
+
+\subsection{Two columns}\label{sec:recognition:column-classification}
+
+Part~I described how internal derivations stall.  Part~II describes the
+other route used by the companion applications: a closure that names
+its load-bearing source as a premise, instead of presenting it as the
+output of an internal derivation.  We call such a closure a
+\emph{\RML}.  This part is a vocabulary together with four named
+patterns, stated as conditional schemas.  Their predicates---whether a
+template applies, whether content is derivable from the framework's
+primitives, whether a closure lands at theorem grade---are primitive, so
+the schemas have no truth conditions until those predicates are given a
+meaning; they describe an intended informal reading and are not
+mathematical conjectures in the strict sense.  The two applications
+that illustrate them are described in \Cref{sec:validation}.  Unlike
+Part~I, the targets here are propositions rather than claims; only
+\Cref{thm:attack-foreclosure-v5}, which refers back to Part~I, uses the
+interpretation of a claim.
+
+The organizing distinction comes from the V-Differential classification
+of the hiddenness companion \cite{Tsiokos2026CSL}, which asks how a
+substrate's witness is exposed to current observation.  In a
+witness-content-exposing substrate, current observation can read a
+witness datum, such as an assignment or a solution coordinate.  In a
+trace-state-only substrate, current observation sees only trace
+bookkeeping---step counts, audit fields and similar records of how a
+computation proceeded---and no witness datum.
+
+\begin{definition}[Columns]\label{def:vdiff-tso-column}
+A substrate \(S\) lies in the \emph{trace-state-only column},
+\(\operatorname{TSO}(S)\), when its load-bearing witness is not exposed to
+current observation and is available only through trace-state evidence,
+which a closure must name and accept as a premise.  It lies in the
+\emph{witness-content-exposing column}, \(\operatorname{WCE}(S)\), when its
+witness is exposed to current observation through the substrate's own
+apparatus.  Both are primitive predicates.
+\end{definition}
+
+The hiddenness companion places the Navier--Stokes substrate in the
+second column and the Riemann-hypothesis and P-versus-NP substrates in
+the first.  It adopts these placements as hypotheses, with an informal
+motivation for each, and this paper uses them with the same status.
+For the Riemann hypothesis the named source is
+\(\Gamma_{\mathrm{SDTC}}^{\mathrm{Selberg}}\), recorded in the
+application \cite{Tsiokos2026RH}; the self-dual trace confinement
+companion \cite{Tsiokos2026SDTC} supplies the squeeze it feeds.  Its name refers to Selberg's trace
+formula \cite{Selberg1956TraceFormula} by analogy only: Selberg's
+formula concerns automorphic spectra and does not provide the
+completed-zeta data that the source asserts, which remain a premise.
+For \(P\) versus \(NP\) the named source is
+\(\Gamma_{\mathrm{csl\text{-}sat\text{-}hidden}}\), recorded in the
+application \cite{Tsiokos2026PvNP}.
+
+Naming a source is not a sufficient premise in itself.  The
+Riemann-hypothesis endpoint also needs an identification of its
+coordinates with the classical zeros, including the conditions that
+the identification preserves the real part \(\frac12\) and covers every
+zero; the Navier--Stokes endpoint needs its spectral closure and its
+hypotheses on the initial data; and the P-versus-NP endpoint needs an
+accepted negative source and, in its family form, the admission of
+search events.  Recognition-mode landings and derivation-mode landings
+are two different kinds of conditional closure; neither is a weaker
+form of the other.
+
+\subsection{The seven-stage template}\label{sec:recognition:template-applicability}
+
+The template describes a recognition-mode landing as a sequence of
+seven checks on a formed closure \(c\) with target \(X\).
+\begin{enumerate}
+\item \emph{Construction.}  Build the formed closure with its types,
+  levels, thresholds and visibility data, and exhibit that it reaches
+  beyond the carriers available before it was formed.
+\item \emph{Translation.}  Prove that the closure's internal predicate
+  is equivalent to the standard statement of \(X\).  This is not where
+  the source enters; it ensures that an accepted source yields the
+  standard statement.
+\item \emph{Applicability.}  Check that the relevant structural theorem
+  applies to the closure, and separate the hypotheses already verified
+  from those still needed.
+\item \emph{Smuggling check.}  Check that the admissibility,
+  lawfulness and saturation hypotheses do not already assume the source.
+\item \emph{Anti-tautology.}  Check that the closure's predicate
+  genuinely depends on the closure's data, so that the apparent gain
+  does not split into independent claims about independent carriers.
+\item \emph{Derivation sweep.}  Search for a derivation of the source
+  along three routes (\Cref{def:three-option-sweep}).
+\item \emph{Recognition.}  Name the source and record its acceptance as
+  a separate premise.
+\end{enumerate}
+We write \(T=\langle S_{1},\ldots,S_{7}\rangle:\mathsf{7Stage}(c,X)\) for a
+record of the seven stages as propositions about \((c,X)\).
+
+\begin{definition}[Template applies]\label{def:applies}
+For a formed closure \(c\), a target \(X\) and a seven-stage record
+\(T\), \(\operatorname{Applies}(c,X,T)\) is a primitive predicate,
+intended to state that the seven checks of \(T\) succeed for \((c,X)\);
+it is not defined as the conjunction of the seven stages.
+\end{definition}
+
+\begin{schema}[Recognition-Mode Template Applicability]\label{thm:template-applicability}
+Let \(c\) be a formed closure with target \(X\), and suppose that
+\(\operatorname{TSO}(c)\), that the SB closure assumption holds for \(c\),
+and that \(T:\mathsf{7Stage}(c,X)\) satisfies
+\(\operatorname{Applies}(c,X,T)\).  Then \(c\) lands at theorem grade:
+\(\operatorname{TheoremGrade}(c,X)\).
+\end{schema}
+
+All four inputs are needed; in particular the schema assumes, and does
+not derive, that the template applies.  \(\operatorname{TheoremGrade}\)
+is primitive, so even an instance of the schema would not prove \(X\);
+it would record that the closure has the status of a conditional
+theorem under its premises.  The two applications of
+\Cref{sec:validation} illustrate the schema.
+
+\subsection{The derivation sweep}\label{sec:recognition:verdict-signature}
+
+\begin{definition}[Three-option derivation sweep]\label{def:three-option-sweep}
+The \emph{derivation sweep} of Stage~6 tests three routes to the
+load-bearing source: the \emph{framework-primitive option}, a
+derivation from the primitives of the framework; the \emph{non-descent
+option}, whether a derivation is blocked because the needed content
+does not descend to the coarser layer; and the \emph{elevation option},
+whether passing to the V-Differential classification resolves the
+route.  Each option receives one of three verdicts: (i) the option is
+the closure route; (ii) the option is not the closure route but does
+not block it; (iii) the option passes the question to the
+V-Differential classification.
+\end{definition}
+
+Formally, \(\mathsf{SweepOption}=\{\mathsf{FP},\mathsf{ND},\mathsf{VDE}\}\),
+\(\mathsf{Verdict}=\{\mathrm{i},\mathrm{ii},\mathrm{iii}\}\), and a
+seven-stage record \(T\) has a primitive verdict map
+\(v_{T}:\mathsf{SweepOption}\to\mathsf{Verdict}\).
+
+\begin{schema}[Cross-Track Verdict Signature]\label{thm:verdict-signature}
+Let \(c\) be a formed closure in the trace-state-only column with
+target \(X\), and let \(T:\mathsf{7Stage}(c,X)\) satisfy
+\(\operatorname{Applies}(c,X,T)\).  Then
+\[
+  v_T(\mathsf{FP})=\mathrm{ii},\qquad
+  v_T(\mathsf{ND})=\mathrm{iii},\qquad
+  v_T(\mathsf{VDE})=\mathrm{ii}.
+\]
+\end{schema}
+
+The intended explanation is that a verdict (i) for the
+framework-primitive option would contradict
+\Cref{thm:closure-content-thesis}, and that the other two options only
+relabel the route; this is a heuristic, not a proof.
+
+The evidence is limited to the two trace-state-only applications.  The
+first version of the Riemann-hypothesis application reports that three
+candidate derivations of its source from the framework's primitives
+each fail \cite{Tsiokos2026RHvOne}, and the first version of the
+P-versus-NP application reports the same for its source
+\cite{Tsiokos2026PvNPvOne}.
+\Cref{tab:verdict-signature} records this paper's reading of those
+reports as verdicts.  The assignment is not computed by any formal
+procedure, and no formal instance of the schema is constructed.
+
+\input{tables/tab_03_verdict_signature}
+
+\subsection{The closure-content thesis}\label{sec:recognition:closure-content-thesis}
+
+The derivation sweep suggests a semantic distinction.  On a
+trace-state-only substrate the load-bearing content is part of the
+formed closure itself: the closure names it and accepts it as a
+premise.  We use three primitive predicates of a structural fact
+\(s\): \(\operatorname{FLC}(s,c)\), that \(s\) is \emph{formed-layer
+content} of \(c\), supplied by the formed closure rather than produced
+later; \(\operatorname{DFP}(s)\), that \(s\) is \emph{derivable from
+the framework's primitives}; and \(\operatorname{NAS}(s,c)\), that \(s\)
+is \emph{named as an accepted source} of \(c\).
+
+\begin{definition}[Load-bearing content]\label{def:load-bearing}
+For a formed closure \(c\) and a target \(X\), the load-bearing content
+\(s_{c,X}=\operatorname{LoadBearingFor}(c,X)\) is the structural fact
+that \(c\) must accept as a premise in order to land \(X\).  The
+assignment \((c,X)\mapsto s_{c,X}\) is primitive.
+\end{definition}
+
+\begin{schema}[Closure-Content Thesis]\label{thm:closure-content-thesis}
+Let \(c\) be a formed closure in the trace-state-only column, with
+target \(X\).  Then its load-bearing content is formed-layer content,
+is not derivable from the framework's primitives, and is named as an
+accepted source:
+\[
+  \operatorname{FLC}(s_{c,X},c)\wedge
+  \neg\operatorname{DFP}(s_{c,X})\wedge
+  \operatorname{NAS}(s_{c,X},c).
+\]
+\end{schema}
+
+The three predicates are independent: a fact can be formed-layer
+content without being named, be named without being load-bearing, or be
+derivable without being a recognition source.  The thesis asserts the
+specific combination for the load-bearing content of a trace-state-only
+closure.  It concerns the content \(s_{c,X}\) only; that every
+recognition-mode landing of \(c\) imports this content is a separate
+clause of \Cref{thm:attack-foreclosure-v5}.
+
+\subsection{Refined attack foreclosure}\label{sec:recognition:attack-foreclosure-v5}
+
+The last schema combines the two parts.  Write
+\(\operatorname{DerivationRoute}(m)\) for the primitive predicate that
+an internal move \(m\) is a derivation route,
+\(l:\operatorname{RMLanding}(c,X)\) for a recognition-mode landing of
+\(X\) on \(c\), and \(\operatorname{ImportsAsNamedRecognition}(l,s)\)
+for the primitive predicate that \(l\) imports \(s\) as a named source.
+
+\begin{schema}[Refined Attack Foreclosure]\label{thm:attack-foreclosure-v5}
+Let \(x\) be a claim in framework scope, put \(X=\llbracket x\rrbracket\),
+and let \(c\) be a formed closure in the trace-state-only column for which
+the SB closure assumption holds.  Then
+\[
+\begin{aligned}
+  &\forall m.\;
+    \operatorname{DerivationRoute}(m)
+    \Longrightarrow
+        \neg\operatorname{AdvancesWithoutExternal}(m,x),\\
+  &\forall l:\operatorname{RMLanding}(c,X).\;
+    \operatorname{ImportsAsNamedRecognition}(l,s_{c,X}),\\
+  &\forall l:\operatorname{RMLanding}(c,X).\;
+    \operatorname{TheoremGrade}(c,X).
+\end{aligned}
+\]
+\end{schema}
+
+The first clause is a consequence of \Cref{thm:attack-foreclosure-v4},
+restricted to derivation routes.  The second and third clauses are new:
+a recognition-mode landing imports the load-bearing content as a named
+source, and lands at theorem grade.  The schema therefore adds to
+\Cref{thm:attack-foreclosure-v4} and does not retract it.  It does not
+assert that every admissible route is either a derivation route or a
+recognition-mode landing; that the two kinds exhaust the routes is an
+additional assumption, which we do not make.
+
+\input{tables/tab_02_recognition_summary}

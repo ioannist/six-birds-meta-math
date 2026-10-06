@@ -1,0 +1,123 @@
+\section{The scoped exact-six theorem}\label{sec:scoped-exact-six}
+
+% Mathematical job:
+%   - State the terminal theorem:
+%       Within the R010 finite audited typed closure description domain,
+%       every admissible description D admits a well-formed
+%       decomposition/exhaustion record Dec(D) with exactly six typed
+%       closure-role channels P1 through P6, and no covered seventh
+%       irreducible typed closure role is needed.
+%   - Enumerate the channel statuses (active_projection, below_threshold,
+%     collapsed_boundary_case, absent_with_record, inapplicable_outside_scope).
+%   - State the exact-six meaning and the exact-six non-meaning explicitly.
+%   - Record the proof-input chain: Section 4 (domain), Section 5 (lower
+%     bounds), Section 6 (upper bound), Section 7 (decomposition),
+%     Section 8 (integrated stress).
+%
+% Governing sources:
+%   workspace/meta/lens_lab/papers/paper3/scoped_exact_six_theorem_statement.md
+%   workspace/meta/lens_lab/papers/paper3/scoped_exact_six_promotion.md
+%   workspace/meta/lens_lab/papers/paper3/exact_six_scope_and_nonclaims.md
+%
+% Discipline (non-negotiable):
+%   "scoped exact-six", not "absolute exact-six".
+%   "six role channels/status slots", not "six active roles in every case".
+%   "existential decomposition", not "unique decomposition".
+%   "no seventh irreducible role in the covered scope".
+
+
+The theorem chain of
+Sections~\ref{sec:fatcd-domain}--\ref{sec:decomposition-exhaustion}
+and the integrated stress certification of
+Section~\ref{sec:integrated-stress} together permit the terminal
+statement. The scoped exact-six theorem combines the definition of
+\FATCD{} with the lower bounds, the upper-bound classification, and
+the decomposition/exhaustion theorems into a single quantified claim
+over the domain.
+
+\begin{theorem}[Scoped exact-six]\label{thm:scoped-exact-six}
+Let \(D \in \FATCD{}\). Then \(D\) admits a well-formed
+decomposition/exhaustion record \(\Dec{D}\) with exactly six typed
+closure-role channels:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: update-vs-quotient compatibility / descent obstruction;
+  \item \Ptwo{}: macro-specification representability;
+  \item \Pthree{}: enriched route/coherence mismatch;
+  \item \Pfour{}: stage/order/transition/refinement structure;
+  \item \Pfive{}: quotient packaging / quotienting;
+  \item \Psix{}: audit/bookkeeping/provenance/replay/checkability.
+\end{itemize}
+Each channel carries exactly one recorded status from
+\(\{\activeproj,\; \belowthr,\; \collapsedbc,\; \absentrec,\;
+\outsidescope\}\). Every active projection is supported by threshold
+data, a witness schema, a level assignment, and an honest bookkeeping
+record. Every residual raw feature of \(D\) is classified, under the
+upper-bound classification of
+Section~\ref{sec:upper-bound-classification}, as one of:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item composite of existing role channels;
+  \item presentation variant;
+  \item level shift;
+  \item activation-threshold refinement;
+  \item instrument-visibility artifact;
+  \item empirical-bridge annotation;
+  \item outside-domain structure;
+  \item already-covered bookkeeping or annotation data.
+\end{itemize}
+No covered residual feature remains as an unresolved candidate seventh
+role or genuine seventh irreducible typed closure role. We denote this
+conclusion by
+\[
+\ScopedExactSix{\FATCD{}}.
+\]
+\end{theorem}
+
+\begin{proof}
+Fix \(D \in \FATCD{}\). By Theorem~\ref{thm:decomposition-existence},
+\(D\) admits a well-formed decomposition/exhaustion record \(\Dec{D}\)
+in the sense of Definition~\ref{def:decomposition-record}. By
+Theorem~\ref{thm:six-channel-exactness}, the channel sequence of
+\(\Dec{D}\) has length six, each channel carries one of the five
+statuses of Definition~\ref{def:channel-status}, and every raw
+feature of \(D\) is accounted for by an active projection, by a
+status record, by a residual classification, or by an auxiliary
+loss/lift or visibility annotation. By
+Theorem~\ref{thm:upper-bound-classification}, residual features in
+the covered scope classify under categories (ii)--(ix) of
+Definition~\ref{def:residual-scheme}, and categories (x) and (xi) are
+empty. Theorem~\ref{thm:six-role-lower-bounds} supplies, for each
+channel, a \(D' \in \FATCD{}\) at which that channel is active. The
+integrated stress certification of
+Theorem~\ref{thm:integrated-stress} discharges the dependency,
+circularity, channel-versus-activation, role-alignment, upper-bound
+residual, and overclaim families. Hence \(\ScopedExactSix{\FATCD{}}\).
+\end{proof}
+
+\subsection{What scoped exact-six means and does not mean}\label{subsec:exact-six-meaning}
+
+Theorem~\ref{thm:scoped-exact-six} has a reading that should be
+preserved throughout what follows.
+
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \emph{Six channels, not six active witnesses.} The theorem
+    asserts six role channels in \(\Dec{D}\) for every
+    \(D \in \FATCD{}\). It does not assert that every \(D\) activates
+    all six roles, that every \(D\) carries six active projections
+    \(\pi_1(D), \ldots, \pi_6(D)\), or that a single \(D\) realizes
+    all six witness schemas of Section~\ref{sec:lower-bounds}.
+  \item \emph{Existential, not unique, decomposition.} The theorem
+    asserts existence of \(\Dec{D}\); it does not assert uniqueness or
+    canonicity. Distinct well-formed records of the same \(D\) may
+    exist (Proposition~\ref{prop:non-uniqueness}).
+  \item \emph{Covered-scope residual exhaustion.} The residual
+    exhaustion clause is restricted to the covered scope. Features
+    outside that scope are classified as outside-domain structures
+    under category~(viii) of Definition~\ref{def:residual-scheme},
+    not absorbed into primitive roles.
+  \item \emph{No broader claim.} Theorem~\ref{thm:scoped-exact-six}
+    is a statement about \FATCD{}. It does not assert a full
+    six-primitives algebra, global primitive independence, empirical
+    realization, instrument-family completeness, or coverage of all
+    emergence phenomena. See Section~\ref{sec:limitations-nonclaims}.
+\end{itemize}
+

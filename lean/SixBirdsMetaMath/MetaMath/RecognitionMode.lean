@@ -1,0 +1,8 @@
+import SixBirdsMetaMath.MetaMath.RecognitionMode.Template
+import SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature
+import SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis
+import SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5
+
+namespace SixBirdsMetaMath.MetaMath.RecognitionMode
+
+end SixBirdsMetaMath.MetaMath.RecognitionMode

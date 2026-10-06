@@ -1,0 +1,719 @@
+\section{Symmetry}\label{sec:symmetry}
+
+The Symmetry axis collects obstructions caused by involutions,
+branch selection, and anomaly-style failures.  In this chapter a
+symmetry is not merely a convenient change of notation.  It is part
+of the apparatus that controls which branches, traces, and quotient
+classes may be distinguished without adding new breaking data.  The
+basic question is therefore familiar: when a construction is
+invariant under the declared symmetry, what can it select, transport,
+or record?  In the running example of \Cref{sec:intro}, the involution
+exchanging \(1\) and \(2\) fixes every \(q\)-class; its orbit \(\{1,2\}\) has no fixed point, so by \Fref{F15a} no equivariant section of the orbit map exists (every equivariant map from the orbit set to \(X\) takes values in the fixed points \(3,4\)); choosing \(1\) or \(2\) needs breaking data, such as the readout \(F\), which separates them.
+
+The five laws proceed from fixed data to failure modes and then to
+equivalence.  Duality Fixity, or Self-Dual Trace Confinement, is the
+layer-agnostic form of the confinement theorem of
+\citet{Tsiokos2026SDTC}, which \citet{Tsiokos2026RH} applies to the
+zeros of the Riemann zeta function.  For a readout that is strongly
+measurable and square-integrable when the visible weight is a measure,
+a positive anti-invariant ledger dominated by bounds whose traces have
+infimum at most \(0\) is zero, and a separating readout then confines
+visible mass to the fixed locus.  Such bounds exist exactly when
+\(\psi^-=0\) \(\mu\)-almost everywhere (last clause of \Cref{thm:F14}),
+so all content lies in constructing them; the source papers take them
+as input, and no result of this paper assumes the Riemann hypothesis.  Selection Obstruction / Repair
+Normal Form is a direct theorem: exact symmetry cannot select a
+non-fixed branch without declared breaking data.  Spontaneous
+Symmetry Breaking / Branch-Selection Formation characterizes when a
+branch-selection record exists: exactly when some ground state is not invariant
+under the symmetry.  Anomaly / Symmetry Obstruction and Duality
+Equivalence are direct theorems about failed symmetry descent and
+role-preserving equivalence of formed packages.
+
+The direct selection-obstruction theorem reuses the
+Descent--Repair split-pair discipline: a forbidden selection is a
+split-pair obstruction at the level of symmetry orbits.  The later
+anomaly and duality-equivalence subsections keep the same posture:
+the apparatus must say when symmetry descends, when it fails, and
+when two symmetry presentations preserve the same formed roles.
+
+\subsection{Duality Fixity (Self-Dual Trace Confinement) [\texorpdfstring{\Fref{F14}}{F14}]}\label{sec:symmetry:duality-fixity}
+
+\begin{definition}[Involutive ledger; anti-invariant readout]\label{def:involutive-ledger}
+An involutive ledger is a carrier \(X\) equipped with an involution
+\(\Jinv:X\to X\), so \(\Jinv^2=\mathrm{id}\), and a visible weight
+\(\mu\ge 0\) on \(X\) (a finite weight function, or a measure).  Its fixed
+locus is
+\[
+  \Fixinv=\{x\in X:\Jinv(x)=x\}.
+\]
+An anti-invariant readout is a map \(\psi^-\) from \(X\) to a Hilbert space
+\(\mathcal H\), with a declared unitary involution \(U\) of \(\mathcal H\), such
+that \(\psi^-(\Jinv x)=-U\psi^-(x)\) for every \(x\); when \(\mu\) is a
+measure, \(\psi^-\) is strongly (Bochner) measurable, for instance Borel measurable with
+\(\mathcal H\) separable, with \(\int_X\|\psi^-\|^2\,d\mu<\infty\).
+A map \(\psi^-:X\to\mathcal H\), anti-invariant or not, is \emph{separating} when \(\{x\notin\Fixinv:\psi^-(x)=0\}\) is contained in a
+\(\mu\)-null set; for a finite weight this means that
+every \(x\) with \(\mu(x)>0\) and \(\psi^-(x)=0\) lies in \(\Fixinv\).
+\end{definition}
+
+\paragraph{Reading the statement.}
+The objects are those of \citet{Tsiokos2026SDTC}, over a real Hilbert
+space.  There the odd part \(\psi^-\) of an observable satisfies
+\(\psi^-(\Jinv x)=-\psi^-(x)\), which is the case \(U=\mathrm{id}\) of
+\Cref{def:involutive-ledger}; the response involution of that paper,
+under which \(\psi^-\) is odd, is a different map and is not the \(U\)
+of this definition, so the restriction on \(U\) below is not imposed by
+that paper. The anti-invariant ledger
+is the positive element
+\(A_X=\int_X\psi^-(x)\psi^-(x)^*\,d\mu(x)\), a Bochner integral of
+trace-class operators, which converges because
+\(\int_X\|\psi^-\|^2\,d\mu<\infty\); for a finite weighted ledger it is the
+finite sum \(A_X=\sum_{x}\mu(x)\,\psi^-(x)\psi^-(x)^*\) (Definition~4.1
+there). Anti-invariance identifies \(A_X\) as the anti-invariant ledger.
+The trace-squeeze argument does not use anti-invariance; the implication from confinement to \(A_X=0\), under the stated restriction on \(U\), does. No clause uses \(\Jinv^2=\mathrm{id}\), nor that \(U\) is unitary or an involution: \(\Jinv\) enters only through \(\Fixinv\), and \(U\) only through \(U\psi^-(x)=-\psi^-(x)\) at fixed points, so every clause holds for an arbitrary map \(\Jinv:X\to X\) and an arbitrary map \(U:\mathcal H\to\mathcal H\). The ledger \(A_X\) lies
+in a positive cone with order \(\preceq\) and trace \(\trAX\); positive
+trace-class operators on a Hilbert space, or positive semidefinite matrices
+with the usual trace, are the classical model. The theorem uses two
+properties of the cone and one property of \(A_X\), all of which hold in that
+model:
+(C1) the trace is monotone, \(A\preceq B\) implies \(\trAX A\le\trAX B\);
+(C2) a positive element of trace zero is zero;
+(C3) the trace identity \(\trAX A_X=\int_X\|\psi^-(x)\|^2\,d\mu(x)\)
+(Lemma~4.3 there; in the classical model it is the trace of a rank-one
+operator, \(\trAX(vv^*)=\|v\|^2\)).
+The theorem is a reformulation, not a way of establishing
+confinement: by its last clause, suitable bounds exist exactly when
+\(\psi^-=0\) \(\mu\)-almost everywhere.  Its value lies in isolating the
+properties (C1)--(C3) that the squeeze uses.  For a linear involution
+\(U\), the condition in the theorem that no nonzero \(v\) satisfies
+\(Uv=-v\) holds exactly when \(U=\mathrm{id}\).
+The \(B_n\) are the bounds of a domination ladder, a sequence of elements of
+the cone with \(A_X\preceq B_n\) for every \(n\); in the source paper they
+have the form \(B_n=K^-_n+E_n\) (Definition~6.1 there).
+
+\begin{theorem}[Duality Fixity / Self-Dual Trace Confinement]\label{thm:F14}
+Let \(X\) carry a map \(\Jinv:X\to X\) (an involution in the intended reading; \(\Jinv^2=\mathrm{id}\) is not required) and a visible weight \(\mu\) as in \Cref{def:involutive-ledger} (in the intended reading, the ledger of a formed closure; formedness is not used), with
+separating readout \(\psi^-:X\to\mathcal H\), strongly measurable and square-integrable when \(\mu\) is a measure, as in \Cref{def:involutive-ledger} but not necessarily anti-invariant, and let its
+ledger \(A_X\) (the anti-invariant ledger when \(\psi^-\) is anti-invariant) lie in a positive cone with order \(\preceq\) and trace
+\(\trAX\) satisfying (C1)--(C3). If
+\[
+  A_X \preceq B_n\ \ \text{for every } n
+  \qquad\text{and}\qquad
+  \inf_n\trAX(B_n)\le 0
+  \quad(\text{for every }\varepsilon>0\text{ some }\trAX(B_n)<\varepsilon),
+\]
+then \(A_X=0\) and \(X\setminus\Fixinv\) is contained in a \(\mu\)-null set,
+so \(\mu(X\setminus\Fixinv)=0\) whenever \(\Fixinv\) is measurable (for
+instance, when \(\Jinv\) is measurable on a standard Borel space): visible
+mass is confined to the fixed locus \(\Fixinv\). Moreover, if \(\psi^-(\Jinv x)=-U\psi^-(x)\) for a declared map \(U:\mathcal H\to\mathcal H\) (a unitary involution in the intended reading), \(\trAX(0)=0\) (true in the classical model), and no nonzero \(v\in\mathcal H\) has \(Uv=-v\) (for instance
+\(U=\mathrm{id}\)), then \(A_X=0\) if and only if \(X\setminus\Fixinv\) is
+contained in a \(\mu\)-null set; without this condition on \(U\) the
+equivalence can fail. Conversely, if \(\psi^-=0\) \(\mu\)-almost everywhere, then \(\trAX A_X=0\) by (C3), and the constant sequence \(B_n:=A_X\) satisfies both displayed hypotheses; hence such a sequence exists if and only if \(\psi^-=0\) \(\mu\)-almost everywhere.
+\end{theorem}
+\begin{proof}
+By (C3), \(\trAX A_X=\int_X\|\psi^-\|^2\,d\mu\ge 0\), and by (C1),
+\(\trAX A_X\le\trAX B_n\) for every \(n\). Taking the infimum over \(n\) gives
+\(\trAX A_X\le 0\), so \(\trAX A_X=0\). Since \(A_X\) is positive, (C2)
+gives \(A_X=0\). By (C3) again, \(\int_X\|\psi^-\|^2\,d\mu=0\), and the
+integrand is nonnegative, so \(\psi^-(x)=0\) for \(\mu\)-almost every
+\(x\). Then \(X\setminus\Fixinv\) is contained in the union of the null set
+\(\{\psi^-\neq0\}\) and the set \(\{x\notin\Fixinv:\psi^-(x)=0\}\), which is
+contained in a null set by separation; so \(X\setminus\Fixinv\) is contained
+in a \(\mu\)-null set, and \(\mu(X\setminus\Fixinv)=0\) when \(\Fixinv\) is
+measurable. For the equivalence under the restriction on \(U\), if \(A_X=0\) then \(\trAX A_X=\trAX(0)=0\), and the argument just given, from \(\trAX A_X=0\) on, confines \(X\setminus\Fixinv\) to a null set. Conversely, let
+\(U\) have no nonzero \(v\) with \(Uv=-v\), and let \(X\setminus\Fixinv\) lie in
+a null set. For \(x\in\Fixinv\), anti-invariance gives
+\(\psi^-(x)=\psi^-(\Jinv x)=-U\psi^-(x)\), so \(U\psi^-(x)=-\psi^-(x)\) and
+\(\psi^-(x)=0\); hence \(\psi^-=0\) almost everywhere,
+\(\int_X\|\psi^-\|^2\,d\mu=0\), \(\trAX A_X=0\) by (C3), and \(A_X=0\) by (C2).
+Without the condition, take one point \(x\) of mass one with \(\Jinv x=x\),
+\(Uv=-v\) and \(\psi^-(x)=v\neq0\): then \(X\setminus\Fixinv=\varnothing\) but
+\(A_X=vv^*\neq0\). For the converse, if \(\psi^-=0\) \(\mu\)-almost everywhere, (C3) gives \(\trAX A_X=\int_X\|\psi^-\|^2\,d\mu=0\); the constant sequence \(B_n:=A_X\) satisfies \(A_X\preceq B_n\) by reflexivity of \(\preceq\), and \(\trAX(B_n)=0\).
+\end{proof}
+
+\paragraph{What the sources supply.}
+The theorem assumes the domination ladder; it does not construct one.
+\PaperSDTC\ \citep{Tsiokos2026SDTC} proves the same squeeze for real
+Hilbert spaces, adds a quantitative form of the confinement and
+variants on finite windows, and names as a hypothesis, Self-Dual Trace
+Confinement, that in specified self-dual settings such domination
+records are supplied by independent structure.  \PaperRH\
+\citep{Tsiokos2026RH} applies the squeeze to the reflection
+\(s\mapsto1-\bar s\) in the critical line.  Its conditional theorem uses
+a named hypothesis on an auxiliary ledger of represented zeros, with
+explicit encoding conditions, rather than the global ledger
+\(A_Z=\sum_\rho m_\rho(\operatorname{Re}\rho-\tfrac12)^2\) over the
+nontrivial zeros, whose vanishing is equivalent to the Riemann
+hypothesis for positive integer weights \(m_\rho\).  Its concrete
+version uses finite windows of actual zeros that are closed under
+\(s\mapsto1-\bar s\), carry unit weights and eventually contain every
+nontrivial zero.  The named hypothesis holds exactly when every
+represented zero has critical coordinate; it is therefore equivalent to
+the Riemann hypothesis on the bare shell, which represents exactly the
+nontrivial zeros with coordinate \(\operatorname{Re}\rho\), and the
+concrete window version is likewise equivalent to the Riemann
+hypothesis.  That paper presents its conditional theorem as a
+reformulation, not as evidence.  \Cref{thm:F14} states the
+confinement law for any involutive ledger with a separating readout.
+
+
+\paragraph{Nonclaims.} This subsection does not construct a domination
+ladder, does not prove the RH specialization, and does not instantiate the
+law to a specific arithmetic carrier.
+
+\subsection*{Layer instantiations}\label{layer-inst:F14}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Symmetric/skew decomposition under transpose involution
+(linear algebra).}] \textit{Analogy.}
+For any \(A\in\mathrm{Mat}_n(\mathbb R)\), the transpose
+\(J(A)=A^{\!\top}\) is an involution; the unique decomposition
+\(A=\tfrac12(A+A^{\!\top})+\tfrac12(A-A^{\!\top})\) separates
+\(J\)-symmetric and \(J\)-skew parts.  The skew part \(A-A^{\!\top}\), which \(J\) sends to its negative,
+is the \Fref{F14} anti-invariant readout; its Frobenius norm
+\(\lVert A-A^{\!\top}\rVert_F\) is \(J\)-invariant, and its vanishing
+places \(A\) in the fixed locus \(\mathrm{Sym}_n(\mathbb R)\), on
+which the Loewner order is defined
+\citep{HornJohnson2013MatrixAnalysis}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Selection Obstruction / Repair Normal Form [\texorpdfstring{\Fref{F15a}}{F15a}]}\label{sec:symmetry:selection-obstruction}
+
+\begin{definition}[Selection obstruction]\label{def:selection-obstruction}
+Let a declared symmetry group \(G\) act on a carrier \(X\), and let
+\[
+  p:X\to X/G
+\]
+be the orbit quotient.  For a selectedness predicate
+\(\chi:X\to\{0,1\}\), the selection obstruction is the split-pair set
+\[
+  \splitObs(p,\mathrm{id}_X,\chi) =
+  \{(x,x')\in X\times X:
+      p(x)=p(x')\ \text{and}\ \chi(x)\ne\chi(x')\}.
+\]
+\end{definition}
+
+\paragraph{Reading the statement.}
+The symbols are those of \Cref{thm:F15a} below: \(G\) acts on \(X\)
+by \(\rho_X\) and on \(O\) by \(\rho_O\), \(\pi:X\to O\) is
+surjective, \(s\) is the selectedness predicate, and
+\(\sigma:O\to X\) is a map, in the intended reading a section picking one point in each \(\pi\)-fiber; \(\pi\circ\sigma=\mathrm{id}_O\) is assumed only in the equivariant-section clause.
+\(\operatorname{EquivariantSelector}(\rho_O,\rho_X,\sigma)\) says
+that this choice commutes with the group:
+\(\sigma(\rho_O(g,o))=\rho_X(g,\sigma(o))\) for all \(g,o\).
+\(\operatorname{TrivialOrbitAction}(\rho_O)\) says that every group
+element fixes every element of \(O\): \(\rho_O(g,o)=o\).
+\(\operatorname{HasSelectionSplit}(\pi,s)\) says that some
+\(\pi\)-fiber contains a selected and an unselected point.
+Under the orbit-quotient hypothesis of the theorem's moreover
+clause, these fibers are the orbits, \(O\) plays the role of \(X/G\),
+\(\pi\) that of \(p\), and \(s\) that of \(\chi\), so
+\(\mathcal O_s\) is the selection obstruction of
+\Cref{def:selection-obstruction}.
+
+\begin{theorem}[Selection Obstruction / Repair Normal Form]\label{thm:F15a}
+Let \(G\) act on a set \(X\) and on an orbit set \(O\) by
+\(\rho_X:G\times X\to X\) and \(\rho_O:G\times O\to O\).  Let
+\(\pi:X\to O\) be a surjective map (in the intended reading the orbit map; the
+orbit-quotient property is assumed only in the clause that states it), let
+\(s:X\to\{0,1\}\) be a selectedness predicate, let
+\(\sigma:O\to X\) be a map (in the intended reading a section of \(\pi\), though \(\pi\circ\sigma=\mathrm{id}_O\) is not assumed; the equivariant-section clause below concerns maps that satisfy it).  Define
+\[
+  \mathcal O_s
+  :=
+  \{(x,x')\in X^2:\pi(x)=\pi(x')\ \text{and}\ s(x)\ne s(x')\}.
+\]
+Then
+\begin{align*}
+  &\operatorname{EquivariantSelector}(\rho_O,\rho_X,\sigma)
+    \wedge \operatorname{TrivialOrbitAction}(\rho_O)\\
+  &\hspace{4em}\Longrightarrow
+    \forall o\in O,\ \forall g\in G,\
+      \rho_X(g,\sigma(o))=\sigma(o),\\
+  s\ \text{descends through}\ \pi
+  &\iff
+  \mathcal O_s=\emptyset
+  \iff
+  \exists\,\bar s:O\to\{0,1\}\ \text{with}\ \bar s\circ\pi=s,\\
+  \operatorname{HasSelectionSplit}(\pi,s)
+  &\iff
+  \mathcal O_s\ne\emptyset.
+\end{align*}
+If moreover \(\pi\) is the orbit quotient,
+\(\pi(x)=\pi(x')\iff x'=\rho_X(g,x)\) for some \(g\in G\), and \(\rho_O\) is
+the induced action, \(\rho_O(g,\pi(x))=\pi(\rho_X(g,x))\), then
+\(\operatorname{TrivialOrbitAction}(\rho_O)\) holds, every equivariant map
+\(\sigma:O\to X\), in particular every equivariant section, takes values in the
+common fixed-point set \(X^G\), and if \(X^G=\emptyset\) and
+\(O\ne\emptyset\), no equivariant map \(O\to X\) exists; and an equivariant section exists if and only if \(G\) acts trivially on \(X\), and it is then the inverse of \(\pi\).
+For every breaker readout \(b:X\to B\), the breaker extension
+\(\langle\pi,b\rangle:X\to O\times B\) retains \(\pi\) and carries \(b\), strictly
+refines \(\pi\) when \(b\) separates two points of one \(\pi\)-fiber, and factors
+through every map \(p\) through which both \(\pi\) and \(b\) factor. Conversely to the fixed-point clause above, under the orbit-quotient and induced-action hypotheses every map \(O\to X^G\) is equivariant, so an equivariant map \(O\to X\) exists if and only if \(X^G\ne\emptyset\) or \(O=\emptyset\). Adjoining \(b\) records the
+distinction carried by \(b\); taking \(b=s\) carries selectedness, but the
+extension alone does not construct a selector.
+\end{theorem}
+\begin{proof}
+Assume the actions \(\rho_X,\rho_O\), the surjective map
+\(\pi:X\to O\), the selectedness predicate \(s\), and the map
+\(\sigma:O\to X\).  If \(\sigma\) is equivariant and the \(G\)-action on
+\(O\) is trivial, then for every \(g\in G\) and \(o\in O\), equivariance of
+the selector and triviality of the action on \(O\) give
+\(\rho_X(g,\sigma(o))=\sigma(\rho_O(g,o))=\sigma(o)\), so
+\(\sigma(o)\) lies in the common fixed locus of the \(G\)-action on
+\(X\).
+
+For selectedness, if \(s=\bar s\circ\pi\), then
+\(\pi(x)=\pi(x')\) implies \(s(x)=s(x')\), hence
+\(\mathcal O_s=\emptyset\).  Conversely, if
+\(\mathcal O_s=\emptyset\), define
+\[
+  \bar s(\pi(x)):=s(x).
+\]
+The empty obstruction makes the definition independent of the
+representative \(x\), and surjectivity of \(\pi\) supplies
+representatives for all \(o\in O\).  If \(\mathcal O_s=\emptyset\), selectedness is a quotient-level
+predicate. If \(\mathcal O_s\ne\emptyset\), a split pair shows that no
+\(\bar s\) exists; by the breaker clause with \(b=s\), the extension
+\(\langle\pi,s\rangle\) removes every split pair, since \(s\) factors through
+it.
+
+For the orbit-quotient clause, \(\rho_O(g,\pi(x))=\pi(\rho_X(g,x))=\pi(x)\),
+since \(\rho_X(g,x)\) lies in the orbit of \(x\); as \(\pi\) is surjective, the
+action on \(O\) is trivial. The first display then places every value of an
+equivariant map \(\sigma:O\to X\) in \(X^G\), and if \(X^G=\emptyset\) while \(O\) has an
+element \(o\), the value \(\sigma(o)\) cannot exist. For an equivariant section \(\sigma\), the value \(\sigma(\pi x)\) is fixed and lies in the orbit of \(x\), since \(\pi(\sigma(\pi x))=\pi x\); a point of an orbit is fixed only if every point of that orbit is, so \(x\) is fixed and \(\sigma(\pi x)=x\). Conversely, a trivial action makes every orbit a point, so \(\pi\) is bijective and its inverse is an equivariant section. As \(\rho_O\) is trivial, every \(\sigma:O\to X^G\) satisfies \(\sigma(\rho_O(g,o))=\sigma(o)=\rho_X(g,\sigma(o))\), so the equivariant maps are exactly those with values in \(X^G\).
+
+The breaker clauses are the source-repair part of \Cref{thm:F2} with source \(\pi\),
+identity transport and target readout \(b\). For the selectedness reading, take
+\(b=s\).
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not classify which
+breaking data are allowed and does not instantiate the obstruction to
+a particular symmetry group.
+
+\subsection*{Layer instantiations}\label{layer-inst:F15a}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Vitali sets and the axiom of choice (mathematical
+logic).}] \textit{Special case.}
+For the free \(\mathbb Q\)-action on \(\mathbb R\) by translation,
+no equivariant section of the orbit projection
+\(\mathbb R\to\mathbb R/\mathbb Q\) can exist (there are no fixed
+points).  The axiom of choice supplies a non-equivariant Vitali
+set of representatives, which is necessarily non-measurable: the
+\Fref{F15a} declared breaker is the readout \(b(x)=[x=v(\pi(x))]\) for a choice of
+representatives \(v:\mathbb R/\mathbb Q\to\mathbb R\), which the axiom of choice supplies, licensing a
+non-equivariant selection where no equivariant one is available
+\citep{Vitali1905ProblemaMisura}.
+
+\item[\emph{Faddeev--Popov gauge fixing and the Gribov--Singer
+obstruction (gauge theory).}] \textit{Analogy.}
+Singer's theorem states that the gauge orbit space
+\(\mathcal A/\mathcal G\) of Yang--Mills theory admits no
+continuous global section.  Faddeev--Popov gauge fixing provides
+the \Fref{F15a} declared breaker through a local gauge condition
+\(F(A)=0\) together with the Faddeev--Popov determinant
+\(\det(\delta F/\delta\omega)\) and ghost fields, licensing local
+path-integral computations; the global Gribov--Singer obstruction
+witnesses the non-existence of a clean equivariant selector
+\citep{FaddeevPopov1967YangMills}.
+
+\item[\emph{Buridan's ass and symmetric tie-breaking (decision
+theory).}] \textit{Special case.}
+Under exact symmetry between two equally optimal choices, no
+equivariant deterministic decision rule selects one option.  Take
+\(X=\{\ell,r\}\), \(G=\mathbb Z/2\) exchanging the options, \(O\) a one-point set
+and \(\pi\) constant with the induced action; since \(X^G=\varnothing\) and
+\(O\ne\varnothing\), \Fref{F15a} gives no equivariant section.  The
+declared breaker is a tie-breaking rule --- random coin flip, a
+lexicographic preference axis, or a memory of past choices --- that
+supplies the non-symmetric apparatus needed for a definite
+selection
+\citep{Rescher1959ChoiceWithoutPreference}.
+\end{description}
+\endgroup
+
+
+\subsection{Spontaneous Symmetry Breaking / Branch-Selection Formation [\texorpdfstring{\Fref{F15b}}{F15b}]}\label{sec:symmetry:spontaneous-ssb}
+
+The setup is a formed closure under an exact declared symmetry, with
+the orbit quotient and selection interface already in place as in the
+previous subsection.  A spontaneous symmetry-breaking claim asks for
+more than a set-theoretic section of the orbit map.  It asks for a
+branch-selection record: a map that keeps each state in its orbit and
+selects, for some ground state, a branch that the symmetry moves.
+
+\paragraph{Reading the statement.}
+A \emph{branch-selection formation record} for \((\mathcal C,G,\Omega)\) is a
+triple \((F,c,g)\) with \(F:\mathcal C\to\mathcal C\), \(q\circ F=q\), \(F\)
+constant on orbits (\(F(h\cdot x)=F(x)\) for all \(h\in G\), so that
+\(F=\sigma\circ q\) for a section \(\sigma\) of \(q\)), \(\Omega(c)\) and
+\(g\cdot F(c)\ne F(c)\). The identity map is not such a record, since it is not
+constant on a nontrivial orbit: the record selects one branch in each orbit. Clause (o) says that such a record
+exists exactly when some ground state is not invariant under \(G\). When
+\(\Omega\) is \(G\)-invariant, as in clause (iii), this is the usual definition
+of a spontaneously broken symmetry; without that invariance the asymmetry may
+already be in \(\Omega\). Clause (i) locates
+the selected branch, clause (ii) says that no symmetric selector
+produces it, and clause (iii) says that when the ground-state predicate is
+symmetric the record exhibits two distinct ground states in one orbit, the
+selected branch and its image under \(g\).
+
+\begin{theorem}[Spontaneous Symmetry Breaking / Branch-Selection Formation]\label{thm:F15b}
+Let \(\mathcal C\) be a closure space with a \(G\)-action, let
+\(\Omega:\mathcal C\to\mathrm{Prop}\) be the ground-state predicate,
+and let \(q:\mathcal C\to\mathcal C/G\) be the orbit map onto the
+branch quotient.  Then:
+\begin{enumerate}[label=(\roman*)]
+\item[(o)] a branch-selection formation record exists if and only if some
+  ground state is not fixed by \(G\): there are \(c\in\mathcal C\) with
+  \(\Omega(c)\) and \(g\in G\) with \(g\cdot c\ne c\);
+\end{enumerate}
+and for every branch-selection formation record \((F,c,g)\):
+\begin{enumerate}[label=(\roman*)]
+\item \(F\) maps each orbit into itself, and the branch \(F(c)\) lies in the
+  orbit of the ground state \(c\) and is not fixed by \(G\);
+\item no \(G\)-equivariant map \(\sigma:\mathcal C/G\to\mathcal C\), for the
+  trivial action of \(G\) on \(\mathcal C/G\), takes the value \(F(c)\) at
+  \(q(c)\);
+\item if \(\Omega\) is \(G\)-invariant, that is \(\Omega(h\cdot x)\iff\Omega(x)\)
+  for all \(h\in G\) and \(x\in\mathcal C\), then \(F(c)\) and \(g\cdot F(c)\)
+  are distinct ground states in the orbit of \(c\).
+\end{enumerate}
+So the branch \(F(c)\) cannot be chosen by a symmetric selector: the record
+\(F\) is breaker data in the sense of \Cref{thm:F15a}.
+\end{theorem}
+\begin{proof}
+(o) If \(c\) is a ground state and \(g\cdot c\ne c\), choose a section
+\(\sigma\) of \(q\) with \(\sigma(q(c))=c\), and let \(F=\sigma\circ q\). Then
+\(q\circ F=q\), \(F\) is constant on orbits, and \(F(c)=c\), so
+\(g\cdot F(c)\ne F(c)\) and \((F,c,g)\) is a formation record. Conversely, let \((F,c,g)\) be a formation record.
+Since \(q(F(c))=q(c)\), there is \(h\in G\) with \(F(c)=h\cdot c\). If \(G\)
+fixed \(c\), then \(F(c)=c\) and \(g\cdot F(c)=F(c)\), which is not the case;
+so the ground state \(c\) is not fixed by \(G\).
+
+(i) Since \(q\circ F=q\), each \(F(x)\) lies in the orbit of \(x\); in
+particular \(F(c)\) lies in the orbit of \(c\), and \(g\cdot F(c)\ne F(c)\)
+says that \(G\) does not fix it.  (ii) Let \(\sigma\) be \(G\)-equivariant for
+the trivial action on \(\mathcal C/G\).  Then for every \(h\in G\) and every
+orbit \(o\), \(h\cdot\sigma(o)=\sigma(h\cdot o)=\sigma(o)\), so every value of
+\(\sigma\) is fixed by \(G\), as in the first clause of \Cref{thm:F15a}.  Since
+\(g\cdot F(c)\ne F(c)\), \(\sigma(q(c))\ne F(c)\).  The asymmetry is therefore
+carried by the selection record \(F\), not by the symmetric quotient.
+(iii) By (i), \(F(c)=h\cdot c\) for some \(h\in G\), so \(\Omega(F(c))\) by
+invariance, and then \(\Omega(g\cdot F(c))\) by invariance again. Both lie in
+the orbit of \(c\), and they are distinct because \(g\cdot F(c)\ne F(c)\).
+\end{proof}
+
+\paragraph{Where the breaking comes from.}
+The theorem does not produce a non-invariant ground state; whether one exists
+is a property of the closure and its ground-state predicate. In a physical
+system this is the content of a spontaneous symmetry-breaking result, and the
+theorem records where the asymmetry is carried once it holds: in the
+selection record, not in the symmetric quotient. \PaperCSL\
+\citep{Tsiokos2026CSL} gives a parallel diagnosis in the access setting.
+
+
+\paragraph{Nonclaims.} This subsection does not exhibit a non-invariant
+ground state for any particular closure and does not classify spontaneous
+symmetry breaking at a substrate level.  The canonical particle-physics
+instances of spontaneous symmetry breaking are surveyed in Goldstone, Salam,
+and Weinberg \citep{Goldstone1962BrokenSymmetries}, and the broader
+emergent-layer reading of multi-level breaking appears in Anderson's
+\emph{More is Different} \citep{Anderson1972MoreIsDifferent}.
+
+\subsection*{Layer instantiations}\label{layer-inst:F15b}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Bose--Einstein condensation (atomic physics).}] \textit{Analogy.}
+When a dilute gas of bosons is cooled below its critical
+temperature, a macroscopic fraction of atoms condenses into a
+single one-particle quantum state.  The condensate's overall
+\(U(1)\) phase is arbitrary --- a continuous symmetry of the
+underlying dynamics --- yet each realisation selects a definite
+phase, breaking the symmetry.  The 1995 Anderson--Ensher--
+Matthews--Wieman--Cornell experiment on rubidium-87 confirmed
+Einstein's 1925 prediction; the macroscopic phase selection is the
+\Fref{F15b} formation operator
+\citep{AndersonEnsherMatthewsWiemanCornell1995BEC}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Anomaly / Symmetry Obstruction [\texorpdfstring{\Fref{F40}}{F40}]}\label{sec:symmetry:anomaly}
+
+Let a formed closure have carrier \(H\), layer quotient
+\(q:H\to Q\), declared readouts and audit records, and a would-be
+symmetry, an action \(\alpha\) of a group \(G\) on the raw carrier.  The
+action is a genuine layer symmetry only when it acts functorially on the quotient and
+preserves the declared structure of the layer.
+
+\paragraph{Reading the statement.}
+\(\operatorname{SymmetryDescends}(q,\alpha)\) says that each group
+element induces a well-defined map on the quotient: for every \(g\),
+the map \(h\mapsto q(\alpha(g,h))\) factors through \(q\).
+\(\operatorname{DomainDescends}(q,D)\) says that whether \(g\) applies
+to \(h\) depends only on the quotient class of \(h\): for every \(g\),
+the predicate \(h\mapsto D(g,h)\) factors through \(q\). The other two
+conditions are defined by their displayed equations.
+
+\begin{theorem}[Anomaly / Symmetry Obstruction]\label{thm:F40}
+Let \(G\) act on a history space \(H\) by
+\(\alpha:G\times H\to H\), let \(q:H\to Q\) be a surjective quotient,
+let \(\bar\alpha:G\times Q\to Q\) be a candidate descended action,
+let \(D:G\times H\to\{0,1\}\) be a domain predicate, and let
+\(r:H\to V\) be a readout with value action
+\(\rho:G\times V\to V\).  Define
+\[
+  \mathcal O_{\alpha}
+  :=
+  \{(g,h,h'):\ q(h)=q(h')\ \text{and}\
+    q(\alpha(g,h))\ne q(\alpha(g,h'))\},
+\]
+and define \(\mathcal O_D\) analogously by replacing
+\(q(\alpha(g,h))\) with \(D(g,h)\), and define
+\begin{align*}
+  \operatorname{GroupLawPreserved}(\bar\alpha)
+  &:\Longleftrightarrow
+  \forall g,g'\in G,\forall \bar h\in Q,\,
+    \bar\alpha(gg',\bar h)=
+    \bar\alpha(g,\bar\alpha(g',\bar h)),\\
+  \operatorname{ReadoutPreserved}(r,\alpha,\rho)
+  &:\Longleftrightarrow
+  \forall g\in G,\forall h\in H,\,
+    r(\alpha(g,h))=\rho(g,r(h)).
+\end{align*}
+Then
+\begin{align*}
+  \operatorname{SymmetryDescends}(q,\alpha)
+  &\iff \mathcal O_{\alpha}=\emptyset,\\
+  \operatorname{DomainDescends}(q,D)
+  &\iff \mathcal O_D=\emptyset.
+\end{align*}
+Moreover, if \(\bar\alpha\) is a descended action,
+\(\bar\alpha(g,q(h))=q(\alpha(g,h))\) for all \(g\) and \(h\), then
+\(\mathcal O_\alpha=\emptyset\), \(\operatorname{GroupLawPreserved}(\bar\alpha)\)
+holds, and \(\bar\alpha(e,\bar h)=\bar h\) for the identity \(e\) and every
+\(\bar h\in Q\), so \(\bar\alpha\) is a group action. Let the would-be symmetry carry a declared record
+\(\mathsf{broken}\in\{0,1\}\), which is \(1\) when it is recorded as
+explicitly broken. When \(\mathsf{broken}=0\), the \emph{anomaly} is defined by
+\[
+  \operatorname{Anomaly}
+  \;:\iff\;
+  \mathcal O_\alpha\ne\emptyset\ \lor\ \mathcal O_D\ne\emptyset\ \lor\
+  \neg\operatorname{ReadoutPreserved}(r,\alpha,\rho).
+\]
+If \(\mathcal O_\alpha\ne\emptyset\), action descent fails and no descended
+action exists; when \(\mathsf{broken}=0\) this is an anomaly. If \(\mathcal O_\alpha=\emptyset\), the
+\emph{induced action} \(\alpha^{\flat}(g,q(h)):=q(\alpha(g,h))\) is well
+defined and is a descended action, hence preserves the group law. An anomaly
+then occurs exactly when one of \(\operatorname{SymmetryDescends}(q,\alpha)\),
+\(\operatorname{DomainDescends}(q,D)\),
+\(\operatorname{GroupLawPreserved}(\alpha^{\flat})\) and
+\(\operatorname{ReadoutPreserved}(r,\alpha,\rho)\) fails; since the first and
+third hold, this is exactly when domain descent or readout preservation
+fails. The record \(\mathsf{broken}\) affects only the anomaly designation:
+the descent equivalences and descended-action conclusions hold whatever
+its value, while the anomaly characterizations apply only when
+\(\mathsf{broken}=0\).
+\end{theorem}
+\begin{proof}
+Assume the action \(\alpha\), quotient \(q\), candidate descended
+action \(\bar\alpha\), domain predicate \(D\), readout \(r\), and
+value action \(\rho\).  The action descends through \(q\) exactly when
+the formula
+\[
+  \alpha^{\flat}(g,q(h)):=q(\alpha(g,h))
+\]
+is independent of the representative \(h\).  That independence is
+equivalent to \(\mathcal O_{\alpha}=\emptyset\).  The domain predicate
+descends by the identical argument applied to \(D(g,h)\), giving
+\(\mathcal O_D=\emptyset\).
+
+The displayed equation defines \(\operatorname{GroupLawPreserved}\):
+\[
+  \bar\alpha(gg',\bar h)
+  =
+  \bar\alpha(g,\bar\alpha(g',\bar h))
+  \quad
+  \forall g,g'\in G,\ \bar h\in Q.
+\]
+If \(\alpha\) is a group action and \(\bar\alpha\) is the descended action,
+then for \(\bar h=q(h)\), which covers all of \(Q\) since \(q\) is surjective,
+\[
+  \bar\alpha(gg',q(h))=q(\alpha(gg',h))=q(\alpha(g,\alpha(g',h)))
+  =\bar\alpha(g,q(\alpha(g',h)))=\bar\alpha(g,\bar\alpha(g',q(h))),
+\]
+so the group law holds. For an action descended from \(\alpha\), surjectivity of
+\(q\) also gives \(\bar\alpha(e,q(h))=q(\alpha(e,h))=q(h)\), so the induced map
+is a group action. The readout is \(G\)-equivariant exactly when
+\[
+  r(\alpha(g,h))=\rho(g,r(h))
+  \quad
+  \forall g\in G,\ h\in H.
+\]
+If \(\bar\alpha(g,q(h))=q(\alpha(g,h))\) for all \(g,h\) and \(q(h)=q(h')\),
+then \(q(\alpha(g,h))=\bar\alpha(g,q h)=\bar\alpha(g,q h')=q(\alpha(g,h'))\),
+so \(\mathcal O_\alpha=\emptyset\); conversely a descended action requires
+\(\mathcal O_\alpha=\emptyset\). If \(\mathcal O_\alpha=\emptyset\), the induced
+action is well defined by the first equivalence and is a descended action, so
+it preserves the group law by the computation above; the group law is
+therefore not a separate source of anomaly, and an anomaly, as defined in the
+statement, is exactly the failure of one of the four conditions for the
+induced action. For the induced action, action descent and the group law
+hold. In the claimed, unbroken case, an anomaly is therefore exactly a failure
+of domain descent or readout preservation. An unclaimed or explicitly broken
+symmetry is outside this anomaly designation.
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not classify anomalies
+into carrier-specific forms and does not assert anything about
+non-symmetric gates (maps on the carrier, in the sense of
+\Cref{sec:apparatus}, that do not commute with the action).  The standard quantum-field-theory treatment of
+anomalies, including the Wess--Zumino consistency condition and the
+descent-equation classification, is collected in
+\citet{Bertlmann2000Anomalies}.
+
+\subsection*{Layer instantiations}\label{layer-inst:F40}
+
+\begingroup\small
+\begin{description}
+\item[\emph{{IEEE} 754 floating-point non-associativity (numerical
+computing).}] \textit{Analogy.}
+Associativity of real addition fails in IEEE 754 arithmetic, although addition of finite operands in a fixed format and rounding mode is commutative: \((a+b)+c\) generically differs from \(a+(b+c)\) because each operation rounds. Rebracketing is not a group action; read loosely, with rebracketings of a sum as the would-be symmetry and the rounded value as the readout, the failure is one of ReadoutPreserved; numerical
+libraries declare explicit accumulation orders (Kahan or
+pairwise summation) as the apparatus extension that mitigates the
+anomaly
+\citep{IEEE7542019FloatingPoint}.
+
+\end{description}
+\endgroup
+
+
+\subsection{Duality Equivalence [\texorpdfstring{\Fref{F41}}{F41}]}\label{sec:symmetry:duality-equivalence}
+
+Let \(\mathcal L_A\) and \(\mathcal L_B\) be formed closures with
+declared symmetry presentations.  Each presentation has an object
+quotient, transport data, declared observables, role registry,
+residual registry, and status discipline.  A proposed duality is not
+just a dictionary between symbols.  It is a pair of translations
+between the two formed packages, with the claim that the translations
+preserve the roles being compared.
+
+\paragraph{Reading the statement.}
+\(\mathcal K_A\) and \(\mathcal K_B\) are the claims of the two
+packages, and \(\operatorname{status}_A\), \(\operatorname{status}_B\)
+are their declared status assignments, which give each claim its
+status in the package's status discipline. The last condition says
+that translating a claim carries its status to the corresponding
+status of the other package under \(\varsigma\). A \emph{role-preserving
+duality equivalence} is defined as the conjunction of the four displayed
+conditions; the role readouts live on the quotients, so the role condition
+constrains the duality maps themselves. The theorem records this definition
+together with its consequences: the inverse map \(\bar G\) also carries routes
+to routes and roles back, it is the only two-sided inverse of \(\bar F\), the
+role condition fixes \(\rho\) on the image of \(r_A\), and \(F\) and \(G\)
+preserve and reflect the quotient classes. These consequences use only the first three conditions together with the descent equations: uniqueness of \(\bar G\) and the fiber clause use the first, the route clause the first and third, and the role clauses the first and second; the status condition, and with it \(\kappa\), \(\varsigma\) and the status maps, enters only the definition.
+
+\begin{theorem}[Duality Equivalence]\label{thm:F41}
+Let \(\mathcal C_A,\mathcal C_B\) be sets (in the intended reading, formed closures) with quotients
+\(q_A:\mathcal C_A\to Q_A\) and \(q_B:\mathcal C_B\to Q_B\).  Let
+\(F:\mathcal C_A\to\mathcal C_B\) and
+\(G:\mathcal C_B\to\mathcal C_A\) descend to
+\(\bar F:Q_A\to Q_B\) and \(\bar G:Q_B\to Q_A\), meaning explicitly
+\(\bar F\circ q_A=q_B\circ F\) and
+\(\bar G\circ q_B=q_A\circ G\).  Let
+\(r_A:Q_A\to S_A\), \(r_B:Q_B\to S_B\) be role readouts on the quotients,
+let \(\rho:S_A\to S_B\) be the role-value map, and let
+\(\phi:\Gamma_A\to\Gamma_B\) and
+\(\kappa:\mathcal K_A\to\mathcal K_B\) translate routes and claims, let
+\(\operatorname{status}_A:\mathcal K_A\to\Sigma_A\) and
+\(\operatorname{status}_B:\mathcal K_B\to\Sigma_B\) be the declared
+claim statuses, and let \(\varsigma:\Sigma_A\to\Sigma_B\) be the
+declared status-value map,
+where a route \(\gamma\in\Gamma_A\) acts on \(Q_A\) by
+\(\mathrm{act}_A(\gamma):Q_A\to Q_A\) and a route
+\(\delta\in\Gamma_B\) acts on \(Q_B\) by
+\(\mathrm{act}_B(\delta):Q_B\to Q_B\).
+The data form a \emph{role-preserving duality equivalence} when
+\begin{align*}
+  \bar G\circ\bar F&=\mathrm{id}_{Q_A}
+  \quad\text{and}\quad
+  \bar F\circ\bar G=\mathrm{id}_{Q_B},\\
+  r_B\circ\bar F&=\rho\circ r_A,\\
+  \bar F\circ \mathrm{act}_A(\gamma)
+  &=\mathrm{act}_B(\phi(\gamma))\circ\bar F
+  \quad\forall \gamma\in\Gamma_A,\\
+  \operatorname{status}_B(\kappa(k))
+  &=\varsigma(\operatorname{status}_A(k))
+  \quad\forall k\in\mathcal K_A.
+\end{align*}
+Then, for a role-preserving duality equivalence, the inverse also
+intertwines the routes,
+\(\bar G\circ\mathrm{act}_B(\phi(\gamma))=\mathrm{act}_A(\gamma)\circ\bar G\)
+for every \(\gamma\in\Gamma_A\), and it transports the roles back:
+\(r_B=\rho\circ r_A\circ\bar G\). Moreover \(\bar G\) is the only two-sided inverse of
+\(\bar F\), and \(\rho(r_A(a))=r_B(\bar F(a))\) for every \(a\in Q_A\), so if \(r_A\)
+is surjective then \(\rho\) is determined by \(\bar F\), \(r_A\) and \(r_B\).
+Consequently \(q_A(x)=q_A(x')\iff q_B(Fx)=q_B(Fx')\) for all
+\(x,x'\in\mathcal C_A\), and \(q_B(y)=q_B(y')\iff q_A(Gy)=q_A(Gy')\) for all
+\(y,y'\in\mathcal C_B\).
+\end{theorem}
+\begin{proof}
+The four displayed conditions define a role-preserving duality equivalence:
+the first line makes \(Q_A\) and \(Q_B\) equivalent quotient presentations,
+the second transports role observables, the third transports routes, and the
+fourth transports claim statuses. We prove the consequences.
+
+For the routes, let \(y\in Q_B\). Using \(\bar F\bar G=\mathrm{id}\),
+then the route condition, then \(\bar G\bar F=\mathrm{id}\):
+\[
+  \bar G\,\mathrm{act}_B(\phi\gamma)\,y
+  =\bar G\,\mathrm{act}_B(\phi\gamma)\,\bar F\bar G\,y
+  =\bar G\bar F\,\mathrm{act}_A(\gamma)\,\bar G\,y
+  =\mathrm{act}_A(\gamma)\,\bar G\,y .
+\]
+For the roles, \(r_B=r_B\circ\bar F\circ\bar G=\rho\circ r_A\circ\bar G\).
+If \(\bar G'\) is another two-sided inverse of \(\bar F\), then \(\bar G'=\bar G'\circ\bar F\circ\bar G=\bar G\). The identity \(\rho(r_A(a))=r_B(\bar F(a))\) is the role condition read pointwise, and it fixes \(\rho\) on the image of \(r_A\).
+For the fiber clause: since \(q_B\circ F=\bar F\circ q_A\) and \(\bar F\) is a
+bijection, \(q_B(Fx)=q_B(Fx')\) exactly when \(q_A(x)=q_A(x')\); likewise for
+\(G\).
+\end{proof}
+
+\paragraph{Nonclaims.} The theorem does not classify
+symmetry presentations and does not assert a unique role presentation
+beyond observable equivalence.
+
+\subsection*{Layer instantiations}\label{layer-inst:F41}
+
+\begingroup\small
+\begin{description}
+\item[\emph{Pontryagin duality (harmonic analysis).}] \textit{Analogy.}
+For a locally compact abelian group \(G\), the Pontryagin dual
+\(\widehat G\) of continuous characters \(G\to S^1\) satisfies the
+Pontryagin duality theorem
+\(G\cong\widehat{\widehat G}\), with the Fourier transform
+\(L^2(G)\to L^2(\widehat G)\) a unitary isomorphism.  Pontryagin dualization is a contravariant equivalence: for closed \(H\), the
+dual of \(G/H\) is the annihilator subgroup \(H^\perp\subseteq\widehat G\), and
+double dualization recovers \(G\). For functions with defined convolution,
+Fourier transform exchanges convolution and pointwise multiplication; this is
+an analogy with reversible translation, with quotient variance and route data
+specified separately \citep{Pontryagin1966TopologicalGroups}.
+
+\end{description}
+\endgroup
+
+
+\subsection*{Symmetry at a glance}\label{sec:symmetry:summary}\addcontentsline{toc}{subsection}{Symmetry at a glance}
+\input{tables/tab_axis_symmetry_summary}
+\FloatBarrier

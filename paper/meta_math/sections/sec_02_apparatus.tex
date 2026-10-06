@@ -1,0 +1,179 @@
+\section{Apparatus}\label{sec:apparatus}
+
+This section fixes the vocabulary used in the rest of the paper.  Most
+of it is imported from earlier papers of the series and is used as a
+black box; we state only what the later sections need.
+
+\subsection{Closure formation}\label{sec:apparatus:closure-formation}
+
+Six Birds Theory treats a theory as a fixed point of an idempotent
+closure operator acting on descriptions; this calculus is developed in
+\FOne\ \cite{Tsiokos2026EmergenceCalculus}.  The companion papers apply
+it to a mathematical problem by recording, for a \emph{substrate} (the
+problem's mathematical setting), the carriers, observables, comparison
+maps and audit data visible at a chosen layer.  When this typed record
+is assumed to be admissibly closed under the framework's formation
+discipline, we call it a \emph{formed closure}, written
+\(\operatorname{FormedClosure}(S)\); the companion papers use the term
+informally, and the predicate is a definition of this paper.
+We call the standing assumption that the formed closures used by the
+companion papers exist the \emph{SB closure assumption}.  It is a
+framework assumption, not a theorem of ordinary set theory; it is not
+proved here, and by itself it supplies none of the problem-specific
+hypotheses of the three applications.
+
+An \emph{accepted import} is outside mathematical content that the
+closure formation allows a proof attempt to use.  It must be named and
+kept apart from what the attempt produces itself.  To keep names
+distinct from truth values, \Cref{sec:foreclosure} works with a set
+\(\mathsf{Claim}\) of \emph{claims}, each with an interpretation
+\(\llbracket c\rrbracket\) as a proposition.  The accepted imports form
+a set of claims with a soundness hypothesis,
+\[
+  \mathcal B\subseteq\mathsf{Claim},\qquad
+  c\in\mathcal B\ \Rightarrow\ \llbracket c\rrbracket .
+\]
+Two different claims may have equivalent interpretations, and a true
+claim need not be accepted.  (A predicate on propositions would not
+allow this: since equivalent propositions are equal, a sound predicate
+on propositions accepts either every true proposition or none.)  The phrase
+``imported as named recognition'', used for the recognition sources of
+\Cref{sec:recognition}, means that a source is admitted in this way and
+is not claimed to be derived.
+
+\subsection{The Foundations III audit calculus}\label{sec:apparatus:birdint}
+
+\FThree\ \cite{Tsiokos2026FoundationsIII} constructs a finite audited
+calculus, \(\mathbf{BirdInt}^{\mathrm{aud}}_{\mathrm{fin}}\), in which
+claims are recorded together with the instrument that audits them and a
+verdict.  We use one of its results as motivation.  Theorem~24 of
+\FThree\ (same-level self-audit failure) concerns the claim classifier
+of that calculus: a well-formed complete self-soundness claim of an
+instrument, judged at its own level, is not accepted; it receives
+\texttt{outside\_scope}, \texttt{undefined\_circular}, or a status of
+higher priority (\texttt{blocked}, \texttt{absent\_with\_record} or
+\texttt{failed\_audit}).  In \Cref{sec:foreclosure} each proof attempt
+\(C\) records the verdict of its same-level audit, and
+\(\operatorname{SelfAuditFail}(C)\) is the statement that this recorded
+verdict is \texttt{outside\_scope} or \texttt{undefined\_circular}; the
+restriction to these two verdicts is an assumption of this paper, not a
+consequence of Theorem~24.  The verdict
+is part of the data of \(C\); it is not derived here from Theorem~24,
+which explains why it is the relevant one: an attempt that can certify
+its target only by auditing itself at the target's level has fallen
+back on the content it was meant to supply.  The admissibility
+background for these audits is that of \FTwo\
+\cite{Tsiokos2026FoundationsII}.
+
+\subsection{Adequacy residuals}\label{sec:apparatus:adequacy-residual}
+
+The adequacy-residual companion \cite{Tsiokos2026XiCompanion} measures
+how much of a target readout is left unexplained by a family of native
+probes.  A finite-dimensional real or complex carrier space \(E\)
+carries an \emph{audit energy} \(A\succeq0\), the cost of \(u\in E\)
+being \(u^{*}Au\); the native probes form an operator \(L\) on \(E\), and
+the target readout an operator \(D\), both required to vanish on
+\(\ker A\) (\emph{null legality}: \(\ker A\subseteq\ker L\cap\ker D\)).  With the block currencies \(K_{FG}=FA^{\dagger}G^{*}\),
+the residual is the generalized Schur complement
+\[
+  \Xi_{A}(D\mid L)=K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD}.
+\]
+The companion writes the energy as a subscript \(C\); here \(C\) is
+reserved for carriers.  When the target readout is the identity and the
+audit energy is the identity, \(\Xi(L):=\Xi_{I}(I\mid L)\) is the
+orthogonal projection onto \(\ker L\), and
+\Cref{sec:gaussian-bridge,sec:triad-bridge} use it in that form.  In
+\Cref{sec:foreclosure} only one fact about the residual is used, namely
+whether it vanishes.
+
+\begin{definition}[Carrier residual]\label{def:carrier-residual}
+For a carrier with audit energy \(A\), native probes \(L\) and target
+readout \(D\), the \emph{carrier residual} is the adequacy residual
+\(\Xi_{A}(D\mid L)\) of \cite{Tsiokos2026XiCompanion}; under null
+legality it is the part of the target readout that the native probes do
+not explain at the audit energy \(A\).
+\end{definition}
+
+A \emph{residual closure} is the statement \(\Xi_{A}(D\mid L)=0\).
+When \Cref{sec:foreclosure} compares a residual closure with a target,
+the comparison is logical: it asks whether the proposition
+\(\Xi_{A}(D\mid L)=0\) is equivalent to the target.  A residual closure
+does not by itself prove the target.
+
+From the emergence companion \cite{Tsiokos2026NeedleKiller} we use the
+distinction between probes that stay native to a carrier and probes that
+\emph{dissolve the layer} in which the carrier operates.  A
+layer-dissolving probe is not evidence that the original carrier closed
+its target; its endpoint must either be recorded as outside content or
+be admitted by the closure formation.
+
+\subsection{Typed contexts}\label{sec:apparatus:typed-context}
+
+Every claim, carrier, bridge, calibration and obligation in this paper
+carries an explicit type: its source, its target, the kind of carrier
+it uses, and its admissible imports.  This \emph{\TCD}, inherited from
+\FTwo\ and \FThree\
+\cite{Tsiokos2026FoundationsII,Tsiokos2026FoundationsIII}, forbids
+replacing one of these by an informally similar one.  We write
+\[
+  C\leadsto X,\qquad C\models\text{\TCD}
+\]
+for ``the carrier \(C\) is aimed at the target \(X\)'' and ``\(C\) is
+audited in a context whose source, target, carrier type and imports are
+fixed''.  Two consequences are used repeatedly: a carrier aimed at one
+target is not a carrier aimed at another without an explicit bridge or
+re-aiming step, and a bridge from one setting to another does not by
+itself give a bridge back.
+
+\subsection{Theorems and conditional schemas}\label{sec:apparatus:opacity-guards}
+
+The numbered statements of this paper are of two kinds.  A
+\emph{theorem}, proposition or corollary is proved, from the hypotheses
+it states.  A \emph{conditional schema} is a statement that is not
+proved; it is displayed in its own environment, with its hypotheses, so
+that later results can name it as a hypothesis.  Several predicates in
+\Cref{sec:foreclosure,sec:recognition} are \emph{primitive}: they are
+named but not defined in this paper, and nothing is assumed about them
+beyond what a statement says explicitly.  A result about primitive
+predicates establishes only the logical shape it displays.
+\Cref{app:formalization} lists, for each numbered statement, what has
+been formally verified.
+
+\subsection{Glossary}\label{sec:glossary}
+
+The following framework terms recur.  Each is used only in the sense
+given here.
+
+\begin{description}[leftmargin=1.5em,style=nextline,itemsep=2pt]
+\item[Substrate.] The mathematical setting of a problem, for instance
+  the zeros of the completed zeta function or the runs of machines on
+  SAT instances.
+\item[Formed closure; SB closure assumption.] A typed record of a
+  substrate's carriers, observables, comparison maps and audit data,
+  assumed admissibly closed (\Cref{sec:apparatus:closure-formation}); the
+  assumption that the formed closures used by the companion papers
+  exist.
+\item[Carrier; residual.] A presentation through which a proof attempt
+  tries to reach a target; the part of the target readout that the
+  carrier's native probes leave unexplained
+  (\Cref{def:carrier-residual}).
+\item[Accepted import; claim.] Outside content that a closure admits; it
+  is recorded as a claim, a name with an interpretation as a
+  proposition (\Cref{sec:apparatus:closure-formation}).
+\item[Layer-dissolving probe.] A probe whose endpoint lies outside the
+  layer in which the carrier operates, so that it is not evidence that
+  the carrier closed its target.
+\item[Recognition source; recognition-mode landing.] A load-bearing
+  structural fact that a closure names as a premise rather than
+  deriving; a conditional closure built on such a premise
+  (\Cref{sec:recognition}).
+\item[Trace-state-only; witness-content-exposing.] The two columns of
+  \Cref{def:vdiff-tso-column}: whether current observation sees only
+  trace bookkeeping of a computation, or a witness datum itself.  For
+  \(P\) versus \(NP\), current observation by polynomial-time machines
+  is placed in the first column: it is not assumed to see a satisfying
+  assignment.
+\item[Calibration; functorial gate.] A typed detector of obstructions
+  together with its native carrier; a named transport between
+  calibrations or types whose proof is open (\Cref{sec:calibration}).
+\end{description}

@@ -1,0 +1,86 @@
+\begingroup
+\scriptsize
+\renewcommand{\arraystretch}{0.95}
+\begin{longtable}{@{}
+      >{\raggedright\arraybackslash}p{0.06\linewidth}
+      >{\raggedright\arraybackslash}p{0.13\linewidth}
+      >{\raggedright\arraybackslash}p{0.75\linewidth}@{}}
+\caption{Lean declarations for the laws of the catalog.}\label{tab:formalization-coverage}\\
+    \toprule
+    Law & Alignment & Lean declarations \\
+    \midrule
+\endfirsthead
+\caption[]{Lean declarations for the laws of the catalog (continued).}\\
+    \toprule
+    Law & Alignment & Lean declarations \\
+    \midrule
+\endhead
+    \bottomrule
+\endfoot
+    \multicolumn{3}{@{}l}{\textbf{Access}} \\
+    \Fref{F10} & faithful & \path|Access.Quotientality.quotientality| \\
+    \Fref{F11} & faithful & \path|Access.Adequacy.paper_adequacy_three_parts| \\
+    \Fref{F12} & faithful & \path|Access.NoFreeDistinction.no_free_distinction_paper| \\
+    \Fref{F13a} & faithful & \path|Access.HiddennessNormalForm.hiddenness_normal_form_with_exposure_collapse_surplus|; \path|Access.HiddennessNormalForm.hiddenness_normal_form_of_source_obligation|; \path|Access.HiddennessNormalForm.predictive_surplus_iff_not_collapse_iff|; \path|Access.HiddennessNormalForm.hidden_iff_collapse_iff_of_surplus_iff_not_collapse|; \path|Access.HiddennessNormalForm.hiddenness_source_obligation_with_surplus_satisfiable| \\
+    \Fref{F13b} & faithful & \path|Access.CSLFormedClosure.csl_formed_closure_direct_full| \\
+    \Fref{F24} & faithful & \path|Access.LayerMultiplicity.paper_layer_multiplicity_strict_iff_corestriction| \\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textbf{Stability}} \\
+    \Fref{F6} & faithful & \path|Stability.NoNeedlesReal.no_needles_stability_real|; \path|Stability.NoNeedlesReal.no_needles_stability_ordered_field|; \path|Stability.NoNeedlesReal.block_schur_decomposition|; \path|Stability.NoNeedlesReal.loewnerLE_congruence|; companions over the rationals: \path|Stability.NoNeedles.no_needles_stability|; \path|Stability.NoNeedles.no_needles_stability_general_blocks|; \path|Stability.NoNeedles.no_needles_stability_supplied_pseudoinverse| \\
+    \Fref{F7} & faithful & \path|Stability.SufficiencyClosure.sufficiency_closure_probe_family| \\
+    \Fref{F8} & faithful & \path|Stability.StrictExtension.strict_extension|; \path|Stability.StrictExtension.strict_extension_status_partition| \\
+    \Fref{F9} & faithful & \path|Stability.NoUnstatusedResidual.no_unstatused_residual_paper_scoped| \\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textbf{Transport}} \\
+    \Fref{F2} & faithful & \path|Transport.DescentRepair.paper_descent_repair_normal_form_maps| \\
+    \Fref{F3} & faithful & \path|Transport.HolonomyMemoryRepair.paper_holonomy_memory_repair| \\
+    \Fref{F4} & faithful & \path|Transport.LocalGlobalObstruction.local_global_obstruction_paper_full| \\
+    \Fref{F5} & faithful & \path|Transport.RecombinationComparison.recombination_comparison| \\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textbf{Symmetry}} \\
+    \Fref{F14} & restricted & \path|Symmetry.DualityFixity.duality_fixity_direct|; \path|Symmetry.DualityFixity.duality_fixity_direct_without_anti_invariance|; \path|Symmetry.DualityFixity.rational_psd_duality_fixity|; \path|Symmetry.DualityFixity.rational_trace_weighted_rank_one|; \path|Symmetry.DualityFixity.rational_psd_ledger_nonzero|; \path|Symmetry.DualityFixity.duality_fixity_identity_involution|; \path|Symmetry.DualityFixity.duality_fixity_no_minus_one_eigen|; \path|Symmetry.DualityFixity.duality_fixity_minus_one_eigen_counterexample|; \path|Symmetry.DualityFixity.finite_duality_fixity_identity_involution|; \path|Symmetry.DualityFixity.duality_ladder_exists_iff_readout_vanishes| \\
+    \Fref{F15a} & faithful & \path|Symmetry.SelectionObstruction.selection_obstruction_orbit_conditional_paper|; \path|Symmetry.SelectionObstruction.selection_obstruction_orbit_strengthened|; \path|Symmetry.SelectionObstruction.selection_obstruction_equivariant_maps_characterization| \\
+    \Fref{F15b} & faithful & \path|Symmetry.SpontaneousSSB.spontaneous_ssb_orbit_constant_paper| \\
+    \Fref{F40} & faithful & \path|Symmetry.Anomaly.anomaly_symmetry_obstruction_full_paper| \\
+    \Fref{F41} & faithful & \path|Symmetry.DualityEquivalence.paper_duality_equivalence_quotient_roles_full| \\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textbf{Status / Records / Coherence}} \\
+    \Fref{F17} & faithful & \path|StatusRecordsCoherence.ObjectivityAsCommonQuotient.paper_objectivity_from_factorization_minimality| \\
+    \Fref{F18} & faithful & \path|StatusRecordsCoherence.LawhoodDescent.readout_invariant_under_fiber_bijections_iff_descends| \\
+    \Fref{F19} & faithful & \path|StatusRecordsCoherence.ObjectPersistence.object_persistence_strengthened_of_source_surjective| \\
+    \Fref{F20} & faithful & \path|StatusRecordsCoherence.FactRecordFormation.paper_fact_record_formation_conditional_raw_transport_with_event| \\
+    \Fref{F21} & faithful & \path|StatusRecordsCoherence.ReflexiveNonclosure.paper_reflexive_nonclosure_with_sharpness_rules_2_3_4_without_rule_1|; \path|StatusRecordsCoherence.ReflexiveNonclosure.paper_reflexive_nonclosure_with_sharpness_rules_2_3_4| (companion; also assumes rule 1) \\
+    \Fref{F22} & faithful & \path|StatusRecordsCoherence.InterfaceMediation.paper_interface_mediation_of_source_boundary_surjective|; \path|StatusRecordsCoherence.InterfaceMediation.paper_interface_mediation_split_full| (companion; also assumes \(q'\) surjective) \\
+    \Fref{F23} & faithful & \path|StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber.paper_probability_fiber_split_per_clause_stable| (clauses (i)--(v), any weight set); \path|StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber.paper_probability_fiber_split_per_clause_point_mass| (companion; clause (vi) under global weights); \path|StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber.finite_positive_fiber_chance_criterion_on_fiber|; \path|StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber.paper_probability_fiber_split_per_clause_stable_strengthened| (clause (vi) as stated) ; \path|StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber.stable_probability_concentrated_every_class| ; \path|StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber.stable_probability_iff_stable_and_charges_two| \\
+    \Fref{F25} & faithful & \path|StatusRecordsCoherence.CausalityAsStableInterventionTransport.paper_causality_transport_separate_raw_witness_full| \\
+    \Fref{F26} & faithful & \path|StatusRecordsCoherence.ModuliContingency.paper_moduli_contingency_split_full_general| \\
+    \Fref{F27} & faithful & \path|StatusRecordsCoherence.ConservationAsOrbitDescent.partial_route_step_invariant_iff_orbit_descends| \\
+    \Fref{F28} & faithful & \path|StatusRecordsCoherence.Composability.paper_composability_unique|; \path|StatusRecordsCoherence.Composability.paper_composability|; \path|StatusRecordsCoherence.Composability.assoc_identity_descent| \\
+    \Fref{F29} & faithful & \path|StatusRecordsCoherence.PresentationInvariance.presentation_invariance_paper_conditional_strengthened|; \path|StatusRecordsCoherence.PresentationInvariance.presentation_relation_invariance_any_presentation|; \path|StatusRecordsCoherence.PresentationInvariance.presentation_invariance_general_relation| \\
+    \Fref{F30} & faithful & \path|StatusRecordsCoherence.ExplanationAsCompressionWithDescent.explanation_as_compression_with_descent| \\
+    \Fref{F31} & faithful & \path|StatusRecordsCoherence.CounterfactualLegitimacy.paper_counterfactual_legitimacy_without_surjectivity| \\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textbf{Self-reference / Limits}} \\
+    \Fref{F33} & faithful & \path|SelfReferenceLimits.HorizonSufficiency.horizon_sufficiency_paper| \\
+    \Fref{F34} & faithful & \path|SelfReferenceLimits.InformationLoss.information_loss_normal_form_paper| \\
+    \Fref{F35} & faithful & \path|SelfReferenceLimits.ScaleDescentRenormalization.scale_descent_renormalization_paper_tower_strengthened|; \path|SelfReferenceLimits.ScaleDescentRenormalization.scale_descent_renormalized_unique| \\
+    \Fref{F36} & faithful & \path|SelfReferenceLimits.SingularLimitCompletion.singular_limit_completion_paper_strengthened| \\
+    \Fref{F37} & faithful & \path|SelfReferenceLimits.Complementarity.complementarity_split_criterion_general_unconditional|; \path|SelfReferenceLimits.Complementarity.complementarity_split_criterion_general| (companion; also assumes separate admissibility) \\
+    \Fref{F38} & faithful & \path|SelfReferenceLimits.ArrowFromRecordMonotonicity.paper_arrow_from_record_monotonicity_fiber| \\
+    \Fref{F39} & faithful & \path|SelfReferenceLimits.EntropyAsFiberVolume.paper_entropy_as_fiber_volume_conditional_mixing_at_pair|; \path|SelfReferenceLimits.EntropyAsFiberVolume.paper_shannon_entropy_as_fiber_volume|; \path|SelfReferenceLimits.EntropyAsFiberVolume.paper_shannon_fiber_entropy_instance|; \path|SelfReferenceLimits.EntropyAsFiberVolume.paper_entropy_as_fiber_volume_conditional_mixing| (companion; under global combine-monotonicity) \\
+    \Fref{F42} & faithful & \path|SelfReferenceLimits.Irreducibility.paper_irreducibility_admissible|; \path|SelfReferenceLimits.Irreducibility.point_irreducible_all_maps_collapses|; \path|SelfReferenceLimits.Irreducibility.point_irreducible_isolating_maps_collapses|; \path|SelfReferenceLimits.Irreducibility.irreducibility_no_short_closed_description|; \path|SelfReferenceLimits.Irreducibility.admissible_closed_compression_has_irreducible_minimum| \\
+    \Fref{F43} & faithful & \path|SelfReferenceLimits.ContinuumEmergence.continuum_limit_readout_dependent_tower_full|; \path|SelfReferenceLimits.ContinuumEmergence.continuum_limit_readout_dependent_tower_general| \\
+    \Fref{F44} & faithful & \path|SelfReferenceLimits.Criticality.criticality_phase_boundary_descent_paper_full| \\
+    \Fref{F45} & faithful & \path|SelfReferenceLimits.Locality.locality_domain_of_dependence_paper_strict| \\
+    \Fref{F46} & faithful & \path|SelfReferenceLimits.LawStateSplit.law_state_split_paper_full| \\
+    \Fref{F47} & faithful & \path|SelfReferenceLimits.FineTuning.fine_tuning_small_selector_region_paper|; \path|SelfReferenceLimits.FineTuning.complementary_selector_regions_not_both_small_real| \\
+    \Fref{F48} & faithful & \path|SelfReferenceLimits.Topology.topology_global_gluing_invariant_paper| \\
+    \Fref{F49} & faithful & \path|SelfReferenceLimits.CommonSourceNonlocal.common_source_nonlocal_correlation_repaired_strengthened_of_nonempty| \\
+    \Fref{F50} & faithful & \path|SelfReferenceLimits.VacuumBackgroundSelection.paper_vacuum_background_selection_cardinality|; \path|SelfReferenceLimits.VacuumBackgroundSelection.vacuum_background_link_split|; \path|SelfReferenceLimits.VacuumBackgroundSelection.vacuum_background_link| (companion; also assumes the descent equation for the background clause) \\
+    \Fref{F51} & faithful & \path|SelfReferenceLimits.Unification.unification_as_common_refinement_paper_exact_kernel|; \path|SelfReferenceLimits.Unification.common_refinement_square_and_kernel_of_projection_equations| \\
+    \Fref{F52} & faithful & \path|SelfReferenceLimits.ClosureCompletenessBoundary.paper_closure_completeness_boundary_general_sharp| \\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textbf{Closure--Reality Boundary}} \\
+    \Fref{F53} & faithful; clause (b) imported & \path|ClosureRealityBoundary.cer_direct_reduct_witness|, \path|ClosureRealityBoundary.cer_converse_closed_witness|, \path|ClosureRealityBoundary.cer_converse_failure_iff_closed_not_bare|, \path|ClosureRealityBoundary.cer_no_go_of_nonidentity_closure| (companion; assumes a closure operator), \path|ClosureRealityBoundary.finite_cer_paper_bundle|, \path|ClosureRealityBoundary.clSB_fixed_iff_structural_defect_zero|, \path|ClosureRealityBoundary.cer_no_go_of_nonidentity_extensive_operator|, \path|ClosureRealityBoundary.cer_no_go_iff_nonidentity_extensive_operator|, \path|ClosureRealityBoundary.cer_direct_no_go_of_nonidentity_operator|, \path|ClosureRealityBoundary.cer_direct_failure_iff_nonidentity_operator|, \path|ClosureRealityBoundary.closed_iff_aor|, \path|ClosureRealityBoundary.aor_saturation_cer_both_fail|, \path|ClosureRealityBoundary.finite_cer_direct_instance|, \path|ClosureRealityBoundary.finite_cer_converse_instance|, \path|ClosureRealityBoundary.cer_both_implications_iff_fixed_point_predicate|, \path|ClosureRealityBoundary.aor_realisability_unique_fixed_point_predicate|, \path|ClosureRealityBoundary.current_aor_accounted_completion_iff|, \path|ClosureRealityBoundary.current_aor_inference_closed_not_fully_discharged| \\
+\end{longtable}
+\endgroup

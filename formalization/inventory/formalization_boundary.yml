@@ -1,0 +1,532 @@
+# Formalization boundary overlay for the Lean 4 inventory.
+# Categories: lean_definition, fully_formal_math, schema_theorem, sourced_assumption, prose_only.
+# This file is curated. The extractor updates missing entries but preserves existing categories.
+items:
+  "cor:xi:same-family-saturation":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 5a3f2400d331b68aa7dc89936d38dfb19fe772936d1f1bbe2ed1a151da19335e
+  "def:aor:aor-8-statuses":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 8b62240fc8d8cbfd3d600cc04330e65d53059d6ccd3e8763ddc518f17dea9fa7
+  "def:aor:aor-subcategory":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: c555649e159da47df0e347d607282aaa3428e992e58c204e022e4964ac8fc1fd
+  "def:aor:asymptotic-statuses":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 3c483e80912581268d046dfd8aa9d13e5231155b03eabcce4c0d55bd3f6c0edc
+  "def:aor:cascade-graph":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 87c56d9ea8da9c238fe71fb005a2854e7278d7c6b34665ff84458cb659da1df1
+  "def:aor:cascade-stable-aor":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 3c305c2bae9b6f30d5475542ddad5fc94684df1fd2864d9d07669ca536a6cb94
+  "def:aor:cl-sb-operator":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 65d869365db8b31e04dd854662ba0fe0be678e6cbe46a7554acfe47d55e7df67
+  "def:aor:cost-record":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: af89c69075c6270d5c4c3a2236ed6c8c9fe45422ee2bde537de395aff02454af
+  "def:aor:cost-table":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: f65ede2f21e1b6498912907d20560aaee9d290ab1a0b09cc903bb57fad2c6e9d
+  "def:aor:discharge-record":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 988fd69cbe8b65d1de7e19f92726a7faaf603e5d5e718098cf0edf836b336783
+  "def:aor:discharge-witness":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 49e0a4a86ddfa341f83f3801bb51d08527589ac0543e78ab3094fbc09ffce868
+  "def:aor:down-operator":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 6dcacf4e2d746d949884bec85f1c4d72fddaf654793ee1a3a23d2f6f3bbe4920
+  "def:aor:morphism-presb":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 8585c1f593935a20644e6415a478c8766a56ab1116a71009a118b1e40e39470a
+  "def:aor:presb-carrier":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: a235f2032169877be39ec3e933b9e5328f9c82e70568ab63cdf826bb9ccf0593
+  "def:aor:refinement-kinds-six":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 4130bc65a60c277cdd5b1db33d2c36b3e49670bf45ab90d89f5ca7ea22780824
+  "def:aor:refinement-morphism":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: a767d653456831bf41f51faec124c566ae9893e9010c5959bb74ba4aabdcd56f
+  "def:aor:refinement-stable-aor":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: ed3d17c27a0de36c2495fe16605b93848126e531c297a3e12df8b62cdecc1cc4
+  "def:aor:refpresb-category":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 530675f1f49f82b20b15b5c9550dd90df4f758e9b810d87fa60c42df66ffd4ee
+  "def:aor:residual-atom":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 376581fad4ef34a62752444b1e3016c6b22be8098feceece99cf4afa22952073
+  "def:aor:residual-partial-order":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: e848284c2d29635e97dc4a32db9ff7cf7f070c14d854aacd315ae723f189587a
+  "def:aor:residual-types-twelve":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 5b8bcbde8e477c41981fef0497205a87bdbe443e8cd43e90da4f2fd4126de699
+  "def:aor:scope-record":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: ce6d1ea4c696cba6da65eca76d1779e49a9f6224a5248ffef529677c6f2894f9
+  "def:aor:sigma-constraint":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 2699dcb81f329c9713e05ec9b071c35a00f57cd3dc6cab70912104905eef015f
+  "def:aor:sigma-holonomy":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 2b4e77d54ca9a6c5ae20dce6256c565299550c9a4953f7d739822e094c934f6e
+  "def:aor:sigma-meta":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: e92e8b19921bba4239636355496c0d4a7ba78721f45d977cfb3cc190454b166e
+  "def:aor:sigma-nonclaim":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: adb9cb719bc33ec8f48239bd8bbc4c7db01a45da6cfcad08fd4f7f4800a3962c
+  "def:aor:sigma-obs":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 42ef5bd340753c74e00f7163af97a0e5f99e54011a849068dc948baeb7aa1acb
+  "def:aor:sigma-residual":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 82c8b6d9b3c070316b007d75d13a3abec8db81a0c585ae0b21669c89630d2f44
+  "def:aor:sigma-rewrite":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 060e8d486d79ec8677117660eb9641ef1550e178ea10e36c7c508f2437c22ac3
+  "def:aor:sigma-stage":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 90cf8240e5bec35eb0c45402772eeb8fde43993d6be59801427edb2bddee0d78
+  "def:aor:xi-sb":
+    category: lean_definition
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 4c84ea6ee14fc2556e5f00dceb94647165ba8c00cdf4f602fd4a087863031e50
+  "def:main:anti-invariant-membrane":
+    category: lean_definition
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 6847288e4e2bea8af3b75377a42965fface4f6cbb34b8f199303136d7b05bb78
+  "def:main:domination-bridge":
+    category: lean_definition
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 262ca2d8940736b4ddae7714eaa9119569d4c909ba1398c781c8eaaded57a655
+  "def:main:exhaustive-moving-ledger":
+    category: lean_definition
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: a5f580656b11238ad209e3558ec1d96da9ba7a2f948553dee079b3e191689868
+  "def:main:involutive-ledger":
+    category: lean_definition
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 954ee1c74a8e5449c48dca7c71d14d4ee0f0d832fd5341f53f6aa5d3d0b14d7f
+  "def:main:obstruction-budget":
+    category: lean_definition
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 614026b33ba65fe0d0c5ccbfed01a0f4c5e53772110b6d8d3a942bc2ae3f0c18
+  "def:main:packaged-currency":
+    category: lean_definition
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 88ebb956abcd7c5a7a7ed4c636bf8a627e8e252bd09a0acdb1ac162dc01667ee
+  "def:main:separating-readout":
+    category: lean_definition
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 2878c44214a0a0cecfa55dd132853c070a2ba81fff5002f68ed3a3f27a204561
+  "def:ns:aor-instance-object":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: c788541304a132197ff9c60120f7ab94214a52a6f07074299b42dacf4e4daccf
+  "def:ns:bg-import":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 2a6ba918a63e624f5eae21cfd83bb65edd60de34676b8e82fbc8bdf09db06796
+  "def:ns:bg-package":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 53294d3837268777e1bba858e83836689f505cadd2bf0d9db44650711de66748
+  "def:ns:bg-readout":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: d38f2c82a43f2986d76f0ca17f0f5e492a44f1348996c1a873ddadbfdee44594
+  "def:ns:bkm-import":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 77d488e3ca9994176e039babbc05db90305df78256b181d24088d956b2dcc760
+  "def:ns:closure-r1-r9":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 518a79c4fcc777012dd5eb0d7fcde9efe693ace23933ac159967924c91e2b48e
+  "def:ns:gevrey-probes":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: a6ff983ef6aec6a06e491c8368e84bba19b136af6b27e8a6c18b3570f88fddcb
+  "def:ns:kato-import":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 45328ca6b24be1f2c578dfbb73556a4e2d05395ec39349c10a48911917e82ff5
+  "def:ns:lp-bcd-import":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: cc4d45c1defba4806dc0d275c0f783a5df29f5f0ff26807c80b265bb064caa55
+  "def:ns:lp-transport":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 7f2ba2d792955a28f8833e6654e44367037cc863a127e7bbeda80025f6c10be2
+  "def:ns:null-mode-legal-ns":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 9a20b541909ab6523102292731266f227f6477b4fa4e71475495e5bc1a8cbadc
+  "def:ns:physical-native-probes":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 79218e32688d00f209fa4998ae6e139e1369520e57719798e249562c012835f9
+  "def:ns:sobolev-besov-embedding-import":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 883ed554042d0496feab2b7303f071eb7ccd3f5daa3e22d4e13d26693d16b778
+  "def:ns:source-admission-ledger":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: f31a88356c4a7af5dfb50bfa4b450b58cd5584a8947c8b4c563a22f080575ab3
+  "def:ns:wang-halflog-import":
+    category: lean_definition
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 918ab81422a0e394473c18015d6bea633aa9fc094273b8a692083e8ca56f4f10
+  "def:xi:adequacy-residual":
+    category: lean_definition
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: dcf34ee489fae5e5058dad8633c5fc501074dff8ee2f8ba20ba5db38558e3f97
+  "lem:main:trace-identity":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 34e2dd94ec8a83cdc318d895c46ce39a2c8d1e741d05eb7de6981724293fa4ae
+  "nonclaim:aor:no-strong-realism":
+    category: prose_only
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 345e1352cfa1e91106d80bfe6de7e55764a8276f7385a8fcb97085258809e37e
+  "nonclaim:main:applications":
+    category: prose_only
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 8174292192a20cac3d0f4d3aeab1ec8b95b2c9143c72c74029cd92802e7e6149
+  "nonclaim:main:closure-only-scope":
+    category: prose_only
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 8fff8498c3f5a6234e78f01c7af3e07f452d41c07a391c4270ed70421c8221c1
+  "nonclaim:main:duality-confinement-scope":
+    category: prose_only
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 804aebeb01dbab1654040edf291b66a238e4eeb860842834126037e73ad3f1d1
+  "nonclaim:ns:aor-instance-no-clay-claim":
+    category: prose_only
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: f363ebd875d92d95d45ce944de33cf2942052917edb84507452b8834780f006b
+  "nonclaim:ns:aor-instance-smooth-data-only":
+    category: prose_only
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 0f7a457a37928148a32f040b7952c5a7c1c7da68ff322c0585a194340509235c
+  "nonclaim:ns:outside-framework":
+    category: prose_only
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 186c9b462e7d7e87c4ece2764c3a184899ed8ff2e9914bec35ecea75c595d090
+  "obl:main:character-source-coercivity":
+    category: sourced_assumption
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: ff9244a9325ca68291ef9a5025f901def4c369e6cece5b9fe4d0b06260af41b7
+  "obl:main:explicit-formula-domination":
+    category: sourced_assumption
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 5b018d642a533cf4561ea7418e06df3415d0b457392c86cae2123693c7d9573d
+  "prop:main:optimized-trace-budget":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 3a2077613db4f7352d37ba00861f43eea92b8f5d9bc84d2c15158023d2326753
+  "rmk:main:blind-spot-interpretation":
+    category: prose_only
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 74f05e726e4132a2548cc7e4a3d915b0a18bd3ef4e9e96420ccc0ee0d3207180
+  "rmk:xi:null-mode-warning":
+    category: prose_only
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 43a65ce1094e7e3a8166596d00499147744534e51a27fdd9a831cf6250aa40cd
+  "rmk:xi:projection-interpretation":
+    category: prose_only
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: bcca04c6ed0ec5b2b28f0c0a534da4f6b12e59aa52cf0e50f2216d4fc76bd92e
+  "thm:aor:aor-full-subcat":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: f067c7df95c4199095651ef5890fd12703aca565238f589324fffe8ed12b6559
+  "thm:aor:asymptotic-soundness":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 0f91ba8b79bb14a41e93b19d1b7aed4095ee1409fe0f23843368a47f5bd7be99
+  "thm:aor:atom-decomposition":
+    category: schema_theorem
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 65a69ed568a86d4d5099a2cfd12cd6dcfdc3b8b36ade7596f218a2cf96b0ef25
+  "thm:aor:cascade-bipartite":
+    category: schema_theorem
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 9e32dcda4ca36e4955731e9db9cb701124e3510bf351d84a04d12360a3b839a1
+  "thm:aor:cascade-confluence":
+    category: schema_theorem
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 62e268b105b32adeab6ff691c2940c50767f72ccf83e9869d7a9b6501764d5b6
+  "thm:aor:cascade-stable-characterisation":
+    category: schema_theorem
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 8b9b1e71f2bcb7c54539350d32605980c62213dcb1918f633fe2c1e3c94c34e7
+  "thm:aor:cascade-termination":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 466db66b0caca83286c7d4b89bc07c067832c9aa0b973903d27fdcffaa0c80fa
+  "thm:aor:cl-sb-adjunction":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 8d6e6cc5bf9736ee80cb27f348c64a5b70a3e7c32fd08cfdff305b3f705d3a31
+  "thm:aor:cl-sb-construction":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 7cee84639dd465c85471de5d69bad77f0cb0add0faeda625a25574b3cfe67309
+  "thm:aor:cl-sb-universal-property":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 649cc235794d7643132a3fdc9c2ff1e9784569794d9655fba02c271a27821989
+  "thm:aor:cross-cascade-composition":
+    category: schema_theorem
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 58f242d69f8f22513444bb56eb5481943b8fa1961a38e7a386fce19bdc544ed8
+  "thm:aor:eight-stratum-decomposition":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 8a3edd3617f4d5b1d14b52264d0037606b6b7450088ed0272ab3e366f75b57a6
+  "thm:aor:forced-residual":
+    category: schema_theorem
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 00e77fff3019b07836694091096dbe10e2caf1af14b34a665b1d08f5faae8b8f
+  "thm:aor:hierarchy":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: e7771b9d6fa5d349b5969af30de3815868912f68b961ca2d598273df98ee7bf3
+  "thm:aor:refinement-stable-characterisation":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: d18da0599d2842342da13b93c44454b6ed04e477af1c85a5b852e7a321a7730b
+  "thm:aor:refpresb-cocomplete":
+    category: schema_theorem
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: 17dc76974391f06ad41c736a6b8d3f44fea831750735c39e3da2ac8a41a37ec9
+  "thm:aor:residual-product":
+    category: fully_formal_math
+    source_file: paper/aor/aor_paper.tex
+    statement_hash: f69d158c8da8b2f22ab44f3fc6de81f899553d899b6b8ef5a996edf9894c19a8
+  "thm:main:adequacy-aware-transfer":
+    category: schema_theorem
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: a69b022d54997d751cb787d05ce3aedd5fd65f37d2a34b193ed7cb54f95d245b
+  "thm:main:adequacy-interface":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: d5386830c4061ed36a036b0d57ad51a45979ddf2d2d048c169fbd4825eca12ff
+  "thm:main:douglas-domination":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 0e8684d28557c05f198ed1979b059de0354019f227de41b1926ae1d042463e8d
+  "thm:main:duality-confinement-master":
+    category: schema_theorem
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 2d6792cbafe3142143e9d48f27dfa46c254451fce0dda64d9e3ebb252b9bbc18
+  "thm:main:exhaustive-ledger-squeeze":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: d582dc6322f5d00470f94d3ec02f4d55195a35b9e7a1e6126b9d73a523cba769
+  "thm:main:layer-dissolving-master":
+    category: schema_theorem
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 90d8fbc8b47f190b4b8220e02356f83c54baca6bc029e674b898bc472f9fad6d
+  "thm:main:minimum-spend-duality":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: c3bc53259c4bd3145af31ab028f4a05e6b228b56a53acd27094fc5e2d122b5e9
+  "thm:main:predictive-native-membrane":
+    category: schema_theorem
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: bc476bfdce109f2079209321a2a47ed883591ef08453176c8121e0d88445fb21
+  "thm:main:probe-family-currency":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: e4b65e05b60c286805a72bff3483c5fe8b77496bd1a3fb5ac73e927609334eaf
+  "thm:main:quantitative-confinement":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 0616ae8e8733274611c498871f099bffcbf36ab2d8a12d4c4f831bdd8567e8e6
+  "thm:main:separation-confinement":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: ce61404935f606c222171aaf53cd868911a93e9eece6bad593db08512fac64d5
+  "thm:main:strict-extension-contraction":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 7b678e3ef263fdde08556ff346497964b73a27993a15d984663d8c3fa2888602
+  "thm:main:summable-predictive-propagation":
+    category: fully_formal_math
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: b52460aa6923c847110707f9415cd55b9a75cdb2024781ac79629347561a006a
+  "thm:ns:aor-mechanical-r-records":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: cc57d4ea5959a3533b77f95ba9b127e2ee8dcabc0aa616f88d8ebbb26255ea0e
+  "thm:ns:aor-quotient-transport-record":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 63f7880ee0668b9c8666224500da41ac01c6d1a832ab3fb47d95011ce290dcfd
+  "thm:ns:aor-r4-discharge":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 7dd346e97ed44189c53938d86cfb67e0c63ff8135d446eb921d2ebf1ef96d199
+  "thm:ns:aor-r6-discharge":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 813f06d1fd0d2daf32078247b940c0ce371f12f69271b5f7d4be8d94343f60ff
+  "thm:ns:aor-r7-discharge":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: edac60abe8df94d4ac4a0ff9a0b105e42cc265cd25845e7b2bba4afc5a10f473
+  "thm:ns:criterion-native-equality":
+    category: fully_formal_math
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 966eb1e6e03f2b1bf89e8430a2689645d443cb12123809ddef78a6f96ec49f72
+  "thm:ns:framework-deliverable-regularity":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 0f7d1fd45b359aeaa78dbda116f6f095f6cac146907201bb787aa9d04f5169a1
+  "thm:ns:gevrey-dominance":
+    category: fully_formal_math
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 5e0ecbea0ea6419782a4ed0e92435612c74778336e03bfe1925af6dac276587c
+  "thm:ns:in-refstableaor":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 702192105ab6950bc24a65fec62bc54696d45c1a96be7df53fae779595dddedd
+  "thm:ns:lp-transport-rescue":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 5dd07bb89cb71be159dfbe5d278e699cce06f7278cd75bfa822ef8205e7447f5
+  "thm:ns:no-go-criterion-native":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: a99ea55302cb22a3eff062fc04de01908fa3e05de5f9536602744c2b31577e6d
+  "thm:ns:no-go-half-log-endpoint":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: e9b19abd5f83cae141514d415175d9f80a351d24484ef7597c933603ce6a8a35
+  "thm:ns:no-go-marker-only":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 7e65856c12a179045c3a44878104680961b32ce41a2010175cb465733ac0557e
+  "thm:ns:no-go-metric-shadow":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 2ff684a273f0b2bda555d114475bdb49074b84ff1c204ed2d9faa5ddf24bd0a7
+  "thm:ns:no-go-moving-window":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: ddda6758ce94f3142e48d6a57ac74c082c87b047086b38e71860523f427e9153
+  "thm:ns:no-go-packing-amplitude":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: f99d9d4cf341ca3e5ad4a08c4e9e7aa420e051f5f8207e240fa76e7f84514751
+  "thm:ns:no-go-published-analyticity":
+    category: fully_formal_math
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 9c7cc04cae2f7a203bd73eb33451dfffa7bb09bc5c2506c9b780af1dbbb8f309
+  "thm:ns:no-go-raw-nonlinearity":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 214c2c36c14bb6a000ed2fe94eba24914dc9dd85c83bf82fdc64fc45c355e3e1
+  "thm:ns:no-go-scalar-energy":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: f6ebfa64910d600d407fd33cb917607f9fce647f856a1765c36739401a601f82
+  "thm:ns:no-go-sparse-shadow":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: f31076d5897c44815f8837d151dc082dd22ec9e71251c57f1c5d290a55de3a7f
+  "thm:ns:smooth-data-half-log-transfer":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: eee3e4fa798b31011c52098fd9f4ee0b7ef251e8fcdd4070f8da73da8c547de2
+  "thm:ns:source-admission-recurrence":
+    category: schema_theorem
+    source_file: paper/ns/needles_ns.tex
+    statement_hash: 7cb039d44dca6b350f06b7ac1d741bdd5700358c126491ab38b521c9e87ba26d
+  "thm:xi:adequacy-promotion":
+    category: schema_theorem
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 528523cc9d479737a1e2e071cbc3c6aee4da835876478cc125011815f0f6dd20
+  "thm:xi:blind-spot-witness":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 2e3fbeb4f0f8ec1f58c2f2dbd722945ec87381278f86d24f1bcbae73984c6639
+  "thm:xi:chain-rule":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 8b202ffc635f6256d1cc6e8c89b127ae39c00b7fa886bce42555995adfb9581d
+  "thm:xi:defective-bridge":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: ff32e39647d4e164237141c5e34cbcc54030f0b35a4bfbd19710d4b57ab65b10
+  "thm:xi:dissolving-post-processing":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 83f4dc8cfbac2556581f73ed5ea8d6bcb3ba18067fe4190e09e5063dab267526
+  "thm:xi:exact-adequacy":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 1751d15369e9fe0f895354bc1fee8027b0e6ea3a58c75d181808ccd63a8f91a2
+  "thm:xi:exact-reducing-bridge":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 9fe697ce1e870893b2f372357ab5391df87039c316d5e6c2587ddd0319569f53
+  "thm:xi:minimum-spend-duality":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 8817c06d233189ae8eb5ac771f40704e433b9afb808ef250dff91b024800a956
+  "thm:xi:native-coarsening":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: d51d65482d9d96a30c0943d495877b66416cb7992d677dcdfc7aca10d73c812a
+  "thm:xi:optimal-residual-identity":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 71f459d45b2963238f056ede575493f30f159cf3b58a6a16c82a4bcba2196160
+  "thm:xi:projection-identity":
+    category: fully_formal_math
+    source_file: paper/xi/xi_companion.tex
+    statement_hash: 8c71bd55843469682f8ae7ff342825325e8576b3feb5edf516da9026a6ca99b0
+  "warn:main:defect-paid-version":
+    category: prose_only
+    source_file: paper/main/formed_layer_membrane.tex
+    statement_hash: 1ce2dc78a7420565fb0251f61bd253a43955fd2ecc872cca88ec1d0f4c893242

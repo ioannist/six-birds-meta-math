@@ -1,0 +1,140 @@
+SixBirdsHiddenness.PvNP.ConcreteTranslationA.sat_mem_NP : SAT.L_SAT ∈ NP
+SixBirdsHiddenness.PvNP.ConcreteTranslationBRaw.rawCanonicalSATWitness_mem_FP_iff_sat_mem_P :
+  SixBirdsHiddenness.PvNP.ConcreteTranslationBRaw.rawCanonicalSATWitness ∈ FP ↔ SAT.L_SAT ∈ P
+SixBirdsHiddenness.PvNP.ConcreteTranslationBRaw.standard_separation_of_raw_witness_noncurrentization
+  (acceptedReadout : SixBirdsHiddenness.PvNP.ConcreteTranslationBRaw.rawCanonicalSATWitness ∉ FP) :
+  SAT.L_SAT ∉ P ∧ P ≠ NP
+SixBirdsHiddenness.PvNP.ConcreteCurrentizationRaw.standard_separation_of_named_recognition_source
+  (E_Q_bang : SixBirdsHiddenness.PvNP.ConcreteCurrentizationRaw.TaggedPolynomialEvent → Prop)
+  (hAdmission : SixBirdsHiddenness.PvNP.ConcreteCurrentizationRaw.CanonicalSearchAdmission E_Q_bang)
+  (Γ : SixBirdsHiddenness.PvNP.RecognitionSource.recognitionSource)
+  (hContent :
+    Γ.not_currentize_wit =
+      SixBirdsHiddenness.PvNP.RecognitionSource.cslSatHiddenPredicate
+        (SixBirdsHiddenness.PvNP.ConcreteCurrentizationRaw.currentizeWitRaw E_Q_bang))
+  (hAccepted : Γ.not_currentize_wit) : SAT.L_SAT ∉ P ∧ P ≠ NP
+SixBirdsMetaMath.RHNavierPvNP.TriadObservationReturn.concrete_triad_gaussian_xi_span (γ : ℝ) (hγ : 5 / 2 < γ)
+  (ν t₀ : NNReal) (hν : 0 < ν) (ht₀ : 0 < t₀) (τ : ℝ) (hτ : 0 ≤ τ)
+  (hmem :
+    ∀ (i : Fin 3),
+      τ ∈
+        SixBirdsNeedles.NSCore.admissibleMildTimes γ hγ ν hν
+          (SixBirdsNeedles.NSCore.solenoidalThetaHeatState ν t₀ hν ht₀ i))
+  (a : ℝ) (ha : 0 < a) (ρ : SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero)
+  (W : Finset SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero)
+  (hW : SixBirdsDualityConfinement.RH.ActualInvolution.JReflectedWindow W) (hρ : ρ ∈ W) {n : ℕ}
+  (φ : SixBirdsHiddenness.PvNP.CNFSemantics.Formula n) (clause : SixBirdsHiddenness.PvNP.CNFSemantics.Clause n)
+  (i : Fin n) (choice : Bool) :
+  have t := τ.toNNReal + t₀;
+  have b := 4 * Real.pi ^ 2 * ↑ν * ↑t;
+  SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.nonlinearFrameWindowExcess γ hγ ν t₀ hν ht₀ τ a W =
+      a * b / (a + b) *
+        ‖(SixBirdsNeedles.XiCore.hilbertKernelXi (SixBirdsDualityConfinement.RH.FiniteZeroWindows.invariantProbe W))
+              (SixBirdsDualityConfinement.RH.FiniteZeroWindows.displacementVector
+                SixBirdsDualityConfinement.RH.FiniteZeroWindows.unitWeights W)‖ ^
+          2 ∧
+    (SixBirdsMetaMath.RHNavierPvNP.ConstantProbeComparison.finiteConstantProbe { ρ // ρ ∈ W })
+          (SixBirdsDualityConfinement.RH.FiniteZeroWindows.displacementVector
+            SixBirdsDualityConfinement.RH.FiniteZeroWindows.unitWeights W) =
+        0 ∧
+      (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ) +
+              SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ) ≠
+            0 ↔
+          0 <
+            ‖(SixBirdsNeedles.XiCore.hilbertNativeCurrency (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)‖ ^
+                2 +
+              ‖(SixBirdsNeedles.XiCore.hilbertKernelXi (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)‖ ^
+                2) ∧
+        (0 <
+              (SixBirdsMetaMath.RHNavierPvNP.ConstantProbeComparison.finiteConstantProbe
+                  (SixBirdsHiddenness.PvNP.CNFSemantics.Assignment n))
+                (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ) ↔
+            (SixBirdsHiddenness.PvNP.StandardSATBridge.toExternalFormula φ).encode ∈ SAT.L_SAT) ∧
+          SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace (φ ++ [clause])
+                  SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                  (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ) +
+                SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace (φ ++ [clause])
+                  SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                  (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ) =
+              SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ) +
+                  SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ) -
+                (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.clauseFailureFrameTrace φ clause
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ) +
+                  SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.clauseFailureFrameTrace φ clause
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ)) ∧
+            SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState
+                  (φ ++ [SixBirdsHiddenness.PvNP.CNFSemantics.unitClause i choice]) =
+                SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                  (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ) ∧
+              (SixBirdsNeedles.XiCore.hilbertKernelXi (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)) -
+                  SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                    ((SixBirdsNeedles.XiCore.hilbertKernelXi
+                        (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)) =
+                SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                    ((SixBirdsNeedles.XiCore.hilbertNativeCurrency
+                        (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)) -
+                  (SixBirdsNeedles.XiCore.hilbertNativeCurrency
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ))
+'SixBirdsHiddenness.PvNP.ConcreteTranslationBRaw.standard_separation_of_raw_witness_noncurrentization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsHiddenness.PvNP.ConcreteCurrentizationRaw.standard_separation_of_named_recognition_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavierPvNP.TriadObservationReturn.concrete_triad_gaussian_xi_span' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsDualityConfinement.RH.FullClassicalRHBridge.rhConditionalFullClassical.{u_1, u_2, u_3, u_4, u_5, u_6, u_7, u_8,
+    u_9, u_10, u_11, u_12, u_13, u_14, u_15, u_16, u_17}
+  {R : SixBirdsDualityConfinement.RH.Involution.RealCoordinate}
+  (shell : SixBirdsDualityConfinement.RH.SatSelShell.SatSelShell R)
+  (gamma : SixBirdsDualityConfinement.RH.RHConditional.GammaSdtcSelberg shell)
+  (ident : SixBirdsDualityConfinement.RH.RHConditional.ClassicalZeroIdentification shell) : RiemannHypothesis
+SixBirdsNeedles.NSCore.physical_representative_global_classical_navier_stokes (γ : ℝ) (hγ : 5 / 2 < γ) (ν : NNReal)
+  (hν : 0 < ν) (u₀ : ↥SixBirdsNeedles.NSCore.PhysicalVelocityL2)
+  (hf :
+    MeasureTheory.MemLp (fun ξ => (1 + ‖ξ‖ ^ 2) ^ (γ / 2) • ↑↑(SixBirdsNeedles.NSCore.fourierOfRealVelocity u₀) ξ) 2
+      MeasureTheory.volume)
+  (v : SixBirdsNeedles.NSCore.Space3 → SixBirdsNeedles.NSCore.Space3) (hv : Differentiable ℝ v)
+  (hv₀ : v =ᵐ[MeasureTheory.volume] ↑↑u₀)
+  (hdiv : ∀ (x : SixBirdsNeedles.NSCore.Space3), SixBirdsNeedles.NSCore.realSpatialDivergence v x = 0)
+  (hc :
+    SixBirdsNeedles.NSCore.HilbertXiStrongClosure γ hγ ν hν
+      (SixBirdsNeedles.NSCore.energyOfWeightedAmplitude γ (↑↑(SixBirdsNeedles.NSCore.fourierOfRealVelocity u₀)) hf))
+  (t : ℝ) (ht : 0 < t) (x : SixBirdsNeedles.NSCore.Space3) :
+  have g₀ :=
+    SixBirdsNeedles.NSCore.energyOfWeightedAmplitude γ (↑↑(SixBirdsNeedles.NSCore.fourierOfRealVelocity u₀)) hf;
+  have g := SixBirdsNeedles.NSCore.maximalMildValue γ hγ ν hν g₀ t;
+  have u := SixBirdsNeedles.NSCore.realSobolevField γ ⋯ g;
+  deriv
+            (fun r =>
+              SixBirdsNeedles.NSCore.realSobolevField γ ⋯ (SixBirdsNeedles.NSCore.maximalMildValue γ hγ ν hν g₀ r) x)
+            t -
+          ↑ν • Laplacian.laplacian u x +
+        SixBirdsNeedles.NSCore.spatialConvection u u x +
+      SixBirdsNeedles.NSCore.realScalarGradient (SixBirdsNeedles.NSCore.sobolevPressure γ hγ g g) x =
+    0
+'SixBirdsDualityConfinement.RH.FullClassicalRHBridge.rhConditionalFullClassical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsNeedles.NSCore.physical_representative_global_classical_navier_stokes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

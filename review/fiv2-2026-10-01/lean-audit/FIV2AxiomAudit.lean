@@ -1,0 +1,12 @@
+import SixBirdsMetaMath
+
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.quadratic_congruence
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_congruence
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_add_mono
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_trans
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.blockResidual
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.block_schur_decomposition
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_ordered_field
+#print axioms SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_real

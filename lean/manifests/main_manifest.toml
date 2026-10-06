@@ -1,0 +1,247 @@
+# Lean validation manifest for the Main paper axis.
+#
+# Each entry corresponds to a paper_label from
+# formalization/inventory/main_paper_inventory.toml whose
+# intended_status is "mechanize_now". The manifest records the accepted
+# Lean realization status for each inventoried paper item.
+#
+# Status meanings (verbatim from F2/F3):
+# - definition:   paper definition has a Lean definition-like declaration
+# - theorem:      paper claim has a Lean theorem/lemma whose dependency audit passes
+# - axiomatic:    declaration is or depends on project-local axioms (not allowed here)
+# - partial:      declaration mechanizes only a supporting fragment
+# - unformalized: no Lean correspondent is present yet
+#
+# Schema (per entry):
+#   paper_label    = "<kind>:<axis>:<short-name>"  # from per-axis paper_inventory
+#   paper_section  = "<section title>"
+#   description    = "<one-line summary>"
+#   status         = "<one of the values above>"
+#   lean_subproject = "."                          # single lakefile project
+#   lean_module    = "SixBirdsMetaMath.Main.<Section>"
+#   lean_decl      = "SixBirdsMetaMath.Main.<Section>.<name>"
+#   notes          = ""
+#
+# Use `[[definition]]` for definition_kind entries, `[[claim]]` for
+# theorem/lemma/proposition/corollary entries. This mirrors F2/F3's
+# manifest TOML idiom.
+
+[[definition]]
+paper_label = "def:main:packaged-currency"
+paper_section = "Legal quotient and native currency"
+description = "Concrete rational-matrix packaged currency L_Gamma C_Gamma^dagger L_Gamma^T with derived adjoint and pseudoinverse."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.LegalQuotient"
+lean_decl = "SixBirdsMetaMath.Main.LegalQuotient.packagedCurrency"
+notes = ""
+
+[[claim]]
+paper_label = "thm:main:probe-family-currency"
+paper_section = "Legal quotient and native currency"
+description = "Narrowed surrogate of the paper's Cap_C(y^*L; Ran Γ) = y^T K_{C,Γ}(L) y. Lean's `capacity` is `quad C_Γ` at the MP-optimal direction u* = C_Γ^† L_Γ^T y (a point evaluation, NOT a variational supremum); under StrictPositiveDiagonal C_Γ this equals y^T K y by a 13-step matrix-algebra calc chain."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.LegalQuotient"
+lean_decl = "SixBirdsMetaMath.Main.LegalQuotient.probeFamilyCurrency"
+notes = "Two narrowings vs the paper. (1) HYPOTHESIS: paper assumes `L(Ker C) = 0` (null-mode legality, allowing kernel directions); Lean assumes the strictly stronger `StrictPositiveDiagonal (packagedAudit C Gamma)` (no kernel on Ran Γ). The `NullLegal` predicate is defined in the module but unused; wiring it in is part of closing the gap. (2) STATEMENT: paper's Cap_C is a variational supremum `sup_u (y^T L u)^2 / quad C_Γ u`; Lean's `capacity` is a point evaluation `quad C_Γ (D† L_Γ^T y)`. The Lean theorem establishes a matrix-algebra identity (point eval = y^T K y) but does NOT prove the variational characterization (Cauchy–Schwarz upper bound + attainment) that the paper's claim requires. The 2nd and 3rd conjuncts (membrane budget ↔ Loewner; ¬ budget ↔ ∃ critical-pair witness) are propositional unfoldings, not substantive math content. Promoting to `status = theorem` requires (a) wiring NullLegal into the proof, (b) redefining `capacity` variationally with a Cauchy–Schwarz upper bound and attainment proof. Proof uses matVec_matMul, dot_matVec_transpose, transpose_diagonalPseudoInverse, diagonalPseudoInverse_strictPositiveDiagonal_inverse."
+
+[[claim]]
+paper_label = "thm:main:minimum-spend-duality"
+paper_section = "Legal quotient and native currency"
+description = "Partial: restored infimum certificate and proved the +infinity off-range branch."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.LegalQuotient"
+lean_decl = "SixBirdsMetaMath.Main.LegalQuotient.minimumSpendDuality"
+notes = "Off-range branch is unconditional. Finite branch remains open: K = L_Gamma C_Gamma^dagger L_Gamma^T is not generally diagonal, while the available pseudoinverse is diagonal-support only. Closing the branch needs either a Moore-Penrose inverse for K or additional range/projection lemmas proving the attaining vector and global lower bound."
+
+[[claim]]
+paper_label = "thm:main:adequacy-interface"
+paper_section = "The Xi companion interface"
+description = "Partial: Schur identity K_DD = A_* K_LL A_*^* + Ξ_C(D|L) proved under three algebraic hypotheses (K_LD = K_DL^* from C symmetric; KLL† symmetric; K_LL · KLL† · K_LD = K_LD). Loewner monotonicity corollary and factorization equivalence (Ξ = 0 ↔ ∃ A: D_0 = A L_0 ↔ Ker L_0 ⊆ Ker D_0) are deferred."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.XiInterface"
+lean_decl = "SixBirdsMetaMath.Main.XiInterface.adequacyInterface"
+notes = "Three branches of the paper theorem. Branch 1 (Schur identity): proved algebraically here, parameterized by hKLDsym, hKLLdaggerSym, hMPLLD. Branch 2 (Loewner monotonicity under K_LL ⪯ Θ_Y and Ξ ⪯ Ω_Z): deferred until PSD/Loewner closure machinery is built (sum of PSDs, conjugation A·X·A^T of PSDs). Branch 3 (Ξ = 0 ↔ ∃ A: D_0 = A L_0 ↔ Ker L_0 ⊆ Ker D_0): deferred until kernel/range duality machinery is built. Additional narrowing: this module models C^dagger as `diagonalPseudoInverse C`; the paper's C_0^{-1} is the genuine Moore-Penrose inverse on the legal quotient. The Lean theorem is paper-faithful only under an implicit `StrictPositiveDiagonal C` assumption, the same narrowing carried in Phase E §1."
+
+[[claim]]
+paper_label = "thm:main:predictive-native-membrane"
+paper_section = "Predictive native membranes"
+description = "Equivalence of the native-predictive-membrane budget Khat_j ⪯ Theta (for every accepted j) with the no-critical-pair characterization."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.PredictiveNative"
+lean_decl = "SixBirdsMetaMath.Main.PredictiveNative.predictiveNativeMembrane"
+notes = ""
+
+[[claim]]
+paper_label = "thm:main:summable-predictive-propagation"
+paper_section = "Predictive native membranes"
+description = "Partial: finite-n summable propagation using the public Loewner arithmetic library, conditional on finite per-stage, product/sum envelope, and factor-nonnegativity bounds."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.PredictiveNative"
+lean_decl = "SixBirdsMetaMath.Main.PredictiveNative.summablePredictivePropagation"
+notes = "Two narrowings vs the paper. (1) The paper's infinite product/sum convergence is replaced by finite hypotheses hPbound and hEnvelopeStep, which bundle the iterated product/sum envelope bound and the arithmetic step from stage j to j+1. (2) Factor nonnegativity hFactorNonneg remains an explicit finite-stage hypothesis. The formerly elevated generic Loewner facts (reflexivity, transitivity, additive monotonicity, nonnegative scaling) are now discharged by the public LegalQuotient library; the proof still uses them substantively via induction on n."
+
+[[claim]]
+paper_label = "thm:main:layer-dissolving-master"
+paper_section = "Layer-dissolving membrane endpoint theorem"
+description = "Partial: layer-dissolving transport bound S K^D S^T ⪯ Theta^D proved by deriving the per-stage Schur identity via XiInterface.adequacyInterface (hKLDsym, hKLLdaggerSym, hMPLLD) and chaining through the public Loewner arithmetic library. Capacity-bound consequence and no-needles claim are deferred."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.LayerDissolving"
+lean_decl = "SixBirdsMetaMath.Main.LayerDissolving.layerDissolvingMaster"
+notes = "Three branches of the paper theorem. Branch 1 (Transport bound): proved here, with hSchur derived internally via XiInterface.adequacyInterface; the three algebraic sub-hypotheses hKLDsym, hKLLdaggerSym, hMPLLD are explicit parameters. Generic Loewner transitivity, additive monotonicity, and conjugation monotonicity are now discharged by the public LegalQuotient library. Branch 2 (Capacity bound sup_j Cap ≤ z^T Theta^D z): deferred until variational sup machinery is built. Branch 3 (No layer-dissolving predictive needles within declared scope): deferred as a qualitative claim that requires a formal `Needle` object and scope encoding to state, both out of scope for Package 2. Additional narrowing: this module models C^dagger as `diagonalPseudoInverse C`; the paper's C_0^{-1} is the genuine Moore-Penrose inverse on the legal quotient. The Lean theorem is paper-faithful only under an implicit `StrictPositiveDiagonal C` assumption, the same narrowing carried in Phase E §1."
+
+[[definition]]
+paper_label = "def:main:involutive-ledger"
+paper_section = "Duality-confinement membrane theorem"
+description = "Finite-rank model: anti-invariant object ledger A_X realized as a weighted sum over Fin n of outer products psi_-(x) psi_-(x)^T."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.antiInvariantObjectLedger"
+notes = "Restriction to the finite-rank rational-matrix model: X = Fin n, mu = Vec n (rational weight system), Y = Vec y, Jresp = Mat y y. Paper's general measure-theoretic A_X = integral psi_- psi_-^* dmu is replaced by the finite weighted sum. Equivariance, object involution, and response involution constraints are encoded as separate Prop predicates (IsEquivariantReadout, IsObjectInvolution, IsResponseInvolution). The paper's trace-class generality and infinite measure spaces are out of scope for this codebase."
+
+[[definition]]
+paper_label = "def:main:separating-readout"
+paper_section = "Duality-confinement membrane theorem"
+description = "Finite-support predicate for anti-invariant readout separation of the fixed locus, plus a quantitative lower-bound variant."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.SeparatesFixedLocus"
+notes = "Restriction to finite rational supports: the visible support of mu is represented by points x : Fin n with 0 < mu x, fixed locus membership is J x = x, and psi_-(x)=0 is vector equality to the zero vector. The paper's metric distance condition dist(x, Fix(J)) >= epsilon is narrowed to QuantitativelySeparatesFixedLocus, a single positive rational lower bound m whose square bounds the squared readout norm for off-fixed visible points. General metric spaces and epsilon-dependent moduli m(epsilon) are deferred."
+
+[[definition]]
+paper_label = "def:main:anti-invariant-membrane"
+paper_section = "Duality-confinement membrane theorem"
+description = "Finite-rank anti-invariant carrier currency K^- = L^- C^dagger (L^-)^T with a Loewner budget predicate K^- ⪯ Theta^-."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.antiInvariantCarrierCurrency"
+notes = "Restriction to the finite-rank rational-matrix model. The carrier currency is built via diagonalPseudoInverse C; the paper's C^dagger is the genuine Moore-Penrose inverse on the legal quotient, so this is paper-faithful only under an implicit StrictPositiveDiagonal C assumption (the same narrowing carried throughout Phase E). The budget predicate antiInvariantMembraneBudget exposes K^- ⪯ Theta^-. Null-mode legality, the infinite collapse ladder K^-_n ⪯ B_n with tr B_n -> 0, and the defected bridge-budget variant are deferred: this codebase currently has no general trace, no infinite limits, and no bridge-budget object for this subsection."
+
+[[claim]]
+paper_label = "lem:main:trace-identity"
+paper_section = "Duality-confinement membrane theorem"
+description = "Finite-rank trace identity: trace of A_X equals the weighted sum of squared anti-invariant readout norms."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.traceIdentity"
+notes = "The equality branch is proved by finite-sum manipulation: traceMat (antiInvariantObjectLedger mu Jresp psi) = sum_x mu x * dot psi_-(x) psi_-(x). The paper's consequence A_X = 0 iff psi_-(x) = 0 mu-a.e. is represented downstream in separationConfinement, which derives the finite positive-weight version internally using the Main.LegalQuotient public library (sumFin_eq_zero_of_nonneg, dot_self_nonneg, dot_self_eq_zero, Rat.mul_eq_zero) plus this trace identity. The general measure-zero formulation of the consequence remains out of scope (no measure theory in this codebase)."
+
+[[claim]]
+paper_label = "thm:main:separation-confinement"
+paper_section = "Duality-confinement membrane theorem"
+description = "Partial: finite positive-weight confinement clause proved; general measure-zero confinement statement is deferred."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.separationConfinement"
+notes = "The finite-ledger corollary is fully proved: from SeparatesFixedLocus, nonnegative weights hMuNonneg, and A_X = 0, prove forall x, 0 < mu x -> J x = x. The proof is substantive, using traceIdentity, sumFin_eq_zero_of_nonneg, dot_self_nonneg, Rat.mul_eq_zero, dot_self_eq_zero, and SeparatesFixedLocus. The only paper-aligned extra hypothesis is hMuNonneg (the standing finite weight-system assumption); no generic Rat, sumFin, or Loewner hypotheses remain elevated. The general measure-zero statement mu(X \\ Fix(J)) = 0 is deferred because this codebase has no measure theory."
+
+[[claim]]
+paper_label = "thm:main:quantitative-confinement"
+paper_section = "Duality-confinement membrane theorem"
+description = "Partial finite-rank Markov-style confinement m^2 * offFixedWeight J mu <= traceMat A_X, proved via a substantive calc chain using LegalQuotient Rat/sumFin ordering lemmas plus QuantitativelySeparatesFixedLocus and nonnegative weights."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.quantitativeConfinement"
+notes = "The paper's epsilon-dependent metric modulus m(epsilon) and set {x : dist(x, Fix(J)) >= epsilon} are narrowed to a single rational lower bound m and the discrete off-fixed predicate J x != x. The theorem is proved by a substantive calc chain combining the standing weight-system assumption hMuNonneg with QuantitativelySeparatesFixedLocus, traceIdentity, dot_self_nonneg, rat_mul_mono_nonneg, and sumFin_mono from the public LegalQuotient library. The formerly elevated generic Rat/sumFin hypotheses hDotSelfNonneg, hRatMulMonoNonneg, and hSumFinMono are discharged; only hMuNonneg remains as the paper-aligned nonnegative-weight assumption."
+
+[[definition]]
+paper_label = "def:main:domination-bridge"
+paper_section = "Duality-confinement membrane theorem"
+description = "Defected domination bridge predicate A_X ⪯ K^- + E with E positive-semidefinite, plus contraction and exact-bridge factorization predicates."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.DominationBridge"
+notes = "Finite-rank model. DominationBridge is PositiveSemidefinite E together with loewnerLE A_X (K^- + E); IsContraction encodes T^T T ⪯ I; ExactBridgeFactorization encodes ∃ contraction T with V = T W. Paper's exact equivalence between A_X ⪯ K^- and ∃ contraction T : V = T W is represented downstream by the Douglas theorem entry, currently proved only in the reverse direction."
+
+[[claim]]
+paper_label = "thm:main:douglas-domination"
+paper_section = "Duality-confinement membrane theorem"
+description = "Partial: reverse direction only — if V = T W for a contraction T, then V^T V ⪯ W^T W."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.douglasDominationReverse"
+notes = "The paper's full equivalence A ⪯ K iff ∃ contraction T: V = T W is the Douglas Hilbert-space factorization theorem. This Lean theorem proves only the reverse direction, using transpose_matMul, matMul_assoc, transpose_transpose, matMul_identity_right, and loewnerLE_conjugate from the public LegalQuotient library applied to the contraction bound T^T T ⪯ I. The forward direction requires constructive operator-norm and range-of-adjoint machinery that this codebase lacks."
+
+[[claim]]
+paper_label = "thm:main:duality-confinement-master"
+paper_section = "Duality-confinement membrane theorem"
+description = "Partial finite-rank master: under separation, nonnegative weights, and a single completed domination record A_X ⪯ B with traceMat B = 0 and PSD B, every positive-weight visible object lies in Fix(J)."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.dualityConfinementMaster"
+notes = "Two paper-to-Lean narrowings. (1) The infinite sequence with tr B_n -> 0 is replaced by a single bridge A_X ⪯ B with traceMat B = 0, paper-faithful for the limit case; the sequence-with-limit reformulation is deferred until future infinite-limit infrastructure exists. (2) The conclusion μ(X \\ Fix(J)) = 0 is replaced by the finite positive-weight version forall x, 0 < μ x -> J x = x, matching the second clause of the paper's separation-confinement step. The proof is substantive: derives PSD A_X internally, uses loewnerLE_traceMat_mono and psd_trace_nonneg to force traceMat A_X = 0, then chains traceIdentity, sumFin_eq_zero_of_nonneg, Rat.mul_eq_zero, dot_self_eq_zero, and SeparatesFixedLocus. Hypotheses elevated: hMuNonneg (standing nonnegative-weight assumption); all generic Loewner, Rat, and sumFin facts are discharged via Main.LegalQuotient public library."
+
+[[definition]]
+paper_label = "def:main:exhaustive-moving-ledger"
+paper_section = "Duality-confinement membrane theorem"
+description = "Finite-rank single-record exhaustive moving-ledger relation A_X ⪯ iota · A_window · iota^T + T with PSD T."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.ExhaustiveMovingLedger"
+notes = "Paper's n-indexed sequence of records A_X ⪯ iota_n A_{X,n} iota_n^* + T_n is collapsed to a single record (no infinite limit, no sequence indexing). The vanishing-exhaustive form tr(iota_n B_n iota_n^*) + tr T_n -> 0 is represented downstream in the squeeze theorem as traceMat (iota B iota^T) + traceMat T = 0, a single equality replacing the limit. General measure-theoretic and infinite-sequence settings are deferred because this codebase has no infinite limits."
+
+[[claim]]
+paper_label = "thm:main:exhaustive-ledger-squeeze"
+paper_section = "Duality-confinement membrane theorem"
+description = "Partial finite-rank squeeze: under a single exhaustive record, a window bound, and a vanishing combined trace, derive finite positive-weight Fix(J) confinement via dualityConfinementMaster."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.exhaustiveLedgerSqueeze"
+notes = "Two narrowings vs the paper. (1) Sequence with tr(iota_n B_n iota_n^*) + tr T_n -> 0 is replaced by a single record with traceMat (iota B iota^T) + traceMat T = 0. (2) Paper's measure-zero conclusion μ(X \\ Fix(J)) = 0 is replaced by finite positive-weight forall x, 0 < μ x -> J x = x, paralleling the second clause of separation-confinement. Proof structure: combine the exhaustive bound with loewnerLE_conjugate and loewnerLE_add_mono to build a single combined PSD bridge B' = iota B iota^T + T with traceMat B' = 0, then invoke dualityConfinementMaster. All generic Loewner, trace, and PSD facts come from the public LegalQuotient library; only hMuNonneg (standing nonnegative-weight assumption) is elevated."
+
+[[definition]]
+paper_label = "def:main:obstruction-budget"
+paper_section = "Duality-confinement membrane theorem"
+description = "Defected obstruction budget operator B(t) = (1+t)(K + E_src) + (1+1/t) E_br plus the defected duality-confinement record predicate."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.obstructionBudget"
+notes = "Finite-rank model. obstructionBudget takes a generic carrier K; the paper's collapse-ladder case K = Lambda_n^{-1} Theta_0^- is recovered by passing matScale LambdaInv Theta0Minus. DefectedDualityRecord bundles 0 < t, PSD E_src, PSD E_br, and the Loewner inequality A_X ⪯ B(t). Paper's n-indexed sequence and per-n Lambda_n^{-1} scaling are absorbed into the caller's choice of K; the sequence-with-limit interpretation is deferred because this codebase has no infinite limits."
+
+[[claim]]
+paper_label = "prop:main:optimized-trace-budget"
+paper_section = "Duality-confinement membrane theorem"
+description = "Partial: the per-t algebraic trace formula traceMat B(t) = (1+t)(traceMat K + traceMat E_src) + (1+1/t) traceMat E_br is proved under 0 < t, restricting the t-domain to the paper's intended range. The closed-form infimum (sqrt(a) + sqrt(b))^2 and the convergence sufficient condition a_n -> 0, b_n -> 0 are deferred."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.DualityConfinement"
+lean_decl = "SixBirdsMetaMath.Main.DualityConfinement.optimizedTraceBudget"
+notes = "Three clauses of the paper proposition. Clause 1 (per-t trace formula) is proved here via traceMat_add and traceMat_scale, with the paper-domain hypothesis 0 < t carried explicitly in the theorem signature, paralleling DefectedDualityRecord.left = 0 < t. Clause 2 (inf_{t>0} traceMat B(t) = (sqrt(a) + sqrt(b))^2 for a = traceMat(K + E_src), b = traceMat E_br) is deferred: rational square roots are not expressible in Rat without leaving the field, and the optimization-over-t step requires a calculus or AM-GM development that is not yet in scope. Clause 3 (a_n -> 0, b_n -> 0 implies confinement) is deferred because this codebase has no infinite limits. The Lean theorem keeps the paper-faithful algebraic content (clause 1), while the headline closed-form and convergence statements remain future work."
+
+[[claim]]
+paper_label = "thm:main:strict-extension-contraction"
+paper_section = "Critical-pair completion and strict extension"
+description = "Partial: Loewner inequality clause — the extended L^+ residual is dominated by the L-residual, under the elevated Schur-update identity and PSD conditional-Schur term."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.CriticalPair"
+lean_decl = "SixBirdsMetaMath.Main.CriticalPair.strictExtensionContraction"
+notes = "Three clauses of the paper theorem. Clause 1 (algebraic Schur-update identity Xi(D|L^+) = Xi(D|L) - K_{DM|L} K_{MM|L}^dagger K_{MD|L}) is elevated as hExtendedResidual; deriving it constructively requires a general Moore-Penrose inverse for both K_LL and K_{MM|L} plus block-stacking/block-matrix algebra not yet in scope. Clause 2 (Loewner inequality Xi(D|L^+) ⪯ Xi(D|L)) is proved here from hExtendedResidual and hConditionalSchurPSD using the public LegalQuotient helper loewnerLE_matSub_self. Clause 3 (strict contraction exactly in directions seen by the new probes) is deferred because this codebase does not yet encode a notion of directions seen by probes. Conditional currencies conditionalCurrencyDM_L, conditionalCurrencyMM_L, and conditionalCurrencyMD_L are added as helper definitions but have no separate manifest entries because the paper does not label them."
+
+[[claim]]
+paper_label = "thm:main:adequacy-aware-transfer"
+paper_section = "All-six records, transfer, and taxonomy"
+description = "Data-shape placeholder: LawfulMembraneTransfer bundles source/target operators and four transport maps; the theorem only witnesses field existence plus definitional unfoldings of IsExactBridge and IsDefectiveBridge. No laws tie the transport maps to the source/target operators, and no quantitative paper claim is mechanized."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Main.AllSix"
+lean_decl = "SixBirdsMetaMath.Main.AllSix.adequacyAwareTransfer"
+notes = "The paper theorem is qualitative: it asserts that a lawful membrane transfer must transport four components (energy, native, dissolving, residual), that exact bridges transport budgets by congruence, and that defective bridges produce explicit PSD residual currencies absorbed in the target budget. This Lean entry is a data-shape placeholder: LawfulMembraneTransfer is a record with source/target operators and four transport maps, but it imposes no laws tying those maps to the source or target operators. There are no isometry constraints on S_*, no commutation laws, no operator-equation laws, and no proof that transported source data equals target data. IsExactBridge and IsDefectiveBridge encode congruence and paid-defect cases as optional certificates; the theorem only witnesses field existence and unfolds those predicates when a certificate is supplied. No congruence-vs-PSD-defect quantitative deduction is made, and no new operator inequality is derived. The paper's all-six-records taxonomy (P_1 rewrite/gauge through P_6 audit/currency) and membrane-type taxonomy (intrinsic / sectioned / bundle / protocol) are not encoded; they would require typeclass-style hierarchies or finite enumeration types beyond Package 4's scope."

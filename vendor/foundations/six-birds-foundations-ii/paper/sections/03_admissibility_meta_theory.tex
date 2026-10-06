@@ -1,0 +1,262 @@
+\section{Admissibility and meta-theory}\label{sec:admissibility-meta-theory}
+
+% Mathematical job:
+%   - Introduce honest bookkeeping as an admissibility regime.
+%   - Replace flat generator independence with typed non-collapse.
+%   - State the level-profile architecture (behavioral / verification /
+%     structural-categorical) as common meta-theory.
+%   - State the forgetting / selected-lift architecture (preserved invariants,
+%     loss records, non-uniqueness, lower-to-higher non-determinacy).
+%   - State the activation-threshold architecture (below-threshold collapse,
+%     threshold crossing, no-arbitrary-enrichment).
+%   - State instrument-relative visibility and suppression.
+%   - State empirical-bridge admissibility (threshold-dependent, level-indexed,
+%     instrument-visible; not empirical realization).
+%
+% Governing sources:
+%   workspace/meta/lens_lab/papers/paper2/theorem_sequence_claims.md
+%   workspace/meta/lens_lab/papers/paper2/meta_theory_synthesis/paper2_meta_theory_synthesis.md
+%   workspace/meta/lens_lab/papers/paper2/meta_theory_synthesis/admissibility_nonclaim_closure.md
+%   workspace/meta/lens_lab/papers/paper2/scope_and_nonclaims.md
+%   docs/papers/Tsiokos_2026_Six_Birds_No_Go_Theorems_for_Audited_Emergence.tex
+%     (NG_LADDER_IDEM, NG_LADDER_BOUNDED_INTERFACE, NG_PROTOCOL_TRAP,
+%     NG_MACRO_CLOSURE_DEFICIT)
+%   paper/prior_literature_context.md (Tier A1, A2, A3)
+%
+% Overclaim risks:
+%   - Collapsing typed non-collapse into global independence.
+%   - Turning admissibility remarks into philosophy.
+%   - Claiming instrument-family completeness (this is future work only).
+%   - Claiming lossless forgetting or unique lifts without proof.
+
+The admissibility regime is honest bookkeeping, elevated from a
+per-description condition on \(D \in \FATCD{}\) to a meta-theoretic
+discipline governing which claims about admissible descriptions enter
+the theorem chain. Under honest bookkeeping, the flat
+primitive-independence question is replaced by typed non-collapse,
+level transitions are controlled by forgetting and selected lifts,
+thresholds govern activation, instruments govern visibility, and
+empirical-bridge claims are admitted only as threshold-dependent,
+level-indexed, instrument-visible assertions. Seven theorem schemas
+formalize the regime and preserve the global nonclaims of
+Remark~\ref{rem:atlas-global-nonclaims}.
+
+\subsection{Honest bookkeeping as an admissibility regime}\label{subsec:honest-bookkeeping}
+
+The audit condition of Definition~\ref{def:audited} records enough
+data for each claim, promotion, translation, lift, forgetting,
+visibility, and empirical-bridge assertion to be interrogated on its
+own terms. The following proposition states that these record
+requirements jointly constitute the admissibility regime, in a spirit
+analogous to the axiomatic specification discipline of Hoare
+logic~\citep{Hoare1969}.
+
+\begin{proposition}[Honest bookkeeping is an admissibility regime]\label{prop:honest-bookkeeping}
+Honest bookkeeping is a necessary part of the admissibility regime for
+claims about a description \(D \in \FATCD{}\). Concretely, any claim that
+enters the theorem chain is admissible only if every assertion below
+carries an explicit record in \(\Audit{D}\):
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the claim itself, with its statement, hypotheses, and scope;
+  \item every promotion, with its source level, target level, added data,
+    losses, and preserved nonclaims;
+  \item every translation, with its source context, target context,
+    preserved data, suppressed data, and claim strength;
+  \item every selected lift, marked selected and non-unique;
+  \item every forgetting map, with its record of losses;
+  \item every visibility claim, with both its visible and its suppressed
+    data;
+  \item every empirical-bridge assertion, with its substrate, observable,
+    instrument, level map, threshold-witness relation, and
+    suppressed-structure nonclaims.
+\end{itemize}
+Accordingly, unrecorded claims, implicit promotions, silent translations,
+asserted-but-unselected lifts, lossless forgetting without proof,
+visibility overreads, and bare empirical-realization assertions are all
+inadmissible.
+\end{proposition}
+
+\begin{remark}[Why the regime is necessary]\label{rem:why-honest-bookkeeping}
+The bookkeeping requirement is a structural check, not a stylistic
+one. Without explicit records, passive observation can be misread as
+\Psix{}, mere packaging as \Pone{} descent, and route failure as
+\Pthree{} mismatch. The regime prevents those misreadings from
+entering the theorem chain.
+\end{remark}
+
+
+\subsection{Typed non-collapse}\label{subsec:typed-non-collapse}
+
+The regime does not include flat primitive independence --- the claim
+that \Pone{}, \ldots, \Psix{} are independent generators of a global
+algebra. Its meta-theoretic counterpart here is typed non-collapse.
+
+\begin{proposition}[Typed non-collapse]\label{prop:typed-non-collapse}
+Under honest bookkeeping (Proposition~\ref{prop:honest-bookkeeping}) and
+the repaired alignments of Remark~\ref{rem:repaired-alignments}, for
+every pair of primitive roles \((P_i, P_j)\) with \(i \ne j\), the
+``forbidden collapse'' of the corresponding row in
+Table~\ref{tab:boundary-matrix} is not admissible as an identification
+of \(P_i\) with \(P_j\); the ``permitted interaction'' of the same row is
+not thereby excluded and may remain admissible when its own bookkeeping
+conditions are met.
+\end{proposition}
+
+\begin{remark}[Typed non-collapse versus global independence]\label{rem:typed-non-collapse-vs-independence}
+Typed non-collapse is strictly weaker than global primitive
+independence. It does not assert that the six roles are logically or
+categorically independent in a global algebra; it asserts only that
+the pairwise identifications listed as forbidden collapses in
+Table~\ref{tab:boundary-matrix} are inadmissible under honest
+bookkeeping, leaving the corresponding typed interactions available.
+\end{remark}
+
+
+\subsection{Level-profile architecture}\label{subsec:level-profile-architecture}
+
+Typed non-collapse fixes which identifications are inadmissible; the
+regime must also record the level at which each admissible claim is
+made. The level trichotomy of Definition~\ref{def:level-trichotomy}
+is therefore lifted from a role-by-role template to a regime-level
+structure.
+
+\begin{proposition}[Level-profile architecture]\label{prop:level-profile}
+Every admissible claim about a description \(D \in \FATCD{}\) carries a
+level profile: each claim is located on the behavioral, verification, or
+structural-categorical level, and each cross-level assertion is
+accompanied by a translation record in the sense of
+Proposition~\ref{prop:honest-bookkeeping}. Direct comparison of claims at
+different levels without a translation record is inadmissible.
+\end{proposition}
+
+\subsection{Forgetting and selected lifts}\label{subsec:forgetting-lifts}
+
+Level transitions are controlled by forgetting and selected lifts.
+
+\begin{proposition}[Forgetting and selected-lift architecture]\label{prop:forgetting-lifts}
+Forgetting from the structural-categorical level to verification, and
+from verification to behavioral, is admissible and is always lossy in
+principle: an admissible forgetting carries a record of the losses in
+\(\Audit{D}\). Lifting from a lower level to a higher level is
+admissible only when accompanied by
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the added data required to support the higher-level statement;
+  \item the mark that the lift is selected and non-unique;
+  \item explicit preservation of lower-level invariants and explicit
+    losses where the lift is partial.
+\end{itemize}
+Lossless forgetting and unique lifts are inadmissible unless the losslessness
+or uniqueness is itself proved and recorded.
+\end{proposition}
+
+\begin{remark}[Lower-to-higher non-determinacy]\label{rem:lower-to-higher-non-determinacy}
+Proposition~\ref{prop:forgetting-lifts} formalizes the non-determinacy of
+lower-level data: given behavioral or verification content alone, no
+choice of structural-categorical content is forced by the admissibility
+regime, and any asserted choice must be marked as a selected lift.
+\end{remark}
+
+\subsection{Activation thresholds}\label{subsec:activation-thresholds}
+
+The regime must also state when a projected role is active. The
+attachment protocol of Definition~\ref{def:threshold-attachment} is
+lifted to a regime-level principle.
+
+\begin{proposition}[Activation thresholds]\label{prop:activation-thresholds}
+An admissible active derived role projection \(\pi_i(D)\) exists only when
+\(D\) carries the threshold, witness, level, collapse, and audit data
+required by Definition~\ref{def:threshold-attachment}. Below-threshold
+clusters carry an explicit \(\belowthr\) status, and boundary-collapsed
+clusters carry \(\collapsedbc\). Arbitrary enrichment, adding structure
+solely to force a role projection, is inadmissible unless the additions
+are themselves honestly bookkept as raw features or annotations.
+\end{proposition}
+
+\subsection{Instrument-relative visibility and suppression}\label{subsec:visibility-suppression}
+
+Threshold-governed activation still leaves open what an instrument
+makes visible or suppresses. Admissibility is therefore
+instrument-relative.
+
+\begin{proposition}[Instrument-relative visibility]\label{prop:visibility}
+Every admissible claim carries an explicit visibility record comprising
+its visible content, its suppressed content, the instruments under which
+the visibility and suppression are asserted, and the resulting
+instrument-relative claim strength. Overreading a suppressed claim as
+visible under a different instrument is inadmissible. Partial visibility,
+in which a claim is visible only up to some coarsening or translation, is
+admitted when the visibility record itself makes the partiality explicit.
+\end{proposition}
+
+\begin{remark}[No instrument-free truth]\label{rem:no-instrument-free}
+Proposition~\ref{prop:visibility} does not claim that instruments are
+free of distortion or that any single instrument is canonical. It
+asserts only that admissible claims carry an instrument-relative
+visibility record. Instrument completeness is deferred to
+Section~\ref{sec:future-work}.
+\end{remark}
+
+\subsection{Empirical-bridge admissibility}\label{subsec:empirical-bridge}
+
+Any claim crossing from the closure-algebraic side of the framework
+to a substrate-level observable must pass through the
+empirical-bridge discipline, related to but narrower than
+the empirical-adequacy view of theories~\citep{vanFraassen1980}.
+
+\begin{proposition}[Empirical-bridge admissibility]\label{prop:empirical-bridge}
+An empirical-bridge claim about \(D \in \FATCD{}\) is admissible only when
+it carries, in \(\Audit{D}\),
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the substrate and observable to which the bridge relates;
+  \item the instrument under which the observable is measured;
+  \item the level map between the closure-algebraic content and the
+    substrate-level content;
+  \item a threshold-witness relation recording when the bridge is
+    crossed;
+  \item the nonclaims suppressed by the bridge record, in particular any
+    structural content of \(D\) that is not tracked by the substrate or
+    instrument.
+\end{itemize}
+Empirical realization --- the claim that \(D\) is itself a substrate
+observation --- is stronger than empirical-bridge admissibility and is
+not asserted by any empirical-bridge claim.
+\end{proposition}
+
+
+\subsection{Nonclaim closure across the seven schemas}\label{subsec:nonclaim-closure}
+
+The seven schemas of
+Propositions~\ref{prop:honest-bookkeeping}--\ref{prop:empirical-bridge}
+together preserve the global nonclaims of
+Remark~\ref{rem:atlas-global-nonclaims} and block a corresponding
+class of overclaims.
+
+\begin{proposition}[Admissibility-regime nonclaim closure]\label{prop:nonclaim-closure}
+Under the seven schemas, the following remain non-claims of the
+admissibility regime:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item no full six-primitives algebra is claimed;
+  \item no global primitive-independence theorem is claimed;
+  \item no empirical realization is claimed;
+  \item no unique lift theorem is claimed;
+  \item no lower-level-to-higher-level determinacy is claimed;
+  \item no instrument-free truth claim is made;
+  \item direct cross-level comparison remains inadmissible without
+    translation;
+  \item forgetting remains lossy unless losslessness is explicitly proved;
+  \item empirical-bridge claims require threshold data, level maps,
+    instrument visibility records, and suppressed-structure nonclaims.
+\end{itemize}
+Each schema blocks a specific class of overclaims. Honest bookkeeping blocks
+unrecorded claims, promotions, translations, lifts, visibility claims, and
+empirical-bridge assertions; typed non-collapse blocks forbidden primitive
+collapses and flat independence overclaims while leaving restricted typed
+boundary interactions available; level-profile architecture blocks direct
+cross-level comparison without translation; forgetting-and-lift architecture
+blocks lossless forgetting, unique lifts, and lower-to-higher determinacy;
+activation thresholds block arbitrary enrichment and threshold-free
+nontriviality claims; instrument-relative visibility blocks instrument-free
+truth and visible-to-suppressed overreads; empirical-bridge admissibility
+blocks empirical-realization overclaims and bridge claims without threshold or
+level-map data.
+\end{proposition}

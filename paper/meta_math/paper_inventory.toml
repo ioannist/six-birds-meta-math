@@ -1,0 +1,343 @@
+# paper_inventory.toml — meta-math paper (M5+M6 merged)
+#
+# Canonical source bundle:
+# - paper/meta_math/proposal.md  (identity + status for T1-T17)
+# - M6 source bundle  (statements + proof spines for T1-T6, T11-T17)
+# - M5 source bundle  (statements for T7-T10)
+#
+# Status vocabulary:
+#   mechanize_now      — full Lean realization required
+#   partial            — theorem applying either a `# substrate_pending` axiom
+#                        (cross-paper dependency) or a same-paper `# obligation`
+#                        axiom (intra-paper dependency, e.g. T1 depends on T3).
+#                        The partial declaration is itself a theorem, not an
+#                        axiom; its axiom-audit footprint is whichever tagged
+#                        axiom it applies.
+#   obligation         — Lean `axiom`, tagged `# obligation` in trust_base.txt
+#   substrate_pending  — Lean `axiom`, tagged `# substrate_pending` in trust_base.txt
+#   support_only       — typed `def` recording cascade evidence; not a proof gate
+#   nonclaim           — explicitly negated; documented only
+#
+# Mechanization sources:
+#   M6 = carrier-dichotomy / foreclosure source bundle
+#   M5 = recognition-mode landing source bundle
+
+# ----------------------------------------------------------------------
+# Part I — Carrier Dichotomy + Type-Finite Foreclosure + Attack Foreclosure (v4)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "T1"
+name = "Carrier Dichotomy"
+kind = "theorem"
+part = "I"
+section = "Foreclosure"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 1 (Carrier Dichotomy)"
+source_lines = "43-52"
+target_lean_module = "SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy"
+target_lean_decl = "carrier_dichotomy"
+notes = "Four typed states (non-X-equivalent, CRE-TE, CRE-BF, CRE-CTMT) partition every typed primary carrier aimed at X. Statement is precise; the X-equivalent-branch exhaustiveness proof depends on precise definitions of 'open conjecture relative to accepted-imports base' and the relative-consistency argument that are still open per T3 Coverage. Landed encoding: partial = theorem applying the same-paper `# obligation` axiom `carrier_dichotomy_t3_pending` (narrowed to JUST the X-equivalent branch). Branch 1 (non-X-equivalent → NativeClosureOutcome) is derived directly via classical LEM on acceptedImportsBase, with an explicit `h_imports_sound : ∀ Y, acceptedImportsBase Y → Y` hypothesis making the accepted-imports-base semantics explicit at the use-site."
+
+[[entry]]
+paper_label = "T2"
+name = "Bridge Impossibility Corollary"
+kind = "corollary"
+part = "I"
+section = "Foreclosure"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 2 (Bridge Impossibility Corollary)"
+source_lines = "54-56"
+target_lean_module = "SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility"
+target_lean_decl = "bridge_impossibility"
+notes = "Partial corollary of T1: any bridge composing a non-X-equivalent carrier into X-closure inherits the X-strength obligation. The composite classification is obtained via T1; the final M6 'therefore' step from TE/BF/CTMT classification to bridge-level XStrengthObligation is represented by the same-paper # obligation axiom bridge_impossibility_carries_obligation."
+
+[[entry]]
+paper_label = "T3"
+name = "Coverage Theorem"
+kind = "theorem"
+part = "I"
+section = "Foreclosure"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 3 (Coverage Theorem, central proposed result)"
+source_lines = "58-62"
+target_lean_module = "SixBirdsMetaMath.MetaMath.Foreclosure.Coverage"
+target_lean_decl = "CoverageSchema"
+notes = "Coverage Conjecture promoted: four typed states are exhaustive. M6 explicitly flags this as central proof obligation requiring (i) precise definition of 'open conjecture relative to accepted-imports base' and (ii) relative-consistency argument. Neither move executed in formal detail (M6 §Pending). Axiom shape with # obligation tag."
+
+[[entry]]
+paper_label = "T4"
+name = "Type-Finite Foreclosure"
+kind = "theorem"
+part = "I"
+section = "Foreclosure"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 4 (Type-Finite Foreclosure)"
+source_lines = "64-68"
+target_lean_module = "SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure"
+target_lean_decl = "type_finite_foreclosure"
+notes = "Corollary of T3: door-space is type-finite (4 states) even when carrier-space is infinite. Encoded as partial applying the same-paper `# obligation` axiom `coverage_theorem` (T3); the 'at most 4' content is a structural restatement of T3's 4-way disjunction."
+
+[[entry]]
+paper_label = "T5"
+name = "Attack Foreclosure (v4)"
+kind = "theorem"
+part = "I"
+section = "Foreclosure"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 5 (Attack Foreclosure Conjecture — operational meta-theorem)"
+source_lines = "70-78"
+target_lean_module = "SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure"
+target_lean_decl = "AttackForeclosureV4Schema"
+notes = "No internal cascade chain (carrier pivot / bridge import / cascade-internal computation) advances X without external content. M6 says derivation from T1+T2+T6 is currently informal; may require separate axiom about accepted-imports base."
+
+[[entry]]
+paper_label = "T6"
+name = "CTMT Recursion"
+kind = "theorem"
+part = "I"
+section = "Foreclosure"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 6 (CTMT recursion)"
+source_lines = "80-84"
+target_lean_module = "SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion"
+target_lean_decl = "ctmt_recursion"
+notes = "Terminal matrix-element families admit nested towers. Mechanizable as a depth-typed inductive structure with the base-case CTMT as depth-1. Open: track-independent depth bound (Branch B 8-layer chain at step 230 is deepest documented)."
+
+# ----------------------------------------------------------------------
+# Part II — Recognition-Mode Landing Template
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "T7"
+name = "Recognition-Mode Landing Template, Applicability"
+kind = "theorem"
+part = "II"
+section = "RecognitionMode"
+required = true
+intended_status = "mechanize_now"
+source_file = "M5"
+source_section = "Appendix A, Theorem 1"
+source_lines = "390"
+template_section_lines = "74-122"
+target_lean_module = "SixBirdsMetaMath.MetaMath.RecognitionMode.Template"
+target_lean_decl = "TemplateApplicabilitySchema"
+notes = "Seven-stage template lands at theorem-grade under SB closure assumption on V-Differential trace-state-only substrates. Two-instance verified (PvNP via Γ_csl-sat-hidden, RH via Γ_SDTC^Selberg). M5 §10.6 explicitly says 'paper-proposal-grade, not theorem-grade.' Axiom shape with # obligation tag."
+
+[[entry]]
+paper_label = "T8"
+name = "Cross-Track Verdict Signature"
+kind = "theorem"
+part = "II"
+section = "RecognitionMode"
+required = true
+intended_status = "mechanize_now"
+source_file = "M5"
+source_section = "Appendix A, Theorem 2"
+source_lines = "392"
+template_section_lines = "49-71"
+target_lean_module = "SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature"
+target_lean_decl = "VerdictSignatureSchema"
+notes = "(ii)/(iii)/(ii) pattern for options 1/2/3 of three-option derivation sweep. Verified-on-2-track-instances per M5; theorem-grade lifting requires third instance + structural argument from V-Differential column-membership."
+
+[[entry]]
+paper_label = "T9"
+name = "Closure-Content Thesis"
+kind = "theorem"
+part = "II"
+section = "RecognitionMode"
+required = true
+intended_status = "mechanize_now"
+source_file = "M5"
+source_section = "Appendix A, Theorem 3"
+source_lines = "394"
+template_section_lines = "124-143"
+target_lean_module = "SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis"
+target_lean_decl = "ClosureContentThesisSchema"
+notes = "Load-bearing structural content for TSO closures is content of formed-layer closure per Foundations I, not separately-derivable from currently-available primitives. Meta-theoretic claim about closure formation."
+
+[[entry]]
+paper_label = "T10"
+name = "Attack Foreclosure (v5 refinement)"
+kind = "theorem"
+part = "II"
+section = "RecognitionMode"
+required = true
+intended_status = "mechanize_now"
+source_file = "M5"
+source_section = "Appendix A, Theorem 4 + §6 v5 refinement"
+source_lines = "396"
+template_section_lines = "172-198"
+target_lean_module = "SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5"
+target_lean_decl = "AttackForeclosureV5Schema"
+notes = "v4 (T5) continues to hold for derivation routes; recognition-mode landings are structurally distinct path achieving theorem-grade under SB closure assumption. Refines T5, does not replace."
+
+# ----------------------------------------------------------------------
+# Part III — Calibration Family (PvNP-derived, framework-general)
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "T11"
+name = "Calibration-Family Structure"
+kind = "theorem"
+part = "III"
+section = "CalibrationFamily"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 8 (Calibration-Family Structure)"
+source_lines = "106-128"
+target_lean_module = "SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure"
+target_lean_decl = "calibration_family_structure"
+notes = "Non-descending calibration as a typed family, not single instrument. Encode as Lean structure type. Evidence: valid calibrations and honest retracts on the P-vs-NP track; these become support_only entries."
+
+[[entry]]
+paper_label = "T12"
+name = "Rebadge Discipline"
+kind = "theorem"
+part = "III"
+section = "CalibrationFamily"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 8.1 (Calibration-Family Discipline: Rebadge vs. Genuinely New)"
+source_lines = "130-134"
+target_lean_module = "SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline"
+target_lean_decl = "rebadge_discipline"
+notes = "Candidate calibration matching existing member on all four axes (algebraic identities, detector class, descent invariants, carrier orientation) collapses on earning-its-place. Four-axis discriminator encodes as a 4-tuple match predicate."
+
+[[entry]]
+paper_label = "T13"
+name = "Bridges-as-Theorems"
+kind = "theorem"
+part = "III"
+section = "CalibrationFamily"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 9 (Bridges Between Calibrations Require Theorems, Not Dictionaries)"
+source_lines = "136-147"
+target_lean_module = "SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems"
+target_lean_decl = "bridges_as_theorems"
+notes = "Bridges between calibrations are typed objects with content (basis-change OR substantive theorem), not free amalgamations. Encode as inductive: BasisChange | Substantive."
+
+[[entry]]
+paper_label = "T14"
+name = "Bridge Type-Direction"
+kind = "theorem"
+part = "III"
+section = "CalibrationFamily"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 9.1 (Bridge Type-Direction Asymmetry)"
+source_lines = "149-155"
+target_lean_module = "SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgeTypeDirection"
+target_lean_decl = "bridge_type_direction"
+notes = "Bridges have typed direction; existence ≠ usability. Encode direction as part of the bridge type signature."
+
+[[entry]]
+paper_label = "T15"
+name = "Coverage-Family Geometry"
+kind = "theorem"
+part = "III"
+section = "CalibrationFamily"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 10 (Calibration-Family Coverage Geometry)"
+source_lines = "157-167"
+target_lean_module = "SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry"
+target_lean_decl = "coverage_family_geometry"
+notes = "Calibration union has typed holes; more calibrations is not monotonically more closure power. Encode coverage as a set with named-hole markers."
+
+[[entry]]
+paper_label = "T16"
+name = "Framework-Type Self-Characterization"
+kind = "theorem"
+part = "III"
+section = "CalibrationFamily"
+required = true
+intended_status = "theorem"
+source_file = "M6"
+source_section = "Theorem 11 (Framework-Type Self-Characterization)"
+source_lines = "169-187"
+target_lean_module = "SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar"
+target_lean_decl = "framework_type_self_characterization"
+notes = "Cascade's natural object-type (nonuniform / average-case / scoped / package-based) vs Clay-target type (uniform / worst-case / unconditional / language-based), separated by three named functorial gates (T17). M6 status: candidate framework-general, promotion gated by replication on further Clay track. Landed encoding (post-axis-review): the PvNP-specific type-mismatch is proved DIRECTLY as `pvnp_framework_type_mismatch` (decidable from the concrete record values). Main theorem `framework_type_self_characterization` applies the direct PvNP mismatch + T17's named_functorial_gates.1; status `theorem` (no pending application). The framework-general candidate claim (∀ Clay-class TSO substrate, cascade vs target framework-types differ) is captured separately by the same-paper `# obligation` axiom `framework_type_self_char_pending` over opaque `cascadeFrameworkType` / `standardClayTargetType` — manifest-tagged as `obligation`, available for downstream framework-general consumers; not applied by this row's main theorem."
+
+[[entry]]
+paper_label = "T17"
+name = "Named Functorial Gates"
+kind = "definition"
+part = "III"
+section = "CalibrationFamily"
+required = true
+intended_status = "mechanize_now"
+source_file = "M6"
+source_section = "Theorem 12 (Named Functorial Gates as a Third Typed-Deliverable Species)"
+source_lines = "189-204"
+target_lean_module = "SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates"
+target_lean_decl = "named_functorial_gates"
+notes = "New typed-deposit species: typed-bridges-as-content with stated theorem obligation. Three constructive gate specifications recorded as types: Xi_function_degree_to_NS_certificate_degree, Xi_planted_statistical_to_NP_hard_language_lift, Xi_uniform_time_hierarchy_realization_functor. Each is itself a substrate_pending axiom waiting on external mathematics; the species-level type definition is mechanize_now."
+
+# ----------------------------------------------------------------------
+# The maintained analytic bridge, separate from the legacy T1--T17 axis.
+# ----------------------------------------------------------------------
+
+[[entry]]
+paper_label = "thm:joint-gaussian-return"
+name = "Joint Gaussian observation and source return"
+kind = "theorem"
+part = "JointBridge"
+section = "GaussianBridge"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/meta_math/sections/sec_05a_gaussian_bridge.tex"
+source_section = "Joint Gaussian observation and source return"
+source_lines = "thm:joint-gaussian-return"
+target_lean_module = "SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn"
+target_lean_decl = "joint_actual_zero_xi_and_navier_source_return"
+notes = "Actual zero-window XI heat identity and actual local Navier Gaussian Duhamel return, with explicit positive time and weight hypotheses. No closure payment."
+
+[[entry]]
+paper_label = "thm:concrete-triad-gaussian-xi"
+name = "Concrete Gaussian--XI triad span"
+kind = "theorem"
+part = "JointBridge"
+section = "TriadBridge"
+required = true
+intended_status = "mechanize_now"
+source_file = "paper/meta_math/sections/sec_05b_triad_bridge.tex"
+source_section = "Concrete Gaussian--XI triad span"
+source_lines = "thm:concrete-triad-gaussian-xi"
+target_lean_module = "SixBirdsMetaMath.RHNavierPvNP.TriadObservationReturn"
+target_lean_decl = "concrete_triad_gaussian_xi_span"
+notes = "One actual local nonlinear Navier frame, actual reflected zero window, native SAT CNF state, shared Gaussian and XI probes, clause failure and branch commutator; no source-payment transport or efficient Gaussian SAT solver."
+
+# ----------------------------------------------------------------------
+# Excluded from this inventory (out of scope per merge decision / plan)
+# ----------------------------------------------------------------------
+#
+# M6 Theorem 7 (Non-Descending Translation Meta-Theorem) — folded into Part III
+#   as historical/substrate context per proposal.md pending §2; NOT a primary
+#   mechanization target. Will appear in the manuscript prose (later
+#   paper-preparation phase) as background, not in the inventory.
+#
+# M6 Theorems 9.2 / 10.1 / 12.1 (BSD-track framework-grade theorems) —
+#   out_of_scope_bsd per plan §Scope. The BSD track has no landing yet.
+#
+# M5 §7 Generalization predictions (Hodge, Yang-Mills) — predictions, not
+#   claims; no Lean realization needed.

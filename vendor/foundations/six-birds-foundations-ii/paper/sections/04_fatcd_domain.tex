@@ -1,0 +1,426 @@
+\section{The FATCD domain and the exact-six question}\label{sec:fatcd-domain}
+
+% Mathematical job:
+%   - Define finite audited typed closure descriptions (FATCD).
+%   - Fix the neutral typed raw grammar (objects, states, relations, maps,
+%     predicates, comparisons, paths, indices, orders, transitions,
+%     refinements, traces, events, provenance, replay, check records, and
+%     the Ann_* annotation kinds).
+%   - State the finite-description, closure, and audit/bookkeeping conditions.
+%   - State threshold attachment: annotations attach to raw features BEFORE
+%     role projection is attempted.
+%   - Define derived role projections pi_i(D) as interpretations of raw
+%     features, NOT as domain membership slots.
+%   - State the non-circularity and non-overbreadth theorem schemas.
+%   - State the exact-six question precisely over FATCD.
+%
+% Notation to introduce (see paper/macros.tex once wired):
+%   FATCD, D in FATCD, Raw(D), Audit(D), Closed(D),
+%   Ann_L, Ann_Theta, Ann_Lift, Ann_Forget, Ann_Vis, Ann_Bridge,
+%   Chan_i(D), Status_i(D), pi_i(D), Theta_i, W_i, Level_i,
+%   Dec(D), Residual(D), Classify(r),
+%   SixChan(Dec(D)), Exhaustive(Dec(D)), ScopedExactSix(FATCD).
+%
+% Governing sources:
+%   workspace/meta/lens_lab/campaigns/paper3_exact_six_exhaustiveness/domain_exactification_api_repair/api_grounded_domain_repair_spec.md
+%   workspace/meta/lens_lab/aristotle/results/paper3/paper3_exact_six_domain_exact_from_R008_B/paper3_exact_six_domain_exact_from_R008_B_result_shape.md
+%   workspace/meta/lens_lab/papers/paper3/drafting_support/definition_statement_bank.md
+%   workspace/meta/lens_lab/papers/paper3/drafting_support/notation_conventions.md
+%   workspace/meta/lens_lab/papers/paper3/theorem_claims.md
+%
+% Overclaim risks:
+%   - Writing the domain as if role membership is baked in.
+%   - Treating optimization/objective data as excluded by definition.
+%   - Collapsing "derived role projection" into "role occurrence".
+
+The scoped exact-six theorem quantifies over a specific class of
+admissible descriptions; this section defines that class. A
+\emph{finite audited typed closure description}, abbreviated \FATCD{},
+is a finitely presented collection of typed raw records and
+annotations subject to finiteness, closure, and honest-bookkeeping
+conditions, sitting in the broader finite-structure tradition of
+finite model theory~\citep{Libkin2004}. Threshold annotations attach to raw features before any
+role projection is attempted; the active projections
+\(\pi_1(D),\dots,\pi_6(D)\) for the primitives \Pone{}--\Psix{} are
+derived interpretations of raw material, not conditions of domain
+membership. Candidate raw features not absorbed into such projections
+are carried into an explicit residual classification, so seventh-role
+threats are not excluded by definition. The section closes with
+non-circularity and non-overbreadth schemas and formulates the
+exact-six question precisely over \FATCD{}: whether every
+\(D \in \FATCD{}\) admits a decomposition/exhaustion record with
+exactly six role channels. The theorem chain answering that question
+appears in
+Sections~\ref{sec:lower-bounds}--\ref{sec:decomposition-exhaustion}.
+
+The domain is framed in the finite theory-package setting of
+Foundations~I~\citep{Tsiokos2026SixBirdsFoundations}, where one works
+with tuples \(\mathcal{T} = (Z, f, \Sigma_f, E, \mathcal{A})\)
+carrying a lens, a completion operator, and an audit functional. \FATCD{} does not
+identify a description with such a tuple; it extracts from that
+setting the structural requirements relevant to the scoped exact-six
+question: finite typed raw data, closure under references, sources,
+targets, endpoints, and annotations, and honest bookkeeping in the
+sense of Section~\ref{sec:admissibility-meta-theory}. Optimization,
+objective, and richer semantic material are not excluded at the
+outset; they belong in the domain when finitely represented and
+honestly recorded as raw or annotated data.
+
+\subsection{Raw grammar}\label{subsec:raw-grammar}
+
+We begin with the neutral typed raw grammar from which every element
+of \FATCD{} is built. The alphabet is fixed in advance of the role
+vocabulary and follows standard typed-record
+conventions~\citep{CardelliMitchell1991}.
+
+\begin{definition}[Raw record]\label{def:raw-record}
+A \emph{raw record} is a finite typed syntactic or relational feature of a
+description. The admissible record kinds are
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \emph{object} and \emph{state} records;
+  \item \emph{relation} records, \emph{map} records, and \emph{partial-map}
+    records;
+  \item \emph{predicate} records and \emph{comparison} records;
+  \item \emph{path} or \emph{derivation} records;
+  \item \emph{index}, \emph{order}, \emph{transition}, and \emph{refinement}
+    records;
+  \item \emph{trace}, \emph{event}, and \emph{provenance} records;
+  \item \emph{replay} and \emph{check} records.
+\end{itemize}
+A raw record is not, by itself, a \Pone{}--\Psix{} role.
+\end{definition}
+
+\begin{definition}[Annotations]\label{def:annotations}
+In addition to raw records, a description admits \emph{annotations} of six
+declared kinds:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item level annotations \(\mathrm{Ann}_L\);
+  \item threshold annotations \(\mathrm{Ann}_\Theta\);
+  \item lift annotations \(\mathrm{Ann}_{\mathrm{Lift}}\);
+  \item forgetting annotations \(\mathrm{Ann}_{\mathrm{Forget}}\);
+  \item instrument-visibility annotations \(\mathrm{Ann}_{\mathrm{Vis}}\);
+  \item empirical-bridge annotations \(\mathrm{Ann}_{\mathrm{Bridge}}\).
+\end{itemize}
+These annotation kinds belong to the raw grammar; the finiteness and closure
+conditions on how they attach to declared records are imposed in the next
+subsection. For a description \(D\), we write \(\Raw{D}\) for the finite
+collection of raw records and annotations of \(D\).
+\end{definition}
+
+\begin{remark}[Independence of the feature alphabet]\label{rem:alphabet-independence}
+The record and annotation kinds in Definitions~\ref{def:raw-record} and
+\ref{def:annotations} are syntactic or relational entities. No kind is named
+\Pone{}, \ldots, \Psix{}. Consequently, membership in \FATCD{} does not
+require any derived role projection, does not require an exact-six
+decomposition/exhaustion record, and does not exclude candidate seventh-role
+features by definition. The role vocabulary will enter only in
+\S\ref{subsec:derived-role-projections} as a derived interpretation of raw
+features under threshold and witness data.
+\end{remark}
+
+\subsection{Finiteness, closure, and audit conditions}\label{subsec:conditions}
+
+Three further restrictions turn the raw grammar into a domain of
+admissible descriptions: finiteness, closure, and audit.
+
+\begin{definition}[Finite description]\label{def:finite}
+A description \(D\) is \emph{finite} when
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \(\Raw{D}\) contains finitely many records and annotations;
+  \item every record or annotation carries finite typed fields;
+  \item every relation, map, path, trace, or annotation is finitely
+    represented;
+  \item every reference in a record points to a declared finite record of
+    \(D\);
+  \item no infinite semantic, probabilistic, topological, geometric, causal,
+    optimization, or resource structure is admitted unless it is finitely
+    represented and bookkept as a raw feature of \(D\).
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Closed description]\label{def:closed}
+A finite description \(D\) satisfies the \emph{closure condition} \(\Closed{D}\)
+when
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item every source and target of every relation or map record is a declared
+    record of \(D\);
+  \item every endpoint of every path or derivation record is a declared record
+    of \(D\);
+  \item every index, transition, order, or refinement reference is a declared
+    record of \(D\);
+  \item every trace, event, provenance, replay, or check record references
+    declared records of \(D\);
+  \item every level, threshold, lift, forgetting, visibility, or
+    empirical-bridge annotation references declared records of \(D\);
+  \item every claim carried by \(D\) has a bookkeeping record.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Audited description]\label{def:audited}
+A description \(D\) is \emph{audited} when every claim carried by \(D\) has an
+honest bookkeeping record. The collection of such records is denoted
+\(\Audit{D} \subseteq \Raw{D}\), subject to the following discipline:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item every promotion records its source level, target level, added data,
+    losses, and nonclaims;
+  \item every translation records its source context, target context,
+    preserved data, suppressed data, and claim strength;
+  \item every lift is marked as selected, not unique;
+  \item every forgetting map records its losses;
+  \item every visibility claim records both visible and suppressed data;
+  \item every empirical-bridge claim records substrate, observable,
+    instrument, level map, threshold witness relation, and
+    suppressed-structure nonclaims.
+\end{itemize}
+\end{definition}
+
+\subsection{Finite audited typed closure descriptions}\label{subsec:fatcd}
+
+Combining the grammar with the three admissibility conditions yields
+the domain over which the exact-six question is posed.
+
+\begin{definition}[Finite audited typed closure description]\label{def:fatcd}
+A \emph{finite audited typed closure description} is a finitely presented,
+closed, audited collection of typed raw records and annotations, equipped with
+honest bookkeeping for claims, levels, thresholds, visibility, forgetting,
+lifts, and empirical-bridge assertions where present. Equivalently, it is a
+description \(D\) whose raw content \(\Raw{D}\) is drawn from the kinds
+declared in Definitions~\ref{def:raw-record} and~\ref{def:annotations}, such
+that \(D\) is finite in the sense of Definition~\ref{def:finite}, satisfies
+the closure condition \(\Closed{D}\) of Definition~\ref{def:closed}, and is
+audited in the sense of Definition~\ref{def:audited}. We write \FATCD{} for
+the class of all such descriptions, and \(D \in \FATCD{}\) for membership.
+\end{definition}
+
+\begin{remark}[No minimum richness]\label{rem:fatcd-minimality}
+\FATCD{} imposes no lower bound on description size. A description
+consisting of a single object record together with the bookkeeping
+required by its claims may be admissible, as may a richer description
+carrying transitions, paths or derivations, annotations of every kind,
+and empirical-bridge annotations. The domain is defined by structural
+discipline, not by the presence of any particular feature kind.
+\end{remark}
+
+\subsection{Threshold attachment}\label{subsec:threshold-attachment}
+
+Membership in \FATCD{} is fixed; the next step is to specify how
+role-theoretic claims may attach to the raw data of an admissible
+description. Role projections in \FATCD{} enter only through a
+disciplined attachment of threshold and witness data to raw features.
+The condition below is the structural precondition for the role
+vocabulary introduced in the next subsection.
+
+\begin{definition}[Threshold attachment]\label{def:threshold-attachment}
+A threshold annotation \(\mathrm{Ann}_\Theta \in \Raw{D}\) attaches first to
+a finite cluster \(C \subseteq \Raw{D}\) of raw features of \(D\), where \(C\)
+may consist of a single raw feature. No role projection is attempted on \(C\)
+until all of the following are present in \(\Raw{D}\):
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the raw features of \(C\) themselves;
+  \item a threshold annotation \(\mathrm{Ann}_\Theta\) attached to \(C\);
+  \item a witness schema specifying what in \(C\) would support the attempted
+    projection;
+  \item a record of the collapse cases that would invalidate the witness;
+  \item a level annotation \(\mathrm{Ann}_L\) attached to \(C\);
+  \item an audit record in \(\Audit{D}\) honestly bookkeeping the claim.
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Pre-projection discipline]\label{rem:pre-projection}
+The items of Definition~\ref{def:threshold-attachment} form a structural
+precondition, not a process narrative. What matters is that each item is
+present explicitly in \(\Raw{D}\) before a role projection is asserted, so
+that no threshold, witness, collapse case, or level is supplied tacitly by
+the act of projection itself.
+\end{remark}
+
+\subsection{Derived role projections}\label{subsec:derived-role-projections}
+
+The role vocabulary \Pone{}--\Psix{} now enters \FATCD{}, not as a
+constraint on membership but as a derived interpretation of raw
+features conditioned on the attachment data of
+\S\ref{subsec:threshold-attachment}.
+
+\begin{definition}[Derived role projection]\label{def:role-projection}
+A \emph{derived role projection} for a description \(D \in \FATCD{}\) at
+role index \(i \in \{1,\ldots,6\}\) is an active derived interpretation
+\(\pi_i(D)\) of raw features of \(D\) as the role \(\mathrm{P}_i\), supported
+by threshold data, witness schema, level assignment, and honest bookkeeping.
+Concretely, \(\pi_i(D)\) is specified by
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the proposed role name, one of \Pone{}, \Ptwo{}, \Pthree{},
+    \Pfour{}, \Pfive{}, \Psix{};
+  \item a raw feature cluster \(C \subseteq \Raw{D}\) on which the role is
+    interpreted;
+  \item the threshold data \(\Theta_i\) attached to \(C\) in the sense of
+    Definition~\ref{def:threshold-attachment};
+  \item a witness schema \(W_i\) specifying what constitutes a witness for
+    the candidate role under its fixed meaning;
+  \item a level assignment \(\mathrm{Level}_i\);
+  \item an evidence or certificate type;
+  \item a record of collapse cases avoided or accepted;
+  \item loss and lift annotations for any level crossings involved;
+  \item the explicit nonclaims preserved by the projection.
+\end{itemize}
+The supporting data for \(\pi_i(D)\) are carried by \(\Raw{D}\) and certified
+by \(\Audit{D}\) in the sense of Definition~\ref{def:audited}.
+\end{definition}
+
+\begin{remark}[Fixed role meanings]\label{rem:fixed-role-meanings}
+The role names \Pone{}--\Psix{} are defined by their meanings in
+Section~\ref{sec:primitive-role-architecture}: \Pone{} concerns
+update-vs-quotient compatibility and descent obstruction; \Ptwo{} concerns
+macro-specification representability; \Pthree{} concerns enriched
+route and coherence mismatch, not a directionality certificate; \Pfour{}
+concerns stage, order, transition, and refinement structure; \Pfive{}
+concerns quotient packaging; and
+\Psix{} concerns audit, bookkeeping, provenance, replay, and checkability.
+The witness schema \(W_i\) in Definition~\ref{def:role-projection} must be
+aligned with these meanings; a cluster whose raw features do not support the
+meaning of the proposed role contributes no \(\pi_i(D)\).
+\end{remark}
+
+\begin{remark}[Projection and membership are independent]\label{rem:projection-vs-membership}
+Whether a description \(D\) supports a given derived role projection
+\(\pi_i(D)\) is not part of the admissibility conditions of
+Definitions~\ref{def:finite}--\ref{def:audited}. A description
+\(D \in \FATCD{}\) may carry no derived role projection, projections
+for some roles, or projections for all six; its membership in
+\FATCD{} is unaffected. The decomposition/exhaustion record of
+Section~\ref{sec:decomposition-exhaustion} accordingly assigns a
+status to every role channel of \(D\), only some of which need be
+active.
+\end{remark}
+
+\subsection{Residual classification scheme}\label{subsec:residual-classification}
+
+Some raw features remain role-theoretically unsettled at the
+raw-grammar level. \FATCD{} provides an explicit scheme for
+classifying them.
+
+\begin{definition}[Residual feature; residual classification scheme]\label{def:residual-scheme}
+Let \(D \in \FATCD{}\). A \emph{residual feature} of \(D\) is a raw record
+or annotation in \(\Raw{D}\) whose role-theoretic disposition is not fixed
+solely by its raw-grammar kind. The \emph{residual classification scheme}
+assigns to each residual feature \(r\) a single label
+\(\operatorname{Classify}(r)\) drawn from the list
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item already absorbed into a derived \Pone{}--\Psix{} projection
+    \(\pi_i(D)\);
+  \item composite of such projections;
+  \item presentation variant of an already classified feature;
+  \item level shift of an already classified feature;
+  \item activation-threshold refinement;
+  \item instrument-visibility artifact;
+  \item empirical-bridge annotation;
+  \item outside-domain structure;
+  \item already-covered bookkeeping or annotation data;
+  \item unresolved candidate seventh-role threat;
+  \item genuine seventh irreducible typed role.
+\end{enumerate}
+The scheme is declarative. At the domain-definition level, \FATCD{} records
+the available labels but neither proves that every residual feature lands in
+categories (i)--(ix) nor proves that categories (x) and (xi) are empty. Those
+claims are deferred to Section~\ref{sec:upper-bound-classification}.
+\end{definition}
+
+\begin{remark}[Optimization and objective data are not excluded]\label{rem:optimization-not-excluded}
+Raw features expressing optimization, objective, or selection criteria
+pass through the scheme of Definition~\ref{def:residual-scheme}; they
+are not dismissed by definition. Under the fixed role meanings
+(Remark~\ref{rem:fixed-role-meanings}), typical classifications
+include: a predicate or specification record possibly supporting a
+\Ptwo{} projection; a map or transition-selection record possibly
+supporting a \Pone{} or \Pfour{} projection; a route-comparison or
+route-choice record possibly supporting a \Pthree{} projection; an
+audit or check record possibly supporting a \Psix{} projection; an
+empirical-bridge annotation; or an outside-domain structure when the
+feature requires non-finite or unbookkept semantics. A feature that
+fits none of these is recorded under category~(x).
+\end{remark}
+
+\subsection{Non-circularity and non-overbreadth}\label{subsec:non-circularity-non-overbreadth}
+
+Two proposition schemas record the definition-theoretic facts used by
+the later theorem chain: the domain does not presuppose the answer to
+the exact-six question, and it is structurally restrictive enough
+for that question to remain substantive.
+
+\begin{proposition}[Non-circularity schema for \FATCD{}]\label{prop:non-circularity}
+Inspection of Definitions~\ref{def:raw-record}--\ref{def:fatcd} shows that
+membership in \FATCD{} is not defined by requiring a decomposition/exhaustion record or
+by requiring any derived role projection to exist. In particular:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item no clause of Definitions~\ref{def:raw-record},
+    \ref{def:annotations}, \ref{def:finite}, \ref{def:closed}, or
+    \ref{def:audited} quantifies over the role index \(i\) or requires a
+    role-channel assignment;
+  \item no membership clause excludes a candidate seventh-role feature by
+    definition;
+  \item the residual classification scheme (Definition~\ref{def:residual-scheme})
+    is declarative and carries the categories (x) and (xi) as explicit
+    failure options.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Non-overbreadth schema for \FATCD{}]\label{prop:non-overbreadth}
+Inspection of Definitions~\ref{def:finite}--\ref{def:threshold-attachment}
+shows that \FATCD{} is structurally restricted and does not admit arbitrary
+syntactic material:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item \(\Raw{D}\) contains finitely many records and annotations, each
+    record or annotation carries finite typed fields, and no infinite
+    semantic, probabilistic, topological, geometric, causal, optimization, or
+    resource structure is admitted unless finitely represented and bookkept as
+    a raw feature, exactly as required by Definition~\ref{def:finite};
+  \item every reference is bound to a declared record
+    (Definition~\ref{def:closed});
+  \item every claim is bookkept, and every promotion, translation, lift,
+    forgetting, visibility, and empirical-bridge assertion carries the
+    structured audit record required by
+    Definition~\ref{def:audited};
+  \item a role projection cannot be asserted without the full attachment
+    data of Definition~\ref{def:threshold-attachment}.
+\end{enumerate}
+Consequently, arbitrary unaudited syntactic material cannot enter \FATCD{},
+and mentioning a role name without the supporting threshold, witness, level,
+collapse, and bookkeeping data does not by itself produce a derived role
+projection.
+\end{proposition}
+
+\subsection{The scoped exact-six question over \FATCD{}}\label{subsec:scoped-exact-six-question}
+
+We can now state the scoped exact-six question precisely.
+
+\begin{definition}[Scoped exact-six question]\label{def:scoped-exact-six-question}
+The \emph{scoped exact-six question} over \FATCD{} asks whether, for every
+\(D \in \FATCD{}\), there exists at least one decomposition/exhaustion record
+\(\Dec{D}\) whose role-channel structure consists of exactly the six typed
+closure-role channels \Pone{}, \Ptwo{}, \Pthree{}, \Pfour{}, \Pfive{},
+\Psix{}, each assigned exactly one of the five statuses later formalized in
+Section~\ref{sec:decomposition-exhaustion}, with all residual features of
+\(D\) classified under the scheme of Definition~\ref{def:residual-scheme}
+without recourse to categories (x) or (xi). No uniqueness is built into this
+question. The affirmative answer is denoted \(\ScopedExactSix{\FATCD{}}\).
+\end{definition}
+
+\begin{remark}[Channels, not active projections]\label{rem:channel-vs-activation-reminder}
+An affirmative answer to the scoped exact-six question asserts the
+existence of six role channels per description, not six active derived
+projections per description. The distinction introduced in
+Remark~\ref{rem:projection-vs-membership} and formalized in
+Section~\ref{sec:decomposition-exhaustion} is preserved throughout.
+\end{remark}
+
+\begin{remark}[Relation to the Foundations theorem]\label{rem:fatcd-foundations-relation}
+Proving \(\ScopedExactSix{\FATCD{}}\) is not a re-derivation of the
+canonical unavoidability result of Foundations~I~\citep{Tsiokos2026SixBirdsFoundations},
+and \(\ScopedExactSix{\FATCD{}}\) does not follow from that result
+alone. The Foundations theorem derives the \Pone{}--\Psix{} vocabulary
+under minimal hypotheses of composability with limited interface
+access; the scoped exact-six claim asserts that, within the finite
+audited typed closure regime of \FATCD{}, every admissible description
+admits a six-channel decomposition/exhaustion record without a seventh
+irreducible typed role in the covered scope. The two results share
+vocabulary but address different questions.
+\end{remark}

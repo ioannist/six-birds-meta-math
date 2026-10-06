@@ -1,0 +1,553 @@
+# Lean validation manifest for Six Birds Foundations II.
+#
+# Status meanings:
+# - definition: paper definition has a Lean definition-like declaration.
+# - theorem: paper claim has a Lean theorem/lemma whose dependency audit passes.
+# - axiomatic: recovered Lean declaration is or depends on project-local axioms.
+# - partial: recovered Lean declaration mechanizes only a supporting fragment.
+# - unformalized: no Lean correspondent is present yet.
+
+[[definition]]
+paper_label = "def:primitive-roles"
+paper_section = "2"
+description = "Primitive closure roles P1 through P6."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.Role"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:level-trichotomy"
+paper_section = "2"
+description = "Behavioral, verification, and structural-categorical levels."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.Level"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:selected-lift-atlas"
+paper_section = "2"
+description = "Selected-lift atlas for the six roles."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.SelectedLiftAtlas"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:common-witness-data"
+paper_section = "5"
+description = "Common witness data for role Pi."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.CommonWitnessData"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:raw-record"
+paper_section = "4"
+description = "Raw record."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.RawRecord"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:annotations"
+paper_section = "4"
+description = "Annotation kinds."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.AnnotationKind"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:finite"
+paper_section = "4"
+description = "Finite description."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.FiniteDescription"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:closed"
+paper_section = "4"
+description = "Closed description."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.ClosedDescription"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:audited"
+paper_section = "4"
+description = "Audited description."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.AuditedDescription"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:fatcd"
+paper_section = "4"
+description = "Finite audited typed closure description."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.FATCD"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:threshold-attachment"
+paper_section = "4"
+description = "Threshold attachment."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.ThresholdAttachment"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:role-projection"
+paper_section = "4"
+description = "Derived role projection."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.DerivedRoleProjection"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:residual-scheme"
+paper_section = "4"
+description = "Residual feature and residual classification scheme."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.ResidualClassificationScheme"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:scoped-exact-six-question"
+paper_section = "4"
+description = "Scoped exact-six question over FATCD."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.ScopedExactSixQuestion"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:channel-status"
+paper_section = "7"
+description = "Channel status."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.ChannelStatus"
+notes = "Full integrated Lean track."
+
+[[definition]]
+paper_label = "def:decomposition-record"
+paper_section = "7"
+description = "Decomposition/exhaustion record."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.DecompositionRecord"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:boundary-distinctions"
+paper_section = "2"
+kind = "proposition"
+description = "Boundary distinctions under scoped bookkeeping."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.boundary_distinctions"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:honest-bookkeeping"
+paper_section = "3"
+kind = "proposition"
+description = "Honest bookkeeping is an admissibility regime."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.honest_bookkeeping_admissibility"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:typed-non-collapse"
+paper_section = "3"
+kind = "proposition"
+description = "Typed non-collapse."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.typed_non_collapse"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:level-profile"
+paper_section = "3"
+kind = "proposition"
+description = "Level-profile architecture."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.level_profile"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:forgetting-lifts"
+paper_section = "3"
+kind = "proposition"
+description = "Forgetting and selected-lift architecture."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.forgetting_lifts"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:activation-thresholds"
+paper_section = "3"
+kind = "proposition"
+description = "Activation thresholds."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.activation_thresholds"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:visibility"
+paper_section = "3"
+kind = "proposition"
+description = "Instrument-relative visibility."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.visibility"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:empirical-bridge"
+paper_section = "3"
+kind = "proposition"
+description = "Empirical-bridge admissibility."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.empirical_bridge"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:nonclaim-closure"
+paper_section = "3"
+kind = "proposition"
+description = "Admissibility-regime nonclaim closure."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.nonclaim_closure"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:non-circularity"
+paper_section = "4"
+kind = "proposition"
+description = "Non-circularity schema for FATCD."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.non_circularity"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:non-overbreadth"
+paper_section = "4"
+kind = "proposition"
+description = "Non-overbreadth schema for FATCD."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.non_overbreadth"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "thm:six-role-lower-bounds"
+paper_section = "5"
+kind = "theorem"
+description = "Six-role lower bounds."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.six_role_lower_bounds"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:p1-witness"
+paper_section = "5"
+kind = "proposition"
+description = "P1 lower-bound witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.p1_witness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:p2-witness"
+paper_section = "5"
+kind = "proposition"
+description = "P2 lower-bound witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.p2_witness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:p3-witness"
+paper_section = "5"
+kind = "proposition"
+description = "P3 lower-bound witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.p3_witness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:p4-witness"
+paper_section = "5"
+kind = "proposition"
+description = "P4 lower-bound witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.p4_witness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:p5-witness"
+paper_section = "5"
+kind = "proposition"
+description = "P5 lower-bound witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.p5_witness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:p6-witness"
+paper_section = "5"
+kind = "proposition"
+description = "P6 lower-bound witness."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.p6_witness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:alignment-rules"
+paper_section = "6"
+kind = "proposition"
+description = "Role-projection alignment."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.alignment_rules"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:probability-closure"
+paper_section = "6"
+kind = "proposition"
+description = "Closure of probability and uncertainty."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.probability_closure"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:causality-closure"
+paper_section = "6"
+kind = "proposition"
+description = "Closure of residual causality."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.causality_closure"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:agency-closure"
+paper_section = "6"
+kind = "proposition"
+description = "Closure of residual agency."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.agency_closure"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "thm:upper-bound-classification"
+paper_section = "6"
+kind = "theorem"
+description = "Upper-bound classification."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.upper_bound_classification"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "thm:decomposition-existence"
+paper_section = "7"
+kind = "theorem"
+description = "Decomposition existence."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.decomposition_existence"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "thm:six-channel-exactness"
+paper_section = "7"
+kind = "theorem"
+description = "Six-channel exactness and residual exhaustion."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.six_channel_exactness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:channel-vs-activation"
+paper_section = "7"
+kind = "proposition"
+description = "Channel-versus-activation discipline."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.channel_vs_activation"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:non-uniqueness"
+paper_section = "7"
+kind = "proposition"
+description = "Decomposition records are not unique."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.non_uniqueness"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:dependency-stress"
+paper_section = "8"
+kind = "proposition"
+description = "Dependency stress."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.dependency_stress"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:circularity-stress"
+paper_section = "8"
+kind = "proposition"
+description = "Circularity stress."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.circularity_stress"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:channel-activation-stress"
+paper_section = "8"
+kind = "proposition"
+description = "Channel-versus-activation stress."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.channel_activation_stress"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:role-alignment-stress"
+paper_section = "8"
+kind = "proposition"
+description = "Role-alignment stress."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.role_alignment_stress"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:residual-stress"
+paper_section = "8"
+kind = "proposition"
+description = "Upper-bound residual stress."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.residual_stress"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "prop:overclaim-stress"
+paper_section = "8"
+kind = "proposition"
+description = "Overclaim stress."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.overclaim_stress"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "thm:integrated-stress"
+paper_section = "8"
+kind = "theorem"
+description = "Integrated stress."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.integrated_stress"
+notes = "Full integrated Lean track."
+
+[[claim]]
+paper_label = "thm:scoped-exact-six"
+paper_section = "9"
+kind = "theorem"
+description = "Scoped exact-six."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirds"
+lean_decl = "SixBirds.scoped_exact_six"
+notes = "Full integrated Lean track."

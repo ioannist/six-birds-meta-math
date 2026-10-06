@@ -1,0 +1,2 @@
+Scanned 129 Lean sources under lean/SixBirdsMetaMath.
+Axiom declarations: 0

@@ -1,0 +1,7 @@
+import SixBirdsMetaMath.MetaMath.Foreclosure
+import SixBirdsMetaMath.MetaMath.RecognitionMode
+import SixBirdsMetaMath.MetaMath.CalibrationFamily
+
+namespace SixBirdsMetaMath.MetaMath
+
+end SixBirdsMetaMath.MetaMath

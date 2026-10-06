@@ -1,0 +1,157 @@
+# Lean validation manifest for the Xi paper axis.
+#
+# Each entry corresponds to a paper_label from
+# formalization/inventory/xi_paper_inventory.toml whose
+# intended_status is "mechanize_now". The manifest records the accepted
+# Lean realization status for each inventoried paper item.
+#
+# Status meanings (verbatim from F2/F3):
+# - definition:   paper definition has a Lean definition-like declaration
+# - theorem:      paper claim has a Lean theorem/lemma whose dependency audit passes
+# - axiomatic:    declaration is or depends on project-local axioms (not allowed here)
+# - partial:      declaration mechanizes only a supporting fragment
+# - unformalized: no Lean correspondent is present yet
+#
+# Schema (per entry):
+#   paper_label    = "<kind>:<axis>:<short-name>"  # from per-axis paper_inventory
+#   paper_section  = "<section title>"
+#   description    = "<one-line summary>"
+#   status         = "<one of the values above>"
+#   lean_subproject = "."                          # single lakefile project
+#   lean_module    = "SixBirdsMetaMath.Xi.<Section>"
+#   lean_decl      = "SixBirdsMetaMath.Xi.<Section>.<name>"
+#   notes          = ""
+#
+# Use `[[definition]]` for definition_kind entries, `[[claim]]` for
+# theorem/lemma/proposition/corollary entries. This mirrors F2/F3's
+# manifest TOML idiom.
+
+[[claim]]
+paper_label = "thm:xi:minimum-spend-duality"
+paper_section = "Currency and minimum spend"
+description = "Partial: off-range (+∞) branch proven; finite branch (z^* K_F^† z) deferred."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.Currency"
+lean_decl = "SixBirdsMetaMath.Xi.Currency.xiMinimumSpendDuality"
+notes = "Off-range branch is unconditional. Finite branch remains open: K_F is in general not diagonal, while the available pseudoinverse is diagonal-support only. Closing the branch needs a Moore-Penrose inverse identity for K_F or additional projection lemmas — paralleling the same gap acknowledged in Main's `minimumSpendDuality`. Additional narrowing: this module models C^dagger as `diagonalPseudoInverse C`; the paper's C_0^{-1} is the genuine Moore-Penrose inverse on the legal quotient. The Lean theorem is paper-faithful only under an implicit `StrictPositiveDiagonal C` assumption, the same narrowing carried in Phase E §1."
+
+[[definition]]
+paper_label = "def:xi:adequacy-residual"
+paper_section = "Definition of the adequacy residual"
+description = "Adequacy residual K_DD − K_DL K_LL^† K_LD, parameterized by an explicit KLLdagger : Mat y y standing in for the Moore-Penrose inverse of K_LL (no constructive MP for non-diagonal matrices yet)."
+status = "definition"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.AdequacyResidual"
+lean_decl = "SixBirdsMetaMath.Xi.AdequacyResidual.adequacyResidual"
+notes = "The free parameter KLLdagger encodes the gap: the paper's K_LL^† is the Moore-Penrose pseudoinverse of K_LL, which Lean cannot yet construct for general (non-diagonal) K_LL. Downstream theorems (projection identity, optimal residual, exact adequacy) will need to either assume KLLdagger satisfies MoorePenroseInverse K_LL KLLdagger or restrict to a special case where the diagonal pseudoinverse suffices. Additional narrowing: this module models C^dagger as `diagonalPseudoInverse C`; the paper's C_0^{-1} is the genuine Moore-Penrose inverse on the legal quotient. The Lean definition is paper-faithful only under an implicit `StrictPositiveDiagonal C` assumption, the same narrowing carried in Phase E §1."
+
+[[claim]]
+paper_label = "thm:xi:projection-identity"
+paper_section = "Projection theorem"
+description = "Algebraic Schur-complement identity: residual = T_D (I − P_L) T_D^*. T_L, T_D, P_L exposed as parameters with four algebraic hypotheses replacing the paper's constructive `T_L = L C^{-1/2}`, `T_D = D C^{-1/2}`, and `P_L = orthogonal projection on Ran T_L^*` machinery (no rational square roots, no projection construction)."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.Projection"
+lean_decl = "SixBirdsMetaMath.Xi.Projection.projectionIdentity"
+notes = "Three machinery gaps make a fully-constructive proof out of reach in Package 2: (i) no rational square root for `C^{-1/2}`; (ii) no orthogonal projection construction for `P_L`; (iii) no general Moore-Penrose for `K_LL^†`. We elevate the paper's standing constructions to four algebraic hypotheses: hKDD, hPLdef, hKDL, hKLD, and prove the equality `adequacyResidual = T_D (I − P_L) T_D^*` algebraically. The Loewner `⪰ 0` part of the paper's conclusion is deferred (needs symmetric-idempotent + PSD machinery). Additional narrowing: this module models C^dagger as `diagonalPseudoInverse C`; the paper's C_0^{-1} is the genuine Moore-Penrose inverse on the legal quotient. The Lean theorem is paper-faithful only under an implicit `StrictPositiveDiagonal C` assumption, the same narrowing carried in Phase E §1."
+
+[[claim]]
+paper_label = "thm:xi:optimal-residual-identity"
+paper_section = "Optimal residual and exact adequacy"
+description = "Partial Loewner consequence: adequacy residual is Loewner-dominated by the residual-squared-norm operator for any explanation map A, under the elevated paper-algebraic identity residualQuad A = adequacyResidual + penalty(A − A_*) and PSD of K_LL."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.OptimalResidual"
+lean_decl = "SixBirdsMetaMath.Xi.OptimalResidual.optimalResidualIdentity"
+notes = "The paper theorem has two clauses: (1) the algebraic identity (D − A L) C^† (D − A L)^T = Ξ(D|L) + (A − A_*) K_LL (A − A_*)^T; (2) the Loewner-minimal consequence that Ξ(D|L) is the smallest residual currency across all explanation maps A. This Lean theorem proves clause 2 (the Loewner inequality) under hAlgebraicIdentity (paper-faithful Moore-Penrose / cross-cancellation algebra, deferred as a constructive proof) and the smaller paper-implicit block-currency hypothesis hKLL_psd : PositiveSemidefinite K_LL. The former hPenaltyPSD hypothesis is discharged internally from hKLL_psd via posSemidef_conjugate applied to (A − A_*). Additional narrowing: diagonalPseudoInverse C stands in for paper's C_0^{-1} (the standing Phase E narrowing under implicit StrictPositiveDiagonal C)."
+
+[[claim]]
+paper_label = "thm:xi:exact-adequacy"
+paper_section = "Optimal residual and exact adequacy"
+description = "Partial 4-way equivalence: trivial direction chains (ii)→(iii)→(iv) proved internally; the hard directions (i)↔(ii) and (iv)→(ii) are elevated as paper-citation hypotheses."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.OptimalResidual"
+lean_decl = "SixBirdsMetaMath.Xi.OptimalResidual.exactAdequacy"
+notes = "The paper theorem asserts equivalence of four conditions on (D, L, C): (i) Ξ(D|L) = 0; (ii) D_0 = A_* L_0; (iii) ∃ A: D_0 = A L_0; (iv) ker L_0 ⊆ ker D_0. Lean proves (ii) → (iii) (∃-intro with A_*) and (iii) → (iv) (kernel-substitution) internally. Three hard directions are elevated: h_i_implies_ii and h_ii_implies_i (each is one half of the projection-theorem-dependent equivalence — paper proof cites Xi.Projection.projectionIdentity, which is itself partial) and h_iv_implies_ii (kernel-to-factorization, requires constructive quotient). No silent weakening: the full 4-way equivalence is stated as a conjunction of explicit bidirectional/unidirectional implications, with the elevated and proved pieces both visible in the Lean signature."
+
+[[claim]]
+paper_label = "thm:xi:adequacy-promotion"
+paper_section = "Promotion from native membrane to dissolving membrane"
+description = "Loewner promotion K_DD ⪯ A_* Θ_Y A_*^T + Ξ_Z from native and residual budgets, derived via adequacyInterface plus the public Loewner arithmetic library."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.Promotion"
+lean_decl = "SixBirdsMetaMath.Xi.Promotion.adequacyPromotion"
+notes = "Single-clause Loewner promotion. Proof structure: invoke Main.XiInterface.adequacyInterface (Package 2) to get the per-stage Schur identity K_DD = A_* K_LL A_*^T + Ξ, then apply loewnerLE_conjugate (with M = A_*) to hKLbound and loewnerLE_add_mono with hXibound to chain through to the budget envelope. Elevated hypotheses are exactly the three paper-faithful algebraic ones inherited from adequacyInterface (hKLDsym, hKLLdaggerSym, hMPLLD) — Schur identity itself is no longer elevated thanks to the infrastructure interlude. Generic Loewner monotonicity facts (conjugate, add-mono) come from the public LegalQuotient library; nothing is elevated that isn't paper-faithful. Status partial because the upstream adequacyInterface itself is partial (hKLDsym etc. trace back to paper-implicit C symmetric / MP K_LL facts that this codebase doesn't yet prove from scratch). The 'in particular, Ξ = 0 ⟹ exact transfer' second sentence is a downstream specialization (set Ξ_Z = 0, plug into the same theorem); recorded here rather than as a separate decl."
+
+[[claim]]
+paper_label = "thm:xi:chain-rule"
+paper_section = "Strict native extension"
+description = "Partial Loewner clause: extended residual is Loewner-dominated by the L-residual under the elevated Schur chain-rule identity and PSD-of-conditional-Schur hypotheses. Same pattern as Main.CriticalPair.strictExtensionContraction."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.StrictExtension"
+lean_decl = "SixBirdsMetaMath.Xi.StrictExtension.chainRule"
+notes = "The paper theorem has two clauses: (1) the algebraic chain-rule identity Ξ(D|L^+) = Ξ(D|L) − K_{DM|L} K_{MM|L}^† K_{MD|L}; (2) the Loewner inequality Ξ(D|L^+) ⪯ Ξ(D|L). Clause 1 is elevated as hChainRule (paper-standing Schur block-update; full derivation needs general MP for K_LL and K_{MM|L}). Clause 2 is proved here via loewnerLE_matSub_self from the public LegalQuotient library applied to hConditionalSchurPSD. Conditional currencies are reused from Main.CriticalPair; no parallel naming."
+
+[[claim]]
+paper_label = "cor:xi:same-family-saturation"
+paper_section = "Strict native extension"
+description = "Partial saturation: when M = B L, the chain-rule subtracted term vanishes and Ξ(D|[L;M]) = Ξ(D|L)."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.StrictExtension"
+lean_decl = "SixBirdsMetaMath.Xi.StrictExtension.sameFamilySaturation"
+notes = "The paper corollary asserts that M = B L collapses the chain rule via K_{MM|L} = 0 and K_{DM|L} = 0. Lean proves the equality Ξ(D|L^+) = Ξ(D|L) under (a) hChainRule (the chain-rule identity, elevated as in the chain-rule theorem), (b) hM_factors : M = B L (paper hypothesis), and (c) hDML_zero : K_{DM|L} = 0 (elevated; the paper standing fact derivable from M = B L + MP-on-support). Note hDML_zero alone suffices for the conclusion (K_{DM|L} = 0 ⟹ the product K_{DM|L} · K_{MM|L}^† · K_{MD|L} = 0 regardless of K_{MM|L}). hMM_zero is NOT elevated — would be redundant. Status partial because the elevated facts are paper-standing rather than constructively derived."
+
+[[claim]]
+paper_label = "thm:xi:dissolving-post-processing"
+paper_section = "Data processing and transfer"
+description = "Adequacy residual is F-conjugation equivariant: Ξ_C(F·D | L) = F · Ξ_C(D | L) · F^T."
+status = "theorem"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.DataProcessing"
+lean_decl = "SixBirdsMetaMath.Xi.DataProcessing.dissolvingPostProcessing"
+notes = "Fully proved by finite rational matrix algebra: blockCurrencyDD, blockCurrencyDL, blockCurrencyLD, and the Schur correction term commute with dissolving post-processing by F, and matSub_matMul_conjugate factors the residual subtraction. The statement uses the same explicit KLLdagger parameter as adequacyResidual."
+
+[[claim]]
+paper_label = "thm:xi:native-coarsening"
+paper_section = "Data processing and transfer"
+description = "Partial Loewner inequality Ξ_C(D|L) ⪯ Ξ_C(D|AL) under (a) C-symmetric K_LD/K_DL relation hKLDsym and (b) the substantively-smaller MP-pseudoinverse-comparison PSD hypothesis hMPComparePSD on KLLdagger − A^T · K_{AL,AL}^† · A. The Schur-complement-difference is constructed algebraically; only the MP comparison is elevated."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.DataProcessing"
+lean_decl = "SixBirdsMetaMath.Xi.DataProcessing.nativeCoarsening"
+notes = "Refactored after Package 5 self-review SR.6 to avoid the old definition-level tautology hCoarseningSchurDiff : PSD(Ξ(D|AL) − Ξ(D|L)). Lean now proves the Schur-complement difference algebraically: helper lemmas establish K_{D,AL} = K_DL A^T, K_{AL,D} = A K_LD, and K_{AL,AL} = A K_LL A^T; then Ξ(D|AL) − Ξ(D|L) is rearranged to K_DL · (KLLdagger − A^T KaLALdagger A) · K_LD and rewritten as K_DL · gap · K_DL^T using hKLDsym. The only substantive elevated hypothesis is hMPComparePSD, positive semidefiniteness of the MP-comparison matrix KLLdagger − A^T KaLALdagger A, from which the residual difference is PSD by posSemidef_conjugate. The faithful-reparameterization equality clause remains deferred pending general MP/range infrastructure."
+
+[[claim]]
+paper_label = "thm:xi:exact-reducing-bridge"
+paper_section = "Data processing and transfer"
+description = "Partial bridge congruence: residual transport follows from separate transported K_DD and Schur-correction identities under the bridge equations."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.DataProcessing"
+lean_decl = "SixBirdsMetaMath.Xi.DataProcessing.exactReducingBridge"
+notes = "The theorem includes the paper bridge equations C' = U^T C U, L' = A L U, D' = B D U and proves Ξ_{C'}(D'|L') = B Ξ_C(D|L) B^T from two structurally smaller elevated facts: hDDTransport transports the K_DD block, and hSchurTransport transports the Schur correction. The final residual equality is then a genuine matSub_matMul_conjugate calculation, not a hypothesis-equals-conclusion placeholder. Full derivation of hDDTransport and hSchurTransport requires isometry of U, faithfulness of A on Ran L, and general Moore-Penrose/range infrastructure."
+
+[[claim]]
+paper_label = "thm:xi:defective-bridge"
+paper_section = "Data processing and transfer"
+description = "Partial defective bridge bound: a residual decomposition plus the public matrix AM-GM Loewner lemma yields the stated inequality for every t > 0; only PSD of the transported source residual and defect residual remain elevated."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.DataProcessing"
+lean_decl = "SixBirdsMetaMath.Xi.DataProcessing.defectiveBridge"
+notes = "Refactored to remove the old hAMGMBound tautology pattern. The theorem records the bridge data, t > 0, native exactness, and D' = B D U + R. It proves the paper Loewner bound from hResidualDecomposition, which splits Ξ_{C'}(D'|L') into the transported source residual plus Ξ_{C'}(R|L'), and from two structurally smaller PSD hypotheses: hBxiBT_psd for B Ξ_C(D|L) B^T and hXi_R_psd for Ξ_{C'}(R|L'). The AM-GM Loewner step itself is now the public LegalQuotient theorem loewnerLE_scaled_add, whose difference calculation is t·A + t⁻¹·B. Future work is to derive the two PSD hypotheses from a general PSD theorem for adequacyResidual plus PSD preservation under conjugation."
+
+[[claim]]
+paper_label = "thm:xi:blind-spot-witness"
+paper_section = "Obstruction and repair calculus"
+description = "Partial: spectral characterization clause — Loewner violation Ξ ⪯̸ Ω is proved equivalent to the existence of a recombination z with z^T (Ξ − Ω) z > 0. The 'maximum additive violation = λ_max(Δ_Ξ)' clause is deferred (no eigenvalue infrastructure)."
+status = "partial"
+lean_subproject = "."
+lean_module = "SixBirdsMetaMath.Xi.Obstruction"
+lean_decl = "SixBirdsMetaMath.Xi.Obstruction.blindSpotWitness"
+notes = "The paper theorem has two clauses. Clause 1 (Loewner / witness duality) is proved by direct unfolding plus classical not-forall reasoning — same pattern as Main.PredictiveNative.predictiveNativeMembrane (Loewner ⇔ no critical-pair). Clause 2 (maximum additive violation = λ_max(Δ_Ξ)) is deferred: no eigenvalue infrastructure in this codebase. The 'lawful repair moves' list at lines 371-378 is qualitative paper prose; not separately labeled, not mechanized."

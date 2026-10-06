@@ -1,0 +1,38 @@
+% Boundary matrix table (Table 1).
+% Placed at the end of the manuscript in landscape orientation because of its
+% width. Referenced from Section 2 (Local boundary distinctions), Section 3
+% (Typed non-collapse), Section 6 (Role-projection alignment), and Section 8
+% (Role-alignment stress).
+
+\begin{landscape}
+\begin{table}
+\caption{Local boundary distinctions. Each row records the distinction
+rule between two roles, a permitted interaction, and the collapse that
+is forbidden under scoped bookkeeping.}
+\label{tab:boundary-matrix}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lp{0.34\linewidth}p{0.24\linewidth}p{0.24\linewidth}@{}}
+\toprule
+pair & distinction rule & permitted interaction & forbidden collapse \\
+\midrule
+\Pone{}/\Pfive{} & \Pfive{} supplies quotient packaging; \Pone{} tests selected update compatibility with quotient packaging & \Pone{} uses \Pfive{} when checking descent or obstruction & packaging alone is not \Pone{} \\
+\Pone{}/\Pfour{} & \Pfour{} supplies stage/refinement structure; \Pone{} may vary by stage & stage-indexed descent or obstruction & stage index alone is not \Pone{} \\
+\Pone{}/\Ptwo{} & \Pone{} is update compatibility; \Ptwo{} is macro-specification representability & representability may be studied over quotient structures affected by descent & representability failure is not automatically descent obstruction \\
+\Pone{}/\Pthree{} & \Pone{} is failure or success of a descended route; \Pthree{} compares already-defined routes & \Pone{} may block a route before \Pthree{} comparison & route undefinedness is not route mismatch \\
+\Pone{}/\Psix{} & \Psix{} audits a \Pone{} event; \Pone{} is the event content & audited descent success or obstruction & audit record is not descent obstruction \\
+\Ptwo{}/\Pfive{} & \Pfive{} is quotient packaging; \Ptwo{} requires macro-specification representability beyond quotient equality & \Ptwo{} can collapse to \Pfive{} when specifications are just quotient classes; nontrivial \Ptwo{} uses \Pfive{} & nontrivial \Ptwo{} is not mere packaging \\
+\Ptwo{}/\Pfour{} & \Pfour{} supplies stages; \Ptwo{} representability may vary by stage & stage-indexed representability & stage variation alone is not \Ptwo{} \\
+\Ptwo{}/\Pthree{} & \Ptwo{} concerns representability of specifications; \Pthree{} concerns route disagreement & route grammar may be built over represented macro structure & non-representability is not route mismatch \\
+\Ptwo{}/\Psix{} & \Psix{} audits representability claims; \Ptwo{} is the representability content & audited representability or non-representability & audit trail is not representability \\
+\Pthree{}/\Pfour{} & \Pfour{} supplies stage/regime structure; \Pthree{} route mismatch may be stage-indexed & route systems vary over valid stages & stage-indexed route mismatch is not \Pfour{} itself \\
+\Pthree{}/\Pfive{} & \Pfive{} supplies quotient objects; \Pthree{} compares defined routes over objects & routes over quotient objects & quotient object is not route mismatch \\
+\Pthree{}/\Psix{} & \Psix{} audits route comparisons; \Pthree{} is the route mismatch content & audited route mismatch & audit record is not route mismatch \\
+\Pfour{}/\Pfive{} & \Pfour{} supplies stage/refinement structure; \Pfive{} supplies packaging at a stage & stage-indexed packaging & packaging is not stage structure \\
+\Pfour{}/\Psix{} & \Pfour{} supplies staged structure; \Psix{} audits staged histories or transitions & audited stage transitions & audit record is not staging \\
+\Pfive{}/\Psix{} & \Pfive{} supplies packaging; \Psix{} audits packaging events & audited packaging & audit record is not packaging map \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}

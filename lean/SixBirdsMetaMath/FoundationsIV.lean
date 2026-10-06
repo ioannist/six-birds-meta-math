@@ -1,0 +1,11 @@
+import SixBirdsMetaMath.FoundationsIV.Transport
+import SixBirdsMetaMath.FoundationsIV.Stability
+import SixBirdsMetaMath.FoundationsIV.Access
+import SixBirdsMetaMath.FoundationsIV.Symmetry
+import SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence
+import SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits
+import SixBirdsMetaMath.FoundationsIV.ClosureRealityBoundary
+
+namespace SixBirdsMetaMath.FoundationsIV
+
+end SixBirdsMetaMath.FoundationsIV

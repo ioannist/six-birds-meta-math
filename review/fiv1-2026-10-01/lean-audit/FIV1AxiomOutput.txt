@@ -1,0 +1,17 @@
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_normal_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_exposure_collapse_surplus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_normal_form_with_exposure_collapse_surplus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_normal_form_of_source_obligation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_source_obligation_satisfiable' does not depend on any axioms
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_source_obligation_with_surplus_satisfiable' does not depend on any axioms
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.HiddennessSourceObligation' does not depend on any axioms
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.exposedUnitInterface' does not depend on any axioms
+'SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenBoolInterface' does not depend on any axioms

@@ -1,0 +1,12 @@
+name = "ClosureLadder"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["ClosureLadder"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+maxSynthPendingDepth = 3
+
+[[lean_lib]]
+name = "ClosureLadder"

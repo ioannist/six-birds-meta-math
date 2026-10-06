@@ -1,0 +1,94 @@
+\section{Predictions and open problems}\label{sec:predictions}
+
+This section records predictions and open problems.  None of them is
+used as evidence for a numbered statement, and none asserts that a
+missing application has been carried out.
+
+\subsection{A Hodge substrate}
+\label{sec:predictions:hodge}
+
+We conjecture, on structural grounds only, that a Hodge substrate
+\cite{Deligne2000Hodge,Voisin2003HodgeTheoryII} would lie in the
+trace-state-only column; no formed closure for the Hodge conjecture has
+been constructed in this series.  If one is constructed and the column
+placement holds, the seven-stage template of \Cref{sec:recognition}
+should apply to it, and its derivation sweep would be a third test of
+the verdict signature \SigPattern\ of \Cref{thm:verdict-signature}.
+The prediction concerns the column, not the substrate: it asserts no
+Hodge closure and names no Hodge recognition source.  It would be
+refuted by a trace-state-only Hodge closure satisfying the template
+whose derivation sweep returns a different verdict pattern; if a Hodge
+substrate turned out not to be trace-state-only, the prediction would
+simply not apply.
+
+\subsection{Yang--Mills}
+\label{sec:predictions:ym}
+
+Yang--Mills \cite{JaffeWitten2000YangMills} is a further candidate.
+No Yang--Mills substrate has been studied in this series, and nothing
+is claimed about it.  The open question is whether a Yang--Mills
+substrate would be trace-state-only, witness-content-exposing, or of a
+kind not yet represented.  The column question should be settled before
+a recognition-mode or derivation-mode template is chosen.
+
+\subsection{Proving the recognition-mode schemas}
+\label{sec:predictions:theorem-grade-lifting}
+
+The schemas of \Cref{sec:recognition} can become theorems only after
+their primitive predicates are defined; until then they are neither
+provable nor refutable.  Given definitions, each schema needs its own
+argument.  \Cref{thm:template-applicability} needs a proof that a
+successful seven-stage audit gives the closure the status of a
+conditional theorem under its premises.  \Cref{thm:verdict-signature}
+needs a derivation of the verdict pattern \SigPattern\ from column
+membership.  \Cref{thm:closure-content-thesis} needs, for the
+load-bearing content of a trace-state-only closure, a proof that it is
+formed-layer content and is named as a source, and a non-derivability
+proof showing that the framework's primitives do not yield it.
+\Cref{thm:attack-foreclosure-v5} needs, beyond
+\Cref{thm:attack-foreclosure-v4}, a proof that every recognition-mode
+landing imports the load-bearing content and lands at theorem grade.
+Further examples, such as a third trace-state-only application beyond
+the P-versus-NP and Riemann-hypothesis cases, would test these
+arguments but cannot replace them.  This is the main open problem left
+by \Cref{sec:recognition}.
+
+\subsection{A bound on the depth of matrix-element towers}
+\label{sec:predictions:ctmt-depth-bound}
+
+\Cref{thm:ctmt-recursion} describes towers of matrix-element
+terminations of any finite depth but gives no bound on the depth.  The
+open problem is to find an invariant of the carrier
+that bounds the depth independently of the application, for example the
+complexity of the inherited records, a descent height, the rank of the
+native matrix family, or a refinement of the adequacy residual.  Such a
+bound cannot simply forbid further reductions by definition; it has to
+explain why a deeper matrix-element family cannot arise in a typed
+context.
+
+\subsection{Open functorial gates}
+\label{sec:predictions:functorial-gates}
+
+The three gates of \Cref{cat:named-functorial-gates},
+\(\GateFunctionDegree\), \(\GatePlantedStatistical\) and
+\(\GateUniformTime\), each name a transport that has not been proved: from the degree of a
+detector to the degree of a Nullstellensatz certificate, from planted
+statistical detection to worst-case hardness of a language, and from a
+nonuniform family to a uniform time-hierarchy statement.  Each is a
+problem in its own right.  The second transports content from the
+average case to the worst case, so the corresponding hardness statement
+is a worst-case to average-case reduction, and it is related to known
+obstacles: a
+non-adaptive reduction from an NP-complete problem in the worst case to
+a distributional NP problem under a polynomial-time samplable
+distribution, tolerant to a small fraction of oracle errors, would
+imply \(\mathrm{coNP}\subseteq\mathrm{NP/poly}\)
+\cite{BogdanovTrevisan2006WorstAverage}, extending the earlier result
+of \cite{FeigenbaumFortnow1993RandomSelfReducibility}; whether a
+planted detection problem falls under these hypotheses depends on its
+formulation.  Further gates should appear whenever another
+application needs a transport between calibrations, regimes, or a
+native type and a target type that is not a change of basis, for
+instance when its coverage table has a hole like those of
+\Cref{thm:coverage-family-geometry}.  The list of gates is not claimed
+to be complete.

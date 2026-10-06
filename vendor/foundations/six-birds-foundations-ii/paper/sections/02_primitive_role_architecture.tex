@@ -1,0 +1,214 @@
+\section{Primitive role architecture}\label{sec:primitive-role-architecture}
+
+% Mathematical job:
+%   - Fix the six role meanings P1 through P6 at the repaired alignments.
+%   - State local boundary distinction rules (P1/P5, P1/P4, P1/P2, P1/P3,
+%     P1/P6, P2/P5, ...): distinctions under scoped bookkeeping, not global
+%     independence.
+%   - Introduce the common behavioral / verification / structural-categorical
+%     level pattern and the selected-lift atlas vocabulary.
+%   - Use Foundations (Tsiokos 2026) terminology: theory package
+%     T = (Z, f, Sigma_f, E, A), closure operator, idempotent endomap.
+%
+% Repaired role meanings (non-negotiable):
+%   P1  update-vs-quotient compatibility / descent obstruction
+%   P2  macro-specification representability
+%   P3  enriched route/coherence mismatch
+%   P4  stage/order/transition/refinement structure
+%   P5  quotient packaging / quotienting
+%   P6  audit/bookkeeping/provenance/replay/checkability
+%
+% Forbidden regressions:
+%   generic transition assigned to P3
+%   generic path/derivation assigned to P5
+%   generic semantics/interpretation assigned to P1
+%
+% Governing sources:
+%   workspace/meta/lens_lab/synthesis/six_primitive_state_table.md
+%   workspace/meta/lens_lab/synthesis/six_primitive_boundary_matrix.md
+%   workspace/meta/lens_lab/synthesis/six_primitive_level_lift_atlas.md
+%   workspace/meta/lens_lab/synthesis/six_primitive_global_nonclaims.md
+%   docs/papers/Tsiokos_2026_Six_Birds_Foundations_of_Emergence_Calculus.tex
+%     (executive P1-P6 map; finite theory package; three-certificate loop)
+%   paper/prior_literature_context.md (Tier A1)
+%
+% Overclaim risks:
+%   - Restating Paper 1 as a full six-primitives algebra.
+%   - Losing the repaired role meanings under casual prose.
+%   - Treating boundary rules as global independence theorems.
+
+This section fixes the meanings of the six typed closure roles
+\Pone{}, \ldots, \Psix{}, the behavioral, verification, and
+structural-categorical level pattern they share, the local boundary
+distinctions between them, and the selected-lift atlas vocabulary.
+These meanings are fixed for the remainder of the paper and govern
+every subsequent definition, lower bound, and upper-bound
+classification.
+
+\subsection{Role meanings}\label{subsec:role-meanings}
+
+\begin{definition}[Primitive closure roles]\label{def:primitive-roles}
+The six primitive closure roles are
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{} --- update-vs-quotient compatibility / descent
+    obstruction~\citep{GrothendieckSGA1,JanelidzeTholen1994};
+  \item \Ptwo{} --- macro-specification
+    representability~\citep{MacLane1998};
+  \item \Pthree{} --- enriched route/coherence
+    mismatch~\citep{BaaderNipkow1998,Nakahara2003}; \Pthree{} is not a
+    directionality certificate;
+  \item \Pfour{} --- stage/order/transition/refinement
+    structure~\citep{Milner1989,BackVonWright1998};
+  \item \Pfive{} --- quotient packaging /
+    quotienting~\citep{KemenySnell1960};
+  \item \Psix{} --- audit/bookkeeping/provenance/replay/%
+    checkability~\citep{GreenKarvounarakisTannen2007,Merkle1987}.
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Corrected alignments]\label{rem:repaired-alignments}
+Three alignments that Definition~\ref{def:primitive-roles} rules out
+are used throughout later classification: generic transition data is
+not \Pthree{}; generic path or derivation data is not \Pfive{}; and
+generic semantic or interpretation data is not \Pone{}. These
+constraints determine which feature clusters can later be interpreted
+as active projections of each role.
+\end{remark}
+
+\begin{remark}[Drive face of \Psix{}]\label{rem:p6-drive}
+Arguments about affinities, detailed balance, or honest directionality
+use the narrower \(\mathrm{P6}_{\mathrm{drive}}\) specialization of
+\Psix{}: its affinity-carrying, detailed-balance-breaking
+face~\citep{Seifert2012}. \(\mathrm{P6}_{\mathrm{drive}}\) is a face
+of \Psix{}, not a replacement for it. A \Pthree{}
+route/coherence-mismatch witness does not establish directionality
+without a \Psix{}-side audit.
+\end{remark}
+
+\subsection{Behavioral, verification, and structural-categorical levels}\label{subsec:levels}
+
+Each role admits a common three-level pattern.
+
+\begin{definition}[Level trichotomy]\label{def:level-trichotomy}
+For each role \Pone{}, \ldots, \Psix{}, we distinguish
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the \emph{behavioral level}: status, occurrence, or observed
+    behavior of the role in a description;
+  \item the \emph{verification level}: proof, witness, certificate, or
+    checkable record supporting a behavioral
+    claim~\citep{MartinLof1984};
+  \item the \emph{structural-categorical level}: reusable structure
+    supporting the primitive role.
+\end{itemize}
+Forgetting proceeds from structural-categorical to verification to
+behavioral and is lossy. Lifting proceeds from behavioral to
+verification to structural-categorical only after adding explicitly
+recorded data, and selected lifts are not unique.
+\end{definition}
+
+\begin{remark}[Level content per primitive]\label{rem:per-primitive-levels}
+The level trichotomy instantiates as follows.
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: descent success or descent obstruction status; descent
+    proof or obstruction witness; quotient data equipped with a descended
+    map, or an explicit no-descended-map obstruction record.
+  \item \Ptwo{}: representability or non-representability status;
+    representability or non-representability certificate;
+    macro-specification layer together with a realization relation.
+  \item \Pthree{}: witness behavior of route disagreement; generated route
+    terms and non-reducibility certificates; categorical route grammar or a
+    reduced categorical universe.
+  \item \Pfour{}: stage status, transition occurrence, or refinement
+    behavior; order/preorder, transition, or refinement certificates;
+    stage/refinement architecture.
+  \item \Pfive{}: packaging or identification behavior; equivalence and
+    quotient-validity certificate; quotient object with a packaging map
+    and universal-property or tower/coarsening data.
+  \item \Psix{}: audit-relevant event occurrence or record--event
+    association; checkable audit record; audit schema with provenance,
+    replay, and check relations.
+\end{itemize}
+The meta-theoretic properties of this trichotomy --- lossy forgetting,
+selected non-unique lifts, and the absence of lower-to-higher determinacy
+without added data --- are formalized in
+Section~\ref{sec:admissibility-meta-theory}.
+\end{remark}
+
+\subsection{Local boundary distinctions}\label{subsec:boundary-matrix}
+
+With role meanings and level pattern fixed, we turn to how the six
+roles remain distinct. Table~\ref{tab:boundary-matrix} records the
+pairwise local rules. These are local distinctions under scoped
+bookkeeping, not a global primitive-independence theorem: two roles
+may interact legitimately in a single description, but neither
+collapses into the other. The table is reproduced in landscape
+orientation on the page immediately preceding the references.
+
+\begin{proposition}[Boundary distinctions under scoped bookkeeping]\label{prop:boundary-distinctions}
+For every pair of roles listed in Table~\ref{tab:boundary-matrix}, the
+corresponding ``forbidden collapse'' is ruled out as a locally admissible
+identification of those two roles under the repaired alignments of
+Remark~\ref{rem:repaired-alignments} together with the honest bookkeeping
+required by a \FATCD{}.
+\end{proposition}
+
+\begin{remark}[Not a global independence theorem]\label{rem:not-global-independence}
+The boundary matrix asserts local distinctions, not global
+independence. Primitives interact legitimately in a single
+description: \Pone{} descent is audited by \Psix{}; \Pthree{} route
+terms may be indexed by \Pfour{} stages; nontrivial \Ptwo{}
+representability is typically carried over \Pfive{} quotient structure.
+No claim is made that the six roles are independent generators of a
+global algebra. The typed-non-collapse counterpart of this observation
+appears in Section~\ref{sec:admissibility-meta-theory}.
+\end{remark}
+
+\subsection{Selected-lift atlas and global nonclaims}\label{subsec:lift-atlas}
+
+The remaining architectural data are the selected lifts between levels
+and the nonclaims that accompany them. Upgrading from behavioral or
+verification content to the structural-categorical level requires
+explicitly recorded added data. The resulting lifts are selected, not
+unique, and the atlas carries structural content that is lost under
+forgetting.
+
+\begin{definition}[Selected-lift atlas]\label{def:selected-lift-atlas}
+The \emph{selected-lift atlas} for the six roles records, for each
+\Pone{}, \ldots, \Psix{}:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: proof or witness together with quotient structure, carrying
+    either a descended map or an explicit no-map obstruction;
+  \item \Ptwo{}: representability or non-representability certificates
+    together with the macro-specification layer and realization relation;
+  \item \Pthree{}: the selected lift data recorded in the promoted atlas,
+    carrying generated route terms, non-reducibility certificates, and
+    categorical route grammar or a reduced categorical universe;
+  \item \Pfour{}: validity certificates together with structural
+    stage/refinement architecture;
+  \item \Pfive{}: quotient-validity certificates together with the
+    structural quotient data, a packaging map, and universal-property or
+    tower/coarsening data;
+  \item \Psix{}: record-event or check evidence together with the audit
+    schema and its provenance and replay/check relations.
+\end{itemize}
+Each lift is selected and not unique, and forgetting from a higher level
+loses structural content that is not recoverable without re-adding data.
+\end{definition}
+
+\begin{remark}[Global nonclaims for the role architecture]\label{rem:atlas-global-nonclaims}
+The role architecture preserves the following nonclaims, all carried
+forward into the admissibility regime of
+Section~\ref{sec:admissibility-meta-theory} and the theorem chain of
+Sections~\ref{sec:lower-bounds}--\ref{sec:decomposition-exhaustion}:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item no full six-primitives algebra is claimed;
+  \item no global primitive-independence theorem is claimed;
+  \item no empirical realization is claimed;
+  \item no uniqueness of primitive presentations is claimed;
+  \item no uniqueness of selected lifts is claimed;
+  \item no lower-level-to-higher-level determinacy is claimed;
+  \item no instrument-free formulation is claimed;
+  \item direct cross-level comparison remains inadmissible without
+    translation.
+\end{itemize}
+\end{remark}

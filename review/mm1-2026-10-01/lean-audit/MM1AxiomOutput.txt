@@ -1,0 +1,1341 @@
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.ClosureContentThesisSchema : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.closure_content_thesis
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.ClosureContentThesisSchema)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c) :
+  And
+    (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.IsFormedLayerClosureContent
+      (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c X) c)
+    (And
+      (Not
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.IsDerivableFromFrameworkPrimitives
+          (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c X)))
+      (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.NamedAsAcceptedSource
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c X) c))
+'SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.closure_content_thesis' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.AttackForeclosureV5Schema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_v5_derivation_conjunct_of_v4.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (hv4 : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema.{u} signature)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (hscope : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u} signature X)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove) :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.IsDerivationRoute move →
+    Not (SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u} signature move X)
+'SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_v5_derivation_conjunct_of_v4' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_foreclosure_v5.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.AttackForeclosureV5Schema.{u} signature)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c)
+  (hclosure : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SBClosureAssumption c)
+  (hscope : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u} signature X) :
+  And
+    (∀ (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove),
+      SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.IsDerivationRoute move →
+        Not (SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u} signature move X))
+    (And
+      (∀
+        (l :
+          SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.RecognitionModeLanding c
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)),
+        SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.ImportsAsNamedRecognition l
+          (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)))
+      (∀
+        (_l :
+          SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.RecognitionModeLanding c
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)),
+        SixBirdsMetaMath.MetaMath.RecognitionMode.Template.LandsAtTheoremGrade c
+          (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)))
+'SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_foreclosure_v5' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplicabilitySchema : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.recognition_template_applicability
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplicabilitySchema)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c)
+  (hclosure : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SBClosureAssumption c)
+  (htemplate : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate c X)
+  (happlies : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplies c X htemplate) :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.Template.LandsAtTheoremGrade c X
+'SixBirdsMetaMath.MetaMath.RecognitionMode.Template.recognition_template_applicability' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.VerdictSignatureSchema : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.verdict_signature
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.VerdictSignatureSchema)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c)
+  (htemplate : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate c X)
+  (happlies : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplies c X htemplate) :
+  And
+    (Eq.{1}
+      (SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.sweepVerdict htemplate
+        SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption.frameworkPrimitive)
+      SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict.ii)
+    (And
+      (Eq.{1}
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.sweepVerdict htemplate
+          SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption.sauNonDescent)
+        SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict.iii)
+      (Eq.{1}
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.sweepVerdict htemplate
+          SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption.vDifferentialElevation)
+        SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict.ii))
+'SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.verdict_signature' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u}
+  (language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}) : Type u
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.internalMoveSemantics.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.attack_foreclosure_v4.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (hschema : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema.{u} signature)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove)
+  (hscope : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u} signature X) :
+  Not (SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u} signature move X)
+'SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.attack_foreclosure_v4' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_of_classification.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hresidual : ∃ c, SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u} C c)
+  (hclassification : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u} X C) :
+  Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C)
+    (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u} X C)
+      (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C)))
+'SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_of_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_theorem.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hcoverage : SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u} X C) :
+  Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C)
+    (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u} X C)
+      (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C)))
+'SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_theorem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classifyAs.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (s : SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.CarrierState)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.type_finite_foreclosure.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hcoverage : SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u} X C) :
+  ∃ s, SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classifyAs.{u} s X C
+'SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.type_finite_foreclosure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hcoverage : SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u} X C) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.CarrierState
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify_spec.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hcoverage : SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u} X C) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classifyAs.{u}
+    (SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify.{u} X C hcoverage) X C
+'SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify_spec' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, v}
+  (language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}) : Type (max u (v + 1))
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, v}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, v} language) : Type v
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.XStrengthObligation.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeComposition.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (C composite : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (C composite : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (_acceptedImportsBase :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (_h_imports_sound :
+    ∀ (c : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language),
+      _acceptedImportsBase c →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language c)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (composite : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (_hCNonX : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C)
+  (_hCNative : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{u} C)
+  (hcomp :
+    SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeComposition.{u, u_1} signature B C composite X)
+  (hcompositeProduces :
+    And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{u} composite)
+      (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u} composite X))
+  (_hcompositeDiscipline :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.typedContextDiscipline.{u} composite)
+  (_hcompositeAimed :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.aimedAt.{u} composite X)
+  (_hcompositeCtx :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CoverageContext.{u}
+      (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.coverage.{u, u_1} signature) X
+      composite)
+  (hclassification : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u} X composite)
+  (hbridge :
+    SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema.{u, u_1} signature B C composite
+      X) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.XStrengthObligation.{u, u_1} signature B X
+'SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.twoClaimBridgeSignature :
+  SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{0, 0}
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility_hypotheses_satisfiable :
+  ∃ language signature acceptedImportsBase X C composite B,
+    And
+      (∀ (c : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{0} language),
+        acceptedImportsBase c →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0} language c)
+      (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{0} X C)
+        (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{0} C)
+          (And
+            (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeComposition.{0, 0} signature B C composite
+              X)
+            (And
+              (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{0} composite)
+                (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{0} composite X))
+              (And
+                (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.typedContextDiscipline.{0}
+                  composite)
+                (And
+                  (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.aimedAt.{0} composite X)
+                  (And
+                    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CoverageContext.{0}
+                      (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.coverage.{0, 0}
+                        signature)
+                      X composite)
+                    (And
+                      (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{0} X
+                        composite)
+                      (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema.{0, 0} signature
+                        B C composite X)))))))))
+'SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility_hypotheses_satisfiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.cascadeReducesToDeeperFamily.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (semantics :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C Cdeeper : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (semantics :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Nat → Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.ctmt_recursion.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}} :
+  And
+    (∀
+      (semantics :
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+            SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+      (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+      (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language),
+      Iff (SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u} semantics X C 1)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C))
+    (∀
+      (semantics :
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+            SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+      (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+      (C Cdeeper : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) (n : Nat),
+      SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u} semantics X Cdeeper (HAdd.hAdd.{0, 0, 0} n 1) →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.cascadeReducesToDeeperFamily.{u} semantics X C Cdeeper →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u} semantics X C (HAdd.hAdd.{0, 0, 0} n 2))
+'SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.ctmt_recursion' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u} : Type (u + 1)
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u}
+  (language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}) : Type u
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrierResidual.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) :
+  SixBirdsMetaMath.Main.LegalQuotient.Mat
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.z.{u} C)
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.z.{u} C)
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.xEquivalent.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.openPending.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (acceptedImportsBase : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (X' : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.NativeClosureOutcome.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (acceptedImportsBase : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X' : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sameLevelSelfAuditFailure.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CoverageContext.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (guard :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrier_dichotomy.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (acceptedImportsBase : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (h_imports_sound :
+    ∀ (c : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language),
+      acceptedImportsBase c →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language c)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hclassification : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u} X C) :
+  And
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C →
+      ∃ X',
+        And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u} C X')
+          (And (Ne.{u + 1} X' X)
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.NativeClosureOutcome.{u} acceptedImportsBase C X')))
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.xEquivalent.{u} X C →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ExactlyOneOfThree
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C))
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrier_dichotomy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims :
+  SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{0}
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase :
+  SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{0}
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims →
+    Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sound_base_noncollapse :
+  And
+    (∀
+      (c :
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{0}
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims),
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase c →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0}
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims c)
+    (And
+      (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0}
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims false)
+      (And
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0}
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims true)
+        (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase false)
+          (Not (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase true)))))
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sound_base_noncollapse' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier :
+  SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{0}
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier_zero :
+  SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{0}
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier_classification
+  (X :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{0}
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{0} X
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent_and_xEquivalent :
+  And
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{0} true
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier)
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.xEquivalent.{0} true
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier)
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent_and_xEquivalent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkTypeGeneralSchema : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u}
+  (language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}) : Type u
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrierResidual.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) :
+  SixBirdsMetaMath.Main.LegalQuotient.Mat
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.z.{u} C)
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.z.{u} C)
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.xEquivalent.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.openPending.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (acceptedImportsBase : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (X' : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.NativeClosureOutcome.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (acceptedImportsBase : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X' : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sameLevelSelfAuditFailure.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ExactlyOneOfThree (A B C : Prop) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CoverageContext.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (guard :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrier_dichotomy.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (acceptedImportsBase : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (h_imports_sound :
+    ∀ (c : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language),
+      acceptedImportsBase c →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language c)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hclassification : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u} X C) :
+  And
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C →
+      ∃ X',
+        And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u} C X')
+          (And (Ne.{u + 1} X' X)
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.NativeClosureOutcome.{u} acceptedImportsBase C X')))
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.xEquivalent.{u} X C →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ExactlyOneOfThree
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C))
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.carrier_dichotomy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, v}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, v} language) : Type v
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.XStrengthObligation.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeComposition.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (C composite : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (C composite : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility.{u, u_1}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, u_1} language)
+  (_acceptedImportsBase :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language → Prop)
+  (_h_imports_sound :
+    ∀ (c : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language),
+      _acceptedImportsBase c →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language c)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (B : SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.TypedBridge.{u, u_1} signature)
+  (composite : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (_hCNonX : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C)
+  (_hCNative : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{u} C)
+  (hcomp :
+    SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeComposition.{u, u_1} signature B C composite X)
+  (hcompositeProduces :
+    And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{u} composite)
+      (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u} composite X))
+  (_hcompositeDiscipline :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.typedContextDiscipline.{u} composite)
+  (_hcompositeAimed :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.aimedAt.{u} composite X)
+  (_hcompositeCtx :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CoverageContext.{u}
+      (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.coverage.{u, u_1} signature) X
+      composite)
+  (hclassification : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u} X composite)
+  (hbridge :
+    SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema.{u, u_1} signature B C composite
+      X) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.XStrengthObligation.{u, u_1} signature B X
+'SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.CarrierState : Type
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classifyAs.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (s : SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.CarrierState)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.type_finite_foreclosure.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hcoverage : SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u} X C) :
+  ∃ s, SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classifyAs.{u} s X C
+'SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.type_finite_foreclosure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hcoverage : SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u} X C) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.CarrierState
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove : Type
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.internalMoveSemantics.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.cascadeReducesToDeeperFamily.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (semantics :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C Cdeeper : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (semantics :
+    SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language) :
+  SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Nat → Prop
+SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.ctmt_recursion.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}} :
+  And
+    (∀
+      (semantics :
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+            SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+      (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+      (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language),
+      Iff (SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u} semantics X C 1)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C))
+    (∀
+      (semantics :
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language →
+            SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language → Prop)
+      (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+      (C Cdeeper : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language) (n : Nat),
+      SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u} semantics X Cdeeper (HAdd.hAdd.{0, 0, 0} n 1) →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.cascadeReducesToDeeperFamily.{u} semantics X C Cdeeper →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.CTMTTower.{u} semantics X C (HAdd.hAdd.{0, 0, 0} n 2))
+'SixBirdsMetaMath.MetaMath.Foreclosure.CTMTRecursion.ctmt_recursion' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure : Type
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure → Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SBClosureAssumption :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure → Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate
+  (_c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (_X : Prop) : Type
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplies
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop)
+  (htemplate : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate c X) : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.LandsAtTheoremGrade :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure → Prop → Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplicabilitySchema : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption : Type
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict : Type
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.sweepVerdict
+  {c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure} {X : Prop}
+  (_htemplate : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate c X)
+  (opt : SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption) :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.VerdictSignatureSchema : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.StructuralContent : Type
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop) :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.StructuralContent
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.IsFormedLayerClosureContent
+  (s : SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.StructuralContent)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.IsDerivableFromFrameworkPrimitives
+  (s : SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.StructuralContent) : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.NamedAsAcceptedSource
+  (s : SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.StructuralContent)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.ClosureContentThesisSchema : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.IsDerivationRoute :
+  SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove → Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.RecognitionModeLanding
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop) : Type
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.ImportsAsNamedRecognition
+  {c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure} {X : Prop}
+  (l : SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.RecognitionModeLanding c X)
+  (s : SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.StructuralContent) : Prop
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.AttackForeclosureV5Schema.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language) : Prop
+SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily :
+  List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration
+SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibration_family_structure :
+  And (GE.ge.{0} (List.length.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily) 13)
+    (∀ (c : SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration),
+      Ne.{1} (SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration.name c) "" → True)
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibration_family_structure' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.isRebadgeOf
+  (candidate existing : SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile) : Prop
+SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.genuinelyNew
+  (candidate : SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile)
+  (family : List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile) : Prop
+SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.rebadge_discipline
+  (candidate : SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile)
+  (family : List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile) :
+  Iff (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.genuinelyNew candidate family)
+    (∀ (existing : SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile),
+      Membership.mem.{0, 0} family existing →
+        Or
+          (Ne.{1}
+            (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.algebraicIdentities
+              candidate)
+            (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.algebraicIdentities
+              existing))
+          (Or
+            (Ne.{1}
+              (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.detectorClass candidate)
+              (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.detectorClass existing))
+            (Or
+              (Ne.{1}
+                (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.descentInvariants
+                  candidate)
+                (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.descentInvariants
+                  existing))
+              (Ne.{1}
+                (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.carrierOrientation
+                  candidate)
+                (SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.CalibrationProfile.carrierOrientation
+                  existing)))))
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline.rebadge_discipline' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.BridgeKind : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.bridges_as_theorems
+  (b : SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge) :
+  Or
+    (Eq.{1} (SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge.kind b)
+      SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.BridgeKind.basisChange)
+    (Eq.{1} (SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge.kind b)
+      SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.BridgeKind.substantive)
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.bridges_as_theorems' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgeTypeDirection.TypedBridge.reverse
+  (b : SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge) :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge
+SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgeTypeDirection.bridge_type_direction
+  (b : SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge) :
+  Iff (Eq.{1} b (SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgeTypeDirection.TypedBridge.reverse b))
+    (Eq.{1} (SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge.source b)
+      (SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems.TypedBridge.target b))
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgeTypeDirection.bridge_type_direction' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.boundedDepthRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.lowDegreeRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.stableLocalRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.queryRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.topologicalRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.lowNSDegreeRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.nc1Region :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.nc2Region :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.pPolyRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.adaptivePolyTimeRegion :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.calibrationCoverage
+  (c : SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration) :
+  List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+  (family : List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration) :
+  List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.CarrierRegion
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.TypedHole : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.xiNC1Coverage :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.TypedHole
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.xiAdaptiveTrace :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.TypedHole
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.isGenuineHole
+  (h : SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.TypedHole)
+  (family : List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration) : Prop
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.all_covered_regions_in_family :
+  And
+    (Membership.mem.{0, 0}
+      (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+      SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.boundedDepthRegion)
+    (And
+      (Membership.mem.{0, 0}
+        (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+          SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.lowDegreeRegion)
+      (And
+        (Membership.mem.{0, 0}
+          (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+            SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+          SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.stableLocalRegion)
+        (And
+          (Membership.mem.{0, 0}
+            (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+              SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+            SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.queryRegion)
+          (And
+            (Membership.mem.{0, 0}
+              (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+              SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.topologicalRegion)
+            (Membership.mem.{0, 0}
+              (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+              SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.lowNSDegreeRegion)))))
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.all_covered_regions_in_family' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.all_uncovered_regions_not_in_family :
+  And
+    (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.nc1Region ∉
+      SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+    (And
+      (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.nc2Region ∉
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+          SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+      (And
+        (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.pPolyRegion ∉
+          SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+            SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+        (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.adaptivePolyTimeRegion ∉
+          SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+            SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)))
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.all_uncovered_regions_not_in_family' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.bounded_depth_overlap :
+  ∃ c1 c2,
+    And (Membership.mem.{0, 0} SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily c1)
+      (And (Membership.mem.{0, 0} SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily c2)
+        (And (Ne.{1} c1 c2)
+          (And
+            (Membership.mem.{0, 0}
+              (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.calibrationCoverage c1)
+              SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.boundedDepthRegion)
+            (Membership.mem.{0, 0}
+              (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.calibrationCoverage c2)
+              SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.boundedDepthRegion))))
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.bounded_depth_overlap' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.empty_coverage_adds_nothing
+  (c : SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration)
+  (h : Eq.{1} (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.calibrationCoverage c) List.nil.{0})
+  (family : List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.Calibration) :
+  Eq.{1}
+    (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+      (HAppend.hAppend.{0, 0, 0} family (List.cons.{0} c List.nil.{0})))
+    (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage family)
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.empty_coverage_adds_nothing' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.coverage_family_geometry :
+  And
+    (Membership.mem.{0, 0}
+      (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+      SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.boundedDepthRegion)
+    (And
+      (Membership.mem.{0, 0}
+        (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+          SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.lowDegreeRegion)
+      (And
+        (Membership.mem.{0, 0}
+          (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+            SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+          SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.stableLocalRegion)
+        (And
+          (Membership.mem.{0, 0}
+            (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+              SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+            SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.queryRegion)
+          (And
+            (Membership.mem.{0, 0}
+              (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+              SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.topologicalRegion)
+            (And
+              (Membership.mem.{0, 0}
+                (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                  SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+                SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.lowNSDegreeRegion)
+              (And
+                (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.nc1Region ∉
+                  SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                    SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+                (And
+                  (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.nc2Region ∉
+                    SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                      SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+                  (And
+                    (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.pPolyRegion ∉
+                      SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                        SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+                    (And
+                      (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.adaptivePolyTimeRegion ∉
+                        SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.familyCoverage
+                          SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+                      (And
+                        (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.isGenuineHole
+                          SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.xiNC1Coverage
+                          SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)
+                        (SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.isGenuineHole
+                          SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.xiAdaptiveTrace
+                          SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure.calibrationFamily)))))))))))
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry.coverage_family_geometry' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.FunctorialGate : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.namedFunctorialGates :
+  List.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.FunctorialGate
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.named_functorial_gates :
+  And (Eq.{1} (List.length.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.namedFunctorialGates) 3)
+    (∀ (g : SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.FunctorialGate),
+      Membership.mem.{0, 0} SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.namedFunctorialGates g →
+        And (Ne.{1} (SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.FunctorialGate.name g) "")
+          (Ne.{1} (SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.FunctorialGate.theoremObligation g) ""))
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.named_functorial_gates' depends on axioms: [propext]
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkType : Type
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.pvnpFrameworkType :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkType
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.standardClayPvNPType :
+  SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkType
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.typesMatch
+  (a b : SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkType) : Prop
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.pvnp_framework_type_mismatch :
+  Not
+    (SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.typesMatch
+      SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.pvnpFrameworkType
+      SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.standardClayPvNPType)
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.pvnp_framework_type_mismatch' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.cascadeFrameworkType :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure →
+    SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkType
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.standardClayTargetType :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure →
+    SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkType
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.FrameworkTypeGeneralSchema : Prop
+SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.framework_type_self_characterization :
+  And
+    (Not
+      (SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.typesMatch
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.pvnpFrameworkType
+        SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.standardClayPvNPType))
+    (Eq.{1} (List.length.{0} SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates.namedFunctorialGates) 3)
+'SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar.framework_type_self_characterization' depends on axioms: [propext]
+SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.joint_actual_zero_xi_and_navier_source_return (γ : Real)
+  (hγ : LT.lt.{0} (5 / 2) γ) (ν : NNReal) (hν : LT.lt.{0} 0 ν) (g₀ : ↥SixBirdsNeedles.NSCore.FourierEnergy) (t : Real)
+  (ht : Membership.mem.{0, 0} (SixBirdsNeedles.NSCore.admissibleMildTimes γ hγ ν hν g₀) t) (htpos : LT.lt.{0} 0 t)
+  (a : Real) (ha : LT.lt.{0} 0 a) (ρ : SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero)
+  (m : SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero → Nat)
+  (hm :
+    ∀ (ρ : SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero),
+      Eq.{1} (m (SixBirdsDualityConfinement.RH.ActualInvolution.J_zero ρ)) (m ρ))
+  (W : Finset.{0} SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero)
+  (hW : SixBirdsDualityConfinement.RH.ActualInvolution.JReflectedWindow W) (hρ : Membership.mem.{0, 0} W ρ) :
+  And
+    (Eq.{1} (SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.navierHeatWindowExcess a ν (Real.toNNReal t) m W)
+      (HMul.hMul.{0, 0, 0}
+        (HDiv.hDiv.{0, 0, 0}
+          (HMul.hMul.{0, 0, 0} a
+            (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 4 (HPow.hPow.{0, 0, 0} Real.pi 2)) ↑ν)
+              ↑(Real.toNNReal t)))
+          (HAdd.hAdd.{0, 0, 0} a
+            (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 4 (HPow.hPow.{0, 0, 0} Real.pi 2)) ↑ν)
+              ↑(Real.toNNReal t))))
+        (HPow.hPow.{0, 0, 0}
+          (norm.{0}
+            ((SixBirdsNeedles.XiCore.hilbertKernelXi.{0, 0}
+                (SixBirdsDualityConfinement.RH.FiniteZeroWindows.invariantProbe W))
+              (SixBirdsDualityConfinement.RH.FiniteZeroWindows.displacementVector m W)))
+          2)))
+    (And
+      (Eq.{1}
+        (SixBirdsNeedles.NSCore.ComplexGaussianObservations.navierComplexWindowReadout a ν (Real.toNNReal t)
+          (SixBirdsDualityConfinement.RH.ComplexGaussianObservation.spectralCoordinate ↑ρ))
+        (HMul.hMul.{0, 0, 0}
+          (HPow.hPow.{0, 0, 0}
+            (HDiv.hDiv.{0, 0, 0} ↑Real.pi
+              ↑(HAdd.hAdd.{0, 0, 0} a
+                  (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 4 (HPow.hPow.{0, 0, 0} Real.pi 2)) ↑ν)
+                    ↑(Real.toNNReal t))))
+            (HDiv.hDiv.{0, 0, 0} (↑(Module.finrank.{0, 0} Real SixBirdsNeedles.NSCore.Space3)) 2))
+          (SixBirdsDualityConfinement.RH.ComplexGaussianObservation.spectralGaussian
+            (HDiv.hDiv.{0, 0, 0}
+              (HMul.hMul.{0, 0, 0} a
+                (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 4 (HPow.hPow.{0, 0, 0} Real.pi 2)) ↑ν)
+                  ↑(Real.toNNReal t)))
+              (HAdd.hAdd.{0, 0, 0} a
+                (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 4 (HPow.hPow.{0, 0, 0} Real.pi 2)) ↑ν)
+                  ↑(Real.toNNReal t))))
+            ↑ρ)))
+      (And
+        (Eq.{1}
+          (HAdd.hAdd.{0, 0, 0}
+            (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout a
+              SixBirdsNeedles.NSCore.ComplexGaussianObservations.thetaAxis
+              (SixBirdsDualityConfinement.RH.ComplexGaussianObservation.spectralCoordinate ↑ρ)
+              (SixBirdsNeedles.NSCore.maximalMildValue γ hγ ν hν g₀ t))
+            (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout a
+              SixBirdsNeedles.NSCore.ComplexGaussianObservations.thetaAxis
+              (SixBirdsDualityConfinement.RH.ComplexGaussianObservation.spectralCoordinate ↑ρ)
+              (SixBirdsNeedles.NSCore.nonlinearHeatDuhamel γ hγ ν hν
+                (SixBirdsNeedles.NSCore.maximalMildValue γ hγ ν hν g₀) t)))
+          (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexDirectionalStateReadout a
+            SixBirdsNeedles.NSCore.ComplexGaussianObservations.thetaAxis
+            (SixBirdsDualityConfinement.RH.ComplexGaussianObservation.spectralCoordinate ↑ρ)
+            ((SixBirdsNeedles.NSCore.heatEnergy ν (Real.toNNReal t)) g₀)))
+        (LE.le.{0}
+          (HMul.hMul.{0, 0, 0} (↑(m ρ))
+            (HPow.hPow.{0, 0, 0} (SixBirdsDualityConfinement.RH.FiniteZeroWindows.displacement ρ) 2))
+          (HPow.hPow.{0, 0, 0}
+            (norm.{0}
+              ((SixBirdsNeedles.XiCore.hilbertKernelXi.{0, 0}
+                  (SixBirdsDualityConfinement.RH.FiniteZeroWindows.invariantProbe W))
+                (SixBirdsDualityConfinement.RH.FiniteZeroWindows.displacementVector m W)))
+            2))))
+'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.joint_actual_zero_xi_and_navier_source_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.RHNavierPvNP.TriadObservationReturn.concrete_triad_gaussian_xi_span (γ : Real)
+  (hγ : LT.lt.{0} (5 / 2) γ) (ν t₀ : NNReal) (hν : LT.lt.{0} 0 ν) (ht₀ : LT.lt.{0} 0 t₀) (τ : Real) (hτ : LE.le.{0} 0 τ)
+  (hmem :
+    ∀ (i : Fin 3),
+      Membership.mem.{0, 0}
+        (SixBirdsNeedles.NSCore.admissibleMildTimes γ hγ ν hν
+          (SixBirdsNeedles.NSCore.solenoidalThetaHeatState ν t₀ hν ht₀ i))
+        τ)
+  (a : Real) (ha : LT.lt.{0} 0 a) (ρ : SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero)
+  (W : Finset.{0} SixBirdsDualityConfinement.RH.ClassicalZeroLedger.NontrivialZero)
+  (hW : SixBirdsDualityConfinement.RH.ActualInvolution.JReflectedWindow W) (hρ : Membership.mem.{0, 0} W ρ) {n : Nat}
+  (φ : SixBirdsHiddenness.PvNP.CNFSemantics.Formula n) (clause : SixBirdsHiddenness.PvNP.CNFSemantics.Clause n)
+  (i : Fin n) (choice : Bool) :
+  have t := HAdd.hAdd.{0, 0, 0} (Real.toNNReal τ) t₀;
+  have b := HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 4 (HPow.hPow.{0, 0, 0} Real.pi 2)) ↑ν) ↑t;
+  And
+    (Eq.{1} (SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.nonlinearFrameWindowExcess γ hγ ν t₀ hν ht₀ τ a W)
+      (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} a b) (HAdd.hAdd.{0, 0, 0} a b))
+        (HPow.hPow.{0, 0, 0}
+          (norm.{0}
+            ((SixBirdsNeedles.XiCore.hilbertKernelXi.{0, 0}
+                (SixBirdsDualityConfinement.RH.FiniteZeroWindows.invariantProbe W))
+              (SixBirdsDualityConfinement.RH.FiniteZeroWindows.displacementVector
+                SixBirdsDualityConfinement.RH.FiniteZeroWindows.unitWeights W)))
+          2)))
+    (And
+      (Eq.{1}
+        ((SixBirdsMetaMath.RHNavierPvNP.ConstantProbeComparison.finiteConstantProbe.{0}
+            (Subtype.{1} fun ρ => Membership.mem.{0, 0} W ρ))
+          (SixBirdsDualityConfinement.RH.FiniteZeroWindows.displacementVector
+            SixBirdsDualityConfinement.RH.FiniteZeroWindows.unitWeights W))
+        0)
+      (And
+        (Iff
+          (Ne.{1}
+            (HAdd.hAdd.{0, 0, 0}
+              (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ))
+              (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ)))
+            0)
+          (LT.lt.{0} 0
+            (HAdd.hAdd.{0, 0, 0}
+              (HPow.hPow.{0, 0, 0}
+                (norm.{0}
+                  ((SixBirdsNeedles.XiCore.hilbertNativeCurrency.{0, 0}
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)))
+                2)
+              (HPow.hPow.{0, 0, 0}
+                (norm.{0}
+                  ((SixBirdsNeedles.XiCore.hilbertKernelXi.{0, 0}
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)))
+                2))))
+        (And
+          (Iff
+            (LT.lt.{0} 0
+              ((SixBirdsMetaMath.RHNavierPvNP.ConstantProbeComparison.finiteConstantProbe.{0}
+                  (SixBirdsHiddenness.PvNP.CNFSemantics.Assignment n))
+                (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)))
+            (Membership.mem.{0, 0} SAT.L_SAT
+              (SAT.CNF.encode (SixBirdsHiddenness.PvNP.StandardSATBridge.toExternalFormula φ))))
+          (And
+            (Eq.{1}
+              (HAdd.hAdd.{0, 0, 0}
+                (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace
+                  (HAppend.hAppend.{0, 0, 0} φ (List.cons.{0} clause List.nil.{0}))
+                  SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                  (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ))
+                (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace
+                  (HAppend.hAppend.{0, 0, 0} φ (List.cons.{0} clause List.nil.{0}))
+                  SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                  (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ)))
+              (HSub.hSub.{0, 0, 0}
+                (HAdd.hAdd.{0, 0, 0}
+                  (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ))
+                  (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.satFrameTrace φ
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ)))
+                (HAdd.hAdd.{0, 0, 0}
+                  (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.clauseFailureFrameTrace φ clause
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameValue γ hγ ν t₀ hν ht₀ τ))
+                  (SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.clauseFailureFrameTrace φ clause
+                    SixBirdsMetaMath.RHNavierPvNP.FiniteSATGaussianObservation.binarySATCoordinate a
+                    (SixBirdsNeedles.NSCore.ComplexGaussianObservations.complexFrameDuhamel γ hγ ν t₀ hν ht₀ τ)))))
+            (And
+              (Eq.{1}
+                (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState
+                  (HAppend.hAppend.{0, 0, 0} φ
+                    (List.cons.{0} (SixBirdsHiddenness.PvNP.CNFSemantics.unitClause i choice) List.nil.{0})))
+                (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                  (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)))
+              (Eq.{1}
+                (HSub.hSub.{0, 0, 0}
+                  ((SixBirdsNeedles.XiCore.hilbertKernelXi.{0, 0}
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)))
+                  (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                    ((SixBirdsNeedles.XiCore.hilbertKernelXi.{0, 0}
+                        (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ))))
+                (HSub.hSub.{0, 0, 0}
+                  (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                    ((SixBirdsNeedles.XiCore.hilbertNativeCurrency.{0, 0}
+                        (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ)))
+                  ((SixBirdsNeedles.XiCore.hilbertNativeCurrency.{0, 0}
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satMeanProbe n))
+                    (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satUnitMask i choice
+                      (SixBirdsMetaMath.RHNavierPvNP.SATXiCurrency.satState φ))))))))))
+'SixBirdsMetaMath.RHNavierPvNP.TriadObservationReturn.concrete_triad_gaussian_xi_span' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u} : Type (u + 1)
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sound_base_noncollapse :
+  And
+    (∀
+      (c :
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{0}
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims),
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase c →
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0}
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims c)
+    (And
+      (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0}
+        SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims false)
+      (And
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0}
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.twoTrueClaims true)
+        (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase false)
+          (Not (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.selectiveTrueBase true)))))
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sound_base_noncollapse' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent_and_xEquivalent :
+  And
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{0} true
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier)
+    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.xEquivalent.{0} true
+      SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.closedTwoClaimCarrier)
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent_and_xEquivalent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.{u, v}
+  (language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}) : Type (max u (v + 1))
+SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility_hypotheses_satisfiable :
+  ∃ language signature acceptedImportsBase X C composite B,
+    And
+      (∀ (c : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{0} language),
+        acceptedImportsBase c →
+          SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{0} language c)
+      (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{0} X C)
+        (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{0} C)
+          (And
+            (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeComposition.{0, 0} signature B C composite
+              X)
+            (And
+              (And (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureZero.{0} composite)
+                (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{0} composite X))
+              (And
+                (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.typedContextDiscipline.{0}
+                  composite)
+                (And
+                  (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.aimedAt.{0} composite X)
+                  (And
+                    (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CoverageContext.{0}
+                      (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeSignature.coverage.{0, 0}
+                        signature)
+                      X composite)
+                    (And
+                      (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{0} X
+                        composite)
+                      (SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.BridgeObligationSchema.{0, 0} signature
+                        B C composite X)))))))))
+'SixBirdsMetaMath.MetaMath.Foreclosure.BridgeImpossibility.bridge_impossibility_hypotheses_satisfiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_of_classification.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hresidual : ∃ c, SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.residualClosureEquivalent.{u} C c)
+  (hclassification : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.CarrierClassificationSchema.{u} X C) :
+  Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C)
+    (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u} X C)
+      (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C)))
+'SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_of_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u}
+  (language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}) : Type u
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_v5_derivation_conjunct_of_v4.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (hv4 : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema.{u} signature)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (hscope : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u} signature X)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove) :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.IsDerivationRoute move →
+    Not (SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u} signature move X)
+'SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_v5_derivation_conjunct_of_v4' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_theorem.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (C : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.TypedPrimaryCarrier.{u} language)
+  (hcoverage : SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.CoverageSchema.{u} X C) :
+  Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent.{u} X C)
+    (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creTE.{u} X C)
+      (Or (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creBF.{u} X C)
+        (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.creCTMT.{u} X C)))
+'SixBirdsMetaMath.MetaMath.Foreclosure.Coverage.coverage_theorem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.attack_foreclosure_v4.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (hschema : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.AttackForeclosureV4Schema.{u} signature)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove)
+  (hscope : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u} signature X) :
+  Not (SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u} signature move X)
+'SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.attack_foreclosure_v4' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.Template.recognition_template_applicability
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplicabilitySchema)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c)
+  (hclosure : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SBClosureAssumption c)
+  (htemplate : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate c X)
+  (happlies : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplies c X htemplate) :
+  SixBirdsMetaMath.MetaMath.RecognitionMode.Template.LandsAtTheoremGrade c X
+'SixBirdsMetaMath.MetaMath.RecognitionMode.Template.recognition_template_applicability' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.verdict_signature
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.VerdictSignatureSchema)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c)
+  (htemplate : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SevenStageTemplate c X)
+  (happlies : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.TemplateApplies c X htemplate) :
+  And
+    (Eq.{1}
+      (SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.sweepVerdict htemplate
+        SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption.frameworkPrimitive)
+      SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict.ii)
+    (And
+      (Eq.{1}
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.sweepVerdict htemplate
+          SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption.sauNonDescent)
+        SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict.iii)
+      (Eq.{1}
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.sweepVerdict htemplate
+          SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.SweepOption.vDifferentialElevation)
+        SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.Verdict.ii))
+'SixBirdsMetaMath.MetaMath.RecognitionMode.VerdictSignature.verdict_signature' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.closure_content_thesis
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.ClosureContentThesisSchema)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure) (X : Prop)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c) :
+  And
+    (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.IsFormedLayerClosureContent
+      (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c X) c)
+    (And
+      (Not
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.IsDerivableFromFrameworkPrimitives
+          (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c X)))
+      (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.NamedAsAcceptedSource
+        (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c X) c))
+'SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.closure_content_thesis' does not depend on any axioms
+SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_foreclosure_v5.{u}
+  {language : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.{u}}
+  (signature : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InternalMoveSignature.{u} language)
+  (hschema : SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.AttackForeclosureV5Schema.{u} signature)
+  (c : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.FormedClosure)
+  (X : SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.Claim.{u} language)
+  (hcolumn : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.VDifferentialTSOColumn c)
+  (hclosure : SixBirdsMetaMath.MetaMath.RecognitionMode.Template.SBClosureAssumption c)
+  (hscope : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.InFrameworkScope.{u} signature X) :
+  And
+    (∀ (move : SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.FrameworkInternalMove),
+      SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.IsDerivationRoute move →
+        Not (SixBirdsMetaMath.MetaMath.Foreclosure.AttackForeclosure.advancesXWithoutExternal.{u} signature move X))
+    (And
+      (∀
+        (l :
+          SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.RecognitionModeLanding c
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)),
+        SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.ImportsAsNamedRecognition l
+          (SixBirdsMetaMath.MetaMath.RecognitionMode.ClosureContentThesis.loadBearingFor c
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)))
+      (∀
+        (_l :
+          SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.RecognitionModeLanding c
+            (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)),
+        SixBirdsMetaMath.MetaMath.RecognitionMode.Template.LandsAtTheoremGrade c
+          (SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.ClaimLanguage.interp.{u} language X)))
+'SixBirdsMetaMath.MetaMath.RecognitionMode.AttackForeclosureV5.attack_foreclosure_v5' does not depend on any axioms

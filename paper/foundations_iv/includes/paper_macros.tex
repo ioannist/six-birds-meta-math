@@ -1,0 +1,140 @@
+% Foundations IV — shared manuscript macros.
+% Stable, cross-section macros. Add macros incrementally as new
+% vocabulary stabilizes; never redefine locally inside a section.
+% Governed by the shared notation and terminology discipline.
+
+%--- axis labels (the 8 primitive-necessity axes of the F-IV catalog) -------
+\newcommand{\axisAccess}{Access}
+\newcommand{\axisClosure}{Closure}
+\newcommand{\axisStability}{Stability}
+\newcommand{\axisTransport}{Transport}
+\newcommand{\axisStatus}{Status}
+\newcommand{\axisRecords}{Records}
+\newcommand{\axisSymmetry}{Symmetry}
+\newcommand{\axisInterfaces}{Interfaces}
+\newcommand{\axisSelfReference}{Self-reference}
+
+%--- chapter groupings (the 6 drafting chapters that group the 8 axes) ------
+\newcommand{\chapAccess}{Access}
+\newcommand{\chapStability}{Stability}
+\newcommand{\chapTransport}{Transport}
+\newcommand{\chapSymmetry}{Symmetry}
+\newcommand{\chapStatusRecordsCoherence}{Status, Records, Coherence}
+\newcommand{\chapSelfReferenceLimits}{Self-Reference and Limits}
+\newcommand{\chapClosureRealityBoundary}{Closure--Reality Boundary}
+
+%--- catalog identity --------------------------------------------------------
+\newcommand{\FIV}{Foundations~IV}
+\newcommand{\FoundI}{Foundations~I}
+\newcommand{\FoundII}{Foundations~II}
+\newcommand{\FoundIII}{Foundations~III}
+\newcommand{\NumLaws}{52}
+\newcommand{\NumMechanizeNow}{46}
+\newcommand{\NumAnchor}{2}
+\newcommand{\NumPartial}{2}
+\newcommand{\NumObligation}{2}
+\newcommand{\NumAxes}{8}
+\newcommand{\NumChapters}{6}
+
+%--- quotient discipline (shared Transport / Access / Stability) ------------
+\newcommand{\currQ}{\pi^{\mathrm{cur}}}  % current quotient map
+\newcommand{\predM}{\pi^{\mathrm{pred}}} % predictive quotient map
+\newcommand{\splitObs}{\Delta}         % split-pair obstruction
+\newcommand{\quotMap}{\pi}             % quotient map
+\newcommand{\accessQ}{q_I}             % access quotient
+\newcommand{\obsSig}{\sigma_I}         % observation signature
+\newcommand{\closureForm}{\mathsf{cl}} % formed-closure operator
+\newcommand{\BirdInt}{\mathsf{BirdInt}}% interaction judgment
+
+%--- substrate-anchor notation (Papers 1, 3 -- present in inherited Lean) ---
+% Paper 1 (Adequacy Residuals) — for F6/F8 anchor paragraphs.
+% Note: \Xi is a built-in Greek letter; we use it directly without
+% redefinition. The adequacy residual is written $\Xi(D \mid L)$.
+\newcommand{\Kdom}{K^{D}}              % dominator
+\newcommand{\Kloss}{K^{L}}             % loss
+\newcommand{\Schur}{\mathsf{Schur}}    % Schur identity
+% Paper 3 (AOR) — for F53 anchor paragraph
+\newcommand{\ClSB}{\mathrm{Cl}_{\mathrm{SB}}}  % reflective closure operator
+\newcommand{\etaSB}{\eta_{\mathrm{SB}}} % AOR unit
+\newcommand{\XiSB}{\Xi_{\mathrm{SB}}}   % AOR residual
+
+%--- substrate-anchor notation (Papers 2, 6 -- substrate_pending in Lean) ----
+% Paper 2 (SDTC) / Paper 6 (RH) — for F14 paragraph
+\newcommand{\Jinv}{J}                  % involution
+\newcommand{\Fixinv}{\mathrm{Fix}(\Jinv)}  % involution fixity set
+\newcommand{\trAX}{\operatorname{tr}}  % trace functional
+
+%--- normal-form template (uniform across all 52 laws) ----------------------
+% Use these environments to wrap the catalog laws in body prose.
+% Each F-IV law follows the 6-part template: Setup → Theorem → Proof
+% spine → Case enumeration → BirdInt status → Nonclaims.
+\newcommand{\NormalForm}[1]{\textbf{Normal form #1}}
+\newcommand{\SetupBlock}{\textit{Setup.}}
+\newcommand{\ProofSpine}{\textit{Proof spine.}}
+\newcommand{\CaseEnum}{\textit{Cases.}}
+\newcommand{\BirdIntStatus}{\textit{Interaction status.}}
+\newcommand{\Nonclaims}{\textit{Nonclaims.}}
+
+%--- status tags (display form for paper text) ------------------------------
+% Body prose uses these textual descriptions; the literal Lean tag
+% strings (`# obligation`, `# substrate_pending`) appear only in
+% app:formalization per feedback_academic_register.md.
+\newcommand{\statTheorem}{Theorem}
+\newcommand{\statPartial}{Partial}
+\newcommand{\statObligation}{obligation (axiom, opacity-guarded)}
+\newcommand{\statAnchor}{Anchor}
+\newcommand{\statSubstratePending}{substrate-pending (axiom-applied)}
+
+%--- anchor cross-reference shorthands --------------------------------------
+% These are paper-prose hooks for the substrate papers. They expand
+% to descriptive title phrases, not the in-house ``Paper N'' series
+% numbering. Bibtex keys live in paper/references.bib.
+\newcommand{\PaperAR}{the adequacy-residuals paper}
+\newcommand{\PaperSDTC}{the self-dual trace confinement paper}
+\newcommand{\PaperAOR}{the audited-operational-realisability paper}
+\newcommand{\PaperNeedleKiller}{the needle-killer paper}
+\newcommand{\PaperNS}{the Navier--Stokes paper}
+\newcommand{\PaperRH}{the Riemann Hypothesis paper}
+\newcommand{\PaperPvNP}{the P versus NP paper}
+\newcommand{\PaperCSL}{the CSL paper}
+
+%--- opacity-guard predicate names (display form in body prose) -------------
+% In body text the predicate is named descriptively; the literal Lean
+% predicate name appears only in app:formalization.
+\newcommand{\GuardPvNP}{saturated-SAT source predicate}
+\newcommand{\GuardCSL}{CSL diagnosis source predicate}
+\newcommand{\GuardDuality}{duality-fixity substrate-anchor predicate}
+\newcommand{\GuardSSB}{future branch-selection formation source predicate}
+
+%--- canonical theorem-name shortcuts (for cross-references in body) --------
+% These render the canonical paper-prose names so cross-references are
+% mechanically enforced. Add as needed during drafting.
+\newcommand{\thmDescentRepair}{Descent--Repair Normal Form}
+\newcommand{\thmHolonomyMemory}{Holonomy-Memory Repair Normal Form}
+\newcommand{\thmLocalGlobalObstruction}{Local--Global Obstruction Normal Form}
+\newcommand{\thmRecombinationComparison}{Recombination Comparison}
+\newcommand{\thmNoNeedles}{No-Needles Stability}
+\newcommand{\thmSufficiencyClosure}{Sufficiency Closure}
+\newcommand{\thmStrictExtension}{Strict Extension}
+\newcommand{\thmNoUnstatusedResidual}{No Unstatused Residual}
+\newcommand{\thmQuotientality}{Quotientality}
+\newcommand{\thmAdequacy}{Adequacy / No-Overread}
+\newcommand{\thmNoFreeDistinction}{No-Free-Distinction}
+\newcommand{\thmHiddenness}{Hiddenness Normal Form}
+\newcommand{\thmCSLFormedClosure}{CSL Formed-Closure Law}
+\newcommand{\thmLayerMultiplicity}{Layer Multiplicity}
+\newcommand{\thmDualityFixity}{Duality Fixity}
+\newcommand{\thmSelectionObstruction}{Selection Obstruction}
+\newcommand{\thmSpontaneousSSB}{Spontaneous Symmetry Breaking}
+\newcommand{\thmAnomalySymmetry}{Anomaly / Symmetry Obstruction}
+\newcommand{\thmDualityEquivalence}{Duality Equivalence}
+\newcommand{\thmFactRecordFormation}{Fact / Record Formation}
+\newcommand{\thmHorizonSufficiency}{Horizon Sufficiency}
+\newcommand{\thmClosureRealityBoundary}{Closure--Reality Boundary}
+\newcommand{\thmClosureCompletenessBoundary}{Closure Completeness Boundary}
+% Additional thm* shortcuts are added only when body prose needs them.
+
+% F-code of a catalog row, printed as a link to its numbered result.
+\makeatletter
+\newcommand{\Fref}[1]{\@ifundefined{r@thm:#1}{\@ifundefined{r@lem:#1}{\@ifundefined{r@prop:#1}{#1}{\hyperref[prop:#1]{#1}}}{\hyperref[lem:#1]{#1}}}{\hyperref[thm:#1]{#1}}}
+\makeatother

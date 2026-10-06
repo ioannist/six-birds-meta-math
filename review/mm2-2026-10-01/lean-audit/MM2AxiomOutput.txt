@@ -1,0 +1,37 @@
+'SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.MetaMath.Foreclosure.TypeFiniteForeclosure.classify_spec' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.navierHeatWindowExcess_eq_rh_xi' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.actual_zero_gaussian_eq_navier_heat_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavier.ComplexGaussianNavierRHBridge.normalizedNonlinearFrameReadout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavierPvNP.ExternalSATGaussianLanguage.exists_positive_common_theta_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavierPvNP.ExternalSATGaussianLanguage.gaussianSATLanguage_eq_L_SAT' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavierPvNP.ProbePreservingTransportNoGo.no_probe_preserving_transport_to_sat' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.arithmetic_zero_window_closure_iff_rh' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.navier_global_mild_of_two_channel_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.RHNavier.JointSixBirdsObservationReturn.navier_pointwise_physical_pde_of_hilbert_xi_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.sound_base_noncollapse' does not depend on any axioms
+'SixBirdsMetaMath.MetaMath.Foreclosure.CarrierDichotomy.nonXEquivalent_and_xEquivalent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

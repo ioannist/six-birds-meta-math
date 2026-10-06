@@ -1,0 +1,166 @@
+\section{Formal verification}\label{app:formalization}
+
+\subsection{Setting}\label{app:formalization:setting}
+
+The results of this paper are formalized in Lean~4
+\cite{deMouraUllrich2021Lean4}, version 4.28.0, with Mathlib
+\cite{MathlibCommunity2020Lean} at revision \texttt{8f9d9cff}.  The
+Gaussian results of \Cref{sec:gaussian-bridge,sec:triad-bridge} use the
+Lean libraries of the companion papers: the Navier--Stokes and
+adequacy-residual libraries for mild solutions, the heat semigroup and
+the residual projection \(\Xi(L)\), the Riemann-hypothesis library for
+the zeros of the completed zeta function and their reflection, and the
+P-versus-NP library, built on complexitylib \cite{Schlesinger2026Complexitylib},
+for CNF semantics and the bitstring encoding of \(L_{\mathrm{SAT}}\).
+The code is in the repositories
+\url{https://github.com/ioannist/six-birds-meta-math},
+\url{https://github.com/ioannist/six-birds-needles},
+\url{https://github.com/ioannist/six-birds-duality-confinement} and
+\url{https://github.com/ioannist/six-birds-hiddenness}; the first
+depends on the other three, which are expected to be checked out side
+by side with it.  As in the Navier--Stokes companion,
+velocity fields are represented by their Sobolev-weighted Fourier
+states (\Cref{sec:gaussian-bridge}), and the mild solution and the
+Duhamel term are defined in these coordinates.  The zeros of the
+completed zeta function, the completed zeta function itself and the
+statement of the Riemann hypothesis are those of Mathlib.
+
+The formal counterparts of \Cref{sec:foreclosure,sec:recognition} are
+written as follows.  Claims are elements of a type with an
+interpretation into propositions, so that distinct claims can have the
+same truth value (\Cref{sec:apparatus:closure-formation}).  Primitive
+predicates are either parameters of the statements, collected in
+signature records, or opaque constants about which nothing is assumed.
+Each conditional schema is a definition of a proposition; it is never
+asserted, and the results that use a schema take it as an explicit
+hypothesis.  For the Coverage schema the formal definition is the
+per-instance conclusion, without the aiming, typing and coverage-context
+guards of the displayed statement; it is thus a stronger proposition,
+used only as a hypothesis.  Primitive
+predicates of \Cref{sec:recognition}, including the template-applies
+predicate, are opaque constants; the seven stage propositions of a
+template record are not used in their definition.  Formal verification
+therefore confirms the logical shape of the statements of
+\Cref{sec:foreclosure,sec:recognition,sec:calibration} and the
+identities of \Cref{sec:gaussian-bridge,sec:triad-bridge}; it confirms
+no interpretation of the framework's predicates.  In \Cref{sec:foreclosure} the carrier residual is a matrix
+over the rationals given by an explicit formula; only the proposition
+\(R_{C}=0\) is used.
+
+\subsection{Correspondence}\label{app:formalization:master-mapping}
+
+\Cref{tab:formal-correspondence} lists the formal counterpart of every
+numbered statement.  Identifiers are relative to the namespace
+\leanid{SixBirdsMetaMath}; we abbreviate
+\leanid{MetaMath.Foreclosure} as \leanid{F},
+\leanid{MetaMath.RecognitionMode} as \leanid{R} and
+\leanid{MetaMath.CalibrationFamily} as \leanid{C}.  The statuses are:
+\emph{proved}, a theorem with no hypotheses beyond those stated in the
+paper; \emph{proved from} (Cls), (BO) or coverage, a theorem taking that
+schema instance as a hypothesis; \emph{schema}, a definition of the
+schema as a proposition, not asserted; \emph{definition} and
+\emph{primitive}, for definitions and for primitive predicates.
+
+\begingroup\small
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}@{}}
+\caption{Formal counterparts of the numbered statements.}\label{tab:formal-correspondence}\\
+\toprule
+Statement & Declarations & Status\\
+\midrule
+\endfirsthead
+\toprule
+Statement & Declarations & Status\\
+\midrule
+\endhead
+\Cref{def:carrier-residual} & \leanid{F.CarrierDichotomy.carrierResidual} & definition (matrix form)\\
+\Cref{def:typed-primary-carrier} & \leanid{F.CarrierDichotomy.ClaimLanguage}, \leanid{F.CarrierDichotomy.TypedPrimaryCarrier} & definition\\
+\Cref{def:four-typed-states} & \leanid{F.CarrierDichotomy.xEquivalent}, \leanid{nonXEquivalent}, \leanid{creTE}, \leanid{creBF}, \leanid{creCTMT}, \leanid{NativeClosureOutcome} & definition\\
+\Cref{def:coverage-ctx} & \leanid{F.CarrierDichotomy.CoverageContext} & primitive\\
+\Cref{thm:carrier-dichotomy} & \leanid{F.CarrierDichotomy.carrier_dichotomy}; (Cls) is \leanid{CarrierClassificationSchema} & proved from (Cls)\\
+\Cref{def:carrier-side-typed-bridge} & \leanid{F.BridgeImpossibility.BridgeSignature}, \leanid{TypedBridge}, \leanid{BridgeComposition} & primitive\\
+\Cref{def:x-strength-obligation} & \leanid{F.BridgeImpossibility.XStrengthObligation} & primitive\\
+\Cref{cor:bridge-impossibility} & \leanid{F.BridgeImpossibility.bridge_impossibility}; (BO) is \leanid{BridgeObligationSchema}; joint satisfiability: \leanid{bridge_impossibility_hypotheses_satisfiable} & proved from (Cls) and (BO)\\
+\Cref{thm:coverage} & \leanid{F.Coverage.CoverageSchema}; derivation from (Cls): \leanid{F.Coverage.coverage_of_classification} & schema\\
+\Cref{thm:type-finite-foreclosure} & \leanid{F.TypeFiniteForeclosure.type_finite_foreclosure}; the choice of state: \leanid{classify}, \leanid{classify_spec} & proved from coverage\\
+\Cref{def:in-scope} & \leanid{F.AttackForeclosure.InternalMoveSignature}, \leanid{InFrameworkScope}, \leanid{advancesXWithoutExternal} & primitive\\
+\Cref{thm:attack-foreclosure-v4} & \leanid{F.AttackForeclosure.AttackForeclosureV4Schema} & schema\\
+\Cref{thm:ctmt-recursion} & \leanid{F.CTMTRecursion.ctmt_recursion} & proved\\
+\Cref{def:vdiff-tso-column} & \leanid{R.Template.VDifferentialTSOColumn} & primitive; the second column is not formalized\\
+\Cref{def:applies} & \leanid{R.Template.SevenStageTemplate}, \leanid{TemplateApplies} & record; primitive\\
+\Cref{thm:template-applicability} & \leanid{R.Template.TemplateApplicabilitySchema} & schema\\
+\Cref{def:three-option-sweep} & \leanid{R.VerdictSignature.SweepOption}, \leanid{Verdict}, \leanid{sweepVerdict} & definition; primitive map\\
+\Cref{thm:verdict-signature} & \leanid{R.VerdictSignature.VerdictSignatureSchema} & schema\\
+\Cref{def:load-bearing} & \leanid{R.ClosureContentThesis.loadBearingFor} & primitive\\
+\Cref{thm:closure-content-thesis} & \leanid{R.ClosureContentThesis.ClosureContentThesisSchema} & schema\\
+\Cref{thm:attack-foreclosure-v5} & \leanid{R.AttackForeclosureV5.AttackForeclosureV5Schema}; first clause from \Cref{thm:attack-foreclosure-v4}: \leanid{attack_v5_derivation_conjunct_of_v4} & schema\\
+\Cref{thm:joint-gaussian-return} & \leanid{RHNavier.JointSixBirdsObservationReturn.joint_actual_zero_xi_and_navier_source_return}; parts (1) and (2) without the fluid hypotheses: \leanid{RHNavier.ComplexGaussianNavierRHBridge.navierHeatWindowExcess_eq_rh_xi}, \leanid{actual_zero_gaussian_eq_navier_heat_readout} & proved\\
+\Cref{thm:concrete-triad-gaussian-xi} & \leanid{RHNavierPvNP.TriadObservationReturn.concrete_triad_gaussian_xi_span}; normalized frame value: \leanid{RHNavier.ComplexGaussianNavierRHBridge.normalizedNonlinearFrameReadout}; existence of a positive admissible frame time: \leanid{RHNavierPvNP.ExternalSATGaussianLanguage.exists_positive_common_theta_time} & proved\\
+\Cref{def:calibration} & \leanid{C.Structure.Calibration}, \leanid{calibrationFamily} & definition\\
+\Cref{thm:calibration-family-structure} & \leanid{C.Structure.calibration_family_structure} & proved\\
+\Cref{def:four-axis-profile} & \leanid{C.RebadgeDiscipline.CalibrationProfile}, \leanid{isRebadgeOf}, \leanid{genuinelyNew} & definition\\
+\Cref{thm:rebadge-discipline} & \leanid{C.RebadgeDiscipline.rebadge_discipline} & proved\\
+\Cref{def:calibration-side-typed-bridge} & \leanid{C.BridgesAsTheorems.TypedBridge} & definition\\
+\Cref{def:bridge-kind} & \leanid{C.BridgesAsTheorems.BridgeKind} & definition\\
+\Cref{thm:bridges-as-theorems} & \leanid{C.BridgesAsTheorems.bridges_as_theorems} & proved\\
+\Cref{def:calibration-bridge-reversal} & \leanid{C.BridgeTypeDirection.TypedBridge.reverse} & definition\\
+\Cref{thm:bridge-type-direction} & \leanid{C.BridgeTypeDirection.bridge_type_direction} & proved\\
+\Cref{thm:coverage-family-geometry} & \leanid{C.CoverageFamilyGeometry.coverage_family_geometry}, \leanid{all_covered_regions_in_family}, \leanid{all_uncovered_regions_not_in_family}, \leanid{bounded_depth_overlap}, \leanid{empty_coverage_adds_nothing} & proved\\
+\Cref{def:framework-type} & \leanid{C.FrameworkTypeSelfChar.FrameworkType}, \leanid{typesMatch}, \leanid{pvnpFrameworkType}, \leanid{standardClayPvNPType} & definition\\
+\Cref{thm:framework-type-self-char} & \leanid{C.FrameworkTypeSelfChar.framework_type_self_characterization} & proved\\
+\Cref{sch:framework-type-pending} & \leanid{C.FrameworkTypeSelfChar.FrameworkTypeGeneralSchema} & schema\\
+\Cref{def:functorial-gate} & \leanid{C.FunctorialGates.FunctorialGate} & definition\\
+\Cref{cat:named-functorial-gates} & \leanid{C.FunctorialGates.named_functorial_gates} & proved\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Some unnumbered statements are also formalized.  In
+\Cref{sec:apparatus,sec:foreclosure}: a sound set of accepted claims
+that accepts one true claim and rejects another
+(\leanid{F.CarrierDichotomy.sound_base_noncollapse}), and a carrier that
+is both \nonXequiv\ and \Xequiv\
+(\leanid{F.CarrierDichotomy.nonXEquivalent_and_xEquivalent}).  In
+\Cref{sec:gaussian-bridge}: the equivalence of \(\mathcal A_{a,\nu,t}\)
+with the Riemann hypothesis
+(\leanid{RHNavier.JointSixBirdsObservationReturn.arithmetic_zero_window_closure_iff_rh})
+and the two conditional Navier--Stokes returns
+(\leanid{navier_global_mild_of_two_channel_closure},
+\leanid{navier_pointwise_physical_pde_of_hilbert_xi_closure}).  In
+\Cref{sec:triad-bridge}: the impossibility of a probe-preserving map
+(\leanid{RHNavierPvNP.ProbePreservingTransportNoGo.no_probe_preserving_transport_to_sat})
+and the identification of the formulas with positive Gaussian mass with
+\(L_{\mathrm{SAT}}\)
+(\leanid{RHNavierPvNP.ExternalSATGaussianLanguage.gaussianSATLanguage_eq_L_SAT}).
+
+\subsection{What is not formally verified}\label{app:formalization:not-verified}
+
+\begin{itemize}
+\item The conditional schemas.  They are stated, not proved, and no
+  result of the paper assumes one except as an explicit hypothesis.
+\item The meaning of the primitive predicates.  A result about a
+  primitive predicate holds for every interpretation of it; that an
+  intended interpretation has the stated properties is not verified.
+\item The column placements, which are hypotheses of the hiddenness
+  companion, and the verdicts of \Cref{tab:verdict-signature}, which are
+  this paper's reading of the applications.
+\item The descriptions of the companion papers in
+  \Cref{sec:validation,sec:audit}, and the interpretations of the
+  calibration labels and coverage regions in \Cref{sec:calibration}.
+\item The statements of classical results quoted in the text.
+\item That the library definitions of weighted Fourier states, mild
+  solutions, the Duhamel term, the heat semigroup and the residual
+  projection agree with the classical objects they model; this is a
+  matter of reading the definitions, which are those of the companion
+  libraries.
+\end{itemize}
+
+\subsection{Trust base}\label{app:formalization:trust}
+
+Every declaration named in this appendix depends only on Lean's
+standard axioms \texttt{propext}, \texttt{Classical.choice} and
+\texttt{Quot.sound}; the modules of this paper declare no further
+axioms.  Beyond these axioms, the trusted base consists of the Lean
+kernel and the libraries named above.  The repository also contains a
+separate development for another paper of the series, which likewise
+declares no axioms.

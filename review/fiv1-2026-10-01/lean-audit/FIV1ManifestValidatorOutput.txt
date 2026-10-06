@@ -1,0 +1,1 @@
+manifest check passed: main=22 entries, xi=13 entries, ns=37 entries, aor=47 entries, trust_base=5 axioms, section_module_map covers every queued section

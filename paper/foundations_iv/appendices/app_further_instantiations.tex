@@ -1,0 +1,2315 @@
+\section{Further layer instantiations}\label{app:further-instantiations}
+
+This appendix collects the analogies that accompany the laws of the catalog, beyond those kept beside each law. They are grouped by law, in the order of the chapters, and all tagged as analogies; every special case is kept in the body.
+
+\subsection*{\Fref{F10} Quotientality}
+\begingroup\small
+\begin{description}
+\item[\emph{Trubetzkoy phonemic principle (structural linguistics).}] \textit{Analogy.}
+For a language \(L\), the phoneme inventory \(\mathcal P_L\) is a
+partition of phonetic realisations preserving every
+morpheme-distinguishing minimal-pair contrast.  Two phones that
+produce a minimal pair belong to distinct phonemes; phones that never
+do are grouped into one phoneme only when they are also phonetically
+similar (English \emph{h} and the final nasal of \emph{sing} never
+contrast yet are distinct phonemes), so non-contrast alone is not an
+equivalence.  Every morpheme-discriminating phonological observable
+factors through the phoneme map, and merging two phonemes that form
+a minimal pair collapses a morpheme distinction \(L\) tracks
+\citep{Trubetzkoy1939GrundzugePhonologie}.
+
+\item[\emph{Categorical perception of voice onset time (cognitive
+psychophysics).}] \textit{Analogy.}
+For a synthesised voice-onset-time continuum spanning \(/{\!b}/\) to
+\(/{\!p}/\), human listeners exhibit \emph{categorical perception}:
+within-category {ABX} discrimination is weak, falling toward but
+generally not to chance, while between-category discrimination peaks
+at the boundary near \(+25\)~ms.  Liberman and colleagues first
+showed this pattern on a place-of-articulation continuum
+(\(/{\!b}/\)--\(/{\!d}/\)--\(/{\!g}/\)).  The phonetic-category
+partition is the coarsest equivalence on the acoustic continuum
+preserving the identification probe, which factors through the
+phonetic-category map; the ABX probe factors through it up to the
+residual within-category discrimination
+\citep{LibermanHarrisHoffmanGriffith1957Discrimination}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F11} Adequacy / No-Overread}
+\begingroup\small
+\begin{description}
+\item[\emph{Post-processing invariance of differential privacy
+(cryptography / privacy).}] \textit{Analogy.}
+For an \((\varepsilon,\delta)\)-differentially-private mechanism
+\(M:\mathcal D\to\mathcal R\), the post-processing property of differential privacy (proved for \(\varepsilon\)-DP by Dwork--McSherry--Nissim--Smith, and holding equally for \((\varepsilon,\delta)\)-DP) states that for any (possibly
+randomised) \(g:\mathcal R\to\mathcal W\), the composition
+\(g\circ M\) is itself \((\varepsilon,\delta)\)-DP.  Every post-processing
+of \(M\) is therefore again \((\varepsilon,\delta)\)-DP; a published quantity whose
+neighboring-database distinguishability exceeds the
+\(e^{\varepsilon}\!\cdot\!\!\ (\cdot)+\delta\) bound is the
+overread failure --- evidence of access outside \(M\)'s
+randomisation
+\citep{DworkMcSherryNissimSmith2006CalibratingNoise}.
+
+\item[\emph{Registered Reports / preregistered analyses (scientific
+methodology).}] \textit{Analogy.}
+In the Registered Reports format the access quotient is the
+\emph{Stage~1 preregistered protocol together with the locked
+dataset}: confirmatory claims must be computable from those two
+inputs alone, and any two execution histories sharing them must
+produce the same confirmatory verdict.  HARKing, p-hacking, and
+outcome switching are overread failures: a published claim
+presented as confirmatory but computed from post-hoc analytic
+choices fails to factor through the declared protocol-plus-data
+quotient
+\citep{Chambers2013RegisteredReports}.
+
+\item[\emph{Federal Rules of Evidence: admissibility (legal
+procedure).}] \textit{Analogy.}
+Under the U.S. Federal Rules of Evidence (Rules 401--403 on
+relevance, Rule 802 on hearsay), a finding of fact must factor
+through the admitted-evidence quotient of the case record: two
+factually distinct records with identical admitted-evidence content
+must yield the same verdict.  A verdict resting on inadmissible
+evidence is reversible error unless harmless, instantiating the
+\Fref{F11} overread failure
+\citep{FRE2024FederalRulesEvidence}.
+
+\item[\emph{Halpern--Moses common knowledge (distributed-systems
+epistemic discipline).}] \textit{Analogy.}
+For a process \(i\) in a distributed system with local-state map
+\(r_i\) and induced indistinguishability \(\sim_i\), the Kripke
+semantics for \(K_i\varphi\) says that the truth of
+\(K_i\varphi\) at a global state factors through \(r_i\): two
+global states with the same local state for \(i\) make
+\(K_i\varphi\) hold or fail together.  Accepted knowledge claims
+by process \(i\) are therefore exactly those determined by its
+view; a claim that depends on global state beyond \(r_i\) is the
+overread failure.  Common knowledge \(C_G\varphi\) for a group \(G\)
+is the group-level case: its truth factors through the finest
+partition coarser than every local view \(r_i\), \(i\in G\), so it
+holds or fails together on each connected component of the union of
+the relations \(\sim_i\)
+\citep{HalpernMoses1990KnowledgeCommonKnowledge}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F12} No-Free-Distinction}
+\begingroup\small
+\begin{description}
+\item[\emph{Wolpert no-free-lunch theorem (statistical learning).}] \textit{Analogy.}
+For supervised learning on a finite input space, averaged uniformly
+over all possible target functions, every learning algorithm
+achieves the same expected off-training-set error.  Off-sample
+generalization is not a distinction obtainable from training data
+alone; it requires the declared apparatus extension of an
+inductive bias --- a hypothesis class restriction, a prior, or a
+regulariser --- without which Wolpert's averaging identity collapses
+every learner to chance
+\citep{Wolpert1996NoFreeLunch}.
+
+\item[\emph{Wootters--Zurek no-cloning theorem (quantum mechanics).}] \textit{Analogy.}
+No unitary on \(\mathcal H_S\otimes\mathcal H_A\) sends
+\(|\psi\rangle|0\rangle\) to \(|\psi\rangle|\psi\rangle\) for every
+unknown \(|\psi\rangle\); the linearity of unitary evolution
+forbids perfect copying of an unknown quantum state.  Acquiring a
+distinguishing measurement of \(|\psi\rangle\) requires either
+declaring a measurement basis (with collapse) or accepting the
+fidelity bound of an approximate cloner --- the \Fref{F12} apparatus
+cost in either case
+\citep{WoottersZurek1982NoCloning}.
+
+\item[\emph{Goldwasser--Micali semantic security (cryptography).}] \textit{Analogy.}
+For an IND-CPA secure probabilistic public-key encryption scheme,
+no probabilistic polynomial-time adversary holding only the public
+key and a challenge ciphertext can distinguish encryptions of two
+adversarially chosen messages with non-negligible advantage.
+Producing such a distinction requires apparatus extension --- the
+secret key, a decryption oracle, or super-polynomial computation
+breaking the underlying trapdoor (quadratic residuosity, factoring)
+\citep{GoldwasserMicali1984ProbabilisticEncryption}.
+
+\item[\emph{Myerson revenue equivalence (mechanism design).}] \textit{Analogy.}
+In a symmetric independent-private-values auction, Myerson's envelope-formula characterisation shows that in every
+incentive-compatible mechanism the allocation rule fixes each
+bidder's interim expected payment up to a constant, the payment of
+the lowest type, so mechanisms with the same allocation rule and
+lowest-type payments raise the same expected revenue; any
+incentive-compatible mechanism whose allocation responds to private
+values leaves the bidders an information rent.  An allocation-only mechanism with no transfers collapses
+to type-pooling
+\citep{Myerson1981OptimalAuctionDesign}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F13a} Hiddenness Normal Form}
+\begingroup\small
+\begin{description}
+\item[\emph{Pearl back-door criterion and \(do\)-calculus (causal
+inference).}] \textit{Analogy.}
+In a causal DAG with observed variables \(V\) and unobserved
+confounders \(U\), an unblocked back-door path from \(X\) to \(Y\)
+through a common ancestor in \(U\) is the canonical witness of a
+hidden upstream determining state.  The observational/interventional
+gap \(P(Y\mid X)\ne P(Y\mid \mathrm{do}(X))\) is then the named
+predictive surplus inside a \(P(V)\)-fiber, and \(do\)-calculus
+gives rules for deciding when causal effects remain nonparametrically identifiable, for instance via a back-door adjustment set or a front-door mediator (an instrumental variable alone generally does not identify the causal effect; additional identifying assumptions are needed, and these need not be parametric)
+\citep{Pearl1995CausalDiagrams}.
+
+\item[\emph{Le Verrier's prediction of Neptune (celestial
+mechanics).}] \textit{Analogy.}
+In 1845--1846, Le Verrier and (independently, from 1843) Adams analysed the residual
+perturbations of Uranus's orbit after accounting for all
+gravitational influences then catalogued.  The unexplained
+predictive surplus in Uranus's observed position was interpreted as
+the gravitational signature of an undiscovered upstream determining
+state, and Le Verrier computed an ecliptic-longitude prediction
+which Galle confirmed telescopically on 1846 September 23 within
+\(1^\circ\) of Le Verrier's position: the lawful exposure of the
+hidden planet Neptune
+\citep{LeVerrier1846RecherchesUranus}.
+
+\item[\emph{{\AA}str{\"o}m belief-MDP reduction for {POMDPs}
+(reinforcement learning).}] \textit{Analogy.}
+For a partially observable Markov decision process, two histories
+sharing the current observation can yield different distributions
+over future observation--reward sequences only when their belief
+states (posteriors over the hidden Markov state) differ; distinct
+belief states need not yield distinct distributions.
+{\AA}str{\"o}m's 1965 reduction theorem realises the lawful exposure:
+the POMDP is equivalent to a fully observed MDP on the
+continuous-belief simplex \(\Delta(S)\), with the belief state as a sufficient upstream-quotient refinement,
+not in general the minimal one, that resolves the
+observation-fiber surplus
+\citep{Astrom1965OptimalControlIncomplete}.
+
+\item[\emph{Fisher's epistatic variance component (quantitative
+genetics).}] \textit{Analogy.}
+Under the Cockerham--Kempthorne orthogonal decomposition,
+phenotypic variance partitions as
+\(\operatorname{Var}(Y)=V_A+V_D+V_I+V_E\) with
+\(V_I\) the epistatic interaction component.  A non-zero \(V_I\) is
+the named witness of an upstream multi-locus determining state:
+the phenotypic variability within a single-locus marginal fiber
+that additive single-locus regression cannot explain corresponds
+under the declared decomposition to hidden gene--gene interaction
+structure
+\citep{Fisher1918CorrelationRelatives}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F13b} CSL Formed-Closure Law}
+In each item the determining readout \(d\) is the named hidden cause (assignable cause, implementation defect, orbiting body, resonance); the analogy asserts neither that \(d\) is determining nor that the cited source establishes it.
+\begingroup\small
+\begin{description}
+\item[\emph{Shewhart statistical process control (industrial
+quality engineering).}] \textit{Analogy.}
+In a formed manufacturing closure with declared in-control mean
+\(\mu\), standard deviation \(\sigma\), and \(3\sigma\) control
+limits calibrated from a baseline period, an out-of-control signal
+(point outside the control limits or a non-random run pattern) is
+the named predictive surplus that triggers root-cause investigation
+into an assignable cause --- tool wear, raw-material change,
+operator effect, environmental drift --- under declared sampling
+assumptions (a sampling rule, baseline independence, and identical
+distribution).  The control-chart signal is a witness, not
+a proof: false alarms exist under the in-control distribution at the
+declared rate
+\citep{Shewhart1931EconomicControl}.
+
+\item[\emph{Model checking against a temporal-logic specification
+(formal verification).}] \textit{Analogy.}
+For a finite-state model \(M\) and a temporal-logic
+specification \(\varphi\) (branching-time CTL in the cited algorithm,
+linear-time LTL in SPIN), an explicit-state or symbolic
+model-checker produces a counterexample trace \(\tau\) when
+\(M\not\models\varphi\) for a linear-time or universal property.  The trace is the named predictive surplus
+witnessing a hidden upstream defect in the implementation that the
+declared specification was meant to forbid, with lawful exposure via
+the automated checker (SPIN, NuSMV, TLC for TLA+ specifications)
+under declared model-checking assumptions (a closed system, finite
+state, a fair scheduler, and sound temporal-logic semantics)
+\citep{ClarkeEmersonSistla1986AutomaticVerification}.
+
+\item[\emph{Exoplanet detection by radial velocity and transit
+(observational astronomy).}] \textit{Analogy.}
+For a formed exoplanet-detection closure with declared instrument
+(spectrograph + Doppler pipeline; or photometric transit pipeline)
+and declared sensitivity (Doppler precision in m\,s\(^{-1}\);
+photometric precision in ppm), a periodic radial-velocity
+oscillation or photometric dimming inconsistent with stellar
+activity is the named predictive surplus witnessing a hidden
+orbiting body.  Mayor and Queloz realised this lawful exposure with
+the 1995 detection of 51 Pegasi b, the first confirmed exoplanet
+around a Sun-like star
+\citep{MayorQueloz199551Pegasi}.
+
+\item[\emph{{LHC} Higgs-boson discovery as resonance detection
+(high-energy physics).}] \textit{Analogy.}
+For a formed LHC search closure with declared integrated luminosity,
+detector acceptance \(\times\) efficiency, and background-only
+prediction (Standard-Model processes excluding the hypothesised
+Higgs), an observed event yield exceeding the background-only model
+by \(\ge 5\sigma\) in a signal region is the named predictive
+surplus witnessing a hidden upstream resonance / particle predicted
+by the broader theory.  The ATLAS 2012 observation of a 125 GeV
+resonance in declared diphoton and four-lepton mass windows realised
+the lawful exposure, with follow-up spin-parity and branching-ratio
+measurements identifying the Standard-Model Higgs boson
+\citep{ATLAS2012HiggsObservation}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F24} Layer Multiplicity}
+\begingroup\small
+\begin{description}
+\item[\emph{{ANSI} {SQL} transaction isolation levels (database
+concurrency).}] \textit{Analogy.}
+For concurrent database transactions, the isolation-level quotient
+classifies the visibility of in-flight operations.  A transaction's read or write role can split that quotient,
+producing a dirty read, a non-repeatable read, or a phantom.  Each
+transaction declares in advance one of the four ANSI isolation levels
+(read-uncommitted, read-committed, repeatable-read, serializable),
+and each level prices a different set of these role-split
+obstructions as excluded or tolerated; Berenson et al.\ show that the
+ANSI anomaly definitions are ambiguous and miss further anomalies
+such as lost updates and write skew
+\citep{BerensonBernsteinGrayMeltonONeilONeil1995SQLIsolation}.
+
+\item[\emph{Grammatical case-marking (structural linguistics).}] \textit{Analogy.}
+In a case-marking language the morphological word-form quotient
+classifies nouns by inflection.  When a syntactic role (subject,
+object, oblique, possessor) splits that morphological quotient, the
+language's case system resolves the obstruction by assigning a
+named case --- nominative, accusative, ergative, absolutive,
+dative, genitive, locative, instrumental --- from Blake's
+typological inventory.  Different languages instantiate different
+subsets of the inventory, but each role-split is closed by a named
+case-formation category
+\citep{Blake2001Case}.
+
+\item[\emph{{OSI} seven-layer networking reference model (computer
+networking).}] \textit{Analogy.}
+In a networking stack the protocol-layer quotient classifies
+communication functions.  When a new communication role splits the
+current layer quotient, the ISO/IEC 7498-1 model resolves the
+obstruction by placing the function at one of seven named layers
+(physical, data-link, network, transport, session, presentation,
+application), each licensing specific function types and obstructing
+others
+\citep{ISOIEC7498OSI}.
+
+\item[\emph{Polymorphism taxonomy (programming-language theory).}] \textit{Analogy.}
+In a typed language the type quotient classifies expressions by
+their monomorphic type.  When a function's required role is
+generic across multiple types --- a role-split obstruction in the
+monomorphic quotient --- the Cardelli--Wegner taxonomy resolves
+the obstruction by assigning the function to a named polymorphism
+category: parametric (universal quantification), ad-hoc (overloading /
+coercion), or inclusion (subtyping).  Each category
+licenses a distinct layer-formation mechanism for the generic role
+\citep{CardelliWegner1985UnderstandingTypes}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F6} No-Needles Stability}
+\begingroup\small
+\begin{description}
+\item[\emph{Quantum relative-entropy monotonicity.}] \textit{Analogy.}
+For any completely positive trace-preserving (CPTP) quantum channel
+\(T\) and density operators \(\rho,\sigma\), the relative entropy
+satisfies \(S(T(\rho)\,\|\,T(\sigma))\le S(\rho\,\|\,\sigma)\).  The
+decomposition is the Stinespring dilation
+\(T(\rho)=\operatorname{Tr}_E[V\rho V^{*}]\); the monotonicity
+combines joint convexity of relative entropy (Lindblad's lemma) with
+isometric embedding and partial trace.  The preorder is scalar
+\(\le\) on entropy functionals, not the Loewner block ordering
+\citep{Lindblad1975CompletelyPositiveMaps}.
+
+\item[\emph{Csiszár \(f\)-divergence data-processing inequality
+(information theory).}] \textit{Analogy.}
+For any convex \(f:(0,\infty)\to\mathbb R\) with \(f(1)=0\), the
+\(f\)-divergence
+\(D_f(P\,\|\,Q)=\mathbb E_Q\!\bigl[f(\mathrm dP/\mathrm dQ)\bigr]\) is
+monotone under every Markov kernel \(K\):
+\(D_f(K\!\cdot\!P\,\|\,K\!\cdot\!Q)\le D_f(P\,\|\,Q)\).  The
+monotonicity comes from the joint convexity of
+\((p,q)\mapsto qf(p/q)\) plus Jensen on the kernel mixture; a general
+\(f\)-divergence has no chain rule.  The preorder is scalar \(\le\) on a
+divergence value rather than the Loewner cone
+\citep{LieseVajda2006Divergences}.
+
+\item[\emph{Strassen monotone-coupling stochastic dominance
+(probability theory).}] \textit{Analogy.}
+By Strassen's theorem, \(X\le_{\mathrm{st}}Y\) iff there is a
+coupling \(\pi\) of \(\mu_X\) and \(\mu_Y\) supported on
+\(\{(x,y):x\le y\}\); applying a stochastically monotone Markov
+kernel \(K\) to both coordinates preserves the order, so
+\(K\!\cdot\!\mu_X\le_{\mathrm{st}}K\!\cdot\!\mu_Y\).  The
+decomposition is the coupling existence (a measure-theoretic object
+on a product space); the preorder is stochastic dominance defined by
+tail-probability inequalities, with no positive-semidefinite cone
+involved \citep{Strassen1965ExistenceProbabilityMeasures}.
+
+\item[\emph{Lyapunov's direct method (dynamical systems).}] \textit{Analogy.}
+For a dissipative dynamical system \(\dot x=f(x)\) with a
+positive-definite Lyapunov functional \(V\) and a non-negative
+dissipation
+residual \(W\), the Lie-derivative inequality
+\(\dot V=\nabla V\!\cdot\!f(x)\le-W(x)\le 0\) along trajectories
+propagates \(V(x(t))\le V(x_0)\) for all \(t\ge 0\).  The
+decomposition is the pair \((V,W)\) chosen against the vector field's
+structure; transitivity composes through the flow semigroup
+\(\varphi_t\), giving the \Fref{F6} endpoint along a continuous-time
+flow rather than via a matrix Schur complement
+\citep{Lyapunov1892StabilityMotion}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F8} Strict Extension}
+\begingroup\small
+\begin{description}
+\item[\emph{Hematopoietic CMP \(\to\) MEP/GMP bifurcation (stem-cell
+biology).}] \textit{Analogy.}
+The common myeloid progenitor (CMP) population, prospectively
+isolated by Lin\(^{-}\) Sca-1\(^{-}\) c-Kit\(^{+}\) CD34\(^{+}\)
+Fc\(\gamma\)RII/III\(^{\mathrm{lo}}\) surface markers, splits into
+megakaryocyte--erythroid (MEP) and granulocyte--macrophage (GMP)
+progenitors distinguished by CD34 and Fc\(\gamma\)RII/III.  Both
+daughters retain the Lin\(^{-}\) Sca-1\(^{-}\) c-Kit\(^{+}\) part of
+the CMP gate and leave it on the CD34 and Fc\(\gamma\)RII/III axes
+(MEP are CD34\(^{-}\) Fc\(\gamma\)RII/III\(^{\mathrm{lo}}\), GMP are
+CD34\(^{+}\) Fc\(\gamma\)RII/III\(^{\mathrm{hi}}\)), and the witness
+split is two
+clonally related siblings of one CMP division that commit to MEP and
+GMP respectively \citep{AkashiTraverMiyamotoWeissman2000CMPClonogenic}.
+
+\item[\emph{Parisi replica-symmetry-breaking hierarchy (statistical
+mechanics).}] \textit{Analogy.}
+In Parisi's mean-field solution of the Sherrington--Kirkpatrick spin
+glass, the one-step replica-symmetry-breaking ansatz partitions
+overlaps between pure states into two values \(\{q_0,q_1\}\); full RSB
+refines this to a continuous overlap function \(q(x)\) for
+\(x\in[0,1]\).  Cutting the full-RSB ultrametric tree at one
+overlap level groups pure states into clusters with the two-level
+overlap pattern of the one-step ansatz; this cluster partition, not
+the one-step ansatz solution itself, is the retention.  The
+ultrametric witness split is a triple of pure states in one cluster,
+all of whose pairwise overlaps lie above the cut, with
+\(q_{\alpha\beta}\ne q_{\alpha\gamma}\) under full RSB
+\citep{Parisi1983OrderParameterSpinGlasses}.
+
+\item[\emph{Verner's Law refining Grimm's Law (historical
+linguistics).}] \textit{Analogy.}
+Grimm's Law sends PIE \({*}p,{*}t,{*}k,{*}k^w\) (outside clusters after \({*}s\) or, for \({*}t\), after another obstruent) to
+Proto-Germanic \({*}f,{*}\theta,{*}h,{*}h^w\); on the reflexes of the PIE voiceless stops, Verner's Law refines
+this output by voicing a non-initial fricative when the preceding PIE
+syllable was unaccented.  The refinement holds only on that domain:
+the voiced Verner reflexes merge with the reflexes of the PIE voiced
+aspirates.  The
+grammatischer-Wechsel alternation within Germanic strong-verb
+paradigms is the canonical witness: forms that differed only in PIE accent position remain merged under
+Grimm alone but split by voicing under Grimm + Verner, even though the conditioning accent is itself
+lost in attested Germanic
+\citep{Verner1877AusnahmeLautverschiebung}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F9} No Unstatused Residual}
+\begingroup\small
+\begin{description}
+\item[\emph{Progress and preservation.}] \textit{Analogy.}
+The Wright--Felleisen syntactic type-soundness theorem states that
+every well-typed reachable configuration of a source term retains
+its typing judgment (preservation) and is either a value or admits
+a reduction step (progress).  The progress class
+\(\{\text{value},\,\text{can-step}\}\) together with the retained
+typing judgment is the \Fref{F9} typed status.  The orphan residual is a
+\emph{stuck term}: a closed non-value with no reduction rule and no
+type, forbidden by progress together with preservation
+\citep{WrightFelleisen1994SyntacticTypeSoundness}.
+
+\item[\emph{Genetic code via ribosomal translation (molecular
+biology).}] \textit{Analogy.}
+The ribosome decodes each mRNA codon into a unique amino acid (the
+61 sense codons) or a termination signal (the 3 stop codons),
+following the standard genetic code table; codon--anticodon pairing
+at the A-site enforces single-valuedness, with context-dependent
+recoding of UGA to selenocysteine and of UAG to pyrrolysine at
+specific sites as the known exceptions.  Ribosomes stalled at the 3\('\) end of mRNAs lacking an in-frame stop codon constitute the translation-failure residual; tmRNA trans-translation in bacteria, and Pelota--Hbs1 splitting followed by ribosome-associated quality-control ubiquitination in eukaryotes, rescue the ribosome and mark the peptide for degradation\footnote{\url{https://doi.org/10.1126/science.271.5251.990}; \url{https://doi.org/10.1016/j.molcel.2014.07.006}.}
+\citep{Crick1968GeneticCode}.
+
+\item[\emph{Wick--Wightman--Wigner superselection (foundational
+quantum physics).}] \textit{Analogy.}
+The WWW superselection rules require that every physically
+admissible pure state lie in a unique joint eigenspace of the
+superselection observables --- univalence \((-1)^{2J}\) and electric
+charge \(Q\).
+Coherent superpositions across distinct sectors are excluded from
+the physical state space because the relative phase is unobservable
+(the superselection observables commute with every observable), so
+the would-be superposition reduces to a sector-mixture rather than a
+pure state
+\citep{WickWightmanWigner1952IntrinsicParity}.
+
+\item[\emph{Gale--Shapley deferred-acceptance matching
+(mechanism design).}] \textit{Analogy.}
+In a two-sided matching market with complete strict preferences and
+equal market sides, the Gale--Shapley deferred-acceptance algorithm
+terminates with a stable matching \(\mu\) that is a function: every agent is assigned exactly one partner
+\citep{GaleShapley1962CollegeAdmissions}; later work showed that
+truth-telling is a dominant strategy for the proposing side
+\citep{DubinsFreedman1981Machiavelli,Roth1982EconomicsMatching}.  An
+orphan residual, an agent with no partner \(\mu(x)\), cannot occur: that
+every agent is matched plays the role of the \Fref{F9} coverage rule,
+and that \(\mu\) is a function plays the role of agreement of statuses
+at a common locus.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F4} Local-Global Obstruction Normal Form}
+\begingroup\small
+\begin{description}
+\item[\emph{Schema mapping in data integration (computer science).}] \textit{Analogy.}
+In data integration, source instances over local schemas are
+glued to a mediated global schema through declared
+tuple-generating and equality-generating dependencies (tgds, egds).
+Local-overlap compatibility is the egd-and-tgd satisfaction check
+at the chase; egd failure in the chase signals that no solution exists; under weakly acyclic tgds the chase terminates and, when no egd fails, yields a universal solution, unique up to homomorphic equivalence (its core up to isomorphism), from which certain answers are computed \citep{Fagin2005DataExchange}.
+
+\item[\emph{Genome assembly from overlapping reads (biology).}] \textit{Analogy.}
+Sequencing reads are local sequence data on intervals of an
+unknown genome; overlap-layout-consensus and de Bruijn graph
+assemblers test pairwise overlaps for sequence agreement and
+attempt to stitch compatible reads into a single contig.  The
+four statuses appear as overlap conflicts, fragmented contigs
+without a single traversal, repeat-induced chimeric-vs-unique
+ambiguity, and unique reference assembly
+\citep{PevznerTangWaterman2001Eulerian}.
+
+\item[\emph{Pose-graph SLAM with loop closures (engineering).}] \textit{Analogy.}
+A robot trajectory and map are estimated from local sensor
+observations whose loop closures impose pairwise pose constraints.
+The four statuses appear as chi-squared loop-closure rejection
+(perceptual aliasing), nonzero cocycle drift around a cycle (no
+global \(SE(3)\) embedding), gauge ambiguity (global rigid
+transform, monocular scale), and converged g2o\,/\,GTSAM solution
+with positive-definite information matrix
+\citep{Cadena2016SLAMSurvey}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F14} Duality Fixity / Self-Dual Trace Confinement}
+\begingroup\small
+\begin{description}
+\item[\emph{Bender--Boettcher {PT}-symmetric Hamiltonians
+(foundational physics).}] \textit{Analogy.}
+For a spin-\(0\) quantum system, the composite \(\mathcal{PT}\)
+operator is antilinear with \((\mathcal{PT})^2=\mathrm{id}\), an
+involution on the Hilbert space.  Bender and Boettcher conjectured, on numerical and WKB evidence (reality for \(\varepsilon\ge0\) was later proved by Dorey, Dunning and Tateo), that
+\(\mathcal{PT}\)-symmetric non-Hermitian Hamiltonians (such as
+\(H=p^2+x^2(ix)^{\varepsilon}\), including \(H=p^2+ix^3\) at
+\(\varepsilon=1\)) have entirely real spectra precisely when the
+\(\mathcal{PT}\) symmetry is unbroken: each physical eigenstate is
+a \(\mathcal{PT}\)-fixed eigenstate; a nonzero imaginary part of an eigenvalue,
+the \(\mathcal{PT}\)-skew spectral component, occurs only when the symmetry is
+broken. The analogy is with confinement to a fixed locus; no domination ladder
+occurs in the cited work
+\citep{BenderBoettcher1998PTSymmetric}.
+
+\item[\emph{Real signals as the Hermitian-symmetric fixed locus (signal
+processing).}] \textit{Analogy.}
+For a finite-energy signal \(x[n]\in\mathbb C\) over \(\mathbb Z\), the involution \(J(X)(\omega)=\overline{X(-\omega)}\) on its discrete-time Fourier transform has as fixed locus the Hermitian-symmetric spectra, those of real signals.  The
+\(J\)-anti-invariant spectral component is the \Fref{F14} anti-invariant
+readout, and vanishing of its integrated power forces the spectrum
+into that fixed locus, that is, \(x\) real (by Parseval its power is the energy of \(\operatorname{Im}x\))
+\citep{OppenheimSchafer2010DiscreteTimeSP}.
+
+\item[\emph{Galois conjugation and the fixed-field theorem
+(algebraic number theory).}] \textit{Analogy.}
+For a Galois extension \(L/K\) with cyclic order-2 Galois group
+\(\langle\sigma\rangle\), the fundamental theorem of Galois theory
+identifies the base field \(K\) with the fixed locus \(L^{\sigma}\)
+of the involution \(\sigma\).  The anti-invariant component
+\(z-\sigma(z)\) is the \Fref{F14} anti-invariant readout, and \(z-\sigma(z)=0\) forces
+\(z\in K\) --- confinement to the fixed field
+\citep{Galois1846Memoire}.
+
+\item[\emph{Smith theory: \(\mathbb Z/2\)-cohomology and
+fixed-point sets (algebraic topology).}] \textit{Analogy.}
+P.~A. Smith's theorem relates the
+\(\mathbb Z/2\)-cohomology of a topological space \(X\) under a
+continuous involution \(J:X\to X\) to its fixed-point set
+\(X^J\).  For a finite \(\mathbb Z/2\)-CW complex \(X\),
+\(\dim H^*(X^J;\mathbb Z/2)\le\dim H^*(X;\mathbb Z/2)\) (the Smith--Floyd inequality), with
+equality when \(X\) is totally non-homologous to zero.  With \(\mathbb Z/2\) coefficients the sign change of \(J\) is
+invisible, so the \Fref{F14} anti-invariant readout has only a
+counterpart here: Borel localisation, under which the equivariant
+cohomology \(H^*_{\mathbb Z/2}(X;\mathbb Z/2)\), after inverting the
+generator of \(H^1(B\mathbb Z/2;\mathbb Z/2)\), is carried by the
+fixed-point set
+\citep{Smith1938TransformationsFinitePeriod}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F15a} Selection Obstruction / Repair Normal Form}
+\begingroup\small
+\begin{description}
+\item[\emph{Hairy ball theorem / Poincar{\'e}--Hopf (differential
+topology).}] \textit{Analogy.}
+On the 2-sphere \(S^2\), no continuous nonvanishing tangent vector
+field exists.  The Poincar{\'e}--Hopf theorem identifies the
+obstruction with the Euler characteristic
+\(\chi(S^2)=2\neq 0\), and it rules out every nonvanishing field,
+equivariant or not.  \(\mathrm{SO}(3)\)-equivariance is more
+restrictive still: the rotations fixing a point fix no nonzero
+tangent vector there, so the zero field is the only equivariant
+section of \(TS^2\).  A declared breaker --- a preferred polar axis
+or a stochastic perturbation --- selects a non-equivariant field,
+which still vanishes somewhere; a nonvanishing direction field exists
+only after points are removed, such as the poles of the declared
+axis
+\citep{Poincare1885CourbesEquationsDifferentielles}.
+
+\item[\emph{Schelling focal points in coordination games (game
+theory).}] \textit{Analogy.}
+In a pure-coordination game with multiple symmetric equilibria, no
+symmetric pure strategy can pin down a unique equilibrium.  Schelling
+identified \emph{focal points} --- salient landmarks, precedents,
+or conventions distinguishing one equilibrium from its symmetric
+partners --- as the \Fref{F15a} declared breaker; mixed-strategy
+randomisation provides an equivariant but non-selective
+alternative
+\citep{Schelling1960StrategyConflict}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F15b} Spontaneous Symmetry Breaking / Branch-Selection Formation}
+\begingroup\small
+\begin{description}
+\item[\emph{Rayleigh--B{\'e}nard convection (fluid dynamics).}] \textit{Analogy.}
+A horizontal fluid layer heated from below transitions, at a
+critical Rayleigh number (\(\mathrm{Ra}_c\approx 1708\) for the
+standard rigid no-slip boundary case and lower for stress-free
+boundaries), from a translation- and rotation-invariant
+conduction state to a patterned state of convection rolls or
+hexagonal cells.  Each experimental realisation fixes a particular
+roll axis or hexagonal sublattice, selecting a branch in the
+continuous symmetry orbit
+\citep{Chandrasekhar1961HydrodynamicStability}.
+
+\item[\emph{Soai chiral autocatalysis (chemistry).}] \textit{Analogy.}
+In the Soai reaction the product catalyses its own formation with
+the same chirality; starting from a slightly enantioenriched mixture, autocatalysis amplifies the initial bias to nearly enantiopure product; started without chiral bias, either enantiomer results stochastically from run to run (reported by Soai and coworkers in 2003\footnote{\url{https://doi.org/10.1016/S0957-4166(02)00791-7}.}).  The underlying kinetics are chirally symmetric, but the
+autocatalytic formation operator picks a single enantiomer per
+realisation
+\citep{SoaiShibataMoriokaChoji1995AsymmetricAutocatalysis}.
+
+\item[\emph{Biological homochirality of life (origin-of-life
+biology).}] \textit{Analogy.}
+Terrestrial biology employs L-amino acids and D-sugars almost
+exclusively, despite a mirror-symmetric prebiotic chemistry.
+Candidate \Fref{F15b} formation-mechanism classes include
+Frank-style autocatalytic amplification, photochemical bias from
+circularly polarised light, and evolutionary locking after an
+early enantiomeric bias; each names a declared branch-selection
+source by which the biosphere settled into one chirality branch
+\citep{Bonner1991OriginAmplificationBiomolecularChirality}.
+
+\item[\emph{Crystallisation from supercooled liquid (condensed
+matter).}] \textit{Analogy.}
+A homogeneous, isotropic liquid below its freezing point is
+thermodynamically metastable; nucleation of a crystalline phase
+breaks continuous translations and \(\mathrm{SO}(3)\) rotations to
+a discrete crystallographic subgroup, with each nucleation event
+selecting a particular lattice orientation and translation phase
+\citep{Turnbull1950FormationCrystalNuclei}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F40} Anomaly / Symmetry Obstruction}
+\begingroup\small
+\begin{description}
+\item[\emph{Gimbal lock in Euler-angle parametrisations
+(3D graphics).}] \textit{Analogy.}
+The Lie group \(\mathrm{SO}(3)\) is a smooth 3-manifold, but its
+Euler-angle parametrisation has coordinate singularities --- gimbal
+lock --- where two rotation axes align.  At those configurations
+DomainDescends fails: the parametrisation domain breaks down and
+the orientation readout loses a degree of freedom.  Quaternion or
+rotation-matrix representations are the declared apparatus repair
+\citep{Kuipers1999QuaternionsRotationSequences}.
+
+\item[\emph{Discretized translation symmetry.}] \textit{Analogy.}
+A continuum PDE such as Navier--Stokes has continuous translational
+symmetry, and its momentum equation is in flux form, so total momentum is conserved when net boundary momentum flux and net external force vanish (for the inviscid Euler equations this is the Noether charge of translation invariance).  A finite-difference discretisation on a fixed spatial
+lattice respects only a discrete translation subgroup: both
+SymmetryDescends and DomainDescends fail for the continuous group.  A
+conservative flux-form discretisation still conserves discrete total
+momentum exactly; a non-conservative one does not preserve the
+downstream momentum readout.  Flux-form spatial discretisations,
+paired in time with symplectic or energy-momentum-preserving
+variational integrators, are the apparatus repair
+\citep{HairerLubichWanner2006GeometricNumerical}.
+
+\item[\emph{Triangular arbitrage in currency exchange (finance).}] \textit{Analogy.}
+In a frictionless ideal market, exchange rates would compose
+multiplicatively to a triangular product equal to 1
+(e.g.\ \(\mathrm{USD/EUR}\cdot\mathrm{EUR/JPY}\cdot
+\mathrm{JPY/USD}=1\)).  Quotes that update asynchronously across currency pairs break
+GroupLawPreserved on the round-trip composition, and a product
+different from unity offers a triangular-arbitrage opportunity in one
+direction around the triangle; bid--ask spreads and transaction fees
+lower the round-trip product in both directions and so absorb small
+inconsistencies.  Competitive-arbitrage pressure, which restores
+consistent quotes, and explicit modelling of friction are the
+declared apparatus repairs
+\citep{Aliber1973InterestRateParity}.
+
+\item[\emph{Galilean vs special-relativistic velocity addition
+(foundational physics).}] \textit{Analogy.}
+The would-be Galilean velocity-addition group \(v_{AB}=v_{AC}+v_{CB}\)
+fails to be closed on the physical velocity domain \(|v|<c\):
+DomainDescends fails when Galilean composition of sublight
+velocities can exit the declared domain, and the velocity readout
+fails to be preserved.  Einstein's relativistic addition for collinear velocities,
+\(v_{AB}=(v_{AC}+v_{CB})/(1+v_{AC}\cdot v_{CB}/c^2)\) --- equivalently
+rapidity additivity --- is the declared apparatus repair
+\citep{Einstein1905Elektrodynamik}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F41} Duality Equivalence}
+\begingroup\small
+\begin{description}
+\item[\emph{Stone duality (logic and topology).}] \textit{Analogy.}
+Stone's representation theorem gives a contravariant equivalence
+between Boolean algebras and Stone spaces (compact totally
+disconnected Hausdorff spaces): \(\mathrm{Spec}\) sends a Boolean
+algebra to its ultrafilter space, \(\mathrm{Clop}\) sends a Stone
+space to its Boolean algebra of clopen subsets, and
+\(A\cong\mathrm{Clop}(\mathrm{Spec}(A))\),
+\(X\cong\mathrm{Spec}(\mathrm{Clop}(X))\).  Role readouts (Boolean
+operations \(\leftrightarrow\) topological operations on clopens),
+routes (homomorphisms \(\leftrightarrow\) continuous maps), and
+status (the Boolean-algebra / Stone-space structures) are
+preserved on both sides
+\citep{Stone1936RepresentationsBooleanAlgebras}.
+
+\item[\emph{Gelfand duality (operator algebras and topology).}] \textit{Analogy.}
+The Gelfand--Naimark theorem gives a contravariant equivalence
+between commutative unital \(C^*\)-algebras and compact Hausdorff
+spaces: \(\mathrm{Spec}\) returns the space of characters and
+\(C(\cdot,\mathbb C)\) returns the algebra of continuous functions,
+with the Gelfand transform an isometric \(*\)-isomorphism
+\(A\cong C(\mathrm{Spec}(A))\) and homeomorphism
+\(X\cong\mathrm{Spec}(C(X))\).  Role readouts (\(*\)-algebra
+operations \(\leftrightarrow\) continuous-function operations),
+routes (\(*\)-homomorphisms \(\leftrightarrow\) continuous maps),
+and status (commutative-\(C^*\) versus compact-Hausdorff) are
+preserved
+\citep{GelfandNaimark1943NormedRings}.
+
+\item[\emph{Curry--Howard correspondence (logic and type theory).}] \textit{Analogy.}
+For the implicational fragment of intuitionistic natural deduction
+and the simply typed \(\lambda\)-calculus (with product, sum and
+empty types added for full propositional logic), Curry--Howard gives an exact syntactic
+equivalence between propositions and types, proofs and
+\(\lambda\)-terms: introduction/elimination rules correspond to
+abstraction/application, and detour
+elimination (proof normalisation) corresponds to
+\(\beta\)-normalisation.  Roles (formula \(\leftrightarrow\) type,
+proof \(\leftrightarrow\) program), routes (proof rules
+\(\leftrightarrow\) typing rules), and status (provability
+\(\leftrightarrow\) inhabitation, normalisation) are preserved by
+mutually inverse translations between the two formal systems
+\citep{Howard1980FormulaeAsTypes}.
+
+\item[\emph{{AdS}/{CFT} holographic correspondence (string
+theory; conjectural).}] \textit{Analogy.}
+Maldacena's AdS/CFT correspondence conjectures that quantum gravity
+on a \((d+1)\)-dimensional anti-de Sitter spacetime is dual to a
+conformal field theory on its \(d\)-dimensional asymptotic
+boundary, with the canonical example type IIB string theory on
+\(\mathrm{AdS}_5\times S^5\) and \(\mathcal N=4\) super-Yang--Mills
+on the boundary.  Within the accepted holographic dictionary, bulk
+gravitational operators map to boundary CFT operators, partition
+functions match, and AdS isometries map to CFT conformal
+symmetries --- the proposed \Fref{F41} role/route/status preservation
+across the duality
+\citep{Maldacena1997LargeN}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F17} Objectivity as Common Quotient}
+\begingroup\small
+\begin{description}
+\item[\emph{State-machine replication via Paxos (distributed
+systems).}] \textit{Analogy.}
+In a Paxos-style replicated state machine, each replica observes
+its own log of accepted operations while the consensus protocol
+commits a single sequence that all non-faulty replicas converge
+on.  The per-replica log views are \Fref{F17} access quotients, the
+committed sequence is the public quotient, and the safety property
+of consensus is the common-across-accesses condition; split-brain
+configurations are the \Fref{F17} access-objectivity defect
+\citep{Lamport1998PartTimeParliament}.
+
+\item[\emph{The {WGS-84} geodetic reference frame (geodesy).}] \textit{Analogy.}
+National and regional geodetic datums (NAD-83, ETRS-89, JGD2011)
+each provide a local access quotient on geodetic position, and
+each maps to WGS-84 via published transformations.  WGS-84 is the
+\Fref{F17} public quotient through which the local datums factor, and
+agreement under WGS-84 reduction is the common-across-accesses
+property
+\citep{NGA2014WGS84}.
+
+\item[\emph{The {SI} as public measurement quotient (metrology).}] \textit{Analogy.}
+National metrology institutes (NIST, NPL, PTB, etc.) maintain
+their own primary standards realising the seven SI base units
+through the seven defining constants
+\((c,h,e,k,N_A,K_{\mathrm{cd}},\Delta\nu_{\mathrm{Cs}})\).  The SI
+is the public quotient through which all national standards
+factor, and SI-traceable measurement agreement across laboratories
+under the CIPM Mutual Recognition Arrangement is the \Fref{F17}
+common-across-accesses property; unresolved Key-Comparison
+discrepancies are the access-objectivity defect
+\citep{BIPM2019SIBrochure}.
+
+\item[\emph{Thermodynamic ensemble equivalence (statistical
+mechanics).}] \textit{Analogy.}
+In the thermodynamic limit and for short-range systems away from
+phase transitions, the microcanonical, canonical, and grand-canonical
+ensembles yield equivalent equations of state for macroscopic
+intensive quantities.  Each ensemble is an access quotient on
+phase space, and the thermodynamic equation of state is the \Fref{F17}
+public quotient through which all three factor.  Ensemble
+inequivalence at long-range systems / phase-transition
+pathologies is the access-objectivity defect
+\citep{Ruelle1969StatisticalMechanics}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F18} Lawhood Descent}
+\begingroup\small
+\begin{description}
+\item[\emph{Stone--{\v C}ech compactification and continuous
+extensions (topology).}] \textit{Analogy.}
+For a Tychonoff space \(X\), the Stone--{\v C}ech
+compactification \(\beta X\) is characterised by the universal
+property that every continuous bounded real-valued function on
+\(X\) extends uniquely to a continuous function on \(\beta X\).
+A predicate declared on a dense subset is lawful on the closure
+iff it admits a continuous extension --- the \Fref{F18} descent
+criterion for topological laws
+\citep{Cech1937BicompactSpaces}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F19} Object Persistence}
+\begingroup\small
+\begin{description}
+\item[\emph{Comoving galaxy identity in FLRW cosmology
+(cosmology).}] \textit{Analogy.}
+In a Friedmann--Lema{\^\i}tre--Robertson--Walker universe, galaxies
+moving with the Hubble flow keep their comoving coordinates as the
+scale factor evolves.  Comoving-coordinate identity persists under
+the cosmic-time transport; peculiar velocities and gravitational
+mergers are the persistence obstruction
+\citep{Friedmann1922KrummungRaumes}.
+
+\item[\emph{Round-trip identity under {JSON} serialisation
+(computer science).}] \textit{Analogy.}
+For a data value \(D\), the round-trip
+\(D\equiv\mathrm{deserialise}(\mathrm{serialise}(D))\) is the \Fref{F19}
+persistence condition for the declared canonical-form identity
+quotient.  Locale-dependent number formatting, time-zone-aware
+datetimes, hash-randomised dictionary ordering, and floating-point
+precision loss are common persistence obstructions
+\citep{Crockford2006JSON}.
+
+\item[\emph{Corporate personhood across statutory merger
+(corporate law).}] \textit{Analogy.}
+Under the Model Business Corporation Act \S\,11.07, a statutory
+merger transfers the corporate personhood of constituent
+corporations to a single surviving (or new) corporation, which
+inherits the rights, properties, and obligations of the
+constituents.  The legal-identity transport descends through the
+corporate-personhood quotient under declared statutory procedures;
+defective merger filings or undocumented dissolution without
+successor are the persistence obstruction
+\citep{MBCA2016Section1107}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F20} Fact / Record Formation}
+\begingroup\small
+\begin{description}
+\item[\emph{Blockchain ledger and confirmation depth (distributed
+computer science).}] \textit{Analogy.}
+In a blockchain, each transaction is recorded by cryptographic
+signature, included in a block, and chained to prior blocks via
+hash pointers; ``stable fact'' is properly indexed by
+confirmation depth.  Signature-verification failure is the
+event-recording obstruction, hash tampering or chain
+reorganisations and forks are the record-stability obstruction,
+and a double-spend constitutes the fact-value obstruction
+\citep{Nakamoto2008Bitcoin}.
+
+\item[\emph{Forensic chain of custody (criminal procedure).}] \textit{Analogy.}
+Physical evidence is admissible only when its chain of custody
+is fully documented from collection through analysis: each
+transfer between custodians is the recorded event, an unbroken
+custodial log is the stable record, and laboratory results
+matching the seized item are the consistent fact-value.  Gaps,
+mishandling, or tampering are \Fref{F20} stable-fact failures
+\citep{Rice2008ElectronicEvidence}.
+
+\item[\emph{Pacioli double-entry bookkeeping (accounting).}] \textit{Analogy.}
+Pacioli's double-entry method requires every transaction to be
+posted as two equal opposing entries, preserving the accounting
+identity \(\text{Assets}=\text{Liabilities}+\text{Equity}\).  An
+unrecorded transaction is the event-recording obstruction, a
+posting error is the record-stability obstruction, and a
+trial-balance discrepancy is the fact-value obstruction
+\citep{Pacioli1494Summa}.
+
+\item[\emph{Paleontological taphonomy and the fossil record
+(natural science).}] \textit{Analogy.}
+Fossil-record formation is the natural-history analogue of \Fref{F20}:
+preserved burial events, geological persistence, and consistent
+inferential analyses yield robust paleontological facts.  Pre-burial
+scavenging and decay are the event-recording obstruction;
+metamorphism, erosion, and exhumation damage are the
+record-stability obstruction; conflicting species-identification
+or dating analyses are the fact-value obstruction.  The fossil
+record is therefore selective rather than complete, with stable
+facts indexed by preservation-and-inferential quality
+\citep{KidwellHolland2002QualityFossilRecord}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F21} Reflexive Nonclosure}
+\begingroup\small
+\begin{description}
+\item[\emph{Sarbanes-Oxley independent-audit mandate
+(corporate-finance regulation).}] \textit{Analogy.}
+Since the Securities Act of 1933 and the Securities Exchange Act of
+1934, public-company financial statements have been audited by an
+independent public accountant rather than by the issuer's own
+accounting staff; the Sarbanes-Oxley Act of 2002 tightened
+auditor-independence rules and added internal-control reporting.
+Management's internal-controls assessment under \S404(a) is the
+scoped lower audit; the independent auditor's attestation under
+\S404(b), required of accelerated filers, is the meta-layer
+certificate, and the auditor is itself overseen by the Public Company
+Accounting Oversight Board that the Act created, producing a tower of
+meta-audits.  Complete
+self-attestation by the issuer is outside the scope of
+the regime \citep{SarbanesOxley2002Act}.
+
+\item[\emph{X.509 PKI external root-of-trust
+(cryptographic protocol design).}] \textit{Analogy.}
+In the X.509 public-key infrastructure, an endpoint
+certificate cannot self-certify its trustworthiness to a
+relying party: validation requires a chain of signatures
+terminating at a root certificate authority in the
+client's externally maintained trust store, which acts
+as the meta-layer.  Checks on the leaf alone (syntax, validity period, key
+usage) are the scoped lower audit; the leaf carries its issuer's
+signature, not its own, and self-signed leaves are rejected by default by
+mainstream TLS clients.  Complete in-certificate
+self-trust is outside the scope of the protocol
+\citep{Cooper2008RFC5280}.
+
+\item[\emph{Rice's theorem on undecidability of semantic
+properties (computability theory).}] \textit{Analogy.}
+Rice's theorem rules out any same-layer universal
+semantic decider for non-trivial behavioural properties
+of partial recursive functions; specialised to
+self-application, no program can act as a complete
+same-layer
+semantic self-certifier for a non-trivial behavioural
+property.  Bounded-resource testing on a finite input
+set within a step bound is a scoped lower audit, accepted
+but insufficient for the full semantic claim.  Legitimate
+reflexive certification of a particular instance must
+invoke a strictly stronger meta-formalism (proof-assistant
+formalisation against a specification, abstract
+interpretation sound for the target property, or
+model-checking of a decidable abstraction), which
+certifies particular claims rather than serving as a
+same-layer universal decider \citep{Rice1953Classes}.
+
+\item[\emph{M\"unchhausen trilemma in epistemology
+(analytic epistemology).}] \textit{Analogy.}
+Hans Albert's M\"unchhausen trilemma argues that any
+attempted self-grounding of a knowledge claim faces
+three exhaustive options, none of which constitutes
+complete same-layer self-certification: infinite
+regress, logical circularity, or arbitrary termination
+in unargued axioms.  A locally consistent dialectical
+chain of reasons is the scoped lower audit; a legitimate
+epistemic certificate must invoke a meta-layer
+commitment (foundationalist intuition, coherentist
+network, externalist reliability, or transcendental
+argument), each of which exits the same-layer chain of
+reasons \citep{Albert1985TreatiseCriticalReason}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F22} Interface Mediation}
+\begingroup\small
+\begin{description}
+\item[\emph{Pharmacophore / structure-activity relationship
+(medicinal chemistry).}] \textit{Analogy.}
+Within the declared pharmacophore model of a target
+receptor, the source quotient collapses candidate ligands
+to the spatial / electronic arrangement of features
+required for binding (hydrogen-bond donors and acceptors,
+hydrophobic regions, charged groups); the boundary is the
+receptor binding-site geometry; the update is binding
+and downstream signalling; the target quotient is the
+pharmacological response class.  Two molecules sharing
+the same pharmacophore are predicted, within the model,
+to produce the same response class at the same receptor;
+deviations attributable to off-pharmacophore substituents
+(allosteric effects, distinct ADMET profiles) are
+diagnosed as boundary-leakage corrections outside the
+declared interface \citep{Wermuth1998IUPACGlossary}.
+
+\item[\emph{Vienna Convention on Diplomatic Relations
+(international law).}] \textit{Analogy.}
+The 1961 Vienna Convention formalises the diplomatic
+interface between sovereign states.  The carrier is the
+sending state's internal political and administrative
+state; the source quotient collapses internal states
+producing the same officially endorsed position; the
+boundary is the recognised diplomatic channel (note
+verbale, official meeting, protected correspondence)
+delivered via accredited diplomatic agents; the update
+is the receiving state's policy response through its
+foreign ministry; the target quotient is the receiving
+state's diplomatic posture.  Article 41 explicitly
+forbids diplomats from interfering in the receiving
+state's internal affairs, codifying the prohibition on
+source-internal leakage past the diplomatic boundary
+\citep{ViennaConventionDiplomatic1961}.
+
+\item[\emph{Thermodynamic state functions and boundary
+protocol (classical thermodynamics).}] \textit{Analogy.}
+For a thermodynamic system following a declared
+boundary protocol (e.g., quasi-static, adiabatic, or
+isothermal exchange under specified constraints on
+volume, pressure, and particle exchange), the carrier
+is the microstate space; the source quotient is the
+macroscopic state (energy, volume, particle number);
+the boundary is the protocol-fixed heat and work
+exchange together with its constraint structure; the
+update is microscopic dynamical evolution; the target
+quotient reads the post-process macrostate.  Within the
+declared protocol, the macrostate change depends only
+on the initial macrostate and the protocol-fixed
+boundary data, not on the microstate trajectory; this is macroscopic determinism,
+the premise of a thermodynamic description, and the state functions
+\(U\) and \(S\) are the readouts whose changes depend only on the
+initial and final equilibrium macrostates, not on the process path \citep{Callen1985Thermodynamics}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F25} Causality as Stable Intervention Transport}
+\begingroup\small
+\begin{description}
+\item[\emph{Mendelian randomisation
+(instrumental-variable epidemiology).}] \textit{Analogy.}
+A germline genetic variant associated with a modifiable
+exposure is used as a natural instrumental intervention
+to estimate the causal effect of the exposure on a
+disease outcome.  The carrier is the study population;
+the context quotient collapses subjects sharing the
+same confounder profile; the intervention space ranges
+over genotypes at the chosen instrument locus; the
+abstraction collapses genotypes to their associated
+exposure level; the transport is the lifelong exposure
+process; the readout is the disease outcome.
+Admissibility rests on the conjunction of relevance,
+independence (incorporating population-stratification
+control), and the exclusion restriction, together with monotonicity (or effect homogeneity); the descended
+residue is then the local-average exposure-outcome causal
+effect \citep{DaveySmith2003Mendelian}.
+
+\item[\emph{CRISPR-Cas9 directed gene knockout
+(molecular biology).}] \textit{Analogy.}
+An engineered guide-RNA-directed nuclease introduces a
+targeted double-strand break at a specified genomic
+locus, producing loss-of-function alleles in an
+otherwise isogenic background.  The carrier is the
+population of treated cells or organisms; the context
+quotient collapses cells to their genetic background and
+cell type; the intervention space ranges over candidate
+guide RNAs and delivery conditions; the abstraction
+collapses guide RNAs to the target locus they edit; the
+transport is the editing event plus downstream
+biological development; the target readout is the
+phenotypic measurement.  Within the declared
+editing-efficiency and off-target-control regime, the
+phenotypic readout descends through
+(background-and-cell-type, target-locus)
+\citep{Jinek2012CRISPR}.
+
+\item[\emph{Particle-scattering cross-section
+measurement (high-energy physics).}] \textit{Analogy.}
+A scattering experiment fires a beam of particles of
+defined type and energy at a target of defined
+composition; the carrier is the ensemble of individual
+beam-target interaction events; the context quotient
+collapses events to the target-and-beam apparatus
+configuration; the intervention space parameterises
+beam-energy and target choices; the abstraction
+collapses operational details to the beam-target class;
+the transport is the scattering process; the target
+readout of a single event is the realised scattering
+angle and energy.  Individual events are stochastic; the
+\Fref{F25} reading is its probabilistic form, with the
+differential cross-section \(d\sigma/d\Omega\) as the
+stable kernel residue over repeated events.
+The alpha-particle scattering off thin foils measured by Geiger and
+Marsden from 1909 to 1913, with Rutherford's 1911 analysis, is the
+founding instance
+\citep{GeigerMarsden1913Deflexion,Rutherford1911Scattering}.
+
+\item[\emph{Regression-discontinuity natural experiment
+(empirical econometrics).}] \textit{Analogy.}
+A regression-discontinuity design uses a known
+deterministic cutoff in an assignment variable (test
+score for scholarship eligibility, age for retirement
+benefit, vote share for incumbency) to identify the
+local average treatment effect at the threshold.  The
+carrier is the population of units near the threshold;
+the context quotient collapses units sharing the same
+local cutoff neighbourhood of the running variable; the
+intervention space is the treatment-assignment
+indicator; the abstraction collapses delivery-channel
+details to the just-above / just-below assignment; the
+transport is the policy delivery process; the target
+readout is the outcome of interest.  Admissibility
+holds in the limit at the threshold; residue stability
+is established by continuity of potential outcomes and
+no-manipulation of the running variable around the
+cutoff \citep{ThistlethwaiteCampbell1960Regression}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F26} Moduli / Contingency}
+\begingroup\small
+\begin{description}
+\item[\emph{Instruction set architecture versus
+micro-architecture (computer architecture).}] \textit{Analogy.}
+The carrier is the space of computer-system
+implementations; the lawfulness predicate requires
+correct execution of the declared instruction set
+architecture (ISA); the equivalence is observational
+equivalence at the ISA boundary (same program, same
+architectural-state update); the moduli quotient sends
+an implementation to its ISA-conformant behaviour
+class.  The ISA contract (instruction encodings,
+register semantics, addressing modes, observable side
+effects) is a necessary readout shared by all
+conforming implementations.  The micro-architecture
+(pipeline depth, cache hierarchy, branch-prediction
+strategy, clock frequency) is presentation-dependent: it
+varies among implementations of one behaviour class.  The
+System/360 family, which fixed an ISA while shipping
+many distinct micro-architectures, is the founding
+instance \citep{AmdahlBlaauwBrooks1964System360}.
+
+\item[\emph{Evolutionary contingency in macroevolution
+(paleobiology).}] \textit{Analogy.}
+The carrier is the space of possible biotic
+trajectories on Earth; the lawfulness predicate
+requires consistency with natural selection,
+developmental constraints, and the physical
+environment; the equivalence identifies trajectories
+with identical sequences of macroevolutionary
+bottleneck outcomes; the moduli quotient sends a
+trajectory to its bottleneck-survival-pattern class.
+Selection-driven adaptation, the existence of
+developmental constraints, and thermodynamically
+consistent matter/energy flow are necessary readouts.
+The specific assemblage of surviving phyla on Earth
+(e.g., the contingent survival of chordates after the
+Cambrian extinction events) is a contingent readout
+that varies across moduli classes; ``replaying the
+tape of life'' would traverse a different moduli class
+\citep{Gould1989WonderfulLife}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F28} Composability}
+\begingroup\small
+\begin{description}
+\item[\emph{Retrosynthetic analysis and synthon-based
+total synthesis (organic chemistry).}] \textit{Analogy.}
+The carriers are organic compounds; the source quotients
+collapse compounds to their synthon class (connectivity
+and functional groups); the interface readouts are
+reactive sites available for bond formation; the
+composition is a declared coupling reaction within a
+specified reaction family of declared functional-group
+tolerance.  The residual records yield, regio- and
+stereo-byproduct distribution, and
+reaction-mass-efficiency residual.  Composite-outcome
+descent holds
+when the same target connectivity is obtained from
+distinct yet retrosynthetically-equivalent precursors;
+cross-residual descent holds when the residual
+byproduct distribution is invariant under
+representative-level choices within the same reaction
+family \citep{Corey1989LogicSynthesis}.
+
+\item[\emph{Intermodal maritime containerisation
+(industrial logistics).}] \textit{Analogy.}
+The ISO 668 standard fixes the external dimensions,
+corner-fitting geometry, and rated load of intermodal
+freight containers.  The carriers are containers loaded
+by different shippers; the source quotients collapse
+them to their ISO 668-conformant external-interface
+class; the interface readouts are the ISO corner
+fittings and the rated gross mass; the composition is
+stacking on a vessel or chaining across
+truck-train-vessel handoffs; the composite quotient
+classifies the consolidated load by its
+external-interface footprint.  The residual captures
+internal load distribution, weight class, and
+damage / customs / handling residuals.  Admissibility
+restricts to rated compatible cargo (weight under
+ratings, stacking-strength conformance, hazmat
+compatibility) \citep{ISO668_2020}.
+
+\item[\emph{{OSI} 7-layer protocol stack composition
+(network engineering).}] \textit{Analogy.}
+The OSI Basic Reference Model partitions network
+communication into seven layers, each defined by
+service primitives at Service Access Points (SAPs).
+The carriers are layer-\(N\) entity implementations;
+the source quotients collapse implementations to their
+SAP-service-primitive contract; the interface readouts
+record the service-primitive sequence delivered at the
+SAP; the composition stacks a layer-\((N{+}1)\) entity
+on top of a layer-\(N\) service by invoking layer-\(N\)
+service primitives; the composite quotient classifies
+the composite by its end-to-end service.  The residual
+records PDU header overhead, fragmentation, and
+retransmission residual.  Composite-outcome descent
+holds because the layer-\((N{+}1)\) service depends
+only on layer-\(N\) service primitives, not on the
+specific implementation of layer \(N\)
+\citep{ISOIEC7498OSI}.
+
+\item[\emph{Golden Gate modular {DNA} cloning
+(synthetic biology).}] \textit{Analogy.}
+Golden Gate cloning uses Type IIS restriction enzymes
+that cut DNA outside their recognition site, leaving
+scarless four-base overhangs designed arbitrarily.
+The carriers are donor plasmids carrying DNA parts
+flanked by Type IIS recognition sequences; the source
+quotients collapse plasmids to their part-class plus
+overhang specification; the interface readouts are the
+four-base overhang fingerprints; the composition is the
+one-pot enzymatic digest-and-ligate reaction; the
+composite quotient classifies the assembled multi-part
+construct.  The residual records misligation products,
+unligated linearised backbone, and off-target
+re-religation events.  Composite-outcome descent holds
+because overhang complementarity determines assembly
+order independent of donor-plasmid backbone
+\citep{Engler2008GoldenGate}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F30} Explanation as Compression with Descent}
+\begingroup\small
+\begin{description}
+\item[\emph{Mendeleev periodic table explaining
+chemical regularities (chemistry).}] \textit{Analogy.}
+The history space is the set of chemical elements
+with their observed properties (atomic weight,
+valence, melting point, oxidation states, reaction
+products).  Mendeleev's 1869 table is the
+explanation: each element is assigned a
+(period, group) position based on atomic weight and
+chemical-similarity grouping (later refined by atomic
+number).  The descended map sends a property profile
+to its table position; the target map predicts the
+existence and properties of then-unknown elements
+(gallium, germanium, scandium were subsequently
+discovered with properties anticipated from table
+gaps).  The compression is strict: the table position
+summarises chemical-family behaviour without
+recovering all numerical property values
+\citep{Mendeleev1869Periodic}.
+
+\item[\emph{Boltzmann {H}-theorem and
+statistical-mechanical irreversibility (statistical
+physics).}] \textit{Analogy.}
+The history space is the microscopic phase-space
+trajectory set of a dilute gas; the base records the
+full microstate.  The explanation is the one-particle
+distribution function \(f(\mathbf r,\mathbf v,t)\) and
+the H-functional
+\(H[f]=\int f\log f\,d^3v\,d^3r\).  Under the
+molecular-chaos hypothesis, \(H\) is non-increasing
+along Boltzmann-equation evolution; identifying
+macroscopic entropy with \(S=-k_B H\), the target is
+the macroscopic thermodynamic readout.  The
+compression is strict: distinct microstates with the
+same one-particle distribution share the same
+macroscopic readout \citep{Boltzmann1872Weitere}.
+
+\item[\emph{Hart's \emph{The Concept of Law} as
+jurisprudential summary (jurisprudence).}] \textit{Analogy.}
+The history space is the recorded legal practice of a
+jurisdiction (statutes, decided cases, official
+enactments); the base records the full legal corpus.
+Hart's explanation distinguishes primary rules of
+obligation from secondary rules of recognition,
+change, and adjudication, together with the
+identified rule of recognition.  The target, in
+Hart's construction, is the legal-validity verdict on
+candidate rules: a candidate counts as valid law iff
+it satisfies the rule of recognition.  The target map
+is exact because the rule of recognition is itself
+the criterion of validity; the compression is strict
+because many distinct legal corpora share the same
+rule-system structure \citep{Hart1961Concept}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F31} Counterfactual Legitimacy}
+\begingroup\small
+\begin{description}
+\item[\emph{Fogel counterfactual economic history of US
+growth without railroads (cliometrics).}] \textit{Analogy.}
+The context quotient collapses economic trajectories
+to their factor-endowment class (capital, labour,
+natural resources); the intervention abstraction
+collapses transportation mixes to (railroad available,
+wagon and canal substitute) categories; the route is
+the social-savings simulation that re-prices freight
+using non-rail substitutes for each route; the target
+truth records whether the counterfactual 1890 GNP
+exceeds a specified threshold (Fogel's calculation
+gives a deviation of less than 5\% of actual).  The
+legitimacy of the counterfactual is the \Fref{F31} statement:
+the social-savings estimate descends through
+factor-endowment and transportation-mix classes
+\citep{Fogel1964RailroadsAmericanGrowth}.
+
+\item[\emph{Legal ``but-for'' causation in tort law
+(jurisprudence).}] \textit{Analogy.}
+In common-law tort doctrine, but-for causation asks
+whether the plaintiff's harm would have occurred but
+for the defendant's act.  The context quotient
+collapses factual histories to their legally cognisable
+class; the intervention abstraction collapses
+candidate acts to their legal characterisation;
+admissibility encodes proximate-cause limits; the
+route is the counterfactual reconstruction of ``what
+would have happened'' without the defendant's act; the
+target truth records whether the harm would still have
+occurred.  The legitimacy of the but-for
+counterfactual is the \Fref{F31} statement: the verdict
+descends through legally cognisable
+(context, act) classes, and overreaches (e.g.,
+multiple-sufficient-cause cases where but-for fails)
+trigger
+doctrinal corrections such as the substantial-factor
+test \citep{HartHonore1985Causation}.
+
+\item[\emph{Off-policy evaluation in reinforcement
+learning (machine learning).}] \textit{Analogy.}
+An agent estimates the expected return of a target
+policy \(\pi_e\) using trajectories collected under a
+different behaviour policy \(\pi_b\).  The context
+quotient collapses environments to their (state-action
+transition kernel, reward function) class; the
+intervention abstraction collapses target policies to
+their induced visitation; admissibility requires the
+support condition \(\pi_b>0\) wherever \(\pi_e>0\);
+the route is the importance-sampling re-weighting; the
+target truth records whether the estimated return of
+\(\pi_e\) exceeds a specified threshold.  The
+Precup-Sutton-Singh result gives conditions under
+which the off-policy estimator descends from
+behaviour-policy trajectories to a legitimate
+counterfactual verdict on the target policy's value
+\citep{PrecupSuttonSingh2000Eligibility}.
+
+\item[\emph{Climate-model counterfactual emission
+scenarios (climate science).}] \textit{Analogy.}
+In atmospheric general-circulation modelling, the
+context quotient collapses climate trajectories to
+their baseline-forcing class (pre-industrial CO\(_2\),
+solar and orbital parameters); the intervention
+abstraction collapses scenarios to an idealised
+greenhouse-gas forcing class (e.g., doubled
+atmospheric CO\(_2\) concentration); the route is the
+numerical integration of the coupled atmosphere
+model under the chosen forcing; the target truth
+records whether a specified climate diagnostic (e.g.,
+equilibrium global-mean surface temperature change)
+exceeds a threshold.  Manabe \& Wetherald 1967 is the
+founding instance, with its calculation of equilibrium
+climate sensitivity to doubled CO\(_2\) in a one-dimensional
+radiative-convective model, a calculation the same authors repeated
+in a general-circulation model in 1975; legitimacy
+is the \Fref{F31} statement that the threshold-crossing
+verdict descends through (baseline, idealised forcing)
+classes \citep{ManabeWetherald1967Thermal,ManabeWetherald1975Doubling}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F33} Horizon Sufficiency / Holographic Compression}
+\begingroup\small
+\begin{description}
+\item[\emph{{TCP/IP} encapsulation (network protocols).}] \textit{Analogy.}
+A network message is encapsulated as a sequence of
+nested headers wrapping a payload.  The interior is the
+full packet state (headers and payload together); the
+boundary readout records the IP and TCP header fields
+(source/destination addresses, ports, sequence numbers,
+flags, checksum).  The exterior classifier records the
+IP protocol-number class (TCP, UDP, ICMP) and the
+link-layer class.  Routing, flow-control, retransmission,
+and demultiplexing decisions descend through the product
+quotient: two packets sharing the same header fields and
+the same protocol stack class receive the same routing
+verdict, regardless of payload bytes
+\citep{Postel1981RFC791,Postel1981RFC793}.
+
+\item[\emph{Fisher sufficient statistic (mathematical
+statistics).}] \textit{Analogy.}
+For an exponential-family parametric model
+\(p(x\mid\theta)\), a sufficient statistic
+\(T(X_1,\dots,X_n)\) summarises a sample so that the
+conditional distribution of the sample given \(T\) is
+independent of \(\theta\).  The interior is the raw
+sample space; the boundary readout is the sufficient
+statistic; the exterior factor is a one-point set (an ancillary statistic is a function of the same sample and cannot fill \Fref{F33}'s separate exterior slot).  By the Fisher--Neyman factorization theorem,
+likelihood-based inference functionals --- likelihood
+ratio, score where defined, maximum-likelihood maximizing set (and any estimate selected solely from \(T\)), and
+likelihood-equivalent functionals --- descend through \(T\), hence through
+the product quotient \citep{Fisher1922Mathematical}.
+
+\item[\emph{Cauchy's integral formula in complex analysis
+(complex analysis).}] \textit{Analogy.}
+For a function \(f\) holomorphic on a simply connected
+domain \(D\subseteq\mathbb C\) and a point \(z_0\) in
+the interior of a positively oriented simple closed
+contour \(\gamma\subset D\),
+\[
+  f(z_0)=\frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z-z_0}\,
+  dz.
+\]
+The interior parameterises the choice of contour
+\(\gamma\) together with the holomorphic-function trace
+\(f|_\gamma\) on it; the boundary readout records that
+trace; the exterior classifier records the holomorphy
+class of \(f\).  The target value \(f(z_0)\) at any
+interior point descends exactly through the product
+quotient: it is given by the Cauchy kernel integral
+applied to the boundary trace
+\citep{Ahlfors1979ComplexAnalysis}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F35} Scale Descent / Renormalization}
+\begingroup\small
+\begin{description}
+\item[\emph{Multigrid methods on a nested mesh
+hierarchy (numerical analysis).}] \textit{Analogy.}
+For a linear elliptic PDE discretised on a nested
+sequence of meshes
+\(V_0\subset V_1\subset V_2\subset\cdots\) with mesh
+sizes \(h_0>h_1>h_2>\cdots\), the carrier is the
+finest-grid function space \(V_N\).  The scale quotient
+is the composite restriction \(R_{n+1}\cdots R_N:V_N\to V_n\); the coarsening
+is the one-step restriction \(R_n:V_n\to V_{n-1}\).  The discrete Galerkin variational
+form \(A_n u_n=f_n\) at each level is the target law;
+Galerkin coarsening \(A_{n-1}=R_n A_n P_n\) (with
+prolongation \(P_n\) and \(R_n=P_n^{\!\top}\)) makes the coarse
+operator the variational restriction of the fine one: for a symmetric
+positive-definite \(A_n\) the coarse solution is the energy-norm
+projection of the fine solution onto the coarse space, not its
+restriction, so the coarse law is a descended approximation rather
+than an exact descended law.  The multigrid V-cycle corrects it with
+fine-level smoothing for asymptotically optimal solution costs \citep{Hackbusch1985Multigrid}.
+
+\item[\emph{Coarse-grained molecular dynamics
+(computational physics and materials).}] \textit{Analogy.}
+For a biomolecular system, the carrier is the
+all-atom phase-space trajectory.  The scale quotient
+groups atoms into coarse-grained beads (e.g.,
+MARTINI mapping of heavy atoms to lipid beads); the
+coarsening iterates the grouping to even coarser
+representations.  The target law at each level is a
+structural-statistical observable matched between
+the all-atom and coarse-grained models (radial
+distribution functions, free-energy landscapes,
+thermodynamic averages); the renormalised law is the
+effective bead Hamiltonian or potential of mean force
+chosen to reproduce those observables.  Scale descent
+succeeds in the equilibrium structural regime and
+becomes path-dependent for dynamical observables
+sensitive to integrated-out fast atomic motions
+\citep{Voth2008CoarseGraining}.
+
+\item[\emph{Lucas critique on policy-invariant micro
+parameters (macroeconomics).}] \textit{Analogy.}
+The carrier is the set of individual agent decision
+histories under a declared policy regime.  The scale
+quotient collapses individual decisions to
+macroeconomic aggregates (output, inflation,
+employment); the coarsening sends aggregates under
+one policy regime to aggregates under another via
+macro-econometric extrapolation.  The Lucas critique
+observes that reduced-form macro laws do not descend
+through this coarsening when the policy change
+itself alters agents' decision rules: the obstruction
+set is non-empty.  Legitimate scale descent requires
+identifying policy-invariant deep-structural micro
+parameters and aggregating through them
+\citep{Lucas1976Critique}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F36} Singular Limit Completion}
+\begingroup\small
+\begin{description}
+\item[\emph{Prandtl boundary-layer matched asymptotic
+expansion (fluid dynamics).}] \textit{Analogy.}
+For the incompressible Navier-Stokes equations with
+small viscosity \(\nu\), the set of limiting
+processes is the family of solutions parameterised by
+\(\nu\).  The limit quotient sends each solution to
+its formal \(\nu\to 0\) limit; the target readout
+records the velocity field.  The naive Euler limit
+fails to satisfy the no-slip boundary condition;
+Prandtl's boundary-layer theory introduces an inner
+expansion in the rescaled wall-normal coordinate
+\(y/\sqrt{\nu}\) and matches it to the outer Euler
+solution.  The matched-asymptotic structure is the
+canonical path-memory repair, carrying the
+boundary-layer thickness as an additional quotient
+parameter that completes the singular limit
+\citep{Prandtl1904BoundaryLayer}.
+
+\item[\emph{Critical-point scaling at second-order
+phase transitions (statistical mechanics).}] \textit{Analogy.}
+For a magnetic system near its critical temperature
+\(T_c\), the set of limiting processes is the family
+of approach paths to \((T,h)=(T_c,0)\) in the
+temperature-field plane.  Order parameter,
+susceptibility, and correlation length diverge or
+vanish with universal exponents that depend on the approach path (\(|m|\propto(-t)^\beta\) on a selected ordered branch as \(t\uparrow0\) along \(h=0\), and \(|m|\propto|h|^{1/\delta}\) along \(t=0\)), with non-universal amplitudes.
+The Widom scaling hypothesis is the path-memory
+repair: it records the universal scaling functions
+parameterised by \(h/|t|^{\beta\delta}\) (with
+\(t=(T-T_c)/T_c\)), completing the critical-point
+readout by labelling each approach direction
+\citep{Stanley1971PhaseTransitions}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F37} Complementarity as Non-Joint Access}
+\begingroup\small
+\begin{description}
+\item[\emph{Joint diagonalisation of non-commuting
+Hermitians (linear algebra).}] \textit{Analogy.}
+For a finite-dimensional Hilbert space \(H\) and two
+Hermitian operators \(A,B\) on \(H\), the access
+quotient \(q_A\) records the spectral labelling of
+\(A\) in a basis and \(q_B\) records that of \(B\).
+A joint admissible quotient is a single orthonormal
+basis simultaneously diagonalising both operators.
+By the spectral theorem, such a basis exists iff the
+commutator \([A,B]=AB-BA\) vanishes.  When
+\([A,B]\ne 0\), no admissible joint quotient exists;
+the access quotients are \Fref{F37}-complementary within
+the orthonormal-basis class
+\citep{Halmos1974FiniteDimensional}.
+
+\item[\emph{Intuitionistic vs classical logic
+(mathematical logic).}] \textit{Analogy.}
+For a propositional language \(L\) with atomic
+propositions, the access quotient \(q_A\) sends a
+formula \(\varphi\) to its intuitionistic-validity
+class under the Brouwer-Heyting-Kolmogorov (BHK)
+interpretation; \(q_B\) sends \(\varphi\) to its
+classical-proof class requiring the law of excluded
+middle (LEM) and proof by contradiction.  Within the
+admissibility class of BHK-respecting proof systems,
+no joint quotient validates LEM for undecidable
+propositions \(P\): classical proof of
+\(P\vee\neg P\) is admissible classically but lacks
+a constructive witness.  The two proof-system
+quotients are \Fref{F37}-complementary, formalised by
+Heyting's intuitionistic logic
+\citep{Heyting1930Logik}.
+
+\item[\emph{{CAP} theorem in distributed systems
+(distributed systems).}] \textit{Analogy.}
+For a replicated distributed data store, \(q_A\)
+records linearisable-consistency observations and
+\(q_B\) records always-available reads and writes.
+The admissibility constraint is partition tolerance:
+the implementation must continue under arbitrary
+network partitions.  Gilbert-Lynch's formalisation of
+Brewer's CAP conjecture shows that, under network
+partitions, no admissible implementation jointly
+realises both \(q_A\) and \(q_B\); the access
+quotients are \Fref{F37}-complementary within the
+partition-tolerant implementation class
+\citep{GilbertLynch2002CAP}.
+
+\item[\emph{Russell's paradox under naive
+comprehension (set-theoretic foundations).}] \textit{Analogy.}
+For a candidate set \(R\), the access quotient
+\(q_A\) imposes the self-membership predicate
+\(x\in R\iff x\notin x\); the access quotient
+\(q_B\) requires \(R\) to be a set in the admissible
+class.  Substituting \(R\) for \(x\) yields
+\(R\in R\iff R\notin R\), so no joint admissible
+quotient exists under unrestricted comprehension.
+The standard remedies (ZFC's separation schema, which forms \(\{x\in A:x\notin x\}\) only inside a given set \(A\), and Russell--Whitehead type
+stratification) refine admissibility to block this
+joint quotient \citep{Russell1902Letter}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F38} Arrow from Record Monotonicity}
+\begingroup\small
+\begin{description}
+\item[\emph{Steno's law of superposition (geology).}] \textit{Analogy.}
+The source history set is the configuration of
+sediment-deposition processes; \(\kappa\) is the
+geological-time evolution.  The record quotient sends
+each deposition event to its stratum class (named bed,
+geological epoch); the status readout is the
+stratigraphic depth.  Steno's law of superposition
+asserts that, in undisturbed sequences, older strata
+lie below younger strata.  Folding, faulting, and
+overturning are \Fref{F38}-obstructions that require
+unfolding to recover the arrow \citep{Steno1669Prodromus}.
+
+\item[\emph{Dendrochronological tree-ring sequence
+(paleoclimate and archaeology).}] \textit{Analogy.}
+The source history set is the sequence of annual
+tree-ring formation events; \(\kappa\) records one
+annual growth cycle.  The record quotient sends a
+tree-ring to its ring-pattern signature; the status
+readout is the calendrical year identified by master
+tree-ring chronology cross-dating.  Each successive
+ring is added outside the previous ones, producing a
+strictly monotone chronological sequence.  Douglass's
+master chronology cross-dates archaeological wood to
+its year of growth via pattern matching against the
+reference sequence \citep{Douglass1919ClimaticCycles}.
+
+\item[\emph{Libby radiocarbon dating (archaeology and
+nuclear chemistry).}] \textit{Analogy.}
+The source history set is the moment of organism death
+(after which exchange of \(^{14}\)C with the atmosphere
+ceases); \(\kappa\) records radioactive decay over
+time.  The record quotient sends a sample to its
+measured \(^{14}\)C\(/^{12}\)C ratio; the status readout
+is the radiocarbon age inferred from the exponential decay law;
+conventional radiocarbon ages use the Libby half-life of 5568 years
+(the measured value is about 5730 years) and are converted to
+calendar ages by calibration against tree-ring and varve
+chronologies.  The ratio decreases monotonically, providing a
+chronological arrow up to about 50{,}000 years before present \citep{Libby1955RadiocarbonDating}.
+
+\item[\emph{Historical phonological reconstruction.}] \textit{Analogy.}
+The source history set is the lexicon of a
+reconstructed proto-language; the target is the
+lexicon of an attested daughter language; \(\kappa\)
+records the regular sound-change rules carrying
+proto-forms forward to daughter reflexes.  The record
+quotient sends a proto-form to its phonological class;
+the status readout is the chronological layer in the
+family tree, increasing from the proto-language toward
+each attested daughter.  Brugmann's regularity
+principle asserts that sound changes are exceptionless
+within a defined phonological environment, providing a
+monotone forward arrow along the family tree
+\citep{Brugmann1886Grundriss}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F39} Entropy as Fiber Volume}
+\begingroup\small
+\begin{description}
+\item[\emph{Herfindahl-Hirschman market-concentration
+index (industrial economics).}] \textit{Analogy.}
+For a market with firms having shares \(s_i\)
+(\(\sum_i s_i=1\)), the access quotient sends each
+customer transaction to the firm serving it.  The
+Herfindahl-Hirschman index
+\(\mathrm{HHI}=\sum_i s_i^2\) is the probability that
+two random transactions are served by the same firm.
+Under firm grouping (mergers, parent-company
+aggregation), nonnegativity of the cross terms in the square of a grouped share
+forces the sum of squared shares to non-decrease, so HHI is monotone under
+coarsening.  The US Department of Justice merger
+guidelines use HHI thresholds to identify market
+concentration concerns \citep{Hirschman1964HHI}.
+
+\item[\emph{Logarithm of the multinomial coefficient
+(combinatorics).}] \textit{Analogy.}
+For \(N\) distinguishable items distributed into \(k\)
+labelled cells, the fine quotient sends an assignment
+to its cell-content profile
+\((n_1,\dots,n_k)\); the fine fiber has cardinality
+\(\binom{N}{n_1,\dots,n_k}=N!/\prod_i n_i!\).
+Coarsening merges two cells \(i,j\) into a single
+labelled cell of size \(n_{\{i,j\}}=n_i+n_j\); the
+coarse fiber is the disjoint union of fine fibers
+with \(n_i'+n_j'=n_{\{i,j\}}\), so its cardinality is
+\(\sum_{n_i'+n_j'=n_{\{i,j\}}}
+\binom{N}{n_i',n_j',\dots}\), at least any single
+summand.  The combinatorial fiber-volume entropy is
+thus monotone non-decreasing under cell coarsening
+\citep{Knuth1997TAOCP}.
+
+\item[\emph{Kingman coalescent effective population
+size (population genetics).}] \textit{Analogy.}
+For a haploid neutral genealogical model, the access
+quotient sends a genealogy of \(n\) sampled lineages
+to its lineage-merger pattern.  The Kingman coalescent
+gives pairwise coalescence rate \(1/N_e\), where
+\(N_e\) is the effective population size; with \(n\) lineages the expected waiting time to the next merger is \(N_e/\binom n2\).  Changing \(N_e\) rescales coalescent time rather than coarsening a quotient, so this is only a loose analogue of the \Fref{F39} inequality; coarsening a finite carrier of merger patterns with fiber-volume entropy gives an instance \citep{Kingman1982Coalescent}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F42} Irreducibility / No Short Closed Description}
+\begingroup\small
+\begin{description}
+\item[\emph{Quine-McCluskey minimum sum-of-products
+form (digital-logic design).}] \textit{Analogy.}
+For a Boolean function \(f:\{0,1\}^n\to\{0,1\}\), the
+admissible compression class is sum-of-products
+expressions; routes are Boolean-algebra equivalences
+(De Morgan, absorption, distribution).  Quine-McCluskey
+yields a minimum-literal expression by generating all prime implicants and then solving a minimum-weight cover problem, weighting each prime implicant by its number of literals (NP-hard in general) for the minterms not covered by essential prime implicants; the
+function is \Fref{F42}-irreducible at the minimum-cover
+expression \citep{Quine1952Boolean}.
+
+\item[\emph{Information-theoretic
+\(\Omega(n\log n)\) sorting lower bound (analysis of
+algorithms).}] \textit{Analogy.}
+For comparison-sorting on \(n\) distinct keys, the
+admissible compression class is comparison-based
+decision trees; routes are two-key comparisons; the
+sorted permutation is the target.  A correct decision
+tree must have at least \(n!\) leaves, so its
+worst-case depth is \(\Omega(\log n!) = \Omega(n\log
+n)\).  No asymptotically shallower comparison-based
+decision tree exists; the \Fref{F42} irreducibility is the
+unconditional \(\Omega(n\log n)\) lower bound
+\citep{Knuth1998TAOCPv3}.
+
+\item[\emph{Minimal genome for self-replicating cell
+(synthetic biology).}] \textit{Analogy.}
+Hutchison and colleagues designed and synthesized
+JCVI-syn3.0, a \emph{Mycoplasma} genome of 531
+kilobases encoding 473 genes that supports
+self-replication under declared laboratory growth
+conditions.  The design retained genes classified as
+essential and also quasi-essential genes needed for
+robust growth \citep{Hutchison2016MinimalGenome}.
+The analogy is with the search for a short closed
+description within a declared class of designs.  The
+experiment tests only part of that class, so it does
+not establish the minimality that \Fref{F42}
+requires.
+
+\item[\emph{Crystallographic irreducible Brillouin
+zone (solid-state physics).}] \textit{Analogy.}
+For a periodic crystalline solid with space group
+\(G\), the admissible compression is the
+restriction of crystal momentum \(\mathbf k\) to the
+irreducible Brillouin zone (IBZ), the fundamental
+domain of the reciprocal-lattice point-group action;
+routes are point-group operations.  The
+Bouckaert-Smoluchowski-Wigner analysis shows the
+IBZ is the minimal subset of the full Brillouin
+zone that, together with symmetry operations,
+generates all distinct electronic states.  The IBZ
+is \Fref{F42}-irreducible by construction
+\citep{BouckaertSmoluchowskiWigner1936Theory}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F43} Continuum Emergence}
+\begingroup\small
+\begin{description}
+\item[\emph{p-adic completion in number theory
+(algebraic number theory).}] \textit{Analogy.}
+For a prime \(p\), the discrete approximations are
+the finite quotient rings \(\mathbb Z/p^i\mathbb Z\)
+with reduction maps
+\(\phi_{ij}:\mathbb Z/p^j\to\mathbb Z/p^i\).  The
+candidate limit is the p-adic integers
+\(\mathbb Z_p=\varprojlim\mathbb Z/p^i\mathbb Z\),
+with projections to each finite quotient.  Tower
+coherence is congruence compatibility, cofinality
+is directedness of p-power indices, and vanishing
+residuals correspond to convergence in the p-adic
+metric.  \(\mathbb Z_p\) is the p-adic completion of
+\(\mathbb Z\); the non-archimedean continuum
+\(\mathbb Q_p=\mathbb Z_p[1/p]\) is the p-adic completion of
+\(\mathbb Q\), distinct from the archimedean reals
+\citep{Hensel1908Theorie}.
+
+\item[\emph{Thermodynamic limit in statistical
+mechanics (statistical physics).}] \textit{Analogy.}
+For a classical-spin lattice model on a finite
+volume \(\Lambda\subset\mathbb Z^d\), the discrete
+approximations are the finite-volume Gibbs kernels at inverse
+temperature \(\beta\), which condition on the configuration outside
+the volume and are consistent under nesting of volumes; finite-volume
+Gibbs measures with one fixed boundary condition are not consistent
+under restriction.  The candidate limit is
+the set of Dobrushin-Lanford-Ruelle (DLR) states
+on \(\{+1,-1\}^{\mathbb Z^d}\), with projections
+to finite-volume marginals.  Tower coherence is
+the DLR consistency condition, cofinality is
+exhaustion by finite volumes, and vanishing
+residuals correspond to absence of unstable
+boundary contributions.  The set of infinite-volume
+Gibbs states emerges as the \Fref{F43} stable limit quotient; it need
+not be a singleton, and at low temperature in dimension \(d\ge 2\)
+the Ising model has several (phase coexistence)
+\citep{Ruelle1969StatisticalMechanics}.
+
+\item[\emph{Krull absolute Galois group as inverse
+limit (field theory).}] \textit{Analogy.}
+For a field \(K\) with separable closure
+\(K^{\mathrm{sep}}\), the discrete approximations
+are finite Galois groups
+\(\mathrm{Gal}(L_i/K)\) for finite Galois
+extensions \(L_i\), with restriction maps for
+\(L_i\subseteq L_j\).  The candidate limit is the
+absolute Galois group
+\(\mathrm{Gal}(K^{\mathrm{sep}}/K)
+=\varprojlim_i\mathrm{Gal}(L_i/K)\), with
+projections by restriction.  Tower coherence is
+compatibility of restrictions, cofinality is
+directedness of finite Galois extensions, and
+vanishing residuals correspond to profinite
+separation by the finite quotients.  Krull's
+infinite Galois theory establishes the absolute
+Galois group with its profinite (Krull) topology
+as the \Fref{F43} stable limit quotient
+\citep{Krull1928Galois}.
+
+\item[\emph{Born-Huang continuum elasticity from
+atomic lattice (solid-state physics).}] \textit{Analogy.}
+For a crystalline solid, the discrete
+approximations are atomic-lattice models at
+finer-and-finer lattice spacings; comparison maps
+are inter-lattice coarse-graining operations.
+The candidate limit is the continuum elasticity
+theory governing displacement fields on
+\(\mathbb R^3\); projections restrict continuum
+solutions to lattice points.  Tower coherence is
+compatibility of inter-lattice strain
+representations, cofinality is the existence of
+sufficiently fine lattices for any continuum
+scale, and vanishing residuals correspond to the
+long-wavelength approximation being valid.  The
+Born-Huang derivation of elastic constants from
+interatomic potentials is the canonical
+solid-state \Fref{F43} continuum emergence
+\citep{BornHuang1954Dynamical}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F44} Criticality / Phase Boundary}
+\begingroup\small
+\begin{description}
+\item[\emph{Reynolds laminar-turbulent transition
+(fluid dynamics).}] \textit{Analogy.}
+For incompressible smooth-pipe flow, the control
+space is the Reynolds number
+\(\mathrm{Re}=\rho v D/\mu\); the phase readout
+records laminar vs turbulent.  Pipe-flow
+experiments since Reynolds's identify a critical
+\(\mathrm{Re}_c\approx 2300\) as the phase boundary at which laminar
+flow loses empirical robustness to finite-amplitude perturbations at
+ordinary inflow disturbance levels; with carefully quieted inflow,
+laminar flow persists far above this value, to about 13{,}000 in
+Reynolds's own experiments.  The
+empirical robustness margin vanishes, the
+intermittent-puff response is non-uniform, and the
+residual status is described by transition
+intermittency statistics
+\citep{Reynolds1883Turbulent}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F47} Fine-Tuning as Small Selector Region}
+\begingroup\small
+\begin{description}
+\item[\emph{Pharmaceutical therapeutic window
+(clinical pharmacology).}] \textit{Analogy.}
+The moduli space is the set of dose-and-timing
+protocols; the readout is the steady-state plasma
+concentration; the target predicate restricts to
+concentrations between the minimum effective
+concentration (MEC) and the maximum tolerated
+concentration (MTC).  The therapeutic-window selector
+region is small for drugs with narrow therapeutic
+indices (warfarin, lithium, digoxin); realized
+fine-tuning is the clinically attained dose protocol
+placing plasma concentration within the window
+\citep{GoodmanGilman2018Pharmacology}.
+
+\item[\emph{Mechanical tolerance stack-up gap
+(manufacturing engineering).}] \textit{Analogy.}
+The moduli space is the set of component dimension
+tuples within their tolerance bands; the readout is
+the resulting critical assembly dimension; the
+target predicate restricts to assemblies meeting the
+critical-dimension specification.  The selector
+region shrinks as the assembly chain lengthens;
+realized fine-tuning is the actually manufactured
+component-dimension tuple landing inside the
+allowable region \citep{Bjorke1989Tolerance}.
+
+\item[\emph{Hutchinson ecological niche (ecology).}] \textit{Analogy.}
+The moduli space is the multi-dimensional
+environmental parameter space (temperature,
+humidity, pH, salinity, prey abundance); the readout
+is the species' population growth rate; the target
+predicate restricts to non-negative growth.  Within
+the declared environmental envelope for the species,
+the niche occupies a small fraction of total moduli
+volume; realized fine-tuning is the species' actual
+occupancy of the niche
+\citep{Hutchinson1957Concluding}.
+
+\item[\emph{Nyquist closed-loop stability region
+(control theory).}] \textit{Analogy.}
+The moduli space is the set of (plant,
+controller-parameter) combinations; the readout is
+the closed-loop pole location in the complex plane;
+the target predicate restricts to all poles having
+negative real part.  The Nyquist criterion
+characterises the stability selector region: the
+closed-loop system is stable iff the number of
+counter-clockwise encirclements of \(-1+0i\) equals
+the number of open-loop right-half-plane poles.  For
+systems with large gain, delay, or open-loop
+instability, the stability region can be small,
+instantiating \Fref{F47} fine-tuning of controller
+parameters \citep{Nyquist1932Regeneration}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F49} Common-Source / Nonlocal Correlation Normal Form}
+\begingroup\small
+\begin{description}
+\item[\emph{Doolittle lateral gene transfer
+(microbial phylogenetics).}] \textit{Analogy.}
+For prokaryotic phylogenomics, the source quotient
+sends a gene-distribution configuration to its
+vertical-inheritance most-recent-common-ancestor
+class; the readouts are per-gene tree topologies
+and presence patterns.  Vertical inheritance gives
+CommonSource correlations across co-inherited
+genes; Doolittle observed that horizontal gene
+transfer events mediated by phages, plasmids, and
+conjugation break the common-source pattern,
+constituting an interface channel.  A pattern is LocallyExplainable when it factors through vertical descent, a transfer interface, or a direct route; \Fref{F49} gives this as a disjunction, not an additive decomposition \citep{Doolittle1999Phylogenetic}.
+
+\item[\emph{Plagiarism detection via shared-source
+fingerprinting (digital forensics).}] \textit{Analogy.}
+For pairs of documents, the source quotient sends
+a pair to its shared-source text together with
+declared edit / paraphrase / template
+transformations; each document is fingerprinted via
+n-gram or hashed-shingle representations; the
+correlation readout is an overlap metric (Jaccard
+similarity, MinHash).  CommonSource holds when the
+overlap descends through the
+shared-source-plus-declared-transformations
+quotient; the interface
+captures legitimate citation, common literature,
+and formulaic templates not classified as
+plagiarism \citep{Heintze1996Scalable}.
+
+\item[\emph{Mosteller-Wallace stylometric authorship
+attribution (statistical humanities).}] \textit{Analogy.}
+For the disputed Federalist Papers, the source
+quotient assigns a paper to a candidate author; the
+readouts are author-conditioned function-word
+frequency distributions
+\(P(\mathrm{wordfreq}\mid\sigma)\) estimated from
+each candidate's known corpus.  The Bayesian
+posterior \(P(\sigma\mid\mathrm{wordfreq})\) is a probabilistic analogue of CommonSource, which \Fref{F49} covers only as a deterministic factorization; joint
+authorship or formulaic shared templates
+instantiate the interface, and residual anomalies
+index unmodeled influences
+\citep{MostellerWallace1964Federalist}.
+
+\item[\emph{Common-cause failure analysis in
+fault trees (safety engineering).}] \textit{Analogy.}
+For a safety-critical system, the source quotient
+sends a failure event to its underlying
+common-cause basic event (loss of off-site power,
+fire,
+earthquake).  A joint failure fixed by a shared basic event is the deterministic CommonSource pattern; statistical common-cause correlation lies outside \Fref{F49}.  Fault-tree analysis
+identifies the basic events that constitute the
+source, codifying methodology for nuclear-plant
+reliability and risk assessment
+\citep{Vesely1981FaultTree}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F50} Vacuum / Background Selection}
+\begingroup\small
+\begin{description}
+\item[\emph{Ostwald rule of stages: polymorph
+selection (crystallography).}] \textit{Analogy.}
+For a supersaturated solution, the moduli quotient
+collapses crystallisation trajectories sharing the
+same crystalline polymorph; the descended
+background records the polymorph type.  Ostwald's
+rule of stages predicts kinetic selection of a
+metastable polymorph close in free energy to the
+supersaturated state.  The vacuum predicate
+identifies the ultimately stable polymorph as the
+singleton target-formed modulus
+\citep{Ostwald1897Studien}.
+
+\item[\emph{Zermelo axiomatisation (foundations
+of mathematics).}] \textit{Analogy.}
+The closure space is the set of formal theories
+purporting to be foundations of mathematics; the
+moduli quotient sends a theory to its axiom-system
+class (Zermelo 1908 set theory,
+Fraenkel-Skolem-extended ZF, ZFC, NBG, intuitionistic
+ZF,
+Martin-Löf type theory).  Zermelo's 1908
+axiomatisation selected a specific moduli value —
+Zermelo set theory with separation and choice —
+as a singleton background; subsequent extensions
+(Fraenkel Replacement, Foundation, large cardinals)
+refine that selection within the same \Fref{F50}
+background-moduli framework
+\citep{Zermelo1908Untersuchungen}.
+
+\item[\emph{Hund's rules for atomic ground state
+(atomic physics).}] \textit{Analogy.}
+For a multi-electron atom, the moduli quotient
+sends Pauli-allowed configurations to their
+\((S,L,J)\) term-symbol class; the descended
+background is the ground-state term symbol.
+Hund's rules select the ground state: (i) maximize
+total \(S\); (ii) for given \(S\), maximize \(L\);
+(iii) for given \((S,L)\), minimize \(J\) if the
+subshell is less than half-filled, otherwise
+maximize \(J\).  Within the LS-coupling regime, the
+vacuum predicate is the Hund-selected ground term
+symbol \citep{Hund1925Linienspektren}.
+
+\item[\emph{Pittendrigh circadian phase entrainment
+(chronobiology).}] \textit{Analogy.}
+For a circadian oscillator under a periodic
+zeitgeber, the moduli quotient sends oscillator
+trajectories sharing the same entrained phase to a
+class; the descended background records the
+entrained phase.  Pittendrigh's phase-response-curve
+analysis explains how zeitgebers select a definite
+entrained phase from the continuous phase moduli
+space; the vacuum predicate is the biologically
+realised entrained phase
+\citep{Pittendrigh1960Circadian}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F51} Unification as Common Refinement}
+\begingroup\small
+\begin{description}
+\item[\emph{Cartesian analytic geometry
+(mathematics).}] \textit{Analogy.}
+The parent closure is Cartesian analytic geometry;
+the children are Euclidean geometry (synthetic
+proofs) and algebra (symbolic equations).  Cartesian
+coordinates supply interpretations in both
+directions: every coordinate-representable
+algebraic curve maps to a geometric object and
+vice versa.  Euclidean theorems become algebraic
+identities on coordinates, and algebraic equations
+acquire geometric interpretation as curves and
+surfaces \citep{Descartes1637Geometrie}.
+
+\item[\emph{Banach functional analysis (functional
+analysis).}] \textit{Analogy.}
+The parent closure is Banach's framework of complete
+normed vector spaces with bounded linear operators;
+the children are finite-dimensional linear algebra
+and classical function-space analysis.  Both embed
+as concrete Banach spaces, and theorems
+(Hahn-Banach, open mapping, closed graph, uniform
+boundedness) supply unified results across both
+children within the framework's declared scope
+\citep{Banach1932Theorie}.
+
+\item[\emph{L\'evi-Strauss structural anthropology
+(anthropology).}] \textit{Analogy.}
+The parent closure is L\'evi-Strauss's structural
+analysis of myth via mythemes (binary oppositions,
+mediating figures); the children are
+ethnographically distinct mythological corpora.
+Each corpus is interpreted in terms of its
+structural elements, and the parent identifies
+mythematic isomorphisms across geographically
+isolated cultures \citep{LeviStrauss1958Anthropologie}.
+
+\item[\emph{Huxley modern synthesis (evolutionary
+biology).}] \textit{Analogy.}
+The parent closure is the modern synthesis (Huxley
+1942), unifying Mendelian genetics and Darwinian
+natural selection together with cytology,
+paleontology, and biogeography.  Population
+genetics supplies the common refinement:
+allele-frequency dynamics under Mendelian
+inheritance extend, with selection coefficients, to a
+unified
+predictive framework recovering both Mendelian
+ratios and Darwinian adaptive change as special
+cases \citep{Huxley1942Evolution}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F52} Closure Completeness Boundary}
+\begingroup\small
+\begin{description}
+\item[\emph{{PMBOK} project-scope management
+(project management).}] \textit{Analogy.}
+The residuals are deliverables and acceptance
+criteria; directions are project activities and
+stakeholder requests.  The PMBOK scope statement
+declares deliverables (\emph{inScope}), exclusions
+(\emph{namedOutside}), assumptions, constraints,
+and acceptance criteria; scope creep is a
+stakeholder request that is neither.  The
+meta-audit is project-sponsor sign-off
+\citep{PMI2017PMBOK}.
+
+\item[\emph{International Building Code
+jurisdictional scope (construction codes).}] \textit{Analogy.}
+The residuals are code-mandated safety,
+structural, fire-protection, and accessibility
+requirements; directions are declarable
+construction features.  The IBC declares scope by
+occupancy classification, construction type, and
+jurisdictional adoption, with detached one- and two-family dwellings and townhouses, each not more than three stories above grade plane and, for townhouses, with a separate means of egress, referred to the International Residential Code (IBC 101.2) \emph{namedOutside}.  The meta-audit is the
+building inspector's certificate of occupancy
+\citep{ICC2021IBC}.
+
+\item[\emph{Patent-claim scope under {M}arkman
+hearings (intellectual-property law).}] \textit{Analogy.}
+The residuals are patent-claim terms requiring
+construction; directions are declarable claim
+scopes and accused infringing embodiments.  Under
+\emph{Markman v. Westview Instruments}, claim
+construction is a matter of law: each disputed term
+is construed (\emph{inScope}) or held indefinite
+under \S112 (\emph{namedOutside} the valid claim).
+The meta-audit is the Federal Circuit affirmance of
+district-court claim construction
+\citep{Markman1996Westview}.
+
+\item[\emph{{FDA} drug-label indication scope
+(regulatory affairs).}] \textit{Analogy.}
+The residuals are safety and efficacy items required
+on the FDA-approved label; directions are medical
+uses.  21 CFR 201.57 prescribes the format and
+content of the ``Indications and Usage'' section,
+with FDA-approved indications \emph{inScope} and
+off-label uses \emph{namedOutside}.  The meta-audit
+is FDA approval of the (Supplemental) New Drug
+Application \citep{FDA21CFR20157}.
+\end{description}
+\endgroup
+
+\subsection*{Direct CER no-go (\Cref{thm:CER-direct-no-go})}
+\begingroup\small
+\begin{description}
+\item[\emph{Preclinical reproducibility record
+(research methodology).}] \textit{Analogy.}
+The carrier \(C\) is the reported experimental
+result; \(\mathfrak S\) imposes the
+reproducibility audit (lab notebook, raw data,
+randomisation log, blinded scoring).  The
+closure-relevant datum \(d\) is the
+replication-enabling record.  Begley and Ellis
+report that Amgen scientists confirmed only 6 of 53 ``landmark''
+preclinical findings, and attribute the failures in part to missing
+controls, unblinded scoring and selective reporting.  Read through
+the theorem, the bench experiments were bare-realised yet the record
+required to close the published claim was inadequate, so the
+reduct satisfies \(\operatorname{BareReal}
+_{\mathfrak S}\) but the reproducibility
+residual has no satisfying record
+\citep{Begley2012Drug}.
+
+\item[\emph{Software bill of materials (software
+supply chain).}] \textit{Analogy.}
+The carrier \(C\) is the compiled binary in
+production; \(\mathfrak S\) imposes the
+supply-chain audit (component inventory, licence
+terms, vulnerability mapping, build provenance).
+The closure-relevant datum \(d\) is the SBOM
+listing every linked component with supplier, component name, version, other unique identifiers and dependency relationships, per the NTIA minimum elements.
+The binary runs without the SBOM, so the reduct
+satisfies \(\operatorname{BareReal}_{\mathfrak S}\)
+yet the retained claim ``free of
+known-vulnerable components'' has a residual
+whose audit datum (the SBOM) was never produced
+\citep{NTIA2021SBOM}.
+
+\item[\emph{Photometric flux without calibration
+log (observational astronomy).}] \textit{Analogy.}
+The carrier \(C\) is the recorded photon count on
+a CCD; \(\mathfrak S\) imposes the photometric
+audit (flat field, dark current, atmospheric
+extinction, zero-point).  The closure-relevant
+datum \(d\) is the per-exposure calibration log
+binding ADU counts to absolute flux, as in the
+SDSS \"ubercal solution.  The raw integration is
+bare-realised even when \(d\) is absent, so the
+reduct satisfies \(\operatorname{BareReal}
+_{\mathfrak S}\) yet the retained claim ``object
+has AB magnitude \(m\)'' has a residual whose
+audit datum is the missing calibration
+\citep{Padmanabhan2008Improved}.
+
+\item[\emph{Chain of title for real property
+(real-property law).}] \textit{Analogy.}
+The carrier \(C\) is the parcel together with
+the occupant's actual possession; \(\mathfrak S\)
+imposes the marketable-title audit (recorded
+deeds, mortgages, easements, liens).  The
+closure-relevant datum \(d\) is the unbroken
+chain of recorded conveyances from a sovereign
+source.  Adverse occupancy bare-realises the
+parcel even when an unrecorded prior deed or
+undischarged mortgage breaks the chain, so the
+reduct satisfies \(\operatorname{BareReal}
+_{\mathfrak S}\) but the retained claim
+``marketable title'' has a residual whose
+required record is the missing deed
+\citep{Palomar2003Patton}.
+\end{description}
+\endgroup
+
+\subsection*{Converse CER no-go (\Cref{thm:CER-converse-no-go})}
+\begingroup\small
+\begin{description}
+\item[\emph{Ratified RFC without deployed
+implementation (Internet standards).}] \textit{Analogy.}
+The carrier \(C\) is the standards-track RFC
+considered as a closure-of-record: working-group
+consensus, IETF Last Call, IESG approval, RFC
+Editor publication, IANA registry allocation per
+RFC 2026.  Under \(\mathfrak S\) the standards
+process is closed at publication.  When no
+production implementation deploys the protocol
+(orphan or stillborn RFCs), no Internet host
+realises \(C\), so \(C=\mathrm{Cl}_{\mathfrak S}
+(C)\) yet \(\neg\operatorname{BareReal}_{\mathfrak
+S}(C)\) \citep{Bradner1996RFC2026}.
+
+\item[\emph{Statute fallen into desuetude
+(statutory law).}] \textit{Analogy.}
+The carrier \(C\) is the enacted statute
+considered as a closure-of-record: bill passed by
+both chambers, presented and signed (or enacted
+over veto), codified in the official compilation.
+Under \(\mathfrak S\) the legislative procedure is
+closed at codification.  When prosecutors decline
+to charge, courts decline to apply, and citizens
+disregard the statute over sustained time, no
+enforcement instance realises \(C\), so
+\(C=\mathrm{Cl}_{\mathfrak S}(C)\) yet \(\neg
+\operatorname{BareReal}_{\mathfrak S}(C)\); desuetude is not a recognised doctrine in
+most United States jurisdictions (West Virginia is the usual
+exception), and Calabresi proposes that courts be allowed to treat
+such obsolete statutes as open to judicial revision \citep{Calabresi1982Common}.
+
+\item[\emph{Superconducting Super Collider cancellation.}] \textit{Analogy.}
+The carrier \(C\) is the proposed 40\,TeV
+(centre-of-mass) proton--proton collider considered as a
+closure-of-record: Conceptual Design Report,
+Site-Specific
+Conceptual Design Report, technical design
+reports, DOE design reviews, environmental impact
+statement, congressional authorisations.  Under
+\(\mathfrak S\) the megaproject design-review
+audit is closed at the review-completion
+boundary.  Congressional cancellation in 1993
+terminated construction before operations, so no
+running collider instantiates \(C\).  Hence
+\(C=\mathrm{Cl}_{\mathfrak S}(C)\) yet
+\(\neg\operatorname{BareReal}_{\mathfrak S}(C)\)
+\citep{Riordan2015Tunnel}.
+
+\item[\emph{Standard {ML} signature without a
+structure (programming-language type systems).}] \textit{Analogy.}
+The carrier \(C\) is a Standard ML signature
+considered as a closure-of-record: abstract type
+declarations, value specifications with types,
+exception declarations, all type-checked against
+the SML definition.  Under \(\mathfrak S\) the
+type-system audit is closed at signature
+elaboration.  Without a matching structure binding
+no runtime value inhabits the abstract types and
+no function body computes the declared values, so
+\(C=\mathrm{Cl}_{\mathfrak S}(C)\) yet \(\neg
+\operatorname{BareReal}_{\mathfrak S}(C)\)
+\citep{MacQueen1984Modules}.
+\end{description}
+\endgroup
+
+\subsection*{\Fref{F53} Closure--Reality Boundary resolution}
+\begingroup\small
+\begin{description}
+\item[\emph{Audited financial statements (financial reporting).}]
+\textit{Analogy.} Closing a ledger's inference rules does not supply missing
+transaction evidence or an auditor's attestation. Accounting needs actual
+witnesses satisfying the declared obligations; acceptance of an opinion is
+an additional consumer requirement \citep{FASB2009ASC}.
+
+\item[\emph{ACM Artifact Review and Badging (computational reproducibility).}]
+\textit{Analogy.} Deriving consequences of an artifact manifest does not
+create a missing executable or reproduction log. Those witnesses must be
+supplied and checked before the relevant policy can award a badge
+\citep{ACM2020Artifact}.
+
+\item[\emph{CompCert formally verified compiler (programming-language verification).}]
+\textit{Analogy.} Inference closure under proof rules does not create a
+missing semantic-preservation certificate. The actual proof must satisfy
+the original source-to-target specification \citep{Leroy2009Formal}.
+
+\item[\emph{End-to-end verifiable elections (election integrity).}]
+\textit{Analogy.} Closing the declared public record under inference does
+not create missing shuffle or decryption proofs. Actual supplied certificates
+and the verification policy determine whether the original tally obligation
+is delivered \citep{Adida2008Helios}.
+\end{description}
+\endgroup

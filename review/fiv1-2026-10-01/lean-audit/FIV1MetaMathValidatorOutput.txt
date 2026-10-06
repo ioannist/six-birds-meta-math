@@ -1,0 +1,1 @@
+ok: 68 rows; 117 manifest decls cross-checked; 19 inventory labels matched.

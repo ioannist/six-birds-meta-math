@@ -1,0 +1,87 @@
+# Exact legacy declaration inventory. New analytic RHNavier modules have no exceptions.
+# These declarations are interfaces or open obligations, not proved theorems.
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/FoundationsIV/ClosureRealityBoundary.lean"
+kind = "opaque"
+name = "ReductStabilityAssumption"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/FoundationsIV/ClosureRealityBoundary.lean"
+kind = "opaque"
+name = "FormalCarrierGapAssumption"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/CalibrationFamily/FrameworkTypeSelfChar.lean"
+kind = "opaque"
+name = "cascadeFrameworkType"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/CalibrationFamily/FrameworkTypeSelfChar.lean"
+kind = "opaque"
+name = "standardClayTargetType"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/AttackForeclosureV5.lean"
+kind = "opaque"
+name = "IsDerivationRoute"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/AttackForeclosureV5.lean"
+kind = "opaque"
+name = "RecognitionModeLanding"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/AttackForeclosureV5.lean"
+kind = "opaque"
+name = "ImportsAsNamedRecognition"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/ClosureContentThesis.lean"
+kind = "opaque"
+name = "loadBearingFor"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/Template.lean"
+kind = "opaque"
+name = "FormedClosure"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/Template.lean"
+kind = "opaque"
+name = "VDifferentialTSOColumn"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/Template.lean"
+kind = "opaque"
+name = "SBClosureAssumption"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/Template.lean"
+kind = "opaque"
+name = "TemplateApplies"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/Template.lean"
+kind = "opaque"
+name = "LandsAtTheoremGrade"
+role = "uninterpreted_legacy_interface"
+
+[[declaration]]
+path = "lean/SixBirdsMetaMath/MetaMath/RecognitionMode/VerdictSignature.lean"
+kind = "opaque"
+name = "sweepVerdict"
+role = "uninterpreted_legacy_interface"
+

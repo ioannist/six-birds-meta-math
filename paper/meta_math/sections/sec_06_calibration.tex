@@ -1,0 +1,297 @@
+\section{Part III --- The calibration family}\label{sec:calibration}
+
+\subsection{Calibrations}\label{sec:calibration:intro}
+
+A \emph{calibration} records a detector class, the kind of obstruction
+it reads, together with the kind of carrier on which that detector is
+meaningful.  A low-degree polynomial detector, a mutual-information
+detector, a stable local algorithm and a Nullstellensatz certificate
+have different native carriers and different notions of descent, and a
+transport between two of them is a theorem, not a change of notation.
+Part~III records these distinctions in a small typed vocabulary:
+calibration records, a criterion for when a new record merely relabels
+an old one, records of bridges between calibrations, a table of covered
+regions, a four-axis comparison of types, and records of open
+transports called \emph{functorial gates}.
+
+The numbered results of this section are elementary facts about
+finite records of labels: each one checks a property of declared finite
+data, and the names they carry describe the intended use of the data
+rather than the depth of the proof.  We state them because they make the catalogue precise and
+because the functorial gates of \Cref{sec:calibration:functorial-gates}
+are the open problems the catalogue points to.  They prove nothing
+about how well a detector performs, about the existence of a bridge, or
+about inclusions between complexity classes; region names such as
+\(\mathsf{NC}^{1}\) are labels.
+
+\subsection{The seed catalogue}\label{sec:calibration:structure}
+
+\begin{definition}[Calibration]\label{def:calibration}
+A \emph{calibration} is a record
+\[
+  \mathsf{Calibration}
+  =
+  \{\mathsf{name},\ \mathsf{detectorClass},\ \mathsf{nativeCarrierType}\}
+\]
+of three labels: its name, the class of detector it uses, and the type
+of carrier on which the detector is meaningful.
+\end{definition}
+
+The seed catalogue \(\mathcal C_{0}\) is the list of thirteen records in
+\Cref{tab:calibration:seed}; ``seed'' means that it is a starting list
+to which further calibrations can be added.  It is introduced in this
+paper; its
+entries name detector classes that have been considered in connection
+with the P-versus-NP application, and they are not results of that
+application.  Background for the individual detector classes includes
+\cite{Lovasz1978Kneser} for the topological line,
+\cite{MulmuleySohoni2001GCT} for geometric complexity theory,
+\cite{Krajicek2019ProofComplexity} for proof complexity and
+Nullstellensatz certificates, and
+\cite{AlonKrivelevichSudakov1998PlantedClique,Kearns1998SQ} for planted
+problems and statistical queries.
+
+\begin{theorem}[Seed catalogue size]\label{thm:calibration-family-structure}
+The seed catalogue \(\mathcal C_{0}\) is a list of thirteen calibration
+records; in particular \(|\mathcal C_{0}|\ge 13\).
+\end{theorem}
+
+\begin{proof}
+The list in \Cref{tab:calibration:seed} has thirteen entries, each with the three fields of \Cref{def:calibration}; the last entry is a
+transport between calibrations rather than a detector of its own.
+\end{proof}
+
+The catalogue is a seed, not a closed list: the record type is open,
+and further calibrations can be adjoined, subject to the rebadge
+criterion below.  We call the family \emph{non-descending} in the
+intended sense that no entry is presented as a quotient or
+specialization of another; this is a description of the entries, not a
+proved property.
+
+\input{tables/tab_05_calibration_seed}
+
+\subsection{Rebadges}\label{sec:calibration:rebadge}
+
+A new name does not make a new calibration.  A candidate must differ
+from every existing entry in the structural data by which a calibration
+earns its place.
+
+\begin{definition}[Calibration four-axis profile]\label{def:four-axis-profile}
+The \emph{\fourAxis} of a calibration is the quadruple of labels
+\[
+  p=(p_{\mathsf{alg}},p_{\mathsf{det}},p_{\mathsf{desc}},p_{\mathsf{orient}})
+\]
+recording its algebraic identities, detector class, descent invariants
+and carrier orientation.  A profile \(p\) is a \emph{rebadge} of \(q\),
+\(\mathsf{Rebadge}(p,q)\), when \(p=q\) componentwise, and \(p\) is
+\emph{genuinely new} relative to a family \(\mathcal F\),
+\(\mathsf{GenuineNew}(p,\mathcal F)\), when it is a rebadge of no member
+of \(\mathcal F\).
+\end{definition}
+
+\begin{theorem}[Rebadge Discipline]\label{thm:rebadge-discipline}
+A profile \(p\) is genuinely new relative to \(\mathcal F\) if and only
+if, for every \(q\in\mathcal F\), \(p\) and \(q\) differ on at least one
+of the four axes.
+\end{theorem}
+
+\begin{proof}
+\(\mathsf{Rebadge}(p,q)\) is the conjunction of the four componentwise
+equalities, so its negation is the disjunction of the four
+inequalities; quantify over \(q\in\mathcal F\).
+\end{proof}
+
+The criterion compares labels.  Whether two detectors with different
+labels are mathematically equivalent is a separate question, which the
+criterion does not decide.
+
+\subsection{Bridges between calibrations}\label{sec:calibration:bridges-as-theorems}
+
+\begin{definition}[Calibration-side typed bridge]\label{def:calibration-side-typed-bridge}
+A \emph{\TypedBridgeCalibration} is a record
+\(B=\{\mathsf{source},\mathsf{target},\mathsf{kind}\}\) consisting of a
+source calibration, a target calibration and a kind.\footnote{This is
+distinct from the carrier-side bridge of
+\Cref{def:carrier-side-typed-bridge}.}
+\end{definition}
+
+\begin{definition}[Calibration-bridge kind dichotomy]\label{def:bridge-kind}
+The kind of a calibration bridge is one of two values,
+\(\mathsf{BridgeKind}::=\mathsf{basisChange}\mid\mathsf{substantive}\):
+a \emph{basis change} relates two presentations of the same detector and
+carrier content, and a \emph{substantive} bridge asserts a theorem
+relating different invariants.
+\end{definition}
+
+\begin{theorem}[Bridge kinds]\label{thm:bridges-as-theorems}
+Every calibration bridge record has kind \(\mathsf{basisChange}\) or
+kind \(\mathsf{substantive}\).
+\end{theorem}
+
+\begin{proof}
+\(\mathsf{BridgeKind}\) has exactly these two values.
+\end{proof}
+
+The content of the theorem is a convention: a transport between
+calibrations is recorded only together with a declared kind, and is
+then either a change of basis or a theorem that has to be proved.
+Placing two calibrations side by side without such a declaration does
+not produce a bridge record.  The kind label itself does not supply
+the change of basis or the proof.
+
+\subsection{Direction}\label{sec:calibration:bridge-type-direction}
+
+Transports between calibrations usually have a direction: worst case to
+average case, nonuniform to uniform, statistical to algorithmic.
+
+\begin{definition}[Calibration-bridge reversal]\label{def:calibration-bridge-reversal}
+The \emph{reversal} of a bridge record \(B=(S,T,k)\) is
+\(B^{\mathrm{op}}=(T,S,k)\).
+\end{definition}
+
+\begin{theorem}[Bridge Type-Direction]\label{thm:bridge-type-direction}
+For every calibration bridge record \(B\),
+\(B=B^{\mathrm{op}}\) if and only if
+\(\mathsf{source}(B)=\mathsf{target}(B)\).
+\end{theorem}
+
+\begin{proof}
+If \(B=B^{\mathrm{op}}\), comparing source fields gives \(S=T\);
+conversely, if \(S=T\) the two records coincide.
+\end{proof}
+
+Thus a bridge record between different calibrations is never its own
+reversal.  Whether a bridge \(S\to T\) yields a usable bridge
+\(T\to S\) is a mathematical question about the transport, which the
+records do not model.
+
+\subsection{Coverage}\label{sec:calibration:coverage-family-geometry}
+
+Each calibration \(c\) is assigned a set \(\operatorname{Cov}(c)\) of
+region labels, and the family coverage is
+\(\operatorname{Cov}(\mathcal C_{0})=\bigcup_{c\in\mathcal C_{0}}\operatorname{Cov}(c)\).
+The labels and the assignment form a finite declared table, shown in
+\Cref{tab:coverage-regions}; the assignment is a modelling choice, and
+the seven calibrations not listed there are assigned no region.  Two uncovered labels are singled out as
+\emph{typed coverage holes}: \(\xiNCone\), with region
+\(\mathsf{NC}^{1}\), and \(\xiAdaptive\), with region
+\(\mathsf{adaptivePolyTime}\).  The standard references for the classes
+suggested by the uncovered labels are \cite{Cook1985NCTaxonomy} for the
+\(\mathsf{NC}\) hierarchy and \cite{KarpLipton1982Advice} for
+\(\mathsf{P/poly}\).
+
+\input{tables/tab_06_coverage_regions}
+
+\begin{theorem}[Declared coverage table]\label{thm:coverage-family-geometry}
+In the declared table: the labels bounded-depth, low-degree,
+stable-local, query, topological and low-Nullstellensatz-degree belong
+to \(\operatorname{Cov}(\mathcal C_{0})\); the labels \(\mathsf{NC}^{1}\),
+\(\mathsf{NC}^{2}\), \(\mathsf{P/poly}\) and adaptive polynomial time
+do not; the regions of \(\xiNCone\) and \(\xiAdaptive\) are uncovered;
+two distinct seed calibrations, \(\Cvobs\) and \(\CMI\), both cover the
+bounded-depth label; and for every family \(\mathcal F\) and every
+calibration \(c\) with \(\operatorname{Cov}(c)=\varnothing\),
+\[
+  \operatorname{Cov}(\mathcal F\cup\{c\})=\operatorname{Cov}(\mathcal F).
+\]
+\end{theorem}
+
+\begin{proof}
+The membership statements are checked entry by entry in the table.  The
+last statement holds because the union with an empty set is unchanged.
+\end{proof}
+
+The theorem verifies the table; it proves no inclusion, exclusion or
+separation between the complexity classes named by the labels.  Its
+last clause is a reminder that adding names to the catalogue does not
+by itself enlarge its coverage: a new calibration changes the coverage
+only if it covers a new region, or if a bridge theorem carries content
+into one.
+
+\subsection{Native type and target type}
+\label{sec:calibration:framework-type-self-char}
+
+\begin{definition}[Framework-type]\label{def:framework-type}
+A \emph{\FType} is a record of four labels: uniformity, worst-caseness,
+scoping and packaging.  Two framework-types \emph{match} when they agree
+on all four.  For the P-versus-NP application we record
+\[
+\begin{aligned}
+  F_{\mathrm{PvNP}}
+  &=(\mathsf{nonuniform},\mathsf{averageCase},\mathsf{scoped},\mathsf{packageBased}),\\
+  T_{\mathrm{Clay}}
+  &=(\mathsf{uniform},\mathsf{worstCase},\mathsf{unconditional},\mathsf{languageBased}).
+\end{aligned}
+\]
+\end{definition}
+
+The first two axes correspond to the distinctions surveyed in
+\cite{Impagliazzo1995FiveWorlds}.  The tuple \(F_{\mathrm{PvNP}}\)
+describes the calibration catalogue of this section, not every
+construction of the application: the P-versus-NP paper itself proves a
+uniform, worst-case machine translation and a conditional separation of
+standard languages.  The comparison below concerns the two recorded
+tuples and does not classify that proof.
+
+\begin{theorem}[Recorded type mismatch]\label{thm:framework-type-self-char}
+The recorded types \(F_{\mathrm{PvNP}}\) and \(T_{\mathrm{Clay}}\) do not
+match, and the gate catalogue of \Cref{cat:named-functorial-gates} has
+three entries.
+\end{theorem}
+
+\begin{proof}
+The first labels, \(\mathsf{nonuniform}\) and \(\mathsf{uniform}\), are
+different (so are the other three).  The count is
+\Cref{cat:named-functorial-gates}.
+\end{proof}
+
+\begin{schema}[Framework-general candidate]\label{sch:framework-type-pending}
+For every formed closure \(c\) in the trace-state-only column, the
+native framework-type assigned to \(c\) and the framework-type of its
+standard target do not match.
+\end{schema}
+
+Both type assignments in the schema are primitive.  The schema is not
+used in the proof of \Cref{thm:framework-type-self-char}; it records the
+conjectured extension beyond the P-versus-NP case.  The mismatch says
+where the catalogue's native reach lies, and therefore which transports
+would have to be supplied to reach the standard target; the next
+subsection names three of them.
+
+\subsection{Functorial gates}\label{sec:calibration:functorial-gates}
+
+\begin{definition}[Named functorial gate]\label{def:functorial-gate}
+A \emph{named functorial gate} is a record
+\[
+  \{\mathsf{name},\mathsf{source},\mathsf{target},\mathsf{direction},\mathsf{theoremObligation}\}
+\]
+of labels: a typed source, a typed target, a direction, and the
+statement of the theorem that a transport from source to target would
+have to prove.  The record does not assert that the transport exists.
+\end{definition}
+
+\input{tables/tab_08_functorial_gates}
+
+\begin{theorem}[Gate catalogue]\label{cat:named-functorial-gates}
+The gate catalogue \(\mathcal G_{\mathrm{named}}=[G_{1},G_{2},G_{3}]\)
+of \Cref{tab:functorial-gates} has three entries, and each has a
+nonempty name and a nonempty theorem obligation.
+\end{theorem}
+
+\begin{proof}
+Inspection of the three records.
+\end{proof}
+
+None of the three obligations is proved here; they are the open
+problems of \Cref{sec:predictions:functorial-gates}.  The gate records
+complement the classical barrier results---relativization, natural
+proofs and algebrization
+\cite{BakerGillSolovay1975Relativization,RazborovRudich1997NaturalProofs,AaronsonWigderson2009Algebrization}---which
+show that certain families of techniques cannot cross certain
+boundaries; a gate states what a crossing would have to prove.  The
+P-versus-NP application also contains conditional results restricting
+feature-based proof attempts, under explicit hypotheses: a
+feature-decomposition record, a joint-access operation, and assumptions
+that expressions of given classes do not prove the target
+\cite{Tsiokos2026PvNP}.  These results do not constitute a barrier of
+the scope of the classical ones.  The three gates are examples, not a complete list.

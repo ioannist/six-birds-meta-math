@@ -1,0 +1,1050 @@
+---
+# Statements of Record — Foundations IV
+# Canonical registry for manuscript claims and formalization-support wording.
+# Current direct theorem alignment: 48 faithful paper-formula rows
+# and 1 row needing strengthening (F14).
+#
+# One row per main paper claim (52 F-IV inventory rows). Helper
+# definitions surfaced as paper-prose vocabulary appear in
+# `prose-names.md` (Helper section) and `app:formalization` mapping
+# tables; they are not duplicated here.
+#
+# Field discipline:
+#   paper_label         e.g. F2, F13a, F13b
+#   env_kind            definition / theorem / lemma / proposition /
+#                       corollary / remark / warning / nonclaim /
+#                       obligation / substrate_pending / anchor_substrate
+#   source_file         canonical paper source path
+#   source_section      the named claim within the thread file
+#   theorem_title       paper-prose name from prose-names.md
+#   target_destination  body / appendix / source_only
+#   target_axis         Transport / Stability / Access / Symmetry /
+#                       StatusRecordsCoherence / SelfReferenceLimits /
+#                       ClosureRealityBoundary
+#   target_chapter      one of 6 drafting chapters
+#   target_section_hint e.g. sec:transport:descent-repair
+#   proof_presentation  body_full / body_sketch / appendix_only /
+#                       lean_substantive / lean_traceability_only /
+#                       standard_reference / definition_entry /
+#                       anchor_citation
+#   lean_coverage       theorem / partial / obligation /
+#                       substrate_pending / anchor_substrate /
+#                       definition / not_mechanized
+#   lean_decl           full Lean path (mirror of manifest)
+#   semantic_alignment  faithful / narrowed_surrogate /
+#                       weakened_genericized / needs_strengthening /
+#                       projection_packaged / anchored_to_substrate /
+#                       not_applicable
+#   substrate_cite      bibtex key(s); blank if not an anchor
+#   trust_base_tag      obligation / substrate_pending / none
+#   axiom_shape         Lean axiom signature (blank if not tagged)
+#   obligation_guard    opaque source-predicate name (blank if not tagged)
+#   guard_decl          full Lean path to guard (blank if not tagged)
+#   notes               paper-side wording / disclosure hints
+#
+# Bibtex keys are the locked references.bib entries
+# (`Tsiokos2026<ShortName>` convention; see
+# paper/foundations_iv/notes/references-selection.md).
+
+rows:
+  # ---------- Transport (F2-F5) ----------
+  - paper_label: F2
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_05_primary_results.tex
+    source_section: "Descent-Repair Normal Form (boxed core result)"
+    theorem_title: "Descent–Repair Normal Form"
+    target_destination: body
+    target_axis: Transport
+    target_chapter: Transport
+    target_section_hint: sec:transport:descent-repair
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Transport.DescentRepair.paper_descent_repair_normal_form_maps
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Full descent-repair normal form; the source repair equals the paired factor through every intermediate map carrying q and r∘F, without surjectivity of that map."
+  - paper_label: F3
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_05_primary_results.tex
+    source_section: "Holonomy-Memory Repair Normal Form (boxed core result)"
+    theorem_title: "Holonomy-Memory Repair Normal Form"
+    target_destination: body
+    target_axis: Transport
+    target_chapter: Transport
+    target_section_hint: sec:transport:holonomy-memory
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Transport.HolonomyMemoryRepair.holonomy_memory_repair_normal_form
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: ""
+  - paper_label: F4
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_05_primary_results.tex
+    source_section: "Local-Global Obstruction Normal Form"
+    theorem_title: "Local–Global Obstruction Normal Form"
+    target_destination: body
+    target_axis: Transport
+    target_chapter: Transport
+    target_section_hint: sec:transport:local-global
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Transport.LocalGlobalObstruction.local_global_obstruction_paper_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Globalization implies compatibility, is exactly compatible membership in the declared image, and yields exactly one of four statuses."
+  - paper_label: F5
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_05_primary_results.tex
+    source_section: "Recombination Comparison (Branch-Merge Transport)"
+    theorem_title: "Recombination Comparison (Branch-Merge Transport)"
+    target_destination: body
+    target_axis: Transport
+    target_chapter: Transport
+    target_section_hint: sec:transport:recombination
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Transport.RecombinationComparison.recombination_comparison
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Reuses F2 split-pair discipline; the bridge composition BridgeComposition links F2's quotient discipline to F5's cross-track comparison."
+
+  # ---------- Stability (F6-F9) ----------
+  - paper_label: F6
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_04_methods.tex
+    source_section: "No-Needles Stability (layer-agnostic statement)"
+    theorem_title: "No-Needles Stability"
+    target_destination: body
+    target_axis: Stability
+    target_chapter: Stability
+    target_section_hint: sec:stability:no-needles
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_real
+    semantic_alignment: faithful
+    substrate_cite: "Tsiokos2026NeedleKiller, Tsiokos2026NavierStokes"
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Anchored rational-block endpoint, with separate same-library general-block and supplied-symmetric-inverse proofs. The real-block written proof uses the same block identities and Loewner budgets. Optimality and positive residuals require the positive legal Gram setting; arbitrary symmetric blocks support only the declared algebraic decomposition and budget implication."
+  - paper_label: F7
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_04_methods.tex
+    source_section: "Sufficiency Closure (boxed core result)"
+    theorem_title: "Sufficiency Closure"
+    target_destination: body
+    target_axis: Stability
+    target_chapter: Stability
+    target_section_hint: sec:stability:sufficiency-closure
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Stability.SufficiencyClosure.sufficiency_closure_probe_family
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Declared probes may have separate codomains; per-probe factorization is equivalent to closure of their bundled future signature, with the obstruction and four-status clauses."
+  - paper_label: F8
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_04_methods.tex
+    source_section: "Strict Extension (boxed core result)"
+    theorem_title: "Strict Extension"
+    target_destination: body
+    target_axis: Stability
+    target_chapter: Stability
+    target_section_hint: sec:stability:strict-extension
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Stability.StrictExtension.strict_extension
+    semantic_alignment: faithful
+    substrate_cite: "Tsiokos2026XiCompanion"
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Anchored conceptually to Paper 1 (Adequacy Residuals) §strict-extension chain rule; per inventory note, status remained mechanize_now rather than anchor_substrate."
+  - paper_label: F9
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_04_methods.tex
+    source_section: "No Unstatused Residual"
+    theorem_title: "No Unstatused Residual"
+    target_destination: body
+    target_axis: Stability
+    target_chapter: Stability
+    target_section_hint: sec:stability:no-unstatused-residual
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Stability.NoUnstatusedResidual.no_unstatused_residual_paper_scoped
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "For any status carrier, coverage and common-locus agreement give status existence, unique status at each locus, and no unstatused residual. The assignment equivalence assumes only coverage; coverage iff no unstatused residual has no hypothesis."
+
+  # ---------- Access (F10-F13a, F13b, F24) ----------
+  - paper_label: F10
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_03_problem_setup.tex
+    source_section: "Quotientality / Layer-Sameness (universal-property formulation)"
+    theorem_title: "Quotientality (Layer-Sameness via Quotient)"
+    target_destination: body
+    target_axis: Access
+    target_chapter: Access
+    target_section_hint: sec:access:quotientality
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Access.Quotientality.quotientality
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Headline of Access axis; per F10 source-fidelity fix, the canonical access quotient is constructed from a lawful ObservationSignature (not assumed); the universal-property statement covers observable factorization and the coarsest-quotient property."
+  - paper_label: F11
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_03_problem_setup.tex
+    source_section: "Adequacy / No-Overread"
+    theorem_title: "Adequacy / No-Overread"
+    target_destination: body
+    target_axis: Access
+    target_chapter: Access
+    target_section_hint: sec:access:adequacy
+    proof_presentation: lean_traceability_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Access.Adequacy.paper_adequacy_three_parts
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Every claim has equivalent fiber-constancy, empty-obstruction and unique-factorization tests; accepted claims satisfy them under (NO), and global (NO) is equivalent to unique factorization of all accepted claims."
+  - paper_label: F12
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_03_problem_setup.tex
+    source_section: "No-Free-Distinction"
+    theorem_title: "No-Free-Distinction"
+    target_destination: body
+    target_axis: Access
+    target_chapter: Access
+    target_section_hint: sec:access:no-free-distinction
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Access.NoFreeDistinction.no_free_distinction_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Current visibility iff empty distinction obstruction, with accepted-claim, paid repair, strictness, and universal factorization clauses."
+  - paper_label: F13a
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_03_problem_setup.tex
+    source_section: "Hiddenness — quotient/currentizer normal form (theorem-grade part)"
+    theorem_title: "Hiddenness — Quotient/Currentizer Normal Form"
+    target_destination: body
+    target_axis: Access
+    target_chapter: Access
+    target_section_hint: sec:access:hiddenness
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Access.HiddennessNormalForm.hiddenness_normal_form_with_exposure_collapse_surplus
+    semantic_alignment: faithful
+    substrate_cite: "Tsiokos2026PvNP"
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Partial theorem wrapper applying same-module # substrate_pending axiom hiddenness_pending under an opaque Paper7SaturatedSATInstance guard. Current PvNP Lean does not construct the required HiddennessInterface adapter or a source-guard instance. Discharge requires a concrete source interpretation and proofs of surjectivity and the first four normal-form clauses; publication of substrate Lean alone does not supply them. The certificate-free split-pair equivalence is proved separately. Opacity does not establish the intended source obligation."
+  - paper_label: F13b
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_03_problem_setup.tex
+    source_section: "CSL formed-closure law"
+    theorem_title: "CSL Formed-Closure Law"
+    target_destination: body
+    target_axis: Access
+    target_chapter: Access
+    target_section_hint: sec:access:csl-formed-closure
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Access.CSLFormedClosure.csl_formed_closure_direct_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Direct finite-interface theorem: determination by current access and upstream state forces upstream separation of predictive split pairs and the hiddenness equivalence."
+  - paper_label: F24
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_03_problem_setup.tex
+    source_section: "Layer Multiplicity"
+    theorem_title: "Layer Multiplicity"
+    target_destination: body
+    target_axis: Access
+    target_chapter: Access
+    target_section_hint: sec:access:layer-multiplicity
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Access.LayerMultiplicity.paper_layer_multiplicity_strict_iff_corestriction
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Role split iff obstruction nonempty iff canonical extension strict; inclusive resolution without discipline premises."
+
+  # ---------- Symmetry (F14, F15a, F15b, F40, F41) ----------
+  - paper_label: F14
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_06_secondary_results.tex
+    source_section: "Duality Fixity (layer-agnostic statement)"
+    theorem_title: "Duality Fixity (Self-Dual Trace Confinement)"
+    target_destination: body
+    target_axis: Symmetry
+    target_chapter: Symmetry
+    target_section_hint: sec:symmetry:duality-fixity
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Symmetry.DualityFixity.duality_fixity_direct
+    semantic_alignment: needs_strengthening
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "A finite one-dimensional rational PSD-matrix instance proves rank-one trace and cone laws and has a nonzero ledger; Real and the general Hilbert-space measure instance are not available in the core-only module."
+  - paper_label: F15a
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_06_secondary_results.tex
+    source_section: "Selection Obstruction / Repair Normal Form (theorem-grade part)"
+    theorem_title: "Selection Obstruction / Repair Normal Form"
+    target_destination: body
+    target_axis: Symmetry
+    target_chapter: Symmetry
+    target_section_hint: sec:symmetry:selection-obstruction
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Symmetry.SelectionObstruction.selection_obstruction_orbit_conditional_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Selection and repair clauses use only surjectivity; orbit-quotient and induced-action equations condition the final triviality, fixed-point, and no-section clauses."
+  - paper_label: F15b
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_06_secondary_results.tex
+    source_section: "Spontaneous SSB / branch-selection formation"
+    theorem_title: "Spontaneous Symmetry Breaking / Branch-Selection Formation"
+    target_destination: body
+    target_axis: Symmetry
+    target_chapter: Symmetry
+    target_section_hint: sec:symmetry:spontaneous-ssb
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Symmetry.SpontaneousSSB.spontaneous_ssb_orbit_constant_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Direct orbit-map theorem: formation-record existence iff a formed state moves, preservation and movement for each record, and exclusion of fixed-valued selectors; Bool xor supplies an instance."
+  - paper_label: F40
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_06_secondary_results.tex
+    source_section: "Anomaly / Symmetry Obstruction"
+    theorem_title: "Anomaly / Symmetry Obstruction"
+    target_destination: body
+    target_axis: Symmetry
+    target_chapter: Symmetry
+    target_section_hint: sec:symmetry:anomaly
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Symmetry.Anomaly.anomaly_symmetry_obstruction_full_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Action, domain, and readout obstruction equivalences; any descended candidate inherits multiplication and identity, with the induced and obstructed anomaly cases."
+  - paper_label: F41
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_06_secondary_results.tex
+    source_section: "Duality Equivalence"
+    theorem_title: "Duality Equivalence"
+    target_destination: body
+    target_axis: Symmetry
+    target_chapter: Symmetry
+    target_section_hint: sec:symmetry:duality-equivalence
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.Symmetry.DualityEquivalence.paper_duality_equivalence_quotient_roles_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "The inverse descended equivalence also intertwines declared routes."
+
+  # ---------- Status / Records / Coherence (F17-F23, F25-F31) ----------
+  - paper_label: F17
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Objectivity as Common Quotient"
+    theorem_title: "Objectivity as Common Quotient"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:objectivity
+    proof_presentation: lean_traceability_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ObjectivityAsCommonQuotient.paper_objectivity_from_factorization_minimality
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "The paper's factorization and minimality premises derive CommonQuotientUniversal, which yields all seven stated conclusions."
+  - paper_label: F18
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Lawhood Descent"
+    theorem_title: "Lawhood Descent"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:lawhood-descent
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.LawhoodDescent.readout_invariant_under_fiber_bijections_iff_descends
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "A value-valued candidate law is invariant under every access-fiber-preserving bijection exactly when it descends."
+  - paper_label: F19
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Object Persistence"
+    theorem_title: "Object Persistence"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:object-persistence
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ObjectPersistence.object_persistence_strengthened
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: ""
+  - paper_label: F20
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Fact / Record Formation"
+    theorem_title: "Fact / Record Formation"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:fact-record
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.FactRecordFormation.paper_fact_record_formation_conditional_raw_transport_with_event
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Main equivalences hold for arbitrary declared record transport; the raw fact-value equation follows conditionally from its descent equation."
+  - paper_label: F21
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Reflexive Nonclosure"
+    theorem_title: "Reflexive Nonclosure"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:reflexive-nonclosure
+    proof_presentation: lean_traceability_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ReflexiveNonclosure.paper_reflexive_nonclosure_with_sharpness_rules_2_3_4
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Direct audit implication with finite countermodels showing that rules 2, 3, and 4 are each needed for blocking."
+  - paper_label: F22
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Interface Mediation"
+    theorem_title: "Interface Mediation"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:interface-mediation
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.InterfaceMediation.paper_interface_mediation_split_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Joint obstruction emptiness is equivalent to boundary leakage and internal insufficiency both being absent."
+  - paper_label: F23
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Probability as Stable Unresolved Fiber"
+    theorem_title: "Probability as Stable Unresolved Fiber"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:probability
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ProbabilityAsStableUnresolvedFiber.paper_probability_fiber_split_per_clause_point_mass
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Base clauses remain scoped as before; the finite real-weight clause characterizes descent by point mass and unresolvedness by two positive readout values."
+  - paper_label: F25
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Causality as Stable Intervention Transport"
+    theorem_title: "Causality as Stable Intervention Transport"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:causality
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.CausalityAsStableInterventionTransport.paper_causality_transport_separate_raw_witness_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Main equivalences hold for arbitrary quotient transports; deterministic and probabilistic raw witnesses each require only their own descent equation."
+  - paper_label: F26
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Moduli / Contingency"
+    theorem_title: "Moduli / Contingency"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:moduli
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ModuliContingency.paper_moduli_contingency_split_full_general
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "The revised theorem covers lawful quotient factorization, presentation dependence, the necessity/contingency split, obstruction cases, and transport stability."
+  - paper_label: F27
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Conservation as Orbit Descent"
+    theorem_title: "Conservation as Orbit Descent"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:conservation
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ConservationAsOrbitDescent.partial_route_step_invariant_iff_orbit_descends
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Partial-step invariance is equivalent to constancy on generated orbits and descent through their canonical quotient; total routes are a proved special case."
+  - paper_label: F28
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Composability"
+    theorem_title: "Composability"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:composability
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.Composability.paper_composability
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Includes composite-outcome factorization through the surjective joint interface quotient and separate Assoc/Id."
+  - paper_label: F29
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Presentation Invariance"
+    theorem_title: "Presentation Invariance"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:presentation-invariance
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.PresentationInvariance.presentation_invariance_paper_conditional_strengthened
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: ""
+  - paper_label: F30
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Explanation as Compression with Descent"
+    theorem_title: "Explanation as Compression with Descent"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:explanation
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.ExplanationAsCompressionWithDescent.explanation_as_compression_with_descent
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: ""
+  - paper_label: F31
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_07_analysis.tex
+    source_section: "Counterfactual Legitimacy"
+    theorem_title: "Counterfactual Legitimacy"
+    target_destination: body
+    target_axis: StatusRecordsCoherence
+    target_chapter: StatusRecordsCoherence
+    target_section_hint: sec:status-records-coherence:counterfactual
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.StatusRecordsCoherence.CounterfactualLegitimacy.paper_counterfactual_legitimacy
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Repaired statement includes both factor maps and assumes q and alpha surjective."
+
+  # ---------- Self-reference / Limits (F33-F39, F42-F52) ----------
+  - paper_label: F33
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Horizon Sufficiency / Holographic Compression"
+    theorem_title: "Horizon Sufficiency / Holographic Compression"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:horizon-sufficiency
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.HorizonSufficiency.horizon_sufficiency_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "The paper-facing bundle includes per-probe horizon sufficiency iff sufficiency of the dependent bundled readout."
+  - paper_label: F34
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Information Loss Normal Form"
+    theorem_title: "Information Loss Normal Form"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:information-loss
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.InformationLoss.information_loss_normal_form_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Full-codomain surjectivity of the later recovery signature is explicit and matches the repaired paper."
+  - paper_label: F35
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Scale Descent / Renormalization"
+    theorem_title: "Scale Descent / Renormalization"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:scale-descent
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ScaleDescentRenormalization.scale_descent_renormalization_paper_tower_strengthened
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "The tower equation reconstructs the raw target from coherent next-scale readouts; next-scale descent is equivalent to coarsening-fiber constancy of the unique current readout."
+  - paper_label: F36
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Singular Limit Completion"
+    theorem_title: "Singular Limit Completion"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:singular-limit
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.SingularLimitCompletion.singular_limit_completion_paper_strengthened
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Includes Removable iff non-current and empty target-family obstruction, alongside the target descent, path, and repair clauses."
+  - paper_label: F37
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Complementarity as Non-Joint Access"
+    theorem_title: "Complementarity as Non-Joint Access"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:complementarity
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Complementarity.complementarity_split_criterion_general
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "With nonempty H, surjective qA/qB, and separate admissibility, complementarity is equivalent to every admissible joint carrier having a split pair."
+  - paper_label: F38
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Arrow from Record Monotonicity"
+    theorem_title: "Arrow from Record Monotonicity"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:arrow
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ArrowFromRecordMonotonicity.paper_arrow_from_record_monotonicity_fiber
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Fiber constancy iff record factorization, and history-level Arrow iff descended record monotonicity; only source-record surjectivity is needed."
+  - paper_label: F39
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Entropy as Fiber Volume"
+    theorem_title: "Entropy as Fiber Volume"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:entropy
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.EntropyAsFiberVolume.paper_entropy_as_fiber_volume_conditional_mixing_at_pair
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "The base entropy clauses are unconditional; the single-pair zero-mixing law guards only the final target-descent equivalence."
+  - paper_label: F42
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Irreducibility / No Short Closed Description"
+    theorem_title: "Irreducibility / No Short Closed Description"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:irreducibility
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Irreducibility.paper_irreducibility_admissible
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Pointwise obstruction and cost at h, with cheaper candidates restricted to a declared admissible class; a minimum exists for inhabited classes under well-founded cost."
+  - paper_label: F43
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Continuum Emergence"
+    theorem_title: "Continuum Emergence"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:continuum-emergence
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ContinuumEmergence.continuum_limit_readout_dependent_tower_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Dependent stage and residual carriers; compatible readouts agree at all stages, quotient stability is equivalent to fiber constancy, and the descended readout is unique."
+  - paper_label: F44
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Criticality / Phase Boundary"
+    theorem_title: "Criticality / Phase Boundary"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:criticality
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Criticality.criticality_phase_boundary_descent_paper_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Descent iff empty split-pair obstruction; fiber-invariant phase data and quotient-respecting neighborhoods make boundary and criticality fiber-invariant and descended."
+  - paper_label: F45
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Locality / Domain of Dependence"
+    theorem_title: "Locality / Domain of Dependence"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:locality
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Locality.locality_domain_of_dependence_paper_strict
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Adds strict-factorization minimality iff matching fibers for inhabited H; the empty-history paper claim is false and has a formal counterexample."
+  - paper_label: F46
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Law–State Split"
+    theorem_title: "Law–State Split"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:law-state-split
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.LawStateSplit.law_state_split_paper_full
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: ""
+  - paper_label: F47
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Fine-Tuning as Small Selector Region"
+    theorem_title: "Fine-Tuning as Small Selector Region"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:fine-tuning
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.FineTuning.fine_tuning_small_selector_region_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Realized fine-tuning gives positive measure and a selected modulus; monotonicity and transitive order carry smallness from a larger target region to a stricter one."
+  - paper_label: F48
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Topology as Global Gluing Invariant"
+    theorem_title: "Topology as Global Gluing Invariant"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:topology
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Topology.topology_global_gluing_invariant_paper
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: ""
+  - paper_label: F49
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Common-Source / Nonlocal Correlation Normal Form"
+    theorem_title: "Common-Source / Nonlocal Correlation Normal Form"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:common-source
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.CommonSourceNonlocal.common_source_nonlocal_correlation_repaired_strengthened
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "The repaired theorem matches nonempty H and all three surjections. It constructs each response map from the corresponding fiber condition; DirectRoute uses rho:H→P and a map P→A×B whose composition with rho is the joint readout."
+  - paper_label: F50
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Vacuum / Background Selection"
+    theorem_title: "Vacuum / Background Selection"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:vacuum
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.VacuumBackgroundSelection.paper_vacuum_background_selection_cardinality
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Descent and background clauses hold for arbitrary declared background; raw constancy is conditional on descent. The vacuum set has exactly one of zero, one, or multiple members, and a formed singleton vacuum is unique."
+  - paper_label: F51
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Unification as Common Refinement"
+    theorem_title: "Unification as Common Refinement"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:unification
+    proof_presentation: lean_traceability_only
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.Unification.unification_as_common_refinement_paper_exact_kernel
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Projection equations give the square and kernel inclusion; a surjective parent makes paired injectivity equivalent to exact joint kernel."
+  - paper_label: F52
+    env_kind: theorem
+    source_file: paper/foundations_iv/sections/sec_08_formal_framework.tex
+    source_section: "Closure Completeness Boundary"
+    theorem_title: "Closure Completeness Boundary"
+    target_destination: body
+    target_axis: SelfReferenceLimits
+    target_chapter: SelfReferenceLimits
+    target_section_hint: sec:self-reference-limits:closure-completeness
+    proof_presentation: lean_substantive
+    lean_coverage: theorem
+    lean_decl: SixBirdsMetaMath.FoundationsIV.SelfReferenceLimits.ClosureCompletenessBoundary.paper_closure_completeness_boundary_general_sharp
+    semantic_alignment: faithful
+    substrate_cite: ""
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "Arbitrary verdict type and exact failure condition, with four finite witnesses showing independence of the scoped-completeness conjuncts."
+
+  # ---------- Closure–Reality Boundary anchor (F53) ----------
+  - paper_label: F53
+    env_kind: anchor_substrate
+    source_file: paper/foundations_iv/sections/sec_09_synthesis.tex
+    source_section: "Closure–Reality Boundary (CER → AOR resolution)"
+    theorem_title: "Closure–Reality Boundary"
+    target_destination: body
+    target_axis: ClosureRealityBoundary
+    target_chapter: ClosureRealityBoundary
+    target_section_hint: sec:anchor:closure-reality-boundary
+    proof_presentation: anchor_citation
+    lean_coverage: anchor_substrate
+    lean_decl: SixBirdsMetaMath.FoundationsIV.ClosureRealityBoundary.closure_reality_boundary
+    semantic_alignment: anchored_to_substrate
+    substrate_cite: "Tsiokos2026AOR"
+    trust_base_tag: none
+    axiom_shape: ""
+    obligation_guard: ""
+    guard_decl: ""
+    notes: "F53 separates retained Sat5 structural-flag saturation from current AOR inference reflection. The retained fixed-point/zero-flag equivalence and generic CER results are proved here; no identification of Sat5 with the current reflector is imported. current_aor_accounted_completion_iff applies the current kernel's exact source-accounting criterion; current_aor_inference_closed_not_fully_discharged proves the actual closed-but-unpaid budget control. The older aggregate wrapper has opaque uninstantiated obstruction fields; separate finite and abstract CER controls do not rely on them."

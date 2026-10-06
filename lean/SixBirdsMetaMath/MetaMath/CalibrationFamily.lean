@@ -1,0 +1,11 @@
+import SixBirdsMetaMath.MetaMath.CalibrationFamily.Structure
+import SixBirdsMetaMath.MetaMath.CalibrationFamily.RebadgeDiscipline
+import SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgesAsTheorems
+import SixBirdsMetaMath.MetaMath.CalibrationFamily.BridgeTypeDirection
+import SixBirdsMetaMath.MetaMath.CalibrationFamily.CoverageFamilyGeometry
+import SixBirdsMetaMath.MetaMath.CalibrationFamily.FrameworkTypeSelfChar
+import SixBirdsMetaMath.MetaMath.CalibrationFamily.FunctorialGates
+
+namespace SixBirdsMetaMath.MetaMath.CalibrationFamily
+
+end SixBirdsMetaMath.MetaMath.CalibrationFamily

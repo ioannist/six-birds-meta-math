@@ -1,0 +1,110 @@
+Namespace: SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal
+General parameters: {𝕜 : Type u} [Field 𝕜] [LinearOrder 𝕜] [IsStrictOrderedRing 𝕜]
+Theorems quadratic_congruence and block_schur_decomposition omit the two order instances.
+loewnerLE_congruence omits IsStrictOrderedRing.
+Definitions loewnerLE require Field and LinearOrder; nativeExplanation and blockResidual require only Field.
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:22
+def loewnerLE {n : ℕ} (A B : Matrix (Fin n) (Fin n) 𝕜) : Prop
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.quadratic_congruence
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:28
+theorem quadratic_congruence {m n : ℕ}
+    (M : Matrix (Fin m) (Fin n) 𝕜)
+    (A : Matrix (Fin n) (Fin n) 𝕜) (v : Fin m → 𝕜) :
+    v ⬝ᵥ ((M * A * Mᵀ) *ᵥ v) =
+      (Mᵀ *ᵥ v) ⬝ᵥ (A *ᵥ (Mᵀ *ᵥ v))
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_congruence
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:38
+theorem loewnerLE_congruence {m n : ℕ}
+    (M : Matrix (Fin m) (Fin n) 𝕜)
+    (A B : Matrix (Fin n) (Fin n) 𝕜) (h : loewnerLE A B) :
+    loewnerLE (M * A * Mᵀ) (M * B * Mᵀ)
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_add_mono
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:47
+theorem loewnerLE_add_mono {n : ℕ}
+    (A B C D : Matrix (Fin n) (Fin n) 𝕜)
+    (hAB : loewnerLE A B) (hCD : loewnerLE C D) :
+    loewnerLE (A + C) (B + D)
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.loewnerLE_trans
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:57
+theorem loewnerLE_trans {n : ℕ}
+    (A B C : Matrix (Fin n) (Fin n) 𝕜)
+    (hAB : loewnerLE A B) (hBC : loewnerLE B C) :
+    loewnerLE A C
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.nativeExplanation
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:67
+def nativeExplanation {y z : ℕ}
+    (KDL : Matrix (Fin z) (Fin y) 𝕜)
+    (KLLdagger : Matrix (Fin y) (Fin y) 𝕜) :
+    Matrix (Fin z) (Fin y) 𝕜
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.blockResidual
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:73
+def blockResidual {y z : ℕ}
+    (KLD : Matrix (Fin y) (Fin z) 𝕜)
+    (KDL : Matrix (Fin z) (Fin y) 𝕜)
+    (KDD : Matrix (Fin z) (Fin z) 𝕜)
+    (KLLdagger : Matrix (Fin y) (Fin y) 𝕜) :
+    Matrix (Fin z) (Fin z) 𝕜
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.block_schur_decomposition
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:83
+theorem block_schur_decomposition {y z : ℕ}
+    (KLL : Matrix (Fin y) (Fin y) 𝕜)
+    (KLD : Matrix (Fin y) (Fin z) 𝕜)
+    (KDL : Matrix (Fin z) (Fin y) 𝕜)
+    (KDD : Matrix (Fin z) (Fin z) 𝕜)
+    (KLLdagger : Matrix (Fin y) (Fin y) 𝕜)
+    (hKDL : KDL = KLDᵀ) (hdagger : KLLdagger = KLLdaggerᵀ)
+    (hprojection : KLL * KLLdagger * KLD = KLD) :
+    KDD = nativeExplanation KDL KLLdagger * KLL *
+        (nativeExplanation KDL KLLdagger)ᵀ +
+      blockResidual KLD KDL KDD KLLdagger
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_ordered_field
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:110
+theorem no_needles_stability_ordered_field {y z d : ℕ}
+    (KLL : Matrix (Fin y) (Fin y) 𝕜)
+    (KLD : Matrix (Fin y) (Fin z) 𝕜)
+    (KDL : Matrix (Fin z) (Fin y) 𝕜)
+    (KDD : Matrix (Fin z) (Fin z) 𝕜)
+    (KLLdagger : Matrix (Fin y) (Fin y) 𝕜)
+    (ThetaY : Matrix (Fin y) (Fin y) 𝕜)
+    (OmegaZ : Matrix (Fin z) (Fin z) 𝕜)
+    (ThetaD : Matrix (Fin d) (Fin d) 𝕜)
+    (S : Matrix (Fin d) (Fin z) 𝕜)
+    (hKDL : KDL = KLDᵀ) (hdagger : KLLdagger = KLLdaggerᵀ)
+    (hprojection : KLL * KLLdagger * KLD = KLD)
+    (hnative : loewnerLE KLL ThetaY)
+    (hresidual : loewnerLE (blockResidual KLD KDL KDD KLLdagger) OmegaZ)
+    (htransport : loewnerLE
+      (S * (nativeExplanation KDL KLLdagger * ThetaY *
+        (nativeExplanation KDL KLLdagger)ᵀ + OmegaZ) * Sᵀ) ThetaD) :
+    loewnerLE (S * KDD * Sᵀ) ThetaD
+
+SixBirdsMetaMath.FoundationsIV.Stability.NoNeedlesReal.no_needles_stability_real
+lean/SixBirdsMetaMath/FoundationsIV/Stability/NoNeedlesReal.lean:140
+theorem no_needles_stability_real {y z d : ℕ}
+    (KLL : Matrix (Fin y) (Fin y) ℝ)
+    (KLD : Matrix (Fin y) (Fin z) ℝ)
+    (KDL : Matrix (Fin z) (Fin y) ℝ)
+    (KDD : Matrix (Fin z) (Fin z) ℝ)
+    (KLLdagger : Matrix (Fin y) (Fin y) ℝ)
+    (ThetaY : Matrix (Fin y) (Fin y) ℝ)
+    (OmegaZ : Matrix (Fin z) (Fin z) ℝ)
+    (ThetaD : Matrix (Fin d) (Fin d) ℝ)
+    (S : Matrix (Fin d) (Fin z) ℝ)
+    (hKDL : KDL = KLDᵀ) (hdagger : KLLdagger = KLLdaggerᵀ)
+    (hprojection : KLL * KLLdagger * KLD = KLD)
+    (hnative : loewnerLE KLL ThetaY)
+    (hresidual : loewnerLE (blockResidual KLD KDL KDD KLLdagger) OmegaZ)
+    (htransport : loewnerLE
+      (S * (nativeExplanation KDL KLLdagger * ThetaY *
+        (nativeExplanation KDL KLLdagger)ᵀ + OmegaZ) * Sᵀ) ThetaD) :
+    loewnerLE (S * KDD * Sᵀ) ThetaD

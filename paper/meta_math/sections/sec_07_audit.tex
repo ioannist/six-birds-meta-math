@@ -1,0 +1,64 @@
+\section{Cross-paper consistency}\label{sec:audit}
+
+This section adds no formal claim.  It checks that the way this paper
+describes the companion papers agrees with what those papers state,
+and that the two recognition sources of \Cref{sec:recognition} are
+recorded as named premises rather than re-derived.
+
+\subsection{Consistency of the framing}\label{sec:audit:cross-paper-consistency}
+
+\paragraph{Recognition and derivation.}  In this paper a
+recognition-mode landing and a derivation-mode landing are two
+different kinds of conditional closure: the first names its
+load-bearing source as a premise, the second derives its conclusion
+from stated hypotheses.  Neither is treated as a weaker form of the
+other.  This is consistent with the companion papers.  The
+Riemann-hypothesis paper \cite{Tsiokos2026RH} proves the Riemann
+hypothesis from a supplied Selberg recognition source and an
+identification with the classical zeros; the P-versus-NP paper
+\cite{Tsiokos2026PvNP} proves a fixed machine-level translation and
+derives \(P\neq NP\) from an accepted negative source.  Both state these
+premises as hypotheses.  The same separation is what keeps
+\Cref{thm:attack-foreclosure-v5} from reading as a retraction of
+\Cref{thm:attack-foreclosure-v4}: the first applies the second to
+derivation routes only.
+
+\paragraph{Column placement.}  The Riemann-hypothesis and P-versus-NP
+substrates are placed in the trace-state-only column, and the
+Navier--Stokes substrate in the witness-content-exposing column, by the
+V-Differential classification of the hiddenness companion
+\cite{Tsiokos2026CSL}.  That paper adopts the placements as
+hypotheses, with an informal motivation for each; it does not prove
+them.  This paper uses the same placements with the same status.  The
+two trace-state-only substrates are mathematically unlike each other,
+one analytic and one computational, but the criterion applied to them
+is the same.
+
+\paragraph{Source handling.}  In the P-versus-NP row the named source
+is
+recorded in the P-versus-NP paper \cite{Tsiokos2026PvNP}; in the
+Riemann-hypothesis row the Selberg source is recorded in the
+Riemann-hypothesis paper \cite{Tsiokos2026RH}.  In both rows the source is a named
+premise and is not produced by a derivation in this paper.  A source
+record is broader than the proposition it contributes: it carries its
+provenance, the closure it belongs to and its column placement, while
+the proposition is what enters the conditional argument.
+
+\subsection{Recording sources}\label{sec:audit:source-record-discipline}
+
+We use the following rule.  A recognition source must be named, its
+substrate must be identified, and its role in a closure must be kept
+separate from the proposition it contributes.  A proposed
+recognition-mode landing that cannot name its source, identify its
+column placement, or separate the source from the target proposition is
+not counted as an instance of \Cref{thm:template-applicability}; such
+cases belong to the open problems of \Cref{sec:predictions}.
+
+For the P-versus-NP row, naming the source is bookkeeping, not
+evidence for its negative content.  The hiddenness companion proves a
+finite example in which two histories have different predictive classes
+and the same current class while selected Boolean outputs read from the
+two quotients agree; it does not connect its quotients with the classes
+\(P\) and \(NP\).  The accepted negative content and the admission of
+search events used for the standard complexity conclusion are separate
+premises of the P-versus-NP paper.

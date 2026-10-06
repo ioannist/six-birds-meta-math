@@ -1,0 +1,268 @@
+\section{Upper-bound classification: no seventh irreducible role}\label{sec:upper-bound-classification}
+
+% Mathematical job:
+%   - Search candidate seventh-role features in the covered R010 scope.
+%   - Apply the repaired role-projection alignment rules to each candidate.
+%   - Close the three high-priority threats:
+%       probability / uncertainty,
+%       residual causality,
+%       residual agency.
+%   - State the upper-bound classification theorem within the covered scope:
+%     every candidate feature classifies as one of
+%       {P1..P6 projection, composite, presentation variant, level shift,
+%        activation-threshold refinement, instrument-visibility artifact,
+%        empirical-bridge annotation, outside-domain structure,
+%        already-covered bookkeeping/annotation}.
+%   - No covered candidate remains as an unresolved seventh-role threat or
+%     as a genuine seventh irreducible typed closure role.
+%
+% Role-alignment non-negotiables (carry forward from Section 2):
+%   NOT P3 for generic transition.
+%   NOT P5 for generic path / derivation.
+%   NOT P1 for generic semantics / interpretation.
+%
+% Governing sources:
+%   workspace/meta/lens_lab/campaigns/paper3_exact_six_exhaustiveness/upper_bound_classification_repair/T304_content_review.md
+%   workspace/meta/lens_lab/campaigns/paper3_exact_six_exhaustiveness/upper_bound_classification_repair/role_projection_alignment_rules.md
+%   workspace/meta/lens_lab/aristotle/results/paper3/paper3_upper_bound_classification_repair_F/paper3_upper_bound_classification_repair_F_result_shape.md
+%   docs/papers/Tsiokos_2026_Six_Birds_Protocol_Trap_Holonomy_Without_Entropy_Production.tex
+%     (P3-is-a-diagnostic principle)
+%   paper/prior_literature_context.md (Tier A3, B3)
+%
+% Overclaim risks:
+%   - Claiming no-seventh-role OUTSIDE the covered scope.
+%   - Dismissing a candidate by definition rather than by classification.
+%   - Backsliding into the forbidden role assignments above.
+%   - Treating classification pass as proof of uniqueness.
+
+
+The lower bounds of Section~\ref{sec:lower-bounds} rule out the
+trivialization in which some primitive role lacks an admissible
+witness in \FATCD{}. The upper-bound direction addresses the
+complementary question: whether some additional, seventh closure role
+is needed in the covered scope. This section shows that no such role
+is needed. The argument proceeds in three steps. First, we state the
+alignment rules that constrain how raw features may project to
+\Pone{}, \ldots, \Psix{}. Second, we close the three high-priority
+candidate seventh-role threats: probability and uncertainty, residual
+causality, and residual agency. Third, we record the upper-bound
+classification theorem that collects these local classifications into
+a single covered-scope statement.
+
+\subsection{Role-projection alignment rules}\label{subsec:alignment-rules}
+
+The role meanings of Definition~\ref{def:primitive-roles} carry
+alignment rules constraining which raw features may be interpreted as
+active projections of each role. These rules refine the corrected
+alignments of Remark~\ref{rem:repaired-alignments} and form the
+discipline under which the classification theorem is proved.
+
+\begin{proposition}[Role-projection alignment]\label{prop:alignment-rules}
+Under honest bookkeeping and the witness discipline of
+Definition~\ref{def:common-witness-data}, each role projection is
+constrained as follows.
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: admissible only when the candidate cluster carries a
+    selected update, a quotient or relation record, and a witness of
+    descent compatibility, descent obstruction, or update-vs-quotient
+    mismatch. Generic semantics, generic predicate meaning, generic
+    selection criteria, and generic agency are not admissible as
+    \Pone{} projections in the absence of such a witness.
+  \item \Ptwo{}: admissible only when the candidate carries a macro
+    specification, a realization relation, specification-satisfaction
+    data, and evidence of representability or non-representability.
+    Macro-level predicates or objectives count only insofar as they are
+    treated as content to be represented. Mere quotient equality,
+    arbitrary relations without representability structure, and
+    empirical observations without level and threshold data are not
+    admissible as \Ptwo{} projections.
+  \item \Pthree{}: admissible only when the candidate carries enriched
+    route grammar, generated same-source, same-target route terms, and
+    route-comparison data with a non-reducibility or coherence-mismatch
+    certificate. Generic transitions, generic causal arrows, generic
+    path records, and route undefinedness arising from \Pone{}
+    obstruction are not admissible as \Pthree{} projections unless the
+    route/coherence threshold is explicitly present and the route
+    comparison is specifically of the \Pthree{} type.
+  \item \Pfour{}: admissible only when the candidate carries a stage,
+    order, transition, refinement, staged-dynamics, or regime-ordering
+    record with laws beyond bare labels. Bare labels, arbitrary
+    relations without order, transition, or refinement law, quotient
+    packaging, and audit bookkeeping are not admissible as \Pfour{}
+    projections.
+  \item \Pfive{}: admissible only when the candidate carries a quotient
+    relation, a packaging map, the identification of distinct
+    micro-elements, a same-package or quotient-object record, and
+    quotient-validity evidence. Generic structural paths, derivations,
+    topologies or geometries merely because they have paths, and causal
+    chains are not admissible as \Pfive{} projections unless quotient
+    or packaging data is present.
+  \item \Psix{}: admissible only when the candidate carries an audit
+    record with event reference, provenance or dependency trace, replay
+    or check structure, and bookkeeping or checkability structure.
+    Passive logs alone, arbitrary metadata, and certificate-only
+    content without audit/provenance/replay/check structure are not
+    admissible as \Psix{} projections.
+\end{itemize}
+\end{proposition}
+
+\begin{remark}[Three corrected alignments, held fixed]\label{rem:three-repaired-alignments}
+Proposition~\ref{prop:alignment-rules} fixes three alignments that
+are held throughout: generic transition data does not project to
+\Pthree{}, generic path or derivation data does not project to
+\Pfive{}, and generic semantic or interpretation data does not project
+to \Pone{}. These are carried into every step of the classification
+theorem below.
+\end{remark}
+
+\subsection{High-priority threat closures}\label{subsec:threat-closures}
+
+Three classes of candidate seventh-role feature require particular
+scrutiny: probability and uncertainty, residual causality in the
+sense of the interventional and counterfactual
+hierarchy~\citep{Pearl2009}, and residual agency in the planning
+sense~\citep{Bratman1987}. Each closure is recorded as a proposition.
+In every case the candidate is classified under the alignment rules
+of Proposition~\ref{prop:alignment-rules} together with the residual
+scheme of Definition~\ref{def:residual-scheme}; no candidate is
+dismissed by definition. These closures remove the remaining
+high-priority blockers before the general classification theorem.
+
+\begin{proposition}[Closure of probability and uncertainty]\label{prop:probability-closure}
+Every admissible probability or uncertainty feature of a description
+\(D \in \FATCD{}\) classifies, within the covered scope, as one of
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item a \Ptwo{} projection, when the feature is a macro-specification
+    or representability condition;
+  \item a \Pfour{} projection, when the feature is a stochastic
+    transition or regime structure carrying valid stage or transition
+    data;
+  \item a \Psix{} projection, when the feature is an audited
+    uncertainty-bookkeeping record;
+  \item an activation-threshold refinement, when the uncertainty data
+    modulates when an already admissible role projection activates
+    without supplying a new witness schema;
+  \item an empirical-bridge annotation, when the feature expresses
+    measurement uncertainty bridged to a substrate observable;
+  \item or a composite of the foregoing projections and annotations when
+    the admissible bookkeeping carries several of these aspects at once.
+\end{itemize}
+No residual probability or uncertainty feature remains as an unresolved
+seventh-role threat within the covered scope.
+\end{proposition}
+
+\begin{proposition}[Closure of residual causality]\label{prop:causality-closure}
+Every admissible residual-causality feature of a description
+\(D \in \FATCD{}\) classifies, within the covered scope, as one of
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item a \Pfour{} projection, as the primary classification when the
+    feature is a directed transition, refinement, or staged-dependence
+    record;
+  \item a \Pthree{} projection, only when the feature is specifically a
+    route/coherence comparison between generated same-source,
+    same-target routes;
+  \item a \Psix{} projection, when the feature is a provenance or
+    dependency audit;
+  \item a composite of \Pfour{} and \Psix{}, when directed dependence
+    and provenance audit occur together in the same admissible feature;
+  \item an outside-domain structure, when the feature requires
+    metaphysical causation not amenable to honest bookkeeping.
+\end{itemize}
+Classification as \Pfive{} is inadmissible in the absence of quotient
+packaging. No residual-causality feature remains as an unresolved
+seventh-role threat within the covered scope.
+\end{proposition}
+
+\begin{proposition}[Closure of residual agency]\label{prop:agency-closure}
+Every admissible residual-agency feature of a description
+\(D \in \FATCD{}\) classifies, within the covered scope, as one of
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item a composite of \Ptwo{}, \Pfour{}, and \Psix{}, when the feature
+    decomposes into an objective or specification to be represented, a
+    transition, regime, or staged selection event, and an audited
+    decision-provenance record;
+  \item an empirical-bridge annotation, when observed agency serves as
+    substrate evidence for a bridged claim;
+  \item an outside-domain structure, when irreducible intentional or
+    teleological content is asserted beyond what admissible
+    bookkeeping reduces to \Ptwo{}, \Pfour{}, and \Psix{}.
+\end{itemize}
+Classification as \Pone{} is inadmissible in the absence of an explicit
+update-vs-quotient descent obstruction. No residual-agency feature remains
+as an unresolved seventh-role threat within the covered scope.
+\end{proposition}
+
+\begin{remark}[Scope of the closures]\label{rem:threat-closures-scope}
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure}
+close the three threats within the covered scope; they do not make
+scope-free claims. A feature that falls outside the covered scope is
+classified as an outside-domain structure via
+Definition~\ref{def:residual-scheme}, not absorbed into a primitive role
+by default.
+\end{remark}
+
+\subsection{The upper-bound classification theorem}\label{subsec:classification-theorem}
+
+The alignment rules of Proposition~\ref{prop:alignment-rules}, the
+threat closures of
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure},
+and the residual scheme of Definition~\ref{def:residual-scheme}
+combine to yield the upper-bound classification theorem: alignment
+rules fix the admissible role meanings, threat closures rule out the
+three misclassifications that otherwise block the argument, and the
+theorem records the classification codomain for every covered
+residual feature.
+
+\begin{theorem}[Upper-bound classification]\label{thm:upper-bound-classification}
+Let \(D \in \FATCD{}\) and let \(r\) be a residual feature of \(D\) in the
+sense of Definition~\ref{def:residual-scheme}. Then within the covered
+scope, \(r\) classifies as one of
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item already absorbed into an admissible \Pone{}, \Ptwo{}, \Pthree{},
+    \Pfour{}, \Pfive{}, or \Psix{} projection under the alignment rules of
+    Proposition~\ref{prop:alignment-rules};
+  \item a composite of such projections;
+  \item a presentation variant of an already classified feature;
+  \item a level shift of an already classified feature;
+  \item an activation-threshold refinement;
+  \item an instrument-visibility artifact;
+  \item an empirical-bridge annotation;
+  \item an outside-domain structure;
+  \item already-covered bookkeeping or annotation data.
+\end{enumerate}
+Equivalently, within the covered scope, categories (x) and (xi) of
+Definition~\ref{def:residual-scheme}, namely the unresolved-threat and
+genuine-seventh-role categories, are empty: no covered candidate
+seventh-role feature remains as an unresolved threat, and no covered
+candidate seventh-role feature requires a genuine seventh irreducible
+typed closure role.
+\end{theorem}
+
+\begin{proof}[Outline]
+Let \(r\) be a residual feature of \(D\). If its raw feature form,
+threshold data, witness data, level assignment, and bookkeeping align
+with one of the fixed role meanings under
+Proposition~\ref{prop:alignment-rules}, then \(r\) falls under category
+(i). If several such aligned components are required, \(r\) falls under
+the composite category (ii). Presentation variants and level shifts fall
+under (iii) and (iv), activation-threshold refinements under (v),
+instrument-visibility artifacts under (vi), empirical-bridge annotations
+under (vii), and outside-domain structures under (viii). Features already
+covered as bookkeeping or annotation data fall under (ix). The three
+high-priority threat classes are handled decisively by
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure},
+so none of them remains in the unresolved-threat bucket. Therefore every
+covered residual feature lands in categories (i)--(ix), and categories
+(x) and (xi) are empty in the covered scope.
+\end{proof}
+
+\begin{remark}[Scope of the theorem]\label{rem:classification-scope}
+Theorem~\ref{thm:upper-bound-classification} is scoped to \FATCD{}
+and its covered scope. It does not claim that no seventh role can
+arise outside \FATCD{}, that the alignment rules are exhaustive for
+richer domains, or that the three threat closures settle analogous
+questions beyond the covered scope. Nor does it prove exact-six on
+its own: the decomposition/exhaustion theorem of
+Section~\ref{sec:decomposition-exhaustion} remains necessary. Broader
+questions are deferred to Section~\ref{sec:future-work}.
+\end{remark}
